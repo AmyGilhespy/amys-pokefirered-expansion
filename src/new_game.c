@@ -81,7 +81,6 @@ static void ClearPokedexFlags(void)
 
 static void ClearBattleTower(void)
 {
-    CpuFill32(0, &gSaveBlock2Ptr->battleTower, sizeof(gSaveBlock2Ptr->battleTower));
 }
 
 static void WarpToPlayersRoom(void)

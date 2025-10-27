@@ -5,7 +5,6 @@
 #include "battle_controllers.h"
 #include "battle_gfx_sfx_util.h"
 #include "battle_interface.h"
-#include "battle_tower.h"
 #include "berry_pouch.h"
 #include "data.h"
 #include "decompress.h"
@@ -6473,9 +6472,6 @@ static u8 GetPartySlotEntryStatus(s8 slot)
 
 static bool8 GetBattleEntryEligibility(struct Pokemon *mon)
 {
-    u16 species;
-    u16 i = 0;
-
     if (GetMonData(mon, MON_DATA_IS_EGG))
         return FALSE;
     switch (gPartyMenu.chooseMonsBattleType)
@@ -6489,13 +6485,6 @@ static bool8 GetBattleEntryEligibility(struct Pokemon *mon)
             return FALSE;
         break;
     case CHOOSE_MONS_FOR_BATTLE_TOWER:
-        if (gSaveBlock2Ptr->battleTower.battleTowerLevelType == 0 // level 50
-         && GetMonData(mon, MON_DATA_LEVEL) > 50)
-            return FALSE;
-        species = GetMonData(mon, MON_DATA_SPECIES);
-        for (; gBattleTowerBannedSpecies[i] != 0xFFFF; ++i)
-            if (gBattleTowerBannedSpecies[i] == species)
-                return FALSE;
         break;
     }
     return TRUE;

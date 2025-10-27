@@ -10,7 +10,6 @@
 #include "event_scripts.h"
 #include "event_data.h"
 #include "item.h"
-#include "battle_tower.h"
 #include "trainer_tower.h"
 #include "battle_setup.h"
 #include "field_specials.h"
@@ -2061,18 +2060,9 @@ static const u8 *BattleStringGetOpponentNameByTrainerId(u16 trainerId, u8 *text,
         else
             toCpy = gLinkPlayers[GetBattlerMultiplayerId(battler) & BIT_SIDE].name;
     }
-    else if (gBattleTypeFlags & BATTLE_TYPE_BATTLE_TOWER)
-    {
-        GetBattleTowerTrainerName(text);
-    }
     else if (gBattleTypeFlags & BATTLE_TYPE_TRAINER_TOWER)
     {
         GetTrainerTowerOpponentName(text);
-        toCpy = text;
-    }
-    else if (gBattleTypeFlags & BATTLE_TYPE_EREADER_TRAINER)
-    {
-        CopyEReaderTrainerName5(text);
         toCpy = text;
     }
     else
@@ -2162,12 +2152,8 @@ static const u8 *BattleStringGetOpponentClassByTrainerId(u16 trainerId)
         toCpy = gTrainerClasses[GetSecretBaseTrainerClass()].name;
     else if (trainerId == TRAINER_UNION_ROOM)
         toCpy = gTrainerClasses[GetUnionRoomTrainerClass()].name;
-    else if (gBattleTypeFlags & BATTLE_TYPE_BATTLE_TOWER)
-        toCpy = gTrainerClasses[GetBattleTowerTrainerClassNameId()].name;
     else if (gBattleTypeFlags & BATTLE_TYPE_TRAINER_TOWER)
         toCpy = gTrainerClasses[GetTrainerTowerOpponentClass()].name;
-    else if (gBattleTypeFlags & BATTLE_TYPE_EREADER_TRAINER)
-        toCpy = gTrainerClasses[GetEreaderTrainerClassId()].name;
     else
         toCpy = gTrainerClasses[GetTrainerClassFromId(trainerId)].name;
 

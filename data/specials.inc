@@ -246,22 +246,7 @@ gSpecials::
 	def_special NullFieldSpecial
 	def_special NullFieldSpecial
 	def_special GetLeadMonFriendship
-	def_special BattleTowerMapScript2
-	def_special ChooseNextBattleTowerTrainer
-	def_special CheckPartyBattleTowerBanlist
-	def_special PrintBattleTowerTrainerGreeting
-	def_special BufferEReaderTrainerGreeting
-	def_special StartSpecialBattle
-	def_special SetBattleTowerProperty
-	def_special BattleTowerUtil
-	def_special SetBattleTowerParty
-	def_special SaveBattleTowerProgress
-	def_special BattleTower_SoftReset
-	def_special DetermineBattleTowerPrize
-	def_special GiveBattleTowerPrize
-	def_special AwardBattleTowerRibbons
 	def_special ChooseBattleTowerPlayerParty
-	def_special ValidateEReaderTrainer
 	def_special NullFieldSpecial
 	def_special ReducePlayerPartyToSelectedMons
 	def_special BedroomPC
@@ -337,7 +322,6 @@ gSpecials::
 	def_special DoFallWarp
 	def_special NullFieldSpecial
 	def_special NullFieldSpecial
-	def_special SetEReaderTrainerGfxId
 	def_special BattleSetup_StartLatiBattle
 	def_special NullFieldSpecial
 	def_special NullFieldSpecial
@@ -353,9 +337,7 @@ gSpecials::
 	def_special HasAllKantoMons
 	def_special IsMonOTNameNotPlayers
 	def_special NullFieldSpecial
-	def_special Dummy_TryEnableBravoTrainerBattleTower
 	def_special DoesPartyHaveEnigmaBerry
-	def_special DoSpecialTrainerBattle
 	def_special SetPostgameFlags
 	def_special StartMarowakBattle
 	def_special ForcePlayerOntoBike

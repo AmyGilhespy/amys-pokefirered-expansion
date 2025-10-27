@@ -8,7 +8,6 @@
 #include "util.h"
 #include "script.h"
 #include "event_data.h"
-#include "battle_tower.h"
 #include "new_game.h"
 #include "wonder_news.h"
 #include "mystery_gift_menu.h"
@@ -210,9 +209,6 @@ void ClearSavedWonderCardAndRelated(void)
     ClearMysteryGiftFlags();
     ClearMysteryGiftVars();
 #endif //FREE_MYSTERY_GIFT
-#if FREE_BATTLE_TOWER_E_READER == FALSE
-    ClearEReaderTrainer(&gSaveBlock2Ptr->battleTower.ereaderTrainer);
-#endif //FREE_BATTLE_TOWER_E_READER
 }
 
 bool32 SaveWonderCard(const struct WonderCard * card)
