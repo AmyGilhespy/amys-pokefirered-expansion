@@ -146,6 +146,11 @@ void NewGameInitData(void)
     DeactivateAllRoamers();
     gSaveBlock1Ptr->registeredItem = 0;
     ClearBag();
+
+    // Give starting items
+    AddBagItem(ITEM_RARE_CANDY, 999);
+    AddBagItem(ITEM_MAX_REPEL, 999);
+
     NewGameInitPCItems();
     // ClearEnigmaBerries();
     InitEasyChatPhrases();

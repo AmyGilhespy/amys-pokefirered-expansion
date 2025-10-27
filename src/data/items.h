@@ -1996,11 +1996,12 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Rare Candy"),
         .pluralName = ITEM_PLURAL_NAME("Rare Candies"),
-        .price = (I_PRICE >= GEN_7) ? 10000 : 4800,
+        .price = 0/*(I_PRICE >= GEN_7) ? 10000 : 4800*/,
         .description = COMPOUND_STRING(
             "Raises the level "
             "of a Pokémon by\n"
             "one."),
+        .importance = 1,
         .pocket = POCKET_ITEMS,
         .sortType = ITEM_TYPE_LEVEL_UP_ITEM,
         .type = ITEM_USE_PARTY_MENU,
@@ -2271,12 +2272,13 @@ const struct Item gItemsInfo[] =
     [ITEM_MAX_REPEL] =
     {
         .name = ITEM_NAME("Max Repel"),
-        .price = (I_PRICE >= GEN_7) ? 900 : 700,
+        .price = 0/*(I_PRICE >= GEN_7) ? 900 : 700*/,
         .holdEffectParam = 250,
         .description = COMPOUND_STRING(
             "Repels weak wild "
             "Pokémon for 250\n"
             "steps."),
+        .importance = 1,
         .pocket = POCKET_ITEMS,
         .sortType = ITEM_TYPE_FIELD_USE,
         .type = ITEM_USE_BAG_MENU,
