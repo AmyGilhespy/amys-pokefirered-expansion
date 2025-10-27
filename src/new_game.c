@@ -32,6 +32,8 @@
 #include "event_scripts.h"
 #include "save.h"
 #include "rtc.h"
+#include "random_encounters.h"
+#include "constants/species.h"
 
 // this file's functions
 static void ResetMiniGamesResults(void);
@@ -164,6 +166,7 @@ void NewGameInitData(void)
     ResetTrainerTowerResults();
     ResetItemFlags();
     ResetDexNav();
+    RandomEncounters_FillAllWithSpecies(SPECIES_BULBASAUR);
 }
 
 static void ResetMiniGamesResults(void)

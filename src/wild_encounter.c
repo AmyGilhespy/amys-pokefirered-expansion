@@ -21,6 +21,8 @@
 #include "constants/item.h"
 #include "constants/items.h"
 #include "constants/weather.h"
+#include "random_encounters.h"
+#include "constants/random_encounters.h"
 
 #define MAX_ENCOUNTER_RATE 1600
 
@@ -371,9 +373,20 @@ u8 PickWildMonNature(void)
 void CreateWildMon(u16 species, u8 level, u8 unownSlot)
 {
     u32 personality;
+    u16 overriddenSpecies;
     s8 chamber;
     bool32 checkCuteCharm;
     u8 unownLetter = NUM_UNOWN_FORMS;
+    u8 regionId;
+    u8 slotIndex;
+
+    regionId = gMapHeader.regionMapSectionId;
+    slotIndex = Random() % RANDOM_ENCOUNTER_SLOTS_PER_REGION;
+    overriddenSpecies = RandomEncounters_GetSpeciesForRegionSlot(regionId, slotIndex);
+    if (overriddenSpecies != RANDOM_ENCOUNTER_SPECIES_NONE) {
+        species = overriddenSpecies;
+    }
+
 
     ZeroEnemyPartyMons();
 
