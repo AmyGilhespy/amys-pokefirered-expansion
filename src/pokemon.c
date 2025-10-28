@@ -1825,6 +1825,11 @@ void CreateEnemyEventMon(void)
     }
 }
 
+u16 Pokemon_CalculateBoxMonChecksum(struct BoxPokemon *boxMon)
+{
+    return CalculateBoxMonChecksum(boxMon);
+}
+
 static u16 CalculateBoxMonChecksum(struct BoxPokemon *boxMon)
 {
     u32 checksum = 0;
@@ -1833,6 +1838,11 @@ static u16 CalculateBoxMonChecksum(struct BoxPokemon *boxMon)
         checksum += boxMon->secure.raw[i] + (boxMon->secure.raw[i] >> 16);
 
     return checksum;
+}
+
+u16 Pokemon_CalculateBoxMonChecksumDecrypt(struct BoxPokemon *boxMon)
+{
+    return CalculateBoxMonChecksumDecrypt(boxMon);
 }
 
 static u16 CalculateBoxMonChecksumDecrypt(struct BoxPokemon *boxMon)
@@ -1846,6 +1856,11 @@ static u16 CalculateBoxMonChecksumDecrypt(struct BoxPokemon *boxMon)
     }
 
     return checksum;
+}
+
+u16 Pokemon_CalculateBoxMonChecksumReencrypt(struct BoxPokemon *boxMon)
+{
+    return CalculateBoxMonChecksumReencrypt(boxMon);
 }
 
 static u16 CalculateBoxMonChecksumReencrypt(struct BoxPokemon *boxMon)
@@ -2375,6 +2390,11 @@ void SetMultiuseSpriteTemplateToTrainerFront(u16 trainerPicId, u8 battlerPositio
     gMultiuseSpriteTemplate.anims = gAnims_Trainer;
 }
 
+void Pokemon_EncryptBoxMon(struct BoxPokemon *boxMon)
+{
+    EncryptBoxMon(boxMon);
+}
+
 static void EncryptBoxMon(struct BoxPokemon *boxMon)
 {
     for (u32 i = 0; i < ARRAY_COUNT(boxMon->secure.raw); i++)
@@ -2382,6 +2402,11 @@ static void EncryptBoxMon(struct BoxPokemon *boxMon)
         boxMon->secure.raw[i] ^= boxMon->personality;
         boxMon->secure.raw[i] ^= boxMon->otId;
     }
+}
+
+void Pokemon_DecryptBoxMon(struct BoxPokemon *boxMon)
+{
+    DecryptBoxMon(boxMon);
 }
 
 static void DecryptBoxMon(struct BoxPokemon *boxMon)

@@ -13,6 +13,7 @@
 #include "save_failed_screen.h"
 #include "task.h"
 #include "trainer_tower.h"
+#include "random_encounters.h"
 
 static u8 HandleWriteSector(u16 sectorId, const struct SaveSectorLocation *locations);
 static u8 TryWriteSector(u8 sectorNum, u8 *data);
@@ -882,6 +883,8 @@ u8 LoadGameSave(u8 saveType)
             result = TryLoadSaveSector(SECTOR_ID_HOF_2, gDecompressionBuffer + SECTOR_DATA_SIZE, SECTOR_DATA_SIZE);
         break;
     }
+
+    RandomEncounters_Load();
 
     return result;
 }

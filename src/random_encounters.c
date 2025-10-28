@@ -8,14 +8,14 @@
 #include "wild_encounter.h"
 #include "constants/random_encounters.h"
 #include "constants/species.h"
+//#include "gba/isagbprint.h"
 
 EWRAM_DATA static u16 sRandomEncounters_RegionTargetBST[RANDOM_ENCOUNTER_REGION_COUNT] = {0};
-EWRAM_DATA static u16 * sRandomEncounters_ValidSpecies;
+EWRAM_DATA static u16 sRandomEncounters_ValidSpecies[NUM_SPECIES];
 EWRAM_DATA static u16 sRandomEncounters_ValidSpeciesCount;
 
-u16 RandomEncounters_ChooseRandomSpeciesForRegion(s32 regionId, u16 avoid1, u16 avoid2)
+u16 RandomEncounters_ChooseRandomSpeciesForBST(u16 targetBST, u16 avoid1, u16 avoid2)
 {
-    const u16 target = sRandomEncounters_RegionTargetBST[regionId];
     const u16 attempts = 20;
     u16 bestSpecies = SPECIES_RATTATA; // fallback guaranteed valid
     u16 bestScore = 0xFFFF;
@@ -25,6 +25,7 @@ u16 RandomEncounters_ChooseRandomSpeciesForRegion(s32 regionId, u16 avoid1, u16 
     for (i = 0; i < attempts; i++)
     {
         species = RandomEncounters_PickRandomValidSpecies();
+        //MgbaPrintf(MGBA_LOG_WARN, "RandomEncounters_ChooseRandomSpeciesForBST: chose %d (0x%x)", species, species);
         bst = gSpeciesInfo[species].baseHP
                 + gSpeciesInfo[species].baseAttack
                 + gSpeciesInfo[species].baseDefense
@@ -32,7 +33,11 @@ u16 RandomEncounters_ChooseRandomSpeciesForRegion(s32 regionId, u16 avoid1, u16 
                 + gSpeciesInfo[species].baseSpAttack
                 + gSpeciesInfo[species].baseSpDefense;
 
-        score = abs((s16) bst - (s16) target);
+        score = abs((s16) bst - (s16) targetBST);
+        if (species == avoid1 || species == avoid2)
+        {
+            score += 100;
+        }
         if (score < bestScore)
         {
             bestScore = score;
@@ -41,6 +46,11 @@ u16 RandomEncounters_ChooseRandomSpeciesForRegion(s32 regionId, u16 avoid1, u16 
     }
 
     return bestSpecies;
+}
+
+u16 RandomEncounters_ChooseRandomSpeciesForRegion(s32 regionId, u16 avoid1, u16 avoid2)
+{
+    return RandomEncounters_ChooseRandomSpeciesForBST(sRandomEncounters_RegionTargetBST[regionId], avoid1, avoid2);
 }
 
 void RandomEncounters_FillAllWithRandom(void)
@@ -65,7 +75,6 @@ void RandomEncounters_FillAllWithRandom(void)
             gSaveBlock2Ptr->randomEncounterData.randomEncounters[regionId][slot] = species2plus;
         }
     }
-    free(sRandomEncounters_ValidSpecies);
 }
 
 void RandomEncounters_FillAllWithSpecies(u16 species)
@@ -118,8 +127,9 @@ void RandomEncounters_Init(void)
     s32 i;
     u16 species, bst, regionId;
     u8 wildMonIndex, season, timeOfDay;
+    // Init the seed:
+    gSaveBlock2Ptr->randomEncounterData.seed = Random32();
     // Init the valid species list:
-    sRandomEncounters_ValidSpecies = calloc(NUM_SPECIES, sizeof(u16));
     sRandomEncounters_ValidSpeciesCount = 0;
     for (species = 1; species < NUM_SPECIES; ++species)
     {
@@ -128,6 +138,7 @@ void RandomEncounters_Init(void)
             sRandomEncounters_ValidSpecies[sRandomEncounters_ValidSpeciesCount++] = species;
         }
     }
+    //MgbaPrintf(MGBA_LOG_WARN, "RandomEncounters_Init: Have sRandomEncounters_ValidSpeciesCount=%d of NUM_SPECIES=%d valid species, highest of which is %d.", sRandomEncounters_ValidSpeciesCount, NUM_SPECIES, species - 1);
     // Init the region BST targets:
     bst_num = (u32 *) calloc(RANDOM_ENCOUNTER_REGION_COUNT, sizeof(u32));
     bst_div = (u16 *) calloc(RANDOM_ENCOUNTER_REGION_COUNT, sizeof(u16));
@@ -180,6 +191,11 @@ void RandomEncounters_Init(void)
 
 bool8 RandomEncounters_IsAllowedSpecies(u16 species)
 {
+    if (species >= NUM_SPECIES)
+    {
+        return FALSE;
+    }
+
     if (species == SPECIES_NONE)
     {
         return FALSE;
@@ -238,8 +254,30 @@ bool8 RandomEncounters_IsAllowedSpecies(u16 species)
     return TRUE;
 }
 
+void RandomEncounters_Load(void)
+{
+    u16 species;
+    // Init the valid species list:
+    sRandomEncounters_ValidSpeciesCount = 0;
+    for (species = 1; species < NUM_SPECIES; ++species)
+    {
+        if (RandomEncounters_IsAllowedSpecies(species))
+        {
+            sRandomEncounters_ValidSpecies[sRandomEncounters_ValidSpeciesCount++] = species;
+        }
+    }
+    //MgbaPrintf(MGBA_LOG_WARN, "RandomEncounters_Load: Have sRandomEncounters_ValidSpeciesCount=%d of NUM_SPECIES=%d valid species, highest of which is %d.", sRandomEncounters_ValidSpeciesCount, NUM_SPECIES, species - 1);
+}
+
 u16 RandomEncounters_PickRandomValidSpecies(void)
 {
-    return sRandomEncounters_ValidSpecies[Random() % sRandomEncounters_ValidSpeciesCount];
+    u32 rand = Random32();
+    //MgbaPrintf(MGBA_LOG_WARN, "RandomEncounters_PickRandomValidSpecies: rand(%d) %% sRandomEncounters_ValidSpeciesCount(%d) => %d // NUM_SPECIES=%d", rand, sRandomEncounters_ValidSpeciesCount, rand % sRandomEncounters_ValidSpeciesCount, NUM_SPECIES);
+    u16 species = sRandomEncounters_ValidSpecies[rand % (u32) sRandomEncounters_ValidSpeciesCount];
+    if (species >= NUM_SPECIES)
+    {
+        species = SPECIES_RATTATA;
+    }
+    return species;
 }
 

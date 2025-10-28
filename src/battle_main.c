@@ -79,6 +79,7 @@
 #include "constants/trainers.h"
 #include "constants/weather.h"
 #include "cable_club.h"
+#include "random_encounters.h"
 
 extern const struct BgTemplate gBattleBgTemplates[];
 
@@ -1965,6 +1966,7 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
 {
     u32 personalityValue;
     s32 i;
+    u16 avoid1 = SPECIES_NONE, avoid2 = SPECIES_NONE;
     u8 monsCount;
     if (battleTypeFlags & BATTLE_TYPE_TRAINER && !(battleTypeFlags & (BATTLE_TYPE_FRONTIER
                                                                         | BATTLE_TYPE_EREADER_TRAINER
@@ -1997,6 +1999,10 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
             u32 otIdType = OT_ID_RANDOM_NO_SHINY;
             u32 fixedOtId = 0;
             u32 abilityNum = 0;
+            u32 nextSeed, thisSeed;
+            s32 nameCharIdx;
+            u16 randomSpecies, originalSpecies, originalBST;
+            bool8 givePreassignedMoves;
 
             if (trainer->battleType != TRAINER_BATTLE_TYPE_SINGLES)
                 personalityValue = 0x80;
@@ -2018,10 +2024,66 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
                 otIdType = OT_ID_PRESET;
                 fixedOtId = HIHALF(personalityValue) ^ LOHALF(personalityValue);
             }
-            CreateMon(&party[i], partyData[monIndex].species, partyData[monIndex].lvl, 0, TRUE, personalityValue, otIdType, fixedOtId);
-            SetMonData(&party[i], MON_DATA_HELD_ITEM, &partyData[monIndex].heldItem);
+            nextSeed = Random32();
+            thisSeed = gSaveBlock2Ptr->randomEncounterData.seed + personalityHash;
+            thisSeed *= 2;
+            thisSeed ^= partyData[monIndex].species;
+            thisSeed *= 2;
+            thisSeed += trainer->trainerClass;
+            thisSeed *= 2;
+            thisSeed ^= trainer->trainerPic;
+            for (nameCharIdx = 0; nameCharIdx < (TRAINER_NAME_LENGTH + 1) && trainer->trainerName[nameCharIdx]; nameCharIdx++) {
+                if (nameCharIdx % 2 == 0)
+                {
+                    thisSeed *= 3;
+                    thisSeed += trainer->trainerName[nameCharIdx];
+                }
+                else
+                {
+                    thisSeed *= 5;
+                    thisSeed ^= trainer->trainerName[nameCharIdx];
+                }
+            }
+            thisSeed <<= 3;
+            thisSeed |= i;
+            thisSeed <<= 3;
+            thisSeed |= monIndex;
+            randomSpecies = originalSpecies = partyData[monIndex].species;
+            givePreassignedMoves = TRUE;
+            if (trainer->trainerClass == TRAINER_CLASS_LEADER && i < 3) { }
+            else if (trainer->trainerClass == TRAINER_CLASS_RIVAL_EARLY && i < 3) { }
+            else if (trainer->trainerClass == TRAINER_CLASS_RIVAL_LATE && i < 3) { }
+            else if (trainer->trainerClass == TRAINER_CLASS_ELITE_FOUR && i < 3) { }
+            else if (trainer->trainerClass == TRAINER_CLASS_CHAMPION && i < 3) { }
+            else if (trainer->trainerClass == TRAINER_CLASS_BOSS && i < 3) { }
+            else
+            {
+                givePreassignedMoves = FALSE;
+                originalBST = gSpeciesInfo[originalSpecies].baseHP
+                        + gSpeciesInfo[originalSpecies].baseAttack
+                        + gSpeciesInfo[originalSpecies].baseDefense
+                        + gSpeciesInfo[originalSpecies].baseSpeed
+                        + gSpeciesInfo[originalSpecies].baseSpAttack
+                        + gSpeciesInfo[originalSpecies].baseSpDefense;
+                SeedRng(thisSeed);
+                randomSpecies = RandomEncounters_ChooseRandomSpeciesForBST(originalBST, avoid1, avoid2);
+                if (i == 3)
+                {
+                    avoid1 = randomSpecies;
+                }
+                if (i == 4)
+                {
+                    avoid2 = randomSpecies;
+                }
+                SeedRng(nextSeed);
+            }
+            CreateMon(&party[i], randomSpecies, partyData[monIndex].lvl, 0, TRUE, personalityValue, otIdType, fixedOtId);
 
-            CustomTrainerPartyAssignMoves(&party[i], &partyData[monIndex]);
+            SetMonData(&party[i], MON_DATA_HELD_ITEM, &partyData[monIndex].heldItem);
+            if (givePreassignedMoves != FALSE)
+            {
+                CustomTrainerPartyAssignMoves(&party[i], &partyData[monIndex]);
+            }
             SetMonData(&party[i], MON_DATA_IVS, &(partyData[monIndex].iv));
             if (partyData[monIndex].ev != NULL)
             {

@@ -403,6 +403,7 @@ struct RandomEncounterData {
        Uses RANDOM_ENCOUNTER_SPECIES_NONE for empty/unset.
     */
     u16 randomEncounters[RANDOM_ENCOUNTER_REGION_COUNT][RANDOM_ENCOUNTER_SLOTS_PER_REGION];
+    u32 seed;
 };
 
 struct SaveBlock2

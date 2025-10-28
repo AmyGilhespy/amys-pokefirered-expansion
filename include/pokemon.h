@@ -760,6 +760,12 @@ void SetMultiuseSpriteTemplateToPokemon(u16 speciesTag, u8 battlerPosition);
 void SetMultiuseSpriteTemplateToTrainerBack(u16 trainerPicId, u8 battlerPosition);
 void SetMultiuseSpriteTemplateToTrainerFront(u16 trainerPicId, u8 battlerPosition);
 
+void Pokemon_EncryptBoxMon(struct BoxPokemon *boxMon);
+void Pokemon_DecryptBoxMon(struct BoxPokemon *boxMon);
+u16 Pokemon_CalculateBoxMonChecksum(struct BoxPokemon *boxMon);
+u16 Pokemon_CalculateBoxMonChecksumDecrypt(struct BoxPokemon *boxMon);
+u16 Pokemon_CalculateBoxMonChecksumReencrypt(struct BoxPokemon *boxMon);
+
 /* GameFreak called Get(Box)MonData with either 2 or 3 arguments, for
  * type safety we have a Get(Box)MonData macro which dispatches to
  * either Get(Box)MonData2 or Get(Box)MonData3 based on the number of
