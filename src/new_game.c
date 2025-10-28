@@ -166,7 +166,8 @@ void NewGameInitData(void)
     ResetTrainerTowerResults();
     ResetItemFlags();
     ResetDexNav();
-    RandomEncounters_FillAllWithSpecies(SPECIES_BULBASAUR);
+    RandomEncounters_Init();
+    RandomEncounters_FillAllWithRandom();
 }
 
 static void ResetMiniGamesResults(void)
