@@ -46,6 +46,7 @@
 #include "constants/menu.h"
 #include "constants/event_objects.h"
 #include "constants/metatile_labels.h"
+#include "gba/isagbprint.h"
 
 static EWRAM_DATA u8 sElevatorCurrentFloorWindowId = 0;
 static EWRAM_DATA u16 sElevatorScroll = 0;
@@ -1572,7 +1573,7 @@ static u16 GetStarterSpeciesById(u16 idx)
 {
     if (idx >= NELEMS(sStarterSpecies))
         idx = 0;
-    return sStarterSpecies[idx];
+    return gSaveBlock2Ptr->randomEncounterData.starters[idx];
 }
 
 u16 GetStarterSpecies(void)
@@ -2703,4 +2704,40 @@ void TrySkyBattle(void)
         }
     }
     gSpecialVar_Result = FALSE;
+}
+
+void GetRandomStarterPlayer(void)
+{
+    u16 index = (u16) VarGet(VAR_TEMP_1) % 3;
+    u16 species = gSaveBlock2Ptr->randomEncounterData.starters[index];
+    MgbaPrintf(MGBA_LOG_WARN, "GetRandomStarterPlayer: index=%d, species=%d.", index, species);
+    if (species == SPECIES_NONE)
+    {
+        species = SPECIES_BULBASAUR;
+    }
+    VarSet(VAR_RESULT, species);
+}
+
+void GetRandomStarterRival(void)
+{
+    u16 index = ((u16) VarGet(VAR_TEMP_1) + 2) % 3;
+    u16 species = gSaveBlock2Ptr->randomEncounterData.starters[index];
+    MgbaPrintf(MGBA_LOG_WARN, "GetRandomStarterRival: index=%d, species=%d.", index, species);
+    if (species == SPECIES_NONE)
+    {
+        species = SPECIES_CHARMANDER;
+    }
+    VarSet(VAR_RESULT, species);
+}
+
+u16 GetStarterSpeciesPlayer(void)
+{
+    u16 index = (u16) VarGet(VAR_STARTER_MON) % 3;
+    return GetStarterSpeciesById(index);
+}
+
+u16 GetStarterSpeciesRival(void)
+{
+    u16 index = ((u16) VarGet(VAR_STARTER_MON) + 2) % 3;
+    return GetStarterSpeciesById(index);
 }

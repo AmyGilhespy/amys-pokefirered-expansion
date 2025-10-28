@@ -80,6 +80,7 @@
 #include "constants/weather.h"
 #include "cable_club.h"
 #include "random_encounters.h"
+#include "field_specials.h"
 
 extern const struct BgTemplate gBattleBgTemplates[];
 
@@ -2051,7 +2052,17 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
             randomSpecies = originalSpecies = partyData[monIndex].species;
             givePreassignedMoves = TRUE;
             if (trainer->trainerClass == TRAINER_CLASS_LEADER && i < 3) { }
-            else if (trainer->trainerClass == TRAINER_CLASS_RIVAL_EARLY && i < 3) { }
+            else if (trainer->trainerClass == TRAINER_CLASS_RIVAL_EARLY && i < 3) {
+                if (monsCount == 1)
+                {
+                    givePreassignedMoves = FALSE;
+                    randomSpecies = GetStarterSpeciesRival();
+                    if (randomSpecies == SPECIES_NONE)
+                    {
+                        randomSpecies = SPECIES_CHARMANDER;
+                    }
+                }
+            }
             else if (trainer->trainerClass == TRAINER_CLASS_RIVAL_LATE && i < 3) { }
             else if (trainer->trainerClass == TRAINER_CLASS_ELITE_FOUR && i < 3) { }
             else if (trainer->trainerClass == TRAINER_CLASS_CHAMPION && i < 3) { }

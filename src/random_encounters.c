@@ -13,6 +13,8 @@
 EWRAM_DATA static u16 sRandomEncounters_RegionTargetBST[RANDOM_ENCOUNTER_REGION_COUNT] = {0};
 EWRAM_DATA static u16 sRandomEncounters_ValidSpecies[NUM_SPECIES];
 EWRAM_DATA static u16 sRandomEncounters_ValidSpeciesCount;
+EWRAM_DATA static u16 sRandomEncounters_ValidStarterSpeciesCount;
+EWRAM_DATA static u16 * sRandomEncounters_ValidStarterSpecies;
 
 u16 RandomEncounters_ChooseRandomSpeciesForBST(u16 targetBST, u16 avoid1, u16 avoid2)
 {
@@ -51,6 +53,39 @@ u16 RandomEncounters_ChooseRandomSpeciesForBST(u16 targetBST, u16 avoid1, u16 av
 u16 RandomEncounters_ChooseRandomSpeciesForRegion(s32 regionId, u16 avoid1, u16 avoid2)
 {
     return RandomEncounters_ChooseRandomSpeciesForBST(sRandomEncounters_RegionTargetBST[regionId], avoid1, avoid2);
+}
+
+u16 RandomEncounters_ChooseRandomSpeciesForStarter(u16 targetBST, u16 avoid1, u16 avoid2)
+{
+    const u16 attempts = 20;
+    u16 bestSpecies = SPECIES_BULBASAUR; // fallback guaranteed valid
+    u16 bestScore = 0xFFFF;
+    u16 i = 0;
+    u16 species, bst, score;
+
+    for (i = 0; i < attempts; i++)
+    {
+        species = RandomEncounters_PickRandomValidStarterSpecies();
+        bst = gSpeciesInfo[species].baseHP
+                + gSpeciesInfo[species].baseAttack
+                + gSpeciesInfo[species].baseDefense
+                + gSpeciesInfo[species].baseSpeed
+                + gSpeciesInfo[species].baseSpAttack
+                + gSpeciesInfo[species].baseSpDefense;
+
+        score = abs((s16) bst - (s16) targetBST);
+        if (species == avoid1 || species == avoid2)
+        {
+            score += 100;
+        }
+        if (score < bestScore)
+        {
+            bestScore = score;
+            bestSpecies = species;
+        }
+    }
+
+    return bestSpecies;
 }
 
 void RandomEncounters_FillAllWithRandom(void)
@@ -187,6 +222,40 @@ void RandomEncounters_Init(void)
     }
     free(bst_num);
     free(bst_div);
+    // Init the starters:
+    bst = 0
+            + gSpeciesInfo[SPECIES_BULBASAUR].baseHP
+            + gSpeciesInfo[SPECIES_BULBASAUR].baseAttack
+            + gSpeciesInfo[SPECIES_BULBASAUR].baseDefense
+            + gSpeciesInfo[SPECIES_BULBASAUR].baseSpeed
+            + gSpeciesInfo[SPECIES_BULBASAUR].baseSpAttack
+            + gSpeciesInfo[SPECIES_BULBASAUR].baseSpDefense
+            + gSpeciesInfo[SPECIES_CHARMANDER].baseHP
+            + gSpeciesInfo[SPECIES_CHARMANDER].baseAttack
+            + gSpeciesInfo[SPECIES_CHARMANDER].baseDefense
+            + gSpeciesInfo[SPECIES_CHARMANDER].baseSpeed
+            + gSpeciesInfo[SPECIES_CHARMANDER].baseSpAttack
+            + gSpeciesInfo[SPECIES_CHARMANDER].baseSpDefense
+            + gSpeciesInfo[SPECIES_SQUIRTLE].baseHP
+            + gSpeciesInfo[SPECIES_SQUIRTLE].baseAttack
+            + gSpeciesInfo[SPECIES_SQUIRTLE].baseDefense
+            + gSpeciesInfo[SPECIES_SQUIRTLE].baseSpeed
+            + gSpeciesInfo[SPECIES_SQUIRTLE].baseSpAttack
+            + gSpeciesInfo[SPECIES_SQUIRTLE].baseSpDefense
+            ;
+    bst /= 3;
+    sRandomEncounters_ValidStarterSpecies = calloc(sRandomEncounters_ValidSpeciesCount, sizeof(u16));
+    for (i = 0; i < sRandomEncounters_ValidSpeciesCount; ++i)
+    {
+        if (RandomEncounters_IsAllowedStarterSpecies(sRandomEncounters_ValidSpecies[i]))
+        {
+            sRandomEncounters_ValidStarterSpecies[sRandomEncounters_ValidStarterSpeciesCount++] = sRandomEncounters_ValidSpecies[i];
+        }
+    }
+    gSaveBlock2Ptr->randomEncounterData.starters[0] = RandomEncounters_ChooseRandomSpeciesForStarter(bst, SPECIES_NONE, SPECIES_NONE);
+    gSaveBlock2Ptr->randomEncounterData.starters[1] = RandomEncounters_ChooseRandomSpeciesForStarter(bst, gSaveBlock2Ptr->randomEncounterData.starters[0], SPECIES_NONE);
+    gSaveBlock2Ptr->randomEncounterData.starters[2] = RandomEncounters_ChooseRandomSpeciesForStarter(bst, gSaveBlock2Ptr->randomEncounterData.starters[0], gSaveBlock2Ptr->randomEncounterData.starters[1]);
+    free(sRandomEncounters_ValidStarterSpecies);
 }
 
 bool8 RandomEncounters_IsAllowedSpecies(u16 species)
@@ -254,6 +323,22 @@ bool8 RandomEncounters_IsAllowedSpecies(u16 species)
     return TRUE;
 }
 
+bool8 RandomEncounters_IsAllowedStarterSpecies(u16 species)
+{
+    if (GetSpeciesPreEvolution(species) != SPECIES_NONE)
+    {
+        return FALSE;
+    }
+
+    const struct Evolution *evolutions = GetSpeciesEvolutions(species);
+    if (evolutions == NULL || evolutions[0].method == EVOLUTIONS_END)
+    {
+        return FALSE;
+    }
+
+    return TRUE;
+}
+
 void RandomEncounters_Load(void)
 {
     u16 species;
@@ -277,6 +362,17 @@ u16 RandomEncounters_PickRandomValidSpecies(void)
     if (species >= NUM_SPECIES)
     {
         species = SPECIES_RATTATA;
+    }
+    return species;
+}
+
+u16 RandomEncounters_PickRandomValidStarterSpecies(void)
+{
+    u32 rand = Random32();
+    u16 species = sRandomEncounters_ValidStarterSpecies[rand % (u32) sRandomEncounters_ValidStarterSpeciesCount];
+    if (species >= NUM_SPECIES)
+    {
+        species = SPECIES_BULBASAUR;
     }
     return species;
 }

@@ -8412,73 +8412,114 @@ Class: Leader
 Pic: Leader Brock
 Gender: Male
 Music: Male
+Items: Potion
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Sequence Switching
+
+Lileep @ Leftovers
+Level: 12
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+EVs: 60 HP / 0 Atk / 0 Def / 0 SpA / 60 SpD / 0 Spe
+Ability: Storm Drain
+Nature: Careful
+- Ingrain
+- Sandstorm
+- Rock Tomb
+- Giga Drain
+
+Onix @ Eviolite
+Level: 14
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+EVs: 60 HP / 0 Atk / 0 Def / 0 SpA / 60 SpD / 0 Spe
+Ability: Sturdy
+Nature: Careful
+- Stealth Rock
+- Sandstorm
+- Dragon Breath
+- Rock Tomb
+
+Aron @ Shell Bell
+Level: 1
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Ability: Sturdy
+Nature: Mild
+- Endeavor
+- Sandstorm
 
 Geodude
 Level: 12
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Tackle
-- Defense Curl
-
-Onix
-Level: 14
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Tackle
-- Bind
-- Rock Tomb
 
 Geodude
 Level: 12
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Tackle
-- Defense Curl
 
 Onix
 Level: 14
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Tackle
-- Bind
-- Rock Tomb
-
-Geodude
-Level: 12
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Tackle
-- Defense Curl
-
-Onix
-Level: 14
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Tackle
-- Bind
-- Rock Tomb
 
 === TRAINER_LEADER_MISTY ===
 Name: MISTY
 Class: Leader
 Pic: Leader Misty
-Gender: Male
+Gender: Female
 Music: Female
 Items: Super Potion
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Check Bad Move / Try To Faint / Check Viability / Try To 2HKO / HP Aware
+
+Chinchou @ Assault Vest
+Level: 18
+IVs: 18 HP / 0 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 0 HP / 0 Atk / 0 Def / 80 SpA / 80 SpD / 0 Spe
+Ability: Volt Absorb
+Nature: Timid
+- Surf
+- Thunderbolt
+- Signal Beam
+- Dazzling Gleam
+
+Frogadier @ Life Orb
+Level: 19
+IVs: 18 HP / 18 Atk / 18 Def / 19 SpA / 18 SpD / 18 Spe
+EVs: 0 HP / 0 Atk / 0 Def / 80 SpA / 0 SpD / 80 Spe
+Ability: Protean
+Nature: Timid
+- Scald
+- Dark Pulse
+- Ice Beam
+- Hidden Power
+
+Starmie @ Life Orb
+Level: 21
+IVs: 18 HP / 0 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 0 HP / 0 Atk / 0 Def / 80 SpA / 0 SpD / 80 Spe
+- Surf
+- Psyshock
+- Thunderbolt
+- Recover
 
 Staryu
 Level: 18
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Tackle
-- Harden
-- Recover
-- Water Pulse
+
+Staryu
+Level: 18
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Tackle
 
 Starmie
 Level: 21
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Swift
-- Recover
-- Rapid Spin
-- Water Pulse
+- Tackle
 
 === TRAINER_LEADER_LT_SURGE ===
 Name: LT. SURGE
@@ -8518,7 +8559,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Name: ERIKA
 Class: Leader
 Pic: Leader Erika
-Gender: Male
+Gender: Female
 Music: Female
 Items: Hyper Potion / Full Heal
 Double Battle: No
@@ -8636,7 +8677,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Name: SABRINA
 Class: Leader
 Pic: Leader Sabrina
-Gender: Male
+Gender: Female
 Music: Female
 Items: Hyper Potion / Hyper Potion / Full Heal
 Double Battle: No

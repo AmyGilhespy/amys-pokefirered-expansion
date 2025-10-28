@@ -30,5 +30,9 @@ bool8 UsedPokemonCenterWarp(void);
 void QuestLog_CheckDepartingIndoorsMap(void);
 void QuestLog_TryRecordDepartedLocation(void);
 bool8 InPokemonCenter(void);
+void GetRandomStarterPlayer(void);
+void GetRandomStarterRival(void);
+u16 GetStarterSpeciesPlayer(void);
+u16 GetStarterSpeciesRival(void);
 
 #endif // GUARD_FIELD_SPECIALS_H
