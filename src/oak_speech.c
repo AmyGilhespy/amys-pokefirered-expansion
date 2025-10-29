@@ -116,6 +116,7 @@ static void PrintNameChoiceOptions(u8, u8);
 static void GetDefaultName(u8, u8);
 
 extern const u8 gText_Controls[];
+extern const u8 gText_NuzlockeInfo[];
 extern const u8 gText_ABUTTONNext[];
 extern const u8 gText_ABUTTONNext_BBUTTONBack[];
 extern const u8 gText_Standard[];
@@ -191,10 +192,10 @@ static const struct WindowTemplate sControlsGuide_WindowTemplate_Page1[NUM_CONTR
     [CONTROLS_GUIDE_PAGE_1_WINDOW] =
     {
         .bg = 0,
-        .tilemapLeft = 0,
-        .tilemapTop = 7,
+        .tilemapLeft = 2,
+        .tilemapTop = 4,
         .width = 30,
-        .height = 4,
+        .height = 10,
         .paletteNum = 15,
         .baseBlock = 1
     },
@@ -205,7 +206,6 @@ enum
 {
     CONTROLS_GUIDE_PAGES_2_3_WINDOW_TOP,
     CONTROLS_GUIDE_PAGES_2_3_WINDOW_MIDDLE,
-    CONTROLS_GUIDE_PAGES_2_3_WINDOW_BOTTOM,
     NUM_CONTROLS_GUIDE_PAGES_2_3_WINDOWS,
 };
 
@@ -214,9 +214,9 @@ static const struct WindowTemplate sControlsGuide_WindowTemplate_Page2[NUM_CONTR
     [CONTROLS_GUIDE_PAGES_2_3_WINDOW_TOP] =
     {
         .bg = 0,
-        .tilemapLeft = 6,
+        .tilemapLeft = 2,
         .tilemapTop = 3,
-        .width = 24,
+        .width = 26,
         .height = 6,
         .paletteNum = 15,
         .baseBlock = 1
@@ -224,22 +224,12 @@ static const struct WindowTemplate sControlsGuide_WindowTemplate_Page2[NUM_CONTR
     [CONTROLS_GUIDE_PAGES_2_3_WINDOW_MIDDLE] =
     {
         .bg = 0,
-        .tilemapLeft = 6,
+        .tilemapLeft = 2,
         .tilemapTop = 10,
-        .width = 24,
-        .height = 4,
+        .width = 26,
+        .height = 8,
         .paletteNum = 15,
-        .baseBlock = 146
-    },
-    [CONTROLS_GUIDE_PAGES_2_3_WINDOW_BOTTOM] =
-    {
-        .bg = 0,
-        .tilemapLeft = 6,
-        .tilemapTop = 15,
-        .width = 24,
-        .height = 4,
-        .paletteNum = 15,
-        .baseBlock = 243
+        .baseBlock = 160
     },
     DUMMY_WIN_TEMPLATE
 };
@@ -249,32 +239,22 @@ static const struct WindowTemplate sControlsGuide_WindowTemplate_Page3[NUM_CONTR
     [CONTROLS_GUIDE_PAGES_2_3_WINDOW_TOP] =
     {
         .bg = 0,
-        .tilemapLeft = 6,
+        .tilemapLeft = 2,
         .tilemapTop = 3,
-        .width = 24,
-        .height = 4,
+        .width = 26,
+        .height = 6,
         .paletteNum = 15,
         .baseBlock = 1
     },
     [CONTROLS_GUIDE_PAGES_2_3_WINDOW_MIDDLE] =
     {
         .bg = 0,
-        .tilemapLeft = 6,
-        .tilemapTop = 8,
-        .width = 24,
-        .height = 4,
-        .paletteNum = 15,
-        .baseBlock = 98
-    },
-    [CONTROLS_GUIDE_PAGES_2_3_WINDOW_BOTTOM] =
-    {
-        .bg = 0,
-        .tilemapLeft = 6,
-        .tilemapTop = 13,
-        .width = 24,
+        .tilemapLeft = 2,
+        .tilemapTop = 10,
+        .width = 26,
         .height = 6,
         .paletteNum = 15,
-        .baseBlock = 195
+        .baseBlock = 160
     },
     DUMMY_WIN_TEMPLATE
 };
@@ -592,18 +572,16 @@ static const struct SpriteTemplate sPikachuIntro_Pikachu_SpriteTemplates[NUM_PIK
     }
 };
 
-#define CONTROLS_GUIDE_STRINGS_PER_PAGE 3
+#define CONTROLS_GUIDE_STRINGS_PER_PAGE 2
 
 static const u8 *const sControlsGuide_Pages2And3_Strings[CONTROLS_GUIDE_STRINGS_PER_PAGE * 2] =
 {
     // Page 2
-    gControlsGuide_Text_DPad,
-    gControlsGuide_Text_AButton,
-    gControlsGuide_Text_BButton,
+    gControlsGuide_Text_NuzlockeInfo1,
+    gControlsGuide_Text_NuzlockeInfo2,
     // Page 3
-    gControlsGuide_Text_StartButton,
-    gControlsGuide_Text_SelectButton,
-    gControlsGuide_Text_LRButtons
+    gControlsGuide_Text_NuzlockeInfo3,
+    gControlsGuide_Text_NuzlockeInfo4,
 };
 
 static const u8 *const sMaleNameChoices[] =
@@ -817,11 +795,11 @@ static void Task_NewGameScene(u8 taskId)
 
 static void ControlsGuide_LoadPage1(void)
 {
-    HofPCTopBar_PrintPair(gText_Controls, gText_ABUTTONNext, FALSE, 0, TRUE);
+    HofPCTopBar_PrintPair(gText_NuzlockeInfo, gText_ABUTTONNext, FALSE, 0, TRUE);
     sOakSpeechResources->windowIds[0] = AddWindow(sControlsGuide_WindowTemplates[sOakSpeechResources->currentPage]);
     PutWindowTilemap(sOakSpeechResources->windowIds[0]);
     FillWindowPixelBuffer(sOakSpeechResources->windowIds[0], PIXEL_FILL(0));
-    AddTextPrinterParameterized4(sOakSpeechResources->windowIds[0], FONT_NORMAL, 2, 0, 1, 1, sTextColor_White, 0, gControlsGuide_Text_Intro);
+    AddTextPrinterParameterized4(sOakSpeechResources->windowIds[0], FONT_NORMAL, 2, 0, 1, 1, sTextColor_White, 0, gControlsGuide_Text_NuzlockeIntro);
     CopyWindowToVram(sOakSpeechResources->windowIds[0], COPYWIN_FULL);
     FillBgTilemapBufferRect_Palette0(1, 0x3000, 1, 3, 5, 16);
     CopyBgTilemapBufferToVram(1);
@@ -843,14 +821,14 @@ static void Task_ControlsGuide_LoadPage(u8 taskId)
             sOakSpeechResources->windowIds[currWindow] = AddWindow(&sControlsGuide_WindowTemplates[sOakSpeechResources->currentPage][currWindow]);
             PutWindowTilemap(sOakSpeechResources->windowIds[currWindow]);
             FillWindowPixelBuffer(sOakSpeechResources->windowIds[currWindow], PIXEL_FILL(0));
-            AddTextPrinterParameterized4(sOakSpeechResources->windowIds[currWindow], FONT_NORMAL, 6, 0, 1, 1, sTextColor_White, 0, sControlsGuide_Pages2And3_Strings[currWindow + page2Or3 * CONTROLS_GUIDE_STRINGS_PER_PAGE]);
+            AddTextPrinterParameterized4(sOakSpeechResources->windowIds[currWindow], FONT_NORMAL, 0, 0, 1, 1, sTextColor_White, 0, sControlsGuide_Pages2And3_Strings[currWindow + page2Or3 * CONTROLS_GUIDE_STRINGS_PER_PAGE]);
             CopyWindowToVram(sOakSpeechResources->windowIds[currWindow], COPYWIN_FULL);
         }
 
         if (sOakSpeechResources->currentPage == CONTROLS_GUIDE_PAGE_2)
-            CopyToBgTilemapBufferRect(1, sControlsGuide_Tilemap_Page2, 1, 3, 5, 16);
+            ;//CopyToBgTilemapBufferRect(1, sControlsGuide_Tilemap_Page2, 1, 3, 5, 16);
         else // CONTROLS_GUIDE_PAGE_3
-            CopyToBgTilemapBufferRect(1, sControlsGuide_Tilemap_Page3, 1, 3, 5, 16);
+            ;//CopyToBgTilemapBufferRect(1, sControlsGuide_Tilemap_Page3, 1, 3, 5, 16);
         CopyBgTilemapBufferToVram(1);
     }
     BeginNormalPaletteFade(PALETTES_OBJECTS | 0xDFFF, -1, 16, 0, GetTextWindowPalette(2)[15]);

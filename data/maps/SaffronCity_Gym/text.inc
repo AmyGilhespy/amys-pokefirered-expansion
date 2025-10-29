@@ -1,4 +1,4 @@
-SaffronCity_Gym_Text_SabrinaIntro::
+SaffronCity_Gym_Text_SabrinaIntroStandard::
     .string "I had a vision of your arrival.\p"
     .string "I have had psychic powers since\n"
     .string "I was a child.\p"
@@ -6,6 +6,15 @@ SaffronCity_Gym_Text_SabrinaIntro::
     .string "carelessly tossed, bent.\p"
     .string "I dislike battling, but if you wish,\n"
     .string "I will show you my powers!{PLAY_BGM}{MUS_ENCOUNTER_GYM_LEADER}$"
+
+SaffronCity_Gym_Text_SabrinaIntroNuzlocke::
+    .string "I had a vision of your arrival.\p"
+    .string "I have had psychic powers since\n"
+    .string "I was a child.\p"
+    .string "I'd like you to know that, in\n"
+    .string "my vision, I already foresaw\p"
+    .string "this battle and its result:\n"
+    .string "You're going back to the lab!{PLAY_BGM}{MUS_ENCOUNTER_GYM_LEADER}$"
 
 SaffronCity_Gym_Text_SabrinaDefeat::
     .string "This loss shocks me!\n"

@@ -124,6 +124,33 @@ gNameChoice_Momo::
 gNameChoice_Suzi::
     .string "Suzi$"
 
+gControlsGuide_Text_NuzlockeIntro::
+    .string "Nuzlocke info:\n\n"
+    .string "In a moment, you will be asked to\n"
+    .string "choose between STANDARD and NUZLOCKE\n"
+    .string "modes. Here is what NUZLOCKE means:$"
+
+gControlsGuide_Text_NuzlockeInfo1::
+    .string "1. You can catch only one POKéMON\n"
+    .string "   per area. After you do, they\n"
+    .string "   will stop spawning there forever.$"
+
+gControlsGuide_Text_NuzlockeInfo2::
+    .string "2. When a POKéMON faints, it dies.\n"
+    .string "   This is not enforced but it is\n"
+    .string "   intended that you stop using any\n"
+    .string "   POKéMON forever once it faints.$"
+
+gControlsGuide_Text_NuzlockeInfo3::
+    .string "3. Some additional changes will\n"
+    .string "   be made as well, e.g. some items\n"
+    .string "   will not be usable in battle.$"
+
+gControlsGuide_Text_NuzlockeInfo4::
+    .string "4. Feel free to place additional\n"
+    .string "   restrictions on yourself for\n"
+    .string "   added challenge.$"
+
 gControlsGuide_Text_Intro::
     .string "The various buttons will be explained in\n"
     .string "the order of their importance.$"

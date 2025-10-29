@@ -2741,3 +2741,10 @@ u16 GetStarterSpeciesRival(void)
     u16 index = ((u16) VarGet(VAR_STARTER_MON) + 2) % 3;
     return GetStarterSpeciesById(index);
 }
+
+void GetGameType(void)
+{
+    VarSet(VAR_RESULT, gSaveBlock2Ptr->customData.gameType);
+}
+
+

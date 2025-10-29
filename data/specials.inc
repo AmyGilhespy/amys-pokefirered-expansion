@@ -449,4 +449,5 @@ gSpecials::
 	def_special SetHiddenNature
 	def_special GetRandomStarterPlayer
 	def_special GetRandomStarterRival
+	def_special GetGameType
 gSpecialsEnd::
