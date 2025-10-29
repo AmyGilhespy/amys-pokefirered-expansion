@@ -28,16 +28,16 @@ SaffronCity_Gym_Text_ExplainMarshBadgeTakeThis::
     .string "ignoring your orders in battle.\p"
     .string "Just don't raise your POKéMON too\n"
     .string "much to avoid that problem.\p"
-    .string "Wait, please take this TM with you.$"
+    .string "Wait, please take this TR with you.$"
 
-SaffronCity_Gym_Text_ReceivedTM04FromSabrina::
-    .string "{PLAYER} received TM04 from\n"
+SaffronCity_Gym_Text_ReceivedTR99FromSabrina::
+    .string "{PLAYER} received TR99 from\n"
     .string "SABRINA.$"
 
-SaffronCity_Gym_Text_ExplainTM04::
-    .string "TM04 is CALM MIND.\p"
+SaffronCity_Gym_Text_ExplainTR99::
+    .string "TR99 is SKETCH.\p"
     .string "It makes the POKéMON concentrate\n"
-    .string "to raise both SP. ATK and SP. DEF.$"
+    .string "and copy the previous move.$"
 
 SaffronCity_Gym_Text_BagFullOfOtherItems::
     .string "Your BAG is full of other items.$"
@@ -63,7 +63,7 @@ SaffronCity_Gym_Text_JohanDefeat::
 
 SaffronCity_Gym_Text_JohanPostBattle::
     .string "PSYCHIC POKéMON fear only ghosts\n"
-    .string "and bugs!$"
+    .string "and bugs... and the dark!$"
 
 SaffronCity_Gym_Text_StacyIntro::
     .string "POKéMON take on the appearance of\n"

@@ -8693,18 +8693,82 @@ Nature: Calm
 
 Koffing
 Level: 37
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 27 HP / 27 Atk / 27 Def / 27 SpA / 27 SpD / 27 Spe
+EVs: 52 HP / 52 Atk / 52 Def / 52 SpA / 52 SpD / 52 Spe
 - Sludge
 
 Muk
 Level: 39
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 27 HP / 27 Atk / 27 Def / 27 SpA / 27 SpD / 27 Spe
+EVs: 52 HP / 52 Atk / 52 Def / 52 SpA / 52 SpD / 52 Spe
 - Sludge
 
 Weezing
 Level: 43
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 27 HP / 27 Atk / 27 Def / 27 SpA / 27 SpD / 27 Spe
+EVs: 52 HP / 52 Atk / 52 Def / 52 SpA / 52 SpD / 52 Spe
 - Tackle
+
+=== TRAINER_LEADER_SABRINA ===
+Name: SABRINA
+Class: Leader
+Pic: Leader Sabrina
+Gender: Female
+Music: Female
+Items: Hyper Potion / Hyper Potion / Full Heal
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Try To 2HKO / HP Aware / Smart Switching
+
+Victini @ Choice Band
+Level: 37
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 0 HP / 200 Atk / 0 Def / 0 SpA / 0 SpD / 200 Spe
+Ability: Victory Star
+Nature: Jolly
+- V-create
+- Bolt Strike
+- Zen Headbutt
+- U-turn
+
+Slowbro @ Leftovers
+Level: 38
+IVs: 29 HP / 0 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 200 HP / 0 Atk / 200 Def / 0 SpA / 0 SpD / 0 Spe
+Ability: Regenerator
+Nature: Bold
+- Scald
+- Psyshock
+- Ice Beam
+- Slack Off
+
+Alakazam @ Alakazite
+Level: 43
+IVs: 29 HP / 0 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 0 HP / 0 Atk / 0 Def / 200 SpA / 0 SpD / 200 Spe
+Ability: Magic Guard
+Nature: Timid
+- Psychic
+- Psyshock
+- Focus Blast
+- Shadow Ball
+
+Kadabra
+Level: 38
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 68 HP / 68 Atk / 68 Def / 68 SpA / 68 SpD / 68 Spe
+- Psybeam
+
+Venomoth
+Level: 38
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 68 HP / 68 Atk / 68 Def / 68 SpA / 68 SpD / 68 Spe
+- Psybeam
+
+Alakazam
+Level: 43
+IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 68 HP / 68 Atk / 68 Def / 68 SpA / 68 SpD / 68 Spe
+- Psychic
 
 === TRAINER_LEADER_BLAINE ===
 Name: BLAINE
@@ -8724,12 +8788,28 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Take Down
 - Fire Blast
 
-Ponyta
-Level: 40
+Rapidash
+Level: 42
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Stomp
 - Bounce
 - Fire Spin
+- Fire Blast
+
+Arcanine
+Level: 47
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Bite
+- Roar
+- Take Down
+- Fire Blast
+
+Growlithe
+Level: 42
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Bite
+- Roar
+- Take Down
 - Fire Blast
 
 Rapidash
@@ -8747,48 +8827,6 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Roar
 - Take Down
 - Fire Blast
-
-=== TRAINER_LEADER_SABRINA ===
-Name: SABRINA
-Class: Leader
-Pic: Leader Sabrina
-Gender: Female
-Music: Female
-Items: Hyper Potion / Hyper Potion / Full Heal
-Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
-
-Kadabra
-Level: 38
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Psybeam
-- Reflect
-- Future Sight
-- Calm Mind
-
-Mr Mime
-Level: 37
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Barrier
-- Psybeam
-- Baton Pass
-- Calm Mind
-
-Venomoth
-Level: 38
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Psybeam
-- Gust
-- Leech Life
-- Supersonic
-
-Alakazam
-Level: 43
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Psychic
-- Recover
-- Future Sight
-- Calm Mind
 
 === TRAINER_GENTLEMAN_THOMAS ===
 Name: THOMAS
