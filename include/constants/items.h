@@ -1003,7 +1003,11 @@
 // HOPO BERRY
 // LEGEND PLATE
 
-#define ITEMS_COUNT 829
+#define UPSTREAM_ITEMS_COUNT 829
+
+#define ITEM_ABILITY_CAPSULE_PLUS (UPSTREAM_ITEMS_COUNT + 0)
+
+#define ITEMS_COUNT (ITEM_ABILITY_CAPSULE_PLUS + 1)
 #define ITEM_FIELD_ARROW ITEMS_COUNT
 
 // A special item id associated with "Cancel"/"Exit" etc. in a list of items or decorations

@@ -694,8 +694,7 @@ void SetAiLogicDataForTurn(struct AiLogicData *aiData)
 u32 GetPartyMonAbility(struct Pokemon *mon)
 {
     //  Doesn't have any special handling yet
-    u32 species = GetMonData(mon, MON_DATA_SPECIES);
-    enum Ability ability = GetSpeciesAbility(species, GetMonData(mon, MON_DATA_ABILITY_NUM));
+    enum Ability ability = GetMonAbility(mon);
     return ability;
 }
 

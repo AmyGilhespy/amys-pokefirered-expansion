@@ -14630,6 +14630,23 @@ const struct Item gItemsInfo[] =
         .iconPic = gItemIcon_PokeshiDoll,
         .iconPalette = gItemIconPalette_PokeshiDoll,
     },
+
+    [ITEM_ABILITY_CAPSULE_PLUS] =
+    {
+        .name = ITEM_NAME("Ability Capsule+"),
+        .price = 0,
+        .holdEffectParam = 0,
+        .description = COMPOUND_STRING(
+            "Changes a pokémon's ability\n"
+            "to a random one."),
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
+        .sortType = ITEM_TYPE_FIELD_USE,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_AbilityCapsulePlus,
+        .iconPic = gItemIcon_AbilityCapsule,
+        .iconPalette = gItemIconPalette_AbilityCapsule,
+    },
 };
 
 #undef ITEM_NAME

@@ -7106,7 +7106,7 @@ static void Cmd_switchindataupdate(void)
     gBattleMons[battler].types[0] = GetSpeciesType(gBattleMons[battler].species, 0);
     gBattleMons[battler].types[1] = GetSpeciesType(gBattleMons[battler].species, 1);
     gBattleMons[battler].types[2] = TYPE_MYSTERY;
-    gBattleMons[battler].ability = GetAbilityBySpecies(gBattleMons[battler].species, gBattleMons[battler].abilityNum);
+    gBattleMons[battler].ability = gBattleMons[battler].originalAbility;
     #if TESTING
     if (gTestRunnerEnabled)
     {
@@ -11725,7 +11725,6 @@ static void Cmd_healpartystatus(void)
     for (i = 0; i < PARTY_SIZE; i++)
     {
         u16 species = GetMonData(&party[i], MON_DATA_SPECIES_OR_EGG);
-        u8 abilityNum = GetMonData(&party[i], MON_DATA_ABILITY_NUM);
 
         if (species != SPECIES_NONE && species != SPECIES_EGG)
         {
@@ -11744,7 +11743,7 @@ static void Cmd_healpartystatus(void)
                 ability = GetBattlerAbility(partner);
             else
             {
-                ability = GetAbilityBySpecies(species, abilityNum);
+                ability = GetMonAbility(&party[i]);
                 #if TESTING
                 if (gTestRunnerEnabled)
                 {
@@ -13127,7 +13126,7 @@ static void Cmd_pickup(void)
         if (lvlDivBy10 > 9)
             lvlDivBy10 = 9;
 
-        ability = GetSpeciesAbility(species, GetMonData(&gPlayerParty[i], MON_DATA_ABILITY_NUM));
+        ability = GetMonAbility(&gPlayerParty[i]);
 
         if (ability == ABILITY_PICKUP
             && species != SPECIES_NONE
@@ -15828,17 +15827,16 @@ static void UpdatePokeFlutePartyStatus(struct Pokemon* party, u8 position)
     s32 i;
     u8 battler;
     u32 monToCheck, status;
-    u16 species, abilityNum;
+    u16 species;
     monToCheck = 0;
     for (i = 0; i < PARTY_SIZE; i++)
     {
         species = GetMonData(&party[i], MON_DATA_SPECIES_OR_EGG);
-        abilityNum = GetMonData(&party[i], MON_DATA_ABILITY_NUM);
         status = GetMonData(&party[i], MON_DATA_STATUS);
         if (species != SPECIES_NONE
             && species != SPECIES_EGG
             && status & AILMENT_FNT
-            && GetAbilityBySpecies(species, abilityNum) != ABILITY_SOUNDPROOF)
+            && GetMonAbility(&party[i]) != ABILITY_SOUNDPROOF)
             monToCheck |= (1 << i);
     }
     if (monToCheck)

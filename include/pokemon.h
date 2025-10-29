@@ -125,6 +125,7 @@ enum MonData {
     MON_DATA_GIGANTAMAX_FACTOR,
     MON_DATA_TERA_TYPE,
     MON_DATA_EVOLUTION_TRACKER,
+    MON_DATA_CUSTOM_ABILITY,
 };
 
 struct PokemonSubstruct0
@@ -132,10 +133,10 @@ struct PokemonSubstruct0
     u16 species:11; // 2047 species.
     u16 teraType:5; // 30 types.
     u16 heldItem:10; // 1023 items.
-    u16 unused_02:6;
+    u16 customAbilityHi6 : 6; // customAbility: if 0, use the regular ability.
     u32 experience:21;
     u32 nickname11:8; // 11th character of nickname.
-    u32 unused_04:3;
+    u32 customAbilityLo3 : 3; // customAbility: if 0, use the regular ability.
     u8 ppBonuses;
     u8 friendship;
     u16 pokeball:6; // 63 balls.
@@ -396,7 +397,7 @@ struct BattlePokemon
     /*0x15*/ u32 speedIV:5;
     /*0x16*/ u32 spAttackIV:5;
     /*0x17*/ u32 spDefenseIV:5;
-    /*0x17*/ u32 abilityNum:2;
+    /*0x17*/ u32 unused:2; // was abilityNum
     /*0x18*/ s8 statStages[NUM_BATTLE_STATS];
     /*0x20*/ enum Ability ability;
     /*0x22*/ u8 types[3];
@@ -416,6 +417,7 @@ struct BattlePokemon
     /*0x5D*/ u32 otId;
     /*0x61*/ u8 metLevel;
     /*0x62*/ bool8 isShiny;
+    /*0x64*/ enum Ability originalAbility;
 };
 
 struct EvolutionParam

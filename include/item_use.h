@@ -2,6 +2,7 @@
 #define GUARD_ITEM_USE_H
 
 void ItemUseOutOfBattle_AbilityCapsule(u8 taskId);
+void ItemUseOutOfBattle_AbilityCapsulePlus(u8 taskId);
 void ItemUseOutOfBattle_AbilityPatch(u8 taskId);
 void ItemUseOutOfBattle_BerryPouch(u8 taskId);
 void ItemUseOutOfBattle_Bike(u8 taskId);
