@@ -106,6 +106,9 @@ def prepare_output(all_learnables: dict[str, set[str]], repo_teachables: set[str
     };
     """)
 
+    ALWAYS_TEACHABLE_MOVES = {
+        "MOVE_SKETCH"
+    }
     joinpat = ",\n    "
     for species in TEACHABLE_ARRAY_DECL_PAT.finditer(old):
         match_b, match_e = species.span()
@@ -120,7 +123,8 @@ def prepare_output(all_learnables: dict[str, set[str]], repo_teachables: set[str
             cursor = match_e + 1
             continue
 
-        repo_species_teachables = filter(lambda m: m in repo_teachables, all_learnables[species_upper])
+        repo_species_teachables = set(filter(lambda m: m in repo_teachables, all_learnables[species_upper]))
+        repo_species_teachables |= ALWAYS_TEACHABLE_MOVES
 
         new += old[cursor:match_b]
         new += "\n".join([

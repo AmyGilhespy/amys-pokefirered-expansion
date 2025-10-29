@@ -5551,6 +5551,9 @@ static void WaitForEvoSceneToFinish(void)
 
 static void ReturnFromBattleToOverworld(void)
 {
+    u8 regionId;
+    u8 caughtEncountersValue;
+
     if (!(gBattleTypeFlags & BATTLE_TYPE_LINK))
     {
         RandomlyGivePartyPokerus(gPlayerParty);
@@ -5578,6 +5581,18 @@ static void ReturnFromBattleToOverworld(void)
     }
 
     m4aSongNumStop(SE_LOW_HEALTH);
+
+    if (gBattleOutcome == B_OUTCOME_CAUGHT)
+    {
+        regionId = gMapHeader.regionMapSectionId;
+        caughtEncountersValue = gSaveBlock2Ptr->customData.caughtEncounters[regionId];
+        if (caughtEncountersValue < 255)
+        {
+            caughtEncountersValue++;
+        }
+        gSaveBlock2Ptr->customData.caughtEncounters[regionId] = caughtEncountersValue;
+    }
+
     SetMainCallback2(gMain.savedCallback);
 }
 

@@ -51,7 +51,57 @@
     F(STEEL_WING) \
     F(SKILL_SWAP) \
     F(SNATCH) \
-    F(OVERHEAT)
+    F(OVERHEAT) \
+    F(AMY_UNUSED_51) \
+    F(AMY_UNUSED_52) \
+    F(AMY_UNUSED_53) \
+    F(AMY_UNUSED_54) \
+    F(AMY_UNUSED_55) \
+    F(AMY_UNUSED_56) \
+    F(AMY_UNUSED_57) \
+    F(AMY_UNUSED_58) \
+    F(AMY_UNUSED_59) \
+    F(AMY_UNUSED_60) \
+    F(AMY_UNUSED_61) \
+    F(AMY_UNUSED_62) \
+    F(AMY_UNUSED_63) \
+    F(AMY_UNUSED_64) \
+    F(AMY_UNUSED_65) \
+    F(AMY_UNUSED_66) \
+    F(AMY_UNUSED_67) \
+    F(AMY_UNUSED_68) \
+    F(AMY_UNUSED_69) \
+    F(AMY_UNUSED_70) \
+    F(AMY_UNUSED_71) \
+    F(AMY_UNUSED_72) \
+    F(AMY_UNUSED_73) \
+    F(AMY_UNUSED_74) \
+    F(AMY_UNUSED_75) \
+    F(AMY_UNUSED_76) \
+    F(AMY_UNUSED_77) \
+    F(AMY_UNUSED_78) \
+    F(AMY_UNUSED_79) \
+    F(AMY_UNUSED_80) \
+    F(AMY_UNUSED_81) \
+    F(AMY_UNUSED_82) \
+    F(AMY_UNUSED_83) \
+    F(AMY_UNUSED_84) \
+    F(AMY_UNUSED_85) \
+    F(AMY_UNUSED_86) \
+    F(AMY_UNUSED_87) \
+    F(AMY_UNUSED_88) \
+    F(AMY_UNUSED_89) \
+    F(AMY_UNUSED_90) \
+    F(AMY_UNUSED_91) \
+    F(AMY_UNUSED_92) \
+    F(AMY_UNUSED_93) \
+    F(AMY_UNUSED_94) \
+    F(AMY_UNUSED_95) \
+    F(AMY_UNUSED_96) \
+    F(AMY_UNUSED_97) \
+    F(AMY_UNUSED_98) \
+    F(AMY_UNUSED_99) \
+    F(SKETCH)
 
 #define FOREACH_HM(F) \
     F(CUT) \

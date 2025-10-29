@@ -1821,11 +1821,22 @@ static bool32 Fishing_ShowDots(struct Task *task)
 // Determine if fish bites
 static bool32 Fishing_CheckForBite(struct Task *task)
 {
+    u8 regionId;
     bool32 bite, firstMonHasSuctionOrSticky;
 
     AlignFishingAnimationFrames(&gSprites[gPlayerAvatar.spriteId]);
     task->tStep = FISHING_GOT_BITE;
     bite = FALSE;
+
+    if (gSaveBlock2Ptr->customData.gameType > 0)
+    {
+        regionId = gMapHeader.regionMapSectionId;
+        if (gSaveBlock2Ptr->customData.caughtEncounters[regionId] > 0)
+        {
+            task->tStep = FISHING_NOT_EVEN_NIBBLE;
+            return TRUE;
+        }
+    }
 
     if (!DoesCurrentMapHaveFishingMons())
     {

@@ -405,6 +405,7 @@ struct CustomData {
     u16 randomEncounters[RANDOM_ENCOUNTER_REGION_COUNT][RANDOM_ENCOUNTER_SLOTS_PER_REGION];
     u32 seed;
     u16 starters[3];
+    u8 caughtEncounters[RANDOM_ENCOUNTER_REGION_COUNT];
     u8 gameType;
     u8 padding;
 };

@@ -11653,6 +11653,7 @@ const struct Item gItemsInfo[] =
         .fieldUseFunc = NULL,
     },
 
+/*
     [ITEM_TM51] =
     {
         .name = ITEM_NAME("TM51"),
@@ -11663,13 +11664,40 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = NULL,
     },
+*/
 
+    [ITEM_TM51] =
+    {
+        .name = ITEM_NAME("TM51"),
+        .price = 4000,
+        .description = COMPOUND_STRING(
+            "Substitute."),
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = NULL,
+    },
+
+/*
     [ITEM_TM52] =
     {
         .name = ITEM_NAME("TM52"),
         .price = 3000,
         .description = sQuestionMarksDesc, // Todo
         .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = NULL,
+    },
+*/
+
+    [ITEM_TM52] =
+    {
+        .name = ITEM_NAME("TR52"),
+        .price = 4000,
+        .description = COMPOUND_STRING(
+            "SINGLE USE. Dark Void."),
+        .importance = 0,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = NULL,
@@ -12192,12 +12220,26 @@ const struct Item gItemsInfo[] =
         .fieldUseFunc = NULL,
     },
 
+/*
     [ITEM_TM100] =
     {
         .name = ITEM_NAME("TM100"),
         .price = 3000,
         .description = sQuestionMarksDesc, // Todo
         .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = NULL,
+    },
+*/
+
+    [ITEM_TM100] =
+    {
+        .name = ITEM_NAME("TR100"),
+        .price = 10000,
+        .description = COMPOUND_STRING(
+            "SINGLE USE.  Sketch."),
+        .importance = 0,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = NULL,

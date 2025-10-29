@@ -453,8 +453,17 @@ u8 GetUnownLetterByPersonalityLoByte(u32 personality)
 
 static bool8 TryGenerateWildMon(const struct WildPokemonInfo * wildMonInfo, u8 area, u8 flags)
 {
+    u8 regionId;
     u8 wildMonIndex = 0;
     u8 level;
+    if (gSaveBlock2Ptr->customData.gameType > 0)
+    {
+        regionId = gMapHeader.regionMapSectionId;
+        if (gSaveBlock2Ptr->customData.caughtEncounters[regionId] > 0)
+        {
+            return FALSE;
+        }
+    }
     switch (area)
     {
     case WILD_AREA_LAND:
@@ -757,10 +766,11 @@ bool8 SweetScentWildEncounter(void)
         if (gWildMonHeaders[headerId].encounterTypes[season][timeOfDay].landMonsInfo == NULL)
             return FALSE;
 
-        TryGenerateWildMon(gWildMonHeaders[headerId].encounterTypes[season][timeOfDay].landMonsInfo, WILD_AREA_LAND, 0);
-
-        BattleSetup_StartWildBattle();
-        return TRUE;
+        if (TryGenerateWildMon(gWildMonHeaders[headerId].encounterTypes[season][timeOfDay].landMonsInfo, WILD_AREA_LAND, 0))
+        {
+            BattleSetup_StartWildBattle();
+            return TRUE;
+        }
     }
     else if (MapGridGetMetatileAttributeAt(x, y, METATILE_ATTRIBUTE_ENCOUNTER_TYPE) == TILE_ENCOUNTER_WATER)
     {
@@ -774,9 +784,11 @@ bool8 SweetScentWildEncounter(void)
         if (gWildMonHeaders[headerId].encounterTypes[season][timeOfDay].waterMonsInfo == NULL)
             return FALSE;
 
-        TryGenerateWildMon(gWildMonHeaders[headerId].encounterTypes[season][timeOfDay].waterMonsInfo, WILD_AREA_WATER, 0);
-        BattleSetup_StartWildBattle();
-        return TRUE;
+        if (TryGenerateWildMon(gWildMonHeaders[headerId].encounterTypes[season][timeOfDay].waterMonsInfo, WILD_AREA_WATER, 0))
+        {
+            BattleSetup_StartWildBattle();
+            return TRUE;
+        }
     }
 
     return FALSE;
