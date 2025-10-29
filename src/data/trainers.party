@@ -8501,6 +8501,8 @@ Starmie @ Life Orb
 Level: 21
 IVs: 18 HP / 0 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 EVs: 0 HP / 0 Atk / 0 Def / 80 SpA / 0 SpD / 80 Spe
+Ability: Analytic
+Nature: Modest
 - Surf
 - Psyshock
 - Thunderbolt
@@ -8534,30 +8536,38 @@ Items: Super Potion / Full Heal
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_HP_AWARE / AI_FLAG_WILL_SUICIDE
 
-Electrode
+Electrode @ Light Clay
 Level: 21
 IVs: 21 HP / 0 Atk / 21 Def / 21 SpA / 21 SpD / 21 Spe
 EVs: 0 HP / 0 Atk / 0 Def / 100 SpA / 0 SpD / 100 Spe
+Ability: Aftermath
+Nature: Timid
 - Electro Ball
 - Light Screen
 - Reflect
 - Explosion
 
-Pikachu
+Pikachu @ Light Ball
 Level: 18
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 21 HP / 21 Atk / 21 Def / 21 SpA / 21 SpD / 21 Spe
+EVs: 0 HP / 100 Atk / 0 Def / 0 SpA / 0 SpD / 100 Spe
+Ability: Static
+Nature: Adamant
+- Volt Tackle
+- Thunder Punch
+- Play Rough
 - Quick Attack
-- Thunder Wave
-- Double Team
-- Shock Wave
 
-Raichu
+Raichu @ Life Orb
 Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Quick Attack
-- Thunder Wave
-- Double Team
-- Shock Wave
+IVs: 21 HP / 1 Atk / 21 Def / 21 SpA / 21 SpD / 22 Spe
+EVs: 0 HP / 0 Atk / 0 Def / 100 SpA / 0 SpD / 100 Spe
+Ability: Static
+Nature: Modest
+- Nasty Plot
+- Thunderbolt
+- Surf
+- Hidden Power
 
 Voltorb
 Level: 21
@@ -8585,31 +8595,58 @@ Gender: Female
 Music: Female
 Items: Hyper Potion / Full Heal
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Sequence Switching
+
+Roserade @ Leftovers
+Level: 29
+IVs: 24 HP / 0 Atk / 25 Def / 24 SpA / 25 SpD / 24 Spe
+EVs: 0 HP / 0 Atk / 0 Def / 120 SpA / 0 SpD / 120 Spe
+Ability: Technician
+Nature: Timid
+- Spikes
+- Toxic Spikes
+- Leaf Storm
+- Hidden Power
+
+Thwackey @ Terrain Extender
+Level: 24
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 0 HP / 120 Atk / 0 Def / 0 SpA / 0 SpD / 120 Spe
+Ability: Grassy Surge
+Nature: Adamant
+- Swords Dance
+- Grassy Glide
+- Knock Off
+- U-Turn
+
+Exeggutor @ Sitrus Berry
+Level: 29
+IVs: 24 HP / 0 Atk / 25 Def / 24 SpA / 25 SpD / 24 Spe
+EVs: 120 HP / 0 Atk / 0 Def / 120 SpA / 0 SpD / 0 Spe
+Ability: Harvest
+Nature: Modest
+- Sunny Day
+- Solar Beam
+- Psyshock
+- Hidden Power
 
 Victreebel
 Level: 29
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Stun Spore
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 40 HP / 40 Atk / 40 Def / 40 SpA / 40 SpD / 40 Spe
 - Acid
-- Poison Powder
-- Giga Drain
 
 Tangela
 Level: 24
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Poison Powder
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 40 HP / 40 Atk / 40 Def / 40 SpA / 40 SpD / 40 Spe
 - Constrict
-- Ingrain
-- Giga Drain
 
 Vileplume
 Level: 29
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Sleep Powder
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+EVs: 40 HP / 40 Atk / 40 Def / 40 SpA / 40 SpD / 40 Spe
 - Acid
-- Stun Spore
-- Giga Drain
 
 === TRAINER_LEADER_KOGA ===
 Name: KOGA
@@ -8637,14 +8674,6 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Acid Armor
 - Toxic
 
-Koffing
-Level: 37
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Self Destruct
-- Sludge
-- Smokescreen
-- Toxic
-
 Weezing
 Level: 43
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
@@ -8652,6 +8681,21 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Sludge
 - Smokescreen
 - Toxic
+
+Koffing
+Level: 37
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Sludge
+
+Muk
+Level: 39
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Sludge
+
+Weezing
+Level: 43
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Tackle
 
 === TRAINER_LEADER_BLAINE ===
 Name: BLAINE
