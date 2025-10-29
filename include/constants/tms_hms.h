@@ -100,8 +100,8 @@
     F(AMY_UNUSED_96) \
     F(AMY_UNUSED_97) \
     F(AMY_UNUSED_98) \
-    F(AMY_UNUSED_99) \
-    F(SKETCH)
+    F(SKETCH) \
+    F(AMY_UNUSED_100)
 
 #define FOREACH_HM(F) \
     F(CUT) \

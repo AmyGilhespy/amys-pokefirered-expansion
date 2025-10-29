@@ -7,9 +7,9 @@ CeruleanCity_Gym_Text_MistyIntro::
     .string "My policy is an all-out offensive\n"
     .string "with WATER-type POKéMON!{PLAY_BGM}{MUS_ENCOUNTER_GYM_LEADER}$"
 
-CeruleanCity_Gym_Text_ExplainTM03::
-    .string "TM03 teaches WATER PULSE.\p"
-    .string "Use it on an aquatic POKéMON!$"
+CeruleanCity_Gym_Text_ExplainTR99::
+    .string "TR99 teaches SKETCH.\p"
+    .string "Use it to try something new!$"
 
 CeruleanCity_Gym_Text_ExplainCascadeBadge::
     .string "The CASCADEBADGE makes all\n"
@@ -20,10 +20,10 @@ CeruleanCity_Gym_Text_ExplainCascadeBadge::
     .string "anytime, even out of battle.\p"
     .string "You can CUT down small trees to\n"
     .string "open new pathways.\p"
-    .string "You can also have my favorite TM.$"
+    .string "You can also have my favorite TR.$"
 
-CeruleanCity_Gym_Text_ReceivedTM03FromMisty::
-    .string "{PLAYER} received TM03\n"
+CeruleanCity_Gym_Text_ReceivedTR99FromMisty::
+    .string "{PLAYER} received TR99\n"
     .string "from MISTY.$"
 
 CeruleanCity_Gym_Text_BetterMakeRoomForThis::

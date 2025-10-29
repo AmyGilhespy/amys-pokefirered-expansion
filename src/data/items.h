@@ -12209,6 +12209,7 @@ const struct Item gItemsInfo[] =
         .fieldUseFunc = NULL,
     },
 
+/*
     [ITEM_TM99] =
     {
         .name = ITEM_NAME("TM99"),
@@ -12219,27 +12220,26 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = NULL,
     },
+*/
 
-/*
+    [ITEM_TM99] =
+    {
+        .name = ITEM_NAME("TR99"),
+        .price = 10000,
+        .description = COMPOUND_STRING(
+            "SINGLE USE.  Sketch."),
+        .importance = 0,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = NULL,
+    },
+
     [ITEM_TM100] =
     {
         .name = ITEM_NAME("TM100"),
         .price = 3000,
         .description = sQuestionMarksDesc, // Todo
         .importance = I_REUSABLE_TMS,
-        .pocket = POCKET_TM_HM,
-        .type = ITEM_USE_PARTY_MENU,
-        .fieldUseFunc = NULL,
-    },
-*/
-
-    [ITEM_TM100] =
-    {
-        .name = ITEM_NAME("TR100"),
-        .price = 10000,
-        .description = COMPOUND_STRING(
-            "SINGLE USE.  Sketch."),
-        .importance = 0,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = NULL,

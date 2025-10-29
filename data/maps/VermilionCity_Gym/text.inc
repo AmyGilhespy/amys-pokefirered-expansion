@@ -23,13 +23,13 @@ VermilionCity_Gym_Text_ExplainThunderBadgeTakeThis::
     .string "You're special, kid!\n"
     .string "Take this!$"
 
-VermilionCity_Gym_Text_ReceivedTM34FromLtSurge::
-    .string "{PLAYER} received TM34\n"
+VermilionCity_Gym_Text_ReceivedTR99FromLtSurge::
+    .string "{PLAYER} received TR99\n"
     .string "from LT. SURGE.$"
 
-VermilionCity_Gym_Text_ExplainTM34::
-    .string "TM34 contains SHOCK WAVE!\p"
-    .string "Teach it to an ELECTRIC POKéMON!$"
+VermilionCity_Gym_Text_ExplainTR99::
+    .string "TR99 contains SKETCH!\p"
+    .string "Teach it to mix things up!$"
 
 VermilionCity_Gym_Text_MakeRoomInYourBag::
     .string "Yo, kid, make room in your BAG!$"
@@ -87,7 +87,7 @@ VermilionCity_Gym_Text_GymGuyAdvice::
     .string "Champ in the making!\p"
     .string "LT. SURGE has a nickname.\p"
     .string "People refer to him as the\n"
-    .string "Lightning American!\p"
+    .string "Lightning Unovian!\p"
     .string "He's an expert on electric\n"
     .string "POKéMON.\p"
     .string "BIRD/WATER-type POKéMON match\n"

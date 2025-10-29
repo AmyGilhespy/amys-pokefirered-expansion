@@ -3,10 +3,10 @@ PewterCity_Gym_Text_BrockIntro::
     .string "I'm PEWTER's GYM LEADER.\p"
     .string "My rock-hard willpower is evident\n"
     .string "even in my POKéMON.\p"
-    .string "My POKéMON are all rock hard, and\n"
+    .string "My POKéMON are all ROCK HARD, and\n"
     .string "have true-grit determination.\p"
     .string "That's right - my POKéMON are all\n"
-    .string "the ROCK type!\p"
+    .string "ROCK HARD, and so am I!\p"
     .string "Fuhaha! You're going to challenge\n"
     .string "me knowing that you'll lose?\p"
     .string "That's the TRAINER's honor that\n"
@@ -33,22 +33,22 @@ PewterCity_Gym_Text_TakeThisWithYou::
     .string "Wait!\n"
     .string "Take this with you.$"
 
-PewterCity_Gym_Text_ReceivedTM39FromBrock::
-    .string "{PLAYER} received TM39\n"
+PewterCity_Gym_Text_ReceivedTR99FromBrock::
+    .string "{PLAYER} received TR99\n"
     .string "from BROCK.$"
 
-PewterCity_Gym_Text_ExplainTM39::
-    .string "A TM, Technical Machine, contains a\n"
+PewterCity_Gym_Text_ExplainTR99::
+    .string "A TR, Technical Record, contains a\n"
     .string "technique for POKéMON.\p"
-    .string "Using a TM teaches the move it\n"
+    .string "Using a TR teaches the move it\n"
     .string "contains to a POKéMON.\p"
-    .string "A TM is good for only one use.\p"
+    .string "A TR is good for only one use.\p"
     .string "So, when you use one, pick the\n"
     .string "POKéMON carefully.\p"
     .string "Anyways…\n"
-    .string "TM39 contains ROCK TOMB.\p"
-    .string "It hurls boulders at the foe and\n"
-    .string "lowers its SPEED.$"
+    .string "TM99 contains SKETCH.\p"
+    .string "It lets you permanently copy the\n"
+    .string "move last used by a POKéMON.$"
 
 PewterCity_Gym_Text_BrockPostBattle::
     .string "There are all kinds of TRAINERS in\n"
