@@ -2026,7 +2026,7 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
                 fixedOtId = HIHALF(personalityValue) ^ LOHALF(personalityValue);
             }
             nextSeed = Random32();
-            thisSeed = gSaveBlock2Ptr->randomEncounterData.seed + personalityHash;
+            thisSeed = gSaveBlock2Ptr->customData.seed + personalityHash;
             thisSeed *= 2;
             thisSeed ^= partyData[monIndex].species;
             thisSeed *= 2;
@@ -2047,8 +2047,6 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
             }
             thisSeed <<= 3;
             thisSeed |= i;
-            thisSeed <<= 3;
-            thisSeed |= monIndex;
             randomSpecies = originalSpecies = partyData[monIndex].species;
             givePreassignedMoves = TRUE;
             if (trainer->trainerClass == TRAINER_CLASS_LEADER && i < 3) { }

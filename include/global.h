@@ -397,7 +397,7 @@ struct BattleTowerData // Leftover from R/S
     /*0x04D1, 0x0581*/ u8 filler_4D1[0x317];
 }; /* size = 0x7E8 */
 
-struct RandomEncounterData {
+struct CustomData {
     /* Array of species for each region map section:
        [regionId][slot] -> species (u16).
        Uses RANDOM_ENCOUNTER_SPECIES_NONE for empty/unset.
@@ -405,7 +405,8 @@ struct RandomEncounterData {
     u16 randomEncounters[RANDOM_ENCOUNTER_REGION_COUNT][RANDOM_ENCOUNTER_SLOTS_PER_REGION];
     u32 seed;
     u16 starters[3];
-    u16 padding;
+    u8 gameType;
+    u8 padding;
 };
 
 struct SaveBlock2
@@ -432,8 +433,8 @@ struct SaveBlock2
     /*0x0AC*/ bool8 unkFlag1; // Set TRUE, never read
     /*0x0AD*/ bool8 unkFlag2; // Set FALSE, never read
     // /*0x0B0*/ struct BattleTowerData battleTower;
-    /*0x0B0*/ struct RandomEncounterData randomEncounterData;
-    u8 padding[0x898 - 0x0B0 - sizeof(struct RandomEncounterData)];
+    /*0x0B0*/ struct CustomData customData;
+    u8 padding[0x898 - 0x0B0 - sizeof(struct CustomData)];
     /*0x898*/ u16 mapView[0x100];
 #if FREE_LINK_BATTLE_RECORDS == FALSE
     /*0xA98*/ struct LinkBattleRecords linkBattleRecords;

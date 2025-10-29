@@ -1573,7 +1573,7 @@ static u16 GetStarterSpeciesById(u16 idx)
 {
     if (idx >= NELEMS(sStarterSpecies))
         idx = 0;
-    return gSaveBlock2Ptr->randomEncounterData.starters[idx];
+    return gSaveBlock2Ptr->customData.starters[idx];
 }
 
 u16 GetStarterSpecies(void)
@@ -2709,7 +2709,7 @@ void TrySkyBattle(void)
 void GetRandomStarterPlayer(void)
 {
     u16 index = (u16) VarGet(VAR_TEMP_1) % 3;
-    u16 species = gSaveBlock2Ptr->randomEncounterData.starters[index];
+    u16 species = gSaveBlock2Ptr->customData.starters[index];
     MgbaPrintf(MGBA_LOG_WARN, "GetRandomStarterPlayer: index=%d, species=%d.", index, species);
     if (species == SPECIES_NONE)
     {
@@ -2721,7 +2721,7 @@ void GetRandomStarterPlayer(void)
 void GetRandomStarterRival(void)
 {
     u16 index = ((u16) VarGet(VAR_TEMP_1) + 2) % 3;
-    u16 species = gSaveBlock2Ptr->randomEncounterData.starters[index];
+    u16 species = gSaveBlock2Ptr->customData.starters[index];
     MgbaPrintf(MGBA_LOG_WARN, "GetRandomStarterRival: index=%d, species=%d.", index, species);
     if (species == SPECIES_NONE)
     {

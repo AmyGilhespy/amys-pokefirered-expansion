@@ -97,17 +97,17 @@ void RandomEncounters_FillAllWithRandom(void)
         if (0 < RANDOM_ENCOUNTER_SLOTS_PER_REGION)
         {
             species0 = RandomEncounters_ChooseRandomSpeciesForRegion(regionId, SPECIES_NONE, SPECIES_NONE);
-            gSaveBlock2Ptr->randomEncounterData.randomEncounters[regionId][0] = species0;
+            gSaveBlock2Ptr->customData.randomEncounters[regionId][0] = species0;
         }
         if (1 < RANDOM_ENCOUNTER_SLOTS_PER_REGION)
         {
             species1 = RandomEncounters_ChooseRandomSpeciesForRegion(regionId, species0, SPECIES_NONE);
-            gSaveBlock2Ptr->randomEncounterData.randomEncounters[regionId][1] = species1;
+            gSaveBlock2Ptr->customData.randomEncounters[regionId][1] = species1;
         }
         for (slot = 2; slot < RANDOM_ENCOUNTER_SLOTS_PER_REGION; ++slot)
         {
             species2plus = RandomEncounters_ChooseRandomSpeciesForRegion(regionId, species0, species1);
-            gSaveBlock2Ptr->randomEncounterData.randomEncounters[regionId][slot] = species2plus;
+            gSaveBlock2Ptr->customData.randomEncounters[regionId][slot] = species2plus;
         }
     }
 }
@@ -118,7 +118,7 @@ void RandomEncounters_FillAllWithSpecies(u16 species)
     for (regionId = 0; regionId < RANDOM_ENCOUNTER_REGION_COUNT; ++regionId)
     {
         for (slot = 0; slot < RANDOM_ENCOUNTER_SLOTS_PER_REGION; ++slot) {
-            gSaveBlock2Ptr->randomEncounterData.randomEncounters[regionId][slot] = species;
+            gSaveBlock2Ptr->customData.randomEncounters[regionId][slot] = species;
         }
     }
 }
@@ -135,7 +135,7 @@ u16 RandomEncounters_GetSpeciesForRegionSlot(u16 regionId, u8 slot)
     if (slot >= RANDOM_ENCOUNTER_SLOTS_PER_REGION) {
         return RANDOM_ENCOUNTER_SPECIES_NONE;
     }
-    return gSaveBlock2Ptr->randomEncounterData.randomEncounters[regionId][slot];
+    return gSaveBlock2Ptr->customData.randomEncounters[regionId][slot];
 }
 
 /**
@@ -150,7 +150,7 @@ bool8 RandomEncounters_GetSpeciesArrayForRegion(u16 regionId, u16 *outSpecies)
     }
 
     for (i = 0; i < RANDOM_ENCOUNTER_SLOTS_PER_REGION; ++i) {
-        outSpecies[i] = gSaveBlock2Ptr->randomEncounterData.randomEncounters[regionId][i];
+        outSpecies[i] = gSaveBlock2Ptr->customData.randomEncounters[regionId][i];
     }
     return TRUE;
 }
@@ -163,7 +163,7 @@ void RandomEncounters_Init(void)
     u16 species, bst, regionId;
     u8 wildMonIndex, season, timeOfDay;
     // Init the seed:
-    gSaveBlock2Ptr->randomEncounterData.seed = Random32();
+    gSaveBlock2Ptr->customData.seed = Random32();
     // Init the valid species list:
     sRandomEncounters_ValidSpeciesCount = 0;
     for (species = 1; species < NUM_SPECIES; ++species)
@@ -252,9 +252,9 @@ void RandomEncounters_Init(void)
             sRandomEncounters_ValidStarterSpecies[sRandomEncounters_ValidStarterSpeciesCount++] = sRandomEncounters_ValidSpecies[i];
         }
     }
-    gSaveBlock2Ptr->randomEncounterData.starters[0] = RandomEncounters_ChooseRandomSpeciesForStarter(bst, SPECIES_NONE, SPECIES_NONE);
-    gSaveBlock2Ptr->randomEncounterData.starters[1] = RandomEncounters_ChooseRandomSpeciesForStarter(bst, gSaveBlock2Ptr->randomEncounterData.starters[0], SPECIES_NONE);
-    gSaveBlock2Ptr->randomEncounterData.starters[2] = RandomEncounters_ChooseRandomSpeciesForStarter(bst, gSaveBlock2Ptr->randomEncounterData.starters[0], gSaveBlock2Ptr->randomEncounterData.starters[1]);
+    gSaveBlock2Ptr->customData.starters[0] = RandomEncounters_ChooseRandomSpeciesForStarter(bst, SPECIES_NONE, SPECIES_NONE);
+    gSaveBlock2Ptr->customData.starters[1] = RandomEncounters_ChooseRandomSpeciesForStarter(bst, gSaveBlock2Ptr->customData.starters[0], SPECIES_NONE);
+    gSaveBlock2Ptr->customData.starters[2] = RandomEncounters_ChooseRandomSpeciesForStarter(bst, gSaveBlock2Ptr->customData.starters[0], gSaveBlock2Ptr->customData.starters[1]);
     free(sRandomEncounters_ValidStarterSpecies);
 }
 

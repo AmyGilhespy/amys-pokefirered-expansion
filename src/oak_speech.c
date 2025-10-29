@@ -26,6 +26,7 @@
 enum
 {
     WIN_INTRO_TEXTBOX,
+    WIN_INTRO_GAMETYPE,
     WIN_INTRO_BOYGIRL,
     WIN_INTRO_YESNO,
     WIN_INTRO_NAMES,
@@ -62,6 +63,10 @@ static void Task_PikachuIntro_HandleInput(u8);
 static void Task_PikachuIntro_Clear(u8);
 
 static void Task_OakSpeech_Init(u8);
+static void Task_OakSpeech_AskGameType(u8);
+static void Task_OakSpeech_ShowGameTypeOptions(u8);
+static void Task_OakSpeech_HandleGameTypeInput(u8);
+static void Task_OakSpeech_ClearGameTypeWindows(u8);
 static void Task_OakSpeech_WelcomeToTheWorld(u8);
 static void Task_OakSpeech_ThisWorld(u8);
 static void Task_OakSpeech_ReleaseNidoranFFromPokeBall(u8);
@@ -113,6 +118,8 @@ static void GetDefaultName(u8, u8);
 extern const u8 gText_Controls[];
 extern const u8 gText_ABUTTONNext[];
 extern const u8 gText_ABUTTONNext_BBUTTONBack[];
+extern const u8 gText_Casual[];
+extern const u8 gText_Nuzlocke[];
 extern const u8 gText_Boy[];
 extern const u8 gText_Girl[];
 extern const struct OamData gOamData_AffineOff_ObjBlend_32x32;
@@ -296,6 +303,16 @@ static const struct WindowTemplate sIntro_WindowTemplates[NUM_INTRO_WINDOWS + 1]
         .tilemapTop = 4,
         .width = 28,
         .height = 15,
+        .paletteNum = 15,
+        .baseBlock = 1
+    },
+    [WIN_INTRO_GAMETYPE] =
+    {
+        .bg = 0,
+        .tilemapLeft = 2,
+        .tilemapTop = 2,
+        .width = 9,
+        .height = 4,
         .paletteNum = 15,
         .baseBlock = 1
     },
@@ -1121,7 +1138,7 @@ static void Task_OakSpeech_Init(u8 taskId)
         BeginNormalPaletteFade(PALETTES_ALL, 5, 16, 0, RGB_BLACK);
         tTimer = 80;
         ShowBg(2);
-        gTasks[taskId].func = Task_OakSpeech_WelcomeToTheWorld;
+        gTasks[taskId].func = Task_OakSpeech_AskGameType;
     }
 }
 
@@ -1153,6 +1170,65 @@ static inline void OakSpeechPrintMessage(const u8 *str, u8 speed, bool32 isStrin
 //     }                                                                                                                                                        \
 //     CopyWindowToVram(WIN_INTRO_TEXTBOX, COPYWIN_FULL);                                                                                                       \
 // })
+
+static void Task_OakSpeech_AskGameType(u8 taskId)
+{
+    OakSpeechPrintMessage(gOakSpeech_Text_AskGameType, sOakSpeechResources->textSpeed, FALSE);
+    gTasks[taskId].func = Task_OakSpeech_ShowGameTypeOptions;
+}
+
+static void Task_OakSpeech_ShowGameTypeOptions(u8 taskId)
+{
+    if (!IsTextPrinterActive(WIN_INTRO_TEXTBOX))
+    {
+        gTasks[taskId].tMenuWindowId = AddWindow(&sIntro_WindowTemplates[WIN_INTRO_GAMETYPE]);
+        PutWindowTilemap(gTasks[taskId].tMenuWindowId);
+        DrawStdFrameWithCustomTileAndPalette(gTasks[taskId].tMenuWindowId, TRUE, GetStandardFrameBaseTileNum(), 14);
+        FillWindowPixelBuffer(gTasks[taskId].tMenuWindowId, PIXEL_FILL(1));
+        sOakSpeechResources->textColor[0] = 1;
+        sOakSpeechResources->textColor[1] = 2;
+        sOakSpeechResources->textColor[2] = 3;
+        AddTextPrinterParameterized3(gTasks[taskId].tMenuWindowId, FONT_NORMAL, 8, 1, sOakSpeechResources->textColor, 0, gText_Casual);
+        sOakSpeechResources->textColor[0] = 1;
+        sOakSpeechResources->textColor[1] = 2;
+        sOakSpeechResources->textColor[2] = 3;
+        AddTextPrinterParameterized3(gTasks[taskId].tMenuWindowId, FONT_NORMAL, 8, 17, sOakSpeechResources->textColor, 0, gText_Nuzlocke);
+        InitMenuNormal(gTasks[taskId].tMenuWindowId, FONT_NORMAL, 0, 1, GetFontAttribute(FONT_NORMAL, FONTATTR_MAX_LETTER_HEIGHT) + 2, 2, /*initialCursorPos=casual*/0);
+        CopyWindowToVram(gTasks[taskId].tMenuWindowId, COPYWIN_FULL);
+        gTasks[taskId].func = Task_OakSpeech_HandleGameTypeInput;
+    }
+}
+
+static void Task_OakSpeech_HandleGameTypeInput(u8 taskId)
+{
+    s8 input = Menu_ProcessInputNoWrap();
+    switch (input)
+    {
+    case 0: // Casual
+        gSaveBlock2Ptr->customData.gameType = 0;
+        break;
+    case 1: // Nuzlocke
+        gSaveBlock2Ptr->customData.gameType = 1;
+        break;
+    case MENU_B_PRESSED:
+    case MENU_NOTHING_CHOSEN:
+        return;
+    }
+    gTasks[taskId].func = Task_OakSpeech_ClearGameTypeWindows;
+
+}
+
+static void Task_OakSpeech_ClearGameTypeWindows(u8 taskId)
+{
+    s16 *data = gTasks[taskId].data;
+    ClearStdWindowAndFrameToTransparent(tMenuWindowId, TRUE);
+    RemoveWindow(tMenuWindowId);
+    tMenuWindowId = WIN_INTRO_TEXTBOX;
+    ClearDialogWindowAndFrame(tMenuWindowId, TRUE);
+    FillBgTilemapBufferRect_Palette0(0, 0, 0, 0, 30, 20);
+    CopyBgTilemapBufferToVram(0);
+    gTasks[taskId].func = Task_OakSpeech_WelcomeToTheWorld;
+}
 
 static void Task_OakSpeech_WelcomeToTheWorld(u8 taskId)
 {
