@@ -19,10 +19,12 @@
 #include "constants/items.h"
 #include "constants/songs.h"
 #include "constants/field_weather.h"
+#include "random.h"
 
 #define PC_ITEM_ID  0
 #define PC_QUANTITY 1
 #define NEW_GAME_PC_ITEMS(i, type) (((u16 *)gNewGamePCItems + type)[i * 2])
+#define NEW_GAME_PC_ITEM_OPTIONS(i, type) (((u16 *)gNewGamePCItemOptions + type)[i * 2])
 
 #define tCount          data[2]
 #define tPageItems      data[4]
@@ -99,6 +101,15 @@ static const struct ItemSlot gNewGamePCItems[] = {
     { ITEM_NONE,   0 }
 };
 
+static const struct ItemSlot gNewGamePCItemOptions[] = {
+    { ITEM_CHOICE_BAND, 1 },
+    { ITEM_CHOICE_SCARF, 1 },
+    { ITEM_CHOICE_SPECS, 1 },
+    { ITEM_ASSAULT_VEST, 1 },
+    { ITEM_LIFE_ORB, 1 },
+    { ITEM_LEFTOVERS, 1 }
+};
+
 static const struct MenuAction sMenuActions_MailSubmenu[] = {
     {gOtherText_Read, {Task_PlayerPcReadMail}},
     {gOtherText_MoveToBag, {Task_PlayerPcMoveMailToBag}},
@@ -138,11 +149,15 @@ static const struct WindowTemplate sWindowTemplate_ItemStorageSubmenu = {
 
 void NewGameInitPCItems(void)
 {
+    u16 count;
     u8 i;
 
     for (i = 0, ClearPCItemSlots(); NEW_GAME_PC_ITEMS(i, PC_ITEM_ID) && NEW_GAME_PC_ITEMS(i, PC_QUANTITY) &&
                                     AddPCItem(NEW_GAME_PC_ITEMS(i, PC_ITEM_ID), NEW_GAME_PC_ITEMS(i, PC_QUANTITY)) == TRUE; i++)
         ;
+    count = sizeof gNewGamePCItemOptions / sizeof *gNewGamePCItemOptions;
+    i = (u16) Random32() % count;
+    AddPCItem(NEW_GAME_PC_ITEM_OPTIONS(i, PC_ITEM_ID), NEW_GAME_PC_ITEM_OPTIONS(i, PC_QUANTITY));
 }
 
 void BedroomPC(void)

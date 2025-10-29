@@ -1443,6 +1443,16 @@ void CreateMaleMon(struct Pokemon *mon, u16 species, u8 level)
     CreateMon(mon, species, level, USE_RANDOM_IVS, TRUE, personality, OT_ID_PRESET, otId);
 }
 
+void CreateOldMansMon(struct Pokemon *mon, u16 species, u8 level)
+{
+    u32 personality;
+    u32 otId;
+
+    otId = Random32();
+    personality = Random32();
+    CreateMon(mon, species, level, USE_RANDOM_IVS, TRUE, personality, OT_ID_PRESET, otId);
+}
+
 void CreateMonWithIVsPersonality(struct Pokemon *mon, u16 species, u8 level, u32 ivs, u32 personality)
 {
     CreateMon(mon, species, level, 0, TRUE, personality, OT_ID_PLAYER_ID, 0);
