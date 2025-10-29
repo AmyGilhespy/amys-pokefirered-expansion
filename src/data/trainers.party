@@ -15618,3 +15618,24 @@ IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 Muk
 Level: 39
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+
+=== TRAINER_MOM ===
+Name: MOM
+Class: Leader
+Pic: RS Aroma Lady
+Gender: Female
+Music: Aqua
+Items: Hyper Potion / Hyper Potion / Full Heal
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Smart Switching / Ace Pokemon / Omniscient
+
+Swampert @ Swampertite
+Level: 50
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 244 Atk / 0 Def / 0 SpA / 8 SpD / 252 Spe
+Ability: Drizzle
+Nature: Jolly
+- Surging Strikes
+- Earthquake
+- Stone Edge
+- Ice Punch

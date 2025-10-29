@@ -40173,3 +40173,55 @@ F_TRAINER_FEMALE |
             },
         },
     },
+#line 15622
+    [DIFFICULTY_NORMAL][TRAINER_MOM] =
+    {
+#line 15623
+        .trainerName = _("MOM"),
+#line 15624
+        .trainerClass = TRAINER_CLASS_LEADER,
+#line 15625
+        .trainerPic = TRAINER_PIC_RS_AROMA_LADY,
+        .encounterMusic_gender =
+#line 15626
+F_TRAINER_FEMALE | 
+#line 15627
+            TRAINER_ENCOUNTER_MUSIC_AQUA,
+#line 15628
+        .items = { ITEM_HYPER_POTION, ITEM_HYPER_POTION, ITEM_FULL_HEAL },
+#line 15629
+        .battleType = TRAINER_BATTLE_TYPE_SINGLES,
+#line 15630
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_FORCE_SETUP_FIRST_TURN | AI_FLAG_TRY_TO_2HKO | AI_FLAG_HP_AWARE | AI_FLAG_PREFER_STATUS_MOVES | AI_FLAG_STALL | AI_FLAG_SMART_SWITCHING | AI_FLAG_ACE_POKEMON | AI_FLAG_OMNISCIENT,
+#line 0
+        .trainerBackPic = TRAINER_PIC_RS_AROMA_LADY,
+        .partySize = 1,
+        .party = (const struct TrainerMon[])
+        {
+            {
+#line 15632
+            .species = SPECIES_SWAMPERT,
+            .gender = TRAINER_MON_RANDOM_GENDER,
+#line 15632
+            .heldItem = ITEM_SWAMPERTITE,
+#line 15635
+            .ev = TRAINER_PARTY_EVS(4, 244, 0, 252, 0, 8),
+#line 15634
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+#line 15636
+            .ability = ABILITY_DRIZZLE,
+#line 15633
+            .lvl = 50,
+#line 15637
+            .nature = NATURE_JOLLY,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+            .moves = {
+#line 15638
+                MOVE_SURGING_STRIKES,
+                MOVE_EARTHQUAKE,
+                MOVE_STONE_EDGE,
+                MOVE_ICE_PUNCH,
+            },
+            },
+        },
+    },

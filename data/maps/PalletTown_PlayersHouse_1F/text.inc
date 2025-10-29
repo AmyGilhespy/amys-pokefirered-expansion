@@ -36,3 +36,11 @@ PalletTown_PlayersHouse_1F_Text_MovieOnTVGirlOnBrickRoad::
 PalletTown_PlayersHouse_1F_Text_OopsWrongSide::
     .string "Oops, wrong side…$"
 
+PalletTown_PlayersHouse_Text_MomIntro::
+    .string "MomIntro$"
+
+PalletTown_PlayersHouse_Text_MomDefeat::
+    .string "MomDefeat$"
+
+PalletTown_PlayersHouse_Text_DefeatedMom::
+    .string "DefeatedMom$"
