@@ -22375,7 +22375,7 @@ F_TRAINER_FEMALE |
         {
             {
 #line 8722
-            .species = SPECIES_VICTINI,
+            .species = SPECIES_MEDICHAM,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 8722
             .heldItem = ITEM_CHOICE_BAND,
@@ -22384,7 +22384,7 @@ F_TRAINER_FEMALE |
 #line 8724
             .iv = TRAINER_PARTY_IVS(29, 29, 29, 29, 29, 29),
 #line 8726
-            .ability = ABILITY_VICTORY_STAR,
+            .ability = ABILITY_PURE_POWER,
 #line 8723
             .lvl = 37,
 #line 8727
@@ -22392,10 +22392,10 @@ F_TRAINER_FEMALE |
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 8728
-                MOVE_V_CREATE,
-                MOVE_BOLT_STRIKE,
+                MOVE_CLOSE_COMBAT,
                 MOVE_ZEN_HEADBUTT,
-                MOVE_U_TURN,
+                MOVE_ICE_PUNCH,
+                MOVE_THUNDER_PUNCH,
             },
             },
             {

@@ -8719,16 +8719,16 @@ Items: Hyper Potion / Hyper Potion / Full Heal
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / Try To 2HKO / HP Aware / Smart Switching
 
-Victini @ Choice Band
+Medicham @ Choice Band
 Level: 37
 IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
 EVs: 0 HP / 200 Atk / 0 Def / 0 SpA / 0 SpD / 200 Spe
-Ability: Victory Star
+Ability: Pure Power
 Nature: Jolly
-- V-create
-- Bolt Strike
+- Close Combat
 - Zen Headbutt
-- U-turn
+- Ice Punch
+- Thunder Punch
 
 Slowbro @ Leftovers
 Level: 38
