@@ -26,10 +26,12 @@ CeladonCity_GameCorner_PrizeRoom_EventScript_ChoosePrizeMon::
 	switch VAR_RESULT
 	case 0, CeladonCity_GameCorner_PrizeRoom_EventScript_Abra
 	case 1, CeladonCity_GameCorner_PrizeRoom_EventScript_Clefairy
-	case 2, CeladonCity_GameCorner_PrizeRoom_EventScript_DratiniPinsir
-	case 3, CeladonCity_GameCorner_PrizeRoom_EventScript_ScytherDratini
-	case 4, CeladonCity_GameCorner_PrizeRoom_EventScript_Porygon
-	case 5, CeladonCity_GameCorner_PrizeRoom_EventScript_EndPrizeExchange
+	case 2, CeladonCity_GameCorner_PrizeRoom_EventScript_Pinsir
+	case 3, CeladonCity_GameCorner_PrizeRoom_EventScript_Dratini
+	case 4, CeladonCity_GameCorner_PrizeRoom_EventScript_Scyther
+	case 5, CeladonCity_GameCorner_PrizeRoom_EventScript_Porygon
+	case 6, CeladonCity_GameCorner_PrizeRoom_EventScript_Mimikyu
+	case 7, CeladonCity_GameCorner_PrizeRoom_EventScript_EndPrizeExchange
 	case 127, CeladonCity_GameCorner_PrizeRoom_EventScript_EndPrizeExchange
 	end
 
@@ -39,67 +41,44 @@ CeladonCity_GameCorner_PrizeRoom_EventScript_EndPrizeExchange::
 	end
 
 CeladonCity_GameCorner_PrizeRoom_EventScript_Abra::
-	.ifdef FIRERED
 	setvar VAR_TEMP_1, SPECIES_ABRA
-	setvar VAR_TEMP_2, 180
-	.else
-	.ifdef LEAFGREEN
-	setvar VAR_TEMP_1, SPECIES_ABRA
-	setvar VAR_TEMP_2, 120
-	.endif
-	.endif
+	setvar VAR_TEMP_2, 150
 	goto CeladonCity_GameCorner_PrizeRoom_EventScript_ConfirmPrizeMon
 	end
 
 CeladonCity_GameCorner_PrizeRoom_EventScript_Clefairy::
-	.ifdef FIRERED
 	setvar VAR_TEMP_1, SPECIES_CLEFAIRY
-	setvar VAR_TEMP_2, 500
-	.else
-	.ifdef LEAFGREEN
-	setvar VAR_TEMP_1, SPECIES_CLEFAIRY
-	setvar VAR_TEMP_2, 750
-	.endif
-	.endif
+	setvar VAR_TEMP_2, 625
 	goto CeladonCity_GameCorner_PrizeRoom_EventScript_ConfirmPrizeMon
 	end
 
-CeladonCity_GameCorner_PrizeRoom_EventScript_DratiniPinsir::
-	.ifdef FIRERED
-	setvar VAR_TEMP_1, SPECIES_DRATINI
-	setvar VAR_TEMP_2, 2800
-	.else
-	.ifdef LEAFGREEN
+CeladonCity_GameCorner_PrizeRoom_EventScript_Pinsir::
 	setvar VAR_TEMP_1, SPECIES_PINSIR
 	setvar VAR_TEMP_2, 2500
-	.endif
-	.endif
 	goto CeladonCity_GameCorner_PrizeRoom_EventScript_ConfirmPrizeMon
 	end
 
-CeladonCity_GameCorner_PrizeRoom_EventScript_ScytherDratini::
-	.ifdef FIRERED
+CeladonCity_GameCorner_PrizeRoom_EventScript_Dratini::
+	setvar VAR_TEMP_1, SPECIES_DRATINI
+	setvar VAR_TEMP_2, 3700
+	goto CeladonCity_GameCorner_PrizeRoom_EventScript_ConfirmPrizeMon
+	end
+
+CeladonCity_GameCorner_PrizeRoom_EventScript_Scyther::
 	setvar VAR_TEMP_1, SPECIES_SCYTHER
 	setvar VAR_TEMP_2, 5500
-	.else
-	.ifdef LEAFGREEN
-	setvar VAR_TEMP_1, SPECIES_DRATINI
-	setvar VAR_TEMP_2, 4600
-	.endif
-	.endif
 	goto CeladonCity_GameCorner_PrizeRoom_EventScript_ConfirmPrizeMon
 	end
 
 CeladonCity_GameCorner_PrizeRoom_EventScript_Porygon::
-	.ifdef FIRERED
 	setvar VAR_TEMP_1, SPECIES_PORYGON
+	setvar VAR_TEMP_2, 8250
+	goto CeladonCity_GameCorner_PrizeRoom_EventScript_ConfirmPrizeMon
+	end
+
+CeladonCity_GameCorner_PrizeRoom_EventScript_Mimikyu::
+	setvar VAR_TEMP_1, SPECIES_MIMIKYU
 	setvar VAR_TEMP_2, 9999
-	.else
-	.ifdef LEAFGREEN
-	setvar VAR_TEMP_1, SPECIES_PORYGON
-	setvar VAR_TEMP_2, 6500
-	.endif
-	.endif
 	goto CeladonCity_GameCorner_PrizeRoom_EventScript_ConfirmPrizeMon
 	end
 
@@ -110,13 +89,8 @@ CeladonCity_GameCorner_PrizeRoom_EventScript_ConfirmPrizeMon::
 	checkcoins VAR_RESULT
 	goto_if_lt VAR_RESULT, VAR_TEMP_2, CeladonCity_GameCorner_PrizeRoom_EventScript_NotEnoughCoins
 	textcolor NPC_TEXT_COLOR_NEUTRAL
-	switch VAR_TEMP_1
-	case SPECIES_ABRA,     CeladonCity_GameCorner_PrizeRoom_EventScript_GiveAbra
-	case SPECIES_CLEFAIRY, CeladonCity_GameCorner_PrizeRoom_EventScript_GiveClefairy
-	case SPECIES_DRATINI,  CeladonCity_GameCorner_PrizeRoom_EventScript_GiveDratini
-	case SPECIES_SCYTHER,  CeladonCity_GameCorner_PrizeRoom_EventScript_GiveScyther
-	case SPECIES_PORYGON,  CeladonCity_GameCorner_PrizeRoom_EventScript_GivePorygon
-	case SPECIES_PINSIR,   CeladonCity_GameCorner_PrizeRoom_EventScript_GivePinsir
+	givemon VAR_TEMP_1, 5
+	goto CeladonCity_GameCorner_PrizeRoom_EventScript_CheckReceivedMon
 	end
 
 CeladonCity_GameCorner_PrizeRoom_EventScript_GiveAbra::

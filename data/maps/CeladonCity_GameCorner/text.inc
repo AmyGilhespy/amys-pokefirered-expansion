@@ -1,3 +1,15 @@
+CeladonCity_GameCorner_Text_TakeCoinCase::
+    .string "Welcome!\p"
+    .string "I see you don't have a\n"
+    .string "COIN CASE yet.$"
+
+CeladonCity_GameCorner_Text_ReceivedCoinCaseFromInfoClerk::
+    .string "{PLAYER} received a COIN CASE.$"
+
+CeladonCity_GameCorner_Text_InfoClerkMakeRoomForThis::
+    .string "If you make room for it, we'll\n"
+    .string "give you one!$"
+
 CeladonCity_GameCorner_Text_CanExchangeCoinsNextDoor::
     .string "Welcome!\p"
     .string "You can exchange your COINS for\n"

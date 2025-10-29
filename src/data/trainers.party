@@ -8449,20 +8449,20 @@ Nature: Mild
 
 Geodude
 Level: 12
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+EVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - Tackle
 
 Geodude
 Level: 12
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+EVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - Tackle
 
 Onix
 Level: 14
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+EVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - Tackle
 
 === TRAINER_LEADER_MISTY ===
@@ -8508,17 +8508,20 @@ EVs: 0 HP / 0 Atk / 0 Def / 80 SpA / 0 SpD / 80 Spe
 
 Staryu
 Level: 18
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
 - Tackle
 
 Staryu
 Level: 18
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
 - Tackle
 
 Starmie
 Level: 21
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+EVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
 - Tackle
 
 === TRAINER_LEADER_LT_SURGE ===
@@ -8529,15 +8532,16 @@ Gender: Male
 Music: Male
 Items: Super Potion / Full Heal
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_HP_AWARE / AI_FLAG_WILL_SUICIDE
 
-Voltorb
+Electrode
 Level: 21
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Sonic Boom
-- Tackle
-- Screech
-- Shock Wave
+IVs: 21 HP / 0 Atk / 21 Def / 21 SpA / 21 SpD / 21 Spe
+EVs: 0 HP / 0 Atk / 0 Def / 100 SpA / 0 SpD / 100 Spe
+- Electro Ball
+- Light Screen
+- Reflect
+- Explosion
 
 Pikachu
 Level: 18
@@ -8554,6 +8558,24 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Thunder Wave
 - Double Team
 - Shock Wave
+
+Voltorb
+Level: 21
+IVs: 21 HP / 21 Atk / 21 Def / 21 SpA / 21 SpD / 21 Spe
+EVs: 32 HP / 32 Atk / 32 Def / 32 SpA / 32 SpD / 32 Spe
+- Tackle
+
+Pikachu
+Level: 18
+IVs: 21 HP / 21 Atk / 21 Def / 21 SpA / 21 SpD / 21 Spe
+EVs: 32 HP / 32 Atk / 32 Def / 32 SpA / 32 SpD / 32 Spe
+- Quick Attack
+
+Raichu
+Level: 24
+IVs: 21 HP / 21 Atk / 21 Def / 21 SpA / 21 SpD / 21 Spe
+EVs: 32 HP / 32 Atk / 32 Def / 32 SpA / 32 SpD / 32 Spe
+- Quick Attack
 
 === TRAINER_LEADER_ERIKA ===
 Name: ERIKA

@@ -15,7 +15,22 @@ CeladonCity_GameCorner_EventScript_HideRocketHideout::
 	return
 
 CeladonCity_GameCorner_EventScript_InfoClerk::
+	goto_if_unset FLAG_GOT_COIN_CASE, CeladonCity_GameCorner_EventScript_InfoClerkGiveCoinCase
 	msgbox CeladonCity_GameCorner_Text_CanExchangeCoinsNextDoor, MSGBOX_NPC
+	end
+
+CeladonCity_GameCorner_EventScript_InfoClerkGiveCoinCase::
+	msgbox CeladonCity_GameCorner_Text_TakeCoinCase
+	checkitemspace ITEM_COIN_CASE
+	goto_if_eq VAR_RESULT, FALSE, CeladonCity_GameCorner_EventScript_InfoClerkNoRoomForCoinCase
+	giveitem_msg CeladonCity_GameCorner_Text_ReceivedCoinCaseFromInfoClerk, ITEM_COIN_CASE
+	setflag FLAG_GOT_COIN_CASE
+	release
+	end
+
+CeladonCity_GameCorner_EventScript_InfoClerkNoRoomForCoinCase::
+	msgbox CeladonCity_GameCorner_Text_InfoClerkMakeRoomForThis
+	release
 	end
 
 CeladonCity_GameCorner_EventScript_CoinsClerk::

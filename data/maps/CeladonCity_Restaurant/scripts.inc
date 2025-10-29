@@ -10,14 +10,22 @@ CeladonCity_Restaurant_EventScript_Woman::
 	end
 
 CeladonCity_Restaurant_EventScript_CoinCaseMan::
+	checkitem ITEM_COIN_CASE
+	goto_if_eq VAR_RESULT, FALSE, CeladonCity_Restaurant_EventScript_NoCoinCaseYet  @ player does NOT have the coin case
 	lock
 	faceplayer
-	goto_if_set FLAG_GOT_COIN_CASE, CeladonCity_Restaurant_EventScript_AlreadyGotCoinCase
-	msgbox CeladonCity_Restaurant_Text_TakeThisImBusted
-	checkitemspace ITEM_COIN_CASE
-	goto_if_eq VAR_RESULT, FALSE, CeladonCity_Restaurant_EventScript_NoRoomForCoinCase
-	giveitem_msg CeladonCity_Restaurant_Text_ReceivedCoinCaseFromMan, ITEM_COIN_CASE
-	setflag FLAG_GOT_COIN_CASE
+	goto_if_set FLAG_GOT_COINS_FROM_MAN, CeladonCity_Restaurant_EventScript_AlreadyGotCoins
+	msgbox CeladonCity_Restaurant_Text_TakeTheseCoins
+	addcoins 9999
+	setflag FLAG_GOT_COINS_FROM_MAN
+	playfanfare MUS_OBTAIN_KEY_ITEM
+	msgbox CeladonCity_Restaurant_Text_ReceivedCoinsFromMan
+	waitfanfare
+	release
+	end
+
+CeladonCity_Restaurant_EventScript_NoCoinCaseYet::
+	msgbox CeladonCity_Restaurant_Text_GetACoinCaseFirst
 	release
 	end
 
@@ -28,6 +36,11 @@ CeladonCity_Restaurant_EventScript_NoRoomForCoinCase::
 
 CeladonCity_Restaurant_EventScript_AlreadyGotCoinCase::
 	msgbox CeladonCity_Restaurant_Text_ThoughtIdWinItBack
+	release
+	end
+
+CeladonCity_Restaurant_EventScript_AlreadyGotCoins::
+	msgbox CeladonCity_Restaurant_Text_EnjoyYourCoins
 	release
 	end
 
