@@ -118,7 +118,7 @@ static void GetDefaultName(u8, u8);
 extern const u8 gText_Controls[];
 extern const u8 gText_ABUTTONNext[];
 extern const u8 gText_ABUTTONNext_BBUTTONBack[];
-extern const u8 gText_Casual[];
+extern const u8 gText_Standard[];
 extern const u8 gText_Nuzlocke[];
 extern const u8 gText_Boy[];
 extern const u8 gText_Girl[];
@@ -1188,12 +1188,12 @@ static void Task_OakSpeech_ShowGameTypeOptions(u8 taskId)
         sOakSpeechResources->textColor[0] = 1;
         sOakSpeechResources->textColor[1] = 2;
         sOakSpeechResources->textColor[2] = 3;
-        AddTextPrinterParameterized3(gTasks[taskId].tMenuWindowId, FONT_NORMAL, 8, 1, sOakSpeechResources->textColor, 0, gText_Casual);
+        AddTextPrinterParameterized3(gTasks[taskId].tMenuWindowId, FONT_NORMAL, 8, 1, sOakSpeechResources->textColor, 0, gText_Standard);
         sOakSpeechResources->textColor[0] = 1;
         sOakSpeechResources->textColor[1] = 2;
         sOakSpeechResources->textColor[2] = 3;
         AddTextPrinterParameterized3(gTasks[taskId].tMenuWindowId, FONT_NORMAL, 8, 17, sOakSpeechResources->textColor, 0, gText_Nuzlocke);
-        InitMenuNormal(gTasks[taskId].tMenuWindowId, FONT_NORMAL, 0, 1, GetFontAttribute(FONT_NORMAL, FONTATTR_MAX_LETTER_HEIGHT) + 2, 2, /*initialCursorPos=casual*/0);
+        InitMenuNormal(gTasks[taskId].tMenuWindowId, FONT_NORMAL, 0, 1, GetFontAttribute(FONT_NORMAL, FONTATTR_MAX_LETTER_HEIGHT) + 2, 2, /*initialCursorPos=standard*/0);
         CopyWindowToVram(gTasks[taskId].tMenuWindowId, COPYWIN_FULL);
         gTasks[taskId].func = Task_OakSpeech_HandleGameTypeInput;
     }
@@ -1204,7 +1204,7 @@ static void Task_OakSpeech_HandleGameTypeInput(u8 taskId)
     s8 input = Menu_ProcessInputNoWrap();
     switch (input)
     {
-    case 0: // Casual
+    case 0: // Standard
         gSaveBlock2Ptr->customData.gameType = 0;
         break;
     case 1: // Nuzlocke

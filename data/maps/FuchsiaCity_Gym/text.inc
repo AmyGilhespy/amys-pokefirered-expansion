@@ -32,13 +32,13 @@ FuchsiaCity_Gym_Text_KogaExplainSoulBadge::
     .string "Ah!\n"
     .string "Take this, too!$"
 
-FuchsiaCity_Gym_Text_ReceivedTM06FromKoga::
-    .string "{PLAYER} received TM06\n"
+FuchsiaCity_Gym_Text_ReceivedTR99FromKoga::
+    .string "{PLAYER} received TR99\n"
     .string "from KOGA.$"
 
-FuchsiaCity_Gym_Text_KogaExplainTM06::
-    .string "Sealed within that TM06 lies\n"
-    .string "TOXIC!\p"
+FuchsiaCity_Gym_Text_KogaExplainTR99::
+    .string "Sealed within that TR99 lies\n"
+    .string "SKETCH!\p"
     .string "It is a secret technique dating\n"
     .string "back some four hundred years.$"
 

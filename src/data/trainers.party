@@ -8656,31 +8656,40 @@ Gender: Male
 Music: Male
 Items: Hyper Potion / Hyper Potion / Full Heal
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Smart Switching
 
-Koffing
+Muk Alola @ Assault Vest
 Level: 37
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Self Destruct
-- Sludge
-- Smokescreen
-- Toxic
+IVs: 27 HP / 27 Atk / 27 Def / 27 SpA / 27 SpD / 27 Spe
+EVs: 0 HP / 160 Atk / 0 Def / 0 SpA / 160 SpD / 0 Spe
+Ability: Poison Touch
+Nature: Adamant
+- Poison Jab
+- Pursuit
+- Knock Off
+- Fire Punch
 
-Muk
+Toxapex @ Black Sludge
 Level: 39
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Minimize
-- Sludge
-- Acid Armor
-- Toxic
+IVs: 27 HP / 0 Atk / 27 Def / 27 SpA / 27 SpD / 27 Spe
+EVs: 160 HP / 0 Atk / 24 Def / 0 SpA / 136 SpD / 0 Spe
+Ability: Regenerator
+Nature: Calm
+- Knock Off
+- Toxic Spikes
+- Baneful Bunker
+- Recover
 
-Weezing
+Nihilego @ Black Sludge
 Level: 43
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Tackle
-- Sludge
-- Smokescreen
-- Toxic
+IVs: 27 HP / 0 Atk / 27 Def / 27 SpA / 27 SpD / 27 Spe
+EVs: 0 HP / 0 Atk / 0 Def / 160 SpA / 0 SpD / 160 Spe
+Ability: Beast Boost
+Nature: Calm
+- Stealth Rock
+- Sludge Wave
+- Power Gem
+- Thunderbolt
 
 Koffing
 Level: 37

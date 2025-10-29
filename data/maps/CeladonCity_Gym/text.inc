@@ -8,7 +8,7 @@ CeladonCity_Gym_Text_ErikaIntro::
     .string "I am the LEADER of CELADON GYM.\p"
     .string "I am a student of the art of\n"
     .string "flower arranging.\p"
-    .string "My POKéMON are solely of the\n"
+    .string "My POKéMON are mostly of the\n"
     .string "GRASS type.\p"
     .string "…Oh, I'm sorry, I had no idea that\n"
     .string "you wished to challenge me.\p"
@@ -34,14 +34,14 @@ CeladonCity_Gym_Text_ExplainRainbowBadgeTakeThis::
     .string "STRENGTH in and out of battle.\p"
     .string "Please also take this with you.$"
 
-CeladonCity_Gym_Text_ReceivedTM19FromErika::
-    .string "{PLAYER} received TM19\n"
+CeladonCity_Gym_Text_ReceivedTR99FromErika::
+    .string "{PLAYER} received TR99\n"
     .string "from ERIKA.$"
 
-CeladonCity_Gym_Text_ExplainTM19::
-    .string "TM19 contains GIGA DRAIN.\p"
-    .string "Half the damage it inflicts is\n"
-    .string "drained to heal your POKéMON.\p"
+CeladonCity_Gym_Text_ExplainTR99::
+    .string "TR99 contains SKETCH.\p"
+    .string "It lets you permanently copy\n"
+    .string "the move of another POKéMON.\p"
     .string "Wouldn't you agree that it's a\n"
     .string "wonderful move?$"
 
@@ -94,8 +94,8 @@ CeladonCity_Gym_Text_TamiaDefeat::
     .string "No!$"
 
 CeladonCity_Gym_Text_TamiaPostBattle::
-    .string "We only use GRASS-type POKéMON at\n"
-    .string "our GYM.\p"
+    .string "We sometimes use GRASS-type POKéMON\n"
+    .string "at our GYM.\p"
     .string "Why? We also use them for making\n"
     .string "flower arrangements!$"
 
