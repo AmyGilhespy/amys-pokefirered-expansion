@@ -5,9 +5,9 @@ VermilionCity_Gym_Text_LtSurgeIntro::
     .string "Not with your puny power!\p"
     .string "I tell you, kid, electric POKéMON\n"
     .string "saved me during the war!\p"
-    .string "They zapped my enemies into\n"
-    .string "paralysis!\p"
-    .string "The same as I'll do to you!{PLAY_BGM}{MUS_ENCOUNTER_GYM_LEADER}$"
+    .string "They say, ''make love, not war,''\n"
+    .string "but frankly…\p"
+    .string "…I prefer war!{PLAY_BGM}{MUS_ENCOUNTER_GYM_LEADER}$"
 
 VermilionCity_Gym_Text_LtSurgePostBattle::
     .string "A little word of advice, kid!\p"

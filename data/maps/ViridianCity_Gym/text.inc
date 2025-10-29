@@ -7,7 +7,11 @@ ViridianCity_Gym_Text_GiovanniIntro::
     .string "So be it.\l"
     .string "This time, I'm not holding back!\p"
     .string "Once more, you shall face\n"
-    .string "GIOVANNI, the greatest TRAINER!{PLAY_BGM}{MUS_ENCOUNTER_ROCKET}$"
+    .string "GIOVANNI, the greatest TRAINER!\p"
+    .string "But I must warn you, I cheat:\n"
+    .string "I cheated at school growing up.\p"
+    .string "Now I cheat at POKéMON. And\n"
+    .string "I ALWAYS cheat on my wife!{PLAY_BGM}{MUS_ENCOUNTER_ROCKET}$"
 
 ViridianCity_Gym_Text_GiovanniDefeat::
     .string "Ha!\n"
@@ -34,20 +38,18 @@ ViridianCity_Gym_Text_ExplainEarthBadgeTakeThis::
     .string "a POKéMON TRAINER.\p"
     .string "With it, you can challenge the\n"
     .string "POKéMON LEAGUE.\p"
-    .string "Also, take this TM.\p"
+    .string "Also, take this TR.\p"
     .string "Consider it a gift for your POKéMON\n"
     .string "LEAGUE challenge.$"
 
-ViridianCity_Gym_Text_ReceivedTM26FromGiovanni::
-    .string "{PLAYER} received TM26\n"
+ViridianCity_Gym_Text_ReceivedTR99FromGiovanni::
+    .string "{PLAYER} received TR99\n"
     .string "from GIOVANNI.$"
 
-ViridianCity_Gym_Text_ExplainTM26::
-    .string "TM26 contains EARTHQUAKE.\p"
-    .string "It is a powerful attack that causes\n"
-    .string "a massive tremor.\p"
-    .string "I made it when I ran the GYM here,\n"
-    .string "far too long ago… $"
+ViridianCity_Gym_Text_ExplainTR99::
+    .string "TR99 contains SKETCH…\p"
+    .string "…Wait, you seem to already know\n"
+    .string "what it does. Carry on!$"
 
 ViridianCity_Gym_Text_YouDoNotHaveSpace::
     .string "You do not have space for this!$"

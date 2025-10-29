@@ -2,10 +2,10 @@ CinnabarIsland_Gym_Text_BlaineIntro::
     .string "Hah!\p"
     .string "I am BLAINE, the red-hot LEADER\n"
     .string "of CINNABAR GYM!\p"
-    .string "My fiery POKéMON are all rough\n"
-    .string "and ready with intense heat!\p"
-    .string "They incinerate all challengers!\p"
-    .string "Hah!\n"
+    .string "Me and my POKéMON are all hot\n"
+    .string "and fired up with intense heat!\p"
+    .string "We incinerate all challengers!\p"
+    .string "Hah! I'm hot! My POKéMON are hot!\n"
     .string "You better have BURN HEAL!{PLAY_BGM}{MUS_ENCOUNTER_GYM_LEADER}$"
 
 CinnabarIsland_Gym_Text_BlaineDefeat::
@@ -14,7 +14,7 @@ CinnabarIsland_Gym_Text_BlaineDefeat::
     .string "You have earned the VOLCANOBADGE.$"
 
 CinnabarIsland_Gym_Text_FireBlastIsUltimateFireMove::
-    .string "FIRE BLAST is the ultimate fire\n"
+    .string "SKETCH is the ultimate\n"
     .string "technique.\p"
     .string "Don't waste it on WATER POKéMON.$"
 
@@ -24,12 +24,12 @@ CinnabarIsland_Gym_Text_ExplainVolcanoBadge::
     .string "SPECIAL stats of your POKéMON.\p"
     .string "Here, you can have this, too!$"
 
-CinnabarIsland_Gym_Text_ReceivedTM38FromBlaine::
-    .string "{PLAYER} received TM38\n"
+CinnabarIsland_Gym_Text_ReceivedTR99FromBlaine::
+    .string "{PLAYER} received TR99\n"
     .string "from BLAINE.$"
 
 CinnabarIsland_Gym_Text_BlainePostBattle::
-    .string "TM38 contains FIRE BLAST.\n"
+    .string "TR99 contains SKETCH.\n"
     .string "Teach it to FIRE-type POKéMON.\p"
     .string "VULPIX or CHARMELEON would be\n"
     .string "ideal for that move.$"

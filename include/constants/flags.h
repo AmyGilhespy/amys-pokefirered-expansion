@@ -612,7 +612,7 @@
 #define FLAG_DID_MS_NIDO_TRADE                           0x24B
 #define FLAG_0x24C                                       0x24C
 #define FLAG_DID_CH_DING_TRADE                           0x24D
-#define FLAG_GOT_TM38_FROM_BLAINE                        0x24E
+#define FLAG_GOT_TR99_FROM_BLAINE                        0x24E
 #define FLAG_OAK_SKIP_22_RIVAL_CHECK                     0x24F
 #define FLAG_GOT_MASTER_BALL_FROM_SILPH                  0x250
 #define FLAG_DID_NINA_TRADE                              0x251
@@ -686,7 +686,7 @@
 #define FLAG_GOT_TM20_FROM_THIRSTY_GIRL                  0x295
 #define FLAG_GOT_TM16_FROM_THIRSTY_GIRL                  0x296
 #define FLAG_GOT_TR99_FROM_MISTY                         0x297
-#define FLAG_GOT_TM26_FROM_GIOVANNI                      0x298
+#define FLAG_GOT_TR99_FROM_GIOVANNI                      0x298
 #define FLAG_0x299                                       0x299
 #define FLAG_GOT_TR99_FROM_SABRINA                       0x29A
 #define FLAG_GOT_FAME_CHECKER                            0x29B

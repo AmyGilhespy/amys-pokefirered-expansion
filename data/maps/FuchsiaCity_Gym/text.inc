@@ -2,14 +2,16 @@ FuchsiaCity_Gym_Text_KogaIntro::
     .string "KOGA: Fwahahaha!\p"
     .string "A mere child like you dares to\n"
     .string "challenge me?\p"
+    .string "Fwahahaha!\p"
     .string "The very idea makes me shiver\n"
     .string "with mirth!\p"
+    .string "Fwahahaha!\p"
     .string "Very well, I shall show you true\n"
     .string "terror as a ninja master.\p"
     .string "Poison brings steady doom.\n"
     .string "Sleep renders foes helpless.\p"
     .string "Despair to the creeping horror of\n"
-    .string "POISON-type POKéMON!{PLAY_BGM}{MUS_ENCOUNTER_GYM_LEADER}$"
+    .string "POISON-type POKéMON! Fwahahaha!{PLAY_BGM}{MUS_ENCOUNTER_GYM_LEADER}$"
 
 FuchsiaCity_Gym_Text_KogaDefeat::
     .string "Humph!\n"

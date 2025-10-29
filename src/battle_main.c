@@ -2050,6 +2050,7 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
             randomSpecies = originalSpecies = partyData[monIndex].species;
             givePreassignedMoves = TRUE;
             if (trainer->trainerClass == TRAINER_CLASS_LEADER && i < 3) { }
+            else if (trainer->trainerClass == TRAINER_CLASS_LEADER && trainer->trainerPic == TRAINER_PIC_LEADER_GIOVANNI) { } // Comparing the pic ID is way simpler than comparing the name.
             else if (trainer->trainerClass == TRAINER_CLASS_RIVAL_EARLY && i < 3) {
                 if (monsCount == 1)
                 {

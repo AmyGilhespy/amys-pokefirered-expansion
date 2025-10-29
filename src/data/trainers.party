@@ -6348,119 +6348,6 @@ Electrode
 Level: 34
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_BOSS_GIOVANNI ===
-Name: GIOVANNI
-Class: Boss
-Pic: Leader Giovanni
-Gender: Male
-Music: Aqua
-Double Battle: No
-AI: Check Bad Move
-
-Onix
-Level: 25
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-
-Rhyhorn
-Level: 24
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-
-Kangaskhan
-Level: 29
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-
-=== TRAINER_BOSS_GIOVANNI_2 ===
-Name: GIOVANNI
-Class: Boss
-Pic: Leader Giovanni
-Gender: Male
-Music: Aqua
-Double Battle: No
-AI: Check Bad Move
-
-Nidorino
-Level: 37
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-
-Kangaskhan
-Level: 35
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-
-Rhyhorn
-Level: 37
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-
-Nidoqueen
-Level: 41
-IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
-
-=== TRAINER_LEADER_GIOVANNI ===
-Name: GIOVANNI
-Class: Leader
-Pic: Leader Giovanni
-Gender: Male
-Music: Aqua
-Items: Hyper Potion / Hyper Potion / Full Heal
-Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
-
-Rhyhorn
-Level: 45
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Take Down
-- Rock Blast
-- Scary Face
-- Earthquake
-
-Dugtrio
-Level: 42
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Slash
-- Sand Tomb
-- Mud Slap
-- Earthquake
-
-Nidoqueen
-Level: 44
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Body Slam
-- Double Kick
-- Poison Sting
-- Earthquake
-
-Nidoking
-Level: 45
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Thrash
-- Double Kick
-- Poison Sting
-- Earthquake
-
-Rhyhorn
-Level: 50
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Take Down
-- Rock Blast
-- Scary Face
-- Earthquake
-
-=== TRAINER_TEAM_ROCKET_GRUNT ===
-Name: GRUNT
-Class: Team Rocket
-Pic: Rocket Grunt M
-Gender: Male
-Music: Aqua
-Double Battle: No
-AI: Check Bad Move
-
-Rattata
-Level: 13
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Zubat
-Level: 13
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
 === TRAINER_TEAM_ROCKET_GRUNT_2 ===
 Name: GRUNT
 Class: Team Rocket
@@ -8534,7 +8421,7 @@ Gender: Male
 Music: Male
 Items: Super Potion / Full Heal
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability / AI_FLAG_HP_AWARE / AI_FLAG_WILL_SUICIDE
+AI: Check Bad Move / Try To Faint / Check Viability / HP Aware / Will Suicide
 
 Electrode @ Light Clay
 Level: 21
@@ -8717,7 +8604,7 @@ Gender: Female
 Music: Female
 Items: Hyper Potion / Hyper Potion / Full Heal
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability / Try To 2HKO / HP Aware / Smart Switching
+AI: Check Bad Move / Try To Faint / Check Viability / Try To 2HKO / HP Aware / Smart Switching / Omniscient
 
 Medicham @ Choice Band
 Level: 37
@@ -8778,55 +8665,192 @@ Gender: Male
 Music: Male
 Items: Hyper Potion / Hyper Potion / Full Heal
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / HP Aware / Will Suicide / Sequence Switching
+
+Torkoal @ Heat Rock
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 0 Def / 0 SpA / 252 SpD / 0 Spe
+Ability: Drought
+Nature: Adamant
+- Stealth Rock
+- Explosion
+
+Houndoom @ Houndoominite
+Level: 42
+IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 0 HP / 0 Atk / 0 Def / 252 SpA / 4 SpD / 252 Spe
+Ability: Flash Fire
+Nature: Timid
+- Flamethrower
+- Dark Pulse
+- Solar Beam
+- Sludge Bomb
+
+Arcanine @ Firium Z
+Level: 47
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 0 HP / 252 Atk / 4 Def / 0 SpA / 0 SpD / 252 Spe
+Ability: Intimidate
+Nature: Jolly
+- Flare Blitz
+- Wild Charge
+- Extreme Speed
+- Morning Sun
 
 Growlithe
 Level: 42
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Bite
-- Roar
-- Take Down
-- Fire Blast
 
 Rapidash
 Level: 42
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Stomp
-- Bounce
-- Fire Spin
-- Fire Blast
 
 Arcanine
 Level: 47
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Bite
-- Roar
-- Take Down
-- Fire Blast
 
-Growlithe
+=== TRAINER_BOSS_GIOVANNI ===
+Name: GIOVANNI
+Class: Boss
+Pic: Leader Giovanni
+Gender: Male
+Music: Aqua
+Double Battle: No
+AI: Check Bad Move
+
+Onix
+Level: 25
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+
+Rhyhorn
+Level: 24
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+
+Kangaskhan
+Level: 29
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+
+=== TRAINER_BOSS_GIOVANNI_2 ===
+Name: GIOVANNI
+Class: Boss
+Pic: Leader Giovanni
+Gender: Male
+Music: Aqua
+Double Battle: No
+AI: Check Bad Move
+
+Nidorino
+Level: 37
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+
+Kangaskhan
+Level: 35
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+
+Rhyhorn
+Level: 37
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+
+Nidoqueen
+Level: 41
+IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+
+=== TRAINER_LEADER_GIOVANNI ===
+Name: GIOVANNI
+Class: Leader
+Pic: Leader Giovanni
+Gender: Male
+Music: Aqua
+Items: Hyper Potion / Hyper Potion / Full Heal
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Smart Switching / Ace Pokemon / Omniscient
+
+Dugtrio @ Focus Sash
 Level: 42
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Bite
-- Roar
-- Take Down
-- Fire Blast
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 0 HP / 252 Atk / 0 Def / 0 SpA / 4 SpD / 252 Spe
+Ability: No Guard
+Nature: Jolly
+- Fissure
+- Precipice Blades
+- Stone Edge
+- Dynamic Punch
 
-Rapidash
-Level: 42
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Stomp
-- Bounce
-- Fire Spin
-- Fire Blast
+Rhyperior @ Choice Band
+Level: 45
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 52 HP / 252 Atk / 0 Def / 0 SpA / 0 SpD / 204 Spe
+Ability: Solid Rock
+Nature: Adamant
+- Earthquake
+- Stone Edge
+- Megahorn
+- Ice Punch
 
-Arcanine
-Level: 47
+Nidoqueen @ Assault Vest
+Level: 44
+IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 0 HP / 0 Atk / 0 Def / 252 SpA / 4 SpD / 252 Spe
+Ability: Sheer Force
+Nature: Timid
+- Sludge Wave
+- Earth Power
+- Ice Beam
+- Thunderbolt
+
+Nidoking @ Assault Vest
+Level: 45
+IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 0 HP / 0 Atk / 4 Def / 252 SpA / 0 SpD / 252 Spe
+Ability: Sheer Force
+Nature: Timid
+- Sludge Wave
+- Earth Power
+- Ice Beam
+- Flamethrower
+
+Landorus-Therian @ Flyinium Z
+Level: 45
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 0 Atk / 112 Def / 0 SpA / 0 SpD / 114 Spe
+Ability: Intimidate
+Nature: Naive
+- Stealth Rock
+- Brave Bird
+- Earthquake
+- U-turn
+
+Swampert @ Swampertite
+Level: 50
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 244 Atk / 0 Def / 0 SpA / 8 SpD / 252 Spe
+Ability: Drizzle
+Nature: Jolly
+- Surging Strikes
+- Earthquake
+- Stone Edge
+- Ice Punch
+
+=== TRAINER_TEAM_ROCKET_GRUNT ===
+Name: GRUNT
+Class: Team Rocket
+Pic: Rocket Grunt M
+Gender: Male
+Music: Aqua
+Double Battle: No
+AI: Check Bad Move
+
+Rattata
+Level: 13
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Bite
-- Roar
-- Take Down
-- Fire Blast
+
+Zubat
+Level: 13
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GENTLEMAN_THOMAS ===
 Name: THOMAS

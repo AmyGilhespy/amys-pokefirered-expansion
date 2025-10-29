@@ -824,11 +824,6 @@ static void Task_ControlsGuide_LoadPage(u8 taskId)
             AddTextPrinterParameterized4(sOakSpeechResources->windowIds[currWindow], FONT_NORMAL, 0, 0, 1, 1, sTextColor_White, 0, sControlsGuide_Pages2And3_Strings[currWindow + page2Or3 * CONTROLS_GUIDE_STRINGS_PER_PAGE]);
             CopyWindowToVram(sOakSpeechResources->windowIds[currWindow], COPYWIN_FULL);
         }
-
-        if (sOakSpeechResources->currentPage == CONTROLS_GUIDE_PAGE_2)
-            ;//CopyToBgTilemapBufferRect(1, sControlsGuide_Tilemap_Page2, 1, 3, 5, 16);
-        else // CONTROLS_GUIDE_PAGE_3
-            ;//CopyToBgTilemapBufferRect(1, sControlsGuide_Tilemap_Page3, 1, 3, 5, 16);
         CopyBgTilemapBufferToVram(1);
     }
     BeginNormalPaletteFade(PALETTES_OBJECTS | 0xDFFF, -1, 16, 0, GetTextWindowPalette(2)[15]);
