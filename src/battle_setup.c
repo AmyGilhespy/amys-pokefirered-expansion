@@ -53,6 +53,7 @@
 #include "wild_encounter.h"
 #include "help_system.h"
 #include "quest_log.h"
+#include "pokemon.h"
 
 enum {
     TRANSITION_TYPE_NORMAL,
@@ -134,7 +135,14 @@ static void Task_BattleStart(u8 taskId)
             HelpSystem_Enable();
             // PrepareForFollowerNPCBattle();
             CleanupOverworldWindowsAndTilemaps();
-            SetMainCallback2(CB2_InitBattle);
+            if (PlayerHasLivingMon())
+            {
+                SetMainCallback2(CB2_InitBattle);
+            }
+            else
+            {
+                SetMainCallback2(CB2_WhiteOut);
+            }
             RestartWildEncounterImmunitySteps();
             ClearPoisonStepCounter();
             DestroyTask(taskId);
@@ -171,7 +179,14 @@ static void Task_BattleStart_Debug(u8 taskId)
         {
             HelpSystem_Enable();
             CleanupOverworldWindowsAndTilemaps();
-            SetMainCallback2(CB2_InitBattle);
+            if (PlayerHasLivingMon())
+            {
+                SetMainCallback2(CB2_InitBattle);
+            }
+            else
+            {
+                SetMainCallback2(CB2_WhiteOut);
+            }
             RestartWildEncounterImmunitySteps();
             ClearPoisonStepCounter();
             DestroyTask(taskId);

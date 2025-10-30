@@ -732,7 +732,14 @@ static void Task_DoTrainerTowerBattle(u8 taskId)
     {
         gMain.savedCallback = CB2_EndTrainerTowerBattle;
         CleanupOverworldWindowsAndTilemaps();
-        SetMainCallback2(CB2_InitBattle);
+        if (PlayerHasLivingMon())
+        {
+            SetMainCallback2(CB2_InitBattle);
+        }
+        else
+        {
+            SetMainCallback2(CB2_WhiteOut);
+        }
         DestroyTask(taskId);
     }
 }

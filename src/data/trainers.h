@@ -40195,7 +40195,7 @@ F_TRAINER_FEMALE |
         },
     },
 #line 15616
-    [DIFFICULTY_NORMAL][TRAINER_MOM] =
+    [DIFFICULTY_NORMAL][TRAINER_CHAMPION_MOM] =
     {
 #line 15617
         .trainerName = _("MOM"),
@@ -40216,7 +40216,7 @@ F_TRAINER_FEMALE |
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_FORCE_SETUP_FIRST_TURN | AI_FLAG_TRY_TO_2HKO | AI_FLAG_HP_AWARE | AI_FLAG_PREFER_STATUS_MOVES | AI_FLAG_STALL | AI_FLAG_SMART_SWITCHING | AI_FLAG_ACE_POKEMON | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE,
 #line 0
         .trainerBackPic = TRAINER_PIC_RS_AROMA_LADY,
-        .partySize = 2,
+        .partySize = 3,
         .party = (const struct TrainerMon[])
         {
             {
@@ -40263,6 +40263,368 @@ F_TRAINER_FEMALE |
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 15643
+                MOVE_DRAGON_ASCENT,
+                MOVE_DRAGON_DANCE,
+                MOVE_EXTREME_SPEED,
+                MOVE_V_CREATE,
+            },
+            },
+            {
+#line 15648
+            .species = SPECIES_PIKACHU,
+            .gender = TRAINER_MON_RANDOM_GENDER,
+#line 15648
+            .heldItem = ITEM_LIGHT_BALL,
+#line 15651
+            .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 0, 4),
+#line 15650
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+#line 15652
+            .ability = ABILITY_GALVANIZE,
+#line 15649
+            .lvl = 100,
+#line 15653
+            .nature = NATURE_ADAMANT,
+#line 15654
+            .dynamaxLevel = 10,
+#line 1
+            .gigantamaxFactor = TRUE,
+            .shouldUseDynamax = TRUE,
+            .moves = {
+#line 15656
+                MOVE_VOLT_TACKLE,
+                MOVE_EXTREME_SPEED,
+                MOVE_KNOCK_OFF,
+                MOVE_PLAY_ROUGH,
+            },
+            },
+        },
+    },
+#line 15661
+    [DIFFICULTY_NORMAL][TRAINER_CHAMPION_REMATCH_MOM] =
+    {
+#line 15662
+        .trainerName = _("MOM"),
+#line 15663
+        .trainerClass = TRAINER_CLASS_CHAMPION,
+#line 15664
+        .trainerPic = TRAINER_PIC_RS_AROMA_LADY,
+        .encounterMusic_gender =
+#line 15665
+F_TRAINER_FEMALE | 
+#line 15666
+            TRAINER_ENCOUNTER_MUSIC_MAGMA,
+#line 15667
+        .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
+#line 15668
+        .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
+#line 15669
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_FORCE_SETUP_FIRST_TURN | AI_FLAG_TRY_TO_2HKO | AI_FLAG_HP_AWARE | AI_FLAG_PREFER_STATUS_MOVES | AI_FLAG_STALL | AI_FLAG_SMART_SWITCHING | AI_FLAG_ACE_POKEMON | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_RS_AROMA_LADY,
+        .partySize = 3,
+        .party = (const struct TrainerMon[])
+        {
+            {
+#line 15671
+            .species = SPECIES_NECROZMA_DUSK_MANE,
+            .gender = TRAINER_MON_RANDOM_GENDER,
+#line 15671
+            .heldItem = ITEM_ULTRANECROZIUM_Z,
+#line 15674
+            .ev = TRAINER_PARTY_EVS(0, 0, 32, 252, 224, 0),
+#line 15673
+            .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
+#line 15675
+            .ability = ABILITY_PRISM_ARMOR,
+#line 15672
+            .lvl = 100,
+#line 15676
+            .nature = NATURE_JOLLY,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+            .moves = {
+#line 15677
+                MOVE_STEALTH_ROCK,
+                MOVE_PHOTON_GEYSER,
+                MOVE_DRAGON_PULSE,
+                MOVE_HEAT_WAVE,
+            },
+            },
+            {
+#line 15682
+            .species = SPECIES_RAYQUAZA,
+            .gender = TRAINER_MON_RANDOM_GENDER,
+#line 15682
+            .heldItem = ITEM_LIFE_ORB,
+#line 15685
+            .ev = TRAINER_PARTY_EVS(0, 252, 4, 252, 0, 0),
+#line 15684
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+#line 15686
+            .ability = ABILITY_AIR_LOCK,
+#line 15683
+            .lvl = 100,
+#line 15687
+            .nature = NATURE_ADAMANT,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+            .moves = {
+#line 15688
+                MOVE_DRAGON_ASCENT,
+                MOVE_DRAGON_DANCE,
+                MOVE_EXTREME_SPEED,
+                MOVE_V_CREATE,
+            },
+            },
+            {
+#line 15693
+            .species = SPECIES_PIKACHU,
+            .gender = TRAINER_MON_RANDOM_GENDER,
+#line 15693
+            .heldItem = ITEM_LIGHT_BALL,
+#line 15696
+            .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 0, 4),
+#line 15695
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+#line 15697
+            .ability = ABILITY_GALVANIZE,
+#line 15694
+            .lvl = 100,
+#line 15698
+            .nature = NATURE_ADAMANT,
+#line 15699
+            .dynamaxLevel = 10,
+#line 1
+            .gigantamaxFactor = TRUE,
+            .shouldUseDynamax = TRUE,
+            .moves = {
+#line 15701
+                MOVE_VOLT_TACKLE,
+                MOVE_EXTREME_SPEED,
+                MOVE_KNOCK_OFF,
+                MOVE_PLAY_ROUGH,
+            },
+            },
+        },
+    },
+#line 15706
+    [DIFFICULTY_NORMAL][TRAINER_CHAMPION_OAK] =
+    {
+#line 15707
+        .trainerName = _("PROF. OAK"),
+#line 15708
+        .trainerClass = TRAINER_CLASS_PKMN_PROF,
+#line 15709
+        .trainerPic = TRAINER_PIC_PROFESSOR_OAK,
+        .encounterMusic_gender =
+#line 15711
+            TRAINER_ENCOUNTER_MUSIC_MAGMA,
+#line 15712
+        .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
+#line 15713
+        .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
+#line 15714
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_FORCE_SETUP_FIRST_TURN | AI_FLAG_TRY_TO_2HKO | AI_FLAG_HP_AWARE | AI_FLAG_PREFER_STATUS_MOVES | AI_FLAG_STALL | AI_FLAG_SMART_SWITCHING | AI_FLAG_ACE_POKEMON | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_PROFESSOR_OAK,
+        .partySize = 2,
+        .party = (const struct TrainerMon[])
+        {
+            {
+#line 15716
+            .species = SPECIES_NECROZMA_DUSK_MANE,
+            .gender = TRAINER_MON_RANDOM_GENDER,
+#line 15716
+            .heldItem = ITEM_ULTRANECROZIUM_Z,
+#line 15719
+            .ev = TRAINER_PARTY_EVS(0, 0, 32, 252, 224, 0),
+#line 15718
+            .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
+#line 15720
+            .ability = ABILITY_PRISM_ARMOR,
+#line 15717
+            .lvl = 100,
+#line 15721
+            .nature = NATURE_JOLLY,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+            .moves = {
+#line 15722
+                MOVE_STEALTH_ROCK,
+                MOVE_PHOTON_GEYSER,
+                MOVE_DRAGON_PULSE,
+                MOVE_HEAT_WAVE,
+            },
+            },
+            {
+#line 15727
+            .species = SPECIES_RAYQUAZA,
+            .gender = TRAINER_MON_RANDOM_GENDER,
+#line 15727
+            .heldItem = ITEM_LIFE_ORB,
+#line 15730
+            .ev = TRAINER_PARTY_EVS(0, 252, 4, 252, 0, 0),
+#line 15729
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+#line 15731
+            .ability = ABILITY_AIR_LOCK,
+#line 15728
+            .lvl = 100,
+#line 15732
+            .nature = NATURE_ADAMANT,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+            .moves = {
+#line 15733
+                MOVE_DRAGON_ASCENT,
+                MOVE_DRAGON_DANCE,
+                MOVE_EXTREME_SPEED,
+                MOVE_V_CREATE,
+            },
+            },
+        },
+    },
+#line 15738
+    [DIFFICULTY_NORMAL][TRAINER_CHAMPION_REMATCH_OAK] =
+    {
+#line 15739
+        .trainerName = _("PROF. OAK"),
+#line 15740
+        .trainerClass = TRAINER_CLASS_PKMN_PROF,
+#line 15741
+        .trainerPic = TRAINER_PIC_PROFESSOR_OAK,
+        .encounterMusic_gender =
+#line 15743
+            TRAINER_ENCOUNTER_MUSIC_MAGMA,
+#line 15744
+        .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
+#line 15745
+        .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
+#line 15746
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_FORCE_SETUP_FIRST_TURN | AI_FLAG_TRY_TO_2HKO | AI_FLAG_HP_AWARE | AI_FLAG_PREFER_STATUS_MOVES | AI_FLAG_STALL | AI_FLAG_SMART_SWITCHING | AI_FLAG_ACE_POKEMON | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_PROFESSOR_OAK,
+        .partySize = 2,
+        .party = (const struct TrainerMon[])
+        {
+            {
+#line 15748
+            .species = SPECIES_NECROZMA_DUSK_MANE,
+            .gender = TRAINER_MON_RANDOM_GENDER,
+#line 15748
+            .heldItem = ITEM_ULTRANECROZIUM_Z,
+#line 15751
+            .ev = TRAINER_PARTY_EVS(0, 0, 32, 252, 224, 0),
+#line 15750
+            .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
+#line 15752
+            .ability = ABILITY_PRISM_ARMOR,
+#line 15749
+            .lvl = 100,
+#line 15753
+            .nature = NATURE_JOLLY,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+            .moves = {
+#line 15754
+                MOVE_STEALTH_ROCK,
+                MOVE_PHOTON_GEYSER,
+                MOVE_DRAGON_PULSE,
+                MOVE_HEAT_WAVE,
+            },
+            },
+            {
+#line 15759
+            .species = SPECIES_RAYQUAZA,
+            .gender = TRAINER_MON_RANDOM_GENDER,
+#line 15759
+            .heldItem = ITEM_LIFE_ORB,
+#line 15762
+            .ev = TRAINER_PARTY_EVS(0, 252, 4, 252, 0, 0),
+#line 15761
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+#line 15763
+            .ability = ABILITY_AIR_LOCK,
+#line 15760
+            .lvl = 100,
+#line 15764
+            .nature = NATURE_ADAMANT,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+            .moves = {
+#line 15765
+                MOVE_DRAGON_ASCENT,
+                MOVE_DRAGON_DANCE,
+                MOVE_EXTREME_SPEED,
+                MOVE_V_CREATE,
+            },
+            },
+        },
+    },
+#line 15770
+    [DIFFICULTY_NORMAL][TRAINER_MOM] =
+    {
+#line 15771
+        .trainerName = _("MOM"),
+#line 15772
+        .trainerClass = TRAINER_CLASS_CHAMPION,
+#line 15773
+        .trainerPic = TRAINER_PIC_RS_AROMA_LADY,
+        .encounterMusic_gender =
+#line 15774
+F_TRAINER_FEMALE | 
+#line 15775
+            TRAINER_ENCOUNTER_MUSIC_MAGMA,
+#line 15776
+        .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
+#line 15777
+        .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
+#line 15778
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_FORCE_SETUP_FIRST_TURN | AI_FLAG_TRY_TO_2HKO | AI_FLAG_HP_AWARE | AI_FLAG_PREFER_STATUS_MOVES | AI_FLAG_STALL | AI_FLAG_SMART_SWITCHING | AI_FLAG_ACE_POKEMON | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE,
+#line 0
+        .trainerBackPic = TRAINER_PIC_RS_AROMA_LADY,
+        .partySize = 2,
+        .party = (const struct TrainerMon[])
+        {
+            {
+#line 15780
+            .species = SPECIES_NECROZMA_DUSK_MANE,
+            .gender = TRAINER_MON_RANDOM_GENDER,
+#line 15780
+            .heldItem = ITEM_ULTRANECROZIUM_Z,
+#line 15783
+            .ev = TRAINER_PARTY_EVS(0, 0, 32, 252, 224, 0),
+#line 15782
+            .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
+#line 15784
+            .ability = ABILITY_PRISM_ARMOR,
+#line 15781
+            .lvl = 100,
+#line 15785
+            .nature = NATURE_JOLLY,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+            .moves = {
+#line 15786
+                MOVE_STEALTH_ROCK,
+                MOVE_PHOTON_GEYSER,
+                MOVE_DRAGON_PULSE,
+                MOVE_HEAT_WAVE,
+            },
+            },
+            {
+#line 15791
+            .species = SPECIES_RAYQUAZA,
+            .gender = TRAINER_MON_RANDOM_GENDER,
+#line 15791
+            .heldItem = ITEM_LIFE_ORB,
+#line 15794
+            .ev = TRAINER_PARTY_EVS(0, 252, 4, 252, 0, 0),
+#line 15793
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+#line 15795
+            .ability = ABILITY_AIR_LOCK,
+#line 15792
+            .lvl = 100,
+#line 15796
+            .nature = NATURE_ADAMANT,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+            .moves = {
+#line 15797
                 MOVE_DRAGON_ASCENT,
                 MOVE_DRAGON_DANCE,
                 MOVE_EXTREME_SPEED,

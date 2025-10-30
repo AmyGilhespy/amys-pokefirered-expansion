@@ -1198,7 +1198,14 @@ static void TeachyTvPreBattleAnimAndSetBattleCallback(u8 taskId)
     case 1:
         if (IsBattleTransitionDone())
         {
-            SetMainCallback2(CB2_InitBattle);
+            if (PlayerHasLivingMon())
+            {
+                SetMainCallback2(CB2_InitBattle);
+            }
+            else
+            {
+                SetMainCallback2(CB2_WhiteOut);
+            }
             DestroyTask(taskId);
         }
         break;

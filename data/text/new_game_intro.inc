@@ -136,10 +136,7 @@ gControlsGuide_Text_NuzlockeInfo1::
     .string "   will stop spawning there forever.$"
 
 gControlsGuide_Text_NuzlockeInfo2::
-    .string "2. When a POKéMON faints, it dies.\n"
-    .string "   This is not enforced but it is\n"
-    .string "   intended that you stop using any\n"
-    .string "   POKéMON forever once it faints.$"
+    .string "2. When a POKéMON faints, it dies.$"
 
 gControlsGuide_Text_NuzlockeInfo3::
     .string "3. Some additional changes will\n"
@@ -149,7 +146,7 @@ gControlsGuide_Text_NuzlockeInfo3::
 gControlsGuide_Text_NuzlockeInfo4::
     .string "4. Feel free to place additional\n"
     .string "   restrictions on yourself for\n"
-    .string "   added challenge.$"
+    .string "   added challenge!$"
 
 gControlsGuide_Text_Intro::
     .string "The various buttons will be explained in\n"

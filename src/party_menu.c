@@ -5129,14 +5129,19 @@ void ItemUseCB_Medicine(u8 taskId, TaskFunc func)
     }
     else
     {
+        bool8 dead = FALSE;
         canHeal = IsHPRecoveryItem(item);
         if (canHeal == TRUE)
         {
             hp = GetMonData(mon, MON_DATA_HP);
             if (hp == GetMonData(mon, MON_DATA_MAX_HP))
                 canHeal = FALSE;
+            if (hp == 0 && gSaveBlock2Ptr->customData.gameType > 0)
+            {
+                dead = TRUE;
+            }
         }
-        cannotUse = ExecuteTableBasedItemEffect(mon, item, gPartyMenu.slotId, 0);
+        cannotUse = dead || ExecuteTableBasedItemEffect(mon, item, gPartyMenu.slotId, 0);
     }
 
     if (cannotUse != FALSE)

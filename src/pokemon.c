@@ -7251,9 +7251,29 @@ void UpdateMonPersonality(struct BoxPokemon *boxMon, u32 personality)
     SetBoxMonData(boxMon, MON_DATA_TERA_TYPE, &teraType);
 }
 
+bool8 PlayerHasLivingMon(void)
+{
+    for (u8 i = 0; i < PARTY_SIZE; i++)
+    {
+        struct Pokemon *mon = &gPlayerParty[i];
+        if (GetMonData(mon, MON_DATA_SPECIES) != SPECIES_NONE
+                && GetMonData(mon, MON_DATA_HP) > 0)
+        {
+            return TRUE;
+        }
+    }
+    return FALSE;
+}
+
 void HealPokemon(struct Pokemon *mon)
 {
     u32 data;
+
+    data = GetMonData(mon, MON_DATA_HP);
+    if (data < 1 && gSaveBlock2Ptr->customData.gameType > 0)
+    {
+        return;
+    }
 
     data = GetMonData(mon, MON_DATA_MAX_HP);
     SetMonData(mon, MON_DATA_HP, &data);
