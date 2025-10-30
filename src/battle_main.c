@@ -2055,7 +2055,7 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
             else if (trainer->trainerClass == TRAINER_CLASS_LEADER && trainer->trainerPic == TRAINER_PIC_LEADER_GIOVANNI) { } // Comparing the pic ID is way simpler than comparing the name.
             else if (trainer->trainerClass == TRAINER_CLASS_RIVAL_EARLY && monsCount == 1) // Oak's Lab
             {
-                givePreassignedMoves = FALSE;
+                givePreassignedMoves = gSaveBlock2Ptr->customData.gameType == 0 ? FALSE : TRUE;
                 randomSpecies = GetStarterSpeciesRival();
                 if (randomSpecies == SPECIES_NONE)
                 {
