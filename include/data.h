@@ -74,7 +74,7 @@ struct TrainerMon
     u8 teraType:5;
     bool8 gigantamaxFactor:1;
     u8 shouldUseDynamax:1;
-    u8 padding1:1;
+    u8 eager:1;
     u8 dynamaxLevel:4;
     u8 padding2:4;
     u32 tags;

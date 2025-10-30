@@ -86,6 +86,9 @@ struct Pokemon
     struct String tera_type;
     int tera_type_line;
 
+    bool eager;
+    bool eager_line;
+
     struct String moves[MAX_MON_MOVES];
     int moves_n;
     int move1_line;
@@ -1484,6 +1487,14 @@ static bool parse_trainer(struct Parser *p, const struct Parsed *parsed, struct 
                 pokemon->tera_type_line = value.location.line;
                 pokemon->tera_type = token_string(&value);
             }
+            else if (is_literal_token(&key, "Eager"))
+            {
+                if (pokemon->eager_line)
+                    any_error = !set_show_parse_error(p, key.location, "duplicate 'Eager'");
+                pokemon->eager_line = value.location.line;
+                if (!token_bool(p, &value, &pokemon->eager))
+                    any_error = !show_parse_error(p);
+            }
             else if (is_literal_token(&key, "Tags"))
             {
                 if (pokemon->tags_line)
@@ -2064,6 +2075,14 @@ static void fprint_trainers(const char *output_path, FILE *f, struct Parsed *par
                 fprintf(f, "#line %d\n", pokemon->tera_type_line);
                 fprintf(f, "            .teraType = ");
                 fprint_constant(f, "TYPE", pokemon->tera_type);
+                fprintf(f, ",\n");
+            }
+
+            if (pokemon->eager_line)
+            {
+                fprintf(f, "#line %d\n", pokemon->eager_line);
+                fprintf(f, "            .eager = ");
+                fprint_bool(f, pokemon->eager);
                 fprintf(f, ",\n");
             }
 

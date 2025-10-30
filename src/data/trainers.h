@@ -40200,18 +40200,18 @@ F_TRAINER_FEMALE |
 #line 15617
         .trainerName = _("MOM"),
 #line 15618
-        .trainerClass = TRAINER_CLASS_LEADER,
+        .trainerClass = TRAINER_CLASS_CHAMPION,
 #line 15619
         .trainerPic = TRAINER_PIC_RS_AROMA_LADY,
         .encounterMusic_gender =
 #line 15620
 F_TRAINER_FEMALE | 
 #line 15621
-            TRAINER_ENCOUNTER_MUSIC_AQUA,
+            TRAINER_ENCOUNTER_MUSIC_MAGMA,
 #line 15622
-        .items = { ITEM_HYPER_POTION, ITEM_HYPER_POTION, ITEM_FULL_HEAL },
+        .items = { ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE },
 #line 15623
-        .battleType = TRAINER_BATTLE_TYPE_SINGLES,
+        .battleType = TRAINER_BATTLE_TYPE_DOUBLES,
 #line 15624
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_FORCE_SETUP_FIRST_TURN | AI_FLAG_TRY_TO_2HKO | AI_FLAG_HP_AWARE | AI_FLAG_PREFER_STATUS_MOVES | AI_FLAG_STALL | AI_FLAG_SMART_SWITCHING | AI_FLAG_ACE_POKEMON | AI_FLAG_OMNISCIENT | AI_FLAG_PREFER_HIGHEST_DAMAGE_MOVE,
 #line 0
@@ -40221,52 +40221,52 @@ F_TRAINER_FEMALE |
         {
             {
 #line 15626
-            .species = SPECIES_DUGTRIO,
+            .species = SPECIES_NECROZMA_DUSK_MANE,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 15626
-            .heldItem = ITEM_FOCUS_SASH,
+            .heldItem = ITEM_ULTRANECROZIUM_Z,
 #line 15629
-            .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 0, 4),
+            .ev = TRAINER_PARTY_EVS(0, 0, 32, 252, 224, 0),
 #line 15628
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
 #line 15630
-            .ability = ABILITY_NO_GUARD,
+            .ability = ABILITY_PRISM_ARMOR,
 #line 15627
-            .lvl = 42,
+            .lvl = 100,
 #line 15631
             .nature = NATURE_JOLLY,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 15632
-                MOVE_FISSURE,
-                MOVE_PRECIPICE_BLADES,
-                MOVE_STONE_EDGE,
-                MOVE_DYNAMIC_PUNCH,
+                MOVE_STEALTH_ROCK,
+                MOVE_PHOTON_GEYSER,
+                MOVE_DRAGON_PULSE,
+                MOVE_HEAT_WAVE,
             },
             },
             {
 #line 15637
-            .species = SPECIES_SWAMPERT,
+            .species = SPECIES_RAYQUAZA,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 15637
-            .heldItem = ITEM_SWAMPERTITE,
+            .heldItem = ITEM_LIFE_ORB,
 #line 15640
-            .ev = TRAINER_PARTY_EVS(4, 244, 0, 252, 0, 8),
+            .ev = TRAINER_PARTY_EVS(0, 252, 4, 252, 0, 0),
 #line 15639
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
 #line 15641
-            .ability = ABILITY_DRIZZLE,
+            .ability = ABILITY_AIR_LOCK,
 #line 15638
-            .lvl = 50,
+            .lvl = 100,
 #line 15642
-            .nature = NATURE_JOLLY,
+            .nature = NATURE_ADAMANT,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 15643
-                MOVE_SURGING_STRIKES,
-                MOVE_EARTHQUAKE,
-                MOVE_STONE_EDGE,
-                MOVE_ICE_PUNCH,
+                MOVE_DRAGON_ASCENT,
+                MOVE_DRAGON_DANCE,
+                MOVE_EXTREME_SPEED,
+                MOVE_V_CREATE,
             },
             },
         },

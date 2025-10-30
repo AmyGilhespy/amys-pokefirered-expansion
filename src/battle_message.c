@@ -2070,7 +2070,7 @@ static const u8 *BattleStringGetOpponentNameByTrainerId(u16 trainerId, u8 *text,
         u32 trainerClass = GetTrainerClassFromId(TRAINER_BATTLE_PARAM.opponentA);
         if (trainerClass == TRAINER_CLASS_RIVAL_EARLY
             || trainerClass == TRAINER_CLASS_RIVAL_LATE
-            || trainerClass == TRAINER_CLASS_CHAMPION)
+            || (trainerClass == TRAINER_CLASS_CHAMPION && GetTrainerPicFromId(TRAINER_BATTLE_PARAM.opponentA) == TRAINER_PIC_CHAMPION_RIVAL))
             toCpy = GetExpandedPlaceholder(PLACEHOLDER_ID_RIVAL);
         else
             toCpy = GetTrainerNameFromId(trainerId);

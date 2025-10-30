@@ -2162,6 +2162,11 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
                 u32 data = partyData[monIndex].teraType;
                 SetMonData(&party[i], MON_DATA_TERA_TYPE, &data);
             }
+            if (partyData[monIndex].eager)
+            {
+                u32 data = partyData[monIndex].eager;
+                SetMonData(&party[i], MON_DATA_EAGER_FLAG, &data);
+            }
             CalculateMonStats(&party[i]);
 
             if (B_TRAINER_CLASS_POKE_BALLS >= GEN_7 && ball == -1)

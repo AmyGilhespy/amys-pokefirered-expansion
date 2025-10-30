@@ -2963,6 +2963,9 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
                 retVal = (u16) substruct0->customAbilityHi6 << 3 | (u16) substruct0->customAbilityLo3;
             }
             break;
+        case MON_DATA_EAGER_FLAG:
+            retVal = GetSubstruct3(boxMon)->eager;
+            break;
         default:
             break;
         }
@@ -3385,6 +3388,9 @@ void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const void *dataArg)
             substruct0->customAbilityLo3 = (u16) var & 7;
             break;
         }
+        case MON_DATA_EAGER_FLAG:
+            SET8(GetSubstruct3(boxMon)->eager);
+            break;
         default:
             break;
         }
@@ -3908,6 +3914,7 @@ void PokemonToBattleMon(struct Pokemon *src, struct BattlePokemon *dst)
     dst->types[2] = TYPE_MYSTERY;
     dst->isShiny = IsMonShiny(src);
     dst->ability = dst->originalAbility = GetMonAbility(src);
+    dst->eager = GetMonData(src, MON_DATA_EAGER_FLAG, NULL);
     GetMonData(src, MON_DATA_NICKNAME, nickname);
     StringCopy_Nickname(dst->nickname, nickname);
     GetMonData(src, MON_DATA_OT_NAME, dst->otName);
@@ -6087,7 +6094,7 @@ u16 GetBattleBGM(void)
         switch (trainerClass)
         {
         case TRAINER_CLASS_CHAMPION:
-            return MUS_VS_CHAMPION;
+            return MUS_HG_VS_CHAMPION;
         case TRAINER_CLASS_LEADER:
         case TRAINER_CLASS_ELITE_FOUR:
             return MUS_VS_GYM_LEADER;

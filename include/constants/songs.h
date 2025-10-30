@@ -355,7 +355,10 @@
 #define MUS_TRAINER_TOWER         344 // MUS_T_TOWER
 #define MUS_SLOW_PALLET           345 // MUS_SLOWMASARA
 #define MUS_TEACHY_TV_MENU        346 // MUS_TVNOIZE
-#define END_MUS                   MUS_TEACHY_TV_MENU
+#define MUS_HG_VS_CHAMPION        347
+
+
+#define END_MUS                   MUS_HG_VS_CHAMPION
 
 #define MUS_NONE                    0xFFFF
 
