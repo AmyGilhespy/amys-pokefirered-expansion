@@ -2,10 +2,13 @@ CeruleanCity_Text_RivalIntro::
     .string "{RIVAL}: Yo! {PLAYER}!\p"
     .string "You're still struggling along back\n"
     .string "here?\p"
-    .string "I'm doing great! I caught a bunch\n"
-    .string "of strong and smart POKéMON!\p"
-    .string "Here, let me see what you caught,\n"
-    .string "{PLAYER}!$"
+    .string "My POKéMON…\n"
+    .string "…were weak!\p"
+    .string "They didn't make it.\n"
+    .string "So I discarded them.\p"
+    .string "But it's ok because these new\n"
+    .string "ones are so much tougher!\p"
+    .string "Come on! I'll show you!$"
 
 CeruleanCity_Text_RivalDefeat::
     .string "Hey!\n"

@@ -4676,7 +4676,7 @@ void ItemUseCB_ApplyAbilityCapsulePlus(u8 taskId, TaskFunc task)
     case 0:    
         tMonId = gPartyMenu.slotId;
         tSpecies = GetMonData(&gPlayerParty[tMonId], MON_DATA_SPECIES, NULL);
-        tAbilityNum = (u16) Random32() % ABILITIES_COUNT;
+        tAbilityNum = (u16) Random32() % (ABILITIES_COUNT - 1) + 1;
         PlaySE(SE_USE_ITEM);
         GetMonNickname(&gPlayerParty[tMonId], gStringVar1);
         StringCopy(gStringVar2, gAbilitiesInfo[tAbilityNum].name);

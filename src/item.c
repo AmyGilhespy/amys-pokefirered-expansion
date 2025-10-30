@@ -16,6 +16,7 @@
 #include "constants/item_effects.h"
 #include "constants/items.h"
 #include "constants/maps.h"
+#include "random.h"
 
 #define DUMMY_PC_BAG_POCKET                 \
 {                                           \
@@ -336,6 +337,47 @@ u32 GetFreeSpaceForItemInBag(u16 itemId)
         }
     }
     return spaceForItem;
+}
+
+static bool8 IsInfiniteItem(u16 itemId)
+{
+    return itemId == ITEM_RARE_CANDY
+        || itemId == ITEM_REPEL
+        || itemId == ITEM_SUPER_REPEL
+        || itemId == ITEM_MAX_REPEL;
+}
+
+static bool8 IsTm01ToTm50Item(u16 itemId)
+{
+    return (itemId >= ITEM_TM01 && itemId <= ITEM_TM50);
+}
+
+u16 Item_RemapPickupItem(u16 baseItemId)
+{
+    u32 nextSeed, seed;
+    u16 mapNum, mapGroup, tmItemId;
+    if (IsInfiniteItem(baseItemId) || IsTm01ToTm50Item(baseItemId))
+    {
+        nextSeed = Random32();
+        mapNum = gSaveBlock1Ptr->location.mapNum;
+        mapGroup = gSaveBlock1Ptr->location.mapGroup;
+        seed = (mapNum * 257 + mapGroup * 71 + baseItemId * 13);
+        SeedRng(seed);
+        tmItemId = ITEM_TM01 + ((u16) Random() % 50);
+        SeedRng(nextSeed ^ seed);
+
+        for (u8 i = 0; i < 10; i++)
+        {
+            if (!CheckBagHasItem(tmItemId, 1))
+            {
+                break;
+            }
+            tmItemId = ITEM_TM01 + ((u16) Random() % 50);
+        }
+
+        return tmItemId;
+    }
+    return baseItemId;
 }
 
 bool8 AddBagItem(u16 itemId, u16 count)

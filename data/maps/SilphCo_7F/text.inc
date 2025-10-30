@@ -112,7 +112,14 @@ SilphCo_7F_Text_RivalIntro::
     .string "I guess TEAM ROCKET slowed you\n"
     .string "down! Not that I care!\p"
     .string "I saw you in SAFFRON, so I decided\n"
-    .string "to see if you got better!$"
+    .string "to see if you got better!\p"
+    .string "My POKéMON…\n"
+    .string "…were weak!\p"
+    .string "They didn't make it.\n"
+    .string "So I discarded them.\p"
+    .string "But it's ok because these new\n"
+    .string "ones are so much tougher!\p"
+    .string "Come on! I'll show you!$"
 
 SilphCo_7F_Text_RivalDefeat::
     .string "Oh, man!\n"

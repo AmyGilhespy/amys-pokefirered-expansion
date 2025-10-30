@@ -7,7 +7,14 @@ Route22_Text_EarlyRivalIntro::
 	.string "The guard won't let you through\n"
 	.string "without them.\p"
 	.string "By the way, did your POKéMON get\n"
-	.string "any stronger?$"
+	.string "any stronger?\p"
+	.string "My POKéMON…\n"
+	.string "…were weak!\p"
+	.string "They didn't make it.\n"
+	.string "So I discarded them.\p"
+	.string "But it's ok because these new\n"
+	.string "ones are so much tougher!\p"
+	.string "Come on! I'll show you!$"
 
 Route22_Text_EarlyRivalDefeat::
 	.string "Awww!\n"
@@ -38,7 +45,13 @@ Route22_Text_LateRivalIntro::
 	.string "That's cool!\p"
 	.string "Then I'll whip you, {PLAYER}, as a\n"
 	.string "warm-up for the POKéMON LEAGUE!\p"
-	.string "Come on!$"
+	.string "My POKéMON…\n"
+	.string "…were weak!\p"
+	.string "They didn't make it.\n"
+	.string "So I discarded them.\p"
+	.string "But it's ok because these new\n"
+	.string "ones are so much tougher!\p"
+	.string "Come on! I'll show you!$"
 
 Route22_Text_LateRivalDefeat::
 	.string "What!?\p"

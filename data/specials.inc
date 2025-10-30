@@ -450,4 +450,5 @@ gSpecials::
 	def_special GetRandomStarterPlayer
 	def_special GetRandomStarterRival
 	def_special GetGameType
+	def_special RemapPickupItem
 gSpecialsEnd::

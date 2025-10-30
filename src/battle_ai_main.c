@@ -4410,8 +4410,13 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
     case EFFECT_SHEER_COLD:
         if (GetActiveGimmick(battlerDef) == GIMMICK_DYNAMAX)
             break;
-        else if (gBattleMons[battlerAtk].volatiles.lockOn)
-            ADJUST_SCORE(BEST_EFFECT);
+        else if (gBattleMons[battlerAtk].volatiles.lockOn || aiData->abilities[battlerAtk] == ABILITY_NO_GUARD)
+        {
+            if (gBattleMons[battlerAtk].level >= gBattleMons[battlerDef].level)
+            {
+                ADJUST_SCORE(10000); // I don't know why it has to be so damn high before my gimmick fight actually selects it...
+            }
+        }
         break;
     case EFFECT_MEAN_LOOK:
         if (ShouldTrap(battlerAtk, battlerDef, move))

@@ -233,6 +233,7 @@ void MoveItemSlotInPC(struct ItemSlot *itemSlots_, u32 from, u32 to_);
 void ClearBag(void);
 void ClearPCItemSlots(void);
 void TrySetObtainedItemQuestLogEvent(u16 itemId);
+u16 Item_RemapPickupItem(u16 baseItemId);
 bool8 AddBagItem(u16 itemId, u16 amount);
 
 u16 CountTotalItemQuantityInBag(u16 item);

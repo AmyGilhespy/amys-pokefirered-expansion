@@ -28,8 +28,9 @@ ViridianCity_Gym_EventScript_GiveTR99::
 	checkitemspace ITEM_TM99
 	goto_if_eq VAR_RESULT, FALSE, ViridianCity_Gym_EventScript_NoRoomForTR99
 	giveitem_msg ViridianCity_Gym_Text_ReceivedTR99FromGiovanni, ITEM_TM99
+	giveitem_msg ViridianCity_Gym_Text_ReceivedAbilityCapsulePlusFromGiovanni, ITEM_ABILITY_CAPSULE_PLUS
 	setflag FLAG_GOT_TR99_FROM_GIOVANNI
-	msgbox ViridianCity_Gym_Text_ExplainTR99
+	msgbox ViridianCity_Gym_Text_ExplainTR99AndAbilityCapsulePlus
 	release
 	end
 

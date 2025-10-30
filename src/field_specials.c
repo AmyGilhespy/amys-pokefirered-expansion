@@ -2747,4 +2747,11 @@ void GetGameType(void)
     VarSet(VAR_RESULT, gSaveBlock2Ptr->customData.gameType);
 }
 
+void RemapPickupItem(void)
+{
+    u16 itemId;
+    itemId = VarGet(VAR_0x8000);
+    itemId = Item_RemapPickupItem(itemId);
+    VarSet(VAR_0x8000, itemId);
+}
 

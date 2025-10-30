@@ -4,7 +4,13 @@ PokemonTower_2F_Text_RivalIntro::
     .string "Is your POKéMON dead?\p"
     .string "Hey! It's alive!\p"
     .string "I can at least make them faint!\n"
-    .string "Let's go!$"
+    .string "My POKéMON…\n"
+    .string "…were weak!\p"
+    .string "They didn't make it.\n"
+    .string "So I discarded them.\p"
+    .string "But it's ok because these new\n"
+    .string "ones are so much tougher!\p"
+    .string "Come on! I'll show you!$"
 
 PokemonTower_2F_Text_RivalDefeat::
     .string "What?\n"

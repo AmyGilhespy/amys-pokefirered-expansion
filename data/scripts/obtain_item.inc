@@ -111,6 +111,7 @@ Std_FindItem::
 	lock
 	faceplayer
 	waitse
+	special RemapPickupItem
 	copyvar VAR_0x8006, VAR_0x8000
 	copyvar VAR_0x8004, VAR_0x8000
 	copyvar VAR_0x8005, VAR_0x8001

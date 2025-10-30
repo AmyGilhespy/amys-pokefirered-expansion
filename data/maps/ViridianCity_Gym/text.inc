@@ -38,18 +38,26 @@ ViridianCity_Gym_Text_ExplainEarthBadgeTakeThis::
     .string "a POKéMON TRAINER.\p"
     .string "With it, you can challenge the\n"
     .string "POKéMON LEAGUE.\p"
-    .string "Also, take this TR.\p"
-    .string "Consider it a gift for your POKéMON\n"
-    .string "LEAGUE challenge.$"
+    .string "Also, take these.\p"
+    .string "Consider them gifts for your\n"
+    .string "POKéMON LEAGUE challenge.$"
 
 ViridianCity_Gym_Text_ReceivedTR99FromGiovanni::
     .string "{PLAYER} received TR99\n"
     .string "from GIOVANNI.$"
 
-ViridianCity_Gym_Text_ExplainTR99::
+ViridianCity_Gym_Text_ReceivedAbilityCapsulePlusFromGiovanni::
+    .string "{PLAYER} received Ability Capsule+\n"
+    .string "from GIOVANNI.$"
+
+ViridianCity_Gym_Text_ExplainTR99AndAbilityCapsulePlus::
     .string "TR99 contains SKETCH…\p"
     .string "…Wait, you seem to already know\n"
-    .string "what it does. Carry on!$"
+    .string "what that one does.  And as for\p"
+    .string "the Ability Capsule+, it allows\n"
+    .string "you to change a POKéMON's ability\p"
+    .string "to a random one, even if the\n"
+    .string "POKéMON can't normally learn it!$"
 
 ViridianCity_Gym_Text_YouDoNotHaveSpace::
     .string "You do not have space for this!$"

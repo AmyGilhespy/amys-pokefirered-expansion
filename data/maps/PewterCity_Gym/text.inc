@@ -46,7 +46,7 @@ PewterCity_Gym_Text_ExplainTR99::
     .string "So, when you use one, pick the\n"
     .string "POKéMON carefully.\p"
     .string "Anyways…\n"
-    .string "TM99 contains SKETCH.\p"
+    .string "TR99 contains SKETCH.\p"
     .string "It lets you permanently copy the\n"
     .string "move last used by a POKéMON.$"
 

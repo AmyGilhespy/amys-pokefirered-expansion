@@ -5812,8 +5812,8 @@ AI: Check Bad Move / Try To Faint / Check Viability
 Squirtle
 Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Tackle
-- Tail Whip
 
 === TRAINER_RIVAL_OAKS_LAB_BULBASAUR ===
 Name: TERRY
@@ -5827,8 +5827,8 @@ AI: Check Bad Move / Try To Faint / Check Viability
 Bulbasaur
 Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Tackle
-- Growl
 
 === TRAINER_RIVAL_OAKS_LAB_CHARMANDER ===
 Name: TERRY
@@ -5842,8 +5842,8 @@ AI: Check Bad Move / Try To Faint / Check Viability
 Charmander
 Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Scratch
-- Growl
 
 === TRAINER_RIVAL_ROUTE22_EARLY_SQUIRTLE ===
 Name: TERRY
@@ -5857,14 +5857,14 @@ AI: Check Bad Move / Try To Faint / Check Viability
 Pidgey
 Level: 9
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+EVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - Tackle
-- Sand Attack
 
 Squirtle
 Level: 9
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+EVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - Tackle
-- Tail Whip
 
 === TRAINER_RIVAL_ROUTE22_EARLY_BULBASAUR ===
 Name: TERRY
@@ -5878,14 +5878,14 @@ AI: Check Bad Move / Try To Faint / Check Viability
 Pidgey
 Level: 9
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+EVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - Tackle
-- Sand Attack
 
 Bulbasaur
 Level: 9
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+EVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - Tackle
-- Growl
 
 === TRAINER_RIVAL_ROUTE22_EARLY_CHARMANDER ===
 Name: TERRY
@@ -5899,14 +5899,14 @@ AI: Check Bad Move / Try To Faint / Check Viability
 Pidgey
 Level: 9
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+EVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - Tackle
-- Sand Attack
 
 Charmander
 Level: 9
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+EVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - Scratch
-- Growl
 
 === TRAINER_RIVAL_CERULEAN_SQUIRTLE ===
 Name: TERRY
@@ -5920,30 +5920,26 @@ AI: Check Bad Move / Try To Faint / Check Viability
 Pidgeotto
 Level: 17
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+EVs: 40 HP / 40 Atk / 40 Def / 40 SpA / 40 SpD / 40 Spe
 - Tackle
-- Sand Attack
-- Gust
-- Quick Attack
 
 Abra
 Level: 16
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+EVs: 40 HP / 40 Atk / 40 Def / 40 SpA / 40 SpD / 40 Spe
 - Teleport
 
 Rattata
 Level: 15
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+EVs: 40 HP / 40 Atk / 40 Def / 40 SpA / 40 SpD / 40 Spe
 - Tackle
-- Tail Whip
-- Quick Attack
 
 Squirtle
 Level: 18
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+EVs: 40 HP / 40 Atk / 40 Def / 40 SpA / 40 SpD / 40 Spe
 - Tackle
-- Tail Whip
-- Withdraw
-- Water Gun
 
 === TRAINER_RIVAL_CERULEAN_BULBASAUR ===
 Name: TERRY
@@ -5957,30 +5953,26 @@ AI: Check Bad Move / Try To Faint / Check Viability
 Pidgeotto
 Level: 17
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+EVs: 40 HP / 40 Atk / 40 Def / 40 SpA / 40 SpD / 40 Spe
 - Tackle
-- Sand Attack
-- Gust
-- Quick Attack
 
 Abra
 Level: 16
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+EVs: 40 HP / 40 Atk / 40 Def / 40 SpA / 40 SpD / 40 Spe
 - Teleport
 
 Rattata
 Level: 15
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+EVs: 40 HP / 40 Atk / 40 Def / 40 SpA / 40 SpD / 40 Spe
 - Tackle
-- Tail Whip
-- Quick Attack
 
 Bulbasaur
 Level: 18
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Sleep Powder
-- Poison Powder
+EVs: 40 HP / 40 Atk / 40 Def / 40 SpA / 40 SpD / 40 Spe
 - Vine Whip
-- Leech Seed
 
 === TRAINER_RIVAL_CERULEAN_CHARMANDER ===
 Name: TERRY
@@ -5994,29 +5986,25 @@ AI: Check Bad Move / Try To Faint / Check Viability
 Pidgeotto
 Level: 17
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+EVs: 40 HP / 40 Atk / 40 Def / 40 SpA / 40 SpD / 40 Spe
 - Tackle
-- Sand Attack
-- Gust
-- Quick Attack
 
 Abra
 Level: 16
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+EVs: 40 HP / 40 Atk / 40 Def / 40 SpA / 40 SpD / 40 Spe
 - Teleport
 
 Rattata
 Level: 15
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+EVs: 40 HP / 40 Atk / 40 Def / 40 SpA / 40 SpD / 40 Spe
 - Tackle
-- Tail Whip
-- Quick Attack
 
 Charmander
 Level: 18
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Metal Claw
-- Ember
-- Growl
+EVs: 40 HP / 40 Atk / 40 Def / 40 SpA / 40 SpD / 40 Spe
 - Scratch
 
 === TRAINER_SCIENTIST_TED ===
@@ -8604,7 +8592,7 @@ Gender: Female
 Music: Female
 Items: Hyper Potion / Hyper Potion / Full Heal
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability / Try To 2HKO / HP Aware / Smart Switching / Omniscient
+AI: Check Bad Move / Try To Faint / Check Viability / Try To 2HKO / HP Aware / Smart Switching / Ace Pokemon / Omniscient
 
 Medicham @ Choice Band
 Level: 37
@@ -8628,17 +8616,6 @@ Nature: Bold
 - Ice Beam
 - Slack Off
 
-Alakazam @ Alakazite
-Level: 43
-IVs: 29 HP / 0 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
-EVs: 0 HP / 0 Atk / 0 Def / 200 SpA / 0 SpD / 200 Spe
-Ability: Magic Guard
-Nature: Timid
-- Psychic
-- Psyshock
-- Focus Blast
-- Shadow Ball
-
 Kadabra
 Level: 38
 IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
@@ -8656,6 +8633,17 @@ Level: 43
 IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
 EVs: 68 HP / 68 Atk / 68 Def / 68 SpA / 68 SpD / 68 Spe
 - Psychic
+
+Alakazam @ Alakazite
+Level: 43
+IVs: 29 HP / 0 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+EVs: 0 HP / 0 Atk / 0 Def / 200 SpA / 0 SpD / 200 Spe
+Ability: Magic Guard
+Nature: Timid
+- Psychic
+- Psyshock
+- Focus Blast
+- Shadow Ball
 
 === TRAINER_LEADER_BLAINE ===
 Name: BLAINE
@@ -8767,7 +8755,7 @@ Gender: Male
 Music: Aqua
 Items: Hyper Potion / Hyper Potion / Full Heal
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Smart Switching / Ace Pokemon / Omniscient
+AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Smart Switching / Ace Pokemon / Omniscient / Prefer Highest Damage Move
 
 Dugtrio @ Focus Sash
 Level: 42
@@ -8775,6 +8763,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 0 HP / 252 Atk / 0 Def / 0 SpA / 4 SpD / 252 Spe
 Ability: No Guard
 Nature: Jolly
+Ball: Master Ball
 - Fissure
 - Precipice Blades
 - Stone Edge
@@ -8786,6 +8775,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 52 HP / 252 Atk / 0 Def / 0 SpA / 0 SpD / 204 Spe
 Ability: Solid Rock
 Nature: Adamant
+Ball: Master Ball
 - Earthquake
 - Stone Edge
 - Megahorn
@@ -8797,6 +8787,7 @@ IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 0 HP / 0 Atk / 0 Def / 252 SpA / 4 SpD / 252 Spe
 Ability: Sheer Force
 Nature: Timid
+Ball: Master Ball
 - Sludge Wave
 - Earth Power
 - Ice Beam
@@ -8808,6 +8799,7 @@ IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 0 HP / 0 Atk / 4 Def / 252 SpA / 0 SpD / 252 Spe
 Ability: Sheer Force
 Nature: Timid
+Ball: Master Ball
 - Sludge Wave
 - Earth Power
 - Ice Beam
@@ -8819,6 +8811,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 0 Atk / 112 Def / 0 SpA / 0 SpD / 114 Spe
 Ability: Intimidate
 Nature: Naive
+Ball: Master Ball
 - Stealth Rock
 - Brave Bird
 - Earthquake
@@ -8830,6 +8823,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 4 HP / 244 Atk / 0 Def / 0 SpA / 8 SpD / 252 Spe
 Ability: Drizzle
 Nature: Jolly
+Ball: Master Ball
 - Surging Strikes
 - Earthquake
 - Stone Edge
@@ -15627,7 +15621,18 @@ Gender: Female
 Music: Aqua
 Items: Hyper Potion / Hyper Potion / Full Heal
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Smart Switching / Ace Pokemon / Omniscient
+AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Smart Switching / Ace Pokemon / Omniscient / Prefer Highest Damage Move
+
+Dugtrio @ Focus Sash
+Level: 42
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 0 HP / 252 Atk / 0 Def / 0 SpA / 4 SpD / 252 Spe
+Ability: No Guard
+Nature: Jolly
+- Fissure
+- Precipice Blades
+- Stone Edge
+- Dynamic Punch
 
 Swampert @ Swampertite
 Level: 50

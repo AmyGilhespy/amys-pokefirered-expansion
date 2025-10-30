@@ -13,7 +13,14 @@ SSAnne_2F_Corridor_Text_RivalIntro::
     .string "I already caught 40 kinds, pal.\n"
     .string "Different kinds are everywhere.\p"
     .string "Crawl around in grassy areas, and\n"
-    .string "look hard for them.$"
+    .string "look hard for them.\p"
+    .string "My POKéMON…\n"
+    .string "…were weak!\p"
+    .string "They didn't make it.\n"
+    .string "So I discarded them.\p"
+    .string "But it's ok because these new\n"
+    .string "ones are so much tougher!\p"
+    .string "Come on! I'll show you!$"
 
 SSAnne_2F_Corridor_Text_RivalDefeat::
     .string "Humph!\p"

@@ -320,6 +320,86 @@ bool8 RandomEncounters_IsAllowedSpecies(u16 species)
         return FALSE;
     }
 
+    if (species >= SPECIES_PIKACHU_COSPLAY && species <= SPECIES_PICHU_SPIKY_EARED)
+    {
+        return FALSE;
+    }
+
+    if (species == SPECIES_UNOWN || (species >= SPECIES_UNOWN_B && species <= SPECIES_UNOWN_QUESTION))
+    {
+        return FALSE;
+    }
+
+    if (species >= SPECIES_CASTFORM_SUNNY && species <= SPECIES_CASTFORM_SNOWY)
+    {
+        return FALSE;
+    }
+
+    if (species >= SPECIES_ARCEUS_FIGHTING && species <= SPECIES_ARCEUS_FAIRY)
+    {
+        return FALSE;
+    }
+
+    if (species >= SPECIES_GENESECT_DOUSE && species <= SPECIES_GENESECT_CHILL)
+    {
+        return FALSE;
+    }
+
+    if (species >= SPECIES_GRENINJA_BOND && species <= SPECIES_GRENINJA_ASH)
+    {
+        return FALSE;
+    }
+
+    if (species >= SPECIES_VIVILLON_POLAR && species <= SPECIES_VIVILLON_POKEBALL)
+    {
+        return FALSE;
+    }
+
+    if (species >= SPECIES_FLABEBE_YELLOW && species <= SPECIES_FLABEBE_WHITE)
+    {
+        return FALSE;
+    }
+
+    if (species >= SPECIES_FLOETTE_YELLOW && species <= SPECIES_FLOETTE_ETERNAL)
+    {
+        return FALSE;
+    }
+
+    if (species >= SPECIES_FLORGES_YELLOW && species <= SPECIES_FLORGES_WHITE)
+    {
+        return FALSE;
+    }
+
+    if (species >= SPECIES_FURFROU_HEART && species <= SPECIES_FURFROU_PHARAOH)
+    {
+        return FALSE;
+    }
+
+    if (species >= SPECIES_MEOWSTIC_F && species <= SPECIES_WISHIWASHI_SCHOOL)
+    {
+        return FALSE;
+    }
+
+    if (species >= SPECIES_SILVALLY_FIGHTING && species <= SPECIES_SILVALLY_FAIRY)
+    {
+        return FALSE;
+    }
+
+    if (species >= SPECIES_MINIOR_ORANGE && species <= SPECIES_MINIOR_CORE_VIOLET)
+    {
+        return FALSE;
+    }
+
+    if (species >= SPECIES_MIMIKYU_BUSTED && species <= SPECIES_POLTEAGEIST_ANTIQUE)
+    {
+        return FALSE;
+    }
+
+    if (species >= SPECIES_ALCREMIE_RUBY_CREAM && species <= SPECIES_ALCREMIE_RIBBON_RAINBOW_SWIRL)
+    {
+        return FALSE;
+    }
+
     return TRUE;
 }
 

@@ -2050,23 +2050,21 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
             thisSeed |= i;
             randomSpecies = originalSpecies = partyData[monIndex].species;
             givePreassignedMoves = TRUE;
-            if (trainer->trainerClass == TRAINER_CLASS_LEADER && i < 3) { }
+            if (trainer->trainerClass == TRAINER_CLASS_LEADER && (
+                trainer->trainerPic == TRAINER_PIC_LEADER_SABRINA ? (i < 2 || i == 5) : i < 3 )) { } // Comparing the pic ID is way simpler than comparing the name.
             else if (trainer->trainerClass == TRAINER_CLASS_LEADER && trainer->trainerPic == TRAINER_PIC_LEADER_GIOVANNI) { } // Comparing the pic ID is way simpler than comparing the name.
-            else if (trainer->trainerClass == TRAINER_CLASS_RIVAL_EARLY && i < 3) {
-                if (monsCount == 1)
+            else if (trainer->trainerClass == TRAINER_CLASS_RIVAL_EARLY && monsCount == 1) // Oak's Lab
+            {
+                givePreassignedMoves = FALSE;
+                randomSpecies = GetStarterSpeciesRival();
+                if (randomSpecies == SPECIES_NONE)
                 {
-                    givePreassignedMoves = FALSE;
-                    randomSpecies = GetStarterSpeciesRival();
-                    if (randomSpecies == SPECIES_NONE)
-                    {
-                        randomSpecies = SPECIES_CHARMANDER;
-                    }
+                    randomSpecies = SPECIES_CHARMANDER;
                 }
             }
-            else if (trainer->trainerClass == TRAINER_CLASS_RIVAL_LATE && i < 3) { }
-            else if (trainer->trainerClass == TRAINER_CLASS_ELITE_FOUR && i < 3) { }
-            else if (trainer->trainerClass == TRAINER_CLASS_CHAMPION && i < 3) { }
-            else if (trainer->trainerClass == TRAINER_CLASS_BOSS && i < 3) { }
+            else if (trainer->trainerClass == TRAINER_CLASS_ELITE_FOUR && i < 4) { }
+            else if (trainer->trainerClass == TRAINER_CLASS_CHAMPION) { }
+            else if (trainer->trainerClass == TRAINER_CLASS_BOSS) { }
             else
             {
                 givePreassignedMoves = FALSE;

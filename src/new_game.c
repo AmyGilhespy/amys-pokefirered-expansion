@@ -168,6 +168,14 @@ void NewGameInitData(void)
     ResetDexNav();
     RandomEncounters_Init();
     RandomEncounters_FillAllWithRandom();
+    // Shortcuts:
+    FlagSet(FLAG_GOT_TEA); // Unlocks the gate houses to Saffron
+    FlagSet(FLAG_RESCUED_MR_FUJI); // Moves the door guard in Saffron
+    AddBagItem(ITEM_POKE_FLUTE, 1);
+    FlagSet(FLAG_GOT_POKE_FLUTE);
+    AddBagItem(ITEM_HM03, 1); // Surf
+    AddBagItem(ITEM_SECRET_KEY, 1);
+    FlagSet(FLAG_HIDE_POKEMON_MANSION_B1F_SECRET_KEY); // Unlocks the gym in Cinnabar
 }
 
 static void ResetMiniGamesResults(void)
