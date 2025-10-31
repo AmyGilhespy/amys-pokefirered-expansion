@@ -2,10 +2,12 @@ EventScript_PkmnCenterNurse::
 	goto_if_questlog EventScript_ReleaseEnd
 	message Text_WelcomeWantToHealPkmn
 	waitmessage
-	multichoice 19, 8, MULTICHOICE_YES_NO, FALSE | (TRUE << 1)
+	multichoice 19, 8, MULTICHOICE_NURSE_CUSTOM, FALSE | (TRUE << 1)
 	switch VAR_RESULT
 	case 0, EventScript_PkmnCenterNurse_HealPkmn
-	case 1 EventScript_PkmnCenterNurse_Goodbye
+	case 1, EventScript_PkmnCenterNurse_RenamePkmn
+	case 2, EventScript_PkmnCenterNurse_RemindPkmn
+	case 3 EventScript_PkmnCenterNurse_Goodbye
 	case SCR_MENU_CANCEL, EventScript_PkmnCenterNurse_Goodbye
 	end
 
@@ -57,6 +59,44 @@ EventScript_PkmnCenterNurse_PlayerWaitingInUnionRoom::
 	waitmovement 0
 	msgbox Text_WeHopeToSeeYouAgain
 	return
+
+EventScript_PkmnCenterNurse_RenamePkmn::
+	msgbox LavenderTown_House2_Text_WhatShallNewNicknameBe
+	call EventScript_ChangePokemonNickname
+	specialvar VAR_RESULT, NameRaterWasNicknameChanged
+	special BufferMonNickname
+	goto_if_eq VAR_RESULT, TRUE, LavenderTown_House2_EventScript_ChoseNewNickname
+	msgbox LavenderTown_House2_Text_FromNowOnShallBeKnownAsSameName
+	release
+	end
+
+EventScript_PkmnCenterNurse_RemindPkmn::
+	msgbox TwoIsland_House_Text_TutorWhichMon
+	special ChooseMonForMoveRelearner
+	waitstate
+	goto_if_ge VAR_0x8004, PARTY_SIZE, EventScript_PkmnCenterNurse_Goodbye
+	special IsSelectedMonEgg
+	goto_if_eq VAR_RESULT, TRUE, EventScript_PkmnCenterNurse_CantTutorEgg
+	goto_if_eq VAR_0x8005, 0, EventScript_PkmnCenterNurse_NoMoveToTutorMon
+	goto EventScript_PkmnCenterNurse_ChooseMoveToTeach
+	end
+
+EventScript_PkmnCenterNurse_ChooseMoveToTeach::
+	msgbox TwoIsland_House_Text_TeachWhichMove
+	special TeachMoveRelearnerMove
+	waitstate
+	goto_if_eq VAR_0x8004, 0, EventScript_PkmnCenterNurse_RemindPkmn
+	end
+
+EventScript_PkmnCenterNurse_NoMoveToTutorMon::
+	msgbox TwoIsland_House_Text_NoMoveICanTeachThatMon
+	goto EventScript_PkmnCenterNurse_RemindPkmn
+	end
+
+EventScript_PkmnCenterNurse_CantTutorEgg::
+	msgbox TwoIsland_House_Text_CantTeachAnEgg
+	goto EventScript_PkmnCenterNurse_RemindPkmn
+	end
 
 EventScript_PkmnCenterNurse_Goodbye::
 	msgbox Text_WeHopeToSeeYouAgain

@@ -131,6 +131,11 @@ const u8 gMenuText_Confirm[] = _("けってい");
 const u8 gOtherText_Walk[] = _("WALK");
 const u8 gFameCheckerText_Cancel[] = _("CANCEL");
 const u8 gOtherText_Exit[] = _("EXIT");
+
+const u8 gOtherText_NurseCustomHeal[] = _("HEAL");
+const u8 gOtherText_NurseCustomName[] = _("RENAME");
+const u8 gOtherText_NurseCustomRemind[] = _("REMIND");
+
 const u8 gString_Dummy[] = _("");
 const u8 gText_Cancel7[] = _("キャンセル");
 const u8 gText_Item[] = _("ITEM");
