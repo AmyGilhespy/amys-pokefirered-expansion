@@ -387,7 +387,6 @@ void CreateWildMon(u16 species, u8 level, u8 unownSlot)
         species = overriddenSpecies;
     }
 
-
     ZeroEnemyPartyMons();
 
     switch (gSpeciesInfo[species].genderRatio)

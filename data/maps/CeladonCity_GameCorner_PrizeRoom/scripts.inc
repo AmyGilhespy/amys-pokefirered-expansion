@@ -24,7 +24,7 @@ CeladonCity_GameCorner_PrizeRoom_EventScript_ChoosePrizeMon::
 	waitmessage
 	multichoice 11, 0, MULTICHOICE_GAME_CORNER_POKEMON_PRIZES, FALSE
 	switch VAR_RESULT
-	case 0, CeladonCity_GameCorner_PrizeRoom_EventScript_Abra
+	case 0, CeladonCity_GameCorner_PrizeRoom_EventScript_Unown
 	case 1, CeladonCity_GameCorner_PrizeRoom_EventScript_Clefairy
 	case 2, CeladonCity_GameCorner_PrizeRoom_EventScript_Pinsir
 	case 3, CeladonCity_GameCorner_PrizeRoom_EventScript_Dratini
@@ -43,6 +43,23 @@ CeladonCity_GameCorner_PrizeRoom_EventScript_EndPrizeExchange::
 CeladonCity_GameCorner_PrizeRoom_EventScript_Abra::
 	setvar VAR_TEMP_1, SPECIES_ABRA
 	setvar VAR_TEMP_2, 150
+	goto CeladonCity_GameCorner_PrizeRoom_EventScript_ConfirmPrizeMon
+	end
+
+CeladonCity_GameCorner_PrizeRoom_EventScript_Unown::
+	setvar VAR_TEMP_2, 500
+	bufferspeciesname STR_VAR_1, SPECIES_UNOWN
+	random 28
+	copyvar VAR_TEMP_1, VAR_RESULT
+	goto_if_eq VAR_RESULT, 27, CeladonCity_GameCorner_PrizeRoom_EventScript_UnownA
+	addvar VAR_TEMP_1, SPECIES_UNOWN_B
+	setvar VAR_TEMP_3, SPECIES_UNOWN
+	goto CeladonCity_GameCorner_PrizeRoom_EventScript_ConfirmPrizeMonSpeciesNameBuffered
+	end
+
+CeladonCity_GameCorner_PrizeRoom_EventScript_UnownA::
+	setvar VAR_TEMP_1, SPECIES_UNOWN
+	setvar VAR_TEMP_3, SPECIES_UNOWN
 	goto CeladonCity_GameCorner_PrizeRoom_EventScript_ConfirmPrizeMon
 	end
 
@@ -84,12 +101,17 @@ CeladonCity_GameCorner_PrizeRoom_EventScript_Mimikyu::
 
 CeladonCity_GameCorner_PrizeRoom_EventScript_ConfirmPrizeMon::
 	bufferspeciesname STR_VAR_1, VAR_TEMP_1
+	copyvar VAR_TEMP_3, VAR_TEMP_1
+	goto CeladonCity_GameCorner_PrizeRoom_EventScript_ConfirmPrizeMonSpeciesNameBuffered
+
+CeladonCity_GameCorner_PrizeRoom_EventScript_ConfirmPrizeMonSpeciesNameBuffered::
 	msgbox CeladonCity_GameCorner_PrizeRoom_Text_YouWantPrize, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, CeladonCity_GameCorner_PrizeRoom_EventScript_EndPrizeExchange
 	checkcoins VAR_RESULT
 	goto_if_lt VAR_RESULT, VAR_TEMP_2, CeladonCity_GameCorner_PrizeRoom_EventScript_NotEnoughCoins
 	textcolor NPC_TEXT_COLOR_NEUTRAL
-	givemon VAR_TEMP_1, 5
+	givemon VAR_TEMP_1, 1
+	copyvar VAR_TEMP_1, VAR_TEMP_3
 	goto CeladonCity_GameCorner_PrizeRoom_EventScript_CheckReceivedMon
 	end
 

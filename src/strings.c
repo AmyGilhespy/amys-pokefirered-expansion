@@ -512,6 +512,7 @@ const u8 gText_Coins_2[] = _("COINS");
 const u8 gText_Bicycle_Price[] = _("BICYCLE{CLEAR_TO 0x49}{FONT_SMALL}¥1,000,000");
 const u8 gText_NoThanks[] = _("NO THANKS");
 const u8 gText_Abra_150Coins[] = _("ABRA{CLEAR_TO 0x55}{FONT_SMALL} 150 COINS");
+const u8 gText_Unown_500Coins[] = _("UNOWN{CLEAR_TO 0x4B}{FONT_SMALL} 500 COINS");
 const u8 gText_Clefairy_625Coins[] = _("CLEFAIRY{CLEAR_TO 0x55}{FONT_SMALL} 625 COINS");
 const u8 gText_Dratini_3700Coins[] = _("DRATINI{CLEAR_TO 0x4B}{FONT_SMALL} 3,700 COINS");
 const u8 gText_Porygon_8250Coins[] = _("PORYGON{CLEAR_TO 0x4B}{FONT_SMALL} 8,250 COINS");
