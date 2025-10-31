@@ -22,6 +22,8 @@ PewterCity_Mart_EventScript_Clerk::
 
 	.align 2
 PewterCity_Mart_Items::
+	.2byte ITEM_TM51
+	.2byte ITEM_TM75
 	.2byte ITEM_POKE_BALL
 	.2byte ITEM_POTION
 	.2byte ITEM_ANTIDOTE
@@ -29,7 +31,6 @@ PewterCity_Mart_Items::
 	.2byte ITEM_AWAKENING
 	.2byte ITEM_BURN_HEAL
 	.2byte ITEM_ESCAPE_ROPE
-	.2byte ITEM_REPEL
 	.2byte ITEM_RARE_CANDY
 	.2byte ITEM_MAX_REPEL
 	.2byte ITEM_NONE

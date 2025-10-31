@@ -52,8 +52,8 @@
     F(SKILL_SWAP) \
     F(SNATCH) \
     F(OVERHEAT) \
-    F(AMY_UNUSED_51) \
-    F(AMY_UNUSED_52) \
+    F(PAY_DAY) \
+    F(SUBSTITUTE) \
     F(AMY_UNUSED_53) \
     F(AMY_UNUSED_54) \
     F(AMY_UNUSED_55) \
@@ -99,7 +99,7 @@
     F(AMY_UNUSED_95) \
     F(AMY_UNUSED_96) \
     F(AMY_UNUSED_97) \
-    F(AMY_UNUSED_98) \
+    F(DARK_VOID) \
     F(SKETCH) \
     F(AMY_UNUSED_100)
 
