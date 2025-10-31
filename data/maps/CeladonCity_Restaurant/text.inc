@@ -46,8 +46,10 @@ CeladonCity_Restaurant_Text_MakeRoomForThis::
 
 CeladonCity_Restaurant_Text_GetACoinCaseFirst::
     .string "Come back when you have a\n"
-    .string "COIN CASE. I'll give you\p"
-    .string "something nice!$"
+    .string "COIN CASE. I'll give you\l"
+    .string "something nice!\p"
+    .string "You can get a COIN CASE from\n"
+    .string "the Game Corner info clerk.$"
 
 CeladonCity_Restaurant_Text_ThoughtIdWinItBack::
     .string "I always thought I was going to\n"

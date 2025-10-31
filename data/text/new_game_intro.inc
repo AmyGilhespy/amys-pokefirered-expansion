@@ -209,16 +209,15 @@ gPikachuIntro_Text_Page2::
     .string "   so feel free to skip them!$"
 
 gPikachuIntro_Text_Page3::
-    @string "people in need, overcoming challenges,\n"
-    .string "5. \n"
-    .string "\n"
+    .string "5. TMs are reusable. Don't forget to\n"
+    .string "   make use of them! TRs are not.\n"
     .string "\n"
     .string "6. ESCAPE ROPE is reusable. Buy one!\n"
     .string "\n"
     @string "people in need, overcoming challenges,\n"
     .string "7. \n"
     .string "\n"
-    .string "8. Have fun!$"
+    .string "8. Most importantly: Have fun!$"
 
 gOakSpeech_Text_WelcomeToTheWorld::
     .string "Hello, there!\n"
