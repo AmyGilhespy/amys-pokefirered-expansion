@@ -6,7 +6,7 @@ SafariZone_SecretHouse_EventScript_Attendant::
 	faceplayer
 	goto_if_set FLAG_GOT_HM03, SafariZone_SecretHouse_EventScript_ExplainTR99
 	msgbox SafariZone_SecretHouse_Text_CongratsYouveWon
-	checkitemspace ITEM_HM03
+	checkitemspace ITEM_TM99, 10
 	goto_if_eq VAR_RESULT, FALSE, SafariZone_SecretHouse_EventScript_NoRoomForTR99
 	giveitem_msg SafariZone_SecretHouse_Text_ReceivedTR99FromAttendant, ITEM_TM99, amount=10
 	msgbox SafariZone_SecretHouse_Text_ExplainTR99
