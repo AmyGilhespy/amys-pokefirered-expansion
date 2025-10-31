@@ -141,6 +141,7 @@ void NewGameInitData(void)
     InitHeracrossSizeRecord();
     InitMagikarpSizeRecord();
     EnableNationalPokedex_RSE();
+    EnableNationalPokedex();
     gPlayerPartyCount = 0;
     ZeroPlayerPartyMons();
     ResetPokemonStorageSystem();
@@ -168,6 +169,7 @@ void NewGameInitData(void)
     ResetDexNav();
     RandomEncounters_Init();
     RandomEncounters_FillAllWithRandom();
+
     // Shortcuts:
     FlagSet(FLAG_GOT_TEA); // Unlocks the gate houses to Saffron
     FlagSet(FLAG_HIDE_SAFFRON_ROCKETS); // Moves the Rocket blocking the gym in Saffron

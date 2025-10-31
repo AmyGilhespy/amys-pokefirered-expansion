@@ -131,12 +131,14 @@ gControlsGuide_Text_NuzlockeIntro::
     .string "modes. Here is what NUZLOCKE means:$"
 
 gControlsGuide_Text_NuzlockeInfo1::
-    .string "1. You can catch only one POKéMON\n"
-    .string "   per area. After you do, they\n"
-    .string "   will stop spawning there forever.$"
+    .string "1. When a POKéMON faints, it dies.\n"
+    .string "   Neither a POKéMON CENTER nor any\n"
+    .string "   REVIVE-like item will revive it.$"
 
 gControlsGuide_Text_NuzlockeInfo2::
-    .string "2. When a POKéMON faints, it dies.$"
+    .string "2. You can catch only one POKéMON\n"
+    .string "   per area. After you do, they\n"
+    .string "   will stop spawning there forever.$"
 
 gControlsGuide_Text_NuzlockeInfo3::
     .string "3. Some additional changes will\n"
