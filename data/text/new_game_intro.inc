@@ -211,13 +211,12 @@ gPikachuIntro_Text_Page2::
 gPikachuIntro_Text_Page3::
     .string "5. TMs are reusable. Don't forget to\n"
     .string "   make use of them! TRs are not.\n"
+    .string "   Also, TMs and TRs after TM50 are\n"
+    .string "   compatible with all POKéMON!\n"
     .string "\n"
     .string "6. ESCAPE ROPE is reusable. Buy one!\n"
     .string "\n"
-    @string "people in need, overcoming challenges,\n"
-    .string "7. \n"
-    .string "\n"
-    .string "8. Most importantly: Have fun!$"
+    .string "7. Most importantly: Have fun!$"
 
 gOakSpeech_Text_WelcomeToTheWorld::
     .string "Hello, there!\n"
