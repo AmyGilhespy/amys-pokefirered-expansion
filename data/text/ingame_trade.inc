@@ -1,7 +1,7 @@
-Trade_Text_LookingForMonWannaTradeForMon::
-	.string "I'm looking for the POKéMON\n"
-	.string "{STR_VAR_1}!\p"
-	.string "Wanna trade one for my\n"
+Trade_Text_LookingToMixUpMyTeamWannaTradeForMon::
+	.string "I'm trying to mix up my team…\n"
+	.string "I'll take any new POKéMON.\p"
+	.string "Wanna trade something for my\n"
 	.string "{STR_VAR_2}?$"
 
 Trade_Text_AwwOhWell::
@@ -18,11 +18,15 @@ Trade_Text_HeyThanks::
 Trade_Text_IsntMyOldMonGreat::
 	.string "Isn't my old {STR_VAR_2} great?$"
 
-Trade_Text_DoYouHaveMonWouldYouTradeForMon::
-	.string "Hello, there! Do you happen to\n"
-	.string "have a {STR_VAR_1}?\p"
-	.string "Would you agree to a trade for\n"
-	.string "my {STR_VAR_2}?$"
+Trade_Text_LookingForSomethingSpecificWannaTradeForMon::
+	.string "I'm looking for something\n"
+	.string "specific: I'll trade my best\l"
+	.string "POKéMON for a ''!'' UNOWN.\p"
+	.string "Wanna trade one for my\n"
+	.string "{STR_VAR_2}?$"
+
+Trade_Text_LookingForSomethingSpecificWrongMon::
+	.string "That's not a ''!'' UNOWN!$"
 
 Trade_Text_WellIfYouDontWantTo::
 	.string "Well, if you don't want to…$"
@@ -38,12 +42,6 @@ Trade_Text_Thanks::
 Trade_Text_HasTradedMonGrownStronger::
 	.string "The {STR_VAR_2} that I traded you,\n"
 	.string "has it grown stronger?$"
-
-Trade_Text_DoYouHaveMonWantToTradeForMon::
-	.string "Hi!\n"
-	.string "Do you have a {STR_VAR_1}?\p"
-	.string "Want to trade it for my\n"
-	.string "{STR_VAR_2}?$"
 
 Trade_Text_ThatsTooBad::
 	.string "That's too bad.$"

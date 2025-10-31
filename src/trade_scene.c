@@ -55,7 +55,7 @@ struct InGameTrade {
     /*0x00*/ u8 nickname[POKEMON_NAME_LENGTH + 1];
     /*0x0C*/ u16 species;
     /*0x0E*/ u8 ivs[NUM_STATS];
-    /*0x14*/ u8 abilityNum;
+    /*0x14*/ u8 unused;
     /*0x18*/ u32 otId;
     /*0x1C*/ u8 conditions[CONTEST_CATEGORIES_COUNT];
     /*0x24*/ u32 personality;
@@ -64,7 +64,7 @@ struct InGameTrade {
     /*0x2B*/ u8 otName[11];
     /*0x36*/ u8 otGender;
     /*0x37*/ u8 sheen;
-    /*0x38*/ u16 requestedSpecies;
+    /*0x38*/ u16 customAbility;
 };
 
 struct {
@@ -2440,9 +2440,9 @@ u16 GetInGameTradeSpeciesInfo(void)
     // gStringVar2 with the name of the offered species.
     // Returns the requested species.
     const struct InGameTrade * inGameTrade = &sInGameTrades[gSpecialVar_0x8004];
-    StringCopy(gStringVar1, gSpeciesInfo[inGameTrade->requestedSpecies].speciesName);
+    StringCopy(gStringVar1, gSpeciesInfo[SPECIES_UNOWN_EXCLAMATION].speciesName);
     StringCopy(gStringVar2, gSpeciesInfo[inGameTrade->species].speciesName);
-    return inGameTrade->requestedSpecies;
+    return SPECIES_UNOWN_EXCLAMATION;
 }
 
 static void BufferInGameTradeMonName(void)
@@ -2456,13 +2456,13 @@ static void BufferInGameTradeMonName(void)
 
 static void CreateInGameTradePokemonInternal(u8 playerSlot, u8 inGameTradeIdx)
 {
+    u32 data = 0;
     const struct InGameTrade * inGameTrade = &sInGameTrades[inGameTradeIdx];
-    u8 level = GetMonData(&gPlayerParty[playerSlot], MON_DATA_LEVEL);
     struct Mail mail;
     u8 metLocation = METLOC_IN_GAME_TRADE;
     struct Pokemon * tradeMon = &gEnemyParty[0];
     u8 mailNum;
-    CreateMon(tradeMon, inGameTrade->species, level, USE_RANDOM_IVS, TRUE, inGameTrade->personality, TRUE, inGameTrade->otId);
+    CreateMon(tradeMon, inGameTrade->species, 1, USE_RANDOM_IVS, TRUE, inGameTrade->personality, TRUE, inGameTrade->otId);
     SetMonData(tradeMon, MON_DATA_HP_IV, &inGameTrade->ivs[0]);
     SetMonData(tradeMon, MON_DATA_ATK_IV, &inGameTrade->ivs[1]);
     SetMonData(tradeMon, MON_DATA_DEF_IV, &inGameTrade->ivs[2]);
@@ -2472,7 +2472,8 @@ static void CreateInGameTradePokemonInternal(u8 playerSlot, u8 inGameTradeIdx)
     SetMonData(tradeMon, MON_DATA_NICKNAME, inGameTrade->nickname);
     SetMonData(tradeMon, MON_DATA_OT_NAME, inGameTrade->otName);
     SetMonData(tradeMon, MON_DATA_OT_GENDER, &inGameTrade->otGender);
-    SetMonData(tradeMon, MON_DATA_ABILITY_NUM, &inGameTrade->abilityNum);
+    SetMonData(tradeMon, MON_DATA_ABILITY_NUM, &data);
+    SetMonData(tradeMon, MON_DATA_CUSTOM_ABILITY, &inGameTrade->customAbility);
     SetMonData(tradeMon, MON_DATA_BEAUTY, &inGameTrade->conditions[1]);
     SetMonData(tradeMon, MON_DATA_CUTE, &inGameTrade->conditions[2]);
     SetMonData(tradeMon, MON_DATA_COOL, &inGameTrade->conditions[0]);

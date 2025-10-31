@@ -1,9 +1,3 @@
-VermilionCity_House2_Text_DoYouHaveMonWantToTradeForMyMon::
-	.string "Hi!\n"
-	.string "Do you have a {STR_VAR_1}?\p"
-	.string "Want to trade it for my\n"
-	.string "{STR_VAR_2}?$"
-
 VermilionCity_House2_Text_ThatsTooBad::
 	.string "That's too bad.$"
 

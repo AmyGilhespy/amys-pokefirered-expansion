@@ -62,6 +62,7 @@ EventScript_PkmnCenterNurse_PlayerWaitingInUnionRoom::
 
 EventScript_PkmnCenterNurse_RenamePkmn::
 	msgbox LavenderTown_House2_Text_WhatShallNewNicknameBe
+	setvar VAR_0x8004, 0 @ Index of pokemon in player's party whose name is to change
 	call EventScript_ChangePokemonNickname
 	specialvar VAR_RESULT, NameRaterWasNicknameChanged
 	special BufferMonNickname
