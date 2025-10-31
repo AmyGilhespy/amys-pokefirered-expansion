@@ -17,9 +17,16 @@
 #define ITEM_NAME(str) COMPOUND_STRING_SIZE_LIMIT(str, ITEM_NAME_LENGTH)
 #define ITEM_PLURAL_NAME(str) COMPOUND_STRING_SIZE_LIMIT(str, ITEM_NAME_PLURAL_LENGTH)
 
+#define ESCAPE_ROPE_PRICE 1000
+
 #define Z_ITEM_PRICE 5000
 #define MEGA_STONE_PRICE 10000
 #define DYNAMAX_CANDY_PRICE 10000
+
+#define CHEAP_VITAMINS TRUE
+#define VITAMIN_PRICE (CHEAP_VITAMINS ? 1000 : ((I_PRICE >= GEN_7) ? 10000 : 9800))
+#define PP_UP_PRICE (CHEAP_VITAMINS ? 500 : ((I_PRICE == GEN_1) ? 1 : ((I_PRICE >= GEN_7) ? 10000 : 9800)))
+#define PP_MAX_PRICE (CHEAP_VITAMINS ? 1000 : ((I_PRICE >= GEN_7) ? 10000 : 9800))
 
 // Shared Item Description entries
 
@@ -1344,7 +1351,7 @@ const struct Item gItemsInfo[] =
     [ITEM_HP_UP] =
     {
         .name = ITEM_NAME("HP Up"),
-        .price = (I_PRICE >= GEN_7) ? 10000 : 9800,
+        .price = VITAMIN_PRICE,
         .description = COMPOUND_STRING(
             "Raises the base HP "
             "of one\nPokémon."),
@@ -1361,7 +1368,7 @@ const struct Item gItemsInfo[] =
     [ITEM_PROTEIN] =
     {
         .name = ITEM_NAME("Protein"),
-        .price = (I_PRICE >= GEN_7) ? 10000 : 9800,
+        .price = VITAMIN_PRICE,
         .description = COMPOUND_STRING(
             "Raises the base "
             "Attack stat of\none "
@@ -1379,7 +1386,7 @@ const struct Item gItemsInfo[] =
     [ITEM_IRON] =
     {
         .name = ITEM_NAME("Iron"),
-        .price = (I_PRICE >= GEN_7) ? 10000 : 9800,
+        .price = VITAMIN_PRICE,
         .description = COMPOUND_STRING(
             "Raises the base "
             "Defense stat of "
@@ -1397,7 +1404,7 @@ const struct Item gItemsInfo[] =
     [ITEM_CALCIUM] =
     {
         .name = ITEM_NAME("Calcium"),
-        .price = (I_PRICE >= GEN_7) ? 10000 : 9800,
+        .price = VITAMIN_PRICE,
         .description = COMPOUND_STRING(
             "Raises the base "
             "Sp. Atk stat of\none "
@@ -1415,7 +1422,7 @@ const struct Item gItemsInfo[] =
     [ITEM_ZINC] =
     {
         .name = ITEM_NAME("Zinc"),
-        .price = (I_PRICE >= GEN_7) ? 10000 : 9800,
+        .price = VITAMIN_PRICE,
         .description = COMPOUND_STRING(
             "Raises the base "
             "Sp. Def stat of\none "
@@ -1434,7 +1441,7 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Carbos"),
         .pluralName = ITEM_PLURAL_NAME("Carbos"),
-        .price = (I_PRICE >= GEN_7) ? 10000 : 9800,
+        .price = VITAMIN_PRICE,
         .description = COMPOUND_STRING(
             "Raises the base "
             "Speed stat of one\n"
@@ -1452,7 +1459,7 @@ const struct Item gItemsInfo[] =
     [ITEM_PP_UP] =
     {
         .name = ITEM_NAME("PP Up"),
-        .price = (I_PRICE == GEN_1) ? 1 : ((I_PRICE >= GEN_7) ? 10000 : 9800),
+        .price = PP_UP_PRICE,
         .description = COMPOUND_STRING(
             "Raises the maximum "
             "PP of a\nselected "
@@ -1471,7 +1478,7 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("PP Max"),
         .pluralName = ITEM_PLURAL_NAME("PP Maxes"),
-        .price = (I_PRICE >= GEN_7) ? 10000 : 9800,
+        .price = PP_MAX_PRICE,
         .description = COMPOUND_STRING(
             "Raises the PP of a "
             "move to its\nmaximum "
@@ -2356,15 +2363,9 @@ const struct Item gItemsInfo[] =
             "Use to escape "
             "instantly from a "
             "\ncave or a dungeon."),
-        #if I_KEY_ESCAPE_ROPE >= GEN_8
-            .price = 0,
-            .importance = 1,
-            .pocket = POCKET_KEY_ITEMS,
-        #else
-            .price = (I_PRICE >= GEN_7) ? 1000 : 550,
-            .pocket = POCKET_ITEMS,
-            .sortType = ITEM_TYPE_FIELD_USE,
-        #endif
+        .price = ESCAPE_ROPE_PRICE,
+        .importance = 1,
+        .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_FIELD,
         .fieldUseFunc = ItemUseOutOfBattle_EscapeRope,
         .flingPower = 30,

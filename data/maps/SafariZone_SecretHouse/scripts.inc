@@ -4,22 +4,22 @@ SafariZone_SecretHouse_MapScripts::
 SafariZone_SecretHouse_EventScript_Attendant::
 	lock
 	faceplayer
-	goto_if_set FLAG_GOT_HM03, SafariZone_SecretHouse_EventScript_ExplainSurf
+	goto_if_set FLAG_GOT_HM03, SafariZone_SecretHouse_EventScript_ExplainTR99
 	msgbox SafariZone_SecretHouse_Text_CongratsYouveWon
 	checkitemspace ITEM_HM03
-	goto_if_eq VAR_RESULT, FALSE, SafariZone_SecretHouse_EventScript_NoRoomForHM03
-	giveitem_msg SafariZone_SecretHouse_Text_ReceivedHM03FromAttendant, ITEM_HM03
-	msgbox SafariZone_SecretHouse_Text_ExplainSurf
+	goto_if_eq VAR_RESULT, FALSE, SafariZone_SecretHouse_EventScript_NoRoomForTR99
+	giveitem_msg SafariZone_SecretHouse_Text_ReceivedTR99FromAttendant, ITEM_TM99, amount=10
+	msgbox SafariZone_SecretHouse_Text_ExplainTR99
 	setflag FLAG_GOT_HM03
 	release
 	end
 
-SafariZone_SecretHouse_EventScript_NoRoomForHM03::
+SafariZone_SecretHouse_EventScript_NoRoomForTR99::
 	msgbox SafariZone_SecretHouse_Text_DontHaveRoomForPrize
 	release
 	end
 
-SafariZone_SecretHouse_EventScript_ExplainSurf::
-	msgbox SafariZone_SecretHouse_Text_ExplainSurf
+SafariZone_SecretHouse_EventScript_ExplainTR99::
+	msgbox SafariZone_SecretHouse_Text_ExplainTR99
 	release
 	end

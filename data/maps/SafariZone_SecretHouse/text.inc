@@ -9,16 +9,15 @@ SafariZone_SecretHouse_Text_CongratsYouveWon::
     .string "Congratulations!\n"
     .string "You have won!$"
 
-SafariZone_SecretHouse_Text_ReceivedHM03FromAttendant::
-    .string "{PLAYER} received HM03\n"
+SafariZone_SecretHouse_Text_ReceivedTR99FromAttendant::
+    .string "{PLAYER} received TR99\n"
     .string "from the attendant!$"
 
-SafariZone_SecretHouse_Text_ExplainSurf::
-    .string "HM03 is SURF.\p"
-    .string "POKéMON will be able to ferry you\n"
-    .string "across water using it.\p"
-    .string "And, this HM isn't disposable, so\n"
-    .string "you can use it over and over.\p"
+SafariZone_SecretHouse_Text_ExplainTR99::
+    .string "TR99 is SKETCH.\p"
+    .string "POKéMON will be able to learn any\n"
+    .string "move by permanently copying the\l"
+    .string "last move used on them.\p"
     .string "You're super lucky for winning this\n"
     .string "fabulous prize!$"
 

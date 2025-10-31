@@ -22,6 +22,7 @@ CinnabarIsland_Mart_EventScript_Clerk::
 
 	.align 2
 CinnabarIsland_Mart_Items::
+	.2byte ITEM_TM99
 	.2byte ITEM_ULTRA_BALL
 	.2byte ITEM_GREAT_BALL
 	.2byte ITEM_HYPER_POTION

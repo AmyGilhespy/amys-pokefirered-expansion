@@ -339,12 +339,24 @@ u32 GetFreeSpaceForItemInBag(u16 itemId)
     return spaceForItem;
 }
 
-static bool8 IsInfiniteItem(u16 itemId)
+static bool8 IsUselessOrBannedItem(u16 itemId)
 {
     return itemId == ITEM_RARE_CANDY
         || itemId == ITEM_REPEL
         || itemId == ITEM_SUPER_REPEL
-        || itemId == ITEM_MAX_REPEL;
+        || itemId == ITEM_MAX_REPEL
+        || itemId == ITEM_REVIVE
+        || itemId == ITEM_MAX_REVIVE
+        || itemId == ITEM_X_ATTACK
+        || itemId == ITEM_X_DEFENSE
+        || itemId == ITEM_X_SP_ATK
+        || itemId == ITEM_X_SP_DEF
+        || itemId == ITEM_X_SPEED
+        || itemId == ITEM_X_ACCURACY
+        || itemId == ITEM_DIRE_HIT
+        || itemId == ITEM_GUARD_SPEC
+        || itemId == ITEM_ESCAPE_ROPE
+        ;
 }
 
 static bool8 IsTm01ToTm50Item(u16 itemId)
@@ -356,7 +368,7 @@ u16 Item_RemapPickupItem(u16 baseItemId)
 {
     u32 nextSeed, seed;
     u16 mapNum, mapGroup, tmItemId;
-    if (IsInfiniteItem(baseItemId) || IsTm01ToTm50Item(baseItemId))
+    if (IsUselessOrBannedItem(baseItemId) || IsTm01ToTm50Item(baseItemId))
     {
         nextSeed = Random32();
         mapNum = gSaveBlock1Ptr->location.mapNum;
