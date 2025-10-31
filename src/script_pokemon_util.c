@@ -19,7 +19,7 @@
 #include "constants/abilities.h"
 #include "constants/items.h"
 #include "constants/pokemon.h"
-#include "gba/isagbprint.h"
+//#include "gba/isagbprint.h"
 
 static void CB2_ReturnFromChooseHalfParty(void);
 static void CB2_ReturnFromChooseBattleTowerParty(void);
@@ -330,7 +330,7 @@ void ScrCmd_createmon(struct ScriptContext *ctx)
     u8 speedIv        = Random() % (MAX_PER_STAT_IVS + 1);
     u8 spAtkIv        = Random() % (MAX_PER_STAT_IVS + 1);
     u8 spDefIv        = Random() % (MAX_PER_STAT_IVS + 1);
-    u16 originalSpecies = species;
+    //u16 originalSpecies = species;
     u8 unownLetter    = 0;
 
     // Perfect IV calculation
@@ -342,7 +342,7 @@ void ScrCmd_createmon(struct ScriptContext *ctx)
         unownLetter = species - (SPECIES_UNOWN_B - 1);
         species = SPECIES_UNOWN;
     }
-    MgbaPrintf(MGBA_LOG_WARN, "ScrCmd_createmon(): originalSpecies=%d, species=%d, level=%d, unownLetter=%d", originalSpecies, species, level, unownLetter);
+    //MgbaPrintf(MGBA_LOG_WARN, "ScrCmd_createmon(): originalSpecies=%d, species=%d, level=%d, unownLetter=%d", originalSpecies, species, level, unownLetter);
     if (gSpeciesInfo[species].perfectIVCount != 0)
     {
         // Initialize a list of IV indices.
