@@ -30797,28 +30797,29 @@ gBattleAnimMove_BloomDoom::
 	createvisualtask AnimTask_BlendBattleAnimPal, 0xa, 0x4, 0x2, 0x0, 0xb, 0x33ed
 	call BloomDoomHyperBeam
 	call BloomDoomHyperBeam
-	call BloomDoomHyperBeam
-	call BloomDoomHyperBeam
-	call BloomDoomHyperBeam
-	call BloomDoomHyperBeam
-	call BloomDoomHyperBeam
-	call BloomDoomHyperBeam
-	call BloomDoomHyperBeam
-	call BloomDoomHyperBeam
-	call BloomDoomHyperBeam
+	@ We have to gut it a bit or it crashes in doubles :-(  I tried everything else first and couldn't figure it out.
+	@call BloomDoomHyperBeam
+	@call BloomDoomHyperBeam
+	@call BloomDoomHyperBeam
+	@call BloomDoomHyperBeam
+	@call BloomDoomHyperBeam
+	@call BloomDoomHyperBeam
+	@call BloomDoomHyperBeam
+	@call BloomDoomHyperBeam
+	@call BloomDoomHyperBeam
 	createsprite gAromatherapySmallFlowerSpriteTemplate, ANIM_ATTACKER, 66, 0x30, 0xc, 0x0, 0x4, 0x3, 0x1, 0x0
 	createsprite gAromatherapySmallFlowerSpriteTemplate, ANIM_ATTACKER, 0, 0x64, 0x10, 0x0, 0x3, 0x2, 0x0, 0x0
 	createsprite gAromatherapySmallFlowerSpriteTemplate, ANIM_ATTACKER, 0, 0x4a, 0x18, 0xb4, 0x3, 0x2, 0x0, 0x0
-	call BloomDoomHyperBeam
-	call BloomDoomHyperBeam
-	call BloomDoomHyperBeam
-	call BloomDoomHyperBeam
-	call BloomDoomHyperBeam
-	call BloomDoomHyperBeam
-	call BloomDoomHyperBeam
-	call BloomDoomHyperBeam
-	call BloomDoomHyperBeam
-	call BloomDoomHyperBeam
+	@call BloomDoomHyperBeam
+	@call BloomDoomHyperBeam
+	@call BloomDoomHyperBeam
+	@call BloomDoomHyperBeam
+	@call BloomDoomHyperBeam
+	@call BloomDoomHyperBeam
+	@call BloomDoomHyperBeam
+	@call BloomDoomHyperBeam
+	@call BloomDoomHyperBeam
+	@call BloomDoomHyperBeam
 	createsprite gAromatherapySmallFlowerSpriteTemplate, ANIM_ATTACKER, 66, 0x50, 0x1e, 0x0, 0x4, 0x1, 0x1, 0x0
 	createsprite gAromatherapySmallFlowerSpriteTemplate, ANIM_ATTACKER, 0, 0x80, 0xc, 0x0, 0x3, 0x3, 0x0, 0x0
 	createsprite gAromatherapyBigFlowerSpriteTemplate, ANIM_ATTACKER, 0, 0x5a, 0x10, 0x0, 0x2, 0x1, 0x0, 0x0

@@ -356,9 +356,13 @@
 #define MUS_SLOW_PALLET           345 // MUS_SLOWMASARA
 #define MUS_TEACHY_TV_MENU        346 // MUS_TVNOIZE
 #define MUS_HG_VS_CHAMPION        347
+#define MUS_HG_VS_GYM_LEADER      348
+#define MUS_HG_VS_GYM_LEADER_KANTO 349
+#define MUS_HG_VS_RIVAL           350
+#define MUS_HG_VS_ROCKET          351
 
 
-#define END_MUS                   MUS_HG_VS_CHAMPION
+#define END_MUS                   MUS_HG_VS_GYM_LEADER_KANTO
 
 #define MUS_NONE                    0xFFFF
 

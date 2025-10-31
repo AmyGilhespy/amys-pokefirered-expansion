@@ -6096,13 +6096,18 @@ u16 GetBattleBGM(void)
         case TRAINER_CLASS_CHAMPION:
             return MUS_HG_VS_CHAMPION;
         case TRAINER_CLASS_LEADER:
+            return GetTrainerPicFromId(TRAINER_BATTLE_PARAM.opponentA) == TRAINER_PIC_LEADER_GIOVANNI ? MUS_HG_VS_GYM_LEADER_KANTO : MUS_VS_GYM_LEADER;
         case TRAINER_CLASS_ELITE_FOUR:
-            return MUS_VS_GYM_LEADER;
+            return MUS_HG_VS_GYM_LEADER;
         case TRAINER_CLASS_BOSS:
+            return MUS_HG_VS_GYM_LEADER_KANTO;
+        case TRAINER_CLASS_RIVAL_EARLY:
+        case TRAINER_CLASS_RIVAL_LATE:
+            return MUS_HG_VS_RIVAL;
         case TRAINER_CLASS_TEAM_ROCKET:
+            return MUS_HG_VS_ROCKET;
         case TRAINER_CLASS_COOLTRAINER:
         case TRAINER_CLASS_GENTLEMAN:
-        case TRAINER_CLASS_RIVAL_LATE:
         default:
             return MUS_VS_TRAINER;
         }

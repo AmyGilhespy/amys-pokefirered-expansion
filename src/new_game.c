@@ -170,7 +170,8 @@ void NewGameInitData(void)
     RandomEncounters_FillAllWithRandom();
     // Shortcuts:
     FlagSet(FLAG_GOT_TEA); // Unlocks the gate houses to Saffron
-    FlagSet(FLAG_RESCUED_MR_FUJI); // Moves the door guard in Saffron
+    FlagSet(FLAG_HIDE_SAFFRON_ROCKETS); // Moves the Rocket blocking the gym in Saffron
+    FlagClear(FLAG_HIDE_SAFFRON_CIVILIANS); // Moves the Rocket blocking the gym in Saffron
     AddBagItem(ITEM_POKE_FLUTE, 1);
     FlagSet(FLAG_GOT_POKE_FLUTE);
     AddBagItem(ITEM_HM03, 1); // Surf
