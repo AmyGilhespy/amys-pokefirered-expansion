@@ -31,6 +31,7 @@
 #include "constants/songs.h"
 #include "constants/region_map_sections.h"
 #include "constants/moves.h"
+#include "pokemon_icon.h"
 
 // Values for signaling to/from the link partner
 enum {
@@ -2519,6 +2520,29 @@ u16 GetTradeSpecies(void)
         return SPECIES_NONE;
     else
         return GetMonData(&gPlayerParty[gSpecialVar_0x8005], MON_DATA_SPECIES);
+}
+
+u16 GetTradeSpeciesUnownRemap(void)
+{
+    u32 personality;
+    u16 species;
+    u8 unownLetter;
+    if (GetMonData(&gPlayerParty[gSpecialVar_0x8005], MON_DATA_IS_EGG))
+        return SPECIES_NONE;
+    else
+    {
+        species = GetMonData(&gPlayerParty[gSpecialVar_0x8005], MON_DATA_SPECIES);
+        if (species == SPECIES_UNOWN)
+        {
+            personality = GetMonData(&gPlayerParty[gSpecialVar_0x8005], MON_DATA_PERSONALITY);
+            unownLetter = GetUnownLetterByPersonality(personality);
+            if (unownLetter > 0)
+            {
+                species = (SPECIES_UNOWN_B - 1) + unownLetter;
+            }
+        }
+        return species;
+    }
 }
 
 void CreateInGameTradePokemon(void)

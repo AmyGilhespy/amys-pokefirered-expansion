@@ -256,6 +256,7 @@ gSpecials::
 	def_special CreateInGameTradePokemon
 	def_special DoInGameTradeScene
 	def_special GetTradeSpecies
+	def_special GetTradeSpeciesUnownRemap
 	def_special NullFieldSpecial  @ Misc Hoenn specials
 	def_special NullFieldSpecial
 	def_special NullFieldSpecial

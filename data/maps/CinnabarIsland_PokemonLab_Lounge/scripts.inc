@@ -15,7 +15,7 @@ CinnabarIsland_PokemonLab_Lounge_EventScript_Clifton::
 	goto_if_eq VAR_RESULT, NO, CinnabarIsland_PokemonLab_Lounge_EventScript_CliftonDeclineTrade
 	call EventScript_ChooseMonForInGameTrade
 	goto_if_ge VAR_0x8004, PARTY_SIZE, CinnabarIsland_PokemonLab_Lounge_EventScript_CliftonDeclineTrade
-	call EventScript_GetInGameTradeSpecies
+	call EventScript_GetInGameTradeSpeciesUnownRemap
 	goto_if_ne VAR_RESULT, SPECIES_UNOWN_EXCLAMATION, CinnabarIsland_PokemonLab_Lounge_EventScript_CliftonNotRequestedMon
 	call EventScript_DoInGameTrade
 	msgbox Trade_Text_Thanks

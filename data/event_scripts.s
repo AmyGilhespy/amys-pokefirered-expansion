@@ -1220,6 +1220,12 @@ EventScript_GetInGameTradeSpecies::
 	copyvar VAR_0x800B, VAR_RESULT
 	return
 
+EventScript_GetInGameTradeSpeciesUnownRemap::
+	copyvar VAR_0x8005, VAR_0x800A
+	specialvar VAR_RESULT, GetTradeSpeciesUnownRemap
+	copyvar VAR_0x800B, VAR_RESULT
+	return
+
 EventScript_DoInGameTrade::
 	copyvar VAR_0x8004, VAR_0x8008
 	copyvar VAR_0x8005, VAR_0x800A
