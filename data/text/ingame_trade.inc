@@ -28,6 +28,15 @@ Trade_Text_LookingForSomethingSpecificWannaTradeForMon::
 Trade_Text_LookingForSomethingSpecificWrongMon::
 	.string "That's not a ''!'' UNOWN!$"
 
+Trade_Text_InterestingOfferMewWannaTradeForUnawareMew:
+	.string "I have an interesting offer\n"
+	.string "for you: I'll trade an\l"
+	.string "UNAWARE MEW for any other MEW.\p"
+	.string "Wanna trade?$"
+
+Trade_Text_InterestingOfferMewWrongMon::
+	.string "That's not MEW!$"
+
 Trade_Text_WellIfYouDontWantTo::
 	.string "Well, if you don't want to…$"
 

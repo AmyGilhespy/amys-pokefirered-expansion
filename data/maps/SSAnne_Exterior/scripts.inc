@@ -33,6 +33,10 @@ SSAnne_Exterior_Movement_WalkUp::
 	step_end
 
 SSAnne_Exterior_EventScript_StrengthTruck::
+	goto_if_unset FLAG_TEMP_1, SSAnne_Exterior_EventScript_StrengthTruckSignActive
+	end
+
+SSAnne_Exterior_EventScript_StrengthTruckSignActive::
 	goto_if_questlog EventScript_ReleaseEnd
 	lockall
 	goto_if_set FLAG_SYS_USE_STRENGTH, SSAnne_Exterior_EventScript_AlreadyUsedStrength
@@ -57,6 +61,7 @@ SSAnne_Exterior_EventScript_UseStrength::
 	setflag FLAG_SYS_USE_STRENGTH
 	msgbox SSAnne_Exterior_Text_MonUsedStrengthCanMoveTrucks, MSGBOX_SIGN
 	lock
+	setflag FLAG_TEMP_1 @disable the signs
 	setmetatile 54, 2, METATILE_General_PavementBlockedAbove, 1
 	setmetatile 54, 3, METATILE_General_PavementCenter, 1
 	special DoTruckMoveCutscene
@@ -64,6 +69,27 @@ SSAnne_Exterior_EventScript_UseStrength::
 	setmetatile 57, 2, METATILE_General_PavementBlockedAbove, 0
 	setmetatile 57, 3, METATILE_General_PavementCenter, 0
 	release
+	goto_if_unset FLAG_MEW_UNDER_TRUCK_ENCOUNTER, SSAnne_Exterior_EventScript_MewUnderTruckEncounter
+	end
+
+SSAnne_Exterior_EventScript_MewUnderTruckEncounter::
+	setwildbattle SPECIES_MEW, 100, ITEM_NONE
+	waitse
+	playmoncry SPECIES_MEW, CRY_MODE_ENCOUNTER
+	delay 40
+	waitmoncry
+	setflag FLAG_SYS_SPECIAL_WILD_BATTLE
+	dowildbattle
+	clearflag FLAG_SYS_SPECIAL_WILD_BATTLE
+	special QuestLog_CutRecording
+	specialvar VAR_RESULT, GetBattleOutcome
+	@goto_if_eq VAR_RESULT, B_OUTCOME_WON, SSAnne_Exterior_EventScript_FoughtMewUnderTruck
+	@goto_if_eq VAR_RESULT, B_OUTCOME_RAN, SSAnne_Exterior_EventScript_FoughtMewUnderTruck
+	@goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, SSAnne_Exterior_EventScript_FoughtMewUnderTruck
+	setflag FLAG_MEW_UNDER_TRUCK_ENCOUNTER
+	end
+
+SSAnne_Exterior_EventScript_FoughtMewUnderTruck::
 	end
 
 SSAnne_Exterior_EventScript_CantMoveTruck::
