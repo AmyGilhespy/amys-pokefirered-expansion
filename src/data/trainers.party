@@ -15627,7 +15627,7 @@ Double Battle: Yes
 AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Smart Switching / Ace Pokemon / Omniscient / Prefer Highest Damage Move
 
 Necrozma-Dusk Mane @ Ultranecrozium Z
-Level: 100
+Level: 60
 IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 0 HP / 0 Atk / 32 Def / 224 SpA / 0 SpD / 252 Spe
 Ability: Prism Armor
@@ -15638,7 +15638,7 @@ Nature: Jolly
 - Heat Wave
 
 Rayquaza @ Life Orb
-Level: 100
+Level: 60
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 0 HP / 252 Atk / 4 Def / 0 SpA / 0 SpD / 252 Spe
 Ability: Air Lock
@@ -15649,7 +15649,7 @@ Nature: Adamant
 - V-create
 
 Pikachu @ Light Ball
-Level: 100
+Level: 60
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 0 HP / 252 Atk / 0 Def / 0 SpA / 4 SpD / 252 Spe
 Ability: Galvanize

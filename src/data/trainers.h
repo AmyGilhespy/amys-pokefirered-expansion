@@ -40232,7 +40232,7 @@ F_TRAINER_FEMALE |
 #line 15633
             .ability = ABILITY_PRISM_ARMOR,
 #line 15630
-            .lvl = 100,
+            .lvl = 60,
 #line 15634
             .nature = NATURE_JOLLY,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
@@ -40257,7 +40257,7 @@ F_TRAINER_FEMALE |
 #line 15644
             .ability = ABILITY_AIR_LOCK,
 #line 15641
-            .lvl = 100,
+            .lvl = 60,
 #line 15645
             .nature = NATURE_ADAMANT,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
@@ -40282,7 +40282,7 @@ F_TRAINER_FEMALE |
 #line 15655
             .ability = ABILITY_GALVANIZE,
 #line 15652
-            .lvl = 100,
+            .lvl = 60,
 #line 15656
             .nature = NATURE_ADAMANT,
 #line 15657

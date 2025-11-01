@@ -155,7 +155,7 @@ gFameCheckerFlavorText_LtSurge0:: @ 0x81ADD3C
 	.string "{COLOR BLUE}{SHADOW LIGHT_BLUE}What does this person do?\p"
 	.string "{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}VERMILION CITY POKéMON GYM\n"
 	.string "LEADER: LT. SURGE\l"
-	.string "The Lightning American!$"
+	.string "The Lightning Unovian!$"
 
 gFameCheckerFlavorText_LtSurge1:: @ 0x81ADDA7
 	.string "{COLOR BLUE}{SHADOW LIGHT_BLUE}Favorite kind of POKéMON?\p"
@@ -182,7 +182,7 @@ gFameCheckerFlavorText_LtSurge4:: @ 0x81ADEEC
 gFameCheckerFlavorText_LtSurge5:: @ 0x81ADF6A
 	.string "{COLOR BLUE}{SHADOW LIGHT_BLUE}There's a rumor…\p"
 	.string "{COLOR DARK_GRAY}{SHADOW LIGHT_GRAY}LT. SURGE is rumored to have been\n"
-	.string "a pilot while home in America.\p"
+	.string "a pilot while home in Unova.\p"
 	.string "He used the electricity generated\n"
 	.string "by POKéMON to power his plane.$"
 
@@ -1392,7 +1392,7 @@ PokemonJournal_Text_SpecialFeatureLtSurge::
 	.string "Special Feature: VERMILION GYM\n"
 	.string "LEADER LT. SURGE!\p"
 	.string "LT. SURGE is rumored to have been\n"
-	.string "a pilot while home in America.\p"
+	.string "a pilot while home in Unova.\p"
 	.string "He used the electricity generated\n"
 	.string "by POKéMON to power his plane.$"
 

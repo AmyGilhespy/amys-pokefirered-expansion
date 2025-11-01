@@ -28,7 +28,10 @@ SaffronCity_Gym_Text_SabrinaPostBattle::
     .string "Psychic power isn't something that\n"
     .string "only a few people have.\p"
     .string "Everyone has psychic power.\n"
-    .string "People just don't realize it.$"
+    .string "People just don't realize it.\p"
+    .string "By the way, I have some items\n"
+    .string "that may interest you.\p"
+    .string "Take a look!$"
 
 SaffronCity_Gym_Text_ExplainMarshBadgeTakeThis::
     .string "The MARSHBADGE makes POKéMON up\n"
@@ -47,6 +50,12 @@ SaffronCity_Gym_Text_ExplainTR99::
     .string "TR99 is SKETCH.\p"
     .string "It makes the POKéMON concentrate\n"
     .string "and copy the previous move.$"
+
+SaffronCity_Gym_Text_ShopIntro::
+    .string "What can I do for you?$"
+
+SaffronCity_Gym_Text_ShopOutro::
+    .string "Come back to see me sometimes!$"
 
 SaffronCity_Gym_Text_BagFullOfOtherItems::
     .string "Your BAG is full of other items.$"

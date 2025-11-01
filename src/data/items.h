@@ -12545,7 +12545,7 @@ const struct Item gItemsInfo[] =
     [ITEM_MEGA_RING] =
     {
         .name = ITEM_NAME("Mega Ring"),
-        .price = 0,
+        .price = 25000,
         .importance = 1,
         .description = COMPOUND_STRING(
             "Enables {PKMN} holding "
@@ -12561,7 +12561,7 @@ const struct Item gItemsInfo[] =
     [ITEM_Z_POWER_RING] =
     {
         .name = ITEM_NAME("Z-Power Ring"),
-        .price = 0,
+        .price = 10000,
         .importance = 1,
         .description = COMPOUND_STRING(
             "A strange ring "
@@ -12577,7 +12577,7 @@ const struct Item gItemsInfo[] =
     [ITEM_DYNAMAX_BAND] =
     {
         .name = ITEM_NAME("Dynamax Band"),
-        .price = 0,
+        .price = 50000,
         .description = COMPOUND_STRING(
             "A band carrying a "
             "Wishing Star\nthat "

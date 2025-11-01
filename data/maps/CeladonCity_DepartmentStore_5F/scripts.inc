@@ -26,10 +26,6 @@ CeladonCity_DepartmentStore_5F_EventScript_ClerkXItems::
 
 	.align 2
 CeladonCity_DepartmentStore_5F_XItems::
-	.2byte ITEM_MEGA_RING
-	.2byte ITEM_Z_POWER_RING
-	.2byte ITEM_DYNAMAX_BAND
-
 	.2byte ITEM_NORMALIUM_Z
 	.2byte ITEM_FIRIUM_Z
 	.2byte ITEM_WATERIUM_Z

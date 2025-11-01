@@ -7,14 +7,28 @@ SaffronCity_Gym_EventScript_Sabrina::
 	goto_if_ne VAR_RESULT, 0, SaffronCity_Gym_EventScript_Sabrina_Nuzlocke
 	trainerbattle_single TRAINER_LEADER_SABRINA, SaffronCity_Gym_Text_SabrinaIntroStandard, SaffronCity_Gym_Text_SabrinaDefeat, SaffronCity_Gym_EventScript_DefeatedSabrina, NO_MUSIC
 	goto_if_unset FLAG_GOT_TR99_FROM_SABRINA, SaffronCity_Gym_EventScript_GiveTR99
-	msgbox SaffronCity_Gym_Text_ExplainTR99
-	release
+	goto SaffronCity_Gym_Shop
 	end
 
 SaffronCity_Gym_EventScript_Sabrina_Nuzlocke::
 	trainerbattle_single TRAINER_LEADER_SABRINA, SaffronCity_Gym_Text_SabrinaIntroNuzlocke, SaffronCity_Gym_Text_SabrinaDefeat, SaffronCity_Gym_EventScript_DefeatedSabrina, NO_MUSIC
 	goto_if_unset FLAG_GOT_TR99_FROM_SABRINA, SaffronCity_Gym_EventScript_GiveTR99
-	msgbox SaffronCity_Gym_Text_ExplainTR99
+	goto SaffronCity_Gym_Shop
+	end
+
+SaffronCity_Gym_Shop::
+	msgbox SaffronCity_Gym_Text_ShopIntro
+	pokemart SaffronCity_Gym_Items
+	msgbox SaffronCity_Gym_Text_ShopOutro
+	release
+	end
+
+	.align 2
+SaffronCity_Gym_Items::
+	.2byte ITEM_Z_POWER_RING
+	.2byte ITEM_MEGA_RING
+	.2byte ITEM_DYNAMAX_BAND
+	.2byte ITEM_NONE
 	release
 	end
 
@@ -34,8 +48,9 @@ SaffronCity_Gym_EventScript_GiveTR99::
 	goto_if_eq VAR_RESULT, FALSE, SaffronCity_Gym_EventScript_NoRoomForTR99
 	giveitem_msg SaffronCity_Gym_Text_ReceivedTR99FromSabrina, ITEM_TM99
 	setflag FLAG_GOT_TR99_FROM_SABRINA
+	msgbox SaffronCity_Gym_Text_ExplainTR99
 	msgbox SaffronCity_Gym_Text_SabrinaPostBattle
-	release
+	goto SaffronCity_Gym_Shop
 	end
 
 SaffronCity_Gym_EventScript_NoRoomForTR99::
