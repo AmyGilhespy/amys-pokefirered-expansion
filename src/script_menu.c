@@ -376,14 +376,14 @@ static const struct MenuAction sMultichoiceList_BikeShop[] = {
 };
 
 static const struct MenuAction sMultichoiceList_GameCornerPokemonPrizes[] = {
-    //{ gText_Abra_150Coins }, // Only 7 fit in the menu, and Abra is the least important.  It also makes Unown not first, and we want Unown to be first.
-    { gText_Unown_500Coins },
+    { gText_Unown_100Coins },
+    { gText_Abra_150Coins },
     { gText_Clefairy_625Coins },
     { gText_Pinsir_2500Coins },
     { gText_Dratini_3700Coins },
     { gText_Scyther_5500Coins },
     { gText_Porygon_8250Coins },
-    { gText_Mimikyu_9999Coins },
+    { gText_Mimikyu_9999Coins }
 /*
 #if defined(FIRERED)
     { gText_Abra_180Coins },
@@ -398,8 +398,8 @@ static const struct MenuAction sMultichoiceList_GameCornerPokemonPrizes[] = {
     { gText_Dratini_4600Coins },
     { gText_Porygon_6500Coins },
 #endif
-*/
     { gText_NoThanks_2 }
+*/
 };
 
 static const struct MenuAction sMultichoiceList_TradeCenter_Colosseum[] = {

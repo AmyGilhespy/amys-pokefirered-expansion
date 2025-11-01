@@ -177,6 +177,7 @@ void NewGameInitData(void)
     AddBagItem(ITEM_POKE_FLUTE, 1);
     FlagSet(FLAG_GOT_POKE_FLUTE);
     AddBagItem(ITEM_HM03, 1); // Surf
+    AddBagItem(ITEM_HM05, 1); // Flash
     AddBagItem(ITEM_SECRET_KEY, 1);
     FlagSet(FLAG_HIDE_POKEMON_MANSION_B1F_SECRET_KEY); // Unlocks the gym in Cinnabar
 }

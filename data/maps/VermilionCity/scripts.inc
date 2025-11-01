@@ -192,7 +192,7 @@ VermilionCity_EventScript_CheckTicket::
 	applymovement LOCALID_VERMILION_FERRY_SAILOR, Common_Movement_WalkInPlaceFasterLeft
 	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterRight
 	waitmovement 0
-	goto_if_eq VAR_MAP_SCENE_VERMILION_CITY, 3, VermilionCity_EventScript_CheckSeagallopPresentTrigger
+	goto_if_eq VAR_MAP_SCENE_VERMILION_CITY, 3, VermilionCity_EventScript_SSAnneGoneButGoDownPierAnyway
 	msgbox VermilionCity_Text_DoYouHaveATicket
 	goto_if_unset FLAG_GOT_SS_TICKET, VermilionCity_EventScript_DontHaveSSTicket
 	msgbox VermilionCity_Text_FlashedSSTicket
@@ -204,6 +204,11 @@ VermilionCity_EventScript_DontHaveSSTicket::
 	msgbox VermilionCity_Text_DontHaveNeededSSTicket
 	closemessage
 	goto VermilionCity_EventScript_WalkUpPier
+	end
+
+VermilionCity_EventScript_SSAnneGoneButGoDownPierAnyway::
+	msgbox VermilionCity_Text_SSAnneGoneButGoDownPierAnyway
+	release
 	end
 
 VermilionCity_EventScript_CheckSeagallopPresentTrigger::

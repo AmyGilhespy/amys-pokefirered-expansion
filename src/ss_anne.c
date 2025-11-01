@@ -19,6 +19,9 @@ static void CreateWakeBehindBoat(void);
 static void WakeSpriteCallback(struct Sprite *sprite);
 static void CreateSmokeSprite(void);
 static void SmokeSpriteCallback(struct Sprite *sprite);
+static void Task_TruckInit(u8 taskId);
+static void Task_TruckRun(u8 taskId);
+static void Task_TruckFinish(u8 taskId);
 
 static const u16 sWakeTiles[] = INCBIN_U16("graphics/ss_anne/wake.4bpp");
 static const u16 sSmokeTiles[] = INCBIN_U16("graphics/ss_anne/smoke.4bpp");
@@ -218,3 +221,90 @@ static void SmokeSpriteCallback(struct Sprite *sprite)
     if (sprite->animEnded)
         DestroySprite(sprite);
 }
+
+
+#define TRUCK_OBJECT_ID             2
+#define TRUCK_MOVE_PIXELS_PER_FRAME 1
+#define TRUCK_MOVE_DELAY_PER_PIXEL  3
+#define TRUCK_MOVE_TOTAL_PIXELS     16  // one tile = 16 pixels
+#define TRUCK_MOVE_PREMOVE_DELAY    10
+#define TRUCK_MOVE_POSTMOVE_DELAY   10 // short delay before resuming script
+
+void DoTruckMoveCutscene(void)
+{
+    u8 taskId;
+
+    taskId = CreateTask(Task_TruckInit, 8);
+    gTasks[taskId].data[0] = TRUCK_MOVE_PREMOVE_DELAY;
+}
+
+static void Task_TruckInit(u8 taskId)
+{
+    s16 * data = gTasks[taskId].data;
+
+    if (--data[0] <= 0)
+    {
+        data[1] = 0; // pixel counter
+        data[2] = 0; // frame counter
+        gTasks[taskId].func = Task_TruckRun;
+    }
+}
+
+static void Task_TruckRun(u8 taskId)
+{
+    s16 *data = gTasks[taskId].data;
+    u8 objectEventId;
+    struct ObjectEvent *truckObject;
+
+    if (TryGetObjectEventIdByLocalIdAndMap(2,
+            gSaveBlock1Ptr->location.mapNum,
+            gSaveBlock1Ptr->location.mapGroup,
+            &objectEventId))
+        return; // couldn't find object safely
+
+    truckObject = &gObjectEvents[objectEventId];
+
+    // Every TRUCK_MOVE_DELAY_PER_PIXEL frames, move 1 pixel
+    if (++data[2] >= TRUCK_MOVE_DELAY_PER_PIXEL)
+    {
+        data[2] = 0;  // reset frame counter
+        if (data[1] < TRUCK_MOVE_TOTAL_PIXELS)
+        {
+            data[1]++;
+            gSprites[truckObject->spriteId].x2 = -data[1];  // move left
+        }
+        else
+        {
+            // Finish movement
+            gSprites[truckObject->spriteId].x2 = 0;
+
+            // Actually shift truck's permanent map position left 1 tile
+            truckObject->currentCoords.x -= 1;
+            truckObject->previousCoords.x -= 1;
+            truckObject->initialCoords.x -= 1;
+            MoveObjectEventToMapCoords(truckObject,
+                truckObject->currentCoords.x,
+                truckObject->currentCoords.y);
+
+            // Sync sprite with new tile location
+            ShiftStillObjectEventCoords(truckObject);
+
+            // Proceed to finish phase
+            gTasks[taskId].data[3] = 0;
+            gTasks[taskId].func = Task_TruckFinish;
+            return;
+        }
+    }
+}
+
+static void Task_TruckFinish(u8 taskId)
+{
+    s16 * data = gTasks[taskId].data;
+
+    if (++data[3] >= TRUCK_MOVE_POSTMOVE_DELAY)
+    {
+        DestroyTask(taskId);
+        ScriptContext_Enable();
+    }
+}
+

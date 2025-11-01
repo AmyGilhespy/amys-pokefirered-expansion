@@ -399,6 +399,7 @@ gSpecials::
 	def_special SetBattledTrainerFlag
 	def_special SetHelpContextForMap
 	def_special DoSSAnneDepartureCutscene
+	def_special DoTruckMoveCutscene
 	def_special IsPokemonJumpSpeciesInParty
 	def_special IsNationalPokedexEnabled
 	def_special CallTrainerTowerFunc

@@ -48,7 +48,7 @@ VermilionCity_Text_PokemonFanClubSign::
 VermilionCity_Text_GymSign::
     .string "VERMILION CITY POKéMON GYM\n"
     .string "LEADER: LT. SURGE\l"
-    .string "The Lightning American!$"
+    .string "The Lightning Unovian!$"
 
 VermilionCity_Text_VermilionHarbor::
     .string "VERMILION HARBOR$"
@@ -73,6 +73,10 @@ VermilionCity_Text_DontHaveNeededSSTicket::
 
 VermilionCity_Text_TheShipSetSail::
     .string "The ship set sail.$"
+
+VermilionCity_Text_SSAnneGoneButGoDownPierAnyway::
+    .string "The ship set sail, but I guess\n"
+    .string "you can walk down the pier anyway.$"
 
 VermilionCity_Text_BoardSeagallopTriPass::
     .string "Ah, you have a TRI-PASS.\p"

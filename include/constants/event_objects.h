@@ -160,8 +160,9 @@
 #define OBJ_EVENT_GFX_BERRY_TREE_EARLY_STAGES     154
 #define OBJ_EVENT_GFX_BERRY_TREE_LATE_STAGES      155
 #define OBJ_EVENT_GFX_OW_MON     156
+#define OBJ_EVENT_GFX_TRUCK 157
 
-#define NUM_OBJ_EVENT_GFX     157
+#define NUM_OBJ_EVENT_GFX     158
 
 // These are dynamic object gfx ids.
 // They correspond with the values of the VAR_OBJ_GFX_ID_X vars.
@@ -271,7 +272,8 @@
 #define OBJ_EVENT_PAL_TAG_NPC_2                       0x111D // emerald
 #define OBJ_EVENT_PAL_TAG_NPC_3                       0x111E // emerald
 #define OBJ_EVENT_PAL_TAG_NPC_4                       0x111F // emerald
-#define OBJ_EVENT_PAL_TAG_DYNAMIC                     0x1120
+#define OBJ_EVENT_PAL_TAG_TRUCK                       0x1120
+#define OBJ_EVENT_PAL_TAG_DYNAMIC                     0x1121
 
 #if OW_FOLLOWERS_POKEBALLS
 // Vanilla

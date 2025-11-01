@@ -25,13 +25,13 @@ CeladonCity_GameCorner_PrizeRoom_EventScript_ChoosePrizeMon::
 	multichoice 11, 0, MULTICHOICE_GAME_CORNER_POKEMON_PRIZES, FALSE
 	switch VAR_RESULT
 	case 0, CeladonCity_GameCorner_PrizeRoom_EventScript_Unown
-	case 1, CeladonCity_GameCorner_PrizeRoom_EventScript_Clefairy
-	case 2, CeladonCity_GameCorner_PrizeRoom_EventScript_Pinsir
-	case 3, CeladonCity_GameCorner_PrizeRoom_EventScript_Dratini
-	case 4, CeladonCity_GameCorner_PrizeRoom_EventScript_Scyther
-	case 5, CeladonCity_GameCorner_PrizeRoom_EventScript_Porygon
-	case 6, CeladonCity_GameCorner_PrizeRoom_EventScript_Mimikyu
-	case 7, CeladonCity_GameCorner_PrizeRoom_EventScript_EndPrizeExchange
+	case 1, CeladonCity_GameCorner_PrizeRoom_EventScript_Abra
+	case 2, CeladonCity_GameCorner_PrizeRoom_EventScript_Clefairy
+	case 3, CeladonCity_GameCorner_PrizeRoom_EventScript_Pinsir
+	case 4, CeladonCity_GameCorner_PrizeRoom_EventScript_Dratini
+	case 5, CeladonCity_GameCorner_PrizeRoom_EventScript_Scyther
+	case 6, CeladonCity_GameCorner_PrizeRoom_EventScript_Porygon
+	case 7, CeladonCity_GameCorner_PrizeRoom_EventScript_Mimikyu
 	case 127, CeladonCity_GameCorner_PrizeRoom_EventScript_EndPrizeExchange
 	end
 
@@ -47,7 +47,7 @@ CeladonCity_GameCorner_PrizeRoom_EventScript_Abra::
 	end
 
 CeladonCity_GameCorner_PrizeRoom_EventScript_Unown::
-	setvar VAR_TEMP_2, 500
+	setvar VAR_TEMP_2, 100
 	bufferspeciesname STR_VAR_1, SPECIES_UNOWN
 	random 28
 	copyvar VAR_TEMP_1, VAR_RESULT

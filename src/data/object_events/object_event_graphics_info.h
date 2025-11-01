@@ -2981,6 +2981,25 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SSAnne = {
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Truck = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_TRUCK,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 2304,
+    .width = 48,
+    .height = 48,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .compressed = FALSE,
+    .tracks = TRACKS_NONE,
+    .oam = &gObjectEventBaseOam_8x8,
+    .subspriteTables = gObjectEventSpriteOamTables_48x48,
+    .anims = sAnimTable_Standard,
+    .images = sPicTable_Truck,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PokeBall = {
     .tileTag = TAG_NONE,
     .paletteTag = OBJ_EVENT_PAL_TAG_NPC_3,

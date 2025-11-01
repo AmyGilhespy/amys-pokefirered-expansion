@@ -69,6 +69,8 @@
 #define METATILE_General_WideTreeTopLeft_Mowed   0x00E
 #define METATILE_General_WideTreeTopRight_Grass  0x00C
 #define METATILE_General_WideTreeTopRight_Mowed  0x00F
+#define METATILE_General_PavementCenter          0x1C1
+#define METATILE_General_PavementBlockedAbove    0x31B
 
 // gTileset_GenericBuilding1
 #define METATILE_GenericBuilding1_PlayersPCOff  0x28F

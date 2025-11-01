@@ -153,6 +153,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_DeoxysD;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_DeoxysA;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_DeoxysN;
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SSAnne;
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Truck;
 // Begin pokemon event objects
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PokeBall;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Follower;
@@ -313,6 +314,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_SS_ANNE]                  = &gObjectEventGraphicsInfo_SSAnne,
     [OBJ_EVENT_GFX_POKE_BALL] =                &gObjectEventGraphicsInfo_PokeBall,
     [OBJ_EVENT_GFX_OW_MON] =                   &gObjectEventGraphicsInfo_Follower,
+    [OBJ_EVENT_GFX_TRUCK]                    = &gObjectEventGraphicsInfo_Truck,
     [OBJ_EVENT_GFX_BERRY_TREE] =               &gObjectEventGraphicsInfo_BerryTree,
     [OBJ_EVENT_GFX_BERRY_TREE_EARLY_STAGES] =  &gObjectEventGraphicsInfo_BerryTreeEarlyStages,
     [OBJ_EVENT_GFX_BERRY_TREE_LATE_STAGES] =   &gObjectEventGraphicsInfo_BerryTreeLateStages,

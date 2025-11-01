@@ -5,7 +5,7 @@ Route2_EastBuilding_Text_GiveHM05IfSeen10Mons::
     .string "on ten species, I'm supposed to\l"
     .string "give you a reward.\p"
     .string "PROF. OAK entrusted me with\n"
-    .string "HM05 for you.\p"
+    .string "TR99 for you.\p"
     .string "So, {PLAYER}, let me ask you.\p"
     .string "Have you gathered data on at least\n"
     .string "ten kinds of POKéMON?$"
@@ -21,12 +21,11 @@ Route2_EastBuilding_Text_ReceivedHM05FromAide::
     .string "from the AIDE.$"
 
 Route2_EastBuilding_Text_ExplainHM05::
-    .string "HM05 contains the hidden move\n"
-    .string "FLASH.\p"
-    .string "FLASH lights up even the darkest\n"
-    .string "of caves and dungeons.$"
+    .string "TR99 contains the SKETCH.\p"
+    .string "SKETCH permanently copies the\n"
+    .string "last move used on a POKéMON.$"
 
 Route2_EastBuilding_Text_CanGetThroughRockTunnel::
-    .string "Once a POKéMON learns FLASH, you\n"
-    .string "can get through ROCK TUNNEL.$"
+    .string "Once a POKéMON learns SKETCH,\n"
+    .string "you can learn any move!$"
 

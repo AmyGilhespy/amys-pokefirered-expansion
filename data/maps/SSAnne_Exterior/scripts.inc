@@ -11,6 +11,92 @@ SSAnne_Exterior_OnFrame::
 	map_script_2 VAR_MAP_SCENE_VERMILION_CITY, 1, SSAnne_Exterior_ExitSSAnne
 	.2byte 0
 
+SSAnne_Exterior_CoordEvent_PierWarpCheck::
+	goto_if_eq VAR_MAP_SCENE_VERMILION_CITY, 3, SSAnne_Exterior_CoordEvent_PierWarpBlock
+	end
+
+SSAnne_Exterior_CoordEvent_PierWarpBlock::
+	msgbox SSAnne_Exterior_Text_ShipHasDeparted
+	closemessage
+	goto SSAnne_Exterior_WalkUpPier
+	end
+
+SSAnne_Exterior_WalkUpPier::
+	closemessage
+	applymovement LOCALID_PLAYER, SSAnne_Exterior_Movement_WalkUp
+	waitmovement 0
+	releaseall
+	end
+
+SSAnne_Exterior_Movement_WalkUp::
+	walk_up
+	step_end
+
+SSAnne_Exterior_EventScript_StrengthTruck::
+	goto_if_questlog EventScript_ReleaseEnd
+	lockall
+	goto_if_set FLAG_SYS_USE_STRENGTH, SSAnne_Exterior_EventScript_AlreadyUsedStrength
+	checkfieldmoveusable FIELD_MOVE_STRENGTH
+	goto_if_eq VAR_RESULT, FALSE, SSAnne_Exterior_EventScript_CantMoveTruck
+	msgbox SSAnne_Exterior_Text_UseStrength, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, SSAnne_Exterior_EventScript_DontUseStrength
+	closemessage
+	dofieldeffect FLDEFF_USE_STRENGTH
+	waitstate
+	goto SSAnne_Exterior_EventScript_UseStrength
+	end
+
+SSAnne_Exterior_EventScript_FldEffStrength::
+	lockall
+	dofieldeffect FLDEFF_USE_STRENGTH
+	waitstate
+	goto SSAnne_Exterior_EventScript_UseStrength
+	end
+
+SSAnne_Exterior_EventScript_UseStrength::
+	setflag FLAG_SYS_USE_STRENGTH
+	msgbox SSAnne_Exterior_Text_MonUsedStrengthCanMoveTrucks, MSGBOX_SIGN
+	lock
+	setmetatile 54, 2, METATILE_General_PavementBlockedAbove, 1
+	setmetatile 54, 3, METATILE_General_PavementCenter, 1
+	special DoTruckMoveCutscene
+	waitstate
+	setmetatile 57, 2, METATILE_General_PavementBlockedAbove, 0
+	setmetatile 57, 3, METATILE_General_PavementCenter, 0
+	release
+	end
+
+SSAnne_Exterior_EventScript_CantMoveTruck::
+	msgbox SSAnne_Exterior_Text_MonMayPushTruck, MSGBOX_SIGN
+	end
+
+SSAnne_Exterior_EventScript_AlreadyUsedStrength::
+	msgbox SSAnne_Exterior_Text_StrengthMadeMovingTrucksPossible, MSGBOX_SIGN
+	end
+
+SSAnne_Exterior_EventScript_DontUseStrength::
+	closemessage
+	releaseall
+	end
+
+SSAnne_Exterior_Text_UseStrength::
+	.string "It's a big truck, but a POKéMON\n"
+	.string "may be able to push it aside.\p"
+	.string "Would you like to use STRENGTH?$"
+
+SSAnne_Exterior_Text_MonUsedStrengthCanMoveTrucks::
+	.string "{STR_VAR_1} used STRENGTH!\p"
+	.string "{STR_VAR_1}'s STRENGTH made it\n"
+	.string "possible to move the truck!$"
+
+SSAnne_Exterior_Text_MonMayPushTruck::
+	.string "It's a big truck, but a POKéMON\n"
+	.string "may be able to push it aside.$"
+
+SSAnne_Exterior_Text_StrengthMadeMovingTrucksPossible::
+	.string "STRENGTH made it possible to move\n"
+	.string "the truck.$"
+
 SSAnne_Exterior_ExitSSAnne::
 	lockall
 	getplayerxy VAR_0x8004, VAR_0x8005
