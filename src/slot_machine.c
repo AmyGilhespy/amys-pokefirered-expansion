@@ -11,6 +11,7 @@
 #include "trig.h"
 #include "strings.h"
 #include "constants/songs.h"
+#include "item.h"
 
 #define NUM_REELS 3
 #define REEL_LENGTH 21 // Total number of icons per reel
@@ -1410,6 +1411,14 @@ static void StopReel1(u16 whichReel)
     sSlotMachineState->destReelPos[whichReel] = destPos;
 }
 
+static u8 GetReel1IconForSilphScopeCheat(void)
+{
+    s32 reel1pos = sSlotMachineState->reelPositions[0] + 2;
+    if (reel1pos >= REEL_LENGTH)
+        reel1pos -= REEL_LENGTH;
+    return sReelIconAnimByReelAndPos[0][reel1pos];
+}
+
 static void StopReel2(u16 whichReel)
 {
     s16 pos, firstStoppedReelPos, firstStoppedReelId, nextPos;
@@ -1454,6 +1463,30 @@ static void StopReel2(u16 whichReel)
     if (pos < 0)
         pos += REEL_LENGTH;
     sSlotMachineState->reelStopOrder[1] = whichReel;
+
+    // --- SILPH SCOPE CHEAT ADDITION BEGIN (REEL 2) ---
+    if (CheckBagHasItem(ITEM_SILPH_SCOPE, 1))
+    {
+        // Occasionally force a winning alignment
+        if (TRUE) // Always align the first two reels.
+        {
+            // Match the symbol shown on the first reel
+            u8 matchSymbol = GetReel1IconForSilphScopeCheat();
+
+            // Search for the same symbol on this reel to make it match
+            for (i = 0; i < REEL_LENGTH; i++)
+            {
+                if (sReelIconAnimByReelAndPos[1][i] == matchSymbol)
+                {
+                    pos = (i + (REEL_LENGTH - 2)) % REEL_LENGTH;
+                    sSlotMachineState->reelSubpixel[2] = 0;
+                    break;
+                }
+            }
+        }
+    }
+    // --- SILPH SCOPE CHEAT ADDITION END ---
+
     sSlotMachineState->destReelPos[whichReel] = pos;
 }
 
@@ -1492,6 +1525,30 @@ static void StopReel3(u16 whichReel)
     pos = nextPos - pos;
     if (pos < 0)
         pos += REEL_LENGTH;
+
+    // --- SILPH SCOPE CHEAT ADDITION BEGIN 3---
+    if (CheckBagHasItem(ITEM_SILPH_SCOPE, 1))
+    {
+        // Occasionally force a winning alignment
+        if ((Random() % 5) < 3) // 40% chance auto-win
+        {
+            // Match the symbol shown on the first reel
+            u8 matchSymbol = GetReel1IconForSilphScopeCheat();
+
+            // Search for the same symbol on this reel to make it match
+            for (i = 0; i < REEL_LENGTH; i++)
+            {
+                if (sReelIconAnimByReelAndPos[2][i] == matchSymbol)
+                {
+                    pos = (i + (REEL_LENGTH - 2)) % REEL_LENGTH;
+                    sSlotMachineState->reelSubpixel[2] = 0;
+                    break;
+                }
+            }
+        }
+    }
+    // --- SILPH SCOPE CHEAT ADDITION END ---
+
     sSlotMachineState->destReelPos[whichReel] = pos;
 }
 

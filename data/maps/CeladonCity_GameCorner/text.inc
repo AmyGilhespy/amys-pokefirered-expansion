@@ -146,6 +146,10 @@ CeladonCity_GameCorner_Text_SlotMachineWantToPlay::
     .string "A slot machine!\n"
     .string "Want to play?$"
 
+CeladonCity_GameCorner_Text_SilphScopeRevealsSlots::
+    .string "The SILPH SCOPE reveals the\n"
+    .string "reels and guides your hand.$"
+
 CeladonCity_GameCorner_Text_OutOfOrder::
     .string "OUT OF ORDER\n"
     .string "This is broken.$"

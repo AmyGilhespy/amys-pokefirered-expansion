@@ -1,6 +1,8 @@
 RocketHideout_B2F_Text_GruntIntro::
     .string "BOSS said you can see ghosts with\n"
-    .string "the SILPH SCOPE.$"
+    .string "the SILPH SCOPE, and that it may\p"
+    .string "also allow someone to cheat the\n"
+    .string "slot machines.$"
 
 RocketHideout_B2F_Text_GruntDefeat::
     .string "I surrender!$"

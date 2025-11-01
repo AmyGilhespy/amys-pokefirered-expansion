@@ -270,6 +270,17 @@ CeladonCity_GameCorner_EventScript_SlotMachine::
 #endif
 	dofieldeffect FLDEFF_SMILEY_FACE_ICON
 	waitfieldeffect FLDEFF_SMILEY_FACE_ICON
+	checkitem ITEM_SILPH_SCOPE, 1
+	goto_if_eq VAR_RESULT, TRUE, CeladonCity_GameCorner_EventScript_SilphScopeSlots
+	goto CeladonCity_GameCorner_EventScript_DoPlaySlots
+	end
+
+CeladonCity_GameCorner_EventScript_SilphScopeSlots::
+	msgbox CeladonCity_GameCorner_Text_SilphScopeRevealsSlots, MSGBOX_SIGN
+	goto CeladonCity_GameCorner_EventScript_DoPlaySlots
+	end
+
+CeladonCity_GameCorner_EventScript_DoPlaySlots::
 	specialvar VAR_RESULT, GetRandomSlotMachineId
 	playslotmachine VAR_RESULT
 	releaseall
