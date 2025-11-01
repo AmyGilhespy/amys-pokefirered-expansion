@@ -73,7 +73,7 @@ SSAnne_Exterior_EventScript_UseStrength::
 	end
 
 SSAnne_Exterior_EventScript_MewUnderTruckEncounter::
-	setwildbattle SPECIES_MEW, 100, ITEM_NONE
+	setwildbattle SPECIES_MEW, 100, ITEM_MASTER_BALL
 	waitse
 	playmoncry SPECIES_MEW, CRY_MODE_ENCOUNTER
 	delay 40
