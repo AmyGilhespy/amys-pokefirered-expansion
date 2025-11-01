@@ -54,6 +54,8 @@ CeladonCity_DepartmentStore_2F_EventScript_ClerkTMs::
 
 	.align 2
 CeladonCity_DepartmentStore_2F_TMs::
+	@.2byte ITEM_TM
+	@.2byte ITEM_TM @TR
 	.2byte ITEM_TM05
 	.2byte ITEM_TM15
 	.2byte ITEM_TM28

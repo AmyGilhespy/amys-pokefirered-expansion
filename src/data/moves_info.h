@@ -21127,6 +21127,207 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .battleAnimScript = gBattleAnimMove_MalignantChain,
     },
 
+    // Placeholder moves
+#define MOVE_AMY_UNUSED(m) [m] = \
+    { \
+        .name = COMPOUND_STRING("Struggle"), \
+        .description = COMPOUND_STRING( \
+            "Used only if all\nPP are gone. " \
+            "Also\nhurts the user a\nlittle."), \
+            .effect = EFFECT_STRUGGLE, \
+            .accuracy = 0, \
+            .mirrorMoveBanned = TRUE, \
+            .additionalEffects = ADDITIONAL_EFFECTS({ \
+                .moveEffect = MOVE_EFFECT_RECOIL_HP_25, \
+                .self = TRUE, \
+            }), \
+        .power = 50, \
+        .type = TYPE_NORMAL, \
+        .pp = 1, \
+        .target = MOVE_TARGET_SELECTED, \
+        .priority = 0, \
+        .category = DAMAGE_CATEGORY_PHYSICAL, \
+        .makesContact = TRUE, \
+        .meFirstBanned = TRUE, \
+        .mimicBanned = TRUE, \
+        .metronomeBanned = TRUE, \
+        .sleepTalkBanned = TRUE, \
+        .copycatBanned = TRUE, \
+        .instructBanned = TRUE, \
+        .encoreBanned = TRUE, \
+        .assistBanned = TRUE, \
+        .sketchBanned = TRUE, \
+        .battleAnimScript = gBattleAnimMove_Struggle, \
+        .validApprenticeMove = TRUE, \
+    }
+
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_00),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_01),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_02),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_03),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_04),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_05),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_06),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_07),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_08),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_09),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_10),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_11),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_12),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_13),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_14),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_15),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_16),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_17),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_18),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_19),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_20),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_21),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_22),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_23),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_24),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_25),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_26),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_27),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_28),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_29),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_30),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_31),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_32),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_33),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_34),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_35),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_36),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_37),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_38),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_39),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_40),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_41),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_42),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_43),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_44),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_45),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_46),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_47),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_48),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_49),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_50),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_51),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_52),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_53),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_54),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_55),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_56),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_57),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_58),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_59),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_60),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_61),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_62),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_63),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_64),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_65),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_66),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_67),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_68),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_69),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_70),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_71),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_72),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_73),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_74),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_75),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_76),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_77),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_78),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_79),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_80),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_81),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_82),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_83),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_84),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_85),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_86),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_87),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_88),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_89),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_90),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_91),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_92),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_93),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_94),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_95),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_96),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_97),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_98),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_99),
+    MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_100),
+
+    // Custom moves
+
+    [MOVE_OMEGA_BEAM] =
+    {
+        .name = COMPOUND_STRING("Omega Beam"),
+        .description = sHyperBeamDescription,
+        .effect = EFFECT_HIT,
+        .power = 100,
+        .type = TYPE_NORMAL,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 1,
+        .alwaysCriticalHit = TRUE,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .ignoresKingsRock = B_UPDATED_MOVE_FLAGS < GEN_3,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_RECHARGE,
+            .self = TRUE,
+        }),
+        .contestEffect = CONTEST_EFFECT_JAMS_OTHERS_BUT_MISS_ONE_TURN,
+        .contestCategory = CONTEST_CATEGORY_COOL,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_HyperBeam,
+        .validApprenticeMove = TRUE,
+    },
+
+    [MOVE_OMEGA_STRIKE] =
+    {
+        .name = COMPOUND_STRING("Omega Strike"),
+        .description = sHyperBeamDescription,
+        .effect = EFFECT_HIT,
+        .power = 100,
+        .type = TYPE_NORMAL,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 1,
+        .alwaysCriticalHit = TRUE,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .makesContact = TRUE,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_RECHARGE,
+            .self = TRUE,
+        }),
+        .contestEffect = CONTEST_EFFECT_JAMS_OTHERS_BUT_MISS_ONE_TURN,
+        .contestCategory = CONTEST_CATEGORY_BEAUTY,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_GigaImpact,
+    },
+
+
+
+
+
+
+
+
+
+
+
+
+
     // Z-Moves
     [MOVE_BREAKNECK_BLITZ] =
     {

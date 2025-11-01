@@ -503,14 +503,13 @@ static void RunAnimScriptCommand(void)
     do
     {
         u8 code = sBattleAnimScriptPtr[0];
-        MgbaPrintf(MGBA_LOG_WARN, "Anim: Anim cmd 0x%02X at script ptr %p\n", code, sBattleAnimScriptPtr);
+        //MgbaPrintf(MGBA_LOG_WARN, "Anim: Anim cmd 0x%02X at script ptr %p\n", code, sBattleAnimScriptPtr);
         if (code >= (sizeof sScriptCmdTable / sizeof *sScriptCmdTable) || sScriptCmdTable[code] == NULL)
         {
             // Print debug info (script pointer, opcode value, maybe caller info)
-            MgbaPrintf(MGBA_LOG_ERROR, "Anim: Unknown anim cmd 0x%02X at script ptr %p\n", code, sBattleAnimScriptPtr);
+            //MgbaPrintf(MGBA_LOG_ERROR, "Anim: Unknown anim cmd 0x%02X at script ptr %p\n", code, sBattleAnimScriptPtr);
             // Optionally dump a few bytes before/after
-            MgbaPrintf(MGBA_LOG_ERROR, "Bytes nearby: %02X %02X %02X %02X %02X\n",
-                *(sBattleAnimScriptPtr-3), *(sBattleAnimScriptPtr-2), *(sBattleAnimScriptPtr-1), *(sBattleAnimScriptPtr), *(sBattleAnimScriptPtr+1));
+            //MgbaPrintf(MGBA_LOG_ERROR, "Bytes nearby: %02X %02X %02X %02X %02X\n", *(sBattleAnimScriptPtr-3), *(sBattleAnimScriptPtr-2), *(sBattleAnimScriptPtr-1), *(sBattleAnimScriptPtr), *(sBattleAnimScriptPtr+1));
             // Safely terminate this animation script so game continues
             return; // or set a flag to end the anim
         }

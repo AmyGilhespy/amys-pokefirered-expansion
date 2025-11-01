@@ -107,10 +107,20 @@ def prepare_output(all_learnables: dict[str, set[str]], repo_teachables: set[str
     """)
 
     ALWAYS_TEACHABLE_MOVES = {
-        "MOVE_PAY_DAY",    # TM51
-        "MOVE_SUBSTITUTE", # TM52
-        "MOVE_DARK_VOID",  # TR98
-        "MOVE_SKETCH"      # TR99
+        "MOVE_PAY_DAY",            # TM51
+        "MOVE_SUBSTITUTE",         # TM52
+
+        "MOVE_OMEGA_BEAM",         # TM65
+        "MOVE_OMEGA_STRIKE",       # TM66
+        "MOVE_SINGULARITY_BEAM",   # TM67
+        "MOVE_SINGULARITY_STRIKE", # TM68
+        "MOVE_OBLIVION_BEAM",      # TM69
+        "MOVE_OBLIVION_STRIKE",    # TM70
+        "MOVE_INFINITY_BEAM",      # TM71
+        "MOVE_INFINITY_STRIKE",    # TM72
+
+        "MOVE_DARK_VOID",          # TR98
+        "MOVE_SKETCH"              # TR99
     }
     joinpat = ",\n    "
     for species in TEACHABLE_ARRAY_DECL_PAT.finditer(old):

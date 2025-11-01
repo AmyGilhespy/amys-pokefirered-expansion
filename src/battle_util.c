@@ -1941,7 +1941,7 @@ static enum MoveCanceller CancellerRecharge(struct BattleContext *ctx)
 {
     if (gBattleMons[ctx->battlerAtk].volatiles.recharge)
     {
-        gBattleMons[ctx->battlerAtk].volatiles.recharge = TRUE;
+        gBattleMons[ctx->battlerAtk].volatiles.recharge = FALSE;
         gDisableStructs[ctx->battlerAtk].rechargeTimer = 0;
         CancelMultiTurnMoves(ctx->battlerAtk, SKY_DROP_ATTACKCANCELLER_CHECK);
         gBattlescriptCurrInstr = BattleScript_MoveUsedMustRecharge;
