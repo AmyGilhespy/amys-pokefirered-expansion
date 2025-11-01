@@ -1680,7 +1680,10 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
              || gBattleMons[battlerDef].volatiles.infatuation
              || gBattleMons[battlerDef].volatiles.confusionTurns))
                 ADJUST_SCORE(-10);
-            if (HasMoveWithEffect(battlerAtk, EFFECT_SUBSTITUTE) && !gBattleMons[battlerAtk].volatiles.substitute)
+            if ((HasMoveWithEffect(battlerAtk, EFFECT_SUBSTITUTE)
+                || HasMoveWithEffect(battlerAtk, EFFECT_BIG_SUBSTITUTE)
+                || HasMoveWithEffect(battlerAtk, EFFECT_HUGE_SUBSTITUTE)
+                || HasMoveWithEffect(battlerAtk, EFFECT_SMALL_SUBSTITUTE)) && !gBattleMons[battlerAtk].volatiles.substitute)
                 ADJUST_SCORE(-10);
             if (HasNonVolatileMoveEffect(battlerAtk, MOVE_EFFECT_SLEEP) && ! (gBattleMons[battlerDef].status1 & STATUS1_SLEEP))
                 ADJUST_SCORE(-10);
@@ -1758,6 +1761,9 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
                 ADJUST_SCORE(-10);
             break;
         case EFFECT_SUBSTITUTE:
+        case EFFECT_BIG_SUBSTITUTE:
+        case EFFECT_HUGE_SUBSTITUTE:
+        case EFFECT_SMALL_SUBSTITUTE:
             if (gBattleMons[battlerAtk].volatiles.substitute || aiData->abilities[battlerDef] == ABILITY_INFILTRATOR)
                 ADJUST_SCORE(-8);
             else if (aiData->hpPercents[battlerAtk] <= 25)
@@ -4434,6 +4440,9 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
         IncreaseConfusionScore(battlerAtk, battlerDef, move, &score);
         break;
     case EFFECT_SUBSTITUTE:
+    case EFFECT_BIG_SUBSTITUTE:
+    case EFFECT_HUGE_SUBSTITUTE:
+    case EFFECT_SMALL_SUBSTITUTE:
     case EFFECT_SHED_TAIL:
         ADJUST_SCORE(IncreaseSubstituteMoveScore(battlerAtk, battlerDef, move));
         break;
@@ -6009,6 +6018,9 @@ static s32 AI_ForceSetupFirstTurn(u32 battlerAtk, u32 battlerDef, u32 move, s32 
     case EFFECT_REFLECT:
     case EFFECT_NON_VOLATILE_STATUS:
     case EFFECT_SUBSTITUTE:
+    case EFFECT_BIG_SUBSTITUTE:
+    case EFFECT_HUGE_SUBSTITUTE:
+    case EFFECT_SMALL_SUBSTITUTE:
     case EFFECT_LEECH_SEED:
     case EFFECT_MINIMIZE:
     case EFFECT_CURSE:

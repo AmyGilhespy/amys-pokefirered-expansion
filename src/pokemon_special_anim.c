@@ -8,6 +8,7 @@
 #include "move.h"
 #include "constants/songs.h"
 #include "constants/items.h"
+#include "pokemon_special_anim_internal.h"
 
 // Functions related to the special anims Pokemon
 // make when using an item on them in the field.
@@ -40,12 +41,15 @@ void StartUseItemAnim_Normal(u8 slotId, u16 itemId, MainCallback callback)
 
 void StartUseItemAnim_ForgetMoveAndLearnTMorHM(u8 slotId, u16 itemId, u16 moveId, MainCallback callback)
 {
+    u8 buf[256];
     struct PokemonSpecialAnim * ptr = AllocPSA(slotId, itemId, callback);
     if (ptr == NULL)
         SetMainCallback2(callback);
     else
     {
-        StringCopy(ptr->nameOfMoveForgotten, GetMoveName(moveId));
+        StringCopy(buf, GetMoveName(moveId));
+        buf[AMY_nameOfMoveForgotten_BUFSIZE - 1] = EOS;
+        StringCopy(ptr->nameOfMoveForgotten, buf);
         SetUpUseItemAnim_ForgetMoveAndLearnTMorHM(ptr);
     }
 }
@@ -61,6 +65,7 @@ void StartUseItemAnim_CantEvolve(u8 slotId, u16 itemId, MainCallback callback)
 
 static struct PokemonSpecialAnim * AllocPSA(u8 slotId, u16 itemId, MainCallback callback)
 {
+    u8 buf[256];
     struct PokemonSpecialAnim * ptr;
     struct Pokemon * pokemon;
     u16 moveId;
@@ -90,7 +95,9 @@ static struct PokemonSpecialAnim * AllocPSA(u8 slotId, u16 itemId, MainCallback 
     if (ptr->animType == 4)
     {
         moveId = ItemIdToBattleMoveId(itemId);
-        StringCopy(ptr->nameOfMoveToTeach, GetMoveName(moveId));
+        StringCopy(buf, GetMoveName(moveId));
+        buf[AMY_nameOfMoveToTeach_BUFSIZE - 1] = EOS;
+        StringCopy(ptr->nameOfMoveToTeach, buf);
     }
     return ptr;
 }

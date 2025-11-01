@@ -2128,6 +2128,9 @@ static void Cmd_attackanimation(void)
     if ((gHitMarker & (HITMARKER_NO_ANIMATIONS | HITMARKER_DISABLE_ANIMATION))
         && effect != EFFECT_TRANSFORM
         && effect != EFFECT_SUBSTITUTE
+        && effect != EFFECT_BIG_SUBSTITUTE
+        && effect != EFFECT_HUGE_SUBSTITUTE
+        && effect != EFFECT_SMALL_SUBSTITUTE
         && effect != EFFECT_ALLY_SWITCH
         // In a wild double battle gotta use the teleport animation if two wild pokemon are alive.
         && !(GetMoveEffect(gCurrentMove) == EFFECT_TELEPORT && WILD_DOUBLE_BATTLE && !IsOnPlayerSide(gBattlerAttacker) && IsBattlerAlive(BATTLE_PARTNER(gBattlerAttacker))))
@@ -11119,13 +11122,24 @@ static void Cmd_setsubstitute(void)
 {
     CMD_ARGS();
 
-    u32 factor = GetMoveEffect(gCurrentMove) == EFFECT_SHED_TAIL ? 2 : 4;
+    u32 factor = 4;
+    u32 factorMul = 1;
+    switch (GetMoveEffect(gCurrentMove))
+    {
+    case EFFECT_SHED_TAIL: factor = 2; break;
+    case EFFECT_SUBSTITUTE: factor = 4; break;
+    case EFFECT_BIG_SUBSTITUTE: factor = 2; break;
+    case EFFECT_HUGE_SUBSTITUTE: factor = 4; factorMul = 3; break;
+    case EFFECT_SMALL_SUBSTITUTE: factor = 8; break;
+    default: break;
+    }
+
     u32 hp;
 
     if (factor == 2)
         hp = (GetNonDynamaxMaxHP(gBattlerAttacker)+1) / factor; // shed tail rounds up
     else
-        hp = GetNonDynamaxMaxHP(gBattlerAttacker) / factor; // one bit value will only work for Pokémon which max hp can go to 1020(which is more than possible in games)
+        hp = GetNonDynamaxMaxHP(gBattlerAttacker) * factorMul / factor; // one bit value will only work for Pokémon which max hp can go to 1020(which is more than possible in games)
 
     if (hp == 0)
         hp = 1;

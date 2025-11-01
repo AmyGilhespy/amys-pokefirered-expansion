@@ -110,9 +110,13 @@ static EWRAM_DATA struct {
     u16 scrollOffset;
 } * sPokedudeBagBackup = NULL;
 
+// Fix for MOVE_SMALL_SUBSTITUTE: 31 exactly fits the string "No51 Small Substitute" after the font size adjustment bytes are added.
+// But it gets cut off in the GUI so I'm actually going to rename it to "No51 Substitute S".
+#define AMY_sListMenuStringsBuffer_ARRAY_SIZE_WAS_29 29
+
 static EWRAM_DATA void *sTilemapBuffer = NULL;
 static EWRAM_DATA struct ListMenuItem * sListMenuItemsBuffer = NULL;
-static EWRAM_DATA u8 (* sListMenuStringsBuffer)[29] = NULL;
+static EWRAM_DATA u8 (* sListMenuStringsBuffer)[AMY_sListMenuStringsBuffer_ARRAY_SIZE_WAS_29] = NULL;
 
 static void CB2_SetUpTMCaseUI_Blocking(void);
 static bool8 DoSetUpTMCaseUI(void);
@@ -633,7 +637,7 @@ static void CreateTMCaseListMenuBuffers(void)
 {
     struct BagPocket * pocket = &gBagPockets[POCKET_TM_HM];
     sListMenuItemsBuffer = Alloc((pocket->capacity + 1) * sizeof(struct ListMenuItem));
-    sListMenuStringsBuffer = Alloc(sTMCaseDynamicResources->numTMs * 29);
+    sListMenuStringsBuffer = Alloc(sTMCaseDynamicResources->numTMs * AMY_sListMenuStringsBuffer_ARRAY_SIZE_WAS_29);
 }
 
 static void InitTMCaseListMenuItems(void)
@@ -683,12 +687,13 @@ static void GetTMNumberAndMoveString(u8 * dest, u16 itemId)
     else
     {
         StringAppend(gStringVar4, gText_NumberClear01);
-        ConvertIntToDecimalStringN(gStringVar1, itemId - ITEM_TM01 + 1, STR_CONV_MODE_LEADING_ZEROS, 2);
+        ConvertIntToDecimalStringN(gStringVar1, itemId - ITEM_TM01 + 1, STR_CONV_MODE_LEADING_ZEROS, itemId >= ITEM_TM100 ? 3 : 2);
         StringAppend(gStringVar4, gStringVar1);
     }
     StringAppend(gStringVar4, sText_SingleSpace);
     StringAppend(gStringVar4, gText_FontNormal);
     StringAppend(gStringVar4, gMovesInfo[ItemIdToBattleMoveId(itemId)].name);
+    gStringVar4[AMY_sListMenuStringsBuffer_ARRAY_SIZE_WAS_29 - 1] = EOS;
     StringCopy(dest, gStringVar4);
 }
 

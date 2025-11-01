@@ -107,17 +107,20 @@ def prepare_output(all_learnables: dict[str, set[str]], repo_teachables: set[str
     """)
 
     ALWAYS_TEACHABLE_MOVES = {
-        "MOVE_PAY_DAY",            # TM51
+        "MOVE_SMALL_SUBSTITUTE",   # TM51
         "MOVE_SUBSTITUTE",         # TM52
+        "MOVE_BIG_SUBSTITUTE",     # TM53
+        "MOVE_HUGE_SUBSTITUTE",    # TM54
+        "MOVE_OMEGA_BEAM",         # TM55
+        "MOVE_OMEGA_STRIKE",       # TM56
+        "MOVE_SINGULARITY_BEAM",   # TM57
+        "MOVE_SINGULARITY_STRIKE", # TM58
+        "MOVE_OBLIVION_BEAM",      # TM59
+        "MOVE_OBLIVION_STRIKE",    # TM60
+        "MOVE_INFINITY_BEAM",      # TM61
+        "MOVE_INFINITY_STRIKE",    # TM62
 
-        "MOVE_OMEGA_BEAM",         # TM65
-        "MOVE_OMEGA_STRIKE",       # TM66
-        "MOVE_SINGULARITY_BEAM",   # TM67
-        "MOVE_SINGULARITY_STRIKE", # TM68
-        "MOVE_OBLIVION_BEAM",      # TM69
-        "MOVE_OBLIVION_STRIKE",    # TM70
-        "MOVE_INFINITY_BEAM",      # TM71
-        "MOVE_INFINITY_STRIKE",    # TM72
+        "MOVE_PAY_DAY",            # TM75
 
         "MOVE_DARK_VOID",          # TR98
         "MOVE_SKETCH"              # TR99

@@ -34,14 +34,16 @@ struct PokemonSpecialAnimScene
     u8 field_2114[0x720];
 }; // size=0x2834
 
+#define AMY_nameOfMoveForgotten_BUFSIZE 13
+#define AMY_nameOfMoveToTeach_BUFSIZE 13
 struct PokemonSpecialAnim
 {
     /*0x0000*/ u8 filler_0000[0x4];
     /*0x0004*/ MainCallback savedCallback;
     /*0x0008*/ struct Pokemon pokemon;
     /*0x006c*/ u8 nickname[POKEMON_NAME_LENGTH + 1];
-    /*0x0077*/ u8 nameOfMoveForgotten[13];
-    /*0x0084*/ u8 nameOfMoveToTeach[13];
+    /*0x0077*/ u8 nameOfMoveForgotten[AMY_nameOfMoveForgotten_BUFSIZE];
+    /*0x0084*/ u8 nameOfMoveToTeach[AMY_nameOfMoveToTeach_BUFSIZE];
     /*0x0091*/ bool8 cancelDisabled;
     /*0x0092*/ u16 state;
     /*0x0094*/ u16 species;

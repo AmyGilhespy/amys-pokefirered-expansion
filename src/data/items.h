@@ -11658,12 +11658,12 @@ const struct Item gItemsInfo[] =
         .fieldUseFunc = NULL,
     },
 
-    [ITEM_TM_PAY_DAY] =
+    [ITEM_TM_SMALL_SUBSTITUTE] =
     {
         .name = ITEM_NAME("TM51"),
-        .price = 0, // Soft-lock prevention.
+        .price = 4000,
         .description = COMPOUND_STRING(
-            "Pay Day."),
+            "Small Substitute."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -11682,110 +11682,120 @@ const struct Item gItemsInfo[] =
         .fieldUseFunc = NULL,
     },
 
-    [ITEM_TM53] =
+    [ITEM_TM_BIG_SUBSTITUTE] =
     {
         .name = ITEM_NAME("TM53"),
-        .price = 3000,
-        .description = sQuestionMarksDesc,
+        .price = 4000,
+        .description = COMPOUND_STRING(
+            "Big Substitute."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = NULL,
     },
 
-    [ITEM_TM54] =
+    [ITEM_TM_HUGE_SUBSTITUTE] =
     {
         .name = ITEM_NAME("TM54"),
-        .price = 3000,
-        .description = sQuestionMarksDesc,
+        .price = 4000,
+        .description = COMPOUND_STRING(
+            "Huge Substitute."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = NULL,
     },
 
-    [ITEM_TM55] =
+    [ITEM_TM_OMEGA_BEAM] =
     {
         .name = ITEM_NAME("TM55"),
-        .price = 3000,
-        .description = sQuestionMarksDesc,
+        .price = 4000,
+        .description = COMPOUND_STRING(
+            "Omega Beam."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = NULL,
     },
 
-    [ITEM_TM56] =
+    [ITEM_TM_OMEGA_STRIKE] =
     {
         .name = ITEM_NAME("TM56"),
-        .price = 3000,
-        .description = sQuestionMarksDesc,
+        .price = 4000,
+        .description = COMPOUND_STRING(
+            "Omega Strike."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = NULL,
     },
 
-    [ITEM_TM57] =
+    [ITEM_TM_SINGULARITY_BEAM] =
     {
         .name = ITEM_NAME("TM57"),
-        .price = 3000,
-        .description = sQuestionMarksDesc,
+        .price = 4000,
+        .description = COMPOUND_STRING(
+            "Singularity Beam."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = NULL,
     },
 
-    [ITEM_TM58] =
+    [ITEM_TM_SINGULARITY_STRIKE] =
     {
         .name = ITEM_NAME("TM58"),
-        .price = 3000,
-        .description = sQuestionMarksDesc,
+        .price = 4000,
+        .description = COMPOUND_STRING(
+            "Singularity Strike."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = NULL,
     },
 
-    [ITEM_TM59] =
+    [ITEM_TM_OBLIVION_BEAM] =
     {
         .name = ITEM_NAME("TM59"),
-        .price = 3000,
-        .description = sQuestionMarksDesc,
+        .price = 4000,
+        .description = COMPOUND_STRING(
+            "Oblivion Beam."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = NULL,
     },
 
-    [ITEM_TM60] =
+    [ITEM_TM_OBLIVION_STRIKE] =
     {
         .name = ITEM_NAME("TM60"),
-        .price = 3000,
-        .description = sQuestionMarksDesc,
+        .price = 4000,
+        .description = COMPOUND_STRING(
+            "Oblivion Strike."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = NULL,
     },
 
-    [ITEM_TM61] =
+    [ITEM_TM_INFINITY_BEAM] =
     {
         .name = ITEM_NAME("TM61"),
-        .price = 3000,
-        .description = sQuestionMarksDesc,
+        .price = 4000,
+        .description = COMPOUND_STRING(
+            "Infinity Beam."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = NULL,
     },
 
-    [ITEM_TM62] =
+    [ITEM_TM_INFINITY_STRIKE] =
     {
         .name = ITEM_NAME("TM62"),
-        .price = 3000,
-        .description = sQuestionMarksDesc,
+        .price = 4000,
+        .description = COMPOUND_STRING(
+            "Infinity Strike."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -11924,11 +11934,12 @@ const struct Item gItemsInfo[] =
         .fieldUseFunc = NULL,
     },
 
-    [ITEM_TM75] =
+    [ITEM_TM_PAY_DAY] =
     {
         .name = ITEM_NAME("TM75"),
-        .price = 3000,
-        .description = sQuestionMarksDesc,
+        .price = 0, // Soft-lock prevention.
+        .description = COMPOUND_STRING(
+            "Pay Day."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,

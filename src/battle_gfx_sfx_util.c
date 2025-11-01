@@ -856,7 +856,7 @@ void LoadBattleMonGfxAndAnimate(u8 battler, bool8 loadMonSprite, u8 spriteId)
 void TrySetBehindSubstituteSpriteBit(u8 battler, u16 move)
 {
     enum BattleMoveEffects effect = GetMoveEffect(move);
-    if (effect == EFFECT_SUBSTITUTE || effect == EFFECT_SHED_TAIL)
+    if (effect == EFFECT_SUBSTITUTE || effect == EFFECT_SHED_TAIL || effect == EFFECT_BIG_SUBSTITUTE || effect == EFFECT_HUGE_SUBSTITUTE || effect == EFFECT_SMALL_SUBSTITUTE)
         gBattleSpritesDataPtr->battlerData[battler].behindSubstitute = 1;
 }
 

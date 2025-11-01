@@ -2889,6 +2889,9 @@ bool32 IsSubstituteEffect(enum BattleMoveEffects effect)
     switch (effect)
     {
     case EFFECT_SUBSTITUTE:
+    case EFFECT_BIG_SUBSTITUTE:
+    case EFFECT_HUGE_SUBSTITUTE:
+    case EFFECT_SMALL_SUBSTITUTE:
     case EFFECT_SHED_TAIL:
         return TRUE;
     default:
@@ -5491,6 +5494,21 @@ u32 IncreaseSubstituteMoveScore(u32 battlerAtk, u32 battlerDef, u32 move)
     if (effect == EFFECT_SUBSTITUTE) // Substitute specific
     {
         if (HasAnyKnownMove(battlerDef) && GetBestDmgFromBattler(battlerDef, battlerAtk, AI_DEFENDING) < gBattleMons[battlerAtk].maxHP / 4)
+            scoreIncrease += GOOD_EFFECT;
+    }
+    else if (effect == EFFECT_BIG_SUBSTITUTE) // Big Substitute specific
+    {
+        if (HasAnyKnownMove(battlerDef) && GetBestDmgFromBattler(battlerDef, battlerAtk, AI_DEFENDING) < gBattleMons[battlerAtk].maxHP / 2)
+            scoreIncrease += GOOD_EFFECT;
+    }
+    else if (effect == EFFECT_HUGE_SUBSTITUTE) // Huge Substitute specific
+    {
+        if (HasAnyKnownMove(battlerDef) && GetBestDmgFromBattler(battlerDef, battlerAtk, AI_DEFENDING) < gBattleMons[battlerAtk].maxHP * 3 / 4)
+            scoreIncrease += GOOD_EFFECT;
+    }
+    else if (effect == EFFECT_SMALL_SUBSTITUTE) // Small Substitute specific
+    {
+        if (HasAnyKnownMove(battlerDef) && GetBestDmgFromBattler(battlerDef, battlerAtk, AI_DEFENDING) < gBattleMons[battlerAtk].maxHP / 8)
             scoreIncrease += GOOD_EFFECT;
     }
     else if (effect == EFFECT_SHED_TAIL) // Shed Tail specific
