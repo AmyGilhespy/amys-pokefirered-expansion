@@ -17,7 +17,7 @@ PokemonMansion_2F_EventScript_Statue::
 	end
 
 PokemonMansion_2F_EventScript_DiaryJuly5th::
-	msgbox PokemonMansion_1F_Text_NewMonDiscoveredInGuyanaJungle, MSGBOX_SIGN
+	msgbox PokemonMansion_1F_Text_NewMonDiscoveredHidingUnderATruck, MSGBOX_SIGN
 	end
 
 PokemonMansion_2F_EventScript_DiaryJuly10th::
