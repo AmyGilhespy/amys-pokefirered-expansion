@@ -3973,6 +3973,10 @@ void SetMoveEffect(u32 battler, u32 effectBattler, bool32 primary, bool32 certai
         BattleScriptPush(gBattlescriptCurrInstr + 1);
         gBattlescriptCurrInstr = BattleScript_EffectConfuseSide;
         break;
+    case MOVE_EFFECT_INFATUATE:
+        BattleScriptPush(gBattlescriptCurrInstr + 1);
+        gBattlescriptCurrInstr = BattleScript_EffectAttract;
+        break;
     case MOVE_EFFECT_INFATUATE_SIDE:
         BattleScriptPush(gBattlescriptCurrInstr + 1);
         gBattlescriptCurrInstr = BattleScript_EffectInfatuateSide;

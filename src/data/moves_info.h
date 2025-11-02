@@ -21630,7 +21630,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Mega Bone"),
         .description = COMPOUND_STRING(
-            "Infatuates the target."),
+            "Infatuates the\ntarget."),
         .effect = EFFECT_HIT,
         .power = 69,
         .type = TYPE_NORMAL,
@@ -21642,7 +21642,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .category = DAMAGE_CATEGORY_PHYSICAL,
         .makesContact = TRUE,
         .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = EFFECT_ATTRACT,
+            .moveEffect = MOVE_EFFECT_INFATUATE,
         }),
         .contestEffect = CONTEST_EFFECT_HIGHLY_APPEALING,
         .contestCategory = CONTEST_CATEGORY_BEAUTY,
