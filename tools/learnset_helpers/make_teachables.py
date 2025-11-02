@@ -107,23 +107,29 @@ def prepare_output(all_learnables: dict[str, set[str]], repo_teachables: set[str
     """)
 
     ALWAYS_TEACHABLE_MOVES = {
-        "MOVE_SMALL_SUBSTITUTE",   # TM51
-        "MOVE_SUBSTITUTE",         # TM52
-        "MOVE_BIG_SUBSTITUTE",     # TM53
-        "MOVE_HUGE_SUBSTITUTE",    # TM54
-        "MOVE_OMEGA_BEAM",         # TM55
-        "MOVE_OMEGA_STRIKE",       # TM56
-        "MOVE_OBLIVION_BEAM",      # TM57
-        "MOVE_ULTIMA_STRIKE",      # TM58
-        "MOVE_INFINIBLAST",        # TM59
-        "MOVE_SINGULARITY_X",      # TM60
-        "MOVE_SINGULARITY_Y",      # TM61
-        "MOVE_SINGULARITY_Z",      # TM62
+        "MOVE_SMALL_SUBSTITUTE", # TM51
+        "MOVE_SUBSTITUTE",       # TM52
+        "MOVE_BIG_SUBSTITUTE",   # TM53
+        "MOVE_HUGE_SUBSTITUTE",  # TM54
+        "MOVE_OMEGA_BEAM",       # TM55
+        "MOVE_OMEGA_STRIKE",     # TM56
+        "MOVE_OBLIVION_BEAM",    # TM57
+        "MOVE_ULTIMA_STRIKE",    # TM58
+        "MOVE_INFINIBLAST",      # TM59
+        "MOVE_SINGULARITY_X",    # TM60
+        "MOVE_SINGULARITY_Y",    # TM61
+        "MOVE_SINGULARITY_Z",    # TM62
 
-        "MOVE_PAY_DAY",            # TM75
+        "MOVE_HELLFIRE",         # TM66
+        "MOVE_ABSOLUTE_ZERO",    # TM67
+        "MOVE_RAILGUN",          # TM68
+        "MOVE_MEGA_BONE",        # TM69
 
-        "MOVE_DARK_VOID",          # TR98
-        "MOVE_SKETCH"              # TR99
+        "MOVE_PAY_DAY",          # TM75
+
+        "MOVE_SPORE",            # TR97
+        "MOVE_DARK_VOID",        # TR98
+        "MOVE_SKETCH"            # TR99
     }
     joinpat = ",\n    "
     for species in TEACHABLE_ARRAY_DECL_PAT.finditer(old):

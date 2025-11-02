@@ -11835,44 +11835,48 @@ const struct Item gItemsInfo[] =
         .fieldUseFunc = NULL,
     },
 
-    [ITEM_TM66] =
+    [ITEM_TM_HELLFIRE] =
     {
         .name = ITEM_NAME("TM66"),
         .price = 3000,
-        .description = sQuestionMarksDesc,
+        .description = COMPOUND_STRING(
+            "Hellfire."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = NULL,
     },
 
-    [ITEM_TM67] =
+    [ITEM_TM_ABSOLUTE_ZERO] =
     {
         .name = ITEM_NAME("TM67"),
         .price = 3000,
-        .description = sQuestionMarksDesc,
+        .description = COMPOUND_STRING(
+            "Absolute Zero."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = NULL,
     },
 
-    [ITEM_TM68] =
+    [ITEM_TM_RAILGUN] =
     {
         .name = ITEM_NAME("TM68"),
         .price = 3000,
-        .description = sQuestionMarksDesc,
+        .description = COMPOUND_STRING(
+            "Railgun."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = NULL,
     },
 
-    [ITEM_TM69] =
+    [ITEM_TM_MEGA_BONE] =
     {
         .name = ITEM_NAME("TM69"),
         .price = 3000,
-        .description = sQuestionMarksDesc,
+        .description = COMPOUND_STRING(
+            "Mega Bone."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12177,11 +12181,12 @@ const struct Item gItemsInfo[] =
         .fieldUseFunc = NULL,
     },
 
-    [ITEM_TM97] =
+    [ITEM_TM_SPORE] =
     {
         .name = ITEM_NAME("TR97"),
-        .price = 3000,
-        .description = sQuestionMarksDesc,
+        .price = 30000,
+        .description = COMPOUND_STRING(
+            "SINGLE USE. Spore."),
         .importance = 0,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,

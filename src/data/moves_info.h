@@ -21552,6 +21552,105 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .validApprenticeMove = TRUE,
     },
 
+    [MOVE_HELLFIRE] =
+    {
+        .name = COMPOUND_STRING("Hellfire"),
+        .description = COMPOUND_STRING(
+            "Targets both opponents."),
+        .effect = EFFECT_HIT,
+        .power = 150,
+        .type = TYPE_FIRE,
+        .accuracy = 100,
+        .pp = 5,
+        .target = MOVE_TARGET_BOTH,
+        .priority = 0,
+        .alwaysCriticalHit = FALSE,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .contestEffect = CONTEST_EFFECT_HIGHLY_APPEALING,
+        .contestCategory = CONTEST_CATEGORY_TOUGH,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_GMaxWildfire,
+        .validApprenticeMove = TRUE,
+    },
+
+    [MOVE_ABSOLUTE_ZERO] =
+    {
+        .name = COMPOUND_STRING("Absolute Zero"),
+        .description = COMPOUND_STRING(
+            "High chance to"
+        #if B_USE_FROSTBITE == TRUE
+            "leave the foe\nwith frostbite."
+        #else
+            "freeze the\nfoe."
+        #endif
+            ),
+        .effect = EFFECT_NON_VOLATILE_STATUS,
+        .power = 0,
+        .type = TYPE_ICE,
+        #if B_USE_FROSTBITE == TRUE
+        .accuracy = 85,
+        #else
+        .accuracy = 30,
+        #endif
+        .pp = 5,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .alwaysCriticalHit = FALSE,
+        .category = DAMAGE_CATEGORY_STATUS,
+        .argument = { .nonVolatileStatus = MOVE_EFFECT_FREEZE_OR_FROSTBITE },
+        .zMove = { .effect = Z_EFFECT_SPD_UP_1 },
+        .magicCoatAffected = TRUE,
+        .contestEffect = CONTEST_EFFECT_HIGHLY_APPEALING,
+        .contestCategory = CONTEST_CATEGORY_COOL,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_SheerCold,
+        .validApprenticeMove = TRUE,
+    },
+
+    [MOVE_RAILGUN] =
+    {
+        .name = COMPOUND_STRING("Railgun"),
+        .description = COMPOUND_STRING(
+            "Hits the foe with\npowerful "
+            "\nelectricity."),
+        .effect = EFFECT_HIT,
+        .power = 250,
+        .type = TYPE_ELECTRIC,
+        .accuracy = 50,
+        .pp = 5,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .battleAnimScript = gBattleAnimMove_GigavoltHavoc,
+    },
+
+    [MOVE_MEGA_BONE] = // Joke move
+    {
+        .name = COMPOUND_STRING("Mega Bone"),
+        .description = COMPOUND_STRING(
+            "Always crits.\nInfatuates opponents."),
+        .effect = EFFECT_HIT,
+        .power = 69,
+        .type = TYPE_NORMAL,
+        .accuracy = 69,
+        .pp = 5,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .alwaysCriticalHit = TRUE,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .makesContact = TRUE,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_INFATUATE_SIDE,
+        }),
+        .contestEffect = CONTEST_EFFECT_HIGHLY_APPEALING,
+        .contestCategory = CONTEST_CATEGORY_BEAUTY,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_Lick,
+    },
+
     // Z-Moves
     [MOVE_BREAKNECK_BLITZ] =
     {

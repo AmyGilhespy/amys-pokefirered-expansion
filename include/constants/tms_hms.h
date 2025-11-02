@@ -67,10 +67,10 @@
     F(AMY_UNUSED_63) \
     F(AMY_UNUSED_64) \
     F(AMY_UNUSED_65) \
-    F(AMY_UNUSED_66) \
-    F(AMY_UNUSED_67) \
-    F(AMY_UNUSED_68) \
-    F(AMY_UNUSED_69) \
+    F(HELLFIRE) \
+    F(ABSOLUTE_ZERO) \
+    F(RAILGUN) \
+    F(MEGA_BONE) \
     F(AMY_UNUSED_70) \
     F(AMY_UNUSED_71) \
     F(AMY_UNUSED_72) \
@@ -98,7 +98,7 @@
     F(AMY_UNUSED_94) \
     F(AMY_UNUSED_95) \
     F(AMY_UNUSED_96) \
-    F(AMY_UNUSED_97) \
+    F(SPORE) \
     F(DARK_VOID) \
     F(SKETCH) \
     F(AMY_UNUSED_100)
