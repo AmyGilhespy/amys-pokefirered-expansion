@@ -10953,8 +10953,7 @@ static void Cmd_tryinfatuating(void)
     }
     else
     {
-        if (gBattleMons[gBattlerTarget].volatiles.infatuation
-            || !AreBattlersOfOppositeGender(gBattlerAttacker, gBattlerTarget))
+        if (gBattleMons[gBattlerTarget].volatiles.infatuation)
         {
             gBattlescriptCurrInstr = cmd->failInstr;
         }

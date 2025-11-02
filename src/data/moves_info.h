@@ -5648,7 +5648,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Attract"),
         .description = COMPOUND_STRING(
-            "Makes the opposite\ngender "
+            "Makes the opponent\n"
             "less likely\nto attack."),
         .effect = EFFECT_ATTRACT,
         .power = 0,
@@ -21630,7 +21630,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Mega Bone"),
         .description = COMPOUND_STRING(
-            "Always crits.\nInfatuates opponents."),
+            "Infatuates the target."),
         .effect = EFFECT_HIT,
         .power = 69,
         .type = TYPE_NORMAL,
@@ -21638,11 +21638,11 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .pp = 5,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
-        .alwaysCriticalHit = TRUE,
+        .alwaysCriticalHit = FALSE,
         .category = DAMAGE_CATEGORY_PHYSICAL,
         .makesContact = TRUE,
         .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = MOVE_EFFECT_INFATUATE_SIDE,
+            .moveEffect = EFFECT_ATTRACT,
         }),
         .contestEffect = CONTEST_EFFECT_HIGHLY_APPEALING,
         .contestCategory = CONTEST_CATEGORY_BEAUTY,
