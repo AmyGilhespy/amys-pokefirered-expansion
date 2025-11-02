@@ -113,12 +113,12 @@ def prepare_output(all_learnables: dict[str, set[str]], repo_teachables: set[str
         "MOVE_HUGE_SUBSTITUTE",    # TM54
         "MOVE_OMEGA_BEAM",         # TM55
         "MOVE_OMEGA_STRIKE",       # TM56
-        "MOVE_SINGULARITY_BEAM",   # TM57
-        "MOVE_SINGULARITY_STRIKE", # TM58
-        "MOVE_OBLIVION_BEAM",      # TM59
-        "MOVE_OBLIVION_STRIKE",    # TM60
-        "MOVE_INFINITY_BEAM",      # TM61
-        "MOVE_INFINITY_STRIKE",    # TM62
+        "MOVE_OBLIVION_BEAM",      # TM57
+        "MOVE_ULTIMA_STRIKE",      # TM58
+        "MOVE_INFINIBLAST",        # TM59
+        "MOVE_SINGULARITY_X",      # TM60
+        "MOVE_SINGULARITY_Y",      # TM61
+        "MOVE_SINGULARITY_Z",      # TM62
 
         "MOVE_PAY_DAY",            # TM75
 

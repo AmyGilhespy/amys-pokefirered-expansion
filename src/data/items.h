@@ -11730,33 +11730,9 @@ const struct Item gItemsInfo[] =
         .fieldUseFunc = NULL,
     },
 
-    [ITEM_TM_SINGULARITY_BEAM] =
-    {
-        .name = ITEM_NAME("TM57"),
-        .price = 4000,
-        .description = COMPOUND_STRING(
-            "Singularity Beam."),
-        .importance = I_REUSABLE_TMS,
-        .pocket = POCKET_TM_HM,
-        .type = ITEM_USE_PARTY_MENU,
-        .fieldUseFunc = NULL,
-    },
-
-    [ITEM_TM_SINGULARITY_STRIKE] =
-    {
-        .name = ITEM_NAME("TM58"),
-        .price = 4000,
-        .description = COMPOUND_STRING(
-            "Singularity Strike."),
-        .importance = I_REUSABLE_TMS,
-        .pocket = POCKET_TM_HM,
-        .type = ITEM_USE_PARTY_MENU,
-        .fieldUseFunc = NULL,
-    },
-
     [ITEM_TM_OBLIVION_BEAM] =
     {
-        .name = ITEM_NAME("TM59"),
+        .name = ITEM_NAME("TM57"),
         .price = 4000,
         .description = COMPOUND_STRING(
             "Oblivion Beam."),
@@ -11766,36 +11742,60 @@ const struct Item gItemsInfo[] =
         .fieldUseFunc = NULL,
     },
 
-    [ITEM_TM_OBLIVION_STRIKE] =
+    [ITEM_TM_ULTIMA_STRIKE] =
+    {
+        .name = ITEM_NAME("TM58"),
+        .price = 4000,
+        .description = COMPOUND_STRING(
+            "Ultima Strike."),
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = NULL,
+    },
+
+    [ITEM_TM_INFINIBLAST] =
+    {
+        .name = ITEM_NAME("TM59"),
+        .price = 4000,
+        .description = COMPOUND_STRING(
+            "Infiniblast."),
+        .importance = I_REUSABLE_TMS,
+        .pocket = POCKET_TM_HM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = NULL,
+    },
+
+    [ITEM_TM_SINGULARITY_X] =
     {
         .name = ITEM_NAME("TM60"),
         .price = 4000,
         .description = COMPOUND_STRING(
-            "Oblivion Strike."),
+            "Singularity X."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = NULL,
     },
 
-    [ITEM_TM_INFINITY_BEAM] =
+    [ITEM_TM_SINGULARITY_Y] =
     {
         .name = ITEM_NAME("TM61"),
         .price = 4000,
         .description = COMPOUND_STRING(
-            "Infinity Beam."),
+            "Singularity Y."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = NULL,
     },
 
-    [ITEM_TM_INFINITY_STRIKE] =
+    [ITEM_TM_SINGULARITY_Z] =
     {
         .name = ITEM_NAME("TM62"),
         .price = 4000,
         .description = COMPOUND_STRING(
-            "Infinity Strike."),
+            "Singularity Z."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
