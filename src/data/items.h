@@ -11663,7 +11663,7 @@ const struct Item gItemsInfo[] =
         .name = ITEM_NAME("TM51"),
         .price = 4000,
         .description = COMPOUND_STRING(
-            "Small Substitute."),
+            "Substitute S."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -11687,7 +11687,7 @@ const struct Item gItemsInfo[] =
         .name = ITEM_NAME("TM53"),
         .price = 4000,
         .description = COMPOUND_STRING(
-            "Big Substitute."),
+            "Substitute L."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -11699,7 +11699,7 @@ const struct Item gItemsInfo[] =
         .name = ITEM_NAME("TM54"),
         .price = 4000,
         .description = COMPOUND_STRING(
-            "Huge Substitute."),
+            "Substitute XL."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,

@@ -797,7 +797,14 @@ static void BuyMenuPrintItemDescriptionAndShowItemIcon(s32 item, bool8 onInit, s
         PlaySE(SE_SELECT);
 
     if (item != INDEX_CANCEL)
-        description = GetItemDescription(item);
+    {
+        if (item >= ITEM_TM01 && item < ITEM_TM01 + NUM_TECHNICAL_MACHINES)
+            description = gMovesInfo[GetItemTMHMMoveId(item)].name;
+        else if (item >= ITEM_HM01 && item < ITEM_HM01 + NUM_HIDDEN_MACHINES)
+            description = gMovesInfo[GetItemTMHMMoveId(item)].name;
+        else
+            description = GetItemDescription(item);
+    }
     else
         description = gText_QuitShopping;
 
