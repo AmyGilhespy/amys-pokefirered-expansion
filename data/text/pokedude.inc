@@ -3,16 +3,16 @@ Pokedude_Text_SpeedierBattlerGoesFirst::
 	.string "battlers gets to attack first.$"
 
 Pokedude_Text_MyRattataFasterThanPidgey::
-	.string "It looks like my RATTATA was\n"
-	.string "faster than the PIDGEY.$"
+	.string "It looks like the RAYQUAZA\n"
+	.string "was faster than my BIDOOF.$"
 
 Pokedude_Text_BattlersTakeTurnsAttacking::
 	.string "The battlers take turns attacking\n"
 	.string "and reducing each other's HP.$"
 
 Pokedude_Text_MyRattataWonGetsEXP::
-	.string "My RATTATA reduced the foe's HP\n"
-	.string "to zero, so it wins!\p"
+	.string "My BIDOOF had its HP reduced to\n"
+	.string "zero, so it died!\p"
 	.string "The POKéMON that took part in the\n"
 	.string "battle get EXP. Points.\p"
 	.string "When a POKéMON collects enough\n"
@@ -22,9 +22,9 @@ Pokedude_Text_MyRattataWonGetsEXP::
 
 Pokedude_Text_UhOhRattataPoisoned::
 	.string "POKé DUDE: Uh-oh…\n"
-	.string "My RATTATA has been poisoned…\p"
-	.string "If a POKéMON is poisoned, it loses\n"
-	.string "HP steadily.$"
+	.string "My BIDOOF has fallen asleep…\p"
+	.string "If a POKéMON is asleep, it can't\n"
+	.string "attack for a few turns.$"
 
 Pokedude_Text_HealStatusRightAway::
 	.string "If a POKéMON develops a status\n"
@@ -36,8 +36,8 @@ Pokedude_Text_UsingItemTakesTurn::
 	.string "Now, it's the opponent's turn!$"
 
 Pokedude_Text_YayWeManagedToWin::
-	.string "Yay!\n"
-	.string "We managed to win!$"
+	.string "Damn!\n"
+	.string "My POKéMON died!$"
 
 Pokedude_Text_WaterNotVeryEffectiveAgainstGrass::
 	.string "POKé DUDE: The move BUBBLE is\n"
@@ -69,22 +69,22 @@ Pokedude_Text_ShiftingUsesTurn::
 	.string "Now, it's the opponent's turn.$"
 
 Pokedude_Text_ButterfreeDoubleResistsGrass::
-	.string "BUTTERFREE is a BUG/FLYING-type\n"
+	.string "RAYQUAZA is a DRAGON/FLYING-type\n"
 	.string "POKéMON.\p"
 	.string "Against this POKéMON, a GRASS-\n"
 	.string "type attack…\p"
 	.string "…inflicts only half the usual\n"
-	.string "damage on a BUG-type POKéMON…\p"
+	.string "damage on a DRAGON-type POKéMON…\p"
 	.string "…And, it also causes only half the\n"
 	.string "damage on a FLYING-type POKéMON.\p"
-	.string "Therefore, BUTTERFREE, being a\n"
-	.string "BUG/FLYING POKéMON, only takes\l"
+	.string "Therefore, RAYQUAZA, being a\n"
+	.string "DRAGON/FLYING POKéMON, only takes\l"
 	.string "one quarter of the usual damage.$"
 
 Pokedude_Text_ButterfreeGoodAgainstOddish::
 	.string "ODDISH is a GRASS/POISON-type\n"
 	.string "POKéMON.\p"
-	.string "A FLYING- or PSYCHIC-type attack\n"
+	.string "A FLYING-type attack\n"
 	.string "is super effective against it.\p"
 	.string "One of those types of attacks will\n"
 	.string "inflict double the usual damage.\p"

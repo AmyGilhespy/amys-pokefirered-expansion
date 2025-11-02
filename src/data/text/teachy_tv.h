@@ -32,8 +32,8 @@ const u8 gTeachyTvText_BattleScript2[] = _(
     "Even if your own POKéMON's HP\n"
     "falls to zero, and it becomes\l"
     "unable to battle, not to worry!\p"
-    "Just take it to any POKéMON\n"
-    "CENTER and heal it!\p"
+    "Just take it to a morgue\n"
+    "and cremate it!\p"
     "All righty, be seeing you!\p"
     "Remember, TRAINERS, a good deed\n"
     "a day brings happiness to stay!");

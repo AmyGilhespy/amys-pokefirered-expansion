@@ -850,92 +850,92 @@ static const struct PokedudeBattlePartyInfo sParties_Battle[] =
 {
     {
         .side = B_SIDE_PLAYER,
-        .level = 15,
-        .species = SPECIES_RATTATA,
-        .moves = { MOVE_TACKLE, MOVE_TAIL_WHIP, MOVE_HYPER_FANG, MOVE_QUICK_ATTACK },
-        .nature = NATURE_LONELY,
-        .gender = MALE,
+        .level = 2,
+        .species = SPECIES_BIDOOF,
+        .moves = { MOVE_TACKLE, MOVE_TACKLE, MOVE_TACKLE, MOVE_TACKLE },
+        .nature = NATURE_NAUGHTY,
+        .gender = MON_FEMALE,
     },
     {
         .side = B_SIDE_OPPONENT,
-        .level = 18,
-        .species = SPECIES_PIDGEY,
-        .moves = { MOVE_TACKLE, MOVE_SAND_ATTACK, MOVE_GUST, MOVE_QUICK_ATTACK },
-        .nature = NATURE_NAUGHTY,
-        .gender = MALE,
+        .level = 100,
+        .species = SPECIES_RAYQUAZA,
+        .moves = { MOVE_V_CREATE, MOVE_V_CREATE, MOVE_V_CREATE, MOVE_V_CREATE },
+        .nature = NATURE_ADAMANT,
+        .gender = MON_GENDERLESS,
     },
-    {0xFF}
+    {.side = 0xFF}
 };
 
 static const struct PokedudeBattlePartyInfo sParties_Status[] =
 {
     {
         .side = B_SIDE_PLAYER,
-        .level = 15,
-        .species = SPECIES_RATTATA,
-        .moves = { MOVE_TACKLE, MOVE_TAIL_WHIP, MOVE_HYPER_FANG, MOVE_QUICK_ATTACK },
-        .nature = NATURE_LONELY,
-        .gender = MALE,
+        .level = 2,
+        .species = SPECIES_BIDOOF,
+        .moves = { MOVE_TACKLE, MOVE_TACKLE, MOVE_TACKLE, MOVE_TACKLE },
+        .nature = NATURE_NAUGHTY,
+        .gender = MON_FEMALE,
     },
     {
         .side = B_SIDE_OPPONENT,
-        .level = 14,
-        .species = SPECIES_ODDISH,
-        .moves = { MOVE_ABSORB, MOVE_SWEET_SCENT, MOVE_POISON_POWDER },
-        .nature = NATURE_RASH,
-        .gender = MALE,
+        .level = 100,
+        .species = SPECIES_DARKRAI,
+        .moves = { MOVE_DARK_VOID, MOVE_DARK_VOID, MOVE_DARK_VOID, MOVE_DARK_VOID },
+        .nature = NATURE_TIMID,
+        .gender = MON_GENDERLESS,
     },
-    {0xFF}
+    {.side = 0xFF}
 };
 
 static const struct PokedudeBattlePartyInfo sParties_Matchups[] =
 {
     {
         .side = B_SIDE_PLAYER,
-        .level = 15,
+        .level = 2,
         .species = SPECIES_POLIWAG,
         .moves = { MOVE_WATER_GUN, MOVE_HYPNOSIS, MOVE_BUBBLE },
         .nature = NATURE_RASH,
-        .gender = MALE,
+        .gender = MON_FEMALE,
     },
     {
         .side = B_SIDE_PLAYER,
-        .level = 15,
-        .species = SPECIES_BUTTERFREE,
-        .moves = { MOVE_CONFUSION, MOVE_POISON_POWDER, MOVE_STUN_SPORE, MOVE_SLEEP_POWDER },
-        .nature = NATURE_RASH,
-        .gender = MALE,
+        .level = 100,
+        .species = SPECIES_RAYQUAZA,
+        .moves = { MOVE_DRAGON_ASCENT, MOVE_DRAGON_DANCE, MOVE_EXTREME_SPEED, MOVE_V_CREATE },
+        .nature = NATURE_ADAMANT,
+        .gender = MON_GENDERLESS,
     },
     {
         .side = B_SIDE_OPPONENT,
-        .level = 14,
+        .level = 2,
         .species = SPECIES_ODDISH,
         .moves = { MOVE_ABSORB, MOVE_SWEET_SCENT, MOVE_POISON_POWDER },
         .nature = NATURE_RASH,
-        .gender = MALE,
+        .gender = MON_FEMALE,
     },
-    {0xFF}
+    {.side = 0xFF}
 };
 
 static const struct PokedudeBattlePartyInfo sParties_Catching[] =
 {
     {
         .side = B_SIDE_PLAYER,
-        .level = 15,
-        .species = SPECIES_BUTTERFREE,
-        .moves = { MOVE_CONFUSION, MOVE_POISON_POWDER, MOVE_SLEEP_POWDER, MOVE_STUN_SPORE },
-        .nature = NATURE_RASH,
-        .gender = MALE,
+        .level = 2,
+        .species = SPECIES_BIDOOF,
+        .moves = { MOVE_TACKLE, MOVE_TACKLE, MOVE_TACKLE, MOVE_TACKLE },
+        .nature = NATURE_NAUGHTY,
+        .gender = MON_FEMALE,
     },
     {
         .side = B_SIDE_OPPONENT,
-        .level = 11,
-        .species = SPECIES_JIGGLYPUFF,
-        .moves = { MOVE_SING, MOVE_DEFENSE_CURL, MOVE_POUND },
-        .nature = NATURE_CAREFUL,
-        .gender = MALE,
+        .level = 2,
+        .species = SPECIES_BIDOOF,
+        .moves = { MOVE_TACKLE, MOVE_TACKLE, MOVE_TACKLE, MOVE_TACKLE },
+        .nature = NATURE_NAUGHTY,
+        .gender = MON_FEMALE,
     },
-    {0xFF}
+    {.side = 0xFF}
 };
 
 

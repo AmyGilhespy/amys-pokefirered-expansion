@@ -2387,12 +2387,14 @@ void InitPokedudeBag(u8 a0)
     u8 location;
     PrepareBagForTutorial();
     AddBagItem(ITEM_POTION, 1);
-    AddBagItem(ITEM_ANTIDOTE, 1);
+    AddBagItem(ITEM_AWAKENING, 1);
     AddBagItem(ITEM_TEACHY_TV, 1);
     AddBagItem(ITEM_TM_CASE, 1);
-    AddBagItem(ITEM_POKE_BALL, 5);
-    AddBagItem(ITEM_GREAT_BALL, 1);
-    AddBagItem(ITEM_NEST_BALL, 1);
+    AddBagItem(ITEM_POKE_BALL, 999);
+    AddBagItem(ITEM_GREAT_BALL, 999);
+    AddBagItem(ITEM_NEST_BALL, 999);
+    AddBagItem(ITEM_MASTER_BALL, 1);
+    AddBagItem(ITEM_MEGA_RING, 1);
     switch (a0)
     {
     default:
@@ -2511,12 +2513,19 @@ static void Task_Bag_TeachyTvCatching(u8 taskId)
             ListMenu_ProcessInput(data[0]);
             break;
         case TUTORIAL_BAG_DELAY * 7:
+        case TUTORIAL_BAG_DELAY * 8:
+        case TUTORIAL_BAG_DELAY * 9:
+            gMain.newKeys = 0;
+            gMain.newAndRepeatedKeys = DPAD_DOWN;
+            ListMenu_ProcessInput(data[0]);
+            break;
+        case TUTORIAL_BAG_DELAY * 10:
             PlaySE(SE_SELECT);
             BagMenu_PrintCursor(tListTaskId, COLORID_GRAY_CURSOR);
-            gSpecialVar_ItemId = ITEM_POKE_BALL;
+            gSpecialVar_ItemId = ITEM_MASTER_BALL;
             OpenContextMenu(taskId);
             break;
-        case TUTORIAL_BAG_DELAY * 8:
+        case TUTORIAL_BAG_DELAY * 11:
             PlaySE(SE_SELECT);
             RemoveContextWindow();
             BagMenu_RemoveWindow(ITEMWIN_SELECTIONTEXT);
@@ -2554,7 +2563,7 @@ static void Task_Bag_TeachyTvStatus(u8 taskId)
         case TUTORIAL_BAG_DELAY * 2:
             PlaySE(SE_SELECT);
             BagMenu_PrintCursor(tListTaskId, COLORID_GRAY_CURSOR);
-            gSpecialVar_ItemId = ITEM_ANTIDOTE;
+            gSpecialVar_ItemId = ITEM_AWAKENING;
             OpenContextMenu(taskId);
             break;
         case TUTORIAL_BAG_DELAY * 3:
