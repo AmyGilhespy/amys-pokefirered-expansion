@@ -4978,11 +4978,11 @@ static void TurnValuesCleanUp(bool8 var0)
 {
     s32 i;
 
-    MgbaPrintf(MGBA_LOG_WARN, "TurnValuesCleanUp(%d): gBattlersCount=%d", var0, gBattlersCount);
+    //MgbaPrintf(MGBA_LOG_WARN, "TurnValuesCleanUp(%d): gBattlersCount=%d", var0, gBattlersCount);
 
     for (i = 0; i < gBattlersCount; i++)
     {
-        MgbaPrintf(MGBA_LOG_WARN, "TurnValuesCleanUp(%d): gD~S~[i=%d].rechargeTimer=%d,gB~M~[i].volatiles.recharge=%d", var0, i, gDisableStructs[i].rechargeTimer, gBattleMons[i].volatiles.recharge);
+        //MgbaPrintf(MGBA_LOG_WARN, "TurnValuesCleanUp(%d): gD~S~[i=%d].rechargeTimer=%d,gB~M~[i].volatiles.recharge=%d", var0, i, gDisableStructs[i].rechargeTimer, gBattleMons[i].volatiles.recharge);
         if (var0)
         {
             gProtectStructs[i].protected = PROTECT_NONE;
@@ -5000,7 +5000,7 @@ static void TurnValuesCleanUp(bool8 var0)
 
             if (gDisableStructs[i].rechargeTimer)
             {
-                MgbaPrintf(MGBA_LOG_WARN, "TurnValuesCleanUp(%d): gDisableStructs[i=%d].rechargeTimer=(%d) will do --", var0, i, gDisableStructs[i].rechargeTimer);
+                //MgbaPrintf(MGBA_LOG_WARN, "TurnValuesCleanUp(%d): gDisableStructs[i=%d].rechargeTimer=(%d) will do --", var0, i, gDisableStructs[i].rechargeTimer);
                 gDisableStructs[i].rechargeTimer--;
                 if (gDisableStructs[i].rechargeTimer == 0)
                     gBattleMons[i].volatiles.recharge = FALSE;

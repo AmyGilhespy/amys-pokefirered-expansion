@@ -52,6 +52,7 @@
 #include "constants/trainers.h"
 #include "constants/weather.h"
 #include "constants/pokemon.h"
+//#include "gba/isagbprint.h"
 
 /*
 NOTE: The data and functions in this file up until (but not including) sSoundMovesTable
@@ -975,6 +976,7 @@ u8 GetBattlerForBattleScript(u8 caseId)
         ret = gBattleScripting.battler;
         break;
     case BS_FAINTED:
+        //MgbaPrintf(MGBA_LOG_WARN, "GetBattlerForBattleScript: BS_FAINTED, ret %d, 0x%08x", gBattlerFainted, gBattlerFainted);
         ret = gBattlerFainted;
         break;
     case BS_FAINTED_MULTIPLE_1:

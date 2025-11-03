@@ -32,6 +32,7 @@
 #include "constants/songs.h"
 #include "constants/sound.h"
 #include "pokemon_animation.h"
+//#include "gba/isagbprint.h"
 
 static EWRAM_DATA u8 sLinkSendTaskId = 0;
 static EWRAM_DATA u8 sLinkReceiveTaskId = 0;
@@ -2168,12 +2169,14 @@ void BattleControllerDummy(u32 battler)
 // Handlers of the controller commands
 void BtlController_HandleGetMonData(u32 battler)
 {
+    //MgbaPrintf(MGBA_LOG_WARN, "BtlController_HandleGetMonData(%d): gBattleResources->bufferA[battler][2]=0x%x", battler, gBattleResources->bufferA[battler][2]);
     u8 monData[sizeof(struct Pokemon) * 2 + 56]; // this allows to get full data of two pokemon, trying to get more will result in overwriting data
     struct Pokemon *party = GetBattlerParty(battler);
     u32 size = 0;
     u8 monToCheck;
     s32 i;
 
+    //MgbaPrintf(MGBA_LOG_WARN, "BtlController_HandleGetMonData(%d):", battler);
     if (gBattleResources->bufferA[battler][2] == 0)
     {
         size += GetBattlerMonData(battler, party, gBattlerPartyIndexes[battler], monData);

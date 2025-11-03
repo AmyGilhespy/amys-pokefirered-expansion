@@ -3,7 +3,7 @@ Pokedude_Text_SpeedierBattlerGoesFirst::
 	.string "battlers gets to attack first.$"
 
 Pokedude_Text_MyRattataFasterThanPidgey::
-	.string "It looks like the RAYQUAZA\n"
+	.string "It looks like the MEWTWO\n"
 	.string "was faster than my BIDOOF.$"
 
 Pokedude_Text_BattlersTakeTurnsAttacking::
@@ -12,13 +12,7 @@ Pokedude_Text_BattlersTakeTurnsAttacking::
 
 Pokedude_Text_MyRattataWonGetsEXP::
 	.string "My BIDOOF had its HP reduced to\n"
-	.string "zero, so it died!\p"
-	.string "The POKéMON that took part in the\n"
-	.string "battle get EXP. Points.\p"
-	.string "When a POKéMON collects enough\n"
-	.string "EXP. Points, it levels up.\p"
-	.string "Leveling up makes your POKéMON\n"
-	.string "stronger than before.$"
+	.string "zero, so it died!$"
 
 Pokedude_Text_UhOhRattataPoisoned::
 	.string "POKé DUDE: Uh-oh…\n"
@@ -33,7 +27,7 @@ Pokedude_Text_HealStatusRightAway::
 Pokedude_Text_UsingItemTakesTurn::
 	.string "Using an item on a POKéMON uses\n"
 	.string "up one turn, though.\p"
-	.string "Now, it's the opponent's turn!$"
+	.string "So, the opponent got a free turn!$"
 
 Pokedude_Text_YayWeManagedToWin::
 	.string "Damn!\n"

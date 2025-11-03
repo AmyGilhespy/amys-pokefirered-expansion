@@ -71,6 +71,7 @@
 #include "data/battle_move_effects.h"
 // #include "follower_npc.h"
 #include "load_save.h"
+//#include "gba/isagbprint.h"
 
 // table to avoid ugly powing on gba (courtesy of doesnt)
 // this returns (i^2.5)/4
@@ -4213,12 +4214,26 @@ static void Cmd_tryfaintmon(void)
         if (cmd->battler == BS_ATTACKER)
         {
             destinyBondBattler = gBattlerTarget;
-            faintScript = BattleScript_FaintAttacker;
+            if (gSaveBlock2Ptr->customData.gameType > 0)
+            {
+                faintScript = BattleScript_FaintAttackerDied;
+            }
+            else
+            {
+                faintScript = BattleScript_FaintAttackerFainted;
+            }
         }
         else
         {
             destinyBondBattler = gBattlerAttacker;
-            faintScript = BattleScript_FaintTarget;
+            if (gSaveBlock2Ptr->customData.gameType > 0)
+            {
+                faintScript = BattleScript_FaintTargetDied;
+            }
+            else
+            {
+                faintScript = BattleScript_FaintTargetFainted;
+            }
         }
         if (!(gAbsentBattlerFlags & (1u << battler))
          && !IsBattlerAlive(battler))
@@ -7058,7 +7073,14 @@ static void Cmd_getswitchedmondata(void)
     gBattlerPartyIndexes[battler] = gBattleStruct->monToSwitchIntoId[battler];
 
     BtlController_EmitGetMonData(battler, B_COMM_TO_CONTROLLER, REQUEST_ALL_BATTLE, 1u << gBattlerPartyIndexes[battler]);
-    MarkBattlerForControllerExec(battler);
+
+    //MgbaPrintf(MGBA_LOG_WARN, "Cmd_getswitchedmondata: battler %d func=0x%08x", battler, gBattlerControllerFuncs[battler]);
+
+    if (gBattleTypeFlags & BATTLE_TYPE_POKEDUDE)
+    {
+        gBattlerControllerFuncs[battler] = BtlController_HandleGetMonData;
+    }
+    MarkBattlerForControllerExec(battler); // crashes in pokedude fights when switching after faint if the above func isn't set.  There's probably a better way to fix it, but I tried for a very long time and couldn't figure it out, and this works, so whatever.
 
     gBattlescriptCurrInstr = cmd->nextInstr;
 }

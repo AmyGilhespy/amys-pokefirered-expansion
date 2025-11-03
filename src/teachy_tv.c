@@ -172,12 +172,10 @@ static const struct ListMenuItem sListMenuItems[] =
         .name = gTeachyTvString_TeachBattle,
         .id = TTVSCR_BATTLE
     },
-    /* // also change below, and also change totalItems!
     {
         .name = gTeachyTvString_StatusProblems,
         .id = TTVSCR_STATUS
     },
-    */
     {
         .name = gTeachyTvString_TypeMatchups,
         .id = TTVSCR_MATCHUPS
@@ -186,7 +184,7 @@ static const struct ListMenuItem sListMenuItems[] =
         .name = gTeachyTvString_CatchPkmn,
         .id = TTVSCR_CATCHING
     },
-    /*
+    /* // also change totalItems if you re-add this!
     {
         .name = gTeachyTvString_AboutTMs,
         .id = TTVSCR_TMS
@@ -209,12 +207,10 @@ static const struct ListMenuItem sListMenuItems_NoTMCase[] =
         .name = gTeachyTvString_TeachBattle,
         .id = TTVSCR_BATTLE
     },
-    /* // also change above, and also change totalItems!
     {
         .name = gTeachyTvString_StatusProblems,
         .id = TTVSCR_STATUS
     },
-    */
     {
         .name = gTeachyTvString_TypeMatchups,
         .id = TTVSCR_MATCHUPS
@@ -234,7 +230,7 @@ static const struct ListMenuTemplate sListMenuTemplate =
     .items = sListMenuItems,
     .moveCursorFunc = NULL,
     .itemPrintFunc = NULL,
-    .totalItems = 4,
+    .totalItems = 5,
     .maxShowed = 6,
     .windowId = 0,
     .header_X = 0,
@@ -561,7 +557,7 @@ static u8 TeachyTvSetupWindow(void)
     if (!CheckBagHasItem(ITEM_TM_CASE, 1))
     {
         gMultiuseListMenuTemplate.items = sListMenuItems_NoTMCase;
-        gMultiuseListMenuTemplate.totalItems = 3;
+        gMultiuseListMenuTemplate.totalItems = 4;
         gMultiuseListMenuTemplate.maxShowed = 5;
         gMultiuseListMenuTemplate.upText_Y = (gMultiuseListMenuTemplate.upText_Y + 8) & 0xF;
     }

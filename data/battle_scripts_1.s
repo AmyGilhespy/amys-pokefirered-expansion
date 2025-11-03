@@ -4531,7 +4531,7 @@ BattleScript_EffectCamouflage::
 	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_MoveEnd
 
-BattleScript_FaintAttacker::
+BattleScript_FaintAttackerFainted::
 	tryillusionoff BS_ATTACKER
 	tryactivategulpmissile
 	playfaintcry BS_ATTACKER
@@ -4548,7 +4548,24 @@ BattleScript_FaintAttacker::
 	trytrainerslidemsgfirstoff BS_ATTACKER
 	return
 
-BattleScript_FaintTarget::
+BattleScript_FaintAttackerDied::
+	tryillusionoff BS_ATTACKER
+	tryactivategulpmissile
+	playfaintcry BS_ATTACKER
+	pause B_WAIT_TIME_LONG
+	dofaintanimation BS_ATTACKER
+	printstring STRINGID_ATTACKERDIED
+	cleareffectsonfaint BS_ATTACKER
+	trytoclearprimalweather
+	tryrevertweatherform
+	flushtextbox
+	waitanimation
+	tryactivatesoulheart
+	tryactivatereceiver BS_ATTACKER
+	trytrainerslidemsgfirstoff BS_ATTACKER
+	return
+
+BattleScript_FaintTargetFainted::
 	tryillusionoff BS_TARGET
 	tryactivategulpmissile
 	tryupdateleaderscresttracker
@@ -4556,6 +4573,24 @@ BattleScript_FaintTarget::
 	pause B_WAIT_TIME_LONG
 	dofaintanimation BS_TARGET
 	printstring STRINGID_TARGETFAINTED
+	cleareffectsonfaint BS_TARGET
+	trytoclearprimalweather
+	tryrevertweatherform
+	flushtextbox
+	waitanimation
+	tryactivatesoulheart
+	tryactivatereceiver BS_TARGET
+	trytrainerslidemsgfirstoff BS_TARGET
+	return
+
+BattleScript_FaintTargetDied::
+	tryillusionoff BS_TARGET
+	tryactivategulpmissile
+	tryupdateleaderscresttracker
+	playfaintcry BS_TARGET
+	pause B_WAIT_TIME_LONG
+	dofaintanimation BS_TARGET
+	printstring STRINGID_TARGETDIED
 	cleareffectsonfaint BS_TARGET
 	trytoclearprimalweather
 	tryrevertweatherform
@@ -4575,7 +4610,8 @@ BattleScript_HandleFaintedMon::
 	setbyte sSHIFT_SWITCHED, 0
 	checkteamslost BattleScript_HandleFaintedMonMultiple
 	jumpifbyte CMP_NOT_EQUAL, gBattleOutcome, 0, BattleScript_FaintedMonEnd
-	jumpifbattletype BATTLE_TYPE_TRAINER | BATTLE_TYPE_DOUBLE, BattleScript_FaintedMonTryChoose
+	@jumpifbattletype BATTLE_TYPE_POKEDUDE, BattleScript_FaintedMonSendOutNew
+	jumpifbattletype BATTLE_TYPE_POKEDUDE | BATTLE_TYPE_TRAINER | BATTLE_TYPE_DOUBLE, BattleScript_FaintedMonTryChoose
 	jumpifword CMP_NO_COMMON_BITS, gHitMarker, HITMARKER_PLAYER_FAINTED, BattleScript_FaintedMonTryChoose
 @ Yes/No for sending out a new Pokémon if one is defeated in a wild battle
 	printstring STRINGID_USENEXTPKMN
@@ -4629,7 +4665,7 @@ BattleScript_FaintedMonTryChoose:
 	setbyte sSHIFT_SWITCHED, 1
 BattleScript_FaintedMonSendOutNew:
 	drawpartystatussummary BS_FAINTED
-	getswitchedmondata BS_FAINTED
+	getswitchedmondata BS_FAINTED @ original crash was here
 	switchindataupdate BS_FAINTED
 	hpthresholds BS_FAINTED
 	trytoclearprimalweather

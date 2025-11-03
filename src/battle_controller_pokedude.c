@@ -21,6 +21,8 @@
 #include "constants/moves.h"
 #include "constants/pokemon.h"
 #include "constants/songs.h"
+#include "script_menu.h"
+#include "gba/isagbprint.h"
 
 struct PokedudeTextScriptHeader
 {
@@ -131,8 +133,24 @@ static void (*const sPokedudeBufferCommands[CONTROLLER_CMDS_COUNT])(u32 battler)
 #define pdScriptNum      simulatedInputState[2]
 #define pdMessageNo      simulatedInputState[3]
 
+//static void HandleInputChooseAction(u32 battler);
+//void SetControllerToPokedude(u32 battler);
+//static void OpenPartyMenuToChooseMon(u32 battler);
+//static void Pokedude_SetBattleEndCallbacks(u32 battler);
+
 void SetControllerToPokedude(u32 battler)
 {
+    /*
+    MgbaPrintf(MGBA_LOG_WARN, "WaitForMonSelection=0x%08x", WaitForMonSelection);
+    MgbaPrintf(MGBA_LOG_WARN, "PokedudeBufferRunCommand=0x%08x", PokedudeBufferRunCommand);
+    MgbaPrintf(MGBA_LOG_WARN, "HandleInputChooseAction=0x%08x", HandleInputChooseAction);
+    MgbaPrintf(MGBA_LOG_WARN, "Pokedude_SetBattleEndCallbacks=0x%08x", Pokedude_SetBattleEndCallbacks);
+    MgbaPrintf(MGBA_LOG_WARN, "OpenPartyMenuToChooseMon=0x%08x", OpenPartyMenuToChooseMon);
+    MgbaPrintf(MGBA_LOG_WARN, "PokedudeHandleChoosePokemon=0x%08x", PokedudeHandleChoosePokemon);
+    MgbaPrintf(MGBA_LOG_WARN, "PokedudeBufferExecCompleted=0x%08x", PokedudeBufferExecCompleted);
+    MgbaPrintf(MGBA_LOG_WARN, "SetControllerToPokedude=0x%08x", SetControllerToPokedude);
+    MgbaPrintf(MGBA_LOG_WARN, "PokedudeBufferRunCommand=0x%08x", PokedudeBufferRunCommand);
+    */
     gBattlerControllerEndFuncs[battler] = PokedudeBufferExecCompleted;
     gBattlerControllerFuncs[battler] = PokedudeBufferRunCommand;
     *(&gBattleStruct->pdScriptNum) = gSpecialVar_0x8004;
@@ -141,12 +159,26 @@ void SetControllerToPokedude(u32 battler)
 
 static void PokedudeBufferRunCommand(u32 battler)
 {
+    /*
+    MgbaPrintf(MGBA_LOG_WARN, "WaitForMonSelection=0x%08x", WaitForMonSelection);
+    MgbaPrintf(MGBA_LOG_WARN, "PokedudeBufferRunCommand=0x%08x", PokedudeBufferRunCommand);
+    MgbaPrintf(MGBA_LOG_WARN, "HandleInputChooseAction=0x%08x", HandleInputChooseAction);
+    MgbaPrintf(MGBA_LOG_WARN, "Pokedude_SetBattleEndCallbacks=0x%08x", Pokedude_SetBattleEndCallbacks);
+    MgbaPrintf(MGBA_LOG_WARN, "OpenPartyMenuToChooseMon=0x%08x", OpenPartyMenuToChooseMon);
+    MgbaPrintf(MGBA_LOG_WARN, "PokedudeHandleChoosePokemon=0x%08x", PokedudeHandleChoosePokemon);
+    MgbaPrintf(MGBA_LOG_WARN, "PokedudeBufferExecCompleted=0x%08x", PokedudeBufferExecCompleted);
+    MgbaPrintf(MGBA_LOG_WARN, "SetControllerToPokedude=0x%08x", SetControllerToPokedude);
+    MgbaPrintf(MGBA_LOG_WARN, "PokedudeBufferRunCommand=0x%08x", PokedudeBufferRunCommand);
+    MgbaPrintf(MGBA_LOG_WARN, "PokedudeBufferRunCommand(%d): gBattleControllerExecFlags=0x%x, gBattleResources->bufferA[battler][0]=%d, sPokedudeBufferCommands[gBattleResources->bufferA[battler][0]]=0x%08x, BtlController_HandleGetMonData=0x%08x, CONTROLLER_GETMONDATA=%d", battler, gBattleControllerExecFlags, gBattleResources->bufferA[battler][0], sPokedudeBufferCommands[gBattleResources->bufferA[battler][0]], BtlController_HandleGetMonData, CONTROLLER_GETMONDATA);
+    */
     if (gBattleControllerExecFlags & (1u << battler))
     {
         if (gBattleResources->bufferA[battler][0] < ARRAY_COUNT(sPokedudeBufferCommands))
         {
             if (!HandlePokedudeVoiceoverEtc(battler))
+            {
                 sPokedudeBufferCommands[gBattleResources->bufferA[battler][0]](battler);
+            }
         }
         else
         {
@@ -200,7 +232,12 @@ static void WaitForMonSelection(u32 battler)
     if (gMain.callback2 == BattleMainCB2 && !gPaletteFade.active)
     {
         if (gPartyMenuUseExitCallback == TRUE)
+        {
+            // [WARN] GBA Debug:	Pokedude: gSelectedMonPartyId 1 for battler 0: 0x10 0x23 0x45
+            //gBattlerControllerFuncs[battler] = BtlController_HandleGetMonData; // this didn't fix it :-(
+            //MgbaPrintf(MGBA_LOG_WARN, "Pokedude: gSelectedMonPartyId %u for battler %d: 0x%02x 0x%02x 0x%02x", gSelectedMonPartyId, battler, gBattlePartyCurrentOrder[0], gBattlePartyCurrentOrder[1], gBattlePartyCurrentOrder[2]);
             BtlController_EmitChosenMonReturnValue(battler, 1, gSelectedMonPartyId, gBattlePartyCurrentOrder);
+        }
         else
             BtlController_EmitChosenMonReturnValue(battler, 1, 6, NULL);
         PokedudeBufferExecCompleted(battler);
@@ -413,17 +450,33 @@ static void PokedudeHandleChooseMove(u32 battler)
 static void PokedudeHandleChooseItem(u32 battler)
 {
     s32 i;
+    u8 partyIndex, partyIndexHi, partyIndexLo;
 
     BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 0x10, RGB_BLACK);
     gBattlerControllerFuncs[battler] = OpenBagAndChooseItem;
     gBattlerInMenuId = battler;
     for (i = 0; i < 3; ++i)
-        gBattlePartyCurrentOrder[i] = gBattleResources->bufferA[battler][i + 1];
+    {
+        partyIndex = gBattleResources->bufferA[battler][i + 1];
+        partyIndexHi = partyIndex >> 4;
+        partyIndexLo = partyIndex & 0xf;
+        if (partyIndexHi >= PARTY_SIZE) {
+            MgbaPrintf(MGBA_LOG_ERROR, "Pokedude: invalid partyIndexHi %u for battler %d at slot %d, clamping to 0 // PokedudeHandleChooseItem(%d)", partyIndexHi, battler, i, battler);
+            partyIndexHi = 0;
+        }
+        if (partyIndexLo >= PARTY_SIZE) {
+            MgbaPrintf(MGBA_LOG_ERROR, "Pokedude: invalid partyIndexLo %u for battler %d at slot %d, clamping to 0 // PokedudeHandleChooseItem(%d)", partyIndexLo, battler, i, battler);
+            partyIndexLo = 0;
+        }
+        partyIndex = partyIndexHi << 4 | partyIndexLo;
+        gBattlePartyCurrentOrder[i] = partyIndex;
+    }
 }
 
 static void PokedudeHandleChoosePokemon(u32 battler)
 {
     s32 i;
+    u8 partyIndex, partyIndexHi, partyIndexLo;
 
     gBattleControllerData[battler] = CreateTask(TaskDummy, 0xFF);
     gTasks[gBattleControllerData[battler]].data[0] = gBattleResources->bufferA[battler][1];
@@ -431,7 +484,21 @@ static void PokedudeHandleChoosePokemon(u32 battler)
     *(&gBattleStruct->prevSelectedPartySlot) = gBattleResources->bufferA[battler][2];
     *(&gBattleStruct->abilityPreventingSwitchout) = (gBattleResources->bufferA[battler][3] & 0xFF) | (gBattleResources->bufferA[battler][7] << 8);
     for (i = 0; i < 3; ++i)
-        gBattlePartyCurrentOrder[i] = gBattleResources->bufferA[battler][4 + i];
+    {
+        partyIndex = gBattleResources->bufferA[battler][4 + i];
+        partyIndexHi = partyIndex >> 4;
+        partyIndexLo = partyIndex & 0xf;
+        if (partyIndexHi >= PARTY_SIZE) {
+            MgbaPrintf(MGBA_LOG_ERROR, "Pokedude: invalid partyIndexHi %u for battler %d at slot %d, clamping to 0 // PokedudeHandleChoosePokemon(%d)", partyIndexHi, battler, i, battler);
+            partyIndexHi = 0;
+        }
+        if (partyIndexLo >= PARTY_SIZE) {
+            MgbaPrintf(MGBA_LOG_ERROR, "Pokedude: invalid partyIndexLo %u for battler %d at slot %d, clamping to 0 // PokedudeHandleChoosePokemon(%d)", partyIndexLo, battler, i, battler);
+            partyIndexLo = 0;
+        }
+        partyIndex = partyIndexHi << 4 | partyIndexLo;
+        gBattlePartyCurrentOrder[i] = partyIndex;
+    }
     BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 0x10, RGB_BLACK);
     gBattlerControllerFuncs[battler] = OpenPartyMenuToChooseMon;
     gBattlerInMenuId = battler;
@@ -490,6 +557,7 @@ static void PokedudeHandleEndBounceEffect(u32 battler)
 
 static void PokedudeHandleLinkStandbyMsg(u32 battler)
 {
+    //MgbaPrintf(MGBA_LOG_WARN, "PokedudeHandleLinkStandbyMsg(%d): gBattleControllerExecFlags=0x%x, gBattleResources->bufferA[battler][1]=%d, LINK_STANDBY_MSG_STOP_BOUNCE=%d, LINK_STANDBY_STOP_BOUNCE_ONLY=%d, LINK_STANDBY_MSG_ONLY=%d", battler, gBattleControllerExecFlags, gBattleResources->bufferA[battler][1], LINK_STANDBY_MSG_STOP_BOUNCE, LINK_STANDBY_STOP_BOUNCE_ONLY, LINK_STANDBY_MSG_ONLY);
     switch (gBattleResources->bufferA[battler][1])
     {
     case LINK_STANDBY_MSG_STOP_BOUNCE:
@@ -529,8 +597,12 @@ static const struct PokedudeInputScript sInputScripts_ChooseAction_Battle[] =
         .delay     = {64, 0}
     },
     {
-        .cursorPos = {4, 4},
-        .delay     = {0, 0}
+        .cursorPos = {0, 0},
+        .delay     = {64, 0}
+    },
+    {
+        .cursorPos = {3, 0}, // Run
+        .delay     = {64, 0}
     },
 };
 
@@ -546,6 +618,10 @@ static const struct PokedudeInputScript sInputScripts_ChooseAction_Status[] =
     },
     {
         .cursorPos = {0, 0},
+        .delay     = {64, 0}
+    },
+    {
+        .cursorPos = {3, 0}, // Run
         .delay     = {64, 0}
     },
 };
@@ -593,7 +669,11 @@ static const struct PokedudeInputScript *const sInputScripts_ChooseAction[] =
 static const struct PokedudeInputScript sInputScripts_ChooseMove_Battle[] =
 {
     {
-        .cursorPos = {  2,   2},
+        .cursorPos = {  0,   3},
+        .delay     = { 64,   0}
+    },
+    {
+        .cursorPos = {  0,   0},
         .delay     = { 64,   0}
     },
     {
@@ -605,15 +685,15 @@ static const struct PokedudeInputScript sInputScripts_ChooseMove_Battle[] =
 static const struct PokedudeInputScript sInputScripts_ChooseMove_Status[] =
 {
     {
-        .cursorPos = {  2,   2},
+        .cursorPos = {  0,   0},
         .delay     = { 64,   0}
     },
     {
-        .cursorPos = {  2,   0},
+        .cursorPos = {  0,   1},
         .delay     = { 64,   0}
     },
     {
-        .cursorPos = {  2,   0},
+        .cursorPos = {  0,   2},
         .delay     = { 64,   0}
     },
     {
@@ -645,11 +725,7 @@ static const struct PokedudeInputScript sInputScripts_ChooseMove_Matchups[] =
 static const struct PokedudeInputScript sInputScripts_ChooseMove_Catching[] =
 {
     {
-        .cursorPos = {  0,   2},
-        .delay     = { 64,   0}
-    },
-    {
-        .cursorPos = {  2,   2},
+        .cursorPos = {  0,   0},
         .delay     = { 64,   0}
     },
     {
@@ -671,24 +747,18 @@ static const struct PokedudeTextScriptHeader sPokedudeTextScripts_Battle[] =
     {
         .btlcmd = CONTROLLER_CHOOSEACTION,
         .side = B_SIDE_PLAYER,
-        .callback = PokedudeAction_PrintVoiceoverMessage,
+        .callback = PokedudeAction_PrintVoiceoverMessage, // speedier goes first
     },
     {
         .btlcmd = CONTROLLER_PRINTSTRING,
-        .side = B_SIDE_OPPONENT,
+        .side = B_SIDE_PLAYER,
         .stringid = STRINGID_USEDMOVE,
-        .callback = PokedudeAction_PrintVoiceoverMessage,
+        .callback = PokedudeAction_PrintVoiceoverMessage, // mewtwo was faster
     },
     {
         .btlcmd = CONTROLLER_CHOOSEACTION,
         .side = B_SIDE_PLAYER,
-        .callback = PokedudeAction_PrintVoiceoverMessage,
-    },
-    {
-        .btlcmd = CONTROLLER_PRINTSTRING,
-        .side = B_SIDE_PLAYER,
-        .stringid = STRINGID_PKMNGAINEDEXP,
-        .callback = PokedudeAction_PrintVoiceoverMessage,
+        .callback = PokedudeAction_PrintVoiceoverMessage, // take turns attacking
     },
 };
 
@@ -707,18 +777,6 @@ static const struct PokedudeTextScriptHeader sPokedudeTextScripts_Status[] =
     {
         .btlcmd = CONTROLLER_OPENBAG,
         .side = B_SIDE_PLAYER,
-        .callback = PokedudeAction_PrintVoiceoverMessage,
-    },
-    {
-        .btlcmd = CONTROLLER_PRINTSTRING,
-        .side = B_SIDE_OPPONENT,
-        .stringid = STRINGID_USEDMOVE,
-        .callback = PokedudeAction_PrintVoiceoverMessage,
-    },
-    {
-        .btlcmd = CONTROLLER_PRINTSTRING,
-        .side = B_SIDE_PLAYER,
-        .stringid = STRINGID_PKMNGAINEDEXP,
         .callback = PokedudeAction_PrintVoiceoverMessage,
     },
 };
@@ -814,6 +872,7 @@ static const u8 *const sPokedudeTexts_Battle[] =
     Pokedude_Text_MyRattataFasterThanPidgey,
     Pokedude_Text_BattlersTakeTurnsAttacking,
     Pokedude_Text_MyRattataWonGetsEXP,
+    Pokedude_Text_MyRattataWonGetsEXP,
 };
 
 static const u8 *const sPokedudeTexts_Status[] =
@@ -822,6 +881,7 @@ static const u8 *const sPokedudeTexts_Status[] =
     Pokedude_Text_UhOhRattataPoisoned,
     Pokedude_Text_HealStatusRightAway,
     Pokedude_Text_UsingItemTakesTurn,
+    Pokedude_Text_YayWeManagedToWin,
     Pokedude_Text_YayWeManagedToWin,
 };
 
@@ -852,15 +912,23 @@ static const struct PokedudeBattlePartyInfo sParties_Battle[] =
         .side = B_SIDE_PLAYER,
         .level = 2,
         .species = SPECIES_BIDOOF,
-        .moves = { MOVE_TACKLE, MOVE_TACKLE, MOVE_TACKLE, MOVE_TACKLE },
+        .moves = { MOVE_TACKLE, MOVE_NONE, MOVE_NONE, MOVE_NONE },
+        .nature = NATURE_NAUGHTY,
+        .gender = MON_FEMALE,
+    },
+    {
+        .side = B_SIDE_PLAYER,
+        .level = 2,
+        .species = SPECIES_BIDOOF,
+        .moves = { MOVE_TACKLE, MOVE_NONE, MOVE_NONE, MOVE_NONE },
         .nature = NATURE_NAUGHTY,
         .gender = MON_FEMALE,
     },
     {
         .side = B_SIDE_OPPONENT,
         .level = 100,
-        .species = SPECIES_RAYQUAZA,
-        .moves = { MOVE_V_CREATE, MOVE_V_CREATE, MOVE_V_CREATE, MOVE_V_CREATE },
+        .species = SPECIES_MEWTWO,
+        .moves = { MOVE_PSYSTRIKE, MOVE_ICE_BEAM, MOVE_FIRE_BLAST, MOVE_CALM_MIND },
         .nature = NATURE_ADAMANT,
         .gender = MON_GENDERLESS,
     },
@@ -873,7 +941,15 @@ static const struct PokedudeBattlePartyInfo sParties_Status[] =
         .side = B_SIDE_PLAYER,
         .level = 2,
         .species = SPECIES_BIDOOF,
-        .moves = { MOVE_TACKLE, MOVE_TACKLE, MOVE_TACKLE, MOVE_TACKLE },
+        .moves = { MOVE_TACKLE, MOVE_NONE, MOVE_NONE, MOVE_NONE },
+        .nature = NATURE_NAUGHTY,
+        .gender = MON_FEMALE,
+    },
+    {
+        .side = B_SIDE_PLAYER,
+        .level = 2,
+        .species = SPECIES_BIDOOF,
+        .moves = { MOVE_TACKLE, MOVE_NONE, MOVE_NONE, MOVE_NONE },
         .nature = NATURE_NAUGHTY,
         .gender = MON_FEMALE,
     },
@@ -881,7 +957,7 @@ static const struct PokedudeBattlePartyInfo sParties_Status[] =
         .side = B_SIDE_OPPONENT,
         .level = 100,
         .species = SPECIES_DARKRAI,
-        .moves = { MOVE_DARK_VOID, MOVE_DARK_VOID, MOVE_DARK_VOID, MOVE_DARK_VOID },
+        .moves = { MOVE_DARK_VOID, MOVE_NASTY_PLOT, MOVE_DARK_PULSE, MOVE_NONE },
         .nature = NATURE_TIMID,
         .gender = MON_GENDERLESS,
     },
@@ -923,7 +999,7 @@ static const struct PokedudeBattlePartyInfo sParties_Catching[] =
         .side = B_SIDE_PLAYER,
         .level = 2,
         .species = SPECIES_BIDOOF,
-        .moves = { MOVE_TACKLE, MOVE_TACKLE, MOVE_TACKLE, MOVE_TACKLE },
+        .moves = { MOVE_TACKLE, MOVE_NONE, MOVE_NONE, MOVE_NONE },
         .nature = NATURE_NAUGHTY,
         .gender = MON_FEMALE,
     },
@@ -931,7 +1007,7 @@ static const struct PokedudeBattlePartyInfo sParties_Catching[] =
         .side = B_SIDE_OPPONENT,
         .level = 2,
         .species = SPECIES_BIDOOF,
-        .moves = { MOVE_TACKLE, MOVE_TACKLE, MOVE_TACKLE, MOVE_TACKLE },
+        .moves = { MOVE_TACKLE, MOVE_NONE, MOVE_NONE, MOVE_NONE },
         .nature = NATURE_NAUGHTY,
         .gender = MON_FEMALE,
     },
@@ -1032,8 +1108,10 @@ static bool8 HandlePokedudeVoiceoverEtc(u32 battler)
 {
     const struct PokedudeTextScriptHeader *header_p = sPokedudeTextScripts[gBattleStruct->pdScriptNum];
     const u16 * bstringid_p = (const u16 *)&gBattleResources->bufferA[battler][2];
+    u8 btlcmd = header_p[gBattleStruct->pdMessageNo].btlcmd;
+    u8 b = gBattleResources->bufferA[battler][0];
 
-    if (gBattleResources->bufferA[battler][0] != header_p[gBattleStruct->pdMessageNo].btlcmd)
+    if (b != btlcmd)
         return FALSE;
     if (battler != header_p[gBattleStruct->pdMessageNo].side)
         return FALSE;
@@ -1197,6 +1275,7 @@ static const u8 *GetPokedudeText(void)
 
 void InitPokedudePartyAndOpponent(void)
 {
+    u32 item = ITEM_SMOKE_BALL;
     s32 i, j;
     struct Pokemon *mon;
     s32 myIdx = 0;
@@ -1217,5 +1296,7 @@ void InitPokedudePartyAndOpponent(void)
         CreateMonWithGenderNatureLetter(mon, data[i].species, data[i].level, 0, data[i].gender, data[i].nature, 0);
         for (j = 0; j < 4; ++j)
             SetMonMoveSlot(mon, data[i].moves[j], j);
+        if (data[i].side == B_SIDE_PLAYER)
+            SetMonData(mon, MON_DATA_HELD_ITEM, &item);
     } while (data[++i].side != 0xFF);
 }

@@ -57,8 +57,6 @@ const u8 gTeachyTvText_StatusScript1[] = _(
 const u8 gTeachyTvText_StatusScript2[] = _(
     "Poisoning or paralysis don't go\n"
     "away after a battle.\p"
-    "If a POKéMON is poisoned, it loses\n"
-    "HP even while you're walking.\p"
     "You should heal POKéMON of these\n"
     "kinds of problems right away.\p"
     "Use an item, or try to get to a\n"

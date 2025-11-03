@@ -2325,7 +2325,7 @@ void InitOldManBag(void)
 }
 
 #define tTimer data[8]
-#define TUTORIAL_BAG_DELAY 102 // The number of frames between each action Wally takes in the bag
+#define TUTORIAL_BAG_DELAY 60 // The number of frames between each action Wally takes in the bag
 
 static void Task_Bag_OldManTutorial(u8 taskId)
 {
