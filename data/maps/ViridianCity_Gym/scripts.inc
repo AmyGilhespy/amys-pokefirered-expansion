@@ -5,11 +5,27 @@ ViridianCity_Gym_EventScript_Giovanni::
 	famechecker FAMECHECKER_GIOVANNI, FCPICKSTATE_COLORED, UpdatePickStateFromSpecialVar8005
 	trainerbattle_single TRAINER_LEADER_GIOVANNI, ViridianCity_Gym_Text_GiovanniIntro, ViridianCity_Gym_Text_GiovanniDefeat, ViridianCity_Gym_EventScript_DefeatedGiovanni, NO_MUSIC
 	goto_if_unset FLAG_GOT_TR99_FROM_GIOVANNI, ViridianCity_Gym_EventScript_GiveTR99
-	msgbox ViridianCity_Gym_Text_GiovanniPostBattle
-	closemessage
-	fadescreen FADE_TO_BLACK
-	removeobject LOCALID_VIRIDIAN_GIOVANNI
-	fadescreen FADE_FROM_BLACK
+	goto ViridianCity_Gym_Shop
+	@msgbox ViridianCity_Gym_Text_GiovanniPostBattle
+	@closemessage
+	@fadescreen FADE_TO_BLACK
+	@removeobject LOCALID_VIRIDIAN_GIOVANNI
+	@fadescreen FADE_FROM_BLACK
+	@release
+	end
+
+ViridianCity_Gym_Shop::
+	msgbox ViridianCity_Gym_Text_ShopIntro
+	pokemart ViridianCity_Gym_Items
+	msgbox ViridianCity_Gym_Text_ShopOutro
+	release
+	end
+
+	.align 2
+ViridianCity_Gym_Items::
+	.2byte ITEM_TM_SURGING_STRIKES
+	.2byte ITEM_TM_BOOMBURST
+	.2byte ITEM_NONE
 	release
 	end
 

@@ -20,16 +20,12 @@ ViridianCity_Gym_Text_GiovanniDefeat::
     .string "As proof, here is the EARTHBADGE!\n"
     .string "{PAUSE_MUSIC}{PLAY_BGM}{MUS_OBTAIN_BADGE}{PAUSE 0xFE}{PAUSE 0x56}{RESUME_MUSIC}$"
 
-ViridianCity_Gym_Text_GiovanniPostBattle::
-    .string "Having lost in this fashion, \n"
-    .string "I can't face my followers.\l"
-    .string "I have betrayed their trust.\p"
-    .string "As of today, TEAM ROCKET is\n"
-    .string "finished forever!\p"
-    .string "As for myself, I shall dedicate\n"
-    .string "my life to training again.\p"
-    .string "Let us meet again someday!\n"
-    .string "Farewell!$"
+ViridianCity_Gym_Text_ShopIntro::
+    .string "I'm not going anywhere!\n"
+    .string "But do you want to buy something?$"
+
+ViridianCity_Gym_Text_ShopOutro::
+    .string "Don't be a stranger.$"
 
 ViridianCity_Gym_Text_ExplainEarthBadgeTakeThis::
     .string "The EARTHBADGE makes POKéMON of\n"

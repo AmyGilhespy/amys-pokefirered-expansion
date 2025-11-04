@@ -114,12 +114,12 @@ def prepare_output(all_learnables: dict[str, set[str]], repo_teachables: set[str
         "MOVE_SUBSTITUTE_XL",    # TM54 Viridian City School
         "MOVE_OMEGA_BEAM",       # TM55 Game Corner Prize Room
         "MOVE_OMEGA_STRIKE",     # TM56 Game Corner Prize Room
-        "MOVE_OBLIVION_BEAM",    # TM57 TODO
-        "MOVE_ULTIMA_STRIKE",    # TM58 TODO
+        "MOVE_OBLIVION_BEAM",    # TM57 Game Corner Prize Room
+        "MOVE_ULTIMA_STRIKE",    # TM58 Game Corner Prize Room
         "MOVE_INFINIBLAST",      # TM59 From Lance, and you can also SKETCH it from ANNA
-        "MOVE_SINGULARITY_X",    # TM60 TODO
-        "MOVE_SINGULARITY_Y",    # TM61 TODO
-        "MOVE_SINGULARITY_Z",    # TM62 TODO
+        "MOVE_SINGULARITY_X",    # TM60 Celadon City Department Store Roof (Thirsty Girl)
+        "MOVE_SINGULARITY_Y",    # TM61 Celadon City Department Store Roof (Thirsty Girl)
+        "MOVE_SINGULARITY_Z",    # TM62 Celadon City Department Store Roof (Thirsty Girl)
         "MOVE_FIRE_PUNCH",       # TM63 Saffron City Dojo
         "MOVE_ICE_PUNCH",        # TM64 Saffron City Dojo
         "MOVE_THUNDER_PUNCH",    # TM65 Saffron City Dojo
@@ -152,9 +152,9 @@ def prepare_output(all_learnables: dict[str, set[str]], repo_teachables: set[str
         "MOVE_BANEFUL_BUNKER",   # TR91 Fuchsia City Gym Shop
         "MOVE_SPIKY_SHIELD",     # TR92 Fuchsia City Gym Shop
         "MOVE_WATER_SHURIKEN",   # TR93 Fuchsia City Gym Shop
-        "MOVE_SURGING_STRIKES",  # TR94 TODO
-        "MOVE_BOOMBURST",        # TR95 TODO
-        "MOVE_ENDEAVOR",         # TR96 TODO
+        "MOVE_SURGING_STRIKES",  # TR94 Viridian City Gym Shop
+        "MOVE_BOOMBURST",        # TR95 Viridian City Gym Shop
+        "MOVE_ENDEAVOR",         # TR96 Pokemon Mansion (In place of the Secret Key)
         "MOVE_SPORE",            # TR97 Celadon City Gym Shop
         "MOVE_DARK_VOID",        # TR98 Celadon City Gym Shop
         "MOVE_SKETCH",           # TR99 Cinnabar Island Mart

@@ -250,10 +250,12 @@ CeladonCity_GameCorner_PrizeRoom_EventScript_ChoosePrizeTM::
 	switch VAR_RESULT
 	case 0, CeladonCity_GameCorner_PrizeRoom_EventScript_TM_OMEGA_BEAM
 	case 1, CeladonCity_GameCorner_PrizeRoom_EventScript_TM_OMEGA_STRIKE
-	case 2, CeladonCity_GameCorner_PrizeRoom_EventScript_TM_HELLFIRE
-	case 3, CeladonCity_GameCorner_PrizeRoom_EventScript_TM_ABSOLUTE_ZERO
-	case 4, CeladonCity_GameCorner_PrizeRoom_EventScript_TM_RAILGUN
-	case 5, CeladonCity_GameCorner_PrizeRoom_EventScript_EndPrizeExchange
+	case 2, CeladonCity_GameCorner_PrizeRoom_EventScript_TM_OBLIVION_BEAM
+	case 3, CeladonCity_GameCorner_PrizeRoom_EventScript_TM_ULTIMA_STRIKE
+	case 4, CeladonCity_GameCorner_PrizeRoom_EventScript_TM_HELLFIRE
+	case 5, CeladonCity_GameCorner_PrizeRoom_EventScript_TM_ABSOLUTE_ZERO
+	case 6, CeladonCity_GameCorner_PrizeRoom_EventScript_TM_RAILGUN
+	case 7, CeladonCity_GameCorner_PrizeRoom_EventScript_EndPrizeExchange
 	case 127, CeladonCity_GameCorner_PrizeRoom_EventScript_EndPrizeExchange
 	end
 
@@ -268,6 +270,20 @@ CeladonCity_GameCorner_PrizeRoom_EventScript_TM_OMEGA_STRIKE:: @ Was TM23 Iron T
 	setvar VAR_TEMP_1, ITEM_TM_OMEGA_STRIKE
 	setvar VAR_TEMP_2, 4000
 	buffermovename STR_VAR_2, MOVE_OMEGA_STRIKE
+	goto CeladonCity_GameCorner_PrizeRoom_EventScript_ConfirmPrizeTM
+	end
+
+CeladonCity_GameCorner_PrizeRoom_EventScript_TM_OBLIVION_BEAM:: @ Was TM13 Ice Beam
+	setvar VAR_TEMP_1, ITEM_TM_OBLIVION_BEAM
+	setvar VAR_TEMP_2, 4000
+	buffermovename STR_VAR_2, MOVE_OBLIVION_BEAM
+	goto CeladonCity_GameCorner_PrizeRoom_EventScript_ConfirmPrizeTM
+	end
+
+CeladonCity_GameCorner_PrizeRoom_EventScript_TM_ULTIMA_STRIKE:: @ Was TM23 Iron Tail
+	setvar VAR_TEMP_1, ITEM_TM_ULTIMA_STRIKE
+	setvar VAR_TEMP_2, 4000
+	buffermovename STR_VAR_2, MOVE_ULTIMA_STRIKE
 	goto CeladonCity_GameCorner_PrizeRoom_EventScript_ConfirmPrizeTM
 	end
 
