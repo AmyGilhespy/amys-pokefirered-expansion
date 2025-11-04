@@ -23,17 +23,17 @@ Route4_Text_RouteSign::
     .string "MT. MOON - CERULEAN CITY$"
 
 Text_MegaPunchTeach::
-    .string "A punch of roaring ferocity!\p"
-    .string "Packed with destructive power!\p"
+    .string "A sweet and delicate kiss!\p"
+    .string "Packed with love and kindness!\p"
     .string "When the chips are down,\n"
-    .string "MEGA PUNCH is the ultimate attack!\l"
+    .string "SWEET KISS is the ultimate kiss!\l"
     .string "You agree, yes?\p"
     .string "Now!\n"
     .string "Let me teach it to your POKéMON!$"
 
 Text_MegaPunchDeclined::
     .string "You'll be back when you understand\n"
-    .string "the worth of MEGA PUNCH.$"
+    .string "the worth of SWEET KISS.$"
 
 Text_MegaPunchWhichMon::
     .string "Fine!\n"
@@ -41,23 +41,23 @@ Text_MegaPunchWhichMon::
 
 Text_MegaPunchTaught::
     .string "Now, we are comrades in the way of\n"
-    .string "punching!\p"
+    .string "kissing!\p"
     .string "You should go before you're seen\n"
     .string "by the misguided fool who trains\l"
-    .string "only his silly kicking over there.$"
+    .string "his silly lips over there.$"
 
 Text_MegaKickTeach::
-    .string "A kick of brutal ferocity!\p"
-    .string "Packed with destructive power!\p"
+    .string "A lovely and romantic kiss!\p"
+    .string "Packed with love and warmth!\p"
     .string "When you get right down to it,\n"
-    .string "MEGA KICK is the ultimate attack!\l"
+    .string "LOVELY KISS is the ultimate kiss!\l"
     .string "Don't you agree?\p"
     .string "Okay!\n"
     .string "I'll teach it to your POKéMON!$"
 
 Text_MegaKickDeclined::
     .string "You'll come crawling back when you\n"
-    .string "realize the value of MEGA KICK.$"
+    .string "realize the value of LOVELY KISS.$"
 
 Text_MegaKickWhichMon::
     .string "All right!\n"
@@ -65,10 +65,10 @@ Text_MegaKickWhichMon::
 
 Text_MegaKickTaught::
     .string "Now, we are soul mates in the way\n"
-    .string "of kicking!\p"
+    .string "of kissing!\p"
     .string "You should run before you're seen\n"
     .string "by the deluded nitwit who trains\l"
-    .string "only simple punching over there.$"
+    .string "only simple kissing over there.$"
 
 Route4_Text_PeopleLikeAndRespectBrock::
     .string "Oh, wow, that's the BOULDERBADGE!\n"

@@ -7,6 +7,21 @@ CeladonCity_Gym_EventScript_Erika::
 	goto_if_unset FLAG_GOT_TR99_FROM_ERIKA, CeladonCity_Gym_EventScript_GiveTR99
 	famechecker FAMECHECKER_ERIKA, 4
 	msgbox CeladonCity_Gym_Text_ErikaPostBattle
+	goto CeladonCity_Gym_Shop
+	end
+
+CeladonCity_Gym_Shop::
+	msgbox CeladonCity_Gym_Text_ShopIntro
+	pokemart CeladonCity_Gym_Items
+	msgbox CeladonCity_Gym_Text_ShopOutro
+	release
+	end
+
+	.align 2
+CeladonCity_Gym_Items::
+	.2byte ITEM_TM_SPORE
+	.2byte ITEM_TM_DARK_VOID
+	.2byte ITEM_NONE
 	release
 	end
 
@@ -26,7 +41,7 @@ CeladonCity_Gym_EventScript_GiveTR99::
 	giveitem_msg CeladonCity_Gym_Text_ReceivedTR99FromErika, ITEM_TM99
 	setflag FLAG_GOT_TR99_FROM_ERIKA
 	msgbox CeladonCity_Gym_Text_ExplainTR99
-	release
+	goto CeladonCity_Gym_Shop
 	end
 
 CeladonCity_Gym_EventScript_NoRoomForTR99::

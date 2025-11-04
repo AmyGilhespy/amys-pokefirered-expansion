@@ -53,9 +53,7 @@ Text_CounterTeach::
     .string "Not done yet? How about I teach\n"
     .string "you a good move?\p"
     .string "The move I have in mind is\n"
-    .string "COUNTER.\p"
-    .string "Not like the one I'm leaning on,\n"
-    .string "mind you!$"
+    .string "SPLASH.$"
 
 Text_CounterDeclined::
     .string "You're not interested? Come see\n"
@@ -63,8 +61,8 @@ Text_CounterDeclined::
 
 Text_CounterWhichMon::
     .string "Which POKéMON should I teach\n"
-    .string "COUNTER to?$"
+    .string "SPLASH to?$"
 
 Text_CounterTaught::
-    .string "Are you using that COUNTER move\n"
+    .string "Are you using that SPLASH move\n"
     .string "I taught your POKéMON?$"

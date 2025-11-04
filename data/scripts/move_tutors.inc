@@ -9,7 +9,7 @@ VictoryRoad_2F_EventScript_DoubleEdgeTutor::
 	call EventScript_CanOnlyBeLearnedOnce
 	goto_if_eq VAR_RESULT, NO, EventScript_DoubleEdgeDeclined
 	msgbox Text_DoubleEdgeWhichMon
-	setvar VAR_0x8005, MOVE_DOUBLE_EDGE
+	setvar VAR_0x8005, MOVE_V_CREATE
 	call EventScript_ChooseMoveTutorMon
 	goto_if_eq VAR_RESULT, FALSE, EventScript_DoubleEdgeDeclined
 .if I_REUSABLE_TMS == FALSE
@@ -39,7 +39,7 @@ EventScript_ThunderWaveTutor::
 	call EventScript_CanOnlyBeLearnedOnce
 	goto_if_eq VAR_RESULT, NO, EventScript_ThunderWaveDeclined
 	msgbox Text_ThunderWaveWhichMon
-	setvar VAR_0x8005, MOVE_THUNDER_WAVE
+	setvar VAR_0x8005, MOVE_BOLT_STRIKE
 	call EventScript_ChooseMoveTutorMon
 	goto_if_eq VAR_RESULT, FALSE, EventScript_ThunderWaveDeclined
 .if I_REUSABLE_TMS == FALSE
@@ -129,7 +129,7 @@ Route4_EventScript_MegaPunchTutor::
 	call EventScript_CanOnlyBeLearnedOnce
 	goto_if_eq VAR_RESULT, NO, EventScript_MegaPunchDeclined
 	msgbox Text_MegaPunchWhichMon
-	setvar VAR_0x8005, MOVE_MEGA_PUNCH
+	setvar VAR_0x8005, MOVE_SWEET_KISS
 	call EventScript_ChooseMoveTutorMon
 	goto_if_eq VAR_RESULT, FALSE, EventScript_MegaPunchDeclined
 .if I_REUSABLE_TMS == FALSE
@@ -159,7 +159,7 @@ Route4_EventScript_MegaKickTutor::
 	call EventScript_CanOnlyBeLearnedOnce
 	goto_if_eq VAR_RESULT, NO, EventScript_MegaKickDeclined
 	msgbox Text_MegaKickWhichMon
-	setvar VAR_0x8005, MOVE_MEGA_KICK
+	setvar VAR_0x8005, MOVE_LOVELY_KISS
 	call EventScript_ChooseMoveTutorMon
 	goto_if_eq VAR_RESULT, FALSE, EventScript_MegaKickDeclined
 .if I_REUSABLE_TMS == FALSE
@@ -219,7 +219,7 @@ EventScript_SoftboiledTutor::
 	call EventScript_CanOnlyBeLearnedOnce
 	goto_if_eq VAR_RESULT, NO, EventScript_SoftboiledDeclined
 	msgbox Text_SoftboiledWhichMon
-	setvar VAR_0x8005, MOVE_SOFT_BOILED
+	setvar VAR_0x8005, MOVE_CELEBRATE
 	call EventScript_ChooseMoveTutorMon
 	goto_if_eq VAR_RESULT, FALSE, EventScript_SoftboiledDeclined
 .if I_REUSABLE_TMS == FALSE
@@ -249,7 +249,7 @@ FuchsiaCity_EventScript_SubstituteTutor::
 	call EventScript_CanOnlyBeLearnedOnce
 	goto_if_eq VAR_RESULT, NO, EventScript_SubstituteDeclined
 	msgbox Text_SubstituteWhichMon
-	setvar VAR_0x8005, MOVE_SUBSTITUTE
+	setvar VAR_0x8005, MOVE_HOLD_HANDS
 	call EventScript_ChooseMoveTutorMon
 	goto_if_eq VAR_RESULT, FALSE, EventScript_SubstituteDeclined
 .if I_REUSABLE_TMS == FALSE
@@ -279,7 +279,7 @@ SevenIsland_EventScript_SwordsDanceTutor::
 	call EventScript_CanOnlyBeLearnedOnce
 	goto_if_eq VAR_RESULT, NO, EventScript_SwordsDanceDeclined
 	msgbox Text_SwordsDanceWhichMon
-	setvar VAR_0x8005, MOVE_SWORDS_DANCE
+	setvar VAR_0x8005, MOVE_TAIL_GLOW
 	call EventScript_ChooseMoveTutorMon
 	goto_if_eq VAR_RESULT, FALSE, EventScript_SwordsDanceDeclined
 .if I_REUSABLE_TMS == FALSE
@@ -339,7 +339,7 @@ EventScript_CounterTutor::
 	call EventScript_CanOnlyBeLearnedOnce
 	goto_if_eq VAR_RESULT, NO, EventScript_CounterDeclined
 	msgbox Text_CounterWhichMon
-	setvar VAR_0x8005, MOVE_COUNTER
+	setvar VAR_0x8005, MOVE_SPLASH
 	call EventScript_ChooseMoveTutorMon
 	goto_if_eq VAR_RESULT, FALSE, EventScript_CounterDeclined
 .if I_REUSABLE_TMS == FALSE
@@ -440,7 +440,7 @@ FourIsland_House1_EventScript_BodySlamTutor::
 	call EventScript_CanOnlyBeLearnedOnce
 	goto_if_eq VAR_RESULT, NO, EventScript_BodySlamDeclined
 	msgbox Text_BodySlamWhichMon
-	setvar VAR_0x8005, MOVE_BODY_SLAM
+	setvar VAR_0x8005, MOVE_LICK
 	call EventScript_ChooseMoveTutorMon
 	goto_if_eq VAR_RESULT, FALSE, EventScript_BodySlamDeclined
 .if I_REUSABLE_TMS == FALSE

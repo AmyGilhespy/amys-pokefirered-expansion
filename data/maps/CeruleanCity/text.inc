@@ -64,10 +64,14 @@ CeruleanCity_Text_GruntDefeat::
 
 CeruleanCity_Text_OkayIllReturnStolenTM::
     .string "…Okay.\n"
-    .string "I'll return the TM I stole.$"
+    .string "I'll return the TMs I stole.$"
 
-CeruleanCity_Text_RecoveredTM28FromGrunt::
-    .string "{PLAYER} recovered TM28 from\n"
+CeruleanCity_Text_RecoveredTM_ZAP_CANNON_FromGrunt::
+    .string "{PLAYER} recovered TM71 from\n"
+    .string "the TEAM ROCKET GRUNT.$"
+
+CeruleanCity_Text_RecoveredTM_INFERNO_FromGrunt::
+    .string "{PLAYER} recovered TM72 from\n"
     .string "the TEAM ROCKET GRUNT.$"
 
 CeruleanCity_Text_BetterGetMovingBye::

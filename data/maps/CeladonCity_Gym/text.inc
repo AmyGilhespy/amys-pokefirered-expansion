@@ -59,6 +59,13 @@ CeladonCity_Gym_Text_ExplainTR99::
 CeladonCity_Gym_Text_ShouldMakeRoomForThis::
     .string "You should make room for this.$"
 
+CeladonCity_Gym_Text_ShopIntro::
+    .string "Do you want to buy something?$"
+
+CeladonCity_Gym_Text_ShopOutro::
+    .string "Come back if you want to take\n"
+    .string "a nap with me.$"
+
 CeladonCity_Gym_Text_KayIntro::
     .string "I should tell you about this GYM.\p"
     .string "Only real ladies are allowed in\n"

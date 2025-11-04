@@ -1258,8 +1258,8 @@
 #define FLAG_0x4BE               0x4BE
 #define FLAG_0x4BF               0x4BF
 #define FLAG_GOT_COINS_FROM_MAN  0x4C0
-#define FLAG_0x4C1               0x4C1
-#define FLAG_0x4C2               0x4C2
+#define FLAG_GOT_TM_ZAP_CANNON   0x4C1
+#define FLAG_GOT_TM_INFERNO      0x4C2
 #define FLAG_0x4C3               0x4C3
 #define FLAG_0x4C4               0x4C4
 #define FLAG_0x4C5               0x4C5

@@ -19,6 +19,12 @@ FuchsiaCity_Gym_Text_KogaDefeat::
     .string "Here!\n"
     .string "Take the SOULBADGE!$"
 
+FuchsiaCity_Gym_Text_ShopIntro::
+    .string "Wanna buy some ninja gear?$"
+
+FuchsiaCity_Gym_Text_ShopOutro::
+    .string "Fwahahaha!$"
+
 FuchsiaCity_Gym_Text_KogaPostBattle::
     .string "When afflicted by TOXIC, a POKéMON\n"
     .string "suffers more and more.\p"

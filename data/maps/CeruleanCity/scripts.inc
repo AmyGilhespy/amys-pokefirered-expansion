@@ -176,9 +176,18 @@ CeruleanCity_EventScript_Grunt::
 
 CeruleanCity_EventScript_GruntDefeated::
 	msgbox CeruleanCity_Text_OkayIllReturnStolenTM
-	checkitemspace ITEM_TM28
+	goto_if_set FLAG_GOT_TM_ZAP_CANNON, CeruleanCity_EventScript_GruntDefeated2
+	checkitemspace ITEM_TM_ZAP_CANNON
 	goto_if_eq VAR_RESULT, FALSE, CeruleanCity_EventScript_NoRoomForTM28
-	giveitem_msg CeruleanCity_Text_RecoveredTM28FromGrunt, ITEM_TM28
+	giveitem_msg CeruleanCity_Text_RecoveredTM_ZAP_CANNON_FromGrunt, ITEM_TM_ZAP_CANNON
+	setflag FLAG_GOT_TM_ZAP_CANNON
+CeruleanCity_EventScript_GruntDefeated2::
+	goto_if_set FLAG_GOT_TM_INFERNO, CeruleanCity_EventScript_GruntDefeated3
+	checkitemspace ITEM_TM_INFERNO
+	goto_if_eq VAR_RESULT, FALSE, CeruleanCity_EventScript_NoRoomForTM28
+	giveitem_msg CeruleanCity_Text_RecoveredTM_INFERNO_FromGrunt, ITEM_TM_INFERNO
+	setflag FLAG_GOT_TM_INFERNO
+CeruleanCity_EventScript_GruntDefeated3::
 	msgbox CeruleanCity_Text_BetterGetMovingBye
 	closemessage
 	fadescreenswapbuffers FADE_TO_BLACK

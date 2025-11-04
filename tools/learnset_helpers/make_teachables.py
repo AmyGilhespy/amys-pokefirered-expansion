@@ -128,9 +128,9 @@ def prepare_output(all_learnables: dict[str, set[str]], repo_teachables: set[str
         "MOVE_RAILGUN",          # TM68 Game Corner Prize Room
         "MOVE_MEGA_LICK",        # TM69 From Mr. Psychic
         "MOVE_DYNAMIC_PUNCH",    # TM70 Saffron City Dojo
-        "MOVE_ZAP_CANNON",       # TM71 TODO
-        "MOVE_INFERNO",          # TM72 TODO
-        "MOVE_DRAGON_RAGE",      # TM73 TODO
+        "MOVE_ZAP_CANNON",       # TM71 Cerulean City (Rocket Grunt)
+        "MOVE_INFERNO",          # TM72 Cerulean City (Rocket Grunt)
+        "MOVE_DRAGON_RAGE",      # TM73 Route 12 North Entrance 2F (Little Girl)
         "MOVE_SHED_TAIL",        # TM74 Viridian City School
         "MOVE_PAY_DAY",          # TM75 Viridian City Mart
         # TRs:
@@ -149,15 +149,34 @@ def prepare_output(all_learnables: dict[str, set[str]], repo_teachables: set[str
         "MOVE_RAPID_SPIN",       # TR88 Celadon City Department Store 2F
         "MOVE_SWEET_SCENT",      # TR89 Celadon City Department Store 2F
         "MOVE_DETECT",           # TR90 Celadon City Department Store 2F
-        "MOVE_BANEFUL_BUNKER",   # TR91 TODO
-        "MOVE_SPIKY_SHIELD",     # TR92 TODO
-        "MOVE_WATER_SHURIKEN",   # TR93 TODO
+        "MOVE_BANEFUL_BUNKER",   # TR91 Fuchsia City Gym Shop
+        "MOVE_SPIKY_SHIELD",     # TR92 Fuchsia City Gym Shop
+        "MOVE_WATER_SHURIKEN",   # TR93 Fuchsia City Gym Shop
         "MOVE_SURGING_STRIKES",  # TR94 TODO
         "MOVE_BOOMBURST",        # TR95 TODO
         "MOVE_ENDEAVOR",         # TR96 TODO
-        "MOVE_SPORE",            # TR97 TODO
-        "MOVE_DARK_VOID",        # TR98 TODO
-        "MOVE_SKETCH"            # TR99 Cinnabar Island Mart
+        "MOVE_SPORE",            # TR97 Celadon City Gym Shop
+        "MOVE_DARK_VOID",        # TR98 Celadon City Gym Shop
+        "MOVE_SKETCH",           # TR99 Cinnabar Island Mart
+        # Move Tutors:
+        "MOVE_SWEET_KISS",       # Move Tutor
+        "MOVE_LOVELY_KISS",      # Move Tutor
+        "MOVE_SEISMIC_TOSS",     # Move Tutor: Unchanged, because I liked the dialogue
+        "MOVE_ROCK_SLIDE",       # Move Tutor: Unchanged, because I liked the dialogue
+        "MOVE_SPLASH",           # Move Tutor
+        "MOVE_CELEBRATE",        # Move Tutor
+        "MOVE_MIMIC",            # Move Tutor: Unchanged, because I liked the dialogue+move
+        "MOVE_BOLT_STRIKE",      # Move Tutor
+        "MOVE_HOLD_HANDS",       # Move Tutor
+        "MOVE_DREAM_EATER",      # Move Tutor: Unchanged, because I liked the move
+        "MOVE_METRONOME",        # Move Tutor: Unchanged, because I liked the move
+        "MOVE_V_CREATE",         # Move Tutor
+        "MOVE_EXPLOSION",        # Move Tutor: Unchanged, because I liked the move
+        "MOVE_FRENZY_PLANT",     # Move Tutor: Unchanged, because I liked the tutor gimmick (except made random)
+        "MOVE_BLAST_BURN",       # Move Tutor: Unchanged, because I liked the tutor gimmick (except made random)
+        "MOVE_HYDRO_CANNON",     # Move Tutor: Unchanged, because I liked the tutor gimmick (except made random)
+        "MOVE_LICK",             # Move Tutor
+        "MOVE_TAIL_GLOW"         # Move Tutor
     }
     joinpat = ",\n    "
     for species in TEACHABLE_ARRAY_DECL_PAT.finditer(old):

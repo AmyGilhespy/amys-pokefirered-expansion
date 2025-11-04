@@ -2294,7 +2294,7 @@ bool8 CapeBrinkGetMoveToTeachLeadPokemon(void)
     //   8007 = Index of lead mon
     //   to specialvar = whether a move can be taught in the first place
     u8 i, leadMonSlot, moveCount = 0;
-    u16 moveId, tutorFlag; 
+    u16 moveId = MOVE_NONE, tutorFlag;
     struct Pokemon *leadMon;
     
     leadMonSlot = GetLeadMonIndex();
@@ -2303,16 +2303,16 @@ bool8 CapeBrinkGetMoveToTeachLeadPokemon(void)
     if (GetMonData(leadMon, MON_DATA_FRIENDSHIP) != 255)
         return FALSE;
 
-    moveId = GetFirstPartnerMove(GetMonData(leadMon, MON_DATA_SPECIES_OR_EGG));
-    switch(moveId)
+    //moveId = GetFirstPartnerMove(GetMonData(leadMon, MON_DATA_SPECIES_OR_EGG));
+    switch(Random() % 3)
     {
-        case MOVE_FRENZY_PLANT:
+        case 0://MOVE_FRENZY_PLANT:
             tutorFlag = FLAG_TUTOR_FRENZY_PLANT;
             break;
-        case MOVE_BLAST_BURN:
+        case 1://MOVE_BLAST_BURN:
             tutorFlag = FLAG_TUTOR_BLAST_BURN;
             break;
-        case MOVE_HYDRO_CANNON:
+        case 2://MOVE_HYDRO_CANNON:
             tutorFlag = FLAG_TUTOR_HYDRO_CANNON;
             break;
         default:

@@ -5,7 +5,22 @@ FuchsiaCity_Gym_EventScript_Koga::
 	famechecker FAMECHECKER_KOGA, FCPICKSTATE_COLORED, UpdatePickStateFromSpecialVar8005
 	trainerbattle_single TRAINER_LEADER_KOGA, FuchsiaCity_Gym_Text_KogaIntro, FuchsiaCity_Gym_Text_KogaDefeat, FuchsiaCity_Gym_EventScript_DefeatedKoga, NO_MUSIC
 	goto_if_unset FLAG_GOT_TR99_FROM_KOGA, FuchsiaCity_Gym_EventScript_GiveTR99
-	msgbox FuchsiaCity_Gym_Text_KogaPostBattle
+	goto SaffronCity_Gym_Shop
+	end
+
+FuchsiaCity_Gym_Shop::
+	msgbox FuchsiaCity_Gym_Text_ShopIntro
+	pokemart FuchsiaCity_Gym_Items
+	msgbox FuchsiaCity_Gym_Text_ShopOutro
+	release
+	end
+
+	.align 2
+FuchsiaCity_Gym_Items::
+	.2byte ITEM_TM_BANEFUL_BUNKER
+	.2byte ITEM_TM_SPIKY_SHIELD
+	.2byte ITEM_TM_WATER_SHURIKEN
+	.2byte ITEM_NONE
 	release
 	end
 
@@ -25,7 +40,8 @@ FuchsiaCity_Gym_EventScript_GiveTR99::
 	giveitem_msg FuchsiaCity_Gym_Text_ReceivedTR99FromKoga, ITEM_TM99
 	setflag FLAG_GOT_TR99_FROM_KOGA
 	msgbox FuchsiaCity_Gym_Text_KogaExplainTR99
-	release
+	msgbox FuchsiaCity_Gym_Text_KogaPostBattle
+	goto FuchsiaCity_Gym_Shop
 	end
 
 FuchsiaCity_Gym_EventScript_NoRoomForTR99::

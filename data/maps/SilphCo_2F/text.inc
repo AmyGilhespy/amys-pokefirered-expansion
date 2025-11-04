@@ -50,19 +50,19 @@ Text_ThunderWaveTeach::
     .string "Oh, you're not with TEAM ROCKET.\n"
     .string "I'm sorry, I thought…\p"
     .string "Will you forgive me if I teach\n"
-    .string "you the THUNDER WAVE technique?$"
+    .string "you the BOLT STRIKE technique?$"
 
 Text_ThunderWaveDeclined::
     .string "Oh…\n"
-    .string "But THUNDER WAVE is convenient…$"
+    .string "But BOLT STRIKE is convenient…$"
 
 Text_ThunderWaveWhichMon::
     .string "Which POKéMON should I teach\n"
-    .string "THUNDER WAVE?$"
+    .string "BOLT STRIKE?$"
 
 Text_ThunderWaveTaught::
-    .string "THUNDER WAVE causes paralysis in\n"
-    .string "the target POKéMON.\p"
+    .string "BOLT STRIKE may causes in\n"
+    .string "paralysis the target POKéMON.\p"
     .string "A paralyzed POKéMON may be unable\n"
     .string "to move in battle.\p"
     .string "It's an ELECTRIC-type move, so it\n"

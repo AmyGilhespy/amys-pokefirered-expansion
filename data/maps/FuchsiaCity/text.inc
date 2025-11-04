@@ -81,28 +81,29 @@ FuchsiaCity_Text_Ellipsis::
     .string "……$"
 
 Text_SubstituteTeach::
-    .string "Aww, I wish I was a KANGASKHAN\n"
+    .string "Aww, I wish I had a KANGASKHAN\n"
     .string "baby.\p"
-    .string "I'd love to be a substitute for the\n"
-    .string "baby…\p"
+    .string "I'd love to be a hold hands\n"
+    .string "with the baby…\p"
     .string "And snuggle in the mother\n"
     .string "KANGASKHAN's belly pouch.\p"
     .string "But only POKéMON can use the\n"
-    .string "technique SUBSTITUTE…\p"
-    .string "Want me to teach SUBSTITUTE to\n"
+    .string "technique HOLD HANDS…\p"
+    .string "Want me to teach HOLD HANDS to\n"
     .string "one of your POKéMON?$"
 
 Text_SubstituteDeclined::
     .string "Oh, really?\n"
-    .string "SUBSTITUTE seems so fun…$"
+    .string "HOLD HANDS seems so fun…$"
 
 Text_SubstituteWhichMon::
     .string "Which POKéMON wants to learn\n"
-    .string "SUBSTITUTE?$"
+    .string "HOLD HANDS?$"
 
 Text_SubstituteTaught::
     .string "Boy, what I'd give to crawl inside\n"
-    .string "a KANGASKHAN belly pouch…$"
+    .string "a KANGASKHAN belly pouch…\l"
+    .string "…it's my kink for sure.$"
 
 FuchsiaCity_Text_MyFatherIsGymLeader::
     .string "My father is the GYM LEADER of\n"

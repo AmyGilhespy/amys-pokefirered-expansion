@@ -1,12 +1,12 @@
 @ The 5 texts below are supposed to be in FourIsland_House1
 Text_BodySlamTeach::
     .string "Ready?\n"
-    .string "Boing!\p"
-    .string "We're having a BODY SLAM match\n"
+    .string "Lick!\p"
+    .string "We're having a LICK match\n"
     .string "to see who wimps out first.\p"
     .string "If you were to join us, you'd be\n"
-    .string "squashed like a bug, though…\p"
-    .string "How about I teach BODY SLAM to\n"
+    .string "licked good, though…\p"
+    .string "How about I teach LICK to\n"
     .string "a POKéMON of yours instead?$"
 
 Text_BodySlamDeclined::
@@ -15,10 +15,10 @@ Text_BodySlamDeclined::
 
 Text_BodySlamWhichMon::
     .string "Which POKéMON wants to learn how\n"
-    .string "to BODY SLAM?$"
+    .string "to LICK?$"
 
 Text_BodySlamTaught::
-    .string "Boioing!$"
+    .string "Licklicklick!$"
 
 FourIsland_House1_Text_FatMan::
     .string "それ　ぼよーん！\n"
