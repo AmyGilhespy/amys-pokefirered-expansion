@@ -5505,7 +5505,9 @@ case EFFECT_GUARD_SPLIT:
             ADJUST_SCORE(DECENT_EFFECT);
         break;
     case EFFECT_ENDEAVOR:
-        if (AI_IsSlower(battlerAtk, battlerDef, move, predictedMoveSpeedCheck, CONSIDER_PRIORITY) && !CanTargetFaintAi(battlerDef, battlerAtk))
+        if (gBattleMons[battlerDef].hp >= gBattleMons[battlerAtk].hp)
+            ADJUST_SCORE(WEAK_EFFECT);
+        else if (AI_IsSlower(battlerAtk, battlerDef, move, predictedMoveSpeedCheck, CONSIDER_PRIORITY) && !CanTargetFaintAi(battlerDef, battlerAtk))
             ADJUST_SCORE(DECENT_EFFECT);
         break;
     case EFFECT_REVIVAL_BLESSING:

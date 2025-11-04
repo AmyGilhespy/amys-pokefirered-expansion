@@ -54,6 +54,7 @@
 #include "help_system.h"
 #include "quest_log.h"
 #include "pokemon.h"
+//#include "gba/isagbprint.h"
 
 enum {
     TRANSITION_TYPE_NORMAL,
@@ -702,7 +703,11 @@ u8 GetTrainerBattleTransition(void)
     u32 trainerId = SanitizeTrainerId(TRAINER_BATTLE_PARAM.opponentA);
 
     if (DoesTrainerHaveMugshot(trainerId))
+    {
+        //MgbaPrintf(MGBA_LOG_WARN, "GetTrainerBattleTransition(): B_TRANSITION_MUGSHOT=%d", B_TRANSITION_MUGSHOT);
         return B_TRANSITION_MUGSHOT;
+    }
+    //MgbaPrintf(MGBA_LOG_WARN, "GetTrainerBattleTransition(): NOT B_TRANSITION_MUGSHOT=%d", B_TRANSITION_MUGSHOT);
 
     switch (GetTrainerBattleType(trainerId))
     {
