@@ -4672,6 +4672,11 @@ static void Cmd_getexp(void)
                             gBattleStruct->battlerExpReward = gExperienceTables[growthRate][levelCap] - currentExp;
                     }
 
+                    if (B_AWARD_EXP == FALSE)
+                    {
+                        gBattleStruct->battlerExpReward = 0;
+                    }
+
                     if (IsTradedMon(&gPlayerParty[*expMonId]))
                     {
                         // check if the Pokémon doesn't belong to the player

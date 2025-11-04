@@ -12,7 +12,7 @@ ViridianCity_House_Text_AnnaIntro::
     .string "I'll show you what he taught me.$"
 
 ViridianCity_House_Text_AnnaDefeat::
-    .string "NOOOOOOOOO!$"
+    .string "NOOOOOOOOO!!$"
 
 ViridianCity_House_Text_YouKilledMrCuddles::
     .string "You killed Mr Cuddles!$"
