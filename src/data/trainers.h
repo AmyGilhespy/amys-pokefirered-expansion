@@ -22582,7 +22582,7 @@ F_TRAINER_FEMALE |
 #line 8786
             .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 4),
 #line 8785
-            .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(30, 0, 31, 31, 31, 31),
 #line 8787
             .ability = ABILITY_NO_GUARD,
 #line 8784
@@ -41057,6 +41057,56 @@ F_TRAINER_FEMALE |
                 MOVE_DRAGON_DANCE,
                 MOVE_EXTREME_SPEED,
                 MOVE_V_CREATE,
+            },
+            },
+        },
+    },
+#line 15973
+    [DIFFICULTY_NORMAL][TRAINER_ANNA] =
+    {
+#line 15974
+        .trainerName = _("ANNA"),
+#line 15975
+        .trainerClass = TRAINER_CLASS_LITTLE_GIRL,
+#line 15976
+        .trainerPic = TRAINER_PIC_SCHOOL_KID_F,
+        .encounterMusic_gender =
+#line 15977
+F_TRAINER_FEMALE | 
+#line 15978
+            TRAINER_ENCOUNTER_MUSIC_MAGMA,
+#line 15979
+        .items = { ITEM_POTION, ITEM_POTION, ITEM_POTION },
+#line 15980
+        .battleType = TRAINER_BATTLE_TYPE_SINGLES,
+#line 15981
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_FORCE_SETUP_FIRST_TURN | AI_FLAG_TRY_TO_2HKO | AI_FLAG_HP_AWARE | AI_FLAG_PREFER_STATUS_MOVES | AI_FLAG_STALL | AI_FLAG_SMART_SWITCHING | AI_FLAG_ACE_POKEMON | AI_FLAG_OMNISCIENT,
+#line 0
+        .trainerBackPic = TRAINER_PIC_SCHOOL_KID_F,
+        .partySize = 1,
+        .party = (const struct TrainerMon[])
+        {
+            {
+#line 15983
+            .nickname = COMPOUND_STRING("Mr Cuddles"),
+#line 15983
+            .species = SPECIES_FURRET,
+#line 15983
+            .gender = TRAINER_MON_MALE,
+#line 15986
+            .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 0, 4),
+#line 15985
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+#line 15987
+            .ability = ABILITY_FLUFFY,
+#line 15984
+            .lvl = 35,
+#line 15988
+            .nature = NATURE_JOLLY,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+            .moves = {
+#line 15989
+                MOVE_INFINIBLAST,
             },
             },
         },

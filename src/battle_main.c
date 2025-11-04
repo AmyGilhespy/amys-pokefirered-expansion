@@ -328,6 +328,7 @@ const struct TrainerClass gTrainerClasses[TRAINER_CLASS_COUNT] =
     [TRAINER_CLASS_RS_ELITE_FOUR] =   { _("ELITE FOUR"), 25, BALL_ULTRA },
     [TRAINER_CLASS_RS_LEADER] =       { _("LEADER"), 25 },
     [TRAINER_CLASS_SCHOOL_KID] =      { _("SCHOOL KID"), 5 },
+    [TRAINER_CLASS_LITTLE_GIRL] =     { _("LITTLE GIRL"), 5 },
     [TRAINER_CLASS_SR_AND_JR] =       { _("SR. AND JR."), 4 },
     [TRAINER_CLASS_POKEFAN] =         { _("POKéFAN"), 20 },
     [TRAINER_CLASS_EXPERT] =          { _("EXPERT"), 10 },
@@ -2066,6 +2067,7 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
             else if (trainer->trainerClass == TRAINER_CLASS_ELITE_FOUR && i < 5) { }
             else if (trainer->trainerClass == TRAINER_CLASS_CHAMPION) { }
             else if (trainer->trainerClass == TRAINER_CLASS_BOSS) { }
+            else if (trainer->trainerClass == TRAINER_CLASS_LITTLE_GIRL) { }
             else
             {
                 givePreassignedMoves = FALSE;

@@ -7,6 +7,16 @@ ViridianCity_House_Text_NicknamingIsFun::
 ViridianCity_House_Text_MyDaddyLovesMonsToo::
     .string "My daddy loves POKéMON, too.$"
 
+ViridianCity_House_Text_AnnaIntro::
+    .string "My daddy loves POKéMON, too.\p"
+    .string "I'll show you what he taught me.$"
+
+ViridianCity_House_Text_AnnaDefeat::
+    .string "NOOOOOOOOO!$"
+
+ViridianCity_House_Text_YouKilledMrCuddles::
+    .string "You killed Mr Cuddles!$"
+
 ViridianCity_House_Text_Speary::
     .string "SPEARY: Tetweet!$"
 

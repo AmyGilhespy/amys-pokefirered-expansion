@@ -8782,7 +8782,7 @@ Mugshot: Pink
 
 Gengar @ Petaya Berry
 Level: 54
-IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+IVs: 30 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 0 HP / 0 Atk / 0 Def / 252 SpA / 4 SpD / 252 Spe
 Ability: No Guard
 Nature: Timid
@@ -15969,4 +15969,22 @@ Nature: Adamant
 - Dragon Dance
 - Extreme Speed
 - V-create
+
+=== TRAINER_ANNA ===
+Name: ANNA
+Class: Little Girl
+Pic: School Kid F
+Gender: Female
+Music: Magma
+Items: Potion / Potion / Potion
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Smart Switching / Ace Pokemon / Omniscient
+
+Mr Cuddles (Furret) (M)
+Level: 35
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 0 HP / 252 Atk / 0 Def / 0 SpA / 4 SpD / 252 Spe
+Ability: Fluffy
+Nature: Jolly
+- Infiniblast
 

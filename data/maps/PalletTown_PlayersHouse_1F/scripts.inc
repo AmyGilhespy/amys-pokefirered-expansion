@@ -2,7 +2,10 @@ PalletTown_PlayersHouse_1F_MapScripts::
 	.byte 0
 
 PalletTown_PlayersHouse_1F_EventScript_Mom::
-	trainerbattle_single TRAINER_MOM, PalletTown_PlayersHouse_Text_MomIntro, PalletTown_PlayersHouse_Text_MomDefeat, PalletTown_PlayersHouse_Text_DefeatedMom, NO_MUSIC
+	trainerbattle_single TRAINER_MOM, PalletTown_PlayersHouse_Text_MomIntro, PalletTown_PlayersHouse_Text_MomDefeat, PalletTown_PlayersHouse_EventScript_DefeatedMom, NO_MUSIC
+	end
+
+PalletTown_PlayersHouse_EventScript_DefeatedMom::
 	end
 
 PalletTown_PlayersHouse_1F_EventScript_MomNoDebug::

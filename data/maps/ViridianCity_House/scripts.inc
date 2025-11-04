@@ -6,7 +6,9 @@ ViridianCity_House_EventScript_BaldingMan::
 	end
 
 ViridianCity_House_EventScript_LittleGirl::
-	msgbox ViridianCity_House_Text_MyDaddyLovesMonsToo, MSGBOX_NPC
+	trainerbattle_single TRAINER_ANNA, ViridianCity_House_Text_AnnaIntro, ViridianCity_House_Text_AnnaDefeat, ViridianCity_House_EventScript_DefeatedAnna, NO_MUSIC
+ViridianCity_House_EventScript_DefeatedAnna::
+	msgbox ViridianCity_House_Text_YouKilledMrCuddles, MSGBOX_NPC
 	end
 
 ViridianCity_House_EventScript_Speary::

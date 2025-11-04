@@ -42,5 +42,3 @@ PalletTown_PlayersHouse_Text_MomIntro::
 PalletTown_PlayersHouse_Text_MomDefeat::
     .string "MomDefeat$"
 
-PalletTown_PlayersHouse_Text_DefeatedMom::
-    .string "DefeatedMom$"
