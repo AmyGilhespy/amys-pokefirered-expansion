@@ -112,6 +112,7 @@ void ResetMenuAndMonGlobals(void)
 
 void NewGameInitData(void)
 {
+    u16 i;
     u8 rivalName[PLAYER_NAME_LENGTH + 1];
     
     if (gSaveFileStatus == SAVE_STATUS_EMPTY || gSaveFileStatus == SAVE_STATUS_INVALID)
@@ -180,6 +181,23 @@ void NewGameInitData(void)
     AddBagItem(ITEM_HM05, 1); // Flash
     AddBagItem(ITEM_SECRET_KEY, 1);
     FlagSet(FLAG_HIDE_POKEMON_MANSION_B1F_SECRET_KEY); // Unlocks the gym in Cinnabar
+
+    // Testing/debug:
+    if (FALSE) // For easy testing, change this to TRUE.
+    {
+        for (i = 0; i < NUM_BADGES; i++)
+        {
+            FlagSet(FLAG_BADGE01_GET + i);
+        }
+        for (i = FLAG_DEFEATED_BROCK; i < FLAG_DEFEATED_LORELEI; i++)
+        {
+            FlagSet(i);
+        }
+        for (i = FLAG_WORLD_MAP_PALLET_TOWN; i <= FLAG_WORLD_MAP_BIRTH_ISLAND_EXTERIOR; i++)
+        {
+            FlagSet(i);
+        }
+    }
 }
 
 static void ResetMiniGamesResults(void)

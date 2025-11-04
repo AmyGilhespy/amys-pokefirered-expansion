@@ -5,8 +5,8 @@ IndigoPlateau_PokemonCenter_1F_MapScripts::
 
 IndigoPlateau_PokemonCenter_1F_OnTransition::
 	setrespawn HEAL_LOCATION_INDIGO_PLATEAU
-	specialvar VAR_RESULT, IsNationalPokedexEnabled
-	call_if_eq VAR_RESULT, TRUE, IndigoPlateau_PokemonCenter_1F_EventScript_CheckBlockDoor
+	@specialvar VAR_RESULT, IsNationalPokedexEnabled
+	@call_if_eq VAR_RESULT, TRUE, IndigoPlateau_PokemonCenter_1F_EventScript_CheckBlockDoor
 	end
 
 IndigoPlateau_PokemonCenter_1F_EventScript_CheckBlockDoor::
@@ -17,8 +17,8 @@ IndigoPlateau_PokemonCenter_1F_EventScript_CheckBlockDoor::
 IndigoPlateau_PokemonCenter_1F_EventScript_DoorGuard::
 	lock
 	faceplayer
-	specialvar VAR_RESULT, IsNationalPokedexEnabled
-	goto_if_eq VAR_RESULT, TRUE, IndigoPlateau_PokemonCenter_1F_EventScript_CheckSeviiIslandComplete
+	@specialvar VAR_RESULT, IsNationalPokedexEnabled
+	@goto_if_eq VAR_RESULT, TRUE, IndigoPlateau_PokemonCenter_1F_EventScript_CheckSeviiIslandComplete
 	msgbox IndigoPlateau_PokemonCenter_1F_Text_FaceEliteFourGoodLuck
 	release
 	end
@@ -57,6 +57,7 @@ IndigoPlateau_PokemonCenter_1F_Items::
 	.2byte ITEM_MAX_POTION
 	.2byte ITEM_REVIVE
 	.2byte ITEM_FULL_HEAL
+	.2byte ITEM_RARE_CANDY
 	.2byte ITEM_MAX_REPEL
 	.2byte ITEM_NONE
 	release

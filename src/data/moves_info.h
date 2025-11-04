@@ -331,7 +331,11 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .punchingMove = TRUE,
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_FREEZE_OR_FROSTBITE,
+        #if B_USE_FROSTBITE == TRUE
+            .chance = 30,
+        #else
             .chance = 10,
+        #endif
         }),
         .contestEffect = CONTEST_EFFECT_HIGHLY_APPEALING,
         .contestCategory = CONTEST_CATEGORY_BEAUTY,
@@ -1619,7 +1623,11 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             // The following effect is also relevant in battle_Pike.c
             // If you cherry-pick this to use something other than the config, make sure to update it there too
             .moveEffect = MOVE_EFFECT_FREEZE_OR_FROSTBITE,
+        #if B_USE_FROSTBITE == TRUE
+            .chance = 20,
+        #else
             .chance = 10,
+        #endif
         }),
         .contestEffect = CONTEST_EFFECT_STARTLE_MONS_SAME_TYPE_APPEAL,
         .contestCategory = CONTEST_CATEGORY_BEAUTY,
@@ -1651,7 +1659,11 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .alwaysHitsInHailSnow = B_BLIZZARD_HAIL >= GEN_4,
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_FREEZE_OR_FROSTBITE,
+        #if B_USE_FROSTBITE == TRUE
+            .chance = 30,
+        #else
             .chance = 10,
+        #endif
         }),
         .contestEffect = CONTEST_EFFECT_HIGHLY_APPEALING,
         .contestCategory = CONTEST_CATEGORY_BEAUTY,
@@ -4298,7 +4310,11 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .category = DAMAGE_CATEGORY_SPECIAL,
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_TRI_ATTACK,
+        #if B_USE_FROSTBITE == TRUE
+            .chance = 30,
+        #else
             .chance = 20,
+        #endif
         }),
         .contestEffect = CONTEST_EFFECT_STARTLE_PREV_MONS,
         .contestCategory = CONTEST_CATEGORY_BEAUTY,
@@ -4838,7 +4854,11 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .category = DAMAGE_CATEGORY_SPECIAL,
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_FREEZE_OR_FROSTBITE,
+        #if B_USE_FROSTBITE == TRUE
+            .chance = 30,
+        #else
             .chance = 10,
+        #endif
         }),
         .contestEffect = CONTEST_EFFECT_HIGHLY_APPEALING,
         .contestCategory = CONTEST_CATEGORY_BEAUTY,
@@ -11011,7 +11031,11 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .bitingMove = TRUE,
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_FREEZE_OR_FROSTBITE,
+        #if B_USE_FROSTBITE == TRUE
+            .chance = 20,
+        #else
             .chance = 10,
+        #endif
         },
         {
             .moveEffect = MOVE_EFFECT_FLINCH,
@@ -14679,7 +14703,11 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .argument = { .type = TYPE_WATER },
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_FREEZE_OR_FROSTBITE,
+        #if B_USE_FROSTBITE == TRUE
+            .chance = 30,
+        #else
             .chance = 10,
+        #endif
         }),
         .contestEffect = CONTEST_EFFECT_STARTLE_MONS_SAME_TYPE_APPEAL,
         .contestCategory = CONTEST_CATEGORY_BEAUTY,
@@ -18996,7 +19024,11 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .metronomeBanned = TRUE,
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_FREEZE_OR_FROSTBITE,
+        #if B_USE_FROSTBITE == TRUE
+            .chance = 30,
+        #else
             .chance = 10,
+        #endif
         }),
         .contestEffect = CONTEST_EFFECT_HIGHLY_APPEALING,
         .contestCategory = CONTEST_CATEGORY_CUTE,
