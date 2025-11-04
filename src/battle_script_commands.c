@@ -17203,7 +17203,7 @@ void BS_HandleFormChange(void)
     }
     else if (cmd->case_ == 1) // Change stats.
     {
-        RecalcBattlerStats(battler, mon, FALSE);
+        RecalcBattlerStats(battler, mon, FALSE, gBattleMons[battler].species);
     }
     else // Update healthbox.
     {

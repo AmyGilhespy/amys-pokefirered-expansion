@@ -6075,7 +6075,7 @@ bool32 CanSetNonVolatileStatus(u32 battlerAtk, u32 battlerDef, enum Ability abil
     case MOVE_EFFECT_FROSTBITE:
         if (gBattleMons[battlerDef].status1 & (STATUS1_FREEZE | STATUS1_FROSTBITE))
         {
-            battleScript = BattleScript_AlreadyBurned;
+            battleScript = gBattleMons[battlerDef].status1 & STATUS1_FREEZE ? BattleScript_AlreadyFrozen : BattleScript_AlreadyFrostbitten;
         }
         else if (IS_BATTLER_OF_TYPE(battlerDef, TYPE_ICE) || IsBattlerWeatherAffected(battlerDef, B_WEATHER_SUN))
         {
@@ -10585,7 +10585,7 @@ bool32 TryBattleFormChange(u32 battler, enum FormChanges method)
         TryToSetBattleFormChangeMoves(&party[monId], method);
         SetMonData(&party[monId], MON_DATA_SPECIES, &targetSpecies);
         gBattleMons[battler].species = targetSpecies;
-        RecalcBattlerStats(battler, &party[monId], method == FORM_CHANGE_BATTLE_GIGANTAMAX);
+        RecalcBattlerStats(battler, &party[monId], method == FORM_CHANGE_BATTLE_GIGANTAMAX, targetSpecies);
         return TRUE;
     }
     else if (GetBattlerPartyState(battler)->changedSpecies != SPECIES_NONE)
@@ -10611,7 +10611,7 @@ bool32 TryBattleFormChange(u32 battler, enum FormChanges method)
             TryToSetBattleFormChangeMoves(&party[monId], method);
             u32 changedSpecies = GetBattlerPartyState(battler)->changedSpecies;
             SetMonData(&party[monId], MON_DATA_SPECIES, &changedSpecies);
-            RecalcBattlerStats(battler, &party[monId], method == FORM_CHANGE_BATTLE_GIGANTAMAX);
+            RecalcBattlerStats(battler, &party[monId], method == FORM_CHANGE_BATTLE_GIGANTAMAX, changedSpecies);
             // Battler data is not updated with regular form's ability, not doing so could cause wrong ability activation.
             if (method == FORM_CHANGE_FAINT)
                 gBattleMons[battler].ability = abilityForm;
@@ -11258,15 +11258,28 @@ void CopyMonLevelAndBaseStatsToBattleMon(u32 battler, struct Pokemon *mon)
     gBattleMons[battler].spDefense = GetMonData(mon, MON_DATA_SPDEF);
 }
 
-void CopyMonAbilityAndTypesToBattleMon(u32 battler, struct Pokemon *mon)
+// For `targetSpecies` (the target species you're form-changing into, you can put SPECIES_NONE to represent no change)
+// NOTE: GetMonData(mon, MON_DATA_SPECIES) does NOT represent the original species, as I originally thought!
+void CopyMonAbilityAndTypesToBattleMon(u32 battler, struct Pokemon *mon, u16 targetSpecies)
 {
-    gBattleMons[battler].ability = GetMonAbility(mon);
+    //MgbaPrintf(MGBA_LOG_WARN, "CopyMonAbilityAndTypesToBattleMon(%d, 0x%08x, %d):", battler, mon, targetSpecies);
+    if (targetSpecies != SPECIES_NONE) // If not no-change-sentinel (SPECIES_NONE).
+    {
+        //MgbaPrintf(MGBA_LOG_WARN, "CopyMonAbilityAndTypesToBattleMon(%d, 0x%08x, %d): originalSpecies=%d, gBattleMons[battler].species=%d", battler, mon, targetSpecies, gBattleMons[battler].species);
+        struct SpeciesInfo targetSpeciesInfo = gSpeciesInfo[targetSpecies];
+        gBattleMons[battler].ability = targetSpeciesInfo.isMegaEvolution
+            || targetSpeciesInfo.isPrimalReversion
+            || targetSpeciesInfo.isUltraBurst
+            ? GetAbilityBySpecies(targetSpecies, GetMonData(mon, MON_DATA_ABILITY_NUM))
+            : GetMonAbility(mon);
+    }
     gBattleMons[battler].types[0] = GetSpeciesType(gBattleMons[battler].species, 0);
     gBattleMons[battler].types[1] = GetSpeciesType(gBattleMons[battler].species, 1);
     gBattleMons[battler].types[2] = TYPE_MYSTERY;
 }
 
-void RecalcBattlerStats(u32 battler, struct Pokemon *mon, bool32 isDynamaxing)
+// For `targetSpecies` (the target species you're form-changing into, you can put SPECIES_NONE to represent no change)
+void RecalcBattlerStats(u32 battler, struct Pokemon *mon, bool32 isDynamaxing, u16 targetSpecies)
 {
     u32 hp = GetMonData(mon, MON_DATA_HP);
     u32 oldMaxHp = GetMonData(mon, MON_DATA_MAX_HP);
@@ -11289,7 +11302,7 @@ void RecalcBattlerStats(u32 battler, struct Pokemon *mon, bool32 isDynamaxing)
         }
     }
     CopyMonLevelAndBaseStatsToBattleMon(battler, mon);
-    CopyMonAbilityAndTypesToBattleMon(battler, mon);
+    CopyMonAbilityAndTypesToBattleMon(battler, mon, targetSpecies);
 }
 
 void RemoveConfusionStatus(u32 battler)

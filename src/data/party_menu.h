@@ -920,27 +920,39 @@ static const union AnimCmd sSpriteAnim_StatusFrozen[] =
     ANIMCMD_END
 };
 
-static const union AnimCmd sSpriteAnim_StatusBurn[] =
+static const union AnimCmd sSpriteAnim_StatusFrostbitten[] =
 {
     ANIMCMD_FRAME(16, 0),
     ANIMCMD_END
 };
 
-static const union AnimCmd sSpriteAnim_StatusPokerus[] =
+static const union AnimCmd sSpriteAnim_StatusBurn[] =
 {
     ANIMCMD_FRAME(20, 0),
     ANIMCMD_END
 };
 
-static const union AnimCmd sSpriteAnim_StatusFaint[] =
+static const union AnimCmd sSpriteAnim_StatusPokerus[] =
 {
     ANIMCMD_FRAME(24, 0),
     ANIMCMD_END
 };
 
-static const union AnimCmd sSpriteAnim_Blank[] =
+static const union AnimCmd sSpriteAnim_StatusFaint[] =
 {
     ANIMCMD_FRAME(28, 0),
+    ANIMCMD_END
+};
+
+static const union AnimCmd sSpriteAnim_StatusDead[] =
+{
+    ANIMCMD_FRAME(32, 0),
+    ANIMCMD_END
+};
+
+static const union AnimCmd sSpriteAnim_Blank[] =
+{
+    ANIMCMD_FRAME(36, 0),
     ANIMCMD_END
 };
 
@@ -950,15 +962,17 @@ static const union AnimCmd *const sSpriteTemplate_StatusCondition[] =
     sSpriteAnim_StatusParalyzed,
     sSpriteAnim_StatusSleep,
     sSpriteAnim_StatusFrozen,
+    sSpriteAnim_StatusFrostbitten,
     sSpriteAnim_StatusBurn,
     sSpriteAnim_StatusPokerus,
     sSpriteAnim_StatusFaint,
+    sSpriteAnim_StatusDead,
     sSpriteAnim_Blank,
 };
 
 static const struct CompressedSpriteSheet sSpriteSheet_StatusIcons =
 {
-    gStatusGfx_Icons, 0x400, 1202
+    gStatusGfx_Icons, 0x800, 1202
 };
 
 static const struct SpritePalette sSpritePalette_StatusIcons =

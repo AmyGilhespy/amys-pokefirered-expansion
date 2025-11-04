@@ -6,9 +6,11 @@
 #define AILMENT_PRZ   2
 #define AILMENT_SLP   3
 #define AILMENT_FRZ   4
-#define AILMENT_BRN   5
-#define AILMENT_PKRS  6
-#define AILMENT_FNT   7
+#define AILMENT_FRB   5
+#define AILMENT_BRN   6
+#define AILMENT_PKRS  7
+#define AILMENT_FNT   8
+#define AILMENT_DEAD  9
 
 #define PARTY_LAYOUT_SINGLE          0
 #define PARTY_LAYOUT_DOUBLE          1

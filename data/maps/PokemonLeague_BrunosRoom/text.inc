@@ -4,11 +4,11 @@ PokemonLeague_BrunosRoom_Text_Intro::
     .string "and POKéMON can become stronger\l"
     .string "without limit.\p"
     .string "I've lived and trained with my\n"
-    .string "fighting POKéMON!\l"
+    .string "POKéMON!\l"
     .string "And that will never change!\p"
     .string "{PLAYER}!\p"
-    .string "We will grind you down with our\n"
-    .string "superior power!\p"
+    .string "I will show you the true FEAR\n"
+    .string "of the ELITE FOUR!\p"
     .string "Hoo hah!{PLAY_BGM}{MUS_ENCOUNTER_GYM_LEADER}$"
 
 PokemonLeague_BrunosRoom_Text_RematchIntro::

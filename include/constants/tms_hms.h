@@ -52,10 +52,11 @@
     F(SKILL_SWAP) \
     F(SNATCH) \
     F(OVERHEAT) \
-    F(SMALL_SUBSTITUTE) \
+    \
+    F(SUBSTITUTE_S) \
     F(SUBSTITUTE) \
-    F(BIG_SUBSTITUTE) \
-    F(HUGE_SUBSTITUTE) \
+    F(SUBSTITUTE_L) \
+    F(SUBSTITUTE_XL) \
     F(OMEGA_BEAM) \
     F(OMEGA_STRIKE) \
     F(OBLIVION_BEAM) \
@@ -64,40 +65,41 @@
     F(SINGULARITY_X) \
     F(SINGULARITY_Y) \
     F(SINGULARITY_Z) \
-    F(AMY_UNUSED_63) \
-    F(AMY_UNUSED_64) \
-    F(AMY_UNUSED_65) \
+    F(FIRE_PUNCH) \
+    F(ICE_PUNCH) \
+    F(THUNDER_PUNCH) \
     F(HELLFIRE) \
     F(ABSOLUTE_ZERO) \
     F(RAILGUN) \
-    F(MEGA_BONE) \
-    F(AMY_UNUSED_70) \
-    F(AMY_UNUSED_71) \
-    F(AMY_UNUSED_72) \
-    F(AMY_UNUSED_73) \
-    F(AMY_UNUSED_74) \
+    F(MEGA_LICK) \
+    F(DYNAMIC_PUNCH) \
+    F(ZAP_CANNON) \
+    F(INFERNO) \
+    F(DRAGON_RAGE) \
+    F(SHED_TAIL) \
     F(PAY_DAY) \
-    F(AMY_UNUSED_76) \
-    F(AMY_UNUSED_77) \
-    F(AMY_UNUSED_78) \
-    F(AMY_UNUSED_79) \
-    F(AMY_UNUSED_80) \
-    F(AMY_UNUSED_81) \
-    F(AMY_UNUSED_82) \
-    F(AMY_UNUSED_83) \
-    F(AMY_UNUSED_84) \
-    F(AMY_UNUSED_85) \
-    F(AMY_UNUSED_86) \
-    F(AMY_UNUSED_87) \
-    F(AMY_UNUSED_88) \
-    F(AMY_UNUSED_89) \
-    F(AMY_UNUSED_90) \
-    F(AMY_UNUSED_91) \
-    F(AMY_UNUSED_92) \
-    F(AMY_UNUSED_93) \
-    F(AMY_UNUSED_94) \
-    F(AMY_UNUSED_95) \
-    F(AMY_UNUSED_96) \
+    \
+    F(CONSTRICT) \
+    F(FALSE_SWIPE) \
+    F(BIDE) \
+    F(TOXIC_SPIKES) \
+    F(WILL_O_WISP) \
+    F(NUZZLE) \
+    F(FOCUS_BLAST) \
+    F(PSYSHOCK) \
+    F(SOAK) \
+    F(FORESTS_CURSE) \
+    F(TRICK_OR_TREAT) \
+    F(HAZE) \
+    F(RAPID_SPIN) \
+    F(SWEET_SCENT) \
+    F(DETECT) \
+    F(BANEFUL_BUNKER) \
+    F(SPIKY_SHIELD) \
+    F(WATER_SHURIKEN) \
+    F(SURGING_STRIKES) \
+    F(BOOMBURST) \
+    F(ENDEAVOR) \
     F(SPORE) \
     F(DARK_VOID) \
     F(SKETCH) \

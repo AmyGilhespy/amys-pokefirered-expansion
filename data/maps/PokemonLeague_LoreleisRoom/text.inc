@@ -18,7 +18,7 @@ PokemonLeague_LoreleisRoom_Text_RematchIntro::
     .string "to icy POKéMON.\p"
     .string "Freezing moves are powerful.\p"
     .string "Your POKéMON will be at my mercy\n"
-    .string "when they are frozen solid.\p"
+    .string "when they are frostbitten.\p"
     .string "Hahaha!\n"
     .string "Are you ready?{PLAY_BGM}{MUS_ENCOUNTER_GYM_LEADER}$"
 

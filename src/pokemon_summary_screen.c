@@ -3955,6 +3955,9 @@ static u8 StatusToAilment(u32 status)
     if ((status & STATUS1_FREEZE) != 0)
         return AILMENT_FRZ;
 
+    if ((status & STATUS1_FROSTBITE) != 0)
+        return AILMENT_FRB;
+
     if ((status & STATUS1_BURN) != 0)
         return AILMENT_BRN;
 

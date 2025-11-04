@@ -22,7 +22,7 @@ CinnabarIsland_Mart_EventScript_Clerk::
 
 	.align 2
 CinnabarIsland_Mart_Items::
-	.2byte ITEM_TM75
+	.2byte ITEM_TM80
 	.2byte ITEM_TM99
 	.2byte ITEM_ULTRA_BALL
 	.2byte ITEM_GREAT_BALL
@@ -30,7 +30,6 @@ CinnabarIsland_Mart_Items::
 	.2byte ITEM_REVIVE
 	.2byte ITEM_FULL_HEAL
 	.2byte ITEM_ESCAPE_ROPE
-	.2byte ITEM_MAX_REPEL
 	.2byte ITEM_RARE_CANDY
 	.2byte ITEM_MAX_REPEL
 	.2byte ITEM_NONE

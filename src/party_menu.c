@@ -1108,7 +1108,7 @@ static void CreatePartyMonSprites(u8 slot)
             CreatePartyMonHeldItemSpriteParameterized(gMultiPartnerParty[actualSlot].species, gMultiPartnerParty[actualSlot].heldItem, &sPartyMenuBoxes[slot]);
             CreatePartyMonPokeballSpriteParameterized(gMultiPartnerParty[actualSlot].species, &sPartyMenuBoxes[slot]);
             if (gMultiPartnerParty[actualSlot].hp == 0)
-                status = AILMENT_FNT;
+                status = gSaveBlock2Ptr->customData.gameType > 0 ? AILMENT_DEAD : AILMENT_FNT;
             else
                 status = GetAilmentFromStatus(gMultiPartnerParty[actualSlot].status);
             CreatePartyMonStatusSpriteParameterized(gMultiPartnerParty[actualSlot].species, status, &sPartyMenuBoxes[slot]);
@@ -1986,6 +1986,8 @@ u8 GetAilmentFromStatus(u32 status)
         return AILMENT_SLP;
     if (status & STATUS1_FREEZE)
         return AILMENT_FRZ;
+    if (status & STATUS1_FROSTBITE)
+        return AILMENT_FRB;
     if (status & STATUS1_BURN)
         return AILMENT_BRN;
     return AILMENT_NONE;
@@ -1996,7 +1998,7 @@ u8 GetMonAilment(struct Pokemon *mon)
     u8 ailment;
 
     if (GetMonData(mon, MON_DATA_HP) == 0)
-        return AILMENT_FNT;
+        return gSaveBlock2Ptr->customData.gameType > 0 ? AILMENT_DEAD : AILMENT_FNT;
     ailment = GetAilmentFromStatus(GetMonData(mon, MON_DATA_STATUS));
     if (ailment != AILMENT_NONE)
         return ailment;

@@ -21265,7 +21265,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
 
     // Custom moves
 
-    [MOVE_SMALL_SUBSTITUTE] =
+    [MOVE_SUBSTITUTE_S] =
     {
         .name = COMPOUND_STRING("Substitute S"),
         .description = COMPOUND_STRING(
@@ -21292,7 +21292,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .validApprenticeMove = TRUE,
     },
 
-    [MOVE_BIG_SUBSTITUTE] =
+    [MOVE_SUBSTITUTE_L] =
     {
         .name = COMPOUND_STRING("Substitute L"),
         .description = COMPOUND_STRING(
@@ -21319,7 +21319,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .validApprenticeMove = TRUE,
     },
 
-    [MOVE_HUGE_SUBSTITUTE] =
+    [MOVE_SUBSTITUTE_XL] =
     {
         .name = COMPOUND_STRING("Substitute XL"),
         .description = COMPOUND_STRING(
@@ -21579,26 +21579,19 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .name = COMPOUND_STRING("Absolute Zero"),
         .description = COMPOUND_STRING(
             "High chance to"
-        #if B_USE_FROSTBITE == TRUE
-            "leave the foe\nwith frostbite."
-        #else
             "freeze the\nfoe."
-        #endif
             ),
         .effect = EFFECT_NON_VOLATILE_STATUS,
         .power = 0,
         .type = TYPE_ICE,
-        #if B_USE_FROSTBITE == TRUE
-        .accuracy = 85,
-        #else
         .accuracy = 30,
-        #endif
         .pp = 5,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .alwaysCriticalHit = FALSE,
         .category = DAMAGE_CATEGORY_STATUS,
-        .argument = { .nonVolatileStatus = MOVE_EFFECT_FREEZE_OR_FROSTBITE },
+        .argument = { .nonVolatileStatus = MOVE_EFFECT_FREEZE },
+        .alwaysHitsInHailSnow = TRUE,
         .zMove = { .effect = Z_EFFECT_SPD_UP_1 },
         .magicCoatAffected = TRUE,
         .contestEffect = CONTEST_EFFECT_HIGHLY_APPEALING,
@@ -21626,9 +21619,9 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .battleAnimScript = gBattleAnimMove_GigavoltHavoc,
     },
 
-    [MOVE_MEGA_BONE] = // Joke move
+    [MOVE_MEGA_LICK] = // Joke move
     {
-        .name = COMPOUND_STRING("Mega Bone"),
+        .name = COMPOUND_STRING("Mega Lick"),
         .description = COMPOUND_STRING(
             "Infatuates the\ntarget."),
         .effect = EFFECT_HIT,

@@ -107,10 +107,11 @@ def prepare_output(all_learnables: dict[str, set[str]], repo_teachables: set[str
     """)
 
     ALWAYS_TEACHABLE_MOVES = {
-        "MOVE_SMALL_SUBSTITUTE", # TM51
+        # TMs:
+        "MOVE_SUBSTITUTE_S",     # TM51
         "MOVE_SUBSTITUTE",       # TM52
-        "MOVE_BIG_SUBSTITUTE",   # TM53
-        "MOVE_HUGE_SUBSTITUTE",  # TM54
+        "MOVE_SUBSTITUTE_L",     # TM53
+        "MOVE_SUBSTITUTE_XL",    # TM54
         "MOVE_OMEGA_BEAM",       # TM55
         "MOVE_OMEGA_STRIKE",     # TM56
         "MOVE_OBLIVION_BEAM",    # TM57
@@ -119,17 +120,44 @@ def prepare_output(all_learnables: dict[str, set[str]], repo_teachables: set[str
         "MOVE_SINGULARITY_X",    # TM60
         "MOVE_SINGULARITY_Y",    # TM61
         "MOVE_SINGULARITY_Z",    # TM62
-
+        "MOVE_FIRE_PUNCH",       # TM63 Saffron City Dojo
+        "MOVE_ICE_PUNCH",        # TM64 Saffron City Dojo
+        "MOVE_THUNDER_PUNCH",    # TM65 Saffron City Dojo
         "MOVE_HELLFIRE",         # TM66
         "MOVE_ABSOLUTE_ZERO",    # TM67
         "MOVE_RAILGUN",          # TM68
-        "MOVE_MEGA_BONE",        # TM69
-
-        "MOVE_PAY_DAY",          # TM75
-
+        "MOVE_MEGA_LICK",        # TM69
+        "MOVE_DYNAMIC_PUNCH",    # TM70
+        "MOVE_ZAP_CANNON",       # TM71
+        "MOVE_INFERNO",          # TM72
+        "MOVE_WEATHER_BALL",     # TM73
+        "MOVE_SHED_TAIL",        # TM74
+        "MOVE_PAY_DAY",          # TM75 Viridian City Mart
+        # TRs:
+        "MOVE_CONSTRICT",        # TR76 Viridian City Mart
+        "MOVE_FALSE_SWIPE",      # TR77 Fuchsia City Mart
+        "MOVE_BIDE",             # TR78 Pewter City Mart
+        "MOVE_TOXIC_SPIKES",     # TR79 Fuchsia City Mart
+        "MOVE_WILL_O_WISP",      # Cinnabar Island Mart
+        "MOVE_NUZZLE",           # TR81 Vermilion City Mart
+        "MOVE_FOCUS_BLAST",      # TR82 Saffron City Mart
+        "MOVE_PSYSHOCK",         # TR83 Saffron City Mart
+        "MOVE_SOAK",             # TR84 Cerulean City Mart
+        "MOVE_FORESTS_CURSE",    # TR85 Celadon City Department Store 2F
+        "MOVE_TRICK_OR_TREAT",   # TR86 Celadon City Department Store 2F
+        "MOVE_HAZE",             # TR87 Celadon City Department Store 2F
+        "MOVE_RAPID_SPIN",       # TR88 Celadon City Department Store 2F
+        "MOVE_SWEET_SCENT",      # TR89 Celadon City Department Store 2F
+        "MOVE_DETECT",           # TR90 Celadon City Department Store 2F
+        "MOVE_BANEFUL_BUNKER",   # TR91
+        "MOVE_SPIKY_SHIELD",     # TR92
+        "MOVE_WATER_SHURIKEN",   # TR93
+        "MOVE_SURGING_STRIKES",  # TR94
+        "MOVE_BOOMBURST",        # TR95
+        "MOVE_ENDEAVOR",         # TR96
         "MOVE_SPORE",            # TR97
         "MOVE_DARK_VOID",        # TR98
-        "MOVE_SKETCH"            # TR99
+        "MOVE_SKETCH"            # TR99 Cinnabar Island Mart
     }
     joinpat = ",\n    "
     for species in TEACHABLE_ARRAY_DECL_PAT.finditer(old):

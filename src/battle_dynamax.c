@@ -468,7 +468,7 @@ void BS_UpdateDynamax(void)
     struct Pokemon *mon = GetBattlerMon(battler);
 
     if (!IsGigantamaxed(battler)) // RecalcBattlerStats will get called on form change.
-        RecalcBattlerStats(battler, mon, GetActiveGimmick(battler) == GIMMICK_DYNAMAX);
+        RecalcBattlerStats(battler, mon, GetActiveGimmick(battler) == GIMMICK_DYNAMAX, SPECIES_NONE); // SPECIES_NONE: Dynamax/gigantamax doesn't change abilities, even though it may change species
 
     UpdateHealthboxAttribute(gHealthboxSpriteIds[battler], mon, HEALTHBOX_ALL);
     gBattlescriptCurrInstr = cmd->nextInstr;

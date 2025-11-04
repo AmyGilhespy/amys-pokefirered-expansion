@@ -2063,7 +2063,7 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
                     randomSpecies = SPECIES_CHARMANDER;
                 }
             }
-            else if (trainer->trainerClass == TRAINER_CLASS_ELITE_FOUR && i < 4) { }
+            else if (trainer->trainerClass == TRAINER_CLASS_ELITE_FOUR && i < 5) { }
             else if (trainer->trainerClass == TRAINER_CLASS_CHAMPION) { }
             else if (trainer->trainerClass == TRAINER_CLASS_BOSS) { }
             else

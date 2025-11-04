@@ -11658,7 +11658,7 @@ const struct Item gItemsInfo[] =
         .fieldUseFunc = NULL,
     },
 
-    [ITEM_TM_SMALL_SUBSTITUTE] =
+    [ITEM_TM_SUBSTITUTE_S] =
     {
         .name = ITEM_NAME("TM51"),
         .price = 4000,
@@ -11682,7 +11682,7 @@ const struct Item gItemsInfo[] =
         .fieldUseFunc = NULL,
     },
 
-    [ITEM_TM_BIG_SUBSTITUTE] =
+    [ITEM_TM_SUBSTITUTE_L] =
     {
         .name = ITEM_NAME("TM53"),
         .price = 4000,
@@ -11694,7 +11694,7 @@ const struct Item gItemsInfo[] =
         .fieldUseFunc = NULL,
     },
 
-    [ITEM_TM_HUGE_SUBSTITUTE] =
+    [ITEM_TM_SUBSTITUTE_XL] =
     {
         .name = ITEM_NAME("TM54"),
         .price = 4000,
@@ -11802,33 +11802,36 @@ const struct Item gItemsInfo[] =
         .fieldUseFunc = NULL,
     },
 
-    [ITEM_TM63] =
+    [ITEM_TM_FIRE_PUNCH] =
     {
         .name = ITEM_NAME("TM63"),
         .price = 3000,
-        .description = sQuestionMarksDesc,
+        .description = COMPOUND_STRING(
+            "Fire Punch."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = NULL,
     },
 
-    [ITEM_TM64] =
+    [ITEM_TM_ICE_PUNCH] =
     {
         .name = ITEM_NAME("TM64"),
         .price = 3000,
-        .description = sQuestionMarksDesc,
+        .description = COMPOUND_STRING(
+            "Ice Punch."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = NULL,
     },
 
-    [ITEM_TM65] =
+    [ITEM_TM_THUNDER_PUNCH] =
     {
         .name = ITEM_NAME("TM65"),
         .price = 3000,
-        .description = sQuestionMarksDesc,
+        .description = COMPOUND_STRING(
+            "Thunder Punch."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -11871,67 +11874,72 @@ const struct Item gItemsInfo[] =
         .fieldUseFunc = NULL,
     },
 
-    [ITEM_TM_MEGA_BONE] =
+    [ITEM_TM_MEGA_LICK] =
     {
         .name = ITEM_NAME("TM69"),
         .price = 3000,
         .description = COMPOUND_STRING(
-            "Mega Bone."),
+            "Mega Lick."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = NULL,
     },
 
-    [ITEM_TM70] =
+    [ITEM_TM_DYNAMIC_PUNCH] =
     {
         .name = ITEM_NAME("TM70"),
         .price = 3000,
-        .description = sQuestionMarksDesc,
+        .description = COMPOUND_STRING(
+            "Dynamic Punch."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = NULL,
     },
 
-    [ITEM_TM71] =
+    [ITEM_TM_ZAP_CANNON] =
     {
         .name = ITEM_NAME("TM71"),
         .price = 3000,
-        .description = sQuestionMarksDesc,
+        .description = COMPOUND_STRING(
+            "Zap Cannon."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = NULL,
     },
 
-    [ITEM_TM72] =
+    [ITEM_TM_INFERNO] =
     {
         .name = ITEM_NAME("TM72"),
         .price = 3000,
-        .description = sQuestionMarksDesc,
+        .description = COMPOUND_STRING(
+            "Inferno."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = NULL,
     },
 
-    [ITEM_TM73] =
+    [ITEM_TM_DRAGON_RAGE] =
     {
         .name = ITEM_NAME("TM73"),
         .price = 3000,
-        .description = sQuestionMarksDesc,
+        .description = COMPOUND_STRING(
+            "Dragon Rage."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = NULL,
     },
 
-    [ITEM_TM74] =
+    [ITEM_TM_SHED_TAIL] =
     {
         .name = ITEM_NAME("TM74"),
         .price = 3000,
-        .description = sQuestionMarksDesc,
+        .description = COMPOUND_STRING(
+            "Shed Tail."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -11943,238 +11951,259 @@ const struct Item gItemsInfo[] =
         .name = ITEM_NAME("TM75"),
         .price = 0, // Soft-lock prevention.
         .description = COMPOUND_STRING(
-            "Pay Day."),
+            "SINGLE USE. Pay Day."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = NULL,
     },
 
-    [ITEM_TM76] =
+    [ITEM_TM_CONSTRICT] =
     {
         .name = ITEM_NAME("TR76"),
         .price = 3000,
-        .description = sQuestionMarksDesc,
+        .description = COMPOUND_STRING(
+            "SINGLE USE. Constrict."),
         .importance = 0,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = NULL,
     },
 
-    [ITEM_TM77] =
+    [ITEM_TM_FALSE_SWIPE] =
     {
         .name = ITEM_NAME("TR77"),
         .price = 3000,
-        .description = sQuestionMarksDesc,
+        .description = COMPOUND_STRING(
+            "SINGLE USE. False Swipe."),
         .importance = 0,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = NULL,
     },
 
-    [ITEM_TM78] =
+    [ITEM_TM_BIDE] =
     {
         .name = ITEM_NAME("TR78"),
         .price = 3000,
-        .description = sQuestionMarksDesc,
+        .description = COMPOUND_STRING(
+            "SINGLE USE. Bide."),
         .importance = 0,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = NULL,
     },
 
-    [ITEM_TM79] =
+    [ITEM_TM_TOXIC_SPIKES] =
     {
         .name = ITEM_NAME("TR79"),
         .price = 3000,
-        .description = sQuestionMarksDesc,
+        .description = COMPOUND_STRING(
+            "SINGLE USE. Toxic Spikes."),
         .importance = 0,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = NULL,
     },
 
-    [ITEM_TM80] =
+    [ITEM_TM_WILL_O_WISP] =
     {
         .name = ITEM_NAME("TR80"),
         .price = 3000,
-        .description = sQuestionMarksDesc,
+        .description = COMPOUND_STRING(
+            "SINGLE USE. Will-o-Wisp."),
         .importance = 0,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = NULL,
     },
 
-    [ITEM_TM81] =
+    [ITEM_TM_NUZZLE] =
     {
         .name = ITEM_NAME("TR81"),
         .price = 3000,
-        .description = sQuestionMarksDesc,
+        .description = COMPOUND_STRING(
+            "SINGLE USE. Nuzzle."),
         .importance = 0,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = NULL,
     },
 
-    [ITEM_TM82] =
+    [ITEM_TM_FOCUS_BLAST] =
     {
         .name = ITEM_NAME("TR82"),
         .price = 3000,
-        .description = sQuestionMarksDesc,
+        .description = COMPOUND_STRING(
+            "SINGLE USE. Focus Blast."),
         .importance = 0,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = NULL,
     },
 
-    [ITEM_TM83] =
+    [ITEM_TM_PSYSHOCK] =
     {
         .name = ITEM_NAME("TR83"),
         .price = 3000,
-        .description = sQuestionMarksDesc,
+        .description = COMPOUND_STRING(
+            "SINGLE USE. Psyshock."),
         .importance = 0,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = NULL,
     },
 
-    [ITEM_TM84] =
+    [ITEM_TM_SOAK] =
     {
         .name = ITEM_NAME("TR84"),
         .price = 3000,
-        .description = sQuestionMarksDesc,
+        .description = COMPOUND_STRING(
+            "SINGLE USE. Soak."),
         .importance = 0,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = NULL,
     },
 
-    [ITEM_TM85] =
+    [ITEM_TM_FORESTS_CURSE] =
     {
         .name = ITEM_NAME("TR85"),
         .price = 3000,
-        .description = sQuestionMarksDesc,
+        .description = COMPOUND_STRING(
+            "SINGLE USE. Forest's Curse."),
         .importance = 0,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = NULL,
     },
 
-    [ITEM_TM86] =
+    [ITEM_TM_TRICK_OR_TREAT] =
     {
         .name = ITEM_NAME("TR86"),
         .price = 3000,
-        .description = sQuestionMarksDesc,
+        .description = COMPOUND_STRING(
+            "SINGLE USE. Trick-or-Treat."),
         .importance = 0,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = NULL,
     },
 
-    [ITEM_TM87] =
+    [ITEM_TM_HAZE] =
     {
         .name = ITEM_NAME("TR87"),
         .price = 3000,
-        .description = sQuestionMarksDesc,
+        .description = COMPOUND_STRING(
+            "SINGLE USE. Haze."),
         .importance = 0,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = NULL,
     },
 
-    [ITEM_TM88] =
+    [ITEM_TM_RAPID_SPIN] =
     {
         .name = ITEM_NAME("TR88"),
         .price = 3000,
-        .description = sQuestionMarksDesc,
+        .description = COMPOUND_STRING(
+            "SINGLE USE. Rapid Spin."),
         .importance = 0,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = NULL,
     },
 
-    [ITEM_TM89] =
+    [ITEM_TM_SWEET_SCENT] =
     {
         .name = ITEM_NAME("TR89"),
         .price = 3000,
-        .description = sQuestionMarksDesc,
+        .description = COMPOUND_STRING(
+            "SINGLE USE. Sweet Scent."),
         .importance = 0,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = NULL,
     },
 
-    [ITEM_TM90] =
+    [ITEM_TM_DETECT] =
     {
         .name = ITEM_NAME("TR90"),
         .price = 3000,
-        .description = sQuestionMarksDesc,
+        .description = COMPOUND_STRING(
+            "SINGLE USE. Detect."),
         .importance = 0,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = NULL,
     },
 
-    [ITEM_TM91] =
+    [ITEM_TM_BANEFUL_BUNKER] =
     {
         .name = ITEM_NAME("TR91"),
         .price = 3000,
-        .description = sQuestionMarksDesc,
+        .description = COMPOUND_STRING(
+            "SINGLE USE. Baneful Bunker."),
         .importance = 0,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = NULL,
     },
 
-    [ITEM_TM92] =
+    [ITEM_TM_SPIKY_SHIELD] =
     {
         .name = ITEM_NAME("TR92"),
         .price = 3000,
-        .description = sQuestionMarksDesc,
+        .description = COMPOUND_STRING(
+            "SINGLE USE. Spiky Shield."),
         .importance = 0,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = NULL,
     },
 
-    [ITEM_TM93] =
+    [ITEM_TM_WATER_SHURIKEN] =
     {
         .name = ITEM_NAME("TR93"),
         .price = 3000,
-        .description = sQuestionMarksDesc,
+        .description = COMPOUND_STRING(
+            "SINGLE USE. Water Shuriken."),
         .importance = 0,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = NULL,
     },
 
-    [ITEM_TM94] =
+    [ITEM_TM_SURGING_STRIKES] =
     {
         .name = ITEM_NAME("TR94"),
         .price = 3000,
-        .description = sQuestionMarksDesc,
+        .description = COMPOUND_STRING(
+            "SINGLE USE. Surging Strikes."),
         .importance = 0,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = NULL,
     },
 
-    [ITEM_TM95] =
+    [ITEM_TM_BOOMBURST] =
     {
         .name = ITEM_NAME("TR95"),
         .price = 3000,
-        .description = sQuestionMarksDesc,
+        .description = COMPOUND_STRING(
+            "SINGLE USE. Boomburst."),
         .importance = 0,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = NULL,
     },
 
-    [ITEM_TM96] =
+    [ITEM_TM_ENDEAVOR] =
     {
         .name = ITEM_NAME("TR96"),
         .price = 3000,
-        .description = sQuestionMarksDesc,
+        .description = COMPOUND_STRING(
+            "SINGLE USE. Endeavor."),
         .importance = 0,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12210,7 +12239,7 @@ const struct Item gItemsInfo[] =
         .name = ITEM_NAME("TR99"),
         .price = 10000,
         .description = COMPOUND_STRING(
-            "SINGLE USE.  Sketch."),
+            "SINGLE USE. Sketch."),
         .importance = 0,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,

@@ -31,7 +31,7 @@
 #define B_INTERFACE_GFX_STATUS_SLP_BATTLER0     27
 #define B_INTERFACE_GFX_STATUS_FRZ_BATTLER0     30
 #define B_INTERFACE_GFX_STATUS_BRN_BATTLER0     33
-// tiles 36 through 38 are unused
+#define B_INTERFACE_GFX_STATUS_FRB              36
 #define B_INTERFACE_GFX_STATUS_NONE             39
 // tiles 40 through 42 are unused
 #define B_INTERFACE_GFX_SAFARI_HEALTHBOX_0      43
@@ -1650,6 +1650,11 @@ static void UpdateStatusIconInHealthbox(u8 healthboxSpriteId)
         statusGfxPtr = GetBattleInterfaceGfxPtr(GetStatusIconForBattlerId(B_INTERFACE_GFX_STATUS_FRZ_BATTLER0, battlerId));
         statusPalId = PAL_STATUS_FRZ;
     }
+    else if (status & STATUS1_FROSTBITE)
+    {
+        statusGfxPtr = GetBattleInterfaceGfxPtr(GetStatusIconForBattlerId(B_INTERFACE_GFX_STATUS_FRB, battlerId));
+        statusPalId = PAL_STATUS_FRZ;
+    }
     else if (status & STATUS1_PARALYSIS)
     {
         statusGfxPtr = GetBattleInterfaceGfxPtr(GetStatusIconForBattlerId(B_INTERFACE_GFX_STATUS_PAR_BATTLER0, battlerId));
@@ -1739,6 +1744,16 @@ static u8 GetStatusIconForBattlerId(u8 statusElementId, u8 battlerId)
             ret = B_INTERFACE_GFX_STATUS_FRZ_BATTLER2;
         else
             ret = B_INTERFACE_GFX_STATUS_FRZ_BATTLER3;
+        break;
+    case B_INTERFACE_GFX_STATUS_FRB:
+        if (battlerId == 0)
+            ret = B_INTERFACE_GFX_STATUS_FRB;
+        else if (battlerId == 1)
+            ret = B_INTERFACE_GFX_STATUS_FRB;
+        else if (battlerId == 2)
+            ret = B_INTERFACE_GFX_STATUS_FRB;
+        else
+            ret = B_INTERFACE_GFX_STATUS_FRB;
         break;
     case B_INTERFACE_GFX_STATUS_BRN_BATTLER0:
         if (battlerId == 0)

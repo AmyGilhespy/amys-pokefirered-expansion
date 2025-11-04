@@ -54,14 +54,12 @@ CeladonCity_DepartmentStore_2F_EventScript_ClerkTMs::
 
 	.align 2
 CeladonCity_DepartmentStore_2F_TMs::
-	@.2byte ITEM_TM
-	@.2byte ITEM_TM @TR
-	.2byte ITEM_TM05
-	.2byte ITEM_TM15
-	.2byte ITEM_TM28
-	.2byte ITEM_TM31
-	.2byte ITEM_TM43
-	.2byte ITEM_TM45
+	.2byte ITEM_TM85 @ Forest's Curse
+	.2byte ITEM_TM86 @ Trick-or-Treat
+	.2byte ITEM_TM87 @ Haze
+	.2byte ITEM_TM88 @ Rapid Spin
+	.2byte ITEM_TM89 @ Sweet Scent
+	.2byte ITEM_TM90 @ Detect
 	.2byte ITEM_NONE
 	release
 	end
