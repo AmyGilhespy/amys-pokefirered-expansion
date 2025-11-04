@@ -18,6 +18,13 @@ SaffronCity_Dojo_Text_ChoosePrizedFightingMon::
     .string "FIGHTING POKéMON!\p"
     .string "Choose whichever one you like!$"
 
+SaffronCity_Dojo_Text_ShopIntro::
+    .string "Wanna learn a new technique?$"
+
+SaffronCity_Dojo_Text_ShopOutro::
+    .string "Grunt!\n"
+    .string "Stay and train at karate with us!$"
+
 SaffronCity_Dojo_Text_StayAndTrainWithUs::
     .string "Grunt!\n"
     .string "Stay and train at karate with us!$"

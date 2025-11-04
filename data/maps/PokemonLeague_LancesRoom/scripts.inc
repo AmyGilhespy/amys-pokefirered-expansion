@@ -131,6 +131,15 @@ PokemonLeague_LancesRoom_EventScript_Rematch::
 
 PokemonLeague_LancesRoom_EventScript_PostBattle::
 	msgbox PokemonLeague_LancesRoom_Text_PostBattle
+	checkitemspace ITEM_TM_INFINIBLAST
+	goto_if_set FLAG_GOT_TM_INFINIBLAST, PokemonLeague_LancesRoom_EventScript_AlreadyGotInfiniblast
+	goto_if_eq VAR_RESULT, FALSE, PokemonLeague_LancesRoom_EventScript_NoRoomForInfiniblast
+	msgbox PokemonLeague_LancesRoom_Text_TakeTM_INFINIBLAST
+	giveitem_msg PokemonLeague_LancesRoom_Text_Received_TM_INFINIBLAST, ITEM_TM_INFINIBLAST
+	setflag FLAG_GOT_TM_INFINIBLAST
+	msgbox PokemonLeague_LancesRoom_Text_ExplainTM_INFINIBLAST
+PokemonLeague_LancesRoom_EventScript_AlreadyGotInfiniblast::
+PokemonLeague_LancesRoom_EventScript_NoRoomForInfiniblast::
 	release
 	end
 
@@ -139,9 +148,9 @@ PokemonLeague_LancesRoom_EventScript_DefeatedLance::
 	special Script_TryGainNewFanFromCounter
 	setflag FLAG_DEFEATED_LANCE
 	call PokemonLeague_EventScript_OpenDoorLance
-	msgbox PokemonLeague_LancesRoom_Text_PostBattle
-	closemessage
-	release
+	goto PokemonLeague_LancesRoom_EventScript_PostBattle
+	@msgbox PokemonLeague_LancesRoom_Text_PostBattle
+	@closemessage
 	end
 
 PokemonLeague_LancesRoom_EventScript_LanceMoveOutOfWayLeft::

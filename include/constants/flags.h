@@ -1272,7 +1272,7 @@
 #define FLAG_0x4CC               0x4CC
 #define FLAG_0x4CD               0x4CD
 #define FLAG_0x4CE               0x4CE
-#define FLAG_0x4CF               0x4CF
+#define FLAG_GOT_TM_INFINIBLAST  0x4CF
 #define FLAG_0x4D0               0x4D0
 #define FLAG_0x4D1               0x4D1
 #define FLAG_0x4D2               0x4D2

@@ -41,3 +41,17 @@ PokemonLeague_LancesRoom_Text_PostBattle::
     .string "You have one more challenge left.\n"
     .string "There is one more TRAINER to face!$"
 
+PokemonLeague_LancesRoom_Text_TakeTM_INFINIBLAST::
+    .string "Before you go, I want you to have\n"
+    .string "this.$"
+
+PokemonLeague_LancesRoom_Text_Received_TM_INFINIBLAST::
+    .string "{PLAYER} received TM59\n"
+    .string "from LANCE.$"
+
+PokemonLeague_LancesRoom_Text_ExplainTM_INFINIBLAST::
+    .string "TM59 is Infiniblast, a devastating\n"
+    .string "move that strikes with your highest\p"
+    .string "attacking stat, but requires you to\n"
+    .string "miss a turn to recharge after use.$"
+

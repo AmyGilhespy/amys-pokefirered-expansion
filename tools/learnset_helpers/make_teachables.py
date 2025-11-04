@@ -108,30 +108,30 @@ def prepare_output(all_learnables: dict[str, set[str]], repo_teachables: set[str
 
     ALWAYS_TEACHABLE_MOVES = {
         # TMs:
-        "MOVE_SUBSTITUTE_S",     # TM51
-        "MOVE_SUBSTITUTE",       # TM52
-        "MOVE_SUBSTITUTE_L",     # TM53
-        "MOVE_SUBSTITUTE_XL",    # TM54
-        "MOVE_OMEGA_BEAM",       # TM55
-        "MOVE_OMEGA_STRIKE",     # TM56
-        "MOVE_OBLIVION_BEAM",    # TM57
-        "MOVE_ULTIMA_STRIKE",    # TM58
-        "MOVE_INFINIBLAST",      # TM59
-        "MOVE_SINGULARITY_X",    # TM60
-        "MOVE_SINGULARITY_Y",    # TM61
-        "MOVE_SINGULARITY_Z",    # TM62
+        "MOVE_SUBSTITUTE_S",     # TM51 Viridian City School
+        "MOVE_SUBSTITUTE",       # TM52 Viridian City School
+        "MOVE_SUBSTITUTE_L",     # TM53 Viridian City School
+        "MOVE_SUBSTITUTE_XL",    # TM54 Viridian City School
+        "MOVE_OMEGA_BEAM",       # TM55 Game Corner Prize Room
+        "MOVE_OMEGA_STRIKE",     # TM56 Game Corner Prize Room
+        "MOVE_OBLIVION_BEAM",    # TM57 TODO
+        "MOVE_ULTIMA_STRIKE",    # TM58 TODO
+        "MOVE_INFINIBLAST",      # TM59 From Lance, and you can also SKETCH it from ANNA
+        "MOVE_SINGULARITY_X",    # TM60 TODO
+        "MOVE_SINGULARITY_Y",    # TM61 TODO
+        "MOVE_SINGULARITY_Z",    # TM62 TODO
         "MOVE_FIRE_PUNCH",       # TM63 Saffron City Dojo
         "MOVE_ICE_PUNCH",        # TM64 Saffron City Dojo
         "MOVE_THUNDER_PUNCH",    # TM65 Saffron City Dojo
-        "MOVE_HELLFIRE",         # TM66
-        "MOVE_ABSOLUTE_ZERO",    # TM67
-        "MOVE_RAILGUN",          # TM68
-        "MOVE_MEGA_LICK",        # TM69
-        "MOVE_DYNAMIC_PUNCH",    # TM70
-        "MOVE_ZAP_CANNON",       # TM71
-        "MOVE_INFERNO",          # TM72
-        "MOVE_WEATHER_BALL",     # TM73
-        "MOVE_SHED_TAIL",        # TM74
+        "MOVE_HELLFIRE",         # TM66 Game Corner Prize Room
+        "MOVE_ABSOLUTE_ZERO",    # TM67 Game Corner Prize Room
+        "MOVE_RAILGUN",          # TM68 Game Corner Prize Room
+        "MOVE_MEGA_LICK",        # TM69 From Mr. Psychic
+        "MOVE_DYNAMIC_PUNCH",    # TM70 Saffron City Dojo
+        "MOVE_ZAP_CANNON",       # TM71 TODO
+        "MOVE_INFERNO",          # TM72 TODO
+        "MOVE_DRAGON_RAGE",      # TM73 TODO
+        "MOVE_SHED_TAIL",        # TM74 Viridian City School
         "MOVE_PAY_DAY",          # TM75 Viridian City Mart
         # TRs:
         "MOVE_CONSTRICT",        # TR76 Viridian City Mart
@@ -149,14 +149,14 @@ def prepare_output(all_learnables: dict[str, set[str]], repo_teachables: set[str
         "MOVE_RAPID_SPIN",       # TR88 Celadon City Department Store 2F
         "MOVE_SWEET_SCENT",      # TR89 Celadon City Department Store 2F
         "MOVE_DETECT",           # TR90 Celadon City Department Store 2F
-        "MOVE_BANEFUL_BUNKER",   # TR91
-        "MOVE_SPIKY_SHIELD",     # TR92
-        "MOVE_WATER_SHURIKEN",   # TR93
-        "MOVE_SURGING_STRIKES",  # TR94
-        "MOVE_BOOMBURST",        # TR95
-        "MOVE_ENDEAVOR",         # TR96
-        "MOVE_SPORE",            # TR97
-        "MOVE_DARK_VOID",        # TR98
+        "MOVE_BANEFUL_BUNKER",   # TR91 TODO
+        "MOVE_SPIKY_SHIELD",     # TR92 TODO
+        "MOVE_WATER_SHURIKEN",   # TR93 TODO
+        "MOVE_SURGING_STRIKES",  # TR94 TODO
+        "MOVE_BOOMBURST",        # TR95 TODO
+        "MOVE_ENDEAVOR",         # TR96 TODO
+        "MOVE_SPORE",            # TR97 TODO
+        "MOVE_DARK_VOID",        # TR98 TODO
         "MOVE_SKETCH"            # TR99 Cinnabar Island Mart
     }
     joinpat = ",\n    "

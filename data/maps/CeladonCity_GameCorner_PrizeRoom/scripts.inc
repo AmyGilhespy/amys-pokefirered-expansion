@@ -248,47 +248,47 @@ CeladonCity_GameCorner_PrizeRoom_EventScript_ChoosePrizeTM::
 	waitmessage
 	multichoice 11, 0, MULTICHOICE_GAME_CORNER_TMPRIZES, FALSE
 	switch VAR_RESULT
-	case 0, CeladonCity_GameCorner_PrizeRoom_EventScript_TM13
-	case 1, CeladonCity_GameCorner_PrizeRoom_EventScript_TM23
-	case 2, CeladonCity_GameCorner_PrizeRoom_EventScript_TM24
-	case 3, CeladonCity_GameCorner_PrizeRoom_EventScript_TM30
-	case 4, CeladonCity_GameCorner_PrizeRoom_EventScript_TM35
+	case 0, CeladonCity_GameCorner_PrizeRoom_EventScript_TM_OMEGA_BEAM
+	case 1, CeladonCity_GameCorner_PrizeRoom_EventScript_TM_OMEGA_STRIKE
+	case 2, CeladonCity_GameCorner_PrizeRoom_EventScript_TM_HELLFIRE
+	case 3, CeladonCity_GameCorner_PrizeRoom_EventScript_TM_ABSOLUTE_ZERO
+	case 4, CeladonCity_GameCorner_PrizeRoom_EventScript_TM_RAILGUN
 	case 5, CeladonCity_GameCorner_PrizeRoom_EventScript_EndPrizeExchange
 	case 127, CeladonCity_GameCorner_PrizeRoom_EventScript_EndPrizeExchange
 	end
 
-CeladonCity_GameCorner_PrizeRoom_EventScript_TM13::
-	setvar VAR_TEMP_1, ITEM_TM13
+CeladonCity_GameCorner_PrizeRoom_EventScript_TM_OMEGA_BEAM:: @ Was TM13 Ice Beam
+	setvar VAR_TEMP_1, ITEM_TM_OMEGA_BEAM
 	setvar VAR_TEMP_2, 4000
-	buffermovename STR_VAR_2, MOVE_ICE_BEAM
+	buffermovename STR_VAR_2, MOVE_OMEGA_BEAM
 	goto CeladonCity_GameCorner_PrizeRoom_EventScript_ConfirmPrizeTM
 	end
 
-CeladonCity_GameCorner_PrizeRoom_EventScript_TM23::
-	setvar VAR_TEMP_1, ITEM_TM23
-	setvar VAR_TEMP_2, 3500
-	buffermovename STR_VAR_2, MOVE_IRON_TAIL
-	goto CeladonCity_GameCorner_PrizeRoom_EventScript_ConfirmPrizeTM
-	end
-
-CeladonCity_GameCorner_PrizeRoom_EventScript_TM24::
-	setvar VAR_TEMP_1, ITEM_TM24
+CeladonCity_GameCorner_PrizeRoom_EventScript_TM_OMEGA_STRIKE:: @ Was TM23 Iron Tail
+	setvar VAR_TEMP_1, ITEM_TM_OMEGA_STRIKE
 	setvar VAR_TEMP_2, 4000
-	buffermovename STR_VAR_2, MOVE_THUNDERBOLT
+	buffermovename STR_VAR_2, MOVE_OMEGA_STRIKE
 	goto CeladonCity_GameCorner_PrizeRoom_EventScript_ConfirmPrizeTM
 	end
 
-CeladonCity_GameCorner_PrizeRoom_EventScript_TM30::
-	setvar VAR_TEMP_1, ITEM_TM30
-	setvar VAR_TEMP_2, 4500
-	buffermovename STR_VAR_2, MOVE_SHADOW_BALL
-	goto CeladonCity_GameCorner_PrizeRoom_EventScript_ConfirmPrizeTM
-	end
-
-CeladonCity_GameCorner_PrizeRoom_EventScript_TM35::
-	setvar VAR_TEMP_1, ITEM_TM35
+CeladonCity_GameCorner_PrizeRoom_EventScript_TM_HELLFIRE:: @ Was TM21 Thunderbolt
+	setvar VAR_TEMP_1, ITEM_TM_HELLFIRE
 	setvar VAR_TEMP_2, 4000
-	buffermovename STR_VAR_2, MOVE_FLAMETHROWER
+	buffermovename STR_VAR_2, MOVE_HELLFIRE
+	goto CeladonCity_GameCorner_PrizeRoom_EventScript_ConfirmPrizeTM
+	end
+
+CeladonCity_GameCorner_PrizeRoom_EventScript_TM_ABSOLUTE_ZERO:: @ Was TM30 Shadow Ball
+	setvar VAR_TEMP_1, ITEM_TM_ABSOLUTE_ZERO
+	setvar VAR_TEMP_2, 4000
+	buffermovename STR_VAR_2, MOVE_ABSOLUTE_ZERO
+	goto CeladonCity_GameCorner_PrizeRoom_EventScript_ConfirmPrizeTM
+	end
+
+CeladonCity_GameCorner_PrizeRoom_EventScript_TM_RAILGUN:: @ Was TM35 Flamethrower
+	setvar VAR_TEMP_1, ITEM_TM_RAILGUN
+	setvar VAR_TEMP_2, 4000
+	buffermovename STR_VAR_2, MOVE_RAILGUN
 	goto CeladonCity_GameCorner_PrizeRoom_EventScript_ConfirmPrizeTM
 	end
 

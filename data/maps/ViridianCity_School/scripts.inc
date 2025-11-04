@@ -14,10 +14,23 @@ ViridianCity_School_EventScript_Lass::
 ViridianCity_School_EventScript_Woman::
 	lock
 	faceplayer
-	msgbox ViridianCity_School_Text_ReadBlackboardCarefully
-	closemessage
+ViridianCity_School_Shop::
+	msgbox ViridianCity_School_Text_ShopIntro
+	pokemart ViridianCity_School_Items
+	msgbox ViridianCity_School_Text_ShopOutro
 	applymovement LOCALID_SCHOOL_WOMAN, Common_Movement_FaceOriginalDirection
 	waitmovement 0
+	release
+	end
+
+	.align 2
+ViridianCity_School_Items::
+	.2byte ITEM_TM_SUBSTITUTE_S
+	.2byte ITEM_TM_SUBSTITUTE
+	.2byte ITEM_TM_SUBSTITUTE_L
+	.2byte ITEM_TM_SUBSTITUTE_XL
+	.2byte ITEM_TM_SHED_TAIL
+	.2byte ITEM_NONE
 	release
 	end
 

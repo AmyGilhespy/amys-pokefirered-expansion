@@ -135,12 +135,24 @@ SaffronCity_Dojo_EventScript_Mike::
 
 SaffronCity_Dojo_EventScript_MasterKoichi::
 	trainerbattle_single TRAINER_BLACK_BELT_KOICHI, SaffronCity_Dojo_Text_MasterKoichiIntro, SaffronCity_Dojo_Text_MasterKoichiDefeat, SaffronCity_Dojo_EventScript_DefeatedMasterKoichi
-	goto_if_set FLAG_GOT_HITMON_FROM_DOJO, SaffronCity_Dojo_EventScript_MasterKoichiAlreadyGotHitmon
+	goto_if_set FLAG_GOT_HITMON_FROM_DOJO, SaffronCity_Dojo_Shop
 	msgbox SaffronCity_Dojo_Text_ChoosePrizedFightingMon, MSGBOX_AUTOCLOSE
 	end
 
-SaffronCity_Dojo_EventScript_MasterKoichiAlreadyGotHitmon::
-	msgbox SaffronCity_Dojo_Text_StayAndTrainWithUs
+SaffronCity_Dojo_Shop::
+	msgbox SaffronCity_Dojo_Text_ShopIntro
+	pokemart SaffronCity_Dojo_Items
+	msgbox SaffronCity_Dojo_Text_ShopOutro
+	release
+	end
+
+	.align 2
+SaffronCity_Dojo_Items::
+	.2byte ITEM_TM_FIRE_PUNCH
+	.2byte ITEM_TM_ICE_PUNCH
+	.2byte ITEM_TM_THUNDER_PUNCH
+	.2byte ITEM_TM_DYNAMIC_PUNCH
+	.2byte ITEM_NONE
 	release
 	end
 

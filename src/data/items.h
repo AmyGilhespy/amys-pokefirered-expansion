@@ -11757,7 +11757,7 @@ const struct Item gItemsInfo[] =
     [ITEM_TM_INFINIBLAST] =
     {
         .name = ITEM_NAME("TM59"),
-        .price = 4000,
+        .price = 10000,
         .description = COMPOUND_STRING(
             "Infiniblast."),
         .importance = I_REUSABLE_TMS,
@@ -11769,7 +11769,7 @@ const struct Item gItemsInfo[] =
     [ITEM_TM_SINGULARITY_X] =
     {
         .name = ITEM_NAME("TM60"),
-        .price = 4000,
+        .price = 10000,
         .description = COMPOUND_STRING(
             "Singularity X."),
         .importance = I_REUSABLE_TMS,
@@ -11781,7 +11781,7 @@ const struct Item gItemsInfo[] =
     [ITEM_TM_SINGULARITY_Y] =
     {
         .name = ITEM_NAME("TM61"),
-        .price = 4000,
+        .price = 10000,
         .description = COMPOUND_STRING(
             "Singularity Y."),
         .importance = I_REUSABLE_TMS,
@@ -11793,7 +11793,7 @@ const struct Item gItemsInfo[] =
     [ITEM_TM_SINGULARITY_Z] =
     {
         .name = ITEM_NAME("TM62"),
-        .price = 4000,
+        .price = 10000,
         .description = COMPOUND_STRING(
             "Singularity Z."),
         .importance = I_REUSABLE_TMS,
@@ -11841,7 +11841,7 @@ const struct Item gItemsInfo[] =
     [ITEM_TM_HELLFIRE] =
     {
         .name = ITEM_NAME("TM66"),
-        .price = 3000,
+        .price = 5000,
         .description = COMPOUND_STRING(
             "Hellfire."),
         .importance = I_REUSABLE_TMS,
@@ -11853,7 +11853,7 @@ const struct Item gItemsInfo[] =
     [ITEM_TM_ABSOLUTE_ZERO] =
     {
         .name = ITEM_NAME("TM67"),
-        .price = 3000,
+        .price = 5000,
         .description = COMPOUND_STRING(
             "Absolute Zero."),
         .importance = I_REUSABLE_TMS,
@@ -11865,7 +11865,7 @@ const struct Item gItemsInfo[] =
     [ITEM_TM_RAILGUN] =
     {
         .name = ITEM_NAME("TM68"),
-        .price = 3000,
+        .price = 5000,
         .description = COMPOUND_STRING(
             "Railgun."),
         .importance = I_REUSABLE_TMS,
@@ -11877,7 +11877,7 @@ const struct Item gItemsInfo[] =
     [ITEM_TM_MEGA_LICK] =
     {
         .name = ITEM_NAME("TM69"),
-        .price = 3000,
+        .price = 6969,
         .description = COMPOUND_STRING(
             "Mega Lick."),
         .importance = I_REUSABLE_TMS,
@@ -11937,7 +11937,7 @@ const struct Item gItemsInfo[] =
     [ITEM_TM_SHED_TAIL] =
     {
         .name = ITEM_NAME("TM74"),
-        .price = 3000,
+        .price = 4000,
         .description = COMPOUND_STRING(
             "Shed Tail."),
         .importance = I_REUSABLE_TMS,
@@ -11951,7 +11951,7 @@ const struct Item gItemsInfo[] =
         .name = ITEM_NAME("TM75"),
         .price = 0, // Soft-lock prevention.
         .description = COMPOUND_STRING(
-            "SINGLE USE. Pay Day."),
+            "Pay Day."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -11961,7 +11961,7 @@ const struct Item gItemsInfo[] =
     [ITEM_TM_CONSTRICT] =
     {
         .name = ITEM_NAME("TR76"),
-        .price = 3000,
+        .price = 100,
         .description = COMPOUND_STRING(
             "SINGLE USE. Constrict."),
         .importance = 0,
@@ -11973,7 +11973,7 @@ const struct Item gItemsInfo[] =
     [ITEM_TM_FALSE_SWIPE] =
     {
         .name = ITEM_NAME("TR77"),
-        .price = 3000,
+        .price = 5000,
         .description = COMPOUND_STRING(
             "SINGLE USE. False Swipe."),
         .importance = 0,
@@ -12141,7 +12141,7 @@ const struct Item gItemsInfo[] =
     [ITEM_TM_BANEFUL_BUNKER] =
     {
         .name = ITEM_NAME("TR91"),
-        .price = 3000,
+        .price = 10000,
         .description = COMPOUND_STRING(
             "SINGLE USE. Baneful Bunker."),
         .importance = 0,
@@ -12153,7 +12153,7 @@ const struct Item gItemsInfo[] =
     [ITEM_TM_SPIKY_SHIELD] =
     {
         .name = ITEM_NAME("TR92"),
-        .price = 3000,
+        .price = 10000,
         .description = COMPOUND_STRING(
             "SINGLE USE. Spiky Shield."),
         .importance = 0,
@@ -12165,7 +12165,7 @@ const struct Item gItemsInfo[] =
     [ITEM_TM_WATER_SHURIKEN] =
     {
         .name = ITEM_NAME("TR93"),
-        .price = 3000,
+        .price = 20000,
         .description = COMPOUND_STRING(
             "SINGLE USE. Water Shuriken."),
         .importance = 0,
@@ -12177,7 +12177,7 @@ const struct Item gItemsInfo[] =
     [ITEM_TM_SURGING_STRIKES] =
     {
         .name = ITEM_NAME("TR94"),
-        .price = 3000,
+        .price = 20000,
         .description = COMPOUND_STRING(
             "SINGLE USE. Surging Strikes."),
         .importance = 0,
@@ -12189,7 +12189,7 @@ const struct Item gItemsInfo[] =
     [ITEM_TM_BOOMBURST] =
     {
         .name = ITEM_NAME("TR95"),
-        .price = 3000,
+        .price = 20000,
         .description = COMPOUND_STRING(
             "SINGLE USE. Boomburst."),
         .importance = 0,
@@ -12201,7 +12201,7 @@ const struct Item gItemsInfo[] =
     [ITEM_TM_ENDEAVOR] =
     {
         .name = ITEM_NAME("TR96"),
-        .price = 3000,
+        .price = 30000,
         .description = COMPOUND_STRING(
             "SINGLE USE. Endeavor."),
         .importance = 0,

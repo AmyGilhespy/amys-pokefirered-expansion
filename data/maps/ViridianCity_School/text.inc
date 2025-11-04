@@ -7,6 +7,15 @@ ViridianCity_School_Text_ReadBlackboardCarefully::
     .string "Be sure to read what's on the\n"
     .string "blackboard carefully!$"
 
+ViridianCity_School_Text_ShopIntro::
+    .string "Okay!\p"
+    .string "Be sure to read what's on the\n"
+    .string "blackboard carefully!\p"
+    .string "Would you like to buy anything?$"
+
+ViridianCity_School_Text_ShopOutro::
+    .string "Have a nice day.$"
+
 ViridianCity_School_Text_NotebookFirstPage::
     .string "Let's check out the notebook.\p"
     .string "First page…\p"
