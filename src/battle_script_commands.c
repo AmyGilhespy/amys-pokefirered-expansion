@@ -13614,13 +13614,23 @@ static void Cmd_handleballthrow(void)
             }
             break;
             case BALL_LOVE:
-                if (gBattleMons[gBattlerTarget].species == gBattleMons[gBattlerAttacker].species)
+                if (B_REWORKED_LOVE_BALL)
                 {
-                    u8 gender1 = GetMonGender(GetBattlerMon(gBattlerTarget));
-                    u8 gender2 = GetMonGender(GetBattlerMon(gBattlerAttacker));
+                    if (gBattleMons[gBattlerTarget].volatiles.infatuation)
+                    {
+                        ballMultiplier = 500;
+                    }
+                }
+                else
+                {
+                    if (gBattleMons[gBattlerTarget].species == gBattleMons[gBattlerAttacker].species)
+                    {
+                        u8 gender1 = GetMonGender(GetBattlerMon(gBattlerTarget));
+                        u8 gender2 = GetMonGender(GetBattlerMon(gBattlerAttacker));
 
-                    if (gender1 != gender2 && gender1 != MON_GENDERLESS && gender2 != MON_GENDERLESS)
-                        ballMultiplier = 800;
+                        if (gender1 != gender2 && gender1 != MON_GENDERLESS && gender2 != MON_GENDERLESS)
+                            ballMultiplier = 800;
+                    }
                 }
                 break;
             case BALL_FAST:

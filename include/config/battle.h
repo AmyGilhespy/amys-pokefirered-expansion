@@ -375,4 +375,6 @@
 #define B_POOL_RULE_MEGA_STONE_CLAUSE       FALSE    // Pick only 1 mon with mega stone
 #define B_POOL_RULE_Z_CRYSTAL_CLAUSE        FALSE    // Pick only 1 mon with Z-crystal
 
+#define B_REWORKED_LOVE_BALL TRUE // If TRUE, the love ball instead has increased catch rate vs pokemon that are infatuated with the user
+
 #endif // GUARD_CONFIG_BATTLE_H
