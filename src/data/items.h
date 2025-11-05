@@ -2012,7 +2012,7 @@ const struct Item gItemsInfo[] =
             "Raises the level "
             "of a Pokémon by\n"
             "one."),
-        .importance = 1,
+        .importance = 0,
         .pocket = POCKET_ITEMS,
         .sortType = ITEM_TYPE_LEVEL_UP_ITEM,
         .type = ITEM_USE_PARTY_MENU,

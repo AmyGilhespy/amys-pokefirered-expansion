@@ -239,11 +239,13 @@ static const struct MenuAction sMultichoiceList_GameCornerTMPrizes[] = {
 };
 
 static const struct MenuAction sMultichoiceList_GameCornerBattleItemPrizes[] = {
-    { gText_SmokeBall_800Coins },
-    { gText_MiracleSeed_1000Coins },
-    { gText_Charcoal_1000Coins },
-    { gText_MysticWater_1000Coins },
-    { gText_YellowFlute_1600Coins },
+    { gText_ToxicOrb_3500Coins },
+    { gText_ChoiceBand_4000Coins },
+    { gText_ChoiceSpecs_4000Coins },
+    { gText_ChoiceScarf_4000Coins },
+    { gText_AssaultVest_4000Coins },
+    { gText_LifeOrb_6500Coins },
+    { gText_Leftovers_9999Coins },
     { gText_NoThanks_2 }
 };
 

@@ -355,41 +355,55 @@ CeladonCity_GameCorner_PrizeRoom_EventScript_ChoosePrizeItem::
 	waitmessage
 	multichoice 10, 0, MULTICHOICE_GAME_CORNER_BATTLE_ITEM_PRIZES, FALSE
 	switch VAR_RESULT
-	case 0, CeladonCity_GameCorner_PrizeRoom_EventScript_SmokeBall
-	case 1, CeladonCity_GameCorner_PrizeRoom_EventScript_MiracleSeed
-	case 2, CeladonCity_GameCorner_PrizeRoom_EventScript_Charcoal
-	case 3, CeladonCity_GameCorner_PrizeRoom_EventScript_MysticWater
-	case 4, CeladonCity_GameCorner_PrizeRoom_EventScript_YellowFlute
-	case 5, CeladonCity_GameCorner_PrizeRoom_EventScript_EndPrizeExchange
+	case 0, CeladonCity_GameCorner_PrizeRoom_EventScript_ToxicOrb
+	case 1, CeladonCity_GameCorner_PrizeRoom_EventScript_ChoiceBand
+	case 2, CeladonCity_GameCorner_PrizeRoom_EventScript_ChoiceSpecs
+	case 3, CeladonCity_GameCorner_PrizeRoom_EventScript_ChoiceScarf
+	case 4, CeladonCity_GameCorner_PrizeRoom_EventScript_AssaultVest
+	case 5, CeladonCity_GameCorner_PrizeRoom_EventScript_LifeOrb
+	case 6, CeladonCity_GameCorner_PrizeRoom_EventScript_Leftovers
+	case 7, CeladonCity_GameCorner_PrizeRoom_EventScript_EndPrizeExchange
 	case 127, CeladonCity_GameCorner_PrizeRoom_EventScript_EndPrizeExchange
 	end
 
-CeladonCity_GameCorner_PrizeRoom_EventScript_SmokeBall::
-	setvar VAR_TEMP_1, ITEM_SMOKE_BALL
-	setvar VAR_TEMP_2, 800
+CeladonCity_GameCorner_PrizeRoom_EventScript_ToxicOrb::
+	setvar VAR_TEMP_1, ITEM_TOXIC_ORB
+	setvar VAR_TEMP_2, 3500
 	goto CeladonCity_GameCorner_PrizeRoom_EventScript_ConfirmPrizeItem
 	end
 
-CeladonCity_GameCorner_PrizeRoom_EventScript_MiracleSeed::
-	setvar VAR_TEMP_1, ITEM_MIRACLE_SEED
-	setvar VAR_TEMP_2, 1000
+CeladonCity_GameCorner_PrizeRoom_EventScript_ChoiceBand::
+	setvar VAR_TEMP_1, ITEM_CHOICE_BAND
+	setvar VAR_TEMP_2, 4000
 	goto CeladonCity_GameCorner_PrizeRoom_EventScript_ConfirmPrizeItem
 	end
 
-CeladonCity_GameCorner_PrizeRoom_EventScript_Charcoal::
-	setvar VAR_TEMP_1, ITEM_CHARCOAL
-	setvar VAR_TEMP_2, 1000
+CeladonCity_GameCorner_PrizeRoom_EventScript_ChoiceSpecs::
+	setvar VAR_TEMP_1, ITEM_CHOICE_SPECS
+	setvar VAR_TEMP_2, 4000
 	goto CeladonCity_GameCorner_PrizeRoom_EventScript_ConfirmPrizeItem
 	end
 
-CeladonCity_GameCorner_PrizeRoom_EventScript_MysticWater::
-	setvar VAR_TEMP_1, ITEM_MYSTIC_WATER
-	setvar VAR_TEMP_2, 1000
+CeladonCity_GameCorner_PrizeRoom_EventScript_ChoiceScarf::
+	setvar VAR_TEMP_1, ITEM_CHOICE_SCARF
+	setvar VAR_TEMP_2, 4000
 	goto CeladonCity_GameCorner_PrizeRoom_EventScript_ConfirmPrizeItem
 	end
 
-CeladonCity_GameCorner_PrizeRoom_EventScript_YellowFlute::
-	setvar VAR_TEMP_1, ITEM_YELLOW_FLUTE
-	setvar VAR_TEMP_2, 1600
+CeladonCity_GameCorner_PrizeRoom_EventScript_AssaultVest::
+	setvar VAR_TEMP_1, ITEM_ASSAULT_VEST
+	setvar VAR_TEMP_2, 4000
+	goto CeladonCity_GameCorner_PrizeRoom_EventScript_ConfirmPrizeItem
+	end
+
+CeladonCity_GameCorner_PrizeRoom_EventScript_LifeOrb::
+	setvar VAR_TEMP_1, ITEM_LIFE_ORB
+	setvar VAR_TEMP_2, 6500
+	goto CeladonCity_GameCorner_PrizeRoom_EventScript_ConfirmPrizeItem
+	end
+
+CeladonCity_GameCorner_PrizeRoom_EventScript_Leftovers::
+	setvar VAR_TEMP_1, ITEM_LEFTOVERS
+	setvar VAR_TEMP_2, 9999
 	goto CeladonCity_GameCorner_PrizeRoom_EventScript_ConfirmPrizeItem
 	end
