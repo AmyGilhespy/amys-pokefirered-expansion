@@ -1232,6 +1232,34 @@ void ItemUseOutOfBattle_CannotUse(u8 taskId)
         PrintNotTheTimeToUseThat(taskId, gTasks[taskId].data[3]);
 }
 
+void ItemUseOutOfBattle_CannotUseInNuzlockeRevivalMedicine(u8 taskId)
+{
+    if (gSaveBlock2Ptr->customData.gameType > 0) // Nuzlocke mode
+    {
+        StringExpandPlaceholders(gStringVar4, gText_CannotUseNuzlockeRevival);
+        DisplayItemMessageInCurrentContext(taskId, FALSE, FONT_MALE, gStringVar4);
+        return;
+    }
+    else
+    {
+        ItemUseOutOfBattle_Medicine(taskId);
+    }
+}
+
+void ItemUseOutOfBattle_CannotUseInNuzlockeSacredAsh(u8 taskId)
+{
+    if (gSaveBlock2Ptr->customData.gameType > 0) // Nuzlocke mode
+    {
+        StringExpandPlaceholders(gStringVar4, gText_CannotUseNuzlockeRevival);
+        DisplayItemMessageInCurrentContext(taskId, FALSE, FONT_MALE, gStringVar4);
+        return;
+    }
+    else
+    {
+        ItemUseOutOfBattle_SacredAsh(taskId);
+    }
+}
+
 void ItemUse_SetQuestLogEvent(u8 eventId, struct Pokemon *pokemon, u16 itemId, u16 param)
 {
     struct QuestLogEvent_Item *data = Alloc(sizeof(*data));
