@@ -2012,7 +2012,6 @@ const struct Item gItemsInfo[] =
             "Raises the level "
             "of a Pokémon by\n"
             "one."),
-        .importance = 0,
         .pocket = POCKET_ITEMS,
         .sortType = ITEM_TYPE_LEVEL_UP_ITEM,
         .type = ITEM_USE_PARTY_MENU,
@@ -2289,7 +2288,6 @@ const struct Item gItemsInfo[] =
             "Repels weak wild "
             "Pokémon for 250\n"
             "steps."),
-        .importance = 1,
         .pocket = POCKET_ITEMS,
         .sortType = ITEM_TYPE_FIELD_USE,
         .type = ITEM_USE_BAG_MENU,

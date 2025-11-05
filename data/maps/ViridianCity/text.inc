@@ -6,10 +6,23 @@ ViridianCity_Text_CanCarryMonsAnywhere::
 
 ViridianCity_Text_GymClosedWonderWhoLeaderIs::
     .string "This POKéMON GYM is always closed.\p"
-    .string "I wonder who the LEADER is?$"
+    .string "I wonder who the LEADER is?\p"
+    .string "……… ………\p"
+    .string "I'm going to break in and steal\n"
+    .string "something!$"
+
+ViridianCity_Text_GymClosedHereTakeThis::
+    .string "Here, take this and become my\n"
+    .string "accomplice in crime!$"
+
+ViridianCity_Text_GymClosedReceivedTM_THIEF::
+    .string "{PLAYER} received TM46 and\n"
+    .string "became a criminal!$"
 
 ViridianCity_Text_ViridiansGymLeaderReturned::
-    .string "VIRIDIAN GYM's LEADER returned!$"
+    .string "VIRIDIAN GYM's LEADER returned!\p"
+    .string "If anything is found to be\n"
+    .string "missing, I'm blaming you!$"
 
 ViridianCity_Text_WantToKnowAboutCaterpillarMons::
     .string "You want to know about the two\n"
@@ -107,7 +120,9 @@ ViridianCity_Text_MovesLimitedByPP::
     .string "The battle moves of POKéMON are\n"
     .string "limited by their POWER POINTS, PP.\p"
     .string "To replenish PP, rest your tired\n"
-    .string "POKéMON at a POKéMON CENTER.$"
+    .string "POKéMON at a POKéMON CENTER.\p"
+    .string "POKéMON CENTERs make your PP\n"
+    .string "better.$"
 
 ViridianCity_Text_GymSign::
     .string "VIRIDIAN CITY POKéMON GYM$"

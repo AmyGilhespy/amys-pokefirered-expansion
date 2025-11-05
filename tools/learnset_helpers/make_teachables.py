@@ -107,6 +107,8 @@ def prepare_output(all_learnables: dict[str, set[str]], repo_teachables: set[str
     """)
 
     ALWAYS_TEACHABLE_MOVES = {
+        # Default TMs (If added here, it was added to help with a fight):
+        "MOVE_THIEF",            # TM46 Viridian City (From Rocket Grunt) (to help with Brock fight)
         # TMs:
         "MOVE_SUBSTITUTE_S",     # TM51 Viridian City School
         "MOVE_SUBSTITUTE",       # TM52 Viridian City School

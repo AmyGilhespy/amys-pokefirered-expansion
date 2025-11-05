@@ -1260,7 +1260,7 @@
 #define FLAG_GOT_COINS_FROM_MAN  0x4C0
 #define FLAG_GOT_TM_ZAP_CANNON   0x4C1
 #define FLAG_GOT_TM_INFERNO      0x4C2
-#define FLAG_0x4C3               0x4C3
+#define FLAG_GOT_TM_THIEF        0x4C3
 #define FLAG_0x4C4               0x4C4
 #define FLAG_0x4C5               0x4C5
 #define FLAG_0x4C6               0x4C6

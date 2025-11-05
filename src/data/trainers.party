@@ -8112,7 +8112,7 @@ Nature: Careful
 - Dragon Breath
 - Rock Tomb
 
-Aron @ Shell Bell
+Geodude @ Shell Bell
 Level: 1
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
@@ -8724,9 +8724,9 @@ Nature: Adamant
 - Knock Off
 
 Shedinja @ Air Balloon
-Level: 1
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Level: 52
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 31 Spe
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 252 Spe
 Ability: Wonder Guard
 Nature: Quiet
 Tera Type: Electric
@@ -9166,9 +9166,9 @@ Nature: Adamant
 - Knock Off
 
 Shedinja @ Air Balloon
-Level: 1
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Level: 52
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 31 Spe
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 252 Spe
 Ability: Wonder Guard
 Nature: Quiet
 Tera Type: Electric

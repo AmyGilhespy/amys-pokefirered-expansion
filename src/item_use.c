@@ -1125,6 +1125,28 @@ bool32 CannotUseItemsInBattle(u16 itemId, struct Pokemon *mon)
         break;
     }
 
+    if (gSaveBlock2Ptr->customData.gameType > 0) // Nuzlocke mode
+    {
+        switch (itemId)
+        {
+        case ITEM_FULL_RESTORE:
+            cannotUse = TRUE;
+            failStr = gText_CannotUseNuzlockeGeneric;
+            break;
+        case ITEM_REVIVE:
+        case ITEM_MAX_REVIVE:
+        case ITEM_REVIVAL_HERB:
+        case ITEM_SACRED_ASH:
+        case ITEM_MAX_HONEY:
+            cannotUse = TRUE;
+            failStr = gText_CannotUseNuzlockeRevival;
+            break;
+        default:
+            break;
+        }
+    }
+
+
     if (failStr != NULL)
         StringExpandPlaceholders(gStringVar4, failStr);
     else

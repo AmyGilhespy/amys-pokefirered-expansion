@@ -77,8 +77,8 @@ MtMoon_B2F_Text_YouWantHelixFossil::
     .string "Do you want the HELIX FOSSIL?$"
 
 MtMoon_B2F_Text_ObtainedHelixFossil::
-    .string "Obtained the HELIX FOSSIL!$"
+    .string "PRAISE HELIX!$"
 
 MtMoon_B2F_Text_ObtainedDomeFossil::
-    .string "Obtained the DOME FOSSIL!$"
+    .string "PRAISE ……… DOME?$"
 

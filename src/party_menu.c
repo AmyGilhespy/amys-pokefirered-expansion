@@ -5083,11 +5083,12 @@ void ItemUseCB_Mint(u8 taskId, TaskFunc task)
 void ItemUseCB_BattleScript(u8 taskId, TaskFunc task)
 {
     struct Pokemon *mon = &gPlayerParty[gPartyMenu.slotId];
+    *gStringVar4 = 0;
     if (CannotUseItemsInBattle(gSpecialVar_ItemId, mon))
     {
         gPartyMenuUseExitCallback = FALSE;
         PlaySE(SE_SELECT);
-        DisplayPartyMenuMessage(gText_WontHaveEffect, TRUE);
+        DisplayPartyMenuMessage(*gStringVar4 ? gStringVar4 : gText_WontHaveEffect, TRUE);
         ScheduleBgCopyTilemapToVram(2);
         gTasks[taskId].func = task;
     }
@@ -5415,11 +5416,12 @@ static void TryUseItemOnMove(u8 taskId) {
     struct PartyMenu *ptr = &gPartyMenu;
     struct Pokemon *mon = &gPlayerParty[ptr->slotId];
     if (gMain.inBattle) {
+        *gStringVar4 = 0;
         if (CannotUseItemsInBattle(gSpecialVar_ItemId, mon))
         {
             gPartyMenuUseExitCallback = FALSE;
             PlaySE(SE_SELECT);
-            DisplayPartyMenuMessage(gText_WontHaveEffect, TRUE);
+            DisplayPartyMenuMessage(*gStringVar4 ? gStringVar4 : gText_WontHaveEffect, TRUE);
             ScheduleBgCopyTilemapToVram(2);
             gTasks[taskId].func = Task_ClosePartyMenuAfterText;
         }

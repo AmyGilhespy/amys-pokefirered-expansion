@@ -83,6 +83,15 @@ ViridianCity_EventScript_OldMan::
 	faceplayer
 	goto_if_eq VAR_MAP_SCENE_VIRIDIAN_CITY_GYM_DOOR, 1, ViridianCity_EventScript_OldManGymLeaderReturned
 	msgbox ViridianCity_Text_GymClosedWonderWhoLeaderIs
+	checkitem ITEM_TM_THIEF
+	goto_if_ne VAR_RESULT, FALSE, ViridianCity_EventScript_OldMan2 @ They got it randomly somewhere, or from here
+	goto_if_set FLAG_GOT_TM_THIEF, ViridianCity_EventScript_OldMan2 @ They got it from here and sold it, too bad
+	checkitemspace ITEM_TM_THIEF
+	goto_if_eq VAR_RESULT, FALSE, ViridianCity_EventScript_OldMan2 @ They have no room for it
+	msgbox ViridianCity_Text_GymClosedHereTakeThis
+	giveitem_msg ViridianCity_Text_GymClosedReceivedTM_THIEF, ITEM_TM_THIEF
+	setflag FLAG_GOT_TM_THIEF
+ViridianCity_EventScript_OldMan2::
 	closemessage
 	applymovement LOCALID_VIRIDIAN_OLD_MAN, Common_Movement_FaceOriginalDirection
 	waitmovement 0

@@ -20916,7 +20916,7 @@
             },
             {
 #line 8115
-            .species = SPECIES_ARON,
+            .species = SPECIES_GEODUDE,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 8115
             .heldItem = ITEM_SHELL_BELL,
@@ -22435,13 +22435,13 @@ F_TRAINER_FEMALE |
 #line 8726
             .heldItem = ITEM_AIR_BALLOON,
 #line 8729
-            .ev = TRAINER_PARTY_EVS(0, 0, 0, 0, 0, 0),
+            .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 0, 0),
 #line 8728
-            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+            .iv = TRAINER_PARTY_IVS(0, 0, 0, 31, 0, 0),
 #line 8730
             .ability = ABILITY_WONDER_GUARD,
 #line 8727
-            .lvl = 1,
+            .lvl = 52,
 #line 8731
             .nature = NATURE_QUIET,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
@@ -23487,13 +23487,13 @@ F_TRAINER_FEMALE |
 #line 9168
             .heldItem = ITEM_AIR_BALLOON,
 #line 9171
-            .ev = TRAINER_PARTY_EVS(0, 0, 0, 0, 0, 0),
+            .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 0, 0),
 #line 9170
-            .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
+            .iv = TRAINER_PARTY_IVS(0, 0, 0, 31, 0, 0),
 #line 9172
             .ability = ABILITY_WONDER_GUARD,
 #line 9169
-            .lvl = 1,
+            .lvl = 52,
 #line 9173
             .nature = NATURE_QUIET,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,

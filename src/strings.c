@@ -3,8 +3,8 @@
 #include "constants/item.h"
 
 const u8 gExpandedPlaceholder_Empty[] = _("");
-const u8 gExpandedPlaceholder_Kun[] = _("");
-const u8 gExpandedPlaceholder_Chan[] = _("");
+const u8 gExpandedPlaceholder_Kun[] = _("-kun");
+const u8 gExpandedPlaceholder_Chan[] = _("-chan");
 const u8 gExpandedPlaceholder_Sapphire[] = _("SAPPHIRE");
 const u8 gExpandedPlaceholder_Ruby[] = _("RUBY");
 const u8 gExpandedPlaceholder_Aqua[] = _("AQUA");
@@ -135,6 +135,9 @@ const u8 gOtherText_Exit[] = _("EXIT");
 const u8 gOtherText_NurseCustomHeal[] = _("HEAL");
 const u8 gOtherText_NurseCustomName[] = _("RENAME");
 const u8 gOtherText_NurseCustomRemind[] = _("REMIND");
+
+const u8 gText_CannotUseNuzlockeGeneric[] = _("You can't use that in a Nuzlocke.{PAUSE_UNTIL_PRESS}");
+const u8 gText_CannotUseNuzlockeRevival[] = _("There's no coming back from the dead.{PAUSE_UNTIL_PRESS}");
 
 const u8 gString_Dummy[] = _("");
 const u8 gText_Cancel7[] = _("キャンセル");
