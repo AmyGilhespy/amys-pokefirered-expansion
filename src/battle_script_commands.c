@@ -1144,7 +1144,7 @@ static void Cmd_attackcanceler(void)
 
 
     // --- Resurrection move special handler ---
-    if (gCurrentMove == MOVE_RESURRECTION)
+    if (gCurrentMove == MOVE_PHOENIX_CALL)
     {
         u32 side = GetBattlerSide(gBattlerAttacker);
         if (gBattleStruct->usedResurrection[side])

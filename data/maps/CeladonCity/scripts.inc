@@ -13,11 +13,21 @@ CeladonCity_EventScript_LittleGirl::
 CeladonCity_EventScript_DefeatedEmily::
 	cleartrainerflag TRAINER_EMILY
 	msgbox CeladonCity_Text_EmilyPostBattle, MSGBOX_NPC
+	goto_if_unset FLAG_GOT_TR100_FROM_EMILY, CeladonCity_EventScript_GetTR100FromEmily
 	end
 CeladonCity_EventScript_RematchEmily::
 	cleartrainerflag TRAINER_EMILY
 	trainerbattle_single TRAINER_EMILY, CeladonCity_Text_EmilyRematchIntro, CeladonCity_Text_EmilyDefeat, CeladonCity_EventScript_DefeatedEmily, NO_MUSIC
 	goto CeladonCity_EventScript_DefeatedEmily
+	end
+CeladonCity_EventScript_GetTR100FromEmily::
+	checkitemspace ITEM_TM_PHOENIX_CALL, 1
+	goto_if_eq VAR_RESULT, FALSE, CeladonCity_EventScript_EmilyEnd
+	msgbox CeladonCity_Text_EmilyPreTR100, MSGBOX_NPC
+	giveitem_msg CeladonCity_Text_EmilyGotTR100, ITEM_TM_PHOENIX_CALL
+	setflag FLAG_GOT_TR100_FROM_EMILY
+	msgbox CeladonCity_Text_EmilyPostTR100, MSGBOX_NPC
+CeladonCity_EventScript_EmilyEnd::
 	end
 
 CeladonCity_EventScript_OldMan1::

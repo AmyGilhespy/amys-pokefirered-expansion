@@ -21676,14 +21676,14 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .battleAnimScript = gBattleAnimMove_Lick,
     },
 
-    [MOVE_RESURRECTION] =
+    [MOVE_PHOENIX_CALL] =
     {
-        .name = COMPOUND_STRING("Resurrection"),
+        .name = COMPOUND_STRING("Phoenix Call"),
         .description = COMPOUND_STRING(
             "Resurrects the\ndead."),
         .effect = EFFECT_RESURRECTION,
         .power = 0,
-        .type = TYPE_GHOST,
+        .type = TYPE_FIRE,
         .accuracy = 0,
         .pp = 1, // Same as SKETCH
         .target = MOVE_TARGET_USER,

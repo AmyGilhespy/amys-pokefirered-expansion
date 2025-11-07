@@ -5623,6 +5623,8 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
             ADJUST_SCORE(-10);
         else if (IsPartyAllDeadExceptBattler(battlerAtk))
             ADJUST_SCORE(10000);
+        else if (IsPartyAlmostAllDeadExceptBattler(battlerAtk))
+            ADJUST_SCORE(BEST_EFFECT);
         else
             ADJUST_SCORE(-10);
         break;

@@ -280,6 +280,7 @@ void FreeRestoreBattleMons(struct BattlePokemon *savedBattleMons);
 s32 CountUsablePartyMons(u32 battlerId);
 bool32 IsPartyFullyHealedExceptBattler(u32 battler);
 bool32 IsPartyAllDeadExceptBattler(u32 battlerId);
+bool32 IsPartyAlmostAllDeadExceptBattler(u32 battlerId);
 bool32 PartyHasMoveCategory(u32 battlerId, enum DamageCategory category);
 bool32 SideHasMoveCategory(u32 battlerId, enum DamageCategory category);
 

@@ -160,6 +160,7 @@ def prepare_output(all_learnables: dict[str, set[str]], repo_teachables: set[str
         "MOVE_SPORE",            # TR97 Celadon City Gym Shop
         "MOVE_DARK_VOID",        # TR98 Celadon City Gym Shop
         "MOVE_SKETCH",           # TR99 Cinnabar Island Mart
+        "MOVE_PHOENIX_CALL",     # TR100 Celadon City (Emily)
         # Move Tutors:
         "MOVE_SWEET_KISS",       # Move Tutor
         "MOVE_LOVELY_KISS",      # Move Tutor

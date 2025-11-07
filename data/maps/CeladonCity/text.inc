@@ -157,3 +157,14 @@ CeladonCity_Text_EmilyPostBattle::
     .string "lovely day today! And talk to me\l"
     .string "again if you ever desire a rematch!$"
 
+CeladonCity_Text_EmilyPreTR100::
+    .string "{PLAYER}, hold on one sec!$"
+
+CeladonCity_Text_EmilyGotTR100::
+    .string "{PLAYER} received TR100\n"
+    .string "from EMILY.$"
+
+CeladonCity_Text_EmilyPostTR100::
+    .string "TR100 contains PHOENIX CALL.\n"
+    .string "Use it to resurrect the fallen.$"
+

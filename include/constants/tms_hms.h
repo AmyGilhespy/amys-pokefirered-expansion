@@ -103,7 +103,7 @@
     F(SPORE) \
     F(DARK_VOID) \
     F(SKETCH) \
-    F(RESURRECTION) \
+    F(PHOENIX_CALL) \
 
 #define FOREACH_HM(F) \
     F(CUT) \

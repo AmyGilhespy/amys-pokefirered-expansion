@@ -41712,7 +41712,7 @@ F_TRAINER_FEMALE |
         },
     },
 #line 16224
-    [DIFFICULTY_NORMAL][TRAINER_HANNAH] =
+    [DIFFICULTY_NORMAL][TRAINER_EMILY] =
     {
 #line 16225
         .trainerName = _("EMILY"),
@@ -41752,7 +41752,7 @@ F_TRAINER_FEMALE |
 #line 16238
             .ability = ABILITY_REGENERATOR,
 #line 16235
-            .lvl = 1,
+            .lvl = 100,
 #line 16239
             .nature = NATURE_RELAXED,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
@@ -41780,89 +41780,101 @@ F_TRAINER_FEMALE |
 #line 16249
             .ability = ABILITY_NO_GUARD,
 #line 16246
-            .lvl = 1,
+            .lvl = 100,
 #line 16250
             .nature = NATURE_TIMID,
-            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
-            .moves = {
 #line 16251
+            .dynamaxLevel = 10,
+#line 1
+            .gigantamaxFactor = TRUE,
+            .shouldUseDynamax = TRUE,
+            .moves = {
+#line 16253
                 MOVE_MOONGEIST_BEAM,
                 MOVE_FOCUS_BLAST,
                 MOVE_ZAP_CANNON,
             },
             },
             {
-#line 16255
-            .nickname = COMPOUND_STRING("3"),
-#line 16255
-            .species = SPECIES_LANTURN,
-#line 16255
-            .gender = TRAINER_MON_FEMALE,
-#line 16255
-            .heldItem = ITEM_LEFTOVERS,
-#line 16258
-            .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 4),
 #line 16257
-            .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
-#line 16259
-            .ability = ABILITY_SIMPLE,
-#line 16256
-            .lvl = 1,
-#line 16260
-            .nature = NATURE_TIMID,
-            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
-            .moves = {
-#line 16261
-                MOVE_SPLASH,
-            },
-            },
-            {
-#line 16263
-            .nickname = COMPOUND_STRING("4"),
-#line 16263
-            .species = SPECIES_JUMPLUFF,
-#line 16263
+            .nickname = COMPOUND_STRING("Fishy"),
+#line 16257
+            .species = SPECIES_LANTURN,
+#line 16257
             .gender = TRAINER_MON_FEMALE,
-#line 16263
+#line 16257
             .heldItem = ITEM_LEFTOVERS,
-#line 16266
-            .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 4),
-#line 16265
+#line 16260
+            .ev = TRAINER_PARTY_EVS(40, 0, 220, 0, 0, 248),
+#line 16259
             .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
-#line 16267
+#line 16261
             .ability = ABILITY_SIMPLE,
-#line 16264
-            .lvl = 1,
-#line 16268
-            .nature = NATURE_TIMID,
+#line 16258
+            .lvl = 100,
+#line 16262
+            .nature = NATURE_CALM,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+#line 16263
+            .teraType = TYPE_FIGHTING,
             .moves = {
-#line 16269
-                MOVE_SPLASH,
+#line 16264
+                MOVE_TAIL_GLOW,
+                MOVE_STEAM_ERUPTION,
+                MOVE_ELECTRO_DRIFT,
+                MOVE_SECRET_SWORD,
             },
             },
             {
-#line 16271
-            .nickname = COMPOUND_STRING("Stergle"),
-#line 16271
-            .species = SPECIES_HOUNDOOM,
-#line 16271
+#line 16269
+            .nickname = COMPOUND_STRING("Cottonball"),
+#line 16269
+            .species = SPECIES_JUMPLUFF,
+#line 16269
             .gender = TRAINER_MON_FEMALE,
-#line 16271
-            .heldItem = ITEM_HOUNDOOMINITE,
-#line 16274
-            .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 4),
-#line 16273
-            .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
-#line 16275
-            .ability = ABILITY_DROUGHT,
+#line 16269
+            .heldItem = ITEM_LEFTOVERS,
 #line 16272
-            .lvl = 1,
-#line 16276
+            .ev = TRAINER_PARTY_EVS(252, 0, 252, 0, 0, 4),
+#line 16271
+            .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
+#line 16273
+            .ability = ABILITY_PRANKSTER,
+#line 16270
+            .lvl = 100,
+#line 16274
+            .nature = NATURE_BOLD,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+            .moves = {
+#line 16275
+                MOVE_ENCORE,
+                MOVE_TORMENT,
+                MOVE_DISABLE,
+                MOVE_SEISMIC_TOSS,
+            },
+            },
+            {
+#line 16280
+            .nickname = COMPOUND_STRING("Stergle"),
+#line 16280
+            .species = SPECIES_HOUNDOOM,
+#line 16280
+            .gender = TRAINER_MON_FEMALE,
+#line 16280
+            .heldItem = ITEM_HOUNDOOMINITE,
+#line 16283
+            .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 252, 4),
+#line 16282
+            .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
+#line 16284
+            .ability = ABILITY_DROUGHT,
+#line 16281
+            .lvl = 100,
+#line 16285
             .nature = NATURE_TIMID,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
-#line 16277
+#line 16286
                 MOVE_NASTY_PLOT,
                 MOVE_HELLFIRE,
                 MOVE_BADDY_BAD,
@@ -41870,111 +41882,31 @@ F_TRAINER_FEMALE |
             },
             },
             {
-#line 16282
-            .nickname = COMPOUND_STRING("Lyly"),
-#line 16282
-            .species = SPECIES_MIMIKYU,
-#line 16282
-            .gender = TRAINER_MON_FEMALE,
-#line 16282
-            .heldItem = ITEM_LEFTOVERS,
-#line 16285
-            .ev = TRAINER_PARTY_EVS(0, 252, 4, 252, 0, 0),
-#line 16284
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-#line 16286
-            .ability = ABILITY_DISGUISE,
-#line 16283
-            .lvl = 1,
-#line 16287
-            .nature = NATURE_JOLLY,
-            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
-            .moves = {
-#line 16288
-                MOVE_RESURRECTION,
-            },
-            },
-        },
-    },
 #line 16291
-    [DIFFICULTY_NORMAL][TRAINER_EMILY] =
-    {
-#line 16292
-        .trainerName = _("EMILY"),
-#line 16293
-        .trainerClass = TRAINER_CLASS_LITTLE_GIRL,
-#line 16294
-        .trainerPic = TRAINER_PIC_SCHOOL_KID_F,
-        .encounterMusic_gender =
-#line 16295
-F_TRAINER_FEMALE | 
-#line 16296
-            TRAINER_ENCOUNTER_MUSIC_MAGMA,
-#line 16297
-        .items = { ITEM_FULL_HEAL, ITEM_FULL_HEAL, ITEM_FULL_HEAL },
-#line 16298
-        .battleType = TRAINER_BATTLE_TYPE_SINGLES,
-#line 16299
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_FORCE_SETUP_FIRST_TURN | AI_FLAG_TRY_TO_2HKO | AI_FLAG_HP_AWARE | AI_FLAG_PREFER_STATUS_MOVES | AI_FLAG_STALL | AI_FLAG_SMART_SWITCHING | AI_FLAG_ACE_POKEMON | AI_FLAG_OMNISCIENT,
-#line 0
-        .trainerBackPic = TRAINER_PIC_SCHOOL_KID_F,
-        .partySize = 2,
-        .party = (const struct TrainerMon[])
-        {
-            {
-#line 16301
-            .nickname = COMPOUND_STRING("Mom"),
-#line 16301
-            .species = SPECIES_CHANSEY,
-#line 16301
-            .gender = TRAINER_MON_FEMALE,
-#line 16301
-            .heldItem = ITEM_EVIOLITE,
-#line 16304
-            .ev = TRAINER_PARTY_EVS(4, 0, 252, 0, 0, 252),
-#line 16303
-            .iv = TRAINER_PARTY_IVS(31, 0, 31, 0, 31, 31),
-#line 16305
-            .ability = ABILITY_REGENERATOR,
-#line 16302
-            .lvl = 1,
-#line 16306
-            .nature = NATURE_RELAXED,
-            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
-            .moves = {
-#line 16307
-                MOVE_WISH,
-                MOVE_HEAL_BELL,
-                MOVE_SHED_TAIL,
-                MOVE_SEISMIC_TOSS,
-            },
-            },
-            {
-#line 16312
             .nickname = COMPOUND_STRING("Lyly"),
-#line 16312
+#line 16291
             .species = SPECIES_MIMIKYU,
-#line 16312
+#line 16291
             .gender = TRAINER_MON_FEMALE,
-#line 16312
-            .heldItem = ITEM_GHOSTIUM_Z,
-#line 16315
+#line 16291
+            .heldItem = ITEM_FIRIUM_Z,
+#line 16294
             .ev = TRAINER_PARTY_EVS(0, 252, 4, 252, 0, 0),
-#line 16314
+#line 16293
             .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
-#line 16316
+#line 16295
             .ability = ABILITY_DISGUISE,
-#line 16313
-            .lvl = 1,
-#line 16317
+#line 16292
+            .lvl = 100,
+#line 16296
             .nature = NATURE_JOLLY,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
-#line 1
-            .eager = TRUE,
             .moves = {
-#line 16319
-                MOVE_RESURRECTION,
-                MOVE_PLAY_ROUGH,
+#line 16297
+                MOVE_PHOENIX_CALL,
+                MOVE_MAGICAL_TORQUE,
+                MOVE_SPECTRAL_THIEF,
+                MOVE_BATON_PASS,
             },
             },
         },

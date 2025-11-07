@@ -16221,73 +16221,6 @@ Nature: Adamant
 - Extreme Speed
 - V-create
 
-=== TRAINER_HANNAH ===
-Name: EMILY
-Class: Little Girl
-Pic: School Kid F
-Gender: Female
-Music: Magma
-Items: Full Heal / Full Heal / Full Heal
-Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Smart Switching / Ace Pokemon / Omniscient
-
-Mom (Chansey) (F) @ Eviolite
-Level: 1
-IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
-EVs: 4 HP / 0 Atk / 252 Def / 0 SpA / 252 SpD / 0 Spe
-Ability: Regenerator
-Nature: Relaxed
-- Wish
-- Heal Bell
-- Shed Tail
-- Seismic Toss
-
-Hugs (Gengar) (M) @ Focus Sash
-Level: 1
-IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 0 HP / 0 Atk / 0 Def / 252 SpA / 4 SpD / 252 Spe
-Ability: No Guard
-Nature: Timid
-- Moongeist Beam
-- Focus Blast
-- Zap Cannon
-
-3 (Lanturn) (F) @ Leftovers
-Level: 1
-IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 0 HP / 0 Atk / 0 Def / 252 SpA / 4 SpD / 252 Spe
-Ability: Simple
-Nature: Timid
-- Splash
-
-4 (Jumpluff) (F) @ Leftovers
-Level: 1
-IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 0 HP / 0 Atk / 0 Def / 252 SpA / 4 SpD / 252 Spe
-Ability: Simple
-Nature: Timid
-- Splash
-
-Stergle (Houndoom) (F) @ Houndoominite
-Level: 1
-IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 0 HP / 0 Atk / 0 Def / 252 SpA / 4 SpD / 252 Spe
-Ability: Drought
-Nature: Timid
-- Nasty Plot
-- Hellfire
-- Baddy Bad
-- Solar Beam
-
-Lyly (Mimikyu) (F) @ Leftovers
-Level: 1
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 0 HP / 252 Atk / 4 Def / 0 SpA / 0 SpD / 252 Spe
-Ability: Disguise
-Nature: Jolly
-- Resurrection
-
-
 === TRAINER_EMILY ===
 Name: EMILY
 Class: Little Girl
@@ -16299,7 +16232,7 @@ Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Smart Switching / Ace Pokemon / Omniscient
 
 Mom (Chansey) (F) @ Eviolite
-Level: 1
+Level: 100
 IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
 EVs: 4 HP / 0 Atk / 252 Def / 0 SpA / 252 SpD / 0 Spe
 Ability: Regenerator
@@ -16309,13 +16242,60 @@ Nature: Relaxed
 - Shed Tail
 - Seismic Toss
 
-Lyly (Mimikyu) (F) @ Ghostium Z
-Level: 1
+Hugs (Gengar) (M) @ Focus Sash
+Level: 100
+IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 0 HP / 0 Atk / 0 Def / 252 SpA / 4 SpD / 252 Spe
+Ability: No Guard
+Nature: Timid
+Dynamax Level: 10
+Gigantamax: Yes
+- Moongeist Beam
+- Focus Blast
+- Zap Cannon
+
+Fishy (Lanturn) (F) @ Leftovers
+Level: 100
+IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 40 HP / 0 Atk / 220 Def / 0 SpA / 248 SpD / 0 Spe
+Ability: Simple
+Nature: Calm
+Tera Type: Fighting
+- Tail Glow
+- Steam Eruption
+- Electro Drift
+- Secret Sword
+
+Cottonball (Jumpluff) (F) @ Leftovers
+Level: 100
+IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 0 Atk / 252 Def / 0 SpA / 4 SpD / 0 Spe
+Ability: Prankster
+Nature: Bold
+- Encore
+- Torment
+- Disable
+- Seismic Toss
+
+Stergle (Houndoom) (F) @ Houndoominite
+Level: 100
+IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 0 HP / 0 Atk / 0 Def / 252 SpA / 4 SpD / 252 Spe
+Ability: Drought
+Nature: Timid
+- Nasty Plot
+- Hellfire
+- Baddy Bad
+- Solar Beam
+
+Lyly (Mimikyu) (F) @ Firium Z
+Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 0 HP / 252 Atk / 4 Def / 0 SpA / 0 SpD / 252 Spe
 Ability: Disguise
 Nature: Jolly
-Eager: Yes
-- Resurrection
-- Play Rough
+- Phoenix Call
+- Magical Torque
+- Spectral Thief
+- Baton Pass
 
