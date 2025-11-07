@@ -13,6 +13,7 @@ SSAnne_Exterior_OnFrame::
 
 SSAnne_Exterior_CoordEvent_PierWarpCheck::
 	goto_if_eq VAR_MAP_SCENE_VERMILION_CITY, 3, SSAnne_Exterior_CoordEvent_PierWarpBlock
+	release
 	end
 
 SSAnne_Exterior_CoordEvent_PierWarpBlock::

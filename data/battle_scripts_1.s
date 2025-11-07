@@ -9124,6 +9124,15 @@ BattleScript_EffectSnow::
 	setfieldweather BATTLE_WEATHER_SNOW
 	goto BattleScript_MoveWeatherChange
 
+BattleScript_EffectResurrection::
+	attackcanceler
+	call BattleScript_Attackstring
+	attackanimation
+	waitanimation
+	printstring STRINGID_POSTRESURRECTION
+	waitmessage B_WAIT_TIME_LONG
+	end
+
 BattleScript_SleepClauseBlocked::
 	pause B_WAIT_TIME_SHORT
 	setmoveresultflags MOVE_RESULT_FAILED

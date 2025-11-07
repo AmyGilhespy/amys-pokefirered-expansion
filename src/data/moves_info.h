@@ -21641,7 +21641,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "Hits the foe with\npowerful "
             "\nelectricity."),
         .effect = EFFECT_HIT,
-        .power = 250,
+        .power = 180,
         .type = TYPE_ELECTRIC,
         .accuracy = 50,
         .pp = 5,
@@ -21674,6 +21674,36 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .contestComboStarterId = 0,
         .contestComboMoves = {0},
         .battleAnimScript = gBattleAnimMove_Lick,
+    },
+
+    [MOVE_RESURRECTION] =
+    {
+        .name = COMPOUND_STRING("Resurrection"),
+        .description = COMPOUND_STRING(
+            "Resurrects the\ndead."),
+        .effect = EFFECT_RESURRECTION,
+        .power = 0,
+        .type = TYPE_GHOST,
+        .accuracy = 0,
+        .pp = 1, // Same as SKETCH
+        .target = MOVE_TARGET_USER,
+        .priority = -1,
+        .category = DAMAGE_CATEGORY_STATUS,
+        .zMove = { .effect = Z_EFFECT_ALL_STATS_UP_1 },
+        .ignoresProtect = TRUE,
+        .ignoresSubstitute = TRUE,
+        .metronomeBanned = TRUE,
+        .sleepTalkBanned = TRUE,
+        .instructBanned = TRUE,
+        .encoreBanned = TRUE,
+        .assistBanned = TRUE,
+        .sketchBanned = TRUE,
+        .contestEffect = CONTEST_EFFECT_HIGHLY_APPEALING,
+        .contestCategory = CONTEST_CATEGORY_BEAUTY,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_HealingWish,
+        .validApprenticeMove = TRUE,
     },
 
     // Z-Moves

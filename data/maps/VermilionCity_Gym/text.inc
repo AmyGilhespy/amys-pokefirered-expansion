@@ -34,6 +34,13 @@ VermilionCity_Gym_Text_ExplainTR99::
 VermilionCity_Gym_Text_MakeRoomInYourBag::
     .string "Yo, kid, make room in your BAG!$"
 
+VermilionCity_Gym_Text_ShopIntro::
+    .string "I have something for sale that I\n"
+    .string "think you might want.$"
+
+VermilionCity_Gym_Text_ShopOutro::
+    .string "Come back to say ''Hi'' sometime!$"
+
 VermilionCity_Gym_Text_LtSurgeDefeat::
     .string "Now that's a shocker!\p"
     .string "You're the real deal, kid!\p"

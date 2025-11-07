@@ -555,8 +555,9 @@ EventScript_ChooseMoveTutorMon::
 EventScript_CanOnlyBeLearnedOnce::
 	textcolor NPC_TEXT_COLOR_NEUTRAL
 	special DisableMsgBoxWalkaway
-	signmsg
-	msgbox Text_MoveCanOnlyBeLearnedOnce, MSGBOX_YESNO
+	setvar VAR_RESULT, YES
+	@signmsg
+	@msgbox Text_MoveCanOnlyBeLearnedOnce, MSGBOX_YESNO
 	normalmsg
 	call EventScript_RestorePrevTextColor
 	return

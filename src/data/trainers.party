@@ -8238,6 +8238,7 @@ IVs: 21 HP / 1 Atk / 21 Def / 21 SpA / 21 SpD / 22 Spe
 EVs: 0 HP / 0 Atk / 0 Def / 100 SpA / 0 SpD / 100 Spe
 Ability: Static
 Nature: Modest
+Tera Type: Electric
 - Nasty Plot
 - Thunderbolt
 - Surf
@@ -8299,6 +8300,7 @@ IVs: 24 HP / 0 Atk / 25 Def / 24 SpA / 25 SpD / 24 Spe
 EVs: 120 HP / 0 Atk / 0 Def / 120 SpA / 0 SpD / 0 Spe
 Ability: Harvest
 Nature: Modest
+Tera Type: Grass
 - Sunny Day
 - Solar Beam
 - Psyshock
@@ -8360,6 +8362,7 @@ IVs: 27 HP / 0 Atk / 27 Def / 27 SpA / 27 SpD / 27 Spe
 EVs: 0 HP / 0 Atk / 0 Def / 160 SpA / 0 SpD / 160 Spe
 Ability: Beast Boost
 Nature: Calm
+Tera Type: Poison
 - Stealth Rock
 - Sludge Wave
 - Power Gem
@@ -8399,6 +8402,7 @@ IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
 EVs: 0 HP / 200 Atk / 0 Def / 0 SpA / 0 SpD / 200 Spe
 Ability: Pure Power
 Nature: Jolly
+Tera Type: Psychic
 - Close Combat
 - Zen Headbutt
 - Ice Punch
@@ -8575,6 +8579,7 @@ EVs: 52 HP / 252 Atk / 0 Def / 0 SpA / 0 SpD / 204 Spe
 Ability: Solid Rock
 Nature: Adamant
 Ball: Master Ball
+Tera Type: Ground
 - Earthquake
 - Stone Edge
 - Megahorn
@@ -8723,13 +8728,13 @@ Nature: Adamant
 - Close Combat
 - Knock Off
 
-Shedinja @ Air Balloon
+Shedinja @ Bright Powder
 Level: 52
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 31 Spe
 EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 252 Spe
 Ability: Wonder Guard
 Nature: Quiet
-Tera Type: Electric
+Tera Type: Stellar
 - Endeavor
 - Dragon Rage
 
@@ -9165,13 +9170,13 @@ Nature: Adamant
 - Close Combat
 - Knock Off
 
-Shedinja @ Air Balloon
+Shedinja @ Bright Powder
 Level: 52
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 31 Spe
 EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 252 Spe
 Ability: Wonder Guard
 Nature: Quiet
-Tera Type: Electric
+Tera Type: Stellar
 - Endeavor
 - Dragon Rage
 
@@ -15987,4 +15992,330 @@ EVs: 0 HP / 252 Atk / 0 Def / 0 SpA / 4 SpD / 252 Spe
 Ability: Fluffy
 Nature: Jolly
 - Infiniblast
+
+=== TRAINER_BAILEY ===
+Name: BAILEY
+Class: Little Girl
+Pic: School Kid F
+Gender: Female
+Music: Magma
+Items: Potion / Potion / Potion
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Smart Switching / Ace Pokemon / Omniscient
+
+Pikablu (Marill) (F) @ Eviolite
+Level: 40
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 52 HP / 252 Atk / 0 Def / 0 SpA / 0 SpD / 204 Spe
+Ability: Huge Power
+Nature: Adamant
+- Play Nice
+- Play Rough
+- Waterfall
+- Aqua Jet
+
+Shy Pika (Mimikyu) (F) @ Life Orb
+Level: 40
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 0 HP / 252 Atk / 4 Def / 0 SpA / 0 SpD / 252 Spe
+Ability: Disguise
+Nature: Adamant
+- Swords Dance
+- Play Rough
+- Shadow Claw
+- Shadow Sneak
+
+Wish4Pika (Togedemaru) (F) @ Heavy-Duty Boots
+Level: 40
+IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 0 Atk / 0 Def / 0 SpA / 248 SpD / 8 Spe
+Ability: Regenerator
+Nature: Careful
+- Wish
+- Spiky Shield
+- U-turn
+
+Pika Minus (Minun) (F) @ Life Orb
+Level: 40
+IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 0 HP / 0 Atk / 0 Def / 252 SpA / 4 SpD / 252 Spe
+Ability: Volt Absorb
+Nature: Timid
+- Nasty Plot
+- Thunderbolt
+- Volt Switch
+- Substitute S
+
+
+Fairychu (Dedenne) (F) @ Petaya Berry
+Level: 40
+IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 0 Atk / 0 Def / 252 SpA / 0 SpD / 252 Spe
+Ability: Cheek Pouch
+Nature: Timid
+- Substitute XL
+- Recycle
+- Thunderbolt
+
+Hot Pika (Victini) (F) @ Normalium Z
+Level: 40
+IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 0 HP / 0 Atk / 0 Def / 252 SpA / 4 SpD / 252 Spe
+Ability: Victory Star
+Nature: Timid
+Eager: Yes
+- Celebrate
+- Blue Flare
+- Stored Power
+- Focus Blast
+
+=== TRAINER_CHLOE ===
+Name: CHLOE
+Class: Little Girl
+Pic: School Kid F
+Gender: Female
+Music: Aqua
+Items: Potion / Potion / Potion
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Smart Switching / Omniscient
+
+MistyFan (Staryu) (F) @ Damp Rock
+Level: 45
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 0 Atk / 252 Def / 0 SpA / 0 SpD / 252 Spe
+Ability: Drizzle
+Nature: Jolly
+- Light Screen
+- Reflect
+- Flip Turn
+
+HappyMisty (Ludicolo) (F) @ Life Orb
+Level: 45
+IVs: 29 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 0 HP / 0 Atk / 0 Def / 252 SpA / 4 SpD / 252 Spe
+Ability: Swift Swim
+Nature: Modest
+- Hydro Pump
+- Energy Ball
+- Giga Drain
+- Ice Beam
+
+MegaMisty (Swampert) (F) @ Swampertite
+Level: 45
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 244 Atk / 0 Def / 0 SpA / 8 SpD / 252 Spe
+Ability: Intimidate
+Nature: Jolly
+- Waterfall
+- Earthquake
+- Ice Punch
+- U-turn
+
+ShesMyLamp (Lanturn) (F) @ Heavy-Duty Boots
+Level: 45
+IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 0 Atk / 4 Def / 0 SpA / 252 SpD / 0 Spe
+Ability: Drizzle
+Nature: Sassy
+- Volt Switch
+- Flip Turn
+- Rest
+- Sleep Talk
+
+NinjaMisty (Greninja) (F) @ Choice Specs
+Level: 45
+IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 0 HP / 0 Atk / 0 Def / 252 SpA / 4 SpD / 252 Spe
+Ability: Protean
+Nature: Timid
+- Surf
+- Dark Pulse
+- Ice Beam
+- Water Shuriken
+
+ILoveMisty (Starmie) (F) @ Life Orb
+Level: 45
+IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 0 HP / 0 Atk / 0 Def / 252 SpA / 4 SpD / 252 Spe
+Ability: Victory Star
+Nature: Jolly
+Tera Type: Ice
+- Hydro Pump
+- Ice Beam
+- Psyshock
+- Thunder
+
+=== TRAINER_DANIELLE ===
+Name: DANIELLE
+Class: Little Girl
+Pic: School Kid F
+Gender: Female
+Music: Magma
+Items: Potion / Potion / Potion
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Smart Switching / Ace Pokemon / Omniscient
+
+Cuddles (Eevee) (F) @ Eevium Z
+Level: 50
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 0 Atk / 128 Def / 0 SpA / 128 SpD / 0 Spe
+Ability: Simple
+Nature: Careful
+Eager: Yes
+- Last Resort
+- Nuzzle
+- Headbutt
+- Baton Pass
+
+Luna (Umbreon) (F) @ Leftovers
+Level: 50
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 0 Atk / 4 Def / 0 SpA / 252 SpD / 0 Spe
+Ability: No Guard
+Nature: Careful
+- Mega Lick
+- Zap Cannon
+- Stun Spore
+- Supersonic
+
+SkitterBug (Shedinja) (M) @ Bright Powder
+Level: 50
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 0 HP / 252 Atk / 0 Def / 4 SpA / 0 SpD / 252 Spe
+Ability: Wonder Guard
+Nature: Jolly
+Tera Type: Stellar
+- Endeavor
+- Dragon Rage
+
+Monkey-kun (Slaking) (M) @ Assault Vest
+Level: 50
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 0 HP / 252 Atk / 4 Def / 0 SpA / 0 SpD / 252 Spe
+Ability: Huge Power
+Nature: Naive
+- Return
+- Earthquake
+- Sucker Punch
+- Pursuit
+
+B. A. Deer (Xerneas) (F) @ Babiri Berry
+Level: 50
+IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 0 HP / 0 Atk / 4 Def / 252 SpA / 0 SpD / 252 Spe
+Ability: Simple
+Nature: Timid
+- Spore
+- Lovely Kiss
+- Quiver Dance
+- Moonblast
+
+Fair (Rayquaza) (F) @ Life Orb
+Level: 50
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 0 HP / 252 Atk / 4 Def / 0 SpA / 0 SpD / 252 Spe
+Ability: Intimidate
+Nature: Adamant
+- Dragon Ascent
+- Dragon Dance
+- Extreme Speed
+- V-create
+
+=== TRAINER_HANNAH ===
+Name: EMILY
+Class: Little Girl
+Pic: School Kid F
+Gender: Female
+Music: Magma
+Items: Full Heal / Full Heal / Full Heal
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Smart Switching / Ace Pokemon / Omniscient
+
+Mom (Chansey) (F) @ Eviolite
+Level: 1
+IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
+EVs: 4 HP / 0 Atk / 252 Def / 0 SpA / 252 SpD / 0 Spe
+Ability: Regenerator
+Nature: Relaxed
+- Wish
+- Heal Bell
+- Shed Tail
+- Seismic Toss
+
+Hugs (Gengar) (M) @ Focus Sash
+Level: 1
+IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 0 HP / 0 Atk / 0 Def / 252 SpA / 4 SpD / 252 Spe
+Ability: No Guard
+Nature: Timid
+- Moongeist Beam
+- Focus Blast
+- Zap Cannon
+
+3 (Lanturn) (F) @ Leftovers
+Level: 1
+IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 0 HP / 0 Atk / 0 Def / 252 SpA / 4 SpD / 252 Spe
+Ability: Simple
+Nature: Timid
+- Splash
+
+4 (Jumpluff) (F) @ Leftovers
+Level: 1
+IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 0 HP / 0 Atk / 0 Def / 252 SpA / 4 SpD / 252 Spe
+Ability: Simple
+Nature: Timid
+- Splash
+
+Stergle (Houndoom) (F) @ Houndoominite
+Level: 1
+IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 0 HP / 0 Atk / 0 Def / 252 SpA / 4 SpD / 252 Spe
+Ability: Drought
+Nature: Timid
+- Nasty Plot
+- Hellfire
+- Baddy Bad
+- Solar Beam
+
+Lyly (Mimikyu) (F) @ Leftovers
+Level: 1
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 0 HP / 252 Atk / 4 Def / 0 SpA / 0 SpD / 252 Spe
+Ability: Disguise
+Nature: Jolly
+- Resurrection
+
+
+=== TRAINER_EMILY ===
+Name: EMILY
+Class: Little Girl
+Pic: School Kid F
+Gender: Female
+Music: Magma
+Items: Full Heal / Full Heal / Full Heal
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Smart Switching / Ace Pokemon / Omniscient
+
+Mom (Chansey) (F) @ Eviolite
+Level: 1
+IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
+EVs: 4 HP / 0 Atk / 252 Def / 0 SpA / 252 SpD / 0 Spe
+Ability: Regenerator
+Nature: Relaxed
+- Wish
+- Heal Bell
+- Shed Tail
+- Seismic Toss
+
+Lyly (Mimikyu) (F) @ Ghostium Z
+Level: 1
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 0 HP / 252 Atk / 4 Def / 0 SpA / 0 SpD / 252 Spe
+Ability: Disguise
+Nature: Jolly
+Eager: Yes
+- Resurrection
+- Play Rough
 

@@ -57,6 +57,7 @@ const u8 gText_StatSharply[] = _("sharply ");
 const u8 gText_StatRose[] = _("rose!");
 const u8 gText_StatFell[] = _("fell!");
 const u8 gText_DefendersStatRose[] = _("{B_DEF_NAME_WITH_PREFIX}'s {B_BUFF1} {B_BUFF2}rose!");
+
 static const u8 sText_GotAwaySafely[] = _("{PLAY_SE SE_FLEE}You got away safely!\p");
 static const u8 sText_PlayerDefeatedLinkTrainer[] = _("You defeated {B_LINK_OPPONENT1_NAME}!");
 static const u8 sText_TwoLinkTrainersDefeated[] = _("You defeated {B_LINK_OPPONENT1_NAME} and {B_LINK_OPPONENT2_NAME}!");
@@ -1001,6 +1002,7 @@ const u8 *const gBattleStringsTable[STRINGID_COUNT] =
     [STRINGID_TRAINER1MON1COMEBACK]          = COMPOUND_STRING("{B_TRAINER1_NAME}: {B_OPPONENT_MON1_NAME}, come back!"),
     [STRINGID_TRAINER1MON2COMEBACK]          = COMPOUND_STRING("{B_TRAINER1_NAME}: {B_OPPONENT_MON2_NAME}, come back!"),
     [STRINGID_TRAINER1MON1AND2COMEBACK]      = COMPOUND_STRING("{B_TRAINER1_NAME}: {B_OPPONENT_MON1_NAME} and\n{B_OPPONENT_MON2_NAME}, come back!"),
+    [STRINGID_POSTRESURRECTION]              = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX}'s allies came back to life!"),
 };
 
 const u16 gTrainerUsedItemStringIds[] =

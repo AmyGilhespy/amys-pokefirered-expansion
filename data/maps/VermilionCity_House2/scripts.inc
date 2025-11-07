@@ -30,6 +30,11 @@ VermilionCity_House2_EventScript_NotRequestedMon::
 	end
 
 VermilionCity_House2_EventScript_AlreadyTraded::
-	msgbox VermilionCity_House2_Text_HowIsMyOldMon
-	release
+	trainerbattle_single TRAINER_DANIELLE, VermilionCity_House2_Text_DanielleIntro, VermilionCity_House2_Text_DanielleDefeat, VermilionCity_House2_EventScript_DefeatedDanielle, NO_MUSIC
+	msgbox VermilionCity_House2_Text_HowIsMyOldMon, MSGBOX_NPC
 	end
+
+VermilionCity_House2_EventScript_DefeatedDanielle::
+	msgbox VermilionCity_House2_Text_DaniellePostBattle, MSGBOX_NPC
+	end
+

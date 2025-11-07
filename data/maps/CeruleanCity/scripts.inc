@@ -55,7 +55,7 @@ CeruleanCity_EventScript_Rival::
 	msgbox CeruleanCity_Text_OhRightLittlePresentAsFavor
 	setvar VAR_MAP_SCENE_CERULEAN_CITY_RIVAL, 1
 	setflag FLAG_GOT_FAME_CHECKER
-	giveitem ITEM_FAME_CHECKER
+	giveitem ITEM_LAGGING_TAIL
 	msgbox CeruleanCity_Text_ExplainFameCheckerSmellYa
 	closemessage
 	applymovement LOCALID_CERULEAN_RIVAL, CeruleanCity_Movement_RivalExit
@@ -365,3 +365,11 @@ CeruleanCity_EventScript_GymSign::
 	msgbox CeruleanCity_Text_GymSign
 	releaseall
 	end
+
+CeruleanCity_EventScript_Chloe::
+	trainerbattle_single TRAINER_CHLOE, CeruleanCity_Text_ChloeIntro, CeruleanCity_Text_ChloeDefeat, CeruleanCity_EventScript_DefeatedChloe, NO_MUSIC
+CeruleanCity_EventScript_DefeatedChloe::
+	msgbox CeruleanCity_Text_ChloePostBattle, MSGBOX_NPC
+	end
+
+

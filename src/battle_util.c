@@ -2333,6 +2333,11 @@ static enum MoveCanceller CancellerZMoves(struct BattleContext *ctx)
     return MOVE_STEP_SUCCESS;
 }
 
+enum MoveCanceller DoCancellerZMoves(struct BattleContext *ctx)
+{
+    return CancellerZMoves(ctx);
+}
+
 static enum MoveCanceller CancellerChoiceLock(struct BattleContext *ctx)
 {
     u16 *choicedMoveAtk = &gBattleStruct->choicedMove[ctx->battlerAtk];
@@ -7787,6 +7792,7 @@ u8 GetAttackerObedienceForAction()
 {
     s32 rnd;
     s32 calc;
+    u8 badgeLevel = 0;
     u8 obedienceLevel = 0;
     u8 levelReferenced;
 
@@ -7808,6 +7814,24 @@ u8 GetAttackerObedienceForAction()
     if (FlagGet(FLAG_BADGE08_GET)) // Rain Badge, ignore obedience altogether
         return OBEYS;
 
+    badgeLevel += FlagGet(FLAG_BADGE01_GET) ? 10 : 0;
+    badgeLevel += FlagGet(FLAG_BADGE02_GET) ? 10 : 0;
+    badgeLevel += FlagGet(FLAG_BADGE03_GET) ? 10 : 0;
+    badgeLevel += FlagGet(FLAG_BADGE04_GET) ? 10 : 0;
+    badgeLevel += FlagGet(FLAG_BADGE05_GET) ? 10 : 0;
+    badgeLevel += FlagGet(FLAG_BADGE06_GET) ? 10 : 0;
+    badgeLevel += FlagGet(FLAG_BADGE07_GET) ? 10 : 0;
+    badgeLevel += FlagGet(FLAG_BADGE08_GET) ? 10 : 0;
+    if (badgeLevel >= 10)
+    {
+        badgeLevel += 10;
+    }
+    if (badgeLevel >= 90)
+    {
+        return OBEYS;
+    }
+
+    /*
     obedienceLevel = 10;
 
     if (FlagGet(FLAG_BADGE02_GET))
@@ -7816,6 +7840,8 @@ u8 GetAttackerObedienceForAction()
         obedienceLevel = 50;
     if (FlagGet(FLAG_BADGE06_GET))
         obedienceLevel = 70;
+    */
+    obedienceLevel = badgeLevel;
 
     if (B_OBEDIENCE_MECHANICS >= GEN_8
      && !IsOtherTrainer(gBattleMons[gBattlerAttacker].otId, gBattleMons[gBattlerAttacker].otName))
@@ -12450,3 +12476,35 @@ bool32 IsAllowedToUseBag(void)
         return TRUE; // Undefined Behavior
     }
 }
+
+void TryResurrectParty(u32 battler)
+{
+    u32 i;
+    struct Pokemon *party = GetBattlerParty(battler);
+
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        if (GetMonData(&party[i], MON_DATA_HP) == 0)
+        {
+            u16 maxHp = GetMonData(&party[i], MON_DATA_MAX_HP);
+            u16 halfHp = maxHp / 2;
+            SetMonData(&party[i], MON_DATA_HP, &halfHp);
+            // Clear faint flag, status, etc.
+            u32 zero = 0;
+            SetMonData(&party[i], MON_DATA_STATUS, &zero);
+        }
+    }
+
+    /*
+    // Heal the battler itself too, if fainted mid-turn.
+    if (!IsBattlerAlive(battler))
+    {
+        u16 maxHp = gBattleMons[battler].maxHP;
+        u16 halfHp = maxHp / 2;
+        gBattleMons[battler].hp = halfHp;
+        gBattleMons[battler].status1 = 0;
+        gAbsentBattlerFlags &= ~(1 << battler); // ensure the battler is considered "present"
+    }
+    */
+}
+

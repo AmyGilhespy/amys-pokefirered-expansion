@@ -38,10 +38,9 @@ CeruleanCity_Text_OhRightLittlePresentAsFavor::
     .string "present as a favor.$"
 
 CeruleanCity_Text_ExplainFameCheckerSmellYa::
-    .string "A chatty gossip like you…\n"
+    .string "You know, since you're always…\n"
+    .string "lagging behind me? Get it?\p"
     .string "That thing's perfect.\p"
-    .string "I don't need it because I don't\n"
-    .string "give a hoot about others.\p"
     .string "All right, this time I really am\n"
     .string "gone. Smell ya!$"
 
@@ -108,11 +107,13 @@ CeruleanCity_Text_PokemonEncyclopediaAmusing::
     .string "POKéMON? That sounds amusing.$"
 
 CeruleanCity_Text_PeopleHereWereRobbed::
-    .string "The people here were robbed.\p"
-    .string "It's obvious that TEAM ROCKET is\n"
-    .string "behind this most heinous crime!\p"
-    .string "Even our POLICE FORCE has\n"
-    .string "trouble with the ROCKETS!$"
+    .string "The people here say they were\n"
+    .string "robbed. But it's obvious that\l"
+    .string "they just made it up!\p"
+    .string "Our POLICE FORCE searched their\n"
+    .string "home, and couldn't find anything\p"
+    .string "of value. So they're obviously\n"
+    .string "just poor and making things up.$"
 
 CeruleanCity_Text_SlowbroUseSonicboom::
     .string "Okay! SLOWBRO!\n"
@@ -186,4 +187,24 @@ CeruleanCity_Text_GymSign::
     .string "CERULEAN CITY POKéMON GYM\n"
     .string "LEADER: MISTY\l"
     .string "The Tomboyish Mermaid!$"
+
+CeruleanCity_Text_ChloeIntro::
+    .string "Sometimes I come out here in our\n"
+    .string "backyard and think about MISTY,\l"
+    .string "the CERULEAN CITY GYM LEADER.\p"
+    .string "She's so pretty and strong and\n"
+    .string "amazing and so so pretty!\p"
+    .string "MISTY will occasionally practice\n"
+    .string "with her pokemon in this little\p"
+    .string "body of water behind our house and\n"
+    .string "I'll come out here and watch her.\p"
+    .string "One day when I grow up I want to\n"
+    .string "be just like her! That's my dream.\p"
+    .string "Anyway, do you want to battle?$"
+
+CeruleanCity_Text_ChloeDefeat::
+    .string "Oh, wow!$"
+
+CeruleanCity_Text_ChloePostBattle::
+    .string "You're strong too, just like MISTY!$"
 

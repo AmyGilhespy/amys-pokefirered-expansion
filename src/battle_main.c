@@ -2940,6 +2940,10 @@ static void BattleStartClearSetData(void)
     gBattleStruct->arenaLostPlayerMons = 0;
     gBattleStruct->arenaLostOpponentMons = 0;
 
+    // === Amy custom per-side init ===
+    memset(gBattleStruct->usedResurrection, 0, sizeof(gBattleStruct->usedResurrection));
+    // === End of Amy custom per-side init ===
+
     for (i = 0; i < ARRAY_COUNT(gSideTimers); i++)
     {
         gSideTimers[i].stickyWebBattlerId = 0xFF;

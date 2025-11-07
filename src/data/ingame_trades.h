@@ -54,8 +54,8 @@ static const struct InGameTrade sInGameTrades[] = {
         .personality = NATURE_JOLLY,
         .heldItem = ITEM_LIFE_ORB,
         .mailNum = 255,
-        .otName = _("ELYSSA"),
-        .otGender = MALE,
+        .otName = _("DANIELLE"),
+        .otGender = FEMALE,
         .sheen = 10,
         .customAbility = ABILITY_VOLT_ABSORB
     },

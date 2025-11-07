@@ -103,7 +103,7 @@
     F(SPORE) \
     F(DARK_VOID) \
     F(SKETCH) \
-    F(AMY_UNUSED_100) \
+    F(RESURRECTION) \
 
 #define FOREACH_HM(F) \
     F(CUT) \

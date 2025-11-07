@@ -434,5 +434,7 @@ u32 GetNaturePowerMove(u32 battler);
 void RemoveAbilityFlags(u32 battler);
 bool32 IsDazzlingAbility(enum Ability ability);
 bool32 IsAllowedToUseBag(void);
+void TryResurrectParty(u32 battler);
+enum MoveCanceller DoCancellerZMoves(struct BattleContext *ctx);
 
 #endif // GUARD_BATTLE_UTIL_H

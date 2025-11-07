@@ -376,6 +376,7 @@ extern const u8 gText_PkmnAlreadyInBattle[];
 extern const u8 gText_EggCantBattle[];
 extern const u8 gText_PkmnAlreadySelected[];
 extern const u8 gText_PkmnCantSwitchOut[];
+extern const u8 gText_TeraTypeChanged[];
 
 // credits
 extern const u8 gString_Dummy[];

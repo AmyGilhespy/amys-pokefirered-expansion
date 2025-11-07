@@ -5190,7 +5190,7 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
         if (gBattleMons[battlerDef].speed > gBattleMons[battlerAtk].speed)
             ADJUST_SCORE(DECENT_EFFECT);
         break;
-case EFFECT_GUARD_SPLIT:
+    case EFFECT_GUARD_SPLIT:
     {
         u32 atkDefense = gBattleMons[battlerAtk].defense;
         u32 defDefense = gBattleMons[battlerDef].defense;
@@ -5617,6 +5617,14 @@ case EFFECT_GUARD_SPLIT:
             }
             break;
         }
+        break;
+    case EFFECT_RESURRECTION:
+        if (DoesPartnerHaveSameMoveEffect(BATTLE_PARTNER(battlerAtk), battlerDef, move, aiData->partnerMove))
+            ADJUST_SCORE(-10);
+        else if (IsPartyAllDeadExceptBattler(battlerAtk))
+            ADJUST_SCORE(10000);
+        else
+            ADJUST_SCORE(-10);
         break;
     default:
         break;

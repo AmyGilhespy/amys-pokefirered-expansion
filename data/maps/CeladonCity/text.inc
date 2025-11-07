@@ -112,3 +112,48 @@ CeladonCity_Text_SomeoneStoleSilphScope::
     .string "But I lost sight of him!\n"
     .string "Where'd he go?$"
 
+CeladonCity_Text_EmilyIntro::
+    .string "Hi! I'm EMILY!\p"
+    .string "Recently in a dream, someone came\n"
+    .string "to visit me from the future.\p"
+    .string "She said her name was KAREN, and\n"
+    .string "she gave me some important advice:\p"
+    .string "''Strong POKéMON. Weak POKéMON.\n"
+    .string "That is only the selfish perception\l"
+    .string "of people.\p"
+    .string "Truly skilled trainers should try\n"
+    .string "to win with their favorites.''\p"
+    .string "That really moved me, and I then\n"
+    .string "and there decided to stop using the\p"
+    .string "so-called ''best'' POKéMON just for\n"
+    .string "their crazy BSTs or raw power.\p"
+    .string "You won't catch me sporting mega-ray\n"
+    .string "like DANI, for instance, no offense.\p"
+    .string "I really like using weird gimmicky\n"
+    .string "hackmons, and trying to make the\p"
+    .string "most of my less popular favorites,\n"
+    .string "such as Lanturn or Jumpluff.\p"
+    .string "Wanna see what I can do?\p"
+    .string "I won't be your toughest fight by\n"
+    .string "any stretch of the imagination,\l"
+    .string "but I promise you I'll have fun!\p"
+    .string "Let's go!$"
+
+CeladonCity_Text_EmilyRematchIntro::
+    .string "Let's go!$"
+
+CeladonCity_Text_EmilyDefeat::
+    .string "Great work!$"
+
+CeladonCity_Text_EmilyPostBattle::
+    .string "So, did you use your favorites to\n"
+    .string "beat me? If so, give yourself a\l"
+    .string "well-deserved pat on the back.\p"
+    .string "If not, that's ok, but I would\n"
+    .string "encourage you to reconsider what\p"
+    .string "motivates you to engage in POKéMON\n"
+    .string "battles.\p"
+    .string "In any case, please have yourself a\n"
+    .string "lovely day today! And talk to me\l"
+    .string "again if you ever desire a rematch!$"
+

@@ -14,7 +14,9 @@ PewterCity_Museum_2F_EventScript_Scientist::
 	end
 
 PewterCity_Museum_2F_EventScript_LittleGirl::
-	msgbox PewterCity_Museum_1F_Text_AskedDaddyToCatchPikachu, MSGBOX_NPC
+	trainerbattle_single TRAINER_BAILEY, PewterCity_Museum_2F_Text_BaileyIntro, PewterCity_Museum_2F_Text_BaileyDefeat, PewterCity_Museum_2F_EventScript_DefeatedBailey, NO_MUSIC
+PewterCity_Museum_2F_EventScript_DefeatedBailey::
+	msgbox PewterCity_Museum_2F_Text_BaileyPostBattle, MSGBOX_NPC
 	end
 
 PewterCity_Museum_2F_EventScript_BaldingMan::

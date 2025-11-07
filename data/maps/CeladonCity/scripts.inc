@@ -7,7 +7,17 @@ CeladonCity_OnTransition::
 	end
 
 CeladonCity_EventScript_LittleGirl::
-	msgbox CeladonCity_Text_GotMyKoffingInCinnabar, MSGBOX_NPC
+	checktrainerflag TRAINER_EMILY
+	goto_if_ne VAR_RESULT, FALSE, CeladonCity_EventScript_RematchEmily
+	trainerbattle_single TRAINER_EMILY, CeladonCity_Text_EmilyIntro, CeladonCity_Text_EmilyDefeat, CeladonCity_EventScript_DefeatedEmily, NO_MUSIC
+CeladonCity_EventScript_DefeatedEmily::
+	cleartrainerflag TRAINER_EMILY
+	msgbox CeladonCity_Text_EmilyPostBattle, MSGBOX_NPC
+	end
+CeladonCity_EventScript_RematchEmily::
+	cleartrainerflag TRAINER_EMILY
+	trainerbattle_single TRAINER_EMILY, CeladonCity_Text_EmilyRematchIntro, CeladonCity_Text_EmilyDefeat, CeladonCity_EventScript_DefeatedEmily, NO_MUSIC
+	goto CeladonCity_EventScript_DefeatedEmily
 	end
 
 CeladonCity_EventScript_OldMan1::
@@ -101,3 +111,4 @@ CeladonCity_EventScript_PrizeExchangeSign::
 CeladonCity_EventScript_GameCornerSign::
 	msgbox CeladonCity_Text_GameCornerSign, MSGBOX_SIGN
 	end
+

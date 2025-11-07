@@ -660,6 +660,12 @@ void ItemUseOutOfBattle_SacredAsh(u8 taskId)
     SetUpItemUseCallback(taskId);
 }
 
+void ItemUseOutOfBattle_TeraShard(u8 taskId)
+{
+    gItemUseCB = ItemUseCB_TeraShard;
+    DoSetUpItemUseCallback(taskId);
+}
+
 static void InitTMCaseFromBag(void)
 {
     InitTMCase(TMCASE_FIELD, CB2_BagMenuFromStartMenu, FALSE);

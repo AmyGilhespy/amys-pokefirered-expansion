@@ -781,6 +781,7 @@ struct BattleStruct
     // pokefirered
     u8 field_DA; // battle tower related
     u8 lastAttackerToFaintOpponent;
+    bool8 usedResurrection[NUM_BATTLE_SIDES];
 };
 
 struct AiBattleData

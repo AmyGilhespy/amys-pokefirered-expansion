@@ -64,7 +64,6 @@ CeladonCity_DepartmentStore_2F_Items::
 	.2byte ITEM_AWAKENING
 	.2byte ITEM_BURN_HEAL
 	.2byte ITEM_ICE_HEAL
-	.2byte ITEM_ABILITY_CAPSULE
 	.2byte ITEM_RARE_CANDY
 	.2byte ITEM_MAX_REPEL
 	.2byte ITEM_NONE

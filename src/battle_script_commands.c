@@ -1140,6 +1140,41 @@ static void Cmd_attackcanceler(void)
         return;
     }
 
+    // === Amy: Custom effects here! ===
+
+
+    // --- Resurrection move special handler ---
+    if (gCurrentMove == MOVE_RESURRECTION)
+    {
+        u32 side = GetBattlerSide(gBattlerAttacker);
+        if (gBattleStruct->usedResurrection[side])
+        {
+            gBattlescriptCurrInstr = BattleScript_ButItFailed;
+            return;
+        }
+        gBattleStruct->usedResurrection[side] = TRUE;
+        TryResurrectParty(gBattlerAttacker);
+        gBattleCommunication[MOVE_EFFECT_BYTE] = 0;
+        gHitMarker |= HITMARKER_IGNORE_SUBSTITUTE;
+        gBattlescriptCurrInstr = cmd->nextInstr;
+        if (GetActiveGimmick(gBattlerAttacker) == GIMMICK_Z_MOVE)
+        {
+            if (DoCancellerZMoves(&(struct BattleContext) {
+                    .battlerAtk = gBattlerAttacker,
+                    .battlerDef = gBattlerTarget,
+                    .currentMove = gCurrentMove
+                    }) == MOVE_STEP_BREAK)
+            {
+                gBattleStruct->gimmick.usableGimmick[gBattlerAttacker] = 0;
+                gBattleStruct->gimmick.activeGimmick[side][gBattlerPartyIndexes[gBattlerAttacker]] = GIMMICK_NONE;
+                return; // Canceller handled it, exit
+            }
+        }
+        return;
+    }
+
+    // === Amy: End of custom effects! ===
+
     // With how attackcanceller works right now we only need attacker and target abilities. Might change in the future
     ctx.ability[ctx.battlerAtk] = GetBattlerAbility(ctx.battlerAtk);
     ctx.ability[ctx.battlerDef] = GetBattlerAbility(ctx.battlerDef);

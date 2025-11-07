@@ -4447,6 +4447,23 @@ bool32 IsPartyFullyHealedExceptBattler(u32 battlerId)
     return TRUE;
 }
 
+bool32 IsPartyAllDeadExceptBattler(u32 battlerId)
+{
+    struct Pokemon *party;
+    u32 i;
+    party = GetBattlerParty(battlerId);
+
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        if (i != gBattlerPartyIndexes[battlerId]
+         && GetMonData(&party[i], MON_DATA_HP) > 0
+         && GetMonData(&party[i], MON_DATA_SPECIES_OR_EGG) != SPECIES_NONE
+         && GetMonData(&party[i], MON_DATA_SPECIES_OR_EGG) != SPECIES_EGG)
+            return FALSE;
+    }
+    return TRUE;
+}
+
 bool32 PartyHasMoveCategory(u32 battlerId, enum DamageCategory category)
 {
     struct Pokemon *party = GetBattlerParty(battlerId);

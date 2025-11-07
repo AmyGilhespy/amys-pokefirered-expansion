@@ -42,6 +42,19 @@ PewterCity_Museum_1F_Text_AskedDaddyToCatchPikachu::
     .string "It's so cute!\p"
     .string "I asked my daddy to catch me one!$"
 
+PewterCity_Museum_2F_Text_BaileyIntro::
+    .string "I want a PIKACHU!\n"
+    .string "It's so cute!\p"
+    .string "I asked my daddy to catch me one!\p"
+    .string "Want to see my POKéMON?\n"
+    .string "They're not as cute as PIKACHU…$"
+
+PewterCity_Museum_2F_Text_BaileyDefeat::
+    .string "Ouchie!$"
+
+PewterCity_Museum_2F_Text_BaileyPostBattle::
+    .string "You owe me a PIKACHU!$"
+
 PewterCity_Museum_1F_Text_PikachuSoonIPromise::
     .string "Yeah, a PIKACHU soon, I promise!$"
 

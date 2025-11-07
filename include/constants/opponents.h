@@ -754,12 +754,26 @@
 #define TRAINER_CHAMPION_OAK                     746
 #define TRAINER_CHAMPION_REMATCH_OAK             747
 #define TRAINER_ANNA                             748
+#define TRAINER_BAILEY                           749
+#define TRAINER_CHLOE                            750
+#define TRAINER_DANIELLE                         751
+#define TRAINER_EMILY                            752
+#define TRAINER_FATIMA                           753
+#define TRAINER_GABBY                            754
+#define TRAINER_HANNAH                           755
+#define TRAINER_IMANI                            756
+#define TRAINER_JULIANA                          757
+#define TRAINER_KAIA                             758
+#define TRAINER_LILY                             759
+#define TRAINER_MEGAN                            760
+#define TRAINER_NATALIE                          761
+#define TRAINER_OLIVIA                           762
 
 // NOTE: Because each Trainer uses a flag to determine when they are defeated, there is 
 //       only space for 25 additional trainers before trainer flag space overflows.
 //       MAX_TRAINERS_COUNT can be increased but will take up additional saveblock space
 
-#define TRAINERS_COUNT                           749
+#define TRAINERS_COUNT                           763
 #define MAX_TRAINERS_COUNT                       768
 #define TRAINER_PARTNER(partner)           (MAX_TRAINERS_COUNT + partner)
 

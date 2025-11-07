@@ -35,6 +35,7 @@ void ItemUseOutOfBattle_ResetEVs(u8 taskId);
 void ItemUseOutOfBattle_Rod(u8 taskId);
 void ItemUseOutOfBattle_RotomCatalog(u8 taskId);
 void ItemUseOutOfBattle_SacredAsh(u8 taskId);
+void ItemUseOutOfBattle_TeraShard(u8 taskId);
 void ItemUseOutOfBattle_TeachyTv(u8 taskId);
 void ItemUseOutOfBattle_TmCase(u8 taskId);
 void ItemUseOutOfBattle_TownMap(u8 taskId);

@@ -5488,6 +5488,88 @@ void ItemUseCB_PPUp(u8 taskId, TaskFunc func)
     gTasks[taskId].func = Task_HandleRestoreWhichMoveInput;
 }
 
+void ItemUseCB_TeraShard(u8 taskId, TaskFunc func)
+{
+    u32 type = TYPE_NONE;
+    struct Pokemon *mon = &gPlayerParty[gPartyMenu.slotId];
+    u16 item = gSpecialVar_ItemId;
+    switch (item)
+    {
+    case ITEM_BUG_TERA_SHARD:
+        type = TYPE_BUG;
+        break;
+    case ITEM_DARK_TERA_SHARD:
+        type = TYPE_DARK;
+        break;
+    case ITEM_DRAGON_TERA_SHARD:
+        type = TYPE_DRAGON;
+        break;
+    case ITEM_ELECTRIC_TERA_SHARD:
+        type = TYPE_ELECTRIC;
+        break;
+    case ITEM_FAIRY_TERA_SHARD:
+        type = TYPE_FAIRY;
+        break;
+    case ITEM_FIGHTING_TERA_SHARD:
+        type = TYPE_FIGHTING;
+        break;
+    case ITEM_FIRE_TERA_SHARD:
+        type = TYPE_FIRE;
+        break;
+    case ITEM_FLYING_TERA_SHARD:
+        type = TYPE_FLYING;
+        break;
+    case ITEM_GHOST_TERA_SHARD:
+        type = TYPE_GHOST;
+        break;
+    case ITEM_GRASS_TERA_SHARD:
+        type = TYPE_GRASS;
+        break;
+    case ITEM_GROUND_TERA_SHARD:
+        type = TYPE_GROUND;
+        break;
+    case ITEM_ICE_TERA_SHARD:
+        type = TYPE_ICE;
+        break;
+    case ITEM_NORMAL_TERA_SHARD:
+        type = TYPE_NORMAL;
+        break;
+    case ITEM_POISON_TERA_SHARD:
+        type = TYPE_POISON;
+        break;
+    case ITEM_PSYCHIC_TERA_SHARD:
+        type = TYPE_PSYCHIC;
+        break;
+    case ITEM_ROCK_TERA_SHARD:
+        type = TYPE_ROCK;
+        break;
+    case ITEM_STEEL_TERA_SHARD:
+        type = TYPE_STEEL;
+        break;
+    case ITEM_WATER_TERA_SHARD:
+        type = TYPE_WATER;
+        break;
+    case ITEM_STELLAR_TERA_SHARD:
+        type = TYPE_STELLAR;
+        break;
+    default:
+        gPartyMenuUseExitCallback = FALSE;
+        PlaySE(SE_SELECT);
+        DisplayPartyMenuMessage(gText_WontHaveEffect, TRUE);
+        ScheduleBgCopyTilemapToVram(2);
+        gTasks[taskId].func = func;
+        return;
+    }
+    SetMonData(mon, MON_DATA_TERA_TYPE, &type);
+    GetMonNickname(mon, gStringVar1);
+    StringCopy(gStringVar2, gTypesInfo[type].name);
+    StringExpandPlaceholders(gStringVar4, gText_TeraTypeChanged);
+    DisplayPartyMenuMessage(gStringVar4, TRUE);
+    ScheduleBgCopyTilemapToVram(2);
+    gTasks[taskId].func = Task_ClosePartyMenuAfterText;
+    gPartyMenuUseExitCallback = TRUE;
+}
+
 u16 ItemIdToBattleMoveId(u16 item)
 {
     return (GetItemPocket(item) == POCKET_TM_HM) ? GetItemTMHMMoveId(item) : MOVE_NONE;

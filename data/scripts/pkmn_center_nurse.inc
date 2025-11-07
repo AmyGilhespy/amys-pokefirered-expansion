@@ -45,8 +45,9 @@ EventScript_PkmnCenterNurse_ReturnPkmn::
 	message Text_RestoredPkmnToFullHealth
 	waitmessage
 	applymovement VAR_LAST_TALKED, Movement_Bow
-	waitmovement 0
-	msgbox Text_WeHopeToSeeYouAgain
+	@waitmovement 0
+	@msgbox Text_WeHopeToSeeYouAgain
+	waitbuttonpress
 	return
 
 EventScript_PkmnCenterNurse_PlayerWaitingInUnionRoom::
@@ -56,8 +57,8 @@ EventScript_PkmnCenterNurse_PlayerWaitingInUnionRoom::
 	message Text_PlayerIsPlayingRightNowGoForIt
 	waitmessage
 	applymovement VAR_LAST_TALKED, Movement_Bow
-	waitmovement 0
-	msgbox Text_WeHopeToSeeYouAgain
+	@waitmovement 0
+	@msgbox Text_WeHopeToSeeYouAgain
 	return
 
 EventScript_PkmnCenterNurse_RenamePkmn::

@@ -79,11 +79,11 @@ bool32 CanTerastallize(u32 battler)
     {
         return FALSE;
     }
-    else if (FlagGet(B_FLAG_TERA_ORB_NO_COST))
+    else if (B_FLAG_TERA_ORB_NO_COST == 0 || FlagGet(B_FLAG_TERA_ORB_NO_COST))
     {
         // Tera Orb is not depleted, go to HasTrainerUsedGimmick
     }
-    else if (!FlagGet(B_FLAG_TERA_ORB_CHARGED))
+    else if (B_FLAG_TERA_ORB_CHARGED && !FlagGet(B_FLAG_TERA_ORB_CHARGED))
     {
         return FALSE;
     }
