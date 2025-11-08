@@ -2195,3 +2195,20 @@ static const u16 sTerapagosFormSpeciesIdTable[] = {
     FORM_SPECIES_END,
 };
 #endif //P_FAMILY_TERAPAGOS
+
+static const u16 sSteelSoulFormSpeciesIdTable[] = {
+    SPECIES_AMY_CUSTOM_FAKEMON_STEEL_SOUL,
+#if P_MEGA_EVOLUTIONS
+    SPECIES_GENGAR_MEGA,
+#endif
+#if P_GIGANTAMAX_FORMS
+    SPECIES_GENGAR_GMAX,
+#endif
+    FORM_SPECIES_END,
+};
+
+static const u16 sMeteonFormSpeciesIdTable[] = {
+    SPECIES_AMY_CUSTOM_FAKEMON_METEON,
+    FORM_SPECIES_END,
+};
+

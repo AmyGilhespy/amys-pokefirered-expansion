@@ -1641,8 +1641,9 @@
 #define NUM_NONFAKEMON_SPECIES                          (SPECIES_MIMIKYU_BUSTED_TOTEM + 1) // 1524
 
 #define SPECIES_AMY_CUSTOM_FAKEMON_STEEL_SOUL           (NUM_NONFAKEMON_SPECIES + 0) // 1524
+#define SPECIES_AMY_CUSTOM_FAKEMON_METEON               (NUM_NONFAKEMON_SPECIES + 1) // 1525
 
-#define SPECIES_EGG                                     (NUM_NONFAKEMON_SPECIES + 1) // 1525
+#define SPECIES_EGG                                     (NUM_NONFAKEMON_SPECIES + 2) // 1526
 
 #define NUM_SPECIES SPECIES_EGG
 
