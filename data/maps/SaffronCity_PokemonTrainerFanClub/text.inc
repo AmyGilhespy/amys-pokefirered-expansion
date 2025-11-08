@@ -167,6 +167,16 @@ SaffronCity_PokemonTrainerFanClub_Text_CanIBecomeCoolTrainerOneDay::
     .string "I wonder if I can become a cool\n"
     .string "TRAINER one day?$"
 
+SaffronCity_PokemonTrainerFanClub_Text_HannahIntro::
+    .string "Will you be my fan?\p"
+    .string "Let me show you what I can do.$"
+
+SaffronCity_PokemonTrainerFanClub_Text_HannahDefeat::
+    .string "Eeek!$"
+
+SaffronCity_PokemonTrainerFanClub_Text_HannahPostBattle::
+    .string "You're so cool!$"
+
 SaffronCity_PokemonTrainerFanClub_Text_TheWayYouBattleIsCool::
     .string "Oh, man, oh, man!\n"
     .string "Cool! Too cool!\p"

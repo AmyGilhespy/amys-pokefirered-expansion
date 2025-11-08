@@ -1638,7 +1638,11 @@
 #define SPECIES_MIMIKYU_BUSTED_TOTEM                    1523
 #define SPECIES_MIMIKYU_TOTEM_BUSTED                    SPECIES_MIMIKYU_BUSTED_TOTEM
 
-#define SPECIES_EGG                                     (SPECIES_MIMIKYU_BUSTED_TOTEM + 1)
+#define NUM_NONFAKEMON_SPECIES                          (SPECIES_MIMIKYU_BUSTED_TOTEM + 1) // 1524
+
+#define SPECIES_AMY_CUSTOM_FAKEMON_STEEL_SPIRIT         (NUM_NONFAKEMON_SPECIES + 0) // 1524
+
+#define SPECIES_EGG                                     (NUM_NONFAKEMON_SPECIES + 1) // 1525
 
 #define NUM_SPECIES SPECIES_EGG
 

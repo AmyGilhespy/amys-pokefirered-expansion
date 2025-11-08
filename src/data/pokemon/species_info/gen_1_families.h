@@ -11826,7 +11826,9 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         )
         .levelUpLearnset = sHaunterLevelUpLearnset,
         .teachableLearnset = sHaunterTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_TRADE, 0, SPECIES_GENGAR},
+        .evolutions = EVOLUTION({EVO_TRADE, 0, SPECIES_AMY_CUSTOM_FAKEMON_STEEL_SPIRIT, CONDITIONS({IF_HOLD_ITEM, ITEM_METAL_COAT})},
+                                {EVO_ITEM, ITEM_METAL_COAT, SPECIES_AMY_CUSTOM_FAKEMON_STEEL_SPIRIT},
+                                {EVO_TRADE, 0, SPECIES_GENGAR},
                                 {EVO_ITEM, ITEM_LINKING_CORD, SPECIES_GENGAR}),
     },
 

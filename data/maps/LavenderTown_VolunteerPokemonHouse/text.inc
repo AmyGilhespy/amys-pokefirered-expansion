@@ -17,6 +17,19 @@ LavenderTown_VolunteerPokemonHouse_Text_MrFujiLooksAfterOrphanedMons::
     .string "He looks after abandoned and\n"
     .string "orphaned POKéMON.$"
 
+LavenderTown_VolunteerPokemonHouse_Text_GabriellaIntro::
+    .string "This is really MR. FUJI's house.\p"
+    .string "He's really kind.\p"
+    .string "He looks after abandoned and\n"
+    .string "orphaned POKéMON.\p"
+    .string "Like these…$"
+
+LavenderTown_VolunteerPokemonHouse_Text_GabriellaDefeat::
+    .string "You're resilient.$"
+
+LavenderTown_VolunteerPokemonHouse_Text_GabriellaPostBattle::
+    .string "Tee-hee.$"
+
 LavenderTown_VolunteerPokemonHouse_Text_MonsNiceToHug::
     .string "It's so warm!\n"
     .string "POKéMON are so nice to hug.$"

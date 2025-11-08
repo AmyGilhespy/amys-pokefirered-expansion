@@ -33,3 +33,16 @@ FuchsiaCity_House3_Text_NoEggShouldKnowMoves::
     .string "What?\n"
     .string "No EGG should know any moves.$"
 
+FuchsiaCity_House3_Text_FatimaIntro::
+    .string "My daddy is the MOVE DELETER.\p"
+    .string "Sometimes he makes me forget\n"
+    .string "things.\p"
+    .string "But I haven't forgotten how to\n"
+    .string "fight. Wanna see?$"
+
+FuchsiaCity_House3_Text_FatimaDefeat::
+    .string "Oh no!$"
+
+FuchsiaCity_House3_Text_FatimaPostBattle::
+    .string "I forgot how to fight after all!$"
+

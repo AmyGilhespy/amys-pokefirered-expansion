@@ -65,6 +65,7 @@ ViridianCity_Mart_EventScript_Clerk::
 ViridianCity_Mart_Items::
 	.2byte ITEM_TM75 @ Pay Day
 	.2byte ITEM_TM76 @ Constrict
+	.2byte ITEM_LINKING_CORD
 	.2byte ITEM_POKE_BALL
 	.2byte ITEM_POTION
 	.2byte ITEM_ANTIDOTE

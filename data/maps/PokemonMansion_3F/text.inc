@@ -33,3 +33,14 @@ PokemonMansion_1F_Text_MewGaveBirthToMewtwo::
     .string "MEW gave birth.\p"
     .string "We named the newborn MEWTWO.$"
 
+PokemonMansion_3F_Text_ImaniIntro::
+    .string "BLAINE may be hot, but I'm cute!\p"
+    .string "I'll show you how terrifying a\n"
+    .string "cute little girl can be!$"
+
+PokemonMansion_3F_Text_ImaniDefeat::
+    .string "Gyaah!$"
+
+PokemonMansion_3F_Text_ImaniPostBattle::
+    .string "You're cute too, by the way.$"
+

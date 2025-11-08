@@ -759,11 +759,11 @@
 #define TRAINER_DANIELLE                         751
 #define TRAINER_EMILY                            752
 #define TRAINER_FATIMA                           753
-#define TRAINER_GABBY                            754
+#define TRAINER_GABRIELLA                        754
 #define TRAINER_HANNAH                           755
 #define TRAINER_IMANI                            756
 #define TRAINER_JULIANA                          757
-#define TRAINER_KAIA                             758
+#define TRAINER_KYOUKO                           758
 #define TRAINER_LILY                             759
 #define TRAINER_MEGAN                            760
 #define TRAINER_NATALIE                          761

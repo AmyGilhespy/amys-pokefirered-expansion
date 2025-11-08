@@ -52,3 +52,10 @@ FuchsiaCity_House3_EventScript_CancelForgetMove::
 	msgbox FuchsiaCity_House3_Text_ComeAgainToForgetOtherMoves
 	release
 	end
+
+FuchsiaCity_House3_EventScript_Fatima::
+	trainerbattle_single TRAINER_FATIMA, FuchsiaCity_House3_Text_FatimaIntro, FuchsiaCity_House3_Text_FatimaDefeat, FuchsiaCity_House3_EventScript_DefeatedFatima, NO_MUSIC
+FuchsiaCity_House3_EventScript_DefeatedFatima::
+	msgbox FuchsiaCity_House3_Text_FatimaPostBattle, MSGBOX_NPC
+	end
+

@@ -26732,6 +26732,33 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //OW_POKEMON_OBJECT_EVENTS
 #endif //P_FAMILY_PECHARUNT
 
+#if !P_GBA_STYLE_SPECIES_GFX
+    const u32 gMonFrontPic_SteelSpirit[] = INCBIN_U32("graphics/pokemon/steel_spirit/anim_front.4bpp.lz");
+    const u16 gMonPalette_SteelSpirit[] = INCBIN_U16("graphics/pokemon/steel_spirit/normal.gbapal");
+    const u32 gMonBackPic_SteelSpirit[] = INCBIN_U32("graphics/pokemon/steel_spirit/back.4bpp.lz");
+    const u16 gMonShinyPalette_SteelSpirit[] = INCBIN_U16("graphics/pokemon/steel_spirit/shiny.gbapal");
+#else
+    const u32 gMonFrontPic_SteelSpirit[] = INCBIN_U32("graphics/pokemon/steel_spirit/anim_front_gba.4bpp.lz");
+    const u16 gMonPalette_SteelSpirit[] = INCBIN_U16("graphics/pokemon/steel_spirit/normal_gba.gbapal");
+    const u32 gMonBackPic_SteelSpirit[] = INCBIN_U32("graphics/pokemon/steel_spirit/back_gba.4bpp.lz");
+    const u16 gMonShinyPalette_SteelSpirit[] = INCBIN_U16("graphics/pokemon/steel_spirit/shiny_gba.gbapal");
+#endif //P_GBA_STYLE_SPECIES_GFX
+#if !P_GBA_STYLE_SPECIES_ICONS
+    const u8 gMonIcon_SteelSpirit[] = INCBIN_U8("graphics/pokemon/steel_spirit/icon.4bpp");
+#else
+    const u8 gMonIcon_SteelSpirit[] = INCBIN_U8("graphics/pokemon/steel_spirit/icon_gba.4bpp");
+#endif //P_GBA_STYLE_SPECIES_ICONS
+#if P_FOOTPRINTS
+    const u8 gMonFootprint_SteelSpirit[] = INCBIN_U8("graphics/pokemon/steel_spirit/footprint.1bpp");
+#endif //P_FOOTPRINTS
+#if OW_POKEMON_OBJECT_EVENTS
+    const u32 gObjectEventPic_SteelSpirit[] = INCBIN_COMP("graphics/pokemon/steel_spirit/overworld.4bpp");
+#if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
+    const u16 gOverworldPalette_SteelSpirit[] = INCBIN_U16("graphics/pokemon/steel_spirit/overworld_normal.gbapal");
+    const u16 gShinyOverworldPalette_SteelSpirit[] = INCBIN_U16("graphics/pokemon/steel_spirit/overworld_shiny.gbapal");
+#endif //OW_PKMN_OBJECTS_SHARE_PALETTES
+#endif //OW_POKEMON_OBJECT_EVENTS
+
     const u32 gMonFrontPic_Egg[] = INCBIN_U32("graphics/pokemon/egg/anim_front.4bpp.lz");
     const u16 gMonPalette_Egg[] = INCBIN_U16("graphics/pokemon/egg/normal.gbapal");
     const u8 gMonIcon_Egg[] = INCBIN_U8("graphics/pokemon/egg/icon.4bpp");

@@ -41,3 +41,36 @@ IndigoPlateau_PokemonCenter_1F_Text_LancesCousinGymLeaderFarAway::
     .string "a cousin who's a GYM LEADER\l"
     .string "somewhere far away.$"
 
+IndigoPlateau_PokemonCenter_1F_Text_JulianaBeatEmilyFirst::
+    .string "I'll fight you only after you\n"
+    .string "beat EMILY in CELADON CITY.$"
+
+IndigoPlateau_PokemonCenter_1F_Text_JulianaIntro::
+    .string ".$"
+
+IndigoPlateau_PokemonCenter_1F_Text_JulianaRematchIntro::
+    .string ".$"
+
+IndigoPlateau_PokemonCenter_1F_Text_JulianaDefeat::
+    .string "Good work.$"
+
+IndigoPlateau_PokemonCenter_1F_Text_JulianaPostBattle::
+    .string "I wasn't the final fight, but\n"
+    .string "before you continue, there's\l"
+    .string "something you should know:\p"
+    .string "From here on out, things get…\l"
+    .string "…weird.\p"
+    .string "Talk to me again for a rematch!$"
+
+IndigoPlateau_PokemonCenter_1F_Text_JulianaPreTR100::
+    .string "EMILY probably gave you one of\n"
+    .string "these already, but here.$"
+
+IndigoPlateau_PokemonCenter_1F_Text_JulianaGotTR100::
+    .string "{PLAYER} received TR100\n"
+    .string "from JULIANA.$"
+
+IndigoPlateau_PokemonCenter_1F_Text_JulianaPostTR100::
+    .string "TR100 contains PHOENIX CALL.\n"
+    .string "Use it to resurrect the fallen.$"
+
