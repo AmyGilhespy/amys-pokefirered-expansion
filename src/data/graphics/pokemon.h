@@ -26733,29 +26733,29 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 #endif //P_FAMILY_PECHARUNT
 
 #if !P_GBA_STYLE_SPECIES_GFX
-    const u32 gMonFrontPic_SteelSpirit[] = INCBIN_U32("graphics/pokemon/steel_spirit/anim_front.4bpp.lz");
-    const u16 gMonPalette_SteelSpirit[] = INCBIN_U16("graphics/pokemon/steel_spirit/normal.gbapal");
-    const u32 gMonBackPic_SteelSpirit[] = INCBIN_U32("graphics/pokemon/steel_spirit/back.4bpp.lz");
-    const u16 gMonShinyPalette_SteelSpirit[] = INCBIN_U16("graphics/pokemon/steel_spirit/shiny.gbapal");
+    const u32 gMonFrontPic_SteelSoul[] = INCBIN_U32("graphics/pokemon/steel_soul/anim_front.4bpp.lz");
+    const u16 gMonPalette_SteelSoul[] = INCBIN_U16("graphics/pokemon/steel_soul/normal.gbapal");
+    const u32 gMonBackPic_SteelSoul[] = INCBIN_U32("graphics/pokemon/steel_soul/back.4bpp.lz");
+    const u16 gMonShinyPalette_SteelSoul[] = INCBIN_U16("graphics/pokemon/steel_soul/shiny.gbapal");
 #else
-    const u32 gMonFrontPic_SteelSpirit[] = INCBIN_U32("graphics/pokemon/steel_spirit/anim_front_gba.4bpp.lz");
-    const u16 gMonPalette_SteelSpirit[] = INCBIN_U16("graphics/pokemon/steel_spirit/normal_gba.gbapal");
-    const u32 gMonBackPic_SteelSpirit[] = INCBIN_U32("graphics/pokemon/steel_spirit/back_gba.4bpp.lz");
-    const u16 gMonShinyPalette_SteelSpirit[] = INCBIN_U16("graphics/pokemon/steel_spirit/shiny_gba.gbapal");
+    const u32 gMonFrontPic_SteelSoul[] = INCBIN_U32("graphics/pokemon/steel_soul/anim_front_gba.4bpp.lz");
+    const u16 gMonPalette_SteelSoul[] = INCBIN_U16("graphics/pokemon/steel_soul/normal_gba.gbapal");
+    const u32 gMonBackPic_SteelSoul[] = INCBIN_U32("graphics/pokemon/steel_soul/back_gba.4bpp.lz");
+    const u16 gMonShinyPalette_SteelSoul[] = INCBIN_U16("graphics/pokemon/steel_soul/shiny_gba.gbapal");
 #endif //P_GBA_STYLE_SPECIES_GFX
 #if !P_GBA_STYLE_SPECIES_ICONS
-    const u8 gMonIcon_SteelSpirit[] = INCBIN_U8("graphics/pokemon/steel_spirit/icon.4bpp");
+    const u8 gMonIcon_SteelSoul[] = INCBIN_U8("graphics/pokemon/steel_soul/icon.4bpp");
 #else
-    const u8 gMonIcon_SteelSpirit[] = INCBIN_U8("graphics/pokemon/steel_spirit/icon_gba.4bpp");
+    const u8 gMonIcon_SteelSoul[] = INCBIN_U8("graphics/pokemon/steel_soul/icon_gba.4bpp");
 #endif //P_GBA_STYLE_SPECIES_ICONS
 #if P_FOOTPRINTS
-    const u8 gMonFootprint_SteelSpirit[] = INCBIN_U8("graphics/pokemon/steel_spirit/footprint.1bpp");
+    const u8 gMonFootprint_SteelSoul[] = INCBIN_U8("graphics/pokemon/steel_soul/footprint.1bpp");
 #endif //P_FOOTPRINTS
 #if OW_POKEMON_OBJECT_EVENTS
-    const u32 gObjectEventPic_SteelSpirit[] = INCBIN_COMP("graphics/pokemon/steel_spirit/overworld.4bpp");
+    const u32 gObjectEventPic_SteelSoul[] = INCBIN_COMP("graphics/pokemon/steel_soul/overworld.4bpp");
 #if OW_PKMN_OBJECTS_SHARE_PALETTES == FALSE
-    const u16 gOverworldPalette_SteelSpirit[] = INCBIN_U16("graphics/pokemon/steel_spirit/overworld_normal.gbapal");
-    const u16 gShinyOverworldPalette_SteelSpirit[] = INCBIN_U16("graphics/pokemon/steel_spirit/overworld_shiny.gbapal");
+    const u16 gOverworldPalette_SteelSoul[] = INCBIN_U16("graphics/pokemon/steel_soul/overworld_normal.gbapal");
+    const u16 gShinyOverworldPalette_SteelSoul[] = INCBIN_U16("graphics/pokemon/steel_soul/overworld_shiny.gbapal");
 #endif //OW_PKMN_OBJECTS_SHARE_PALETTES
 #endif //OW_POKEMON_OBJECT_EVENTS
 

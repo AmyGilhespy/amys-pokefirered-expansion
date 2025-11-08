@@ -177,7 +177,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
 
     /* You may add any custom species below this point based on the following structure: */
 
-    [SPECIES_AMY_CUSTOM_FAKEMON_STEEL_SPIRIT] =
+    [SPECIES_AMY_CUSTOM_FAKEMON_STEEL_SOUL] =
     {
         .baseHP        = 200,
         .baseAttack    = 1,
@@ -192,11 +192,11 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .genderRatio = PERCENT_FEMALE(50),
         .eggCycles = 5,
         .friendship = STANDARD_FRIENDSHIP,
-        .growthRate = GROWTH_MEDIUM_FAST,
-        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_NO_EGGS_DISCOVERED),
+        .growthRate = GROWTH_MEDIUM_SLOW,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_AMORPHOUS),
         .abilities = { ABILITY_IMPOSTER, ABILITY_PRANKSTER, ABILITY_REGENERATOR },
         .bodyColor = BODY_COLOR_BLACK,
-        .speciesName = _("SteelSpirit"),
+        .speciesName = _("Steel Soul"),
         .cryId = CRY_GENGAR,
         .natDexNum = NATIONAL_DEX_NONE,
         .categoryName = _("Shadow"),
@@ -211,7 +211,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .pokemonOffset = 0,
         .trainerScale = 302,
         .trainerOffset = 2,
-        .frontPic = gMonFrontPic_SteelSpirit,
+        .frontPic = gMonFrontPic_SteelSoul,
         .frontPicSize = MON_COORDS_SIZE(56, 56),
         .frontPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 5 : 7,
         .frontAnimFrames = ANIM_FRAMES(
@@ -220,34 +220,34 @@ const struct SpeciesInfo gSpeciesInfo[] =
             ANIMCMD_FRAME(0, 10),
         ),
         .frontAnimId = ANIM_GROW_IN_STAGES,
-        .backPic = gMonBackPic_SteelSpirit,
+        .backPic = gMonBackPic_SteelSoul,
         .backPicSize = P_GBA_STYLE_SPECIES_GFX ? MON_COORDS_SIZE(56, 48) : MON_COORDS_SIZE(64, 48),
         .backPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 9 : 8,
         .backAnimId = BACK_ANIM_SHRINK_GROW_VIBRATE,
-        .palette = gMonPalette_SteelSpirit,
-        .shinyPalette = gMonShinyPalette_SteelSpirit,
-        .iconSprite = gMonIcon_SteelSpirit,
+        .palette = gMonPalette_SteelSoul,
+        .shinyPalette = gMonShinyPalette_SteelSoul,
+        .iconSprite = gMonIcon_SteelSoul,
         .iconPalIndex = 2,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         SHADOW(3, 5, SHADOW_SIZE_L)
-        FOOTPRINT(SteelSpirit)
+        FOOTPRINT(SteelSoul)
         OVERWORLD(
-            sPicTable_SteelSpirit,
+            sPicTable_SteelSoul,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
             sAnimTable_Following,
-            gOverworldPalette_SteelSpirit,
-            gShinyOverworldPalette_SteelSpirit
+            gOverworldPalette_SteelSoul,
+            gShinyOverworldPalette_SteelSoul
         )
-        .levelUpLearnset = sSteelSpiritLevelUpLearnset,
+        .levelUpLearnset = sSteelSoulLevelUpLearnset,
         .teachableLearnset = sMewTeachableLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 100, SPECIES_NONE},
                                 {EVO_ITEM, ITEM_MOOMOO_MILK, SPECIES_NONE}),
         .formSpeciesIdTable = sGengarFormSpeciesIdTable,
         .formChangeTable = sGengarFormChangeTable,
         //.perfectIVCount = NUM_STATS,
-    }
+    },
 
     /*
     [SPECIES_NONE] =
