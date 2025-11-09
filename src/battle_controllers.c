@@ -2547,36 +2547,42 @@ void BtlController_HandlePrintString(u32 battler)
 {
     u16 *stringId;
 
-    gBattle_BG0_X = 0;
-    gBattle_BG0_Y = 0;
-    stringId = (u16 *)(&gBattleResources->bufferA[battler][2]);
-    BufferStringBattle(*stringId, battler);
-
-    if (gTestRunnerEnabled)
+    if (gMailScriptIndex == 0
+            || gAmySaveCurrentTurnActionNumber != gCurrentTurnActionNumber
+            || gBattleMsgDataPtr->currentMove != MOVE_MAIL_SCRIPT
+            ) // MOVE_MAIL_SCRIPT is handled internally.
     {
-        TestRunner_Battle_RecordMessage(gDisplayedStringBattle);
-        if (gTestRunnerHeadless)
+        gBattle_BG0_X = 0;
+        gBattle_BG0_Y = 0;
+        stringId = (u16 *)(&gBattleResources->bufferA[battler][2]);
+        BufferStringBattle(*stringId, battler);
+
+        if (gTestRunnerEnabled)
         {
-            BtlController_Complete(battler);
-            return;
+            TestRunner_Battle_RecordMessage(gDisplayedStringBattle);
+            if (gTestRunnerHeadless)
+            {
+                BtlController_Complete(battler);
+                return;
+            }
         }
-    }
 
-    if (BattleStringShouldBeColored(*stringId))
-        BattlePutTextOnWindow(gDisplayedStringBattle, (B_WIN_MSG | B_TEXT_FLAG_NPC_CONTEXT_FONT));
-    else
-        BattlePutTextOnWindow(gDisplayedStringBattle, B_WIN_MSG);
+        if (BattleStringShouldBeColored(*stringId))
+            BattlePutTextOnWindow(gDisplayedStringBattle, (B_WIN_MSG | B_TEXT_FLAG_NPC_CONTEXT_FONT));
+        else
+            BattlePutTextOnWindow(gDisplayedStringBattle, B_WIN_MSG);
 
-    if (gBattleTypeFlags & BATTLE_TYPE_FIRST_BATTLE && GetBattlerSide(battler) == B_SIDE_OPPONENT)
-    {
-        switch (*stringId)
+        if (gBattleTypeFlags & BATTLE_TYPE_FIRST_BATTLE && GetBattlerSide(battler) == B_SIDE_OPPONENT)
         {
-        case STRINGID_TRAINER1WINTEXT:        
-            gBattlerControllerFuncs[battler] = PrintOakText_HowDisappointing;
-            return;
-        case STRINGID_DONTLEAVEBIRCH:
-            gBattlerControllerFuncs[battler] = PrintOakText_OakNoRunningFromATrainer;
-            return;
+            switch (*stringId)
+            {
+            case STRINGID_TRAINER1WINTEXT:        
+                gBattlerControllerFuncs[battler] = PrintOakText_HowDisappointing;
+                return;
+            case STRINGID_DONTLEAVEBIRCH:
+                gBattlerControllerFuncs[battler] = PrintOakText_OakNoRunningFromATrainer;
+                return;
+            }
         }
     }
 

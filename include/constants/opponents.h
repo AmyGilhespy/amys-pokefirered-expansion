@@ -753,27 +753,32 @@
 #define TRAINER_CHAMPION_REMATCH_MOM             745
 #define TRAINER_CHAMPION_OAK                     746
 #define TRAINER_CHAMPION_REMATCH_OAK             747
-#define TRAINER_ANNA                             748
-#define TRAINER_BAILEY                           749
-#define TRAINER_CHLOE                            750
-#define TRAINER_DANIELLE                         751
-#define TRAINER_EMILY                            752
-#define TRAINER_FATIMA                           753
-#define TRAINER_GABRIELLA                        754
-#define TRAINER_HANNAH                           755
-#define TRAINER_IMANI                            756
-#define TRAINER_JULIANA                          757
-#define TRAINER_KYOUKO                           758
-#define TRAINER_LILY                             759
-#define TRAINER_MEGAN                            760
-#define TRAINER_NATALIE                          761
-#define TRAINER_OLIVIA                           762
+#define TRAINER_RESERVED_1                       748
+#define TRAINER_RESERVED_2                       749
+#define TRAINER_RESERVED_3                       750
+#define TRAINER_RESERVED_4                       751
+#define TRAINER_ANNA                             752
+#define TRAINER_BAILEY                           753
+#define TRAINER_CHLOE                            754
+#define TRAINER_DANIELLE                         755
+#define TRAINER_EMILY                            756
+#define TRAINER_FATIMA                           757
+#define TRAINER_GABRIELLA                        758
+#define TRAINER_HANNAH                           759
+#define TRAINER_IMANI                            760
+#define TRAINER_JULIANA                          761
+#define TRAINER_KYOUKO                           762
+#define TRAINER_LILY                             763
+#define TRAINER_MEGAN                            764
+#define TRAINER_NATALIE                          765
+#define TRAINER_OLIVIA                           766
+#define TRAINER_AMY                              767
 
 // NOTE: Because each Trainer uses a flag to determine when they are defeated, there is 
 //       only space for 25 additional trainers before trainer flag space overflows.
 //       MAX_TRAINERS_COUNT can be increased but will take up additional saveblock space
 
-#define TRAINERS_COUNT                           763
+#define TRAINERS_COUNT                           768
 #define MAX_TRAINERS_COUNT                       768
 #define TRAINER_PARTNER(partner)           (MAX_TRAINERS_COUNT + partner)
 

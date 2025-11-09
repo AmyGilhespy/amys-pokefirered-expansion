@@ -2,6 +2,7 @@
 #define GUARD_BATTLE_ANIM_SCRIPTS_H
 
 // move animations
+extern const u8 gBattleAnimMove_Empty[];
 extern const u8 gBattleAnimMove_None[];
 extern const u8 gBattleAnimMove_Pound[];
 extern const u8 gBattleAnimMove_KarateChop[];
@@ -1021,5 +1022,6 @@ extern const u8 gBattleAnimSpecial_SubstituteToMon[];
 extern const u8 gBattleAnimSpecial_MonToSubstitute[];
 extern const u8 gBattleAnimSpecial_CriticalCaptureBallThrow[];
 
+// custom animations
 
 #endif // GUARD_BATTLE_ANIM_SCRIPTS_H

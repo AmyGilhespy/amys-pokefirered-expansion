@@ -168,3 +168,7 @@ CeladonCity_Text_EmilyPostTR100::
     .string "TR100 contains PHOENIX CALL.\n"
     .string "Use it to resurrect the fallen.$"
 
+CeladonCity_Text_EmilyNextIsJuliana::
+    .string "Now you can fight JULIANA at the\n"
+    .string "INDIGO PLATEAU. Good luck!$"
+

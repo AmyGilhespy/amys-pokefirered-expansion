@@ -8,10 +8,9 @@ CeladonCity_OnTransition::
 
 CeladonCity_EventScript_LittleGirl::
 	checktrainerflag TRAINER_EMILY
-	goto_if_ne VAR_RESULT, FALSE, CeladonCity_EventScript_RematchEmily
+	goto_if_eq CeladonCity_EventScript_RematchEmily
 	trainerbattle_single TRAINER_EMILY, CeladonCity_Text_EmilyIntro, CeladonCity_Text_EmilyDefeat, CeladonCity_EventScript_DefeatedEmily, NO_MUSIC
 CeladonCity_EventScript_DefeatedEmily::
-	cleartrainerflag TRAINER_EMILY
 	msgbox CeladonCity_Text_EmilyPostBattle, MSGBOX_NPC
 	goto_if_unset FLAG_GOT_TR100_FROM_EMILY, CeladonCity_EventScript_GetTR100FromEmily
 	end
@@ -28,6 +27,11 @@ CeladonCity_EventScript_GetTR100FromEmily::
 	setflag FLAG_GOT_TR100_FROM_EMILY
 	msgbox CeladonCity_Text_EmilyPostTR100, MSGBOX_NPC
 CeladonCity_EventScript_EmilyEnd::
+	checktrainerflag TRAINER_JULIANA
+	goto_if_eq VAR_RESULT, FALSE, CeladonCity_EventScript_EmilyNextIsJuliana
+	end
+CeladonCity_EventScript_EmilyNextIsJuliana::
+	msgbox CeladonCity_Text_EmilyNextIsJuliana, MSGBOX_NPC
 	end
 
 CeladonCity_EventScript_OldMan1::

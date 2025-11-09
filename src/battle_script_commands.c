@@ -71,7 +71,7 @@
 #include "data/battle_move_effects.h"
 // #include "follower_npc.h"
 #include "load_save.h"
-//#include "gba/isagbprint.h"
+#include "gba/isagbprint.h"
 
 // table to avoid ugly powing on gba (courtesy of doesnt)
 // this returns (i^2.5)/4
@@ -1112,6 +1112,8 @@ static void Cmd_attackcanceler(void)
 {
     CMD_ARGS();
 
+    //MgbaPrintf(MGBA_LOG_WARN, "Cmd_attackcanceler() // gCurrentActionFuncId=%d, B_ACTION_USE_MOVE=%d", gCurrentActionFuncId, B_ACTION_USE_MOVE);
+
     if (gBattleStruct->battlerState[gBattlerAttacker].usedEjectItem)
     {
         gBattleStruct->battlerState[gBattlerAttacker].usedEjectItem = FALSE;
@@ -1142,8 +1144,7 @@ static void Cmd_attackcanceler(void)
 
     // === Amy: Custom effects here! ===
 
-
-    // --- Resurrection move special handler ---
+    // --- Phoenix Call move special handler ---
     if (gCurrentMove == MOVE_PHOENIX_CALL)
     {
         u32 side = GetBattlerSide(gBattlerAttacker);

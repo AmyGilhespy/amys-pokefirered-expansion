@@ -171,6 +171,8 @@ EWRAM_DATA u8 gChosenMovePos = 0;
 EWRAM_DATA u16 gCurrentMove = 0;
 EWRAM_DATA u16 gChosenMove = 0;
 EWRAM_DATA u16 gCalledMove = 0;
+EWRAM_DATA bool8 gMailScriptActive = FALSE;
+EWRAM_DATA u8 gMailScriptIndex = 0;
 EWRAM_DATA s32 gBideDmg[MAX_BATTLERS_COUNT] = {0};
 EWRAM_DATA u16 gLastUsedItem = 0;
 EWRAM_DATA enum Ability gLastUsedAbility = 0;
@@ -213,6 +215,12 @@ EWRAM_DATA u8 gSentPokesToOpponent[2] = {0};
 EWRAM_DATA struct BattleEnigmaBerry gEnigmaBerries[MAX_BATTLERS_COUNT] = {0};
 EWRAM_DATA struct BattleScripting gBattleScripting = {0};
 EWRAM_DATA struct BattleStruct *gBattleStruct = NULL;
+
+EWRAM_DATA struct BattleContext gAmySaveBattleContext = {0};
+EWRAM_DATA struct BattleScripting gAmySaveBattleScripting = {0};
+EWRAM_DATA u8 gAmySaveBattlerAttacker = 0;
+EWRAM_DATA u8 gAmySaveBattlerTarget = 0;
+EWRAM_DATA u8 gAmySaveCurrentTurnActionNumber = 0;
 
 EWRAM_DATA struct AiThinkingStruct *gAiThinkingStruct = NULL;
 EWRAM_DATA struct AiLogicData *gAiLogicData = NULL;
@@ -2006,6 +2014,7 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
             u32 nextSeed, thisSeed;
             s32 nameCharIdx;
             u16 randomSpecies, originalSpecies, originalBST;
+            s8 levelDelta = 0;
             bool8 givePreassignedMoves;
 
             if (trainer->battleType != TRAINER_BATTLE_TYPE_SINGLES)
@@ -2070,6 +2079,20 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
             else if (trainer->trainerClass == TRAINER_CLASS_LITTLE_GIRL) { }
             else
             {
+                switch (trainer->trainerClass)
+                {
+                case TRAINER_CLASS_LEADER:
+                case TRAINER_CLASS_RIVAL_EARLY:
+                case TRAINER_CLASS_RIVAL_LATE:
+                case TRAINER_CLASS_ELITE_FOUR:
+                case TRAINER_CLASS_CHAMPION:
+                case TRAINER_CLASS_BOSS:
+                case TRAINER_CLASS_LITTLE_GIRL:
+                    break;
+                default:
+                    levelDelta = 5;
+                    break;
+                }
                 givePreassignedMoves = FALSE;
                 originalBST = gSpeciesInfo[originalSpecies].baseHP
                         + gSpeciesInfo[originalSpecies].baseAttack
@@ -2089,7 +2112,16 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
                 }
                 SeedRng(nextSeed);
             }
-            CreateMon(&party[i], randomSpecies, partyData[monIndex].lvl, 0, TRUE, personalityValue, otIdType, fixedOtId);
+            s32 monLevel = (s32) partyData[monIndex].lvl + (s32) levelDelta;
+            if (monLevel < MIN_LEVEL)
+            {
+                monLevel = MIN_LEVEL;
+            }
+            else if (monLevel > MAX_LEVEL)
+            {
+                monLevel = MAX_LEVEL;
+            }
+            CreateMon(&party[i], randomSpecies, monLevel, 0, TRUE, personalityValue, otIdType, fixedOtId);
 
             SetMonData(&party[i], MON_DATA_HELD_ITEM, &partyData[monIndex].heldItem);
             if (givePreassignedMoves != FALSE)
@@ -2899,6 +2931,12 @@ static void BattleStartClearSetData(void)
     gBattlerAbility = 0;
     gBattleWeather = 0;
     gHitMarker = 0;
+
+    // === Amy custom init ===
+    MgbaPrintf(MGBA_LOG_WARN, "\n===\n\n");
+    gMailScriptActive = FALSE;
+    gMailScriptIndex = 0;
+    // === End of Amy custom init ===
 
     if (!(gBattleTypeFlags & BATTLE_TYPE_RECORDED))
     {

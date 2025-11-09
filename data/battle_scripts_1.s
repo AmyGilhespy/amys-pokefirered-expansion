@@ -9133,6 +9133,11 @@ BattleScript_EffectResurrection::
 	waitmessage B_WAIT_TIME_LONG
 	end
 
+BattleScript_EffectMailScript::
+	attackcanceler @ Mail Script itself
+	moveendall
+	end
+
 BattleScript_SleepClauseBlocked::
 	pause B_WAIT_TIME_SHORT
 	setmoveresultflags MOVE_RESULT_FAILED

@@ -18391,6 +18391,9 @@ gBattleAnimMove_MightyCleave::
 gBattleAnimMove_SupercellSlam::
 	end @to do
 
+gBattleAnimMove_Empty::
+	end
+
 @@@@@@@@@@@@@@@@@@@@@@@ GEN 1-3 @@@@@@@@@@@@@@@@@@@@@@@
 gBattleAnimMove_None::
 gBattleAnimMove_MirrorMove::

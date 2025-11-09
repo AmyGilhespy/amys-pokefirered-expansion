@@ -15980,7 +15980,7 @@ Name: ANNA
 Class: Little Girl
 Pic: School Kid F
 Gender: Female
-Music: Magma
+Music: Female
 Items: Potion / Potion / Potion
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Smart Switching / Ace Pokemon / Omniscient
@@ -15998,7 +15998,7 @@ Name: BAILEY
 Class: Little Girl
 Pic: School Kid F
 Gender: Female
-Music: Magma
+Music: Female
 Items: Potion / Potion / Potion
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Smart Switching / Ace Pokemon / Omniscient
@@ -16074,7 +16074,7 @@ Name: CHLOE
 Class: Little Girl
 Pic: School Kid F
 Gender: Female
-Music: Aqua
+Music: Female
 Items: Potion / Potion / Potion
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Smart Switching / Omniscient
@@ -16150,7 +16150,7 @@ Name: DANIELLE
 Class: Little Girl
 Pic: School Kid F
 Gender: Female
-Music: Magma
+Music: Female
 Items: Potion / Potion / Potion
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Smart Switching / Ace Pokemon / Omniscient
@@ -16226,7 +16226,7 @@ Name: EMILY
 Class: Little Girl
 Pic: School Kid F
 Gender: Female
-Music: Magma
+Music: Elite Four
 Items: Full Heal / Full Heal / Full Heal
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Smart Switching / Ace Pokemon / Omniscient
@@ -16304,7 +16304,7 @@ Name: FATIMA
 Class: Little Girl
 Pic: School Kid F
 Gender: Female
-Music: Magma
+Music: Female
 Items: Full Restore / Full Restore
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Smart Switching / Ace Pokemon / Omniscient
@@ -16381,7 +16381,7 @@ Name: GABRIELLA
 Class: Little Girl
 Pic: School Kid F
 Gender: Female
-Music: Magma
+Music: Female
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Smart Switching / Ace Pokemon / Omniscient
@@ -16458,7 +16458,7 @@ Name: HANNAH
 Class: Little Girl
 Pic: School Kid F
 Gender: Female
-Music: Magma
+Music: Female
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Smart Switching / Ace Pokemon / Omniscient
@@ -16531,7 +16531,7 @@ Name: IMANI
 Class: Little Girl
 Pic: School Kid F
 Gender: Female
-Music: Magma
+Music: Female
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Smart Switching / Ace Pokemon / Omniscient
@@ -16608,25 +16608,83 @@ Name: JULIANA
 Class: Little Girl
 Pic: School Kid F
 Gender: Female
-Music: Magma
+Music: Elite Four
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Smart Switching / Ace Pokemon / Omniscient
 
-Test (Rattata) (F) @ Eviolite
+Jinxed (Giratina) (M) @ Safety Goggles
+Level: 100
+IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
+EVs: 248 HP / 0 Atk / 208 Def / 0 SpA / 52 SpD / 0 Spe
+Ability: Magic Bounce
+Nature: Relaxed
+- Core Enforcer
+- Spectral Thief
+- Shore Up
+- U-turn
+
+Jolt (Regieleki) (F) @ Life Orb
 Level: 100
 IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-Ability: Dauntless Shield
-Nature: Impish
-- Tackle
+EVs: 4 HP / 0 Atk / 0 Def / 252 SpA / 0 SpD / 252 Spe
+Ability: Refrigerate
+Nature: Modest
+- Boomburst
+- Electro Drift
+- Volt Switch
+- Strength Sap
+
+Joy (Chansey) (F) @ Eviolite
+Level: 100
+IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
+EVs: 4 HP / 0 Atk / 252 Def / 0 SpA / 252 SpD / 0 Spe
+Ability: Imposter
+Nature: Relaxed
+- Metal Burst
+- U-turn
+- Shore Up
+- Whirlwind
+
+Jagged (Ferrothorn) (F) @ Rocky Helmet
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
+EVs: 252 HP / 0 Atk / 252 Def / 0 SpA / 4 SpD / 0 Spe
+Ability: Magic Bounce
+Nature: Relaxed
+- Anchor Shot
+- Topsy-Turvy
+- Shore Up
+- Nuzzle
+
+Juggernaut (Regigigas) (M) @ Toxic Orb
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 0 Def / 0 SpA / 0 SpD / 252 Spe
+Ability: Poison Heal
+Nature: Jolly
+- Shift Gear
+- Facade
+- Spore
+- Knock Off
+
+Judgement (Gengar Mega) (F) @ Spooky Plate
+Level: 100
+IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 0 HP / 0 Atk / 0 Def / 252 SpA / 4 SpD / 252 Spe
+Ability: Mold Breaker
+Nature: Timid
+- Shell Smash
+- Judgment
+- Secret Sword
+- Lovely Kiss
 
 === TRAINER_KYOUKO ===
 Name: KYOUKO
 Class: Little Girl
 Pic: School Kid F
 Gender: Female
-Music: Magma
+Music: Aqua
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Smart Switching / Ace Pokemon / Omniscient
@@ -16644,7 +16702,7 @@ Name: LILY
 Class: Little Girl
 Pic: School Kid F
 Gender: Female
-Music: Magma
+Music: Aqua
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Smart Switching / Ace Pokemon / Omniscient
@@ -16662,7 +16720,7 @@ Name: MEGAN
 Class: Little Girl
 Pic: School Kid F
 Gender: Female
-Music: Magma
+Music: Aqua
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Smart Switching / Ace Pokemon / Omniscient
@@ -16680,7 +16738,7 @@ Name: NATALIE
 Class: Little Girl
 Pic: School Kid F
 Gender: Female
-Music: Magma
+Music: Aqua
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Smart Switching / Ace Pokemon / Omniscient
@@ -16698,7 +16756,7 @@ Name: OLIVIA
 Class: Little Girl
 Pic: School Kid F
 Gender: Female
-Music: Magma
+Music: Elite Four
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Smart Switching / Ace Pokemon / Omniscient
@@ -16711,4 +16769,21 @@ Ability: Dauntless Shield
 Nature: Impish
 - Tackle
 
+=== TRAINER_AMY ===
+Name: AMY
+Class: Little Girl
+Pic: School Kid F
+Gender: Female
+Music: Magma
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Smart Switching / Ace Pokemon / Omniscient
+
+Test (Rattata) (F) @ Eviolite
+Level: 100
+IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Ability: Dauntless Shield
+Nature: Impish
+- Tackle
 

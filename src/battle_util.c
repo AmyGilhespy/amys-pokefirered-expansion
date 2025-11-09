@@ -52,7 +52,7 @@
 #include "constants/trainers.h"
 #include "constants/weather.h"
 #include "constants/pokemon.h"
-//#include "gba/isagbprint.h"
+#include "gba/isagbprint.h"
 
 /*
 NOTE: The data and functions in this file up until (but not including) sSoundMovesTable
@@ -857,10 +857,34 @@ void HandleAction_OldManBallThrow(void)
     gActionsByTurnOrder[1] = B_ACTION_FINISHED;
 }
 
+static bool8 TryResetForMailScript()
+{
+    if (gMailScriptActive)
+    {
+        gCurrentTurnActionNumber = gAmySaveCurrentTurnActionNumber;
+        gCurrentActionFuncId = gActionsByTurnOrder[gCurrentTurnActionNumber];
+        gBattleStruct->synchronizeMoveEffect = MOVE_EFFECT_NONE;
+        gHitMarker &= ~(HITMARKER_DESTINYBOND
+                      | HITMARKER_ATTACKSTRING_PRINTED
+                      | HITMARKER_IGNORE_SUBSTITUTE
+                      | HITMARKER_STATUS_ABILITY_EFFECT
+                      | HITMARKER_PASSIVE_HP_UPDATE
+                      //| HITMARKER_OBEYS
+                      );
+        return TRUE;
+    }
+    return FALSE;
+}
+
 void HandleAction_TryFinish(void)
 {
     if (!HandleFaintedMonActions())
     {
+        if (TryResetForMailScript())
+        {
+            //MgbaPrintf(MGBA_LOG_WARN, "HandleAction_TryFinish(): TryResetForMailScript() -> TRUE"); // HIT
+            return;
+        }
         gBattleStruct->faintedActionsState = 0;
         gCurrentActionFuncId = B_ACTION_FINISHED;
     }
@@ -868,6 +892,13 @@ void HandleAction_TryFinish(void)
 
 void HandleAction_NothingIsFainted(void)
 {
+    #if 0 // Doesn't seem necessary; the one in HandleAction_TryFinish() is the important one.
+    if (TryResetForMailScript())
+    {
+        MgbaPrintf(MGBA_LOG_WARN, "HandleAction_NothingIsFainted(): TryResetForMailScript() -> TRUE");
+        return;
+    }
+    #endif
     gCurrentTurnActionNumber++;
     gCurrentActionFuncId = gActionsByTurnOrder[gCurrentTurnActionNumber];
     gBattleStruct->synchronizeMoveEffect = MOVE_EFFECT_NONE;
@@ -881,6 +912,14 @@ void HandleAction_NothingIsFainted(void)
 
 void HandleAction_ActionFinished(void)
 {
+    #if 0 // Doesn't seem necessary; the one in HandleAction_TryFinish() is the important one.
+    if (TryResetForMailScript())
+    {
+        MgbaPrintf(MGBA_LOG_WARN, "HandleAction_ActionFinished(): TryResetForMailScript() -> TRUE");
+        return;
+    }
+    #endif
+
     u32 i, j;
     bool32 afterYouActive = gSpecialStatuses[gBattlerByTurnOrder[gCurrentTurnActionNumber + 1]].afterYou;
     gBattleStruct->monToSwitchIntoId[gBattlerByTurnOrder[gCurrentTurnActionNumber]] = gSelectedMonPartyId = PARTY_SIZE;
@@ -2361,12 +2400,75 @@ static enum MoveCanceller CancellerChoiceLock(struct BattleContext *ctx)
     return MOVE_STEP_SUCCESS;
 }
 
+static u16 GetMoveIdFromEasyChatWord(u16 word)
+{
+    u16 group = EC_GROUP(word);
+    u16 index = EC_INDEX(word);
+
+    if (group == EC_GROUP_MOVE_1 || group == EC_GROUP_MOVE_2)
+    {
+        return index; // This is the MOVE_* ID
+    }
+    else
+    {
+        return MOVE_NONE; // not a move word
+    }
+}
+
+static u16 GetMailScriptMove(u32 battlerUser)
+{
+GetMailScriptMove_tryAgain:
+    if (gMailScriptIndex < 0)
+    {
+        return MOVE_NONE;
+    }
+    u8 index = gMailScriptIndex;
+    if (index >= MAIL_WORDS_COUNT)
+    {
+        return MOVE_NONE;
+    }
+    struct Pokemon *party = GetBattlerParty(battlerUser);
+    struct BattlePokemon userBattleMon = gBattleMons[battlerUser];
+    u8 userPartyIndex = gBattlerPartyIndexes[battlerUser];
+    if (userPartyIndex >= PARTY_SIZE)
+    {
+        gMailScriptIndex = MAIL_WORDS_COUNT; // Sentinel value to short-circuit next time.  This gets reset every action.
+        return MOVE_NONE;
+    }
+    u16 itemId = userBattleMon.item;
+    if (!IS_ITEM_MAIL(itemId))
+    {
+        gMailScriptIndex = MAIL_WORDS_COUNT; // Sentinel value to short-circuit next time.  This gets reset every action.
+        return MOVE_NONE;
+    }
+    struct Pokemon userMon = party[userPartyIndex];
+    u8 mailId = GetMonData(&userMon, MON_DATA_MAIL);
+    struct Mail mail = gSaveBlock1Ptr->mail[mailId];
+    #if 0 // This is how the Mail struct is defined (in global.h):
+    struct Mail
+    {
+        /*0x00*/ u16 words[MAIL_WORDS_COUNT];
+        /*0x12*/ u8 playerName[PLAYER_NAME_LENGTH + 1];
+        /*0x1A*/ u8 trainerId[TRAINER_ID_LENGTH];
+        /*0x1E*/ u16 species;
+        /*0x20*/ u16 itemId;
+    };
+    #endif
+    u16 word = mail.words[index];
+    u16 move = GetMoveIdFromEasyChatWord(word);
+    if (move == MOVE_NONE && index < MAIL_WORDS_COUNT)
+    {
+        gMailScriptIndex++;
+        goto GetMailScriptMove_tryAgain;
+    }
+    return move;
+}
+
 static enum MoveCanceller CancellerCallSubmove(struct BattleContext *ctx)
 {
     u32 noEffect = FALSE;
     u32 calledMove = MOVE_NONE;
-    const u8 *battleScript = NULL;
-    battleScript = BattleScript_SubmoveAttackstring;
+    const u8 *battleScript = BattleScript_SubmoveAttackstring;
 
     switch(ctx->moveEffect)
     {
@@ -2393,6 +2495,27 @@ static enum MoveCanceller CancellerCallSubmove(struct BattleContext *ctx)
         break;
     case EFFECT_ME_FIRST:
         calledMove = GetMeFirstMove();
+        break;
+    case EFFECT_MAIL_SCRIPT:
+        if (!gMailScriptActive)
+        {
+            // Nothing to do (defensive), continue normally
+            noEffect = TRUE;
+            break;
+        }
+
+        // Use saved battler if you stored them earlier (so submoves always use same attacker/target)
+        u32 battlerAtkSaved = gAmySaveBattlerAttacker;   // or ctx->battlerAtk
+        // Fetch the move for the current index (do NOT advance index here)
+        calledMove = GetMailScriptMove(battlerAtkSaved);
+        if (calledMove == MOVE_NONE)
+        {
+            // If none (invalid word or reached end), end the mail-script
+            gMailScriptActive = FALSE;
+            gMailScriptIndex = MAIL_WORDS_COUNT;
+            noEffect = TRUE;
+            break;
+        }
         break;
     default:
         noEffect = TRUE;
@@ -2958,11 +3081,53 @@ static enum MoveCanceller (*const sMoveSuccessOrderCancellers[])(struct BattleCo
 enum MoveCanceller AtkCanceller_MoveSuccessOrder(struct BattleContext *ctx)
 {
     enum MoveCanceller effect = MOVE_STEP_SUCCESS;
+    bool8 isMailScript = ctx->moveEffect == EFFECT_MAIL_SCRIPT && gBattleStruct->atkCancellerTracker == 0;
+
+    if (isMailScript)
+    {
+        if (!gMailScriptActive)
+        {
+            gMailScriptIndex = 0;
+            gMailScriptActive = TRUE;
+            gAmySaveCurrentTurnActionNumber = gCurrentTurnActionNumber;
+        }
+        gAmySaveBattlerAttacker = ctx->battlerAtk;
+        gAmySaveBattlerTarget = ctx->battlerDef;
+        memcpy(&gAmySaveBattleContext, ctx, sizeof gAmySaveBattleContext);
+        memcpy(&gAmySaveBattleScripting, &gBattleScripting, sizeof gAmySaveBattleScripting);
+        #if 0 // Not used anymore.
+        if (ctx->moveEffect != EFFECT_MAIL_SCRIPT)
+        {
+            PrepareStringBattle(STRINGID_USEDMOVE, ctx->battlerAtk);
+            gBattleCommunication[MSG_DISPLAY] = 0;
+        }
+        #endif
+    }
 
     while (gBattleStruct->atkCancellerTracker < CANCELLER_END && effect == MOVE_STEP_SUCCESS)
     {
         effect = sMoveSuccessOrderCancellers[gBattleStruct->atkCancellerTracker](ctx);
         gBattleStruct->atkCancellerTracker++;
+    }
+
+    if (gMailScriptActive && (effect == MOVE_STEP_FAILURE || gBattleStruct->atkCancellerTracker >= CANCELLER_END))
+    {
+        // We’ve just finished a submove script; advance to the next mail word
+        gMailScriptIndex++;
+
+        // If we’re out of mail words, stop the sequence
+        if (gMailScriptIndex >= MAIL_WORDS_COUNT)
+        {
+            gMailScriptActive = FALSE;
+            gMailScriptIndex = MAIL_WORDS_COUNT;
+            gBattleStruct->submoveAnnouncement = SUBMOVE_NO_EFFECT;
+            /*
+            if (effect == MOVE_STEP_SUCCESS)
+            {
+                effect = MOVE_STEP_BREAK;
+            }
+            */
+        }
     }
 
     if (effect == MOVE_STEP_REMOVES_STATUS)

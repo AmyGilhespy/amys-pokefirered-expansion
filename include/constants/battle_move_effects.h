@@ -358,6 +358,7 @@ enum __attribute__((packed)) BattleMoveEffects
     EFFECT_HUGE_SUBSTITUTE,
     EFFECT_SMALL_SUBSTITUTE,
     EFFECT_RESURRECTION,
+    EFFECT_MAIL_SCRIPT,
     NUM_BATTLE_MOVE_EFFECTS,
 };
 
