@@ -814,3 +814,21 @@
             },
         },
     },
+#ifndef AMY_TRAINERS_CUSTOM
+#define AMY_TRAINERS_CUSTOM \
+const u16 *const gTrainerMailWordsTable[][PARTY_SIZE] __attribute__((section(".rodata"))) = {\
+[0] = { NULL, NULL, NULL, },\
+[1] = { NULL, },\
+[2] = { NULL, },\
+[2] = { NULL, },\
+[2] = { NULL, },\
+[3] = { NULL, NULL, NULL, NULL, },\
+[4] = { NULL, NULL, NULL, NULL, NULL, NULL, },\
+[5] = { NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, },\
+[6] = { NULL, NULL, NULL, },\
+[7] = { NULL, NULL, NULL, },\
+[8] = { NULL, NULL, NULL, },\
+[9] = { NULL, NULL, },\
+[10] = { NULL, NULL, },\
+};
+#endif // AMY_TRAINERS_CUSTOM

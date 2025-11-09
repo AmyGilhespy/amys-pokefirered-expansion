@@ -93,6 +93,10 @@ struct Pokemon
     int moves_n;
     int move1_line;
 
+    int mail_words[9]; // MAIL_WORDS_COUNT is 9 in GBA code; use literal 9 here
+    int mail_words_n;
+    int mail_words_line;
+
     struct String tags[MAX_MON_TAGS];
     int tags_n;
     int tags_line;
@@ -344,6 +348,32 @@ static void skip_line(struct Parser *p)
         if (c == '\n')
             break;
     }
+}
+
+// Skip a line if it starts with '//' (C++ style comment). Returns true if it skipped.
+static bool skip_line_comment(struct Parser *p)
+{
+    struct Parser p_ = *p;
+    unsigned char c;
+    if (!peek_char(&p_, &c))
+        return false;
+    if (c == '/')
+    {
+        // check next char
+        p_.offset++;
+        if (p_.offset == p_.source->buffer_n)
+            return false;
+        unsigned char c2 = p_.source->buffer[p_.offset];
+        if (c2 == '/')
+        {
+            // skip rest of line
+            p_.offset--; // restore so skip_line sees '/'
+            *p = p_;
+            skip_line(p);
+            return true;
+        }
+    }
+    return false;
 }
 
 __attribute__((warn_unused_result))
@@ -755,8 +785,11 @@ static bool parse_pokemon_header(struct Parser *p, struct Token *nickname, struc
     }
 
     skip_whitespace(&p_);
+
     if (!match_eol(&p_))
         return set_parse_error(p, p_.location, "unexpected character in Pokemon header");
+
+    while (skip_line_comment(p)) {}
 
     *p = p_;
     return true;
@@ -1322,6 +1355,7 @@ static bool parse_trainer(struct Parser *p, const struct Parsed *parsed, struct 
         any_error = !set_show_parse_error(p, p->location, "expected 'Pic' before Pokemon");
     if (!trainer->name_line && !trainer->macro_line)
         any_error = !set_show_parse_error(p, p->location, "expected 'Name' before Pokemon");
+
     if (!match_empty_line(p))
     {
         set_show_parse_error(p, p->location, "expected empty line");
@@ -1426,6 +1460,61 @@ static bool parse_trainer(struct Parser *p, const struct Parsed *parsed, struct 
                 pokemon->ability_line = value.location.line;
                 pokemon->ability = token_string(&value);
             }
+            else if (is_literal_token(&key, "Mail"))
+            {
+                if (pokemon->mail_words_line)
+                    any_error = !set_show_parse_error(p, key.location, "duplicate 'Mail'");
+                pokemon->mail_words_line = value.location.line;
+                // Now consume rest of line and parse up to 9 ints/hex values
+                p->offset = value.begin;
+                skip_whitespace(p);
+                int count = 0;
+                while (count < 9)
+                {
+                    // parse a hex 0x.. or decimal number token
+                    struct Token numTok;
+                    match_until_eol(p, &numTok); // get rest of line into token
+                    // now parse numbers out of numTok.source->buffer[numTok.begin..numTok.end)
+                    int idx = numTok.begin;
+                    while (idx < numTok.end)
+                    {
+                        // skip spaces / commas
+                        while (idx < numTok.end && (numTok.source->buffer[idx] == ' ' || numTok.source->buffer[idx] == '\t' || numTok.source->buffer[idx] == ',')) idx++;
+                        if (idx >= numTok.end) break;
+                        // parse number (hex or decimal)
+                        int val = 0;
+                        if (idx+2 < numTok.end && numTok.source->buffer[idx] == '0' && (numTok.source->buffer[idx+1] == 'x' || numTok.source->buffer[idx+1] == 'X'))
+                        {
+                            idx += 2;
+                            while (idx < numTok.end) {
+                                unsigned char ch = numTok.source->buffer[idx];
+                                int digit = -1;
+                                if ('0' <= ch && ch <= '9') digit = ch - '0';
+                                else if ('a' <= ch && ch <= 'f') digit = 10 + (ch - 'a');
+                                else if ('A' <= ch && ch <= 'F') digit = 10 + (ch - 'A');
+                                else break;
+                                val = (val << 4) | digit;
+                                idx++;
+                            }
+                        }
+                        else
+                        {
+                            while (idx < numTok.end && '0' <= numTok.source->buffer[idx] && numTok.source->buffer[idx] <= '9')
+                            {
+                                val = val * 10 + (numTok.source->buffer[idx] - '0');
+                                idx++;
+                            }
+                        }
+                        pokemon->mail_words[count++] = val;
+                        // skip separators
+                        while (idx < numTok.end && (numTok.source->buffer[idx] == ' ' || numTok.source->buffer[idx] == '\t' || numTok.source->buffer[idx] == ',')) idx++;
+                    }
+                    break; // we consumed the rest of the line
+                }
+                pokemon->mail_words_n = count;
+                while (!match_eol(p))
+                    p++;
+            }
             else if (is_literal_token(&key, "Level"))
             {
                 if (pokemon->level_line)
@@ -1505,7 +1594,7 @@ static bool parse_trainer(struct Parser *p, const struct Parsed *parsed, struct 
             }
             else
             {
-                any_error = !set_show_parse_error(p, key.location, "expected one of 'EVs', 'IVs', 'Ability', 'Level', 'Ball', 'Happiness', 'Nature', 'Shiny', 'Dynamax Level', 'Gigantamax', or 'Tera Type'");
+                any_error = !set_show_parse_error(p, key.location, "expected one of 'EVs', 'IVs', 'Ability', 'Level', 'Ball', 'Happiness', 'Nature', 'Shiny', 'Dynamax Level', 'Gigantamax', 'Tera Type', or 'Mail'");
             }
         }
 
@@ -1552,9 +1641,11 @@ static bool parse_trainer(struct Parser *p, const struct Parsed *parsed, struct 
                 pokemon->moves_n++;
             }
         }
+        while (skip_line_comment(p)) {}
 
         if (match_eof(p))
             break;
+
         if (!match_empty_line(p))
         {
             set_show_parse_error(p, p->location, "expected empty line");
@@ -2118,6 +2209,59 @@ static void fprint_trainers(const char *output_path, FILE *f, struct Parsed *par
             fprintf(f, "        },\n");
         fprintf(f, "    },\n");
     }
+    fprintf(f, "#ifndef AMY_TRAINERS_CUSTOM\n");
+    fprintf(f, "#define AMY_TRAINERS_CUSTOM \\\n");
+    for (int i = 0; i < parsed->trainers_n; i++)
+    {
+        struct Trainer *trainer = &parsed->trainers[i];
+        for (int j = 0; j < trainer->pokemon_n && is_empty_string(trainer->copy_pool); j++)
+        {
+            struct Pokemon *pokemon = &trainer->pokemon[j];
+            if (pokemon->mail_words_n > 0)
+            {
+                fprintf(f, "static const u16 sTrainer_");
+                fprint_string(f, trainer->id);
+                fprintf(f, "_p%d_mailwords[] __attribute__((section(\".rodata\"))) = { ", j);
+                for (int k = 0; k < 9; k++)
+                {
+                    if (k < pokemon->mail_words_n)
+                    {
+                        fprintf(f, "%d, ", pokemon->mail_words[k]);
+                    }
+                    else
+                    {
+                        fprintf(f, "0xffff, ");
+                    }
+                }
+                fprintf(f, "};\\\n");
+            }
+        }
+    }
+    fprintf(f, "const u16 *const gTrainerMailWordsTable[][PARTY_SIZE] __attribute__((section(\".rodata\"))) = {\\\n");
+    for (int i = 0; i < parsed->trainers_n; i++)
+    {
+        struct Trainer *trainer = &parsed->trainers[i];
+        fprintf(f, "[");
+        fprint_string(f, trainer->id);
+        fprintf(f, "] = { ");
+        for (int j = 0; j < trainer->pokemon_n && is_empty_string(trainer->copy_pool); j++)
+        {
+            struct Pokemon *pokemon = &trainer->pokemon[j];
+            if (pokemon->mail_words_n > 0)
+            {
+                fprintf(f, "sTrainer_");
+                fprint_string(f, trainer->id);
+                fprintf(f, "_p%d_mailwords, ", j);
+            }
+            else
+            {
+                fprintf(f, "NULL, ");
+            }
+        }
+        fprintf(f, "},\\\n");
+    }
+    fprintf(f, "};\n");
+    fprintf(f, "#endif // AMY_TRAINERS_CUSTOM\n");
 }
 
 static void usage(FILE *file, char *argv0)

@@ -919,6 +919,7 @@ extern const u8 gEasyChatGroupName_Move1[];
 extern const u8 gEasyChatGroupName_Move2[];
 extern const u8 gEasyChatGroupName_TrendySaying[];
 extern const u8 gEasyChatGroupName_Pokemon2[];
+extern const u8 gEasyChatGroupName_Tm[];
 extern const u8 gText_ThreeQuestionMarks[];
 
 // hall_of_fame

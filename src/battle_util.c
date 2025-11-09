@@ -52,6 +52,7 @@
 #include "constants/trainers.h"
 #include "constants/weather.h"
 #include "constants/pokemon.h"
+#include "mail_trainer.h"
 #include "gba/isagbprint.h"
 
 /*
@@ -2405,18 +2406,32 @@ static u16 GetMoveIdFromEasyChatWord(u16 word)
     u16 group = EC_GROUP(word);
     u16 index = EC_INDEX(word);
 
-    if (group == EC_GROUP_MOVE_1 || group == EC_GROUP_MOVE_2)
+    if (index != EC_INDEX(0xffff))
     {
-        return index; // This is the MOVE_* ID
+        if (group == EC_GROUP_MOVE_1 || group == EC_GROUP_MOVE_2)
+        {
+            return index; // This is the MOVE_* ID
+        }
+        else if (group == EC_GROUP_TM)
+        {
+            return GetTMHMMoveId(index);
+        }
+        else
+        {
+            MgbaPrintf(MGBA_LOG_WARN, "WARNING: index=0x%04x, but group=%d, an invalid group.", index, group);
+        }
     }
     else
     {
-        return MOVE_NONE; // not a move word
+        MgbaPrintf(MGBA_LOG_WARN, "WARNING: index=0x%04x == EC_INDEX(0xffff)=0x%04x, the sentinel for an invalid word.", index, EC_INDEX(0xffff));
     }
+    return MOVE_NONE; // not a move word
 }
 
 static u16 GetMailScriptMove(u32 battlerUser)
 {
+    u16 word, move, w;
+
 GetMailScriptMove_tryAgain:
     if (gMailScriptIndex < 0)
     {
@@ -2441,6 +2456,29 @@ GetMailScriptMove_tryAgain:
         gMailScriptIndex = MAIL_WORDS_COUNT; // Sentinel value to short-circuit next time.  This gets reset every action.
         return MOVE_NONE;
     }
+
+    if (GetBattlerSide(battlerUser) == B_SIDE_OPPONENT)
+    {
+        MgbaPrintf(MGBA_LOG_WARN, "DEBUG: gOpponentPartyMailWords[userPartyIndex=%d] B_SIDE_OPPONENT.", userPartyIndex);
+        const u16 *npcWords = gOpponentPartyMailWords[userPartyIndex];
+        if (npcWords != NULL)
+        {
+            for (w = 0; w < MAIL_WORDS_COUNT; ++w)
+            {
+                word = npcWords[w];
+                MgbaPrintf(MGBA_LOG_WARN, "DEBUG: gOpponentPartyMailWords[userPartyIndex=%d] GOT WORD[%d]=%d.", userPartyIndex, w, word);
+                goto GetMailScriptMove_gotWord;
+            }
+        }
+        else
+        {
+            MgbaPrintf(MGBA_LOG_WARN, "WARNING: gOpponentPartyMailWords[userPartyIndex=%d] was NULL.", userPartyIndex);
+        }
+    }
+    else
+    {
+        MgbaPrintf(MGBA_LOG_WARN, "DEBUG: gOpponentPartyMailWords[userPartyIndex=%d] B_SIDE_PLAYER.", userPartyIndex);
+    }
     struct Pokemon userMon = party[userPartyIndex];
     u8 mailId = GetMonData(&userMon, MON_DATA_MAIL);
     struct Mail mail = gSaveBlock1Ptr->mail[mailId];
@@ -2454,13 +2492,15 @@ GetMailScriptMove_tryAgain:
         /*0x20*/ u16 itemId;
     };
     #endif
-    u16 word = mail.words[index];
-    u16 move = GetMoveIdFromEasyChatWord(word);
+    word = mail.words[index];
+GetMailScriptMove_gotWord:
+    move = GetMoveIdFromEasyChatWord(word);
     if (move == MOVE_NONE && index < MAIL_WORDS_COUNT)
     {
         gMailScriptIndex++;
         goto GetMailScriptMove_tryAgain;
     }
+    MgbaPrintf(MGBA_LOG_WARN, "DEBUG: GOT MOVE = %d.", move);
     return move;
 }
 

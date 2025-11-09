@@ -193,6 +193,8 @@ extern const struct FollowerMsgInfo gFollowerCuriousMessages[];
 extern const struct FollowerMsgInfo gFollowerMusicMessages[];
 extern const struct FollowerMsgInfo gFollowerPoisonedMessages[];
 
+extern const u16 *const gTrainerMailWordsTable[][PARTY_SIZE] __attribute__((section(".rodata")));
+
 static inline u16 SanitizeTrainerId(u16 trainerId)
 {
     if (trainerId >= TRAINERS_COUNT)

@@ -107,3 +107,10 @@
             },
         },
     },
+#ifndef AMY_TRAINERS_CUSTOM
+#define AMY_TRAINERS_CUSTOM \
+const u16 *const gTrainerMailWordsTable[][PARTY_SIZE] __attribute__((section(".rodata"))) = {\
+[PARTNER_NONE] = { },\
+[PARTNER_STEVEN] = { NULL, NULL, NULL, },\
+};
+#endif // AMY_TRAINERS_CUSTOM

@@ -34,7 +34,8 @@
 #define EC_GROUP_MOVE_2         0x13
 #define EC_GROUP_TRENDY_SAYING  0x14
 #define EC_GROUP_POKEMON        0x15
-#define EC_NUM_GROUPS           0x16
+#define EC_GROUP_TM             0x16
+#define EC_NUM_GROUPS           0x17
 
 // TRAINER
 #define EC_WORD_I_CHOOSE_YOU  (EC_GROUP_TRAINER << 9) | 0x0

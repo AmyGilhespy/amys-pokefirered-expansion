@@ -62,6 +62,7 @@ static const u8 *const sEasyChatGroupNamePointers[] = {
     [EC_GROUP_MOVE_2] = gEasyChatGroupName_Move2,
     [EC_GROUP_TRENDY_SAYING] = gEasyChatGroupName_TrendySaying,
     [EC_GROUP_POKEMON_2] = gEasyChatGroupName_Pokemon2,
+    [EC_GROUP_TM] = gEasyChatGroupName_Tm,
 };
 
 static const u16 sDefaultProfileWords[] = {
@@ -93,9 +94,10 @@ static bool8 IsECGroupUnlocked(u8 groupId)
     case EC_GROUP_EVENTS:
     case EC_GROUP_MOVE_1:
     case EC_GROUP_MOVE_2:
-        return FlagGet(FLAG_SYS_GAME_CLEAR);
+    case EC_GROUP_TM:
+        return TRUE || FlagGet(FLAG_SYS_GAME_CLEAR);
     case EC_GROUP_POKEMON:
-        return EC_IsNationalPokedexEnabled();
+        return TRUE || EC_IsNationalPokedexEnabled();
     default:
         return TRUE;
     }
@@ -134,6 +136,7 @@ static bool8 IsECWordInvalid(u16 easyChatWord)
     case EC_GROUP_POKEMON_2:
     case EC_GROUP_MOVE_1:
     case EC_GROUP_MOVE_2:
+    case EC_GROUP_TM:
         list = sEasyChatGroups[groupId].wordData.valueList;
         for (i = 0; i < numWords; i++)
         {
@@ -159,6 +162,11 @@ static const u8 *GetEasyChatWord(u8 groupId, u16 index)
     case EC_GROUP_MOVE_1:
     case EC_GROUP_MOVE_2:
         return GetMoveName(index);
+    case EC_GROUP_TM:
+        if (index < 1)
+            return sEasyChatWord_Fuck;
+        else
+            return gItemsInfo[GetTMHMItemId(sEasyChatGroups[groupId].wordData.valueList[index])].name; // GetTMHMItemId() is from include/item.h
     default:
         return sEasyChatGroups[groupId].wordData.words[index].text;
     }
@@ -255,7 +263,8 @@ static u16 GetRandomWordFromGroup(u16 groupId)
     if (groupId == EC_GROUP_POKEMON_2
      || groupId == EC_GROUP_POKEMON
      || groupId == EC_GROUP_MOVE_1
-     || groupId == EC_GROUP_MOVE_2)
+     || groupId == EC_GROUP_MOVE_2
+     || groupId == EC_GROUP_TM)
     {
         index = sEasyChatGroups[groupId].wordData.valueList[index];
     }
@@ -438,14 +447,15 @@ static void PopulateECGroups(void)
     for (i = EC_GROUP_TRAINER; i <= EC_GROUP_ADJECTIVES; i++)
         sEasyChatSelectionData->groups[sEasyChatSelectionData->numGroups++] = i;
 
-    if (FlagGet(FLAG_SYS_GAME_CLEAR))
+    if (TRUE || FlagGet(FLAG_SYS_GAME_CLEAR))
     {
         sEasyChatSelectionData->groups[sEasyChatSelectionData->numGroups++] = EC_GROUP_EVENTS;
         sEasyChatSelectionData->groups[sEasyChatSelectionData->numGroups++] = EC_GROUP_MOVE_1;
         sEasyChatSelectionData->groups[sEasyChatSelectionData->numGroups++] = EC_GROUP_MOVE_2;
+        sEasyChatSelectionData->groups[sEasyChatSelectionData->numGroups++] = EC_GROUP_TM;
     }
 
-    if (IsNationalPokedexEnabled())
+    if (TRUE || IsNationalPokedexEnabled())
         sEasyChatSelectionData->groups[sEasyChatSelectionData->numGroups++] = EC_GROUP_POKEMON_2;
 }
 
@@ -556,7 +566,8 @@ static u16 GetUnlockedWordsInECGroup(u16 groupId)
     u16 numWords = sEasyChatGroups[groupId].numWords;
 
     if (groupId == EC_GROUP_POKEMON_2 || groupId == EC_GROUP_POKEMON
-     || groupId == EC_GROUP_MOVE_1  || groupId == EC_GROUP_MOVE_2)
+     || groupId == EC_GROUP_MOVE_1  || groupId == EC_GROUP_MOVE_2
+     || groupId == EC_GROUP_TM)
     {
         list = sEasyChatGroups[groupId].wordData.valueList;
         for (i = 0, totalWords = 0; i < numWords; i++)
@@ -609,16 +620,17 @@ static bool8 UnlockedECMonOrMove(u16 wordIndex, u8 groupId)
     switch (groupId)
     {
     case EC_GROUP_POKEMON:
-        return GetSetPokedexFlag(SpeciesToNationalPokedexNum(wordIndex), FLAG_GET_SEEN);
+        return TRUE || GetSetPokedexFlag(SpeciesToNationalPokedexNum(wordIndex), FLAG_GET_SEEN);
     case EC_GROUP_POKEMON_2:
         if (EC_IsDeoxys(wordIndex))
-            return GetSetPokedexFlag(SpeciesToNationalPokedexNum(wordIndex), FLAG_GET_SEEN);
+            return TRUE || GetSetPokedexFlag(SpeciesToNationalPokedexNum(wordIndex), FLAG_GET_SEEN);
         return TRUE;
     case EC_GROUP_MOVE_1:
     case EC_GROUP_MOVE_2:
+    case EC_GROUP_TM:
         return TRUE;
     default:
-        return sEasyChatGroups[groupId].wordData.words[wordIndex].enabled;
+        return TRUE || sEasyChatGroups[groupId].wordData.words[wordIndex].enabled;
     }
 }
 

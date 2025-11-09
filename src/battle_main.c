@@ -81,6 +81,8 @@
 #include "cable_club.h"
 #include "random_encounters.h"
 #include "field_specials.h"
+#include "mail.h"
+#include "mail_trainer.h"
 #include "gba/isagbprint.h"
 
 extern const struct BgTemplate gBattleBgTemplates[];
@@ -265,6 +267,8 @@ COMMON_DATA u8 gLeveledUpInBattle = 0;
 COMMON_DATA u8 gHealthboxSpriteIds[MAX_BATTLERS_COUNT] = {0};
 COMMON_DATA u8 gMultiUsePlayerCursor = 0;
 COMMON_DATA u8 gNumberOfMovesToChoose = 0;
+
+EWRAM_DATA const u16 *gOpponentPartyMailWords[PARTY_SIZE] = {0};
 
 static const struct ScanlineEffectParams sIntroScanlineParams16Bit =
 {
@@ -1973,7 +1977,7 @@ void CustomTrainerPartyAssignMoves(struct Pokemon *mon, const struct TrainerMon 
     }
 }
 
-u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer *trainer, bool32 firstTrainer, u32 battleTypeFlags)
+u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer *trainer, bool32 firstTrainer, u32 battleTypeFlags, u16 trainerId)
 {
     u32 personalityValue;
     s32 i;
@@ -2123,7 +2127,18 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
             }
             CreateMon(&party[i], randomSpecies, monLevel, 0, TRUE, personalityValue, otIdType, fixedOtId);
 
-            SetMonData(&party[i], MON_DATA_HELD_ITEM, &partyData[monIndex].heldItem);
+            u32 itemId = partyData[monIndex].heldItem;
+            if (IS_ITEM_MAIL(itemId) && trainerId != 0xffff && gTrainerMailWordsTable[trainerId][i] != NULL)
+            {
+                gOpponentPartyMailWords[i] = gTrainerMailWordsTable[trainerId][i];
+            }
+            else
+            {
+                gOpponentPartyMailWords[i] = NULL;
+            }
+
+            SetMonData(&party[i], MON_DATA_HELD_ITEM, &itemId);
+
             if (givePreassignedMoves != FALSE)
             {
                 CustomTrainerPartyAssignMoves(&party[i], &partyData[monIndex]);
@@ -2232,11 +2247,11 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 fir
         if (tempTrainer.partySize == 0)
             tempTrainer.partySize = origTrainer->partySize;
 
-        retVal = CreateNPCTrainerPartyFromTrainer(party, (const struct Trainer *)(&tempTrainer), firstTrainer, gBattleTypeFlags);
+        retVal = CreateNPCTrainerPartyFromTrainer(party, (const struct Trainer *)(&tempTrainer), firstTrainer, gBattleTypeFlags, trainerNum);
     }
     else
     {
-        retVal = CreateNPCTrainerPartyFromTrainer(party, GetTrainerStructFromId(trainerNum), firstTrainer, gBattleTypeFlags);
+        retVal = CreateNPCTrainerPartyFromTrainer(party, GetTrainerStructFromId(trainerNum), firstTrainer, gBattleTypeFlags, trainerNum);
     }
     return retVal;
 }
@@ -2247,7 +2262,7 @@ void CreateTrainerPartyForPlayer(void)
 
     ZeroPlayerPartyMons();
     gPartnerTrainerId = gSpecialVar_0x8004;
-    CreateNPCTrainerPartyFromTrainer(gPlayerParty, GetTrainerStructFromId(gSpecialVar_0x8004), TRUE, BATTLE_TYPE_TRAINER);
+    CreateNPCTrainerPartyFromTrainer(gPlayerParty, GetTrainerStructFromId(gSpecialVar_0x8004), TRUE, BATTLE_TYPE_TRAINER, 0xffff);
 }
 
 void VBlankCB_Battle(void)
@@ -2933,7 +2948,6 @@ static void BattleStartClearSetData(void)
     gHitMarker = 0;
 
     // === Amy custom init ===
-    MgbaPrintf(MGBA_LOG_WARN, "\n===\n\n");
     gMailScriptActive = FALSE;
     gMailScriptIndex = 0;
     // === End of Amy custom init ===

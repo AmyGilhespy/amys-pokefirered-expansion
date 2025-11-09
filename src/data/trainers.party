@@ -8170,6 +8170,7 @@ Nature: Timid
 - Dark Pulse
 - Ice Beam
 - Hidden Power
+// HP Ground
 
 Starmie @ Life Orb
 Level: 21
@@ -15950,30 +15951,17 @@ Pic: RS Aroma Lady
 Gender: Female
 Music: Magma
 Items: Full Restore / Full Restore / Full Restore
-Double Battle: Yes
+Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Smart Switching / Ace Pokemon / Omniscient / Prefer Highest Damage Move
 
-Necrozma-Dusk Mane @ Ultranecrozium Z
-Level: 100
-IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 0 HP / 0 Atk / 32 Def / 224 SpA / 0 SpD / 252 Spe
-Ability: Prism Armor
-Nature: Jolly
-- Stealth Rock
-- Photon Geyser
-- Dragon Pulse
-- Heat Wave
-
-Rayquaza @ Life Orb
+Mew @ Orange Mail
 Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 0 HP / 252 Atk / 4 Def / 0 SpA / 0 SpD / 252 Spe
-Ability: Air Lock
-Nature: Adamant
-- Dragon Ascent
-- Dragon Dance
-- Extreme Speed
-- V-create
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Ability: Synchronize
+Nature: Serious
+Mail: 0x244a 0x244a 0x244a 0x244a 0x244a 0x244a 0x2c0f
+- Mail Script
 
 === TRAINER_ANNA ===
 Name: ANNA

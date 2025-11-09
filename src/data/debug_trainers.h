@@ -134,3 +134,10 @@
             },
         },
     },
+#ifndef AMY_TRAINERS_CUSTOM
+#define AMY_TRAINERS_CUSTOM \
+const u16 *const gTrainerMailWordsTable[][PARTY_SIZE] __attribute__((section(".rodata"))) = {\
+[DEBUG_TRAINER_PLAYER] = { NULL, },\
+[DEBUG_TRAINER_AI] = { NULL, NULL, NULL, },\
+};
+#endif // AMY_TRAINERS_CUSTOM

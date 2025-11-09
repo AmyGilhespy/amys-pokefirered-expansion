@@ -245,6 +245,7 @@ const struct Trainer gTrainers[DIFFICULTY_COUNT][TRAINERS_COUNT] =
 {
 #include "data/trainers.h"
 };
+AMY_TRAINERS_CUSTOM
 
 #include "data/partner_parties.h"
 
