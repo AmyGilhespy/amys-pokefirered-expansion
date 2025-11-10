@@ -1373,3 +1373,9 @@ Text_TestMsg::
 	.include "data/text/pokedude.inc"
 	.include "data/scripts/follower.inc"
 	.include "data/scripts/dexnav.inc"
+
+	.include "data/maps/CeruleanCave_Underwater/scripts.inc"
+	.include "data/maps/CeruleanCave_Underwater/text.inc"
+
+	.include "data/maps/CeruleanCave_SecretChamber_B1F/scripts.inc"
+	.include "data/maps/CeruleanCave_SecretChamber_B1F/text.inc"

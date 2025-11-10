@@ -16,6 +16,7 @@ extern const u8 BattleScript_MoveMissed[];
 extern const u8 BattleScript_FlingFailConsumeItem[];
 extern const u8 BattleScript_FailedFromAtkCanceler[];
 extern const u8 BattleScript_ButItFailed[];
+extern const u8 BattleScript_UsedMoveButItFailed[];
 extern const u8 BattleScript_StatUp[];
 extern const u8 BattleScript_StatDown[];
 extern const u8 BattleScript_AlreadyAtFullHp[];

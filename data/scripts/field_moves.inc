@@ -305,7 +305,7 @@ Text_UseWaterfall::
 Text_MonUsedWaterfall::
 	.string "{STR_VAR_1} used WATERFALL.$"
 
-@ Unused leftover from R/S
+EventScript_FldEffAmyDive::
 EventScript_DeepWater::
 	lockall
 	checkfieldmoveusable FIELD_MOVE_DIVE

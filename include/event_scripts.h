@@ -1183,6 +1183,7 @@ extern const u8 Help_Text_TypeMatchupOwnPokemonBug[];
 extern const u8 EventScript_FldEffStrength[];
 extern const u8 EventScript_FailSweetScent[];
 extern const u8 EventScript_FldEffRockSmash[];
+extern const u8 EventScript_FldEffAmyDive[];
 
 extern const u8 SafariZone_EventScript_TimesUp[];
 extern const u8 SafariZone_EventScript_RetirePrompt[];

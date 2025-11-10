@@ -2550,6 +2550,8 @@ static enum MoveCanceller CancellerCallSubmove(struct BattleContext *ctx)
             // If none (invalid word or reached end), end the mail-script
             gMailScriptActive = FALSE;
             gMailScriptIndex = MAIL_WORDS_COUNT;
+            u32 side = GetBattlerSide(gBattlerAttacker);
+            gBattleStruct->usedMailScript[side] = TRUE;
             noEffect = TRUE;
             break;
         }
@@ -3120,6 +3122,7 @@ enum MoveCanceller AtkCanceller_MoveSuccessOrder(struct BattleContext *ctx)
     enum MoveCanceller effect = MOVE_STEP_SUCCESS;
     bool8 isMailScript = ctx->moveEffect == EFFECT_MAIL_SCRIPT && gBattleStruct->atkCancellerTracker == 0;
 
+MgbaPrintf(MGBA_LOG_WARN, "AtkCanceller_MoveSuccessOrder(): <<A>> index=%d", gMailScriptIndex);
     if (isMailScript)
     {
         if (!gMailScriptActive)
@@ -3142,6 +3145,7 @@ enum MoveCanceller AtkCanceller_MoveSuccessOrder(struct BattleContext *ctx)
         #endif
     }
 
+MgbaPrintf(MGBA_LOG_WARN, "AtkCanceller_MoveSuccessOrder(): <<B>> index=%d", gMailScriptIndex);
     while (gBattleStruct->atkCancellerTracker < CANCELLER_END && effect == MOVE_STEP_SUCCESS)
     {
         if (ctx->moveEffect == EFFECT_MAIL_SCRIPT && gBattleStruct->atkCancellerTracker == CANCELLER_POWER_POINTS)
@@ -3166,6 +3170,8 @@ enum MoveCanceller AtkCanceller_MoveSuccessOrder(struct BattleContext *ctx)
         {
             gMailScriptActive = FALSE;
             gMailScriptIndex = MAIL_WORDS_COUNT;
+            u32 side = GetBattlerSide(gBattlerAttacker);
+            gBattleStruct->usedMailScript[side] = TRUE;
             gBattleStruct->submoveAnnouncement = SUBMOVE_NO_EFFECT;
             /*
             if (effect == MOVE_STEP_SUCCESS)
@@ -3176,6 +3182,7 @@ enum MoveCanceller AtkCanceller_MoveSuccessOrder(struct BattleContext *ctx)
         }
     }
 
+MgbaPrintf(MGBA_LOG_WARN, "AtkCanceller_MoveSuccessOrder(): <<C>> index=%d", gMailScriptIndex);
     if (effect == MOVE_STEP_REMOVES_STATUS)
     {
         BtlController_EmitSetMonData(
@@ -3188,6 +3195,7 @@ enum MoveCanceller AtkCanceller_MoveSuccessOrder(struct BattleContext *ctx)
         MarkBattlerForControllerExec(ctx->battlerAtk);
     }
 
+MgbaPrintf(MGBA_LOG_WARN, "AtkCanceller_MoveSuccessOrder(): <<D>> index=%d", gMailScriptIndex);
     return effect;
 }
 

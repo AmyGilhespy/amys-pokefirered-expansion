@@ -2994,6 +2994,7 @@ static void BattleStartClearSetData(void)
 
     // === Amy custom per-side init ===
     memset(gBattleStruct->usedResurrection, 0, sizeof(gBattleStruct->usedResurrection));
+    memset(gBattleStruct->usedMailScript, 0, sizeof(gBattleStruct->usedMailScript));
     // === End of Amy custom per-side init ===
 
     for (i = 0; i < ARRAY_COUNT(gSideTimers); i++)

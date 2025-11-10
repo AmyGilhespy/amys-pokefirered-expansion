@@ -1,0 +1,57 @@
+CeruleanCave_SecretChamber_B1F_MapScripts::
+	.byte 0
+
+CeruleanCave_SecretChamber_B1F_DiveSpot::
+	setflag FLAG_TEMP_D
+	release
+	end
+
+CeruleanCave_SecretChamber_B1F_DiveSpotExited::
+	clearflag FLAG_TEMP_D
+	release
+	end
+
+CeruleanCave_SecretChamber_B1F_Kyouko::
+	checktrainerflag TRAINER_EMILY
+	goto_if_ne CeruleanCave_SecretChamber_B1F_EventScript_KyoukoBeatEmilyFirst
+	checktrainerflag TRAINER_JULIANA
+	goto_if_ne CeruleanCave_SecretChamber_B1F_EventScript_KyoukoBeatJulianaFirst
+	goto CeruleanCave_SecretChamber_B1F_EventScript_KyoukoPrerequisitesMet
+	end
+
+CeruleanCave_SecretChamber_B1F_EventScript_KyoukoBeatEmilyFirst::
+	msgbox CeruleanCave_SecretChamber_B1F_Text_KyoukoBeatEmilyFirst, MSGBOX_NPC
+	end
+
+CeruleanCave_SecretChamber_B1F_EventScript_KyoukoBeatJulianaFirst::
+	msgbox CeruleanCave_SecretChamber_B1F_Text_KyoukoBeatJulianaFirst, MSGBOX_NPC
+	end
+
+CeruleanCave_SecretChamber_B1F_EventScript_KyoukoPrerequisitesMet::
+	lock
+	checktrainerflag TRAINER_KYOUKO
+	goto_if_eq CeruleanCave_SecretChamber_B1F_EventScript_RematchKyouko
+	trainerbattle_single TRAINER_KYOUKO, CeruleanCave_SecretChamber_B1F_Text_KyoukoIntro, CeruleanCave_SecretChamber_B1F_Text_KyoukoDefeat, CeruleanCave_SecretChamber_B1F_EventScript_DefeatedKyouko, NO_MUSIC
+CeruleanCave_SecretChamber_B1F_EventScript_DefeatedKyouko::
+	lockall
+	msgbox CeruleanCave_SecretChamber_B1F_Text_KyoukoPostBattle, MSGBOX_NPC
+	call EventScript_OutOfCenterPartyHeal
+	msgbox CeruleanCave_SecretChamber_B1F_Text_KyoukoPostHeal, MSGBOX_NPC
+	applymovement LOCALID_KYOUKO, CeruleanCave_SecretChamber_B1F_Movement_KyoukoExit
+	waitmovement 0
+	@removeobject LOCALID_KYOUKO
+	releaseall
+	end
+CeruleanCave_SecretChamber_B1F_EventScript_RematchKyouko::
+	cleartrainerflag TRAINER_KYOUKO
+	trainerbattle_single TRAINER_KYOUKO, CeruleanCave_SecretChamber_B1F_Text_KyoukoRematchIntro, CeruleanCave_SecretChamber_B1F_Text_KyoukoDefeat, CeruleanCave_SecretChamber_B1F_EventScript_DefeatedKyouko, NO_MUSIC
+	goto CeruleanCave_SecretChamber_B1F_EventScript_DefeatedKyouko
+	end
+
+CeruleanCave_SecretChamber_B1F_Movement_KyoukoExit::
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	step_end
+

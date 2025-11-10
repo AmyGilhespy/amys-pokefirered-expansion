@@ -781,7 +781,9 @@ struct BattleStruct
     // pokefirered
     u8 field_DA; // battle tower related
     u8 lastAttackerToFaintOpponent;
+    // Amy Custom:
     bool8 usedResurrection[NUM_BATTLE_SIDES];
+    bool8 usedMailScript[NUM_BATTLE_SIDES];
 };
 
 struct AiBattleData

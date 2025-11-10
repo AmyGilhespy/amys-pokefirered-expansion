@@ -3954,6 +3954,13 @@ BattleScript_RestoreTargetButItFailed:
 	restoretarget
 	goto BattleScript_ButItFailed
 
+BattleScript_UsedMoveButItFailed::
+	printstring STRINGID_USEDMOVE
+	pause B_WAIT_TIME_SHORT
+	printstring STRINGID_BUTITFAILED
+	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_MoveEnd
+
 BattleScript_NotAffected::
 	pause B_WAIT_TIME_SHORT
 	setmoveresultflags MOVE_RESULT_DOESNT_AFFECT_FOE

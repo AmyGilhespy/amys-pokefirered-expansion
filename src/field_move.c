@@ -14,6 +14,7 @@ static bool32 FieldMove_IsUnlockedStrength(void);
 static bool32 FieldMove_IsUnlockedFlash(void);
 static bool32 FieldMove_IsUnlockedRockSmash(void);
 static bool32 FieldMove_IsUnlockedWaterfall(void);
+static bool32 FieldMove_IsUnlockedDive(void);
 
 static const u8 sText_ShareHp[] = _("Share HP.");
 
@@ -102,12 +103,12 @@ const struct FieldMoveInfo gFieldMovesInfo[FIELD_MOVE_COUNT] =
     [FIELD_MOVE_DIVE] =
     {
         .defaultSpecies = SPECIES_SEEL,
-        .isUnlockedFunc = NULL,
-        .moveId = MOVE_NONE,
+        .isUnlockedFunc = FieldMove_IsUnlockedDive,
+        .moveId = MOVE_DIVE,
         .partyMessageId = PARTY_MSG_CANT_USE_HERE,
-        .description = COMPOUND_STRING("N/A"),
-        .setUpFunc = NULL,
-        .questLogText = COMPOUND_STRING("N/A"),
+        .description = COMPOUND_STRING("Dive underwater"),
+        .setUpFunc = FieldMove_SetUpDive,
+        .questLogText = COMPOUND_STRING("{STR_VAR_1} used the Hidden Move\nDIVE to dive deep underwater."),
     },
     [FIELD_MOVE_DEFOG] =
     {
@@ -232,4 +233,9 @@ static bool32 FieldMove_IsUnlockedRockSmash(void)
 static bool32 FieldMove_IsUnlockedWaterfall(void)
 {
     return FlagGet(FLAG_BADGE07_GET);
+}
+
+static bool32 FieldMove_IsUnlockedDive(void)
+{
+    return TRUE;
 }

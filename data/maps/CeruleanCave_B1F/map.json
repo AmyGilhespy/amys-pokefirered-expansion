@@ -191,8 +191,242 @@
       "elevation": 3,
       "dest_map": "MAP_CERULEAN_CAVE_1F",
       "dest_warp_id": "2"
+    },
+    {
+      "warp_id": "WARP_ID_CERULEAN_CAVE_B1F_DIVE_SPOT",
+      "x": 10,
+      "y": 19,
+      "elevation": 0,
+      "dest_map": "MAP_CERULEAN_CAVE_B1F",
+      "dest_warp_id": "0"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 18,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "CeruleanCave_B1F_DiveSpot"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 18,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "CeruleanCave_B1F_DiveSpot"
+    },
+    {
+      "type": "trigger",
+      "x": 11,
+      "y": 18,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "CeruleanCave_B1F_DiveSpot"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 19,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "CeruleanCave_B1F_DiveSpot"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 19,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "CeruleanCave_B1F_DiveSpot"
+    },
+    {
+      "type": "trigger",
+      "x": 11,
+      "y": 19,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "CeruleanCave_B1F_DiveSpot"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 20,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "CeruleanCave_B1F_DiveSpot"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 20,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "CeruleanCave_B1F_DiveSpot"
+    },
+    {
+      "type": "trigger",
+      "x": 11,
+      "y": 20,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "CeruleanCave_B1F_DiveSpot"
+    },
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 17,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "CeruleanCave_B1F_DiveSpotExited"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 17,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "CeruleanCave_B1F_DiveSpotExited"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 17,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "CeruleanCave_B1F_DiveSpotExited"
+    },
+    {
+      "type": "trigger",
+      "x": 11,
+      "y": 17,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "CeruleanCave_B1F_DiveSpotExited"
+    },
+    {
+      "type": "trigger",
+      "x": 12,
+      "y": 17,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "CeruleanCave_B1F_DiveSpotExited"
+    },
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 18,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "CeruleanCave_B1F_DiveSpotExited"
+    },
+    {
+      "type": "trigger",
+      "x": 12,
+      "y": 18,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "CeruleanCave_B1F_DiveSpotExited"
+    },
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 19,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "CeruleanCave_B1F_DiveSpotExited"
+    },
+    {
+      "type": "trigger",
+      "x": 12,
+      "y": 19,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "CeruleanCave_B1F_DiveSpotExited"
+    },
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 20,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "CeruleanCave_B1F_DiveSpotExited"
+    },
+    {
+      "type": "trigger",
+      "x": 12,
+      "y": 20,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "CeruleanCave_B1F_DiveSpotExited"
+    },
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 21,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "CeruleanCave_B1F_DiveSpotExited"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 21,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "CeruleanCave_B1F_DiveSpotExited"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 21,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "CeruleanCave_B1F_DiveSpotExited"
+    },
+    {
+      "type": "trigger",
+      "x": 11,
+      "y": 21,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "CeruleanCave_B1F_DiveSpotExited"
+    },
+    {
+      "type": "trigger",
+      "x": 12,
+      "y": 21,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "CeruleanCave_B1F_DiveSpotExited"
+    }
+  ],
   "bg_events": []
 }

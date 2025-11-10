@@ -15960,7 +15960,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
 Ability: Synchronize
 Nature: Serious
-Mail: 0x244a 0x2c0f
+Mail: 0x244a 0x2c0f 0x244a 0x2c0f
 - Mail Script
 
 === TRAINER_ANNA ===
@@ -16676,6 +16676,51 @@ Music: Aqua
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Smart Switching / Ace Pokemon / Omniscient
+Mugshot: Pink
+
+Courier (Delibird) (F) @ Orange Mail
+Level: 100
+IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 16 HP / 0 Atk / 96 Def / 0 SpA / 144 SpD / 252 Spe
+Ability: Dauntless Shield
+Nature: Calm
+Tera Type: Ghost
+Mail: 0x26bf 0x26bf 0x26bf 0x2c4f 0x2c4f 0x2c10 0x2c21 0x2713 0x26e2
+- Mail Script
+- Explosion
+// Spikes, Spikes, Spikes, Toxic Spikes, Toxic Spikes, Light Screen, Reflect, Ingrain, Baton Pass; Ghost Tera lets us switch with Ingrain active.
+
+Test (Rattata) (F) @ Eviolite
+Level: 100
+IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Ability: Dauntless Shield
+Nature: Impish
+- Tackle
+
+Test (Rattata) (F) @ Eviolite
+Level: 100
+IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Ability: Dauntless Shield
+Nature: Impish
+- Tackle
+
+Test (Rattata) (F) @ Eviolite
+Level: 100
+IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Ability: Dauntless Shield
+Nature: Impish
+- Tackle
+
+Test (Rattata) (F) @ Eviolite
+Level: 100
+IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Ability: Dauntless Shield
+Nature: Impish
+- Tackle
 
 Test (Rattata) (F) @ Eviolite
 Level: 100

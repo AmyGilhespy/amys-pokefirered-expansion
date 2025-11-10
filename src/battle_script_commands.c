@@ -1174,6 +1174,20 @@ static void Cmd_attackcanceler(void)
         return;
     }
 
+    // --- Mail Script move special handler ---
+    if (gCurrentMove == MOVE_MAIL_SCRIPT)
+    {
+        u32 side = GetBattlerSide(gBattlerAttacker);
+        if (gBattleStruct->usedMailScript[side])
+        {
+            u8 moveId = gBattleResources->bufferB[gBattlerAttacker][2] & ~RET_GIMMICK;
+            gBattleMons[gBattlerAttacker].pp[moveId] = 0;
+            gBattlescriptCurrInstr = BattleScript_UsedMoveButItFailed;
+            return;
+        }
+        // Do NOT return here: continue down the normal path, below.
+    }
+
     // === Amy: End of custom effects! ===
 
     // With how attackcanceller works right now we only need attacker and target abilities. Might change in the future

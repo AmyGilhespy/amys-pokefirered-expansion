@@ -1,0 +1,489 @@
+{
+  "id": "MAP_CERULEAN_CAVE_UNDERWATER",
+  "name": "CeruleanCave_Underwater",
+  "layout": "LAYOUT_CERULEAN_CAVE_UNDERWATER",
+  "music": "MUS_NONE",
+  "region_map_section": "MAPSEC_CERULEAN_CAVE",
+  "requires_flash": false,
+  "weather": "WEATHER_UNDERWATER_BUBBLES",
+  "map_type": "MAP_TYPE_UNDERWATER",
+  "allow_cycling": true,
+  "allow_escaping": true,
+  "allow_running": true,
+  "show_map_name": true,
+  "floor_number": 0,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [],
+  "warp_events": [
+    {
+      "warp_id": "WARP_ID_CERULEAN_CAVE_UNDERWATER_ENTRANCE",
+      "x": 36,
+      "y": 3,
+      "elevation": 0,
+      "dest_map": "MAP_CERULEAN_CAVE_UNDERWATER",
+      "dest_warp_id": "0"
+    },
+    {
+      "warp_id": "WARP_ID_CERULEAN_CAVE_UNDERWATER_EXIT",
+      "x": 3,
+      "y": 3,
+      "elevation": 0,
+      "dest_map": "MAP_CERULEAN_CAVE_UNDERWATER",
+      "dest_warp_id": "0"
+    }
+  ],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 35,
+      "y": 2,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "CeruleanCave_Underwater_DiveSpot1"
+    },
+    {
+      "type": "trigger",
+      "x": 36,
+      "y": 2,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "CeruleanCave_Underwater_DiveSpot1"
+    },
+    {
+      "type": "trigger",
+      "x": 37,
+      "y": 2,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "CeruleanCave_Underwater_DiveSpot1"
+    },
+    {
+      "type": "trigger",
+      "x": 35,
+      "y": 3,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "CeruleanCave_Underwater_DiveSpot1"
+    },
+    {
+      "type": "trigger",
+      "x": 36,
+      "y": 3,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "CeruleanCave_Underwater_DiveSpot1"
+    },
+    {
+      "type": "trigger",
+      "x": 37,
+      "y": 3,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "CeruleanCave_Underwater_DiveSpot1"
+    },
+    {
+      "type": "trigger",
+      "x": 35,
+      "y": 4,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "CeruleanCave_Underwater_DiveSpot1"
+    },
+    {
+      "type": "trigger",
+      "x": 36,
+      "y": 4,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "CeruleanCave_Underwater_DiveSpot1"
+    },
+    {
+      "type": "trigger",
+      "x": 37,
+      "y": 4,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "CeruleanCave_Underwater_DiveSpot1"
+    },
+    {
+      "type": "trigger",
+      "x": 2,
+      "y": 2,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "CeruleanCave_Underwater_DiveSpot2"
+    },
+    {
+      "type": "trigger",
+      "x": 3,
+      "y": 2,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "CeruleanCave_Underwater_DiveSpot2"
+    },
+    {
+      "type": "trigger",
+      "x": 4,
+      "y": 2,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "CeruleanCave_Underwater_DiveSpot2"
+    },
+    {
+      "type": "trigger",
+      "x": 2,
+      "y": 3,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "CeruleanCave_Underwater_DiveSpot2"
+    },
+    {
+      "type": "trigger",
+      "x": 3,
+      "y": 3,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "CeruleanCave_Underwater_DiveSpot2"
+    },
+    {
+      "type": "trigger",
+      "x": 4,
+      "y": 3,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "CeruleanCave_Underwater_DiveSpot2"
+    },
+    {
+      "type": "trigger",
+      "x": 2,
+      "y": 4,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "CeruleanCave_Underwater_DiveSpot2"
+    },
+    {
+      "type": "trigger",
+      "x": 3,
+      "y": 4,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "CeruleanCave_Underwater_DiveSpot2"
+    },
+    {
+      "type": "trigger",
+      "x": 4,
+      "y": 4,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "CeruleanCave_Underwater_DiveSpot2"
+    },
+    {
+      "type": "trigger",
+      "x": 1,
+      "y": 1,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "CeruleanCave_Underwater_DiveSpotExited"
+    },
+    {
+      "type": "trigger",
+      "x": 2,
+      "y": 1,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "CeruleanCave_Underwater_DiveSpotExited"
+    },
+    {
+      "type": "trigger",
+      "x": 3,
+      "y": 1,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "CeruleanCave_Underwater_DiveSpotExited"
+    },
+    {
+      "type": "trigger",
+      "x": 4,
+      "y": 1,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "CeruleanCave_Underwater_DiveSpotExited"
+    },
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 1,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "CeruleanCave_Underwater_DiveSpotExited"
+    },
+    {
+      "type": "trigger",
+      "x": 1,
+      "y": 2,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "CeruleanCave_Underwater_DiveSpotExited"
+    },
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 2,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "CeruleanCave_Underwater_DiveSpotExited"
+    },
+    {
+      "type": "trigger",
+      "x": 1,
+      "y": 3,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "CeruleanCave_Underwater_DiveSpotExited"
+    },
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 3,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "CeruleanCave_Underwater_DiveSpotExited"
+    },
+    {
+      "type": "trigger",
+      "x": 1,
+      "y": 4,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "CeruleanCave_Underwater_DiveSpotExited"
+    },
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 4,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "CeruleanCave_Underwater_DiveSpotExited"
+    },
+    {
+      "type": "trigger",
+      "x": 1,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "CeruleanCave_Underwater_DiveSpotExited"
+    },
+    {
+      "type": "trigger",
+      "x": 2,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "CeruleanCave_Underwater_DiveSpotExited"
+    },
+    {
+      "type": "trigger",
+      "x": 3,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "CeruleanCave_Underwater_DiveSpotExited"
+    },
+    {
+      "type": "trigger",
+      "x": 4,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "CeruleanCave_Underwater_DiveSpotExited"
+    },
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "CeruleanCave_Underwater_DiveSpotExited"
+    },
+    {
+      "type": "trigger",
+      "x": 34,
+      "y": 1,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "CeruleanCave_Underwater_DiveSpotExited"
+    },
+    {
+      "type": "trigger",
+      "x": 35,
+      "y": 1,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "CeruleanCave_Underwater_DiveSpotExited"
+    },
+    {
+      "type": "trigger",
+      "x": 36,
+      "y": 1,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "CeruleanCave_Underwater_DiveSpotExited"
+    },
+    {
+      "type": "trigger",
+      "x": 37,
+      "y": 1,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "CeruleanCave_Underwater_DiveSpotExited"
+    },
+    {
+      "type": "trigger",
+      "x": 38,
+      "y": 1,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "CeruleanCave_Underwater_DiveSpotExited"
+    },
+    {
+      "type": "trigger",
+      "x": 34,
+      "y": 2,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "CeruleanCave_Underwater_DiveSpotExited"
+    },
+    {
+      "type": "trigger",
+      "x": 38,
+      "y": 2,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "CeruleanCave_Underwater_DiveSpotExited"
+    },
+    {
+      "type": "trigger",
+      "x": 34,
+      "y": 3,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "CeruleanCave_Underwater_DiveSpotExited"
+    },
+    {
+      "type": "trigger",
+      "x": 38,
+      "y": 3,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "CeruleanCave_Underwater_DiveSpotExited"
+    },
+    {
+      "type": "trigger",
+      "x": 34,
+      "y": 4,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "CeruleanCave_Underwater_DiveSpotExited"
+    },
+    {
+      "type": "trigger",
+      "x": 38,
+      "y": 4,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "CeruleanCave_Underwater_DiveSpotExited"
+    },
+    {
+      "type": "trigger",
+      "x": 34,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "CeruleanCave_Underwater_DiveSpotExited"
+    },
+    {
+      "type": "trigger",
+      "x": 35,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "CeruleanCave_Underwater_DiveSpotExited"
+    },
+    {
+      "type": "trigger",
+      "x": 36,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "CeruleanCave_Underwater_DiveSpotExited"
+    },
+    {
+      "type": "trigger",
+      "x": 37,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "CeruleanCave_Underwater_DiveSpotExited"
+    },
+    {
+      "type": "trigger",
+      "x": 38,
+      "y": 5,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "CeruleanCave_Underwater_DiveSpotExited"
+    }
+  ],
+  "bg_events": []
+}
