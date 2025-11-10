@@ -42909,10 +42909,8 @@ F_TRAINER_FEMALE |
 #line 16687
             .nature = NATURE_CALM,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
-#line 16688
-            .teraType = TYPE_GHOST,
             .moves = {
-#line 16691
+#line 16690
                 MOVE_MAIL_SCRIPT,
                 MOVE_EXPLOSION,
             },
@@ -42971,7 +42969,7 @@ F_TRAINER_FEMALE |
 #line 16712
             .nickname = COMPOUND_STRING("Test"),
 #line 16712
-            .species = SPECIES_RATTATA,
+            .species = SPECIES_MEWTWO_MEGA_X,
 #line 16712
             .gender = TRAINER_MON_FEMALE,
 #line 16712
@@ -42996,7 +42994,7 @@ F_TRAINER_FEMALE |
 #line 16720
             .nickname = COMPOUND_STRING("Test"),
 #line 16720
-            .species = SPECIES_RATTATA,
+            .species = SPECIES_MEWTWO_MEGA_Y,
 #line 16720
             .gender = TRAINER_MON_FEMALE,
 #line 16720
@@ -43019,7 +43017,7 @@ F_TRAINER_FEMALE |
             },
             {
 #line 16728
-            .nickname = COMPOUND_STRING("Test"),
+            .nickname = COMPOUND_STRING("Nurse"),
 #line 16728
             .species = SPECIES_CHANSEY,
 #line 16728
@@ -43041,7 +43039,7 @@ F_TRAINER_FEMALE |
 #line 16734
                 MOVE_PHOENIX_CALL,
                 MOVE_REVIVAL_BLESSING,
-                MOVE_METAL_BURST,
+                MOVE_NO_RETREAT,
                 MOVE_BATON_PASS,
             },
             },

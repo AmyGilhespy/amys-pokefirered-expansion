@@ -16684,12 +16684,12 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
 Ability: Dauntless Shield
 Nature: Calm
-Tera Type: Ghost
 Mail: 0x26bf 0x26bf 0x26bf 0x2c4f 0x2c4f 0x2c10 0x2c21 0x2713 0x26e2
 - Mail Script
 - Explosion
 // Spikes, Spikes, Spikes, Toxic Spikes, Toxic Spikes, Light Screen, Reflect, Ingrain, Baton Pass; Ghost Tera lets us switch with Ingrain active.
 // Kyouko's Courier (Delibird) sets up entry hazards and then baton passes immediately to a teammate.  It's not very useful after the first turn of the game, so it just explodes.
+//Tera Type: Ghost
 
 Test (Rattata) (F) @ Eviolite
 Level: 100
@@ -16707,7 +16707,7 @@ Ability: Dauntless Shield
 Nature: Impish
 - Tackle
 
-Test (Rattata) (F) @ Eviolite
+Test (Mewtwo Mega X) (F) @ Eviolite
 Level: 100
 IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 0 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
@@ -16715,7 +16715,7 @@ Ability: Dauntless Shield
 Nature: Impish
 - Tackle
 
-Test (Rattata) (F) @ Eviolite
+Test (Mewtwo Mega Y) (F) @ Eviolite
 Level: 100
 IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 0 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
@@ -16723,7 +16723,7 @@ Ability: Dauntless Shield
 Nature: Impish
 - Tackle
 
-Test (Chansey) (F) @ Firium Z
+Nurse (Chansey) (F) @ Firium Z
 Level: 100
 IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 0 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
@@ -16731,7 +16731,7 @@ Ability: Simple
 Nature: Relaxed
 - Phoenix Call
 - Revival Blessing
-- Metal Burst
+- No Retreat
 - Baton Pass
 
 === TRAINER_LILY ===
