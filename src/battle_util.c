@@ -3146,6 +3146,11 @@ enum MoveCanceller AtkCanceller_MoveSuccessOrder(struct BattleContext *ctx)
 
     while (gBattleStruct->atkCancellerTracker < CANCELLER_END && effect == MOVE_STEP_SUCCESS)
     {
+        if (ctx->moveEffect == EFFECT_MAIL_SCRIPT && gBattleStruct->atkCancellerTracker == CANCELLER_POWER_POINTS)
+        {
+            gBattleStruct->atkCancellerTracker++;
+            continue;
+        }
         effect = sMoveSuccessOrderCancellers[gBattleStruct->atkCancellerTracker](ctx);
         gBattleStruct->atkCancellerTracker++;
     }
