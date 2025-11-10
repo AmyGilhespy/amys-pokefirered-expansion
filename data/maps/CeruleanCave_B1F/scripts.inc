@@ -20,10 +20,10 @@ CeruleanCave_B1F_OnTransition::
 @ FLAG_TEMP_A: Message already printed, so don't print again
 @ FLAG_TEMP_D: Currently in the dive spot
 CeruleanCave_B1F_DiveSpot::
-	lock
 	goto_if_set FLAG_TEMP_A, CeruleanCave_B1F_DiveSpotPrintedMessage
+	lock
 	setflag FLAG_TEMP_A
-	msgbox CeruleanCave_B1F_Text_TheWaterIsDeepHere
+	msgbox Text_TheWaterIsDeepHere
 CeruleanCave_B1F_DiveSpotPrintedMessage::
 	setflag FLAG_TEMP_D
 	release

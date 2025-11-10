@@ -42931,12 +42931,12 @@ F_TRAINER_FEMALE |
 #line 16696
             .lvl = 100,
 #line 16700
-            .nature = NATURE_IMPISH,
+            .nature = NATURE_CALM,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 16703
+                MOVE_NO_RETREAT,
                 MOVE_MAIL_CALL,
-                MOVE_AQUA_RING,
                 MOVE_BODY_PRESS,
                 MOVE_WISH,
             },
@@ -42945,7 +42945,7 @@ F_TRAINER_FEMALE |
 #line 16710
             .nickname = COMPOUND_STRING("Test"),
 #line 16710
-            .species = SPECIES_RATTATA,
+            .species = SPECIES_CHANSEY,
 #line 16710
             .gender = TRAINER_MON_FEMALE,
 #line 16710
@@ -42955,15 +42955,15 @@ F_TRAINER_FEMALE |
 #line 16712
             .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
 #line 16714
-            .ability = ABILITY_DAUNTLESS_SHIELD,
+            .ability = ABILITY_SNOW_WARNING,
 #line 16711
             .lvl = 100,
 #line 16715
-            .nature = NATURE_IMPISH,
+            .nature = NATURE_RELAXED,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 16716
-                MOVE_TACKLE,
+                MOVE_ABSOLUTE_ZERO,
             },
             },
             {
@@ -43020,7 +43020,7 @@ F_TRAINER_FEMALE |
 #line 16734
             .nickname = COMPOUND_STRING("Nurse"),
 #line 16734
-            .species = SPECIES_CHANSEY,
+            .species = SPECIES_ETERNATUS_ETERNAMAX,
 #line 16734
             .gender = TRAINER_MON_FEMALE,
 #line 16734
@@ -43310,7 +43310,7 @@ F_TRAINER_FEMALE |
 #define AMY_TRAINERS_CUSTOM \
 static const u16 sTrainer_TRAINER_MOM_p0_mailwords[] __attribute__((section(".rodata"))) = { 9290, 11279, 9290, 11279, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, };\
 static const u16 sTrainer_TRAINER_KYOUKO_p0_mailwords[] __attribute__((section(".rodata"))) = { 9919, 9919, 9919, 11343, 11343, 11280, 11297, 10003, 9954, };\
-static const u16 sTrainer_TRAINER_KYOUKO_p1_mailwords[] __attribute__((section(".rodata"))) = { 11280, 11297, 10003, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, };\
+static const u16 sTrainer_TRAINER_KYOUKO_p1_mailwords[] __attribute__((section(".rodata"))) = { 11280, 11297, 11323, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, };\
 const u16 *const gTrainerMailWordsTable[][PARTY_SIZE] __attribute__((section(".rodata"))) = {\
 [TRAINER_NONE] = { },\
 [TRAINER_AQUA_LEADER] = { NULL, },\

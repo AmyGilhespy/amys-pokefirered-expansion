@@ -1198,6 +1198,7 @@ static const struct BgEvent *GetBackgroundEventAtPosition(struct MapHeader *mapH
 
 bool8 dive_warp(struct MapPosition *position, u16 metatileBehavior)
 {
+    #if 0 // Original behavior
     if (gMapHeader.mapType == MAP_TYPE_UNDERWATER && !MetatileBehavior_IsUnableToEmerge(metatileBehavior))
     {
         if (SetDiveWarpEmerge(position->x - MAP_OFFSET, position->y - MAP_OFFSET))
@@ -1219,6 +1220,16 @@ bool8 dive_warp(struct MapPosition *position, u16 metatileBehavior)
         }
     }
     return FALSE;
+    #else
+    u8 mapGroup = VarGet(VAR_TEMP_4);
+    u8 mapNum   = VarGet(VAR_TEMP_5);
+    u8 warpId   = VarGet(VAR_TEMP_6);
+    SetWarpDestinationToMapWarp(mapGroup, mapNum, warpId);
+    StoreInitialPlayerAvatarState();
+    DoDiveWarp();
+    PlaySE(SE_M_DIVE);
+    return TRUE;
+    #endif
 }
 
 int SetCableClubWarp(void)

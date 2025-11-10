@@ -9,6 +9,7 @@
 #include "field_effect.h"
 #include "field_effect_helpers.h"
 #include "field_player_avatar.h"
+#include "field_weather.h"
 #include "help_system.h"
 #include "menu.h"
 #include "metatile_behavior.h"
@@ -27,6 +28,7 @@
 #include "constants/metatile_behaviors.h"
 #include "constants/moves.h"
 #include "constants/trainer_types.h"
+#include "constants/weather.h"
 
 static EWRAM_DATA struct ObjectEvent * sPlayerObjectPtr = NULL;
 static EWRAM_DATA u8 sTeleportSavedFacingDirection = DIR_NONE;
@@ -799,7 +801,8 @@ static void PlayerAvatarTransition_Surfing(struct ObjectEvent * playerObjEvent)
 
 static void PlayerAvatarTransition_Underwater(struct ObjectEvent * playerObjEvent)
 {
-
+    QuestLogTryRecordPlayerAvatarGfxTransition(QL_PLAYER_GFX_SURF);
+    QuestLogCallUpdatePlayerSprite(QL_PLAYER_GFX_SURF);
 }
 
 static void PlayerAvatarTransition_ReturnToField(struct ObjectEvent * playerObjEvent)
@@ -2457,3 +2460,4 @@ u8 GetLeftSideStairsDirection(u8 direction)
         return direction;
     }
 }
+

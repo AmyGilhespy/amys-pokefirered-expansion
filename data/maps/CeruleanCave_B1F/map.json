@@ -197,8 +197,8 @@
       "x": 10,
       "y": 19,
       "elevation": 0,
-      "dest_map": "MAP_CERULEAN_CAVE_B1F",
-      "dest_warp_id": "0"
+      "dest_map": "MAP_CERULEAN_CAVE_UNDERWATER",
+      "dest_warp_id": "WARP_ID_CERULEAN_CAVE_UNDERWATER_ENTRANCE"
     }
   ],
   "coord_events": [

@@ -2,6 +2,11 @@ CeruleanCave_SecretChamber_B1F_MapScripts::
 	.byte 0
 
 CeruleanCave_SecretChamber_B1F_DiveSpot::
+	@goto_if_set FLAG_TEMP_A, CeruleanCave_SecretChamber_B1F_DiveSpotPrintedMessage
+	@lock
+	@setflag FLAG_TEMP_A
+	@msgbox Text_TheWaterIsDeepHere
+CeruleanCave_SecretChamber_B1F_DiveSpotPrintedMessage::
 	setflag FLAG_TEMP_D
 	release
 	end

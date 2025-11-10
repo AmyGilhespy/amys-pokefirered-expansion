@@ -38,7 +38,7 @@ CeruleanCave_SecretChamber_B1F_Text_KyoukoDefeat::
 CeruleanCave_SecretChamber_B1F_Text_KyoukoPostBattle::
 	.string "Congratulations on winning the\n"
 	.string "first fight! Let's see how you\l"
-	.string "handle the rest of us.\p"
+	.string "fare against the rest of us.\p"
 	.string "But first, please allow me to heal\n"
 	.string "your living teammates.$"
 

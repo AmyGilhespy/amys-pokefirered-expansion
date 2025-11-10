@@ -284,6 +284,7 @@ EventScript_Waterfall::
 	goto_if_eq VAR_RESULT, NO, EventScript_EndWaterfall
 	msgbox Text_MonUsedWaterfall
 	dofieldeffect FLDEFF_USE_WATERFALL
+	waitstate @ Amy: Was missing.
 	goto EventScript_EndWaterfall
 
 EventScript_CantUseWaterfall::
@@ -315,6 +316,10 @@ EventScript_DeepWater::
 	goto_if_eq VAR_RESULT, NO, EventScript_EndDive
 	msgbox Text_MonUsedDive
 	dofieldeffect FLDEFF_USE_DIVE
+	waitstate @ Amy: Was missing.
+	msgbox Text_MonUsedDive
+	dofieldeffect FLDEFF_USE_DIVE
+	waitstate @ Amy: Was missing.
 	goto EventScript_EndDive
 
 EventScript_CantDive::
@@ -334,6 +339,7 @@ EventScript_TrySurface::
 	goto_if_eq VAR_RESULT, NO, EventScript_EndSurface
 	msgbox Text_MonUsedDive
 	dofieldeffect FLDEFF_USE_DIVE
+	waitstate @ Amy: Was missing.
 	goto EventScript_EndSurface
 
 EventScript_CantSurface::

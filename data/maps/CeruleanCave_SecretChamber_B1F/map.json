@@ -37,8 +37,8 @@
       "x": 32,
       "y": 20,
       "elevation": 0,
-      "dest_map": "MAP_CERULEAN_CAVE_SECRET_CHAMBER_B1F",
-      "dest_warp_id": "0"
+      "dest_map": "MAP_CERULEAN_CAVE_UNDERWATER",
+      "dest_warp_id": "WARP_ID_CERULEAN_CAVE_UNDERWATER_EXIT"
     },
     {
       "warp_id": "WARP_ID_POST_KYOUKO_HOLE",

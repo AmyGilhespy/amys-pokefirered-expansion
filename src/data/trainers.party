@@ -16695,22 +16695,22 @@ Level: 100
 IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 0 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
 Ability: Dauntless Shield
-Nature: Impish
-Mail: 0x2c10 0x2c21 0x2713
+Nature: Calm
+Mail: 0x2c10 0x2c21 0x2c3b
+- No Retreat
 - Mail Call
-- Aqua Ring
 - Body Press
 - Wish
-// Light Screen, Reflect, Ingrain
-// Mail Call uses a random move listed in the held Mail
+// Light Screen, Reflect, Infiniblast
+// Don't nickname Steel Soul, as this is likely the first time the player is seeing this mon.
 
-Test (Rattata) (F) @ Eviolite
+Test (Chansey) (F) @ Eviolite
 Level: 100
 IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 0 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
-Ability: Dauntless Shield
-Nature: Impish
-- Tackle
+Ability: Snow Warning
+Nature: Relaxed
+- Absolute Zero
 
 Test (Mewtwo Mega X) (F) @ Eviolite
 Level: 100
@@ -16728,7 +16728,7 @@ Ability: Dauntless Shield
 Nature: Impish
 - Tackle
 
-Nurse (Chansey) (F) @ Firium Z
+Nurse (Eternatus Eternamax) (F) @ Firium Z
 Level: 100
 IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 0 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe

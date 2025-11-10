@@ -68,5 +68,6 @@ u8 GetRSAvatarGraphicsIdByGender(u8 gender);
 //sideways stairs
 u8 GetRightSideStairsDirection(u8 direction);
 u8 GetLeftSideStairsDirection(u8 direction);
+void EnableSurfingIfUnderwater(void);
 
 #endif //GUARD_FIELD_PLAYER_AVATAR_H

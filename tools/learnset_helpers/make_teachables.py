@@ -179,7 +179,9 @@ def prepare_output(all_learnables: dict[str, set[str]], repo_teachables: set[str
         "MOVE_BLAST_BURN",       # Move Tutor: Unchanged, because I liked the tutor gimmick (except made random)
         "MOVE_HYDRO_CANNON",     # Move Tutor: Unchanged, because I liked the tutor gimmick (except made random)
         "MOVE_LICK",             # Move Tutor
-        "MOVE_TAIL_GLOW"         # Move Tutor
+        "MOVE_TAIL_GLOW",        # Move Tutor
+        # Special Move Tutors:
+        "MOVE_MAIL_SCRIPT"       # Move Tutor
     }
     joinpat = ",\n    "
     for species in TEACHABLE_ARRAY_DECL_PAT.finditer(old):

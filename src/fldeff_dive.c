@@ -6,44 +6,37 @@
 
 bool32 FieldMove_SetUpDive(void)
 {
-    u8 currentMapGroup = gSaveBlock1Ptr->location.mapGroup;
-    u8 currentMapNum = gSaveBlock1Ptr->location.mapNum;
-    u8 targetMapGroup, targetMapNum, warpId;
-    bool8 canDive = TRUE;
-    if (currentMapGroup == MAP_GROUP(MAP_CERULEAN_CAVE_B1F) && currentMapNum == MAP_NUM(MAP_CERULEAN_CAVE_B1F))
+    const struct WarpEvent *warps = gMapHeader.events->warps;
+    s16 px = gSaveBlock1Ptr->pos.x;
+    s16 py = gSaveBlock1Ptr->pos.y;
+    s16 bestDist = 0x7fff;
+    u8 mapGroup, mapNum, warpId;
+    u8 warpCount = gMapHeader.events->warpCount;
+    u8 bestWarpId = 0xff;
+
+    if (!FlagGet(FLAG_TEMP_D))
     {
-        targetMapGroup = MAP_GROUP(MAP_CERULEAN_CAVE_UNDERWATER);
-        targetMapNum = MAP_NUM(MAP_CERULEAN_CAVE_UNDERWATER);
-        warpId = 0;
-    }
-    else if (currentMapGroup == MAP_GROUP(MAP_CERULEAN_CAVE_SECRET_CHAMBER_B1F) && currentMapNum == MAP_NUM(MAP_CERULEAN_CAVE_SECRET_CHAMBER_B1F))
-    {
-        targetMapGroup = MAP_GROUP(MAP_CERULEAN_CAVE_UNDERWATER);
-        targetMapNum = MAP_NUM(MAP_CERULEAN_CAVE_UNDERWATER);
-        warpId = 1;
-    }
-    else if (currentMapGroup == MAP_GROUP(MAP_CERULEAN_CAVE_UNDERWATER) && currentMapNum == MAP_NUM(MAP_CERULEAN_CAVE_UNDERWATER))
-    {
-        bool8 secret = TRUE;
-        targetMapGroup = secret ? MAP_GROUP(MAP_CERULEAN_CAVE_SECRET_CHAMBER_B1F) : MAP_GROUP(MAP_CERULEAN_CAVE_B1F);
-        targetMapNum = secret ? MAP_NUM(MAP_CERULEAN_CAVE_SECRET_CHAMBER_B1F) : MAP_NUM(MAP_CERULEAN_CAVE_B1F);
-        warpId = secret ? 0 : 1;
-    }
-    else
-    {
-        canDive = FALSE;
-    }
-    if (canDive)
-    {
-        canDive = FlagGet(FLAG_TEMP_D);
-    }
-    if (!canDive)
-    {
-        //DisplayFieldMessage(_("There's no deep water here."));
         return FALSE;
     }
-    VarSet(VAR_TEMP_4, targetMapGroup);
-    VarSet(VAR_TEMP_5, targetMapNum);
+
+    for (int i = 0; i < warpCount; i++) {
+        s16 dx = px - warps[i].x;
+        s16 dy = py - warps[i].y;
+        s16 dist = abs(dx) + abs(dy);
+        if (dist < bestDist) {
+            bestDist = dist;
+            bestWarpId = i;
+        }
+    }
+    if (bestDist == 0x7fff)
+    {
+        return FALSE;
+    }
+    mapGroup = warps[bestWarpId].mapGroup;
+    mapNum = warps[bestWarpId].mapNum;
+    warpId = warps[bestWarpId].warpId;
+    VarSet(VAR_TEMP_4, mapGroup);
+    VarSet(VAR_TEMP_5, mapNum);
     VarSet(VAR_TEMP_6, warpId);
     ScriptContext_SetupScript(EventScript_FldEffAmyDive);
     return TRUE;

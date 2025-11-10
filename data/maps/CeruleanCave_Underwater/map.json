@@ -21,16 +21,16 @@
       "x": 36,
       "y": 3,
       "elevation": 0,
-      "dest_map": "MAP_CERULEAN_CAVE_UNDERWATER",
-      "dest_warp_id": "0"
+      "dest_map": "MAP_CERULEAN_CAVE_B1F",
+      "dest_warp_id": "WARP_ID_CERULEAN_CAVE_B1F_DIVE_SPOT"
     },
     {
       "warp_id": "WARP_ID_CERULEAN_CAVE_UNDERWATER_EXIT",
       "x": 3,
       "y": 3,
       "elevation": 0,
-      "dest_map": "MAP_CERULEAN_CAVE_UNDERWATER",
-      "dest_warp_id": "0"
+      "dest_map": "MAP_CERULEAN_CAVE_SECRET_CHAMBER_B1F",
+      "dest_warp_id": "WARP_ID_PRE_KYOUKO_ENTRANCE"
     }
   ],
   "coord_events": [
