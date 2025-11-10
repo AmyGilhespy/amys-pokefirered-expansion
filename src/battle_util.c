@@ -2428,6 +2428,68 @@ static u16 GetMoveIdFromEasyChatWord(u16 word)
     return MOVE_NONE; // not a move word
 }
 
+static u16 GetMailCallMove(u32 battlerUser)
+{
+    s32 i;
+    u16 moves[9] = {0};
+    u16 word, move;
+    u8 moves_n = 0;
+
+    struct Pokemon *party = GetBattlerParty(battlerUser);
+    struct BattlePokemon userBattleMon = gBattleMons[battlerUser];
+    u8 userPartyIndex = gBattlerPartyIndexes[battlerUser];
+    if (userPartyIndex >= PARTY_SIZE)
+    {
+        return MOVE_NONE;
+    }
+    u16 itemId = userBattleMon.item;
+    if (!IS_ITEM_MAIL(itemId))
+    {
+        return MOVE_NONE;
+    }
+
+    if (GetBattlerSide(battlerUser) == B_SIDE_OPPONENT)
+    {
+        const u16 *npcWords = gOpponentPartyMailWords[userPartyIndex];
+        if (npcWords != NULL)
+        {
+            for (i = 0; i < MAIL_WORDS_COUNT; ++i)
+            {
+                word = npcWords[i];
+                move = GetMoveIdFromEasyChatWord(word);
+                if (move != MOVE_NONE)
+                {
+                    moves[moves_n++] = move;
+                }
+            }
+        }
+        else
+        {
+            MgbaPrintf(MGBA_LOG_WARN, "WARNING: gOpponentPartyMailWords[userPartyIndex=%d] was NULL.", userPartyIndex);
+        }
+    }
+    else
+    {
+        struct Pokemon userMon = party[userPartyIndex];
+        u8 mailId = GetMonData(&userMon, MON_DATA_MAIL);
+        struct Mail mail = gSaveBlock1Ptr->mail[mailId];
+        for (i = 0; i < MAIL_WORDS_COUNT; ++i)
+        {
+            word = mail.words[i];
+            move = GetMoveIdFromEasyChatWord(word);
+            if (move != MOVE_NONE)
+            {
+                moves[moves_n++] = move;
+            }
+        }
+    }
+    if (moves_n < 1)
+    {
+        return MOVE_NONE;
+    }
+    return moves[Random() % moves_n];
+}
+
 static u16 GetMailScriptMove(u32 battlerUser)
 {
     u16 word, move;
@@ -2459,22 +2521,16 @@ GetMailScriptMove_tryAgain:
 
     if (GetBattlerSide(battlerUser) == B_SIDE_OPPONENT)
     {
-        MgbaPrintf(MGBA_LOG_WARN, "DEBUG: gOpponentPartyMailWords[userPartyIndex=%d] B_SIDE_OPPONENT.", userPartyIndex);
         const u16 *npcWords = gOpponentPartyMailWords[userPartyIndex];
         if (npcWords != NULL)
         {
             word = npcWords[gMailScriptIndex];
-            MgbaPrintf(MGBA_LOG_WARN, "DEBUG: gOpponentPartyMailWords[userPartyIndex=%d] GOT WORD[%d]=%d.", userPartyIndex, gMailScriptIndex, word);
             goto GetMailScriptMove_gotWord;
         }
         else
         {
             MgbaPrintf(MGBA_LOG_WARN, "WARNING: gOpponentPartyMailWords[userPartyIndex=%d] was NULL.", userPartyIndex);
         }
-    }
-    else
-    {
-        MgbaPrintf(MGBA_LOG_WARN, "DEBUG: gOpponentPartyMailWords[userPartyIndex=%d] B_SIDE_PLAYER.", userPartyIndex);
     }
     struct Pokemon userMon = party[userPartyIndex];
     u8 mailId = GetMonData(&userMon, MON_DATA_MAIL);
@@ -2497,7 +2553,6 @@ GetMailScriptMove_gotWord:
         gMailScriptIndex++;
         goto GetMailScriptMove_tryAgain;
     }
-    MgbaPrintf(MGBA_LOG_WARN, "DEBUG: GOT MOVE = %d.", move);
     return move;
 }
 
@@ -2541,10 +2596,8 @@ static enum MoveCanceller CancellerCallSubmove(struct BattleContext *ctx)
             break;
         }
 
-        // Use saved battler if you stored them earlier (so submoves always use same attacker/target)
-        u32 battlerAtkSaved = gAmySaveBattlerAttacker;   // or ctx->battlerAtk
-        // Fetch the move for the current index (do NOT advance index here)
-        calledMove = GetMailScriptMove(battlerAtkSaved);
+        // Use saved battler (so submoves always use same attacker/target)
+        calledMove = GetMailScriptMove(gAmySaveBattlerAttacker); // or ctx->battlerAtk
         if (calledMove == MOVE_NONE)
         {
             // If none (invalid word or reached end), end the mail-script
@@ -2552,6 +2605,16 @@ static enum MoveCanceller CancellerCallSubmove(struct BattleContext *ctx)
             gMailScriptIndex = MAIL_WORDS_COUNT;
             u32 side = GetBattlerSide(gBattlerAttacker);
             gBattleStruct->usedMailScript[side] = TRUE;
+            noEffect = TRUE;
+            break;
+        }
+        break;
+    case EFFECT_MAIL_CALL:
+        // Use saved battler (so submoves always use same attacker/target)
+        calledMove = GetMailCallMove(gAmySaveBattlerAttacker); // or ctx->battlerAtk
+        if (calledMove == MOVE_NONE)
+        {
+            // If none (invalid word or no words), end the mail-call
             noEffect = TRUE;
             break;
         }

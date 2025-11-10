@@ -5631,6 +5631,9 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
     case EFFECT_MAIL_SCRIPT:
         ADJUST_SCORE(10000);
         break;
+    case EFFECT_MAIL_CALL:
+        ADJUST_SCORE(GOOD_EFFECT);
+        break;
     default:
         break;
     } // move effect checks

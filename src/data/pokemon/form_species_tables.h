@@ -2197,7 +2197,7 @@ static const u16 sTerapagosFormSpeciesIdTable[] = {
 #endif //P_FAMILY_TERAPAGOS
 
 static const u16 sSteelSoulFormSpeciesIdTable[] = {
-    SPECIES_AMY_CUSTOM_FAKEMON_STEEL_SOUL,
+    SPECIES_STEEL_SOUL,
 #if P_MEGA_EVOLUTIONS
     SPECIES_GENGAR_MEGA,
 #endif
@@ -2208,7 +2208,7 @@ static const u16 sSteelSoulFormSpeciesIdTable[] = {
 };
 
 static const u16 sMeteonFormSpeciesIdTable[] = {
-    SPECIES_AMY_CUSTOM_FAKEMON_METEON,
+    SPECIES_METEON,
     FORM_SPECIES_END,
 };
 

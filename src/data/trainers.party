@@ -16687,17 +16687,22 @@ Nature: Calm
 Mail: 0x26bf 0x26bf 0x26bf 0x2c4f 0x2c4f 0x2c10 0x2c21 0x2713 0x26e2
 - Mail Script
 - Explosion
-// Spikes, Spikes, Spikes, Toxic Spikes, Toxic Spikes, Light Screen, Reflect, Ingrain, Baton Pass; Ghost Tera lets us switch with Ingrain active.
+// Spikes, Spikes, Spikes, Toxic Spikes, Toxic Spikes, Light Screen, Reflect, Ingrain, Baton Pass
 // Kyouko's Courier (Delibird) sets up entry hazards and then baton passes immediately to a teammate.  It's not very useful after the first turn of the game, so it just explodes.
-//Tera Type: Ghost
 
-Test (Rattata) (F) @ Eviolite
+Steel Soul (F) @ Orange Mail
 Level: 100
 IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 0 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
 Ability: Dauntless Shield
 Nature: Impish
-- Tackle
+Mail: 0x2c10 0x2c21 0x2713
+- Mail Call
+- Aqua Ring
+- Body Press
+- Wish
+// Light Screen, Reflect, Ingrain
+// Mail Call uses a random move listed in the held Mail
 
 Test (Rattata) (F) @ Eviolite
 Level: 100

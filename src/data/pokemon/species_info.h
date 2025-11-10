@@ -177,7 +177,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
 
     /* You may add any custom species below this point based on the following structure: */
 
-    [SPECIES_AMY_CUSTOM_FAKEMON_STEEL_SOUL] =
+    [SPECIES_STEEL_SOUL] =
     {
         .baseHP        = 200,
         .baseAttack    = 1,
@@ -247,7 +247,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         //.perfectIVCount = NUM_STATS,
     },
 
-    [SPECIES_AMY_CUSTOM_FAKEMON_METEON] =
+    [SPECIES_METEON] =
     {
         .baseHP        = 100,
         .baseAttack    = 100,

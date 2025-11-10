@@ -9145,6 +9145,11 @@ BattleScript_EffectMailScript::
 	moveendall
 	end
 
+BattleScript_EffectMailCall::
+	attackcanceler @ Mail Call itself
+	moveendall
+	end
+
 BattleScript_SleepClauseBlocked::
 	pause B_WAIT_TIME_SHORT
 	setmoveresultflags MOVE_RESULT_FAILED

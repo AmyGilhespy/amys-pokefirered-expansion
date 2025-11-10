@@ -2279,4 +2279,10 @@ const struct BattleMoveEffect gBattleMoveEffects[NUM_BATTLE_MOVE_EFFECTS] =
         .battleTvScore = 4,
     },
 
+    [EFFECT_MAIL_CALL] =
+    {
+        .battleScript = BattleScript_EffectMailCall,
+        .battleTvScore = 4,
+    },
+
 };
