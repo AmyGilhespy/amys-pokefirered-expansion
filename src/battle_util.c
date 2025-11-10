@@ -2430,7 +2430,7 @@ static u16 GetMoveIdFromEasyChatWord(u16 word)
 
 static u16 GetMailScriptMove(u32 battlerUser)
 {
-    u16 word, move, w;
+    u16 word, move;
 
 GetMailScriptMove_tryAgain:
     if (gMailScriptIndex < 0)
@@ -2463,12 +2463,9 @@ GetMailScriptMove_tryAgain:
         const u16 *npcWords = gOpponentPartyMailWords[userPartyIndex];
         if (npcWords != NULL)
         {
-            for (w = 0; w < MAIL_WORDS_COUNT; ++w)
-            {
-                word = npcWords[w];
-                MgbaPrintf(MGBA_LOG_WARN, "DEBUG: gOpponentPartyMailWords[userPartyIndex=%d] GOT WORD[%d]=%d.", userPartyIndex, w, word);
-                goto GetMailScriptMove_gotWord;
-            }
+            word = npcWords[gMailScriptIndex];
+            MgbaPrintf(MGBA_LOG_WARN, "DEBUG: gOpponentPartyMailWords[userPartyIndex=%d] GOT WORD[%d]=%d.", userPartyIndex, gMailScriptIndex, word);
+            goto GetMailScriptMove_gotWord;
         }
         else
         {
@@ -3127,6 +3124,7 @@ enum MoveCanceller AtkCanceller_MoveSuccessOrder(struct BattleContext *ctx)
     {
         if (!gMailScriptActive)
         {
+        MgbaPrintf(MGBA_LOG_WARN, "AtkCanceller_MoveSuccessOrder(): index=%d WILL RESET", gMailScriptIndex);
             gMailScriptIndex = 0;
             gMailScriptActive = TRUE;
             gAmySaveCurrentTurnActionNumber = gCurrentTurnActionNumber;
@@ -3155,8 +3153,11 @@ enum MoveCanceller AtkCanceller_MoveSuccessOrder(struct BattleContext *ctx)
         gBattleStruct->atkCancellerTracker++;
     }
 
+        MgbaPrintf(MGBA_LOG_WARN, "AtkCanceller_MoveSuccessOrder(): index=%d", gMailScriptIndex);
     if (gMailScriptActive && (effect == MOVE_STEP_FAILURE || gBattleStruct->atkCancellerTracker >= CANCELLER_END))
     {
+        MgbaPrintf(MGBA_LOG_WARN, "AtkCanceller_MoveSuccessOrder(): index=%d TRUE, will inc", gMailScriptIndex);
+
         // We’ve just finished a submove script; advance to the next mail word
         gMailScriptIndex++;
 

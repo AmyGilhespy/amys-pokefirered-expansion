@@ -15960,7 +15960,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
 Ability: Synchronize
 Nature: Serious
-Mail: 0x244a 0x244a 0x244a 0x244a 0x244a 0x244a 0x2c0f
+Mail: 0x244a 0x2c0f
 - Mail Script
 
 === TRAINER_ANNA ===

@@ -43176,7 +43176,7 @@ F_TRAINER_FEMALE |
     },
 #ifndef AMY_TRAINERS_CUSTOM
 #define AMY_TRAINERS_CUSTOM \
-static const u16 sTrainer_TRAINER_MOM_p0_mailwords[] __attribute__((section(".rodata"))) = { 9290, 9290, 9290, 9290, 9290, 9290, 11279, 0xffff, 0xffff, };\
+static const u16 sTrainer_TRAINER_MOM_p0_mailwords[] __attribute__((section(".rodata"))) = { 9290, 11279, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, 0xffff, };\
 const u16 *const gTrainerMailWordsTable[][PARTY_SIZE] __attribute__((section(".rodata"))) = {\
 [TRAINER_NONE] = { },\
 [TRAINER_AQUA_LEADER] = { NULL, },\
