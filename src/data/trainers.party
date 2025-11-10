@@ -16680,8 +16680,8 @@ Mugshot: Pink
 
 Courier (Delibird) (F) @ Orange Mail
 Level: 100
-IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 16 HP / 0 Atk / 96 Def / 0 SpA / 144 SpD / 252 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
 Ability: Dauntless Shield
 Nature: Calm
 Tera Type: Ghost
@@ -16689,11 +16689,12 @@ Mail: 0x26bf 0x26bf 0x26bf 0x2c4f 0x2c4f 0x2c10 0x2c21 0x2713 0x26e2
 - Mail Script
 - Explosion
 // Spikes, Spikes, Spikes, Toxic Spikes, Toxic Spikes, Light Screen, Reflect, Ingrain, Baton Pass; Ghost Tera lets us switch with Ingrain active.
+// Kyouko's Courier (Delibird) sets up entry hazards and then baton passes immediately to a teammate.  It's not very useful after the first turn of the game, so it just explodes.
 
 Test (Rattata) (F) @ Eviolite
 Level: 100
 IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+EVs: 252 HP / 0 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
 Ability: Dauntless Shield
 Nature: Impish
 - Tackle
@@ -16701,7 +16702,7 @@ Nature: Impish
 Test (Rattata) (F) @ Eviolite
 Level: 100
 IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+EVs: 252 HP / 0 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
 Ability: Dauntless Shield
 Nature: Impish
 - Tackle
@@ -16709,7 +16710,7 @@ Nature: Impish
 Test (Rattata) (F) @ Eviolite
 Level: 100
 IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+EVs: 252 HP / 0 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
 Ability: Dauntless Shield
 Nature: Impish
 - Tackle
@@ -16717,18 +16718,21 @@ Nature: Impish
 Test (Rattata) (F) @ Eviolite
 Level: 100
 IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+EVs: 252 HP / 0 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
 Ability: Dauntless Shield
 Nature: Impish
 - Tackle
 
-Test (Rattata) (F) @ Eviolite
+Test (Chansey) (F) @ Firium Z
 Level: 100
 IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-Ability: Dauntless Shield
-Nature: Impish
-- Tackle
+EVs: 252 HP / 0 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Ability: Simple
+Nature: Relaxed
+- Phoenix Call
+- Revival Blessing
+- Metal Burst
+- Baton Pass
 
 === TRAINER_LILY ===
 Name: LILY

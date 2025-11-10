@@ -39,7 +39,8 @@ CeruleanCave_SecretChamber_B1F_EventScript_DefeatedKyouko::
 	msgbox CeruleanCave_SecretChamber_B1F_Text_KyoukoPostHeal, MSGBOX_NPC
 	applymovement LOCALID_KYOUKO, CeruleanCave_SecretChamber_B1F_Movement_KyoukoExit
 	waitmovement 0
-	@removeobject LOCALID_KYOUKO
+	setflag FLAG_TEMP_E @ Hide Kyouko until map reload
+	removeobject LOCALID_KYOUKO
 	releaseall
 	end
 CeruleanCave_SecretChamber_B1F_EventScript_RematchKyouko::

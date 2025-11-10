@@ -1150,7 +1150,9 @@ static void Cmd_attackcanceler(void)
         u32 side = GetBattlerSide(gBattlerAttacker);
         if (gBattleStruct->usedResurrection[side])
         {
-            gBattlescriptCurrInstr = BattleScript_ButItFailed;
+            u8 moveId = gBattleResources->bufferB[gBattlerAttacker][2] & ~RET_GIMMICK;
+            gBattleMons[gBattlerAttacker].pp[moveId] = 0;
+            gBattlescriptCurrInstr = BattleScript_UsedMoveButItFailed;
             return;
         }
         gBattleStruct->usedResurrection[side] = TRUE;
