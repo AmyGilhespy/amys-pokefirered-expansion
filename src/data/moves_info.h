@@ -21636,14 +21636,14 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .description = COMPOUND_STRING(
             "Hits the foe with\npowerful "
             "\nelectricity."),
-        .effect = EFFECT_HIT,
+        .effect = EFFECT_PSYSHOCK,
         .power = 180,
         .type = TYPE_ELECTRIC,
         .accuracy = 50,
         .pp = 5,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
-        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .category = DAMAGE_CATEGORY_SPECIAL,
         .battleAnimScript = gBattleAnimMove_GigavoltHavoc,
     },
 

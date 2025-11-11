@@ -1,0 +1,47 @@
+CeruleanCave_SecretChamber_B2F_MapScripts::
+	.byte 0
+
+CeruleanCave_SecretChamber_B2F_Lily::
+	lock
+	checktrainerflag TRAINER_AMY
+	goto_if_eq CeruleanCave_SecretChamber_B2F_EventScript_Rematch2Lily
+	checktrainerflag TRAINER_LILY
+	goto_if_eq CeruleanCave_SecretChamber_B2F_EventScript_RematchLily
+	trainerbattle_single TRAINER_LILY, CeruleanCave_SecretChamber_B2F_Text_LilyIntro, CeruleanCave_SecretChamber_B2F_Text_LilyDefeat, CeruleanCave_SecretChamber_B2F_EventScript_DefeatedLily, NO_MUSIC
+CeruleanCave_SecretChamber_B2F_EventScript_DefeatedLily::
+	lockall
+	msgbox CeruleanCave_SecretChamber_B2F_Text_LilyPostBattle, MSGBOX_NPC
+	call EventScript_OutOfCenterPartyHeal
+	msgbox CeruleanCave_SecretChamber_B2F_Text_LilyPostHeal, MSGBOX_NPC
+	msgbox CeruleanCave_SecretChamber_B2F_Text_LilyTeach, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, CeruleanCave_SecretChamber_B2F_EventScript_LilyPostTeach
+	msgbox CeruleanCave_SecretChamber_B2F_Text_LilyWhichMon
+	setvar VAR_0x8005, MOVE_MAIL_SCRIPT
+	call EventScript_ChooseMoveTutorMon
+	goto_if_eq VAR_RESULT, FALSE, CeruleanCave_SecretChamber_B2F_EventScript_LilyPostTeach
+CeruleanCave_SecretChamber_B2F_EventScript_LilyPostTeach::
+	msgbox CeruleanCave_SecretChamber_B2F_Text_LilyPostTeach, MSGBOX_NPC
+	applymovement LOCALID_LILY, CeruleanCave_SecretChamber_B2F_Movement_LilyExit
+	waitmovement 0
+	setflag FLAG_TEMP_E @ Hide Lily until map reload
+	removeobject LOCALID_LILY
+	releaseall
+	end
+CeruleanCave_SecretChamber_B2F_EventScript_RematchLily::
+	cleartrainerflag TRAINER_LILY
+	trainerbattle_single TRAINER_LILY, CeruleanCave_SecretChamber_B2F_Text_LilyRematchIntro, CeruleanCave_SecretChamber_B2F_Text_LilyDefeat, CeruleanCave_SecretChamber_B2F_EventScript_DefeatedLily, NO_MUSIC
+	goto CeruleanCave_SecretChamber_B2F_EventScript_DefeatedLily
+	end
+CeruleanCave_SecretChamber_B2F_EventScript_Rematch2Lily::
+	cleartrainerflag TRAINER_LILY
+	trainerbattle_single TRAINER_LILY, CeruleanCave_SecretChamber_B2F_Text_LilyRematch2Intro, CeruleanCave_SecretChamber_B2F_Text_LilyDefeat, CeruleanCave_SecretChamber_B2F_EventScript_DefeatedLily, NO_MUSIC
+	goto CeruleanCave_SecretChamber_B2F_EventScript_DefeatedLily
+	end
+
+CeruleanCave_SecretChamber_B2F_Movement_LilyExit::
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	step_end
+

@@ -3652,6 +3652,18 @@ bool32 AI_CanGiveFrostbite(u32 battlerAtk, u32 battlerDef, enum Ability defAbili
     return TRUE;
 }
 
+bool32 AI_CanFreeze(u32 battlerAtk, u32 battlerDef, enum Ability defAbility, u32 battlerAtkPartner, u32 move, u32 partnerMove)
+{
+    if (!CanBeFrozen(battlerAtk, battlerDef, defAbility)
+      || gAiLogicData->effectiveness[battlerAtk][battlerDef][gAiThinkingStruct->movesetIndex] == UQ_4_12(0.0)
+      || DoesSubstituteBlockMove(battlerAtk, battlerDef, move)
+      || PartnerMoveEffectIsStatusSameTarget(battlerAtkPartner, battlerDef, partnerMove))
+    {
+        return FALSE;
+    }
+    return TRUE;
+}
+
 bool32 AI_CanBeInfatuated(u32 battlerAtk, u32 battlerDef, enum Ability defAbility)
 {
     if (gBattleMons[battlerDef].volatiles.infatuation
@@ -4962,6 +4974,35 @@ void IncreaseFrostbiteScore(u32 battlerAtk, u32 battlerDef, u32 move, s32 *score
         if (IsPowerBasedOnStatus(battlerAtk, EFFECT_DOUBLE_POWER_ON_ARG_STATUS, STATUS1_FROSTBITE)
           || IsPowerBasedOnStatus(BATTLE_PARTNER(battlerAtk), EFFECT_DOUBLE_POWER_ON_ARG_STATUS, STATUS1_FROSTBITE))
             ADJUST_SCORE_PTR(WEAK_EFFECT);
+    }
+}
+
+void IncreaseFreezeScore(u32 battlerAtk, u32 battlerDef, u32 move, s32 *score)
+{
+    if ((gAiThinkingStruct->aiFlags[battlerAtk] & AI_FLAG_TRY_TO_FAINT) && CanAIFaintTarget(battlerAtk, battlerDef, 0))
+        return;
+
+    if (AI_CanFreeze(battlerAtk, battlerDef, gAiLogicData->abilities[battlerDef], BATTLE_PARTNER(battlerAtk), move, gAiLogicData->partnerMove))
+    {
+        if (move == MOVE_ABSOLUTE_ZERO)
+        {
+            ADJUST_SCORE_PTR(GOOD_EFFECT);
+        }
+        else
+        {
+            ADJUST_SCORE_PTR(DECENT_EFFECT);
+        }
+    }
+    else
+    {
+        if (move == MOVE_ABSOLUTE_ZERO)
+        {
+            ADJUST_SCORE_PTR(-10);
+        }
+        else
+        {
+            ADJUST_SCORE_PTR(WEAK_EFFECT);
+        }
     }
 }
 

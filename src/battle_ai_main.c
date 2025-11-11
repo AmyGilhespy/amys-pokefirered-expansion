@@ -4093,6 +4093,12 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
     case MOVE_EFFECT_BURN:
         IncreaseBurnScore(battlerAtk, battlerDef, move, &score);
         break;
+    case MOVE_EFFECT_FROSTBITE:
+        IncreaseFrostbiteScore(battlerAtk, battlerDef, move, &score);
+        break;
+    case MOVE_EFFECT_FREEZE:
+        IncreaseFreezeScore(battlerAtk, battlerDef, move, &score);
+        break;
     }
     // move effect checks
     switch (moveEffect)
@@ -5349,6 +5355,9 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
         case MOVE_EFFECT_BURN:
             IncreaseBurnScore(battlerAtk, battlerDef, move, &score);
             break;
+        case MOVE_EFFECT_FROSTBITE:
+            IncreaseFrostbiteScore(battlerAtk, battlerDef, move, &score);
+            break;
         case MOVE_EFFECT_FLINCH:
             score += ShouldTryToFlinch(battlerAtk, battlerDef, aiData->abilities[battlerAtk], aiData->abilities[battlerDef], move);
             break;
@@ -5632,6 +5641,18 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
         ADJUST_SCORE(10000);
         break;
     case EFFECT_MAIL_CALL:
+        break;
+    case EFFECT_VERDANCE:
+        if (!gBattleMons[battlerAtk].volatiles.root)
+            ADJUST_SCORE(DECENT_EFFECT);
+        else if (!gBattleMons[battlerAtk].volatiles.aquaRing)
+            ADJUST_SCORE(DECENT_EFFECT);
+        else if (AI_BattlerAtMaxHp(battlerAtk))
+            ADJUST_SCORE(-10);
+        else if (aiData->hpPercents[battlerAtk] >= 90)
+            ADJUST_SCORE(-9); //No point in healing, but should at least do it if nothing better
+        else if ((AI_GetWeather() & (B_WEATHER_LOW_LIGHT)))
+            ADJUST_SCORE(-3);
         break;
     default:
         break;

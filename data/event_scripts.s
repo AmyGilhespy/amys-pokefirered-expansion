@@ -1382,3 +1382,6 @@ Text_TestMsg::
 
 	.include "data/maps/CeruleanCave_SecretChamber_B1F/scripts.inc"
 	.include "data/maps/CeruleanCave_SecretChamber_B1F/text.inc"
+
+	.include "data/maps/CeruleanCave_SecretChamber_B2F/scripts.inc"
+	.include "data/maps/CeruleanCave_SecretChamber_B2F/text.inc"

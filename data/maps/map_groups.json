@@ -176,7 +176,8 @@
     "SixIsland_PatternBush",
     "SixIsland_AlteringCave",
     "CeruleanCave_Underwater",
-    "CeruleanCave_SecretChamber_B1F"
+    "CeruleanCave_SecretChamber_B1F",
+    "CeruleanCave_SecretChamber_B2F"
   ],
   "gMapGroup_SpecialArea": [
     "NavelRock_Exterior",

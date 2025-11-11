@@ -4404,6 +4404,18 @@
       "secondary_tileset": "gTileset_CeruleanCave",
       "border_filepath": "data/layouts/CeruleanCave_SecretChamber_B1F/border.bin",
       "blockdata_filepath": "data/layouts/CeruleanCave_SecretChamber_B1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_CERULEAN_CAVE_SECRET_CHAMBER_B2F",
+      "name": "CeruleanCave_SecretChamber_B2F_Layout",
+      "width": 40,
+      "height": 23,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_CeruleanCave",
+      "border_filepath": "data/layouts/CeruleanCave_SecretChamber_B2F/border.bin",
+      "blockdata_filepath": "data/layouts/CeruleanCave_SecretChamber_B2F/map.bin"
     }
   ]
 }

@@ -16690,50 +16690,59 @@ Mail: 0x26bf 0x26bf 0x26bf 0x2c4f 0x2c4f 0x2c10 0x2c21 0x2713 0x26e2
 // Spikes, Spikes, Spikes, Toxic Spikes, Toxic Spikes, Light Screen, Reflect, Ingrain, Baton Pass
 // Kyouko's Courier (Delibird) sets up entry hazards and then baton passes immediately to a teammate.  It's not very useful after the first turn of the game, so it just explodes.
 
-Steel Soul (F) @ Orange Mail
+Amphy (Ampharos Mega) (F) @ Red Card
+Level: 100
+IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 0 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Ability: No Guard
+Nature: Bold
+- Absolute Zero
+- Railgun
+- Spacial Rend
+- Inferno
+
+Steel Soul (F) @ Leftovers
 Level: 100
 IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 0 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
 Ability: Dauntless Shield
 Nature: Calm
-Mail: 0x2c10 0x2c21 0x2c3b
 - No Retreat
-- Mail Call
+- Verdance
 - Body Press
-- Wish
+- Foul Play
+//Mail: 0x2c10 0x2c21 0x2c3b
 // Light Screen, Reflect, Infiniblast
 // Don't nickname Steel Soul, as this is likely the first time the player is seeing this mon.
 
-Test (Chansey) (F) @ Eviolite
+X (Mewtwo Mega X) (F) @ Red Card
 Level: 100
-IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 0 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
-Ability: Snow Warning
-Nature: Relaxed
-- Absolute Zero
-
-Test (Mewtwo Mega X) (F) @ Eviolite
-Level: 100
-IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 0 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
-Ability: Dauntless Shield
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Ability: Adaptability
 Nature: Impish
-- Tackle
+- Photon Geyser
+- Close Combat
+- Knock Off
+- U-turn
 
-Test (Mewtwo Mega Y) (F) @ Eviolite
+Y (Mewtwo Mega Y) (F) @ Red Card
 Level: 100
-IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 0 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
-Ability: Dauntless Shield
-Nature: Impish
-- Tackle
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Ability: Sheer Force
+Nature: Naive
+- Photon Geyser
+- Bolt Strike
+- Ice Beam
+- Earth Power
 
 Nurse (Eternatus Eternamax) (F) @ Firium Z
 Level: 100
 IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 0 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
 Ability: Simple
-Nature: Relaxed
+Nature: Calm
 - Phoenix Call
 - Revival Blessing
 - No Retreat
@@ -16748,14 +16757,60 @@ Music: Aqua
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Smart Switching / Ace Pokemon / Omniscient
+Mugshot: Pink
 
-Test (Rattata) (F) @ Eviolite
+Courier (Delibird) (F) @ Orange Mail
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Ability: Dauntless Shield
+Nature: Calm
+Mail: 0x26bf 0x26bf 0x26bf 0x2c4f 0x2c4f 0x2c10 0x2c21 0x2713 0x26e2
+- Mail Script
+- Explosion
+// Spikes, Spikes, Spikes, Toxic Spikes, Toxic Spikes, Light Screen, Reflect, Ingrain, Baton Pass
+// Kyouko's Courier (Delibird) sets up entry hazards and then baton passes immediately to a teammate.  It's not very useful after the first turn of the game, so it just explodes.
+
+Good Girl (Sylveon) (F) @ Eviolite
 Level: 100
 IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-Ability: Dauntless Shield
-Nature: Impish
-- Tackle
+EVs: 252 HP / 0 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Ability: Pixilate
+Nature: Modest
+- Baton Pass
+
+Midnight (Umbreon) (F) @ Toxic Orb
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Ability: Poison Heal
+Nature: Sassy
+- Verdance
+- Spiky Shield
+- Knock Off
+- Baton Pass
+
+Test (Gardevoir Mega) (F) @ Choice Specs
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Ability: Pixilate
+Nature: Rash
+- Boomburst
+- Psystrike
+- Extreme Speed
+- Armor Cannon
+
+Nurse (Eternatus Eternamax) (F) @ Firium Z
+Level: 100
+IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 0 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Ability: Simple
+Nature: Calm
+- Phoenix Call
+- Revival Blessing
+- No Retreat
+- Baton Pass
 
 === TRAINER_MEGAN ===
 Name: MEGAN
