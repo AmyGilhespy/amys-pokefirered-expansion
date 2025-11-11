@@ -113,7 +113,7 @@ CeladonCity_DepartmentStore_Roof_EventScript_AskGiveAllDrinks::
 
 CeladonCity_DepartmentStore_Roof_EventScript_GiveFreshWater::
 	setvar VAR_0x8008, ITEM_FRESH_WATER
-	setvar VAR_0x8009, ITEM_TM_SINGULARITY_X @ Originally: TM16 Light Screen
+	setvar VAR_0x8009, ITEM_TM_VERDANCE @ Originally: TM16 Light Screen
 	goto_if_set FLAG_GOT_TM16_FROM_THIRSTY_GIRL, CeladonCity_DepartmentStore_Roof_EventScript_NotThirstyAfterAll
 	msgbox CeladonCity_DepartmentStore_Roof_Text_YayFreshWaterHaveThis
 	goto CeladonCity_DepartmentStore_Roof_EventScript_GiveDrink

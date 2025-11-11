@@ -2121,6 +2121,17 @@ static void Mugshots_CreateTrainerPics(struct Task *task)
     opponentSprite->oam.size = SPRITE_SIZE(64x32);
     playerSprite->oam.size = SPRITE_SIZE(64x32);
 
+    if (trainerId == TRAINER_PIC_SCHOOL_KID_F)
+    {
+        // Every 8×8 tile is 32 bytes in VRAM, so a full 64×64 sprite = 8×8 tiles = 64 tiles total.
+
+        // Each vertical 8 pixels = 8 tiles (one horizontal row of 8).
+        // So to shift the visible region down by, say, 16 pixels (2 tile rows), you add 8 * 2 = 16 tiles to the starting tile index.
+
+        // Move starting tile index down by 8 tiles = 8 * 32 bytes = 256 bytes = 8px vertical
+        opponentSprite->oam.tileNum += 8;
+    }
+
     CalcCenterToCornerVec(opponentSprite, SPRITE_SHAPE(64x32), SPRITE_SIZE(64x32), ST_OAM_AFFINE_DOUBLE);
     CalcCenterToCornerVec(playerSprite, SPRITE_SHAPE(64x32), SPRITE_SIZE(64x32), ST_OAM_AFFINE_DOUBLE);
 

@@ -360,6 +360,7 @@ enum __attribute__((packed)) BattleMoveEffects
     EFFECT_RESURRECTION,
     EFFECT_MAIL_SCRIPT,
     EFFECT_MAIL_CALL,
+    EFFECT_VERDANCE,
     NUM_BATTLE_MOVE_EFFECTS,
 };
 

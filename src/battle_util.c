@@ -2428,6 +2428,20 @@ static u16 GetMoveIdFromEasyChatWord(u16 word)
     return MOVE_NONE; // not a move word
 }
 
+static u16 GetVerdanceMove(u32 battlerUser)
+{
+    struct BattlePokemon userBattleMon = gBattleMons[battlerUser];
+    if (!userBattleMon.volatiles.root)
+    {
+        return MOVE_INGRAIN;
+    }
+    if (!userBattleMon.volatiles.aquaRing)
+    {
+        return MOVE_AQUA_RING;
+    }
+    return MOVE_SYNTHESIS;
+}
+
 static u16 GetMailCallMove(u32 battlerUser)
 {
     s32 i;
@@ -2610,14 +2624,16 @@ static enum MoveCanceller CancellerCallSubmove(struct BattleContext *ctx)
         }
         break;
     case EFFECT_MAIL_CALL:
-        // Use saved battler (so submoves always use same attacker/target)
-        calledMove = GetMailCallMove(gAmySaveBattlerAttacker); // or ctx->battlerAtk
+        calledMove = GetMailCallMove(ctx->battlerAtk);
         if (calledMove == MOVE_NONE)
         {
             // If none (invalid word or no words), end the mail-call
             noEffect = TRUE;
             break;
         }
+        break;
+    case EFFECT_VERDANCE:
+        calledMove = GetVerdanceMove(ctx->battlerAtk);
         break;
     default:
         noEffect = TRUE;

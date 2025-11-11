@@ -9150,6 +9150,11 @@ BattleScript_EffectMailCall::
 	moveendall
 	end
 
+BattleScript_EffectVerdance::
+	attackcanceler
+	moveendall
+	end
+
 BattleScript_SleepClauseBlocked::
 	pause B_WAIT_TIME_SHORT
 	setmoveresultflags MOVE_RESULT_FAILED

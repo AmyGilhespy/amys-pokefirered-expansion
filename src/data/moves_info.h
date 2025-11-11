@@ -21506,29 +21506,25 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .validApprenticeMove = TRUE,
     },
 
-    [MOVE_SINGULARITY_X] =
+    [MOVE_VERDANCE] =
     {
-        .name = COMPOUND_STRING("Singularity X"),
-        .description = sHyperBeamDescription,
-        .effect = EFFECT_PHOTON_GEYSER,
-        .power = 120,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
+        .name = COMPOUND_STRING("Verdance"),
+        .description = COMPOUND_STRING(
+            "Like Ingrain,\nAqua Ring,"
+            "\nand finally\nSynthesis."),
+        .effect = EFFECT_VERDANCE,
+        .power = 0,
+        .type = TYPE_GRASS,
+        .accuracy = 0,
         .pp = 5,
-        .target = MOVE_TARGET_BOTH,
+        .target = MOVE_TARGET_USER,
         .priority = 0,
-        .alwaysCriticalHit = TRUE,
-        .category = DAMAGE_CATEGORY_SPECIAL,
-        .ignoresKingsRock = B_UPDATED_MOVE_FLAGS < GEN_3,
-        .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = MOVE_EFFECT_RECHARGE,
-            .self = TRUE,
-        }),
-        .contestEffect = CONTEST_EFFECT_JAMS_OTHERS_BUT_MISS_ONE_TURN,
-        .contestCategory = CONTEST_CATEGORY_COOL,
+        .category = DAMAGE_CATEGORY_STATUS,
+        .contestEffect = CONTEST_EFFECT_REPETITION_NOT_BORING,
+        .contestCategory = CONTEST_CATEGORY_BEAUTY,
         .contestComboStarterId = 0,
         .contestComboMoves = {0},
-        .battleAnimScript = gBattleAnimMove_LightThatBurnsTheSky,
+        .battleAnimScript = gBattleAnimMove_Ingrain,
         .validApprenticeMove = TRUE,
     },
 

@@ -2285,4 +2285,10 @@ const struct BattleMoveEffect gBattleMoveEffects[NUM_BATTLE_MOVE_EFFECTS] =
         .battleTvScore = 4,
     },
 
+    [EFFECT_VERDANCE] =
+    {
+        .battleScript = BattleScript_EffectVerdance,
+        .battleTvScore = 4,
+    },
+
 };

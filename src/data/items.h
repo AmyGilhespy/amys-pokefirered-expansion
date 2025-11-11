@@ -11764,12 +11764,12 @@ const struct Item gItemsInfo[] =
         .fieldUseFunc = NULL,
     },
 
-    [ITEM_TM_SINGULARITY_X] =
+    [ITEM_TM_VERDANCE] =
     {
         .name = ITEM_NAME("TM60"),
         .price = 10000,
         .description = COMPOUND_STRING(
-            "Singularity X."),
+            "Verdance."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
