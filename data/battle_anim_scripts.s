@@ -31090,6 +31090,174 @@ HavocSpearSparkTarget:
 	return
 
 
+gBattleAnimMove_Railgun::
+	loadspritegfx ANIM_TAG_HAVOC_SPEAR @ needed, obviously (see gGigavoltHavocChargingSpearSpriteTemplate in src/battle_anim_new.c)
+	loadspritegfx ANIM_TAG_CIRCLE_OF_LIGHT @ seems to be unneeded, but leave it just in case
+	loadspritegfx ANIM_TAG_ELECTRIC_ORBS @ seems to be unneeded, but possibly needed for AnimTask_ElectricChargingParticles (unclear to me), so leave it.
+	loadspritegfx ANIM_TAG_ELECTRICITY @ needed (see gElectricPuffSpriteTemplate in src/battle_anim_electric.c)
+	loadspritegfx ANIM_TAG_SPARK_2 @ needed (see gSparkElectricitySpriteTemplate, gSparkElectricityFlashingSpriteTemplate in src/battle_anim_electric.c)
+	@loadspritegfx ANIM_TAG_GRAY_SMOKE @ seems to be unneeded
+	@loadspritegfx ANIM_TAG_THIN_RING @ seems to be unneeded
+	loadspritegfx ANIM_TAG_EXPLOSION
+	createvisualtask AnimTask_AllBattlersInvisibleExceptAttackerAndTarget, 0xA
+	waitforvisualfinish
+	createvisualtask AnimTask_BlendBattleAnimPal, 0xa, F_PAL_BG, 0x6, 0x0, 0x10, 0x0000
+	playsewithpan SE_M_THUNDERBOLT2, SOUND_PAN_ATTACKER
+	createsprite gGigavoltHavocChargingSpearSpriteTemplate, ANIM_ATTACKER, 2, ANIM_ATTACKER
+	createsprite gSparkElectricitySpriteTemplate, ANIM_ATTACKER, 0, 32, 0x18, 190, 12, ANIM_ATTACKER, 1, 0
+	createsprite gSparkElectricitySpriteTemplate, ANIM_ATTACKER, 0, 80, 0x18, 22, 12, ANIM_ATTACKER, 1, 0
+	createsprite gSparkElectricitySpriteTemplate, ANIM_ATTACKER, 0, 156, 0x18, 121, 13, ANIM_ATTACKER, 1, 1
+	delay 0xa
+	playsewithpan SE_M_THUNDERBOLT2, SOUND_PAN_ATTACKER
+	createsprite gSparkElectricitySpriteTemplate, ANIM_ATTACKER, 0, 100, 0x18, 60, 10, ANIM_ATTACKER, 1, 0
+	createsprite gSparkElectricitySpriteTemplate, ANIM_ATTACKER, 0, 170, 0x18, 42, 11, ANIM_ATTACKER, 1, 1
+	delay 0x0
+	createsprite gSparkElectricitySpriteTemplate, ANIM_ATTACKER, 0, 238, 0x18, 165, 10, ANIM_ATTACKER, 1, 1
+	delay 0x0
+	delay 0x5
+	createsprite gSparkElectricitySpriteTemplate, ANIM_ATTACKER, 0, 100, 0x18, 60, 10, ANIM_ATTACKER, 1, 0
+	createsprite gSparkElectricitySpriteTemplate, ANIM_ATTACKER, 0, 170, 0x18, 42, 11, ANIM_ATTACKER, 1, 1
+	delay 0x0
+	createsprite gSparkElectricitySpriteTemplate, ANIM_ATTACKER, 0, 238, 0x18, 165, 10, ANIM_ATTACKER, 1, 1
+	delay 0x5
+	createsprite gSparkElectricityFlashingSpriteTemplate, ANIM_ATTACKER, 4, 0x0, 0x0, 0x10, 0xc, 0x20, 0x14, 0x0, 0x0
+	createsprite gSparkElectricityFlashingSpriteTemplate, ANIM_ATTACKER, 4, 0x0, 0x0, 0x10, 0xc, 0x60, 0x14, 0x1, 0x0
+	createsprite gSparkElectricityFlashingSpriteTemplate, ANIM_ATTACKER, 4, 0x0, 0x0, 0x10, 0xc, 0xa0, 0x14, 0x0, 0x0
+	createsprite gSparkElectricityFlashingSpriteTemplate, ANIM_ATTACKER, 4, 0x0, 0x0, 0x10, 0xc, 0xe0, 0x14, 0x2, 0x0
+	delay 0x5
+	createsprite gSparkElectricitySpriteTemplate, ANIM_ATTACKER, 0, 100, 0x18, 60, 10, ANIM_ATTACKER, 1, 0
+	createsprite gSparkElectricitySpriteTemplate, ANIM_ATTACKER, 0, 170, 0x18, 42, 11, ANIM_ATTACKER, 1, 1
+	delay 0x0
+	createsprite gSparkElectricitySpriteTemplate, ANIM_ATTACKER, 0, 238, 0x18, 165, 10, ANIM_ATTACKER, 1, 1
+	playsewithpan SE_M_THUNDERBOLT2, SOUND_PAN_ATTACKER
+	monbg ANIM_ATTACKER
+	playsewithpan SE_M_THUNDERBOLT2, SOUND_PAN_ATTACKER
+@	createvisualtask AnimTask_ElectricChargingParticles, 2, ANIM_ATTACKER, 60, 2, 12 	@charge particles to user
+@	createsprite gSparkElectricityFlashingSpriteTemplate, ANIM_TARGET, 2, 0x0, 0x0, 0x10, 0x2c, 0x20, 0x28, 0x0, 0x3
+	createsprite gSparkElectricityFlashingSpriteTemplate, ANIM_TARGET, 2, 0x0, 0x0, 0x10, 0x2c, 0x60, 0x28, 0x1, 0x3
+@	createsprite gSparkElectricityFlashingSpriteTemplate, ANIM_TARGET, 2, 0x0, 0x0, 0x10, 0x2c, 0xa0, 0x28, 0x0, 0x3
+	createsprite gSparkElectricityFlashingSpriteTemplate, ANIM_TARGET, 2, 0x0, 0x0, 0x10, 0x2c, 0xe0, 0x28, 0x2, 0x3
+	delay 0x14
+	playsewithpan SE_M_THUNDERBOLT2, SOUND_PAN_ATTACKER
+	createsprite gSparkElectricityFlashingSpriteTemplate, ANIM_TARGET, 2, 0x0, 0x0, 0x12, 0x2c, 0x0, 0x28, 0x0, 0x3
+@	createsprite gSparkElectricityFlashingSpriteTemplate, ANIM_TARGET, 2, 0x0, 0x0, 0x12, 0x2c, 0x40, 0x28, 0x1, 0x3
+	createsprite gSparkElectricityFlashingSpriteTemplate, ANIM_TARGET, 2, 0x0, 0x0, 0x12, 0x2c, 0x80, 0x28, 0x0, 0x3
+@	createsprite gSparkElectricityFlashingSpriteTemplate, ANIM_TARGET, 2, 0x0, 0x0, 0x12, 0x2c, SOUND_PAN_ATTACKER, 0x28, 0x2, 0x3
+	delay 0x14
+	playsewithpan SE_M_THUNDERBOLT2, SOUND_PAN_ATTACKER
+@	createsprite gSparkElectricityFlashingSpriteTemplate, ANIM_TARGET, 2, 0x0, 0x0, 0x14, 0x2c, 0x0, 0x28, 0x0, 0x3
+	createsprite gSparkElectricityFlashingSpriteTemplate, ANIM_TARGET, 2, 0x0, 0x0, 0x14, 0x2c, 0x40, 0x28, 0x1, 0x3
+@	createsprite gSparkElectricityFlashingSpriteTemplate, ANIM_TARGET, 2, 0x0, 0x0, 0x14, 0x2c, 0x80, 0x28, 0x0, 0x3
+	createsprite gSparkElectricityFlashingSpriteTemplate, ANIM_TARGET, 2, 0x0, 0x0, 0x14, 0x2c, SOUND_PAN_ATTACKER, 0x28, 0x2, 0x3
+	delay 0x14
+	createsprite gSparkElectricityFlashingSpriteTemplate, ANIM_ATTACKER, 2, 0x0, 0x0, 0x15, 0x2c, 0x0, 0x28, 0x0, 0x3
+	createsprite gSparkElectricityFlashingSpriteTemplate, ANIM_ATTACKER, 2, 0x0, 0x0, 0x15, 0x2c, 0x40, 0x28, 0x1, 0x3
+	createsprite gSparkElectricityFlashingSpriteTemplate, ANIM_ATTACKER, 2, 0x0, 0x0, 0x15, 0x2c, 0x80, 0x28, 0x0, 0x3
+	createsprite gSparkElectricityFlashingSpriteTemplate, ANIM_ATTACKER, 2, 0x0, 0x0, 0x15, 0x2c, SOUND_PAN_ATTACKER, 0x28, 0x2, 0x3
+	delay 0x14
+	createsprite gSparkElectricityFlashingSpriteTemplate, ANIM_ATTACKER, 2, 0x0, 0x0, 0x15, 0x2c, 0x0, 0x28, 0x0, 0x3
+	createsprite gSparkElectricityFlashingSpriteTemplate, ANIM_ATTACKER, 2, 0x0, 0x0, 0x15, 0x2c, 0x40, 0x28, 0x1, 0x3
+	createsprite gSparkElectricityFlashingSpriteTemplate, ANIM_ATTACKER, 2, 0x0, 0x0, 0x15, 0x2c, 0x80, 0x28, 0x0, 0x3
+	createsprite gSparkElectricityFlashingSpriteTemplate, ANIM_ATTACKER, 2, 0x0, 0x0, 0x15, 0x2c, SOUND_PAN_ATTACKER, 0x28, 0x2, 0x3
+	delay 0x14
+	createsprite gSparkElectricityFlashingSpriteTemplate, ANIM_ATTACKER, 2, 0x0, 0x0, 0x15, 0x2c, 0x0, 0x28, 0x0, 0x3
+	createsprite gSparkElectricityFlashingSpriteTemplate, ANIM_ATTACKER, 2, 0x0, 0x0, 0x15, 0x2c, 0x40, 0x28, 0x1, 0x3
+	createsprite gSparkElectricityFlashingSpriteTemplate, ANIM_ATTACKER, 2, 0x0, 0x0, 0x15, 0x2c, 0x80, 0x28, 0x0, 0x3
+	createsprite gSparkElectricityFlashingSpriteTemplate, ANIM_ATTACKER, 2, 0x0, 0x0, 0x15, 0x2c, SOUND_PAN_ATTACKER, 0x28, 0x2, 0x3
+	delay 0x14
+	createsprite gSparkElectricityFlashingSpriteTemplate, ANIM_ATTACKER, 2, 0x0, 0x0, 0x15, 0x2c, 0x0, 0x28, 0x0, 0x3
+	createsprite gSparkElectricityFlashingSpriteTemplate, ANIM_ATTACKER, 2, 0x0, 0x0, 0x15, 0x2c, 0x40, 0x28, 0x1, 0x3
+	createsprite gSparkElectricityFlashingSpriteTemplate, ANIM_ATTACKER, 2, 0x0, 0x0, 0x15, 0x2c, 0x80, 0x28, 0x0, 0x3
+	createsprite gSparkElectricityFlashingSpriteTemplate, ANIM_ATTACKER, 2, 0x0, 0x0, 0x15, 0x2c, SOUND_PAN_ATTACKER, 0x28, 0x2, 0x3
+	delay 0x14
+	createsprite gSparkElectricityFlashingSpriteTemplate, ANIM_ATTACKER, 2, 0x0, 0x0, 0x15, 0x2c, 0x0, 0x28, 0x0, 0x3
+	createsprite gSparkElectricityFlashingSpriteTemplate, ANIM_ATTACKER, 2, 0x0, 0x0, 0x15, 0x2c, 0x40, 0x28, 0x1, 0x3
+	createsprite gSparkElectricityFlashingSpriteTemplate, ANIM_ATTACKER, 2, 0x0, 0x0, 0x15, 0x2c, 0x80, 0x28, 0x0, 0x3
+	createsprite gSparkElectricityFlashingSpriteTemplate, ANIM_ATTACKER, 2, 0x0, 0x0, 0x15, 0x2c, SOUND_PAN_ATTACKER, 0x28, 0x2, 0x3
+	delay 0x14
+	createsprite gSparkElectricityFlashingSpriteTemplate, ANIM_ATTACKER, 2, 0x0, 0x0, 0x15, 0x2c, 0x0, 0x28, 0x0, 0x3
+	createsprite gSparkElectricityFlashingSpriteTemplate, ANIM_ATTACKER, 2, 0x0, 0x0, 0x15, 0x2c, 0x40, 0x28, 0x1, 0x3
+	createsprite gSparkElectricityFlashingSpriteTemplate, ANIM_ATTACKER, 2, 0x0, 0x0, 0x15, 0x2c, 0x80, 0x28, 0x0, 0x3
+	createsprite gSparkElectricityFlashingSpriteTemplate, ANIM_ATTACKER, 2, 0x0, 0x0, 0x15, 0x2c, SOUND_PAN_ATTACKER, 0x28, 0x2, 0x3
+	delay 0x14
+	createsprite gSparkElectricityFlashingSpriteTemplate, ANIM_ATTACKER, 2, 0x0, 0x0, 0x15, 0x2c, 0x0, 0x28, 0x0, 0x3
+	createsprite gSparkElectricityFlashingSpriteTemplate, ANIM_ATTACKER, 2, 0x0, 0x0, 0x15, 0x2c, 0x40, 0x28, 0x1, 0x3
+	createsprite gSparkElectricityFlashingSpriteTemplate, ANIM_ATTACKER, 2, 0x0, 0x0, 0x15, 0x2c, 0x80, 0x28, 0x0, 0x3
+	createsprite gSparkElectricityFlashingSpriteTemplate, ANIM_ATTACKER, 2, 0x0, 0x0, 0x15, 0x2c, SOUND_PAN_ATTACKER, 0x28, 0x2, 0x3
+	delay 0x14
+	createsprite gSparkElectricityFlashingSpriteTemplate, ANIM_ATTACKER, 2, 0x0, 0x0, 0x15, 0x2c, 0x0, 0x28, 0x0, 0x3
+	createsprite gSparkElectricityFlashingSpriteTemplate, ANIM_ATTACKER, 2, 0x0, 0x0, 0x15, 0x2c, 0x40, 0x28, 0x1, 0x3
+	createsprite gSparkElectricityFlashingSpriteTemplate, ANIM_ATTACKER, 2, 0x0, 0x0, 0x15, 0x2c, 0x80, 0x28, 0x0, 0x3
+	createsprite gSparkElectricityFlashingSpriteTemplate, ANIM_ATTACKER, 2, 0x0, 0x0, 0x15, 0x2c, SOUND_PAN_ATTACKER, 0x28, 0x2, 0x3
+	delay 0x14
+	waitforvisualfinish
+	playsewithpan SE_M_TRI_ATTACK2, SOUND_PAN_TARGET
+	createsprite gGigavoltHavocLaunchSpearSpriteTemplate, ANIM_TARGET, 3, 0x0
+	createsprite gElectricPuffSpriteTemplate, ANIM_ATTACKER, 2, 0x0, 0x10, 0x10
+	delay 0x2
+	createsprite gElectricPuffSpriteTemplate, ANIM_ATTACKER, 2, 0x0, 0xfff0, 0xfff0
+	delay 0xe
+	clearmonbg ANIM_ATTACKER
+	createvisualtask AnimTask_HorizontalShake, 5, ANIM_TARGET, 8, 28 	@shake target
+	unloadspritegfx ANIM_TAG_HAVOC_SPEAR
+	loadspritegfx ANIM_TAG_SHOCK_3 @thunderbolt
+	createsprite gThunderboltOrbSpriteTemplate, ANIM_TARGET, 3, 0x2c, 0x0, 0x0, 0x3
+	createvisualtask AnimTask_BlendBattleAnimPal, 0xa, F_PAL_TARGET, 0x0, 0x0, 0xc, 0x5bff
+@	createsprite gSparkElectricityFlashingSpriteTemplate, ANIM_TARGET, 4, 0x0, 0x0, 0x20, 0x2c, 0x0, 0x28, 0x0, 0x8003
+@	createsprite gSparkElectricityFlashingSpriteTemplate, ANIM_TARGET, 4, 0x0, 0x0, 0x20, 0x2c, 0x40, 0x28, 0x1, 0x8003
+@	createsprite gSparkElectricityFlashingSpriteTemplate, ANIM_TARGET, 4, 0x0, 0x0, 0x20, 0x2c, 0x80, 0x28, 0x0, 0x8003
+@	createsprite gSparkElectricityFlashingSpriteTemplate, ANIM_TARGET, 4, 0x0, 0x0, 0x20, 0x2c, SOUND_PAN_ATTACKER, 0x28, 0x2, 0x8003
+@	createsprite gSparkElectricityFlashingSpriteTemplate, ANIM_TARGET, 4, 0x0, 0x0, 0x10, 0x2c, 0x20, 0x28, 0x0, 0x8003
+@	createsprite gSparkElectricityFlashingSpriteTemplate, ANIM_TARGET, 4, 0x0, 0x0, 0x10, 0x2c, 0x60, 0x28, 0x1, 0x8003
+@	createsprite gSparkElectricityFlashingSpriteTemplate, ANIM_TARGET, 4, 0x0, 0x0, 0x10, 0x2c, 0xa0, 0x28, 0x0, 0x8003
+@	createsprite gSparkElectricityFlashingSpriteTemplate, ANIM_TARGET, 4, 0x0, 0x0, 0x10, 0x2c, 0xe0, 0x28, 0x2, 0x8003
+	playsewithpan SE_M_HYPER_BEAM, SOUND_PAN_TARGET
+	delay 0x19
+	loadspritegfx ANIM_TAG_VERTICAL_HEX
+	createvisualtask AnimTask_BlendBattleAnimPal, 0xa, F_PAL_TARGET, 0x2, 0xc, 0x0, 0x5bff
+	waitforvisualfinish
+	createvisualtask AnimTask_BlendBattleAnimPal, 0xa, F_PAL_BG, 0x1, 0x10, 0x0, 0x0000
+	waitforvisualfinish
+	createvisualtask AnimTask_AllBattlersVisible, 0xa
+	waitforvisualfinish
+	createsprite gComplexPaletteBlendSpriteTemplate, ANIM_TARGET, 2, F_PAL_BG, 8, 9, RGB(26, 8, 8), 8, RGB_BLACK, 8
+	createvisualtask AnimTask_ShakeMon2, 5, ANIM_TARGET, 8, 0, 40, 1
+	call RailgunExplosion1
+	call RailgunExplosion1
+	waitforvisualfinish
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_BG, 1, 16, 16, RGB_WHITE
+	delay 50
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_BG, 3, 16, 0, RGB_WHITE
+	end
+RailgunExplosion1:
+	playsewithpan SE_M_EXPLOSION, SOUND_PAN_TARGET
+	createsprite gExplosionSpriteTemplate, ANIM_TARGET, 3, 0, 0, ANIM_TARGET, 1
+	delay 6
+	playsewithpan SE_M_EXPLOSION, SOUND_PAN_TARGET
+	createsprite gExplosionSpriteTemplate, ANIM_TARGET, 3, 24, -24, ANIM_TARGET, 1
+	delay 6
+	playsewithpan SE_M_EXPLOSION, SOUND_PAN_TARGET
+	createsprite gExplosionSpriteTemplate, ANIM_TARGET, 3, -16, 16, ANIM_TARGET, 1
+	delay 6
+	playsewithpan SE_M_EXPLOSION, SOUND_PAN_TARGET
+	createsprite gExplosionSpriteTemplate, ANIM_TARGET, 3, -24, -12, ANIM_TARGET, 1
+	delay 6
+	playsewithpan SE_M_EXPLOSION, SOUND_PAN_TARGET
+	createsprite gExplosionSpriteTemplate, ANIM_TARGET, 3, 16, 16, ANIM_TARGET, 1
+	delay 6
+	return
+RailgunSpearSparkTarget:
+@	createsprite gSparkElectricityFlashingSpriteTemplate, ANIM_ATTACKER, 4, 0x0, 0x0, 0x20, 0xc, 0x0, 0x14, 0x0, 0x8000
+	createsprite gSparkElectricityFlashingSpriteTemplate, ANIM_ATTACKER, 4, 0x0, 0x0, 0x10, 0xc, 0x0, 0x14, 0x0, 0x8000
+@	createsprite gSparkElectricityFlashingSpriteTemplate, ANIM_ATTACKER, 4, 0x0, 0x0, 0x20, 0xc, 0x40, 0x14, 0x1, 0x8000
+	createsprite gSparkElectricityFlashingSpriteTemplate, ANIM_ATTACKER, 4, 0x0, 0x0, 0x10, 0xc, 0x40, 0x14, 0x1, 0x8000
+@	createsprite gSparkElectricityFlashingSpriteTemplate, ANIM_ATTACKER, 4, 0x0, 0x0, 0x20, 0xc, 0x80, 0x14, 0x0, 0x8000
+	createsprite gSparkElectricityFlashingSpriteTemplate, ANIM_ATTACKER, 4, 0x0, 0x0, 0x10, 0xc, 0x80, 0x14, 0x0, 0x8000
+@	createsprite gSparkElectricityFlashingSpriteTemplate, ANIM_ATTACKER, 4, 0x0, 0x0, 0x20, 0xc, SOUND_PAN_ATTACKER, 0x14, 0x2, 0x8000
+	createsprite gSparkElectricityFlashingSpriteTemplate, ANIM_ATTACKER, 4, 0x0, 0x0, 0x10, 0xc, SOUND_PAN_ATTACKER, 0x14, 0x2, 0x8000
+	return
+
+
 gBattleAnimMove_ShatteredPsyche::
 	loadspritegfx ANIM_TAG_IMPACT @hit
 	loadspritegfx ANIM_TAG_BLUE_LIGHT_WALL @reflect

@@ -21644,7 +21644,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_SPECIAL,
-        .battleAnimScript = gBattleAnimMove_GigavoltHavoc,
+        .battleAnimScript = gBattleAnimMove_Railgun,
     },
 
     [MOVE_MEGA_LICK] = // Joke move
