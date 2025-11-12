@@ -161,6 +161,7 @@ static const u16 sEasyChatGroup_Move2[] = {
     MOVE_SPIKES,
     MOVE_SPIT_UP,
     MOVE_SPLASH,
+    MOVE_STEALTH_ROCK, // Amy: added
     MOVE_STEEL_WING,
     MOVE_STOCKPILE,
     MOVE_STOMP,
@@ -183,6 +184,7 @@ static const u16 sEasyChatGroup_Move2[] = {
     MOVE_THUNDER_WAVE,
     MOVE_THUNDER_SHOCK,
     MOVE_TOXIC,
+    MOVE_TOXIC_SPIKES, // Amy: added
     MOVE_TRANSFORM,
     MOVE_TRI_ATTACK,
     MOVE_TRICK,

@@ -42,7 +42,8 @@
     "gMapGroup_IndoorFiveIslandRoute",
     "gMapGroup_IndoorTwoIslandRoute",
     "gMapGroup_IndoorSixIslandRoute",
-    "gMapGroup_IndoorSevenIslandRoute"
+    "gMapGroup_IndoorSevenIslandRoute",
+    "gMapGroup_CeruleanCaveSecretChamber"
   ],
   "gMapGroup_Link": [
     "BattleColosseum_2P",
@@ -174,10 +175,7 @@
     "SixIsland_DottedHole_B4F",
     "SixIsland_DottedHole_SapphireRoom",
     "SixIsland_PatternBush",
-    "SixIsland_AlteringCave",
-    "CeruleanCave_Underwater",
-    "CeruleanCave_SecretChamber_B1F",
-    "CeruleanCave_SecretChamber_B2F"
+    "SixIsland_AlteringCave"
   ],
   "gMapGroup_SpecialArea": [
     "NavelRock_Exterior",
@@ -557,5 +555,13 @@
   ],
   "gMapGroup_IndoorSevenIslandRoute": [
     "SevenIsland_SevaultCanyon_House"
+  ],
+  "gMapGroup_CeruleanCaveSecretChamber": [
+    "CeruleanCave_Underwater",
+    "CeruleanCave_SecretChamber_B1F",
+    "CeruleanCave_SecretChamber_B2F",
+    "CeruleanCave_SecretChamber_B3F",
+    "CeruleanCave_SecretChamber_B4F",
+    "CeruleanCave_SecretChamber_B5F"
   ]
 }

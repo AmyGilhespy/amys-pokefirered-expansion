@@ -1,7 +1,7 @@
 {
-  "id": "MAP_CERULEAN_CAVE_SECRET_CHAMBER_B2F",
-  "name": "CeruleanCave_SecretChamber_B2F",
-  "layout": "LAYOUT_CERULEAN_CAVE_SECRET_CHAMBER_B2F",
+  "id": "MAP_CERULEAN_CAVE_SECRET_CHAMBER_B5F",
+  "name": "CeruleanCave_SecretChamber_B5F",
+  "layout": "LAYOUT_CERULEAN_CAVE_SECRET_CHAMBER_B5F",
   "music": "MUS_VICTORY_ROAD",
   "region_map_section": "MAPSEC_CERULEAN_CAVE",
   "requires_flash": false,
@@ -16,10 +16,10 @@
   "connections": null,
   "object_events": [
     {
-      "local_id": "LOCALID_LILY",
+      "local_id": "LOCALID_OLIVIA",
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_LITTLE_GIRL",
-      "x": 3,
+      "x": 19,
       "y": 7,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
@@ -27,26 +27,26 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "CeruleanCave_SecretChamber_B2F_Lily",
+      "script": "CeruleanCave_SecretChamber_B5F_Olivia",
       "flag": "FLAG_TEMP_E"
     }
   ],
   "warp_events": [
     {
-      "warp_id": "WARP_ID_PRE_LILY_ENTRANCE",
-      "x": 35,
-      "y": 19,
+      "warp_id": "WARP_ID_PRE_OLIVIA_ENTRANCE",
+      "x": 19,
+      "y": 36,
       "elevation": 0,
-      "dest_map": "MAP_CERULEAN_CAVE_SECRET_CHAMBER_B1F",
-      "dest_warp_id": "WARP_ID_POST_KYOUKO_HOLE"
+      "dest_map": "MAP_CERULEAN_CAVE_SECRET_CHAMBER_B4F",
+      "dest_warp_id": "WARP_ID_POST_NATALIE_HOLE"
     },
     {
-      "warp_id": "WARP_ID_POST_LILY_HOLE",
-      "x": 3,
+      "warp_id": "WARP_ID_POST_OLIVIA_HOLE",
+      "x": 19,
       "y": 3,
       "elevation": 0,
-      "dest_map": "MAP_CERULEAN_CAVE_SECRET_CHAMBER_B3F",
-      "dest_warp_id": "WARP_ID_PRE_MILLY_ENTRANCE"
+      "dest_map": "MAP_CERULEAN_CAVE_SECRET_CHAMBER_B5F",
+      "dest_warp_id": "WARP_ID_PRE_OLIVIA_ENTRANCE"
     }
   ],
   "coord_events": [],

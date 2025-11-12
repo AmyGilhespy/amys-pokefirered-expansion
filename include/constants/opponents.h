@@ -769,7 +769,7 @@
 #define TRAINER_JULIANA                          761
 #define TRAINER_KYOUKO                           762
 #define TRAINER_LILY                             763
-#define TRAINER_MEGAN                            764
+#define TRAINER_MILLY                            764
 #define TRAINER_NATALIE                          765
 #define TRAINER_OLIVIA                           766
 #define TRAINER_AMY                              767

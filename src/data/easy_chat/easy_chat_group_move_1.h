@@ -15,6 +15,7 @@ static const u16 sEasyChatGroup_Move1[] = {
     MOVE_BRICK_BREAK,
     MOVE_BUBBLE,
     MOVE_CHARGE,
+    MOVE_CHARGE_BEAM, // Amy: added
     MOVE_CHARM,
     MOVE_CLAMP,
     MOVE_CONFUSE_RAY,
@@ -38,6 +39,7 @@ static const u16 sEasyChatGroup_Move1[] = {
     MOVE_EXTREME_SPEED,
     MOVE_FACADE,
     MOVE_FAKE_TEARS,
+    MOVE_FEINT, // Amy: added
     MOVE_FISSURE,
     MOVE_FLAIL,
     MOVE_FLAME_WHEEL,
@@ -125,6 +127,7 @@ static const u16 sEasyChatGroup_Move1[] = {
     MOVE_SMOG,
     MOVE_SMOKESCREEN,
     MOVE_SNORE,
+    MOVE_SOAK, // Amy: added
     MOVE_SOLAR_BEAM,
     MOVE_SONIC_BOOM,
     MOVE_SPARK,
