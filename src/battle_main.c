@@ -341,6 +341,7 @@ const struct TrainerClass gTrainerClasses[TRAINER_CLASS_COUNT] =
     [TRAINER_CLASS_RS_LEADER] =       { _("LEADER"), 25 },
     [TRAINER_CLASS_SCHOOL_KID] =      { _("SCHOOL KID"), 5 },
     [TRAINER_CLASS_LITTLE_GIRL] =     { _("LITTLE GIRL"), 1, BALL_LOVE },
+    [TRAINER_CLASS_ROM_HACKER] =      { _("ROM HACKER"), 1, BALL_LOVE },
     [TRAINER_CLASS_SR_AND_JR] =       { _("SR. AND JR."), 4 },
     [TRAINER_CLASS_POKEFAN] =         { _("POKéFAN"), 20 },
     [TRAINER_CLASS_EXPERT] =          { _("EXPERT"), 10 },

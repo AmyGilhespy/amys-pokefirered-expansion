@@ -446,6 +446,21 @@ const u16 gTrainerPalette_Lady[] = INCBIN_U16("graphics/trainers/palettes/lady.g
 const u32 gTrainerFrontPic_Painter[] = INCBIN_U32("graphics/trainers/front_pics/painter_front_pic.4bpp.lz");
 const u16 gTrainerPalette_Painter[] = INCBIN_U16("graphics/trainers/palettes/painter.gbapal");
 
+const u32 gTrainerFrontPic_LittleGirl1a[] = INCBIN_U32("graphics/trainers/front_pics/little_girl_1a_front_pic.4bpp.lz");
+const u32 gTrainerFrontPic_LittleGirl1b[] = INCBIN_U32("graphics/trainers/front_pics/little_girl_1b_front_pic.4bpp.lz");
+const u16 gTrainerPalette_LittleGirl1[] = INCBIN_U16("graphics/trainers/palettes/little_girl_1.gbapal");
+
+const u32 gTrainerFrontPic_LittleGirl2a[] = INCBIN_U32("graphics/trainers/front_pics/little_girl_2a_front_pic.4bpp.lz");
+const u32 gTrainerFrontPic_LittleGirl2b[] = INCBIN_U32("graphics/trainers/front_pics/little_girl_2b_front_pic.4bpp.lz");
+const u16 gTrainerPalette_LittleGirl2[] = INCBIN_U16("graphics/trainers/palettes/little_girl_2.gbapal");
+
+const u32 gTrainerFrontPic_LittleGirl3a[] = INCBIN_U32("graphics/trainers/front_pics/little_girl_3a_front_pic.4bpp.lz");
+const u32 gTrainerFrontPic_LittleGirl3b[] = INCBIN_U32("graphics/trainers/front_pics/little_girl_3b_front_pic.4bpp.lz");
+const u16 gTrainerPalette_LittleGirl3[] = INCBIN_U16("graphics/trainers/palettes/little_girl_3.gbapal");
+
+const u32 gTrainerFrontPic_RomHacker[] = INCBIN_U32("graphics/trainers/front_pics/rom_hacker_front_pic.4bpp.lz");
+const u16 gTrainerPalette_RomHacker[] = INCBIN_U16("graphics/trainers/palettes/rom_hacker.gbapal");
+
 const u8 gTrainerBackPic_Red[] = INCBIN_U8("graphics/trainers/back_pics/red_back_pic.4bpp");
 const u8 gTrainerBackPic_Leaf[] = INCBIN_U8("graphics/trainers/back_pics/leaf_back_pic.4bpp");
 const u8 gTrainerBackPic_Pokedude[] = INCBIN_U8("graphics/trainers/back_pics/pokedude_back_pic.4bpp");
@@ -621,6 +636,13 @@ const struct TrainerSprite gTrainerSprites[] =
     TRAINER_SPRITE(TRAINER_PIC_RUIN_MANIAC, gTrainerFrontPic_RuinManiac, TRAINER_PIC_SIZE, gTrainerPalette_RuinManiac, 8, 1),
     TRAINER_SPRITE(TRAINER_PIC_LADY, gTrainerFrontPic_Lady, TRAINER_PIC_SIZE, gTrainerPalette_Lady, 8, 1),
     TRAINER_SPRITE(TRAINER_PIC_PAINTER, gTrainerFrontPic_Painter, TRAINER_PIC_SIZE, gTrainerPalette_Painter, 8, 1),
+    TRAINER_SPRITE(TRAINER_PIC_LITTLE_GIRL_1A, gTrainerFrontPic_LittleGirl1a, TRAINER_PIC_SIZE, gTrainerPalette_LittleGirl1, 8, 1),
+    TRAINER_SPRITE(TRAINER_PIC_LITTLE_GIRL_1B, gTrainerFrontPic_LittleGirl1b, TRAINER_PIC_SIZE, gTrainerPalette_LittleGirl1, 8, 1),
+    TRAINER_SPRITE(TRAINER_PIC_LITTLE_GIRL_2A, gTrainerFrontPic_LittleGirl2a, TRAINER_PIC_SIZE, gTrainerPalette_LittleGirl2, 8, 1),
+    TRAINER_SPRITE(TRAINER_PIC_LITTLE_GIRL_2B, gTrainerFrontPic_LittleGirl2b, TRAINER_PIC_SIZE, gTrainerPalette_LittleGirl2, 8, 1),
+    TRAINER_SPRITE(TRAINER_PIC_LITTLE_GIRL_3A, gTrainerFrontPic_LittleGirl3a, TRAINER_PIC_SIZE, gTrainerPalette_LittleGirl3, 8, 1),
+    TRAINER_SPRITE(TRAINER_PIC_LITTLE_GIRL_3B, gTrainerFrontPic_LittleGirl3b, TRAINER_PIC_SIZE, gTrainerPalette_LittleGirl3, 8, 1),
+    TRAINER_SPRITE(TRAINER_PIC_ROM_HACKER, gTrainerFrontPic_RomHacker, TRAINER_PIC_SIZE, gTrainerPalette_RomHacker, 8, 1),
 };
 
 static const union AnimCmd sAnimCmd_Kanto[] = {

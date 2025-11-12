@@ -765,7 +765,7 @@
 #define TRAINER_FATIMA                           757
 #define TRAINER_GABRIELLA                        758
 #define TRAINER_HANNAH                           759
-#define TRAINER_IMANI                            760
+#define TRAINER_ICHIKO                           760
 #define TRAINER_JULIANA                          761
 #define TRAINER_KYOUKO                           762
 #define TRAINER_LILY                             763

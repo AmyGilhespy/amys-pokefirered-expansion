@@ -30,9 +30,9 @@ PokemonMansion_3F_EventScript_Braydon::
 	msgbox PokemonMansion_1F_Text_BraydonPostBattle, MSGBOX_AUTOCLOSE
 	end
 
-PokemonMansion_3F_EventScript_Imani::
-	trainerbattle_single TRAINER_IMANI, PokemonMansion_3F_Text_ImaniIntro, PokemonMansion_3F_Text_ImaniDefeat, PokemonMansion_3F_EventScript_DefeatedImani, NO_MUSIC
-PokemonMansion_3F_EventScript_DefeatedImani::
-	msgbox PokemonMansion_3F_Text_ImaniPostBattle, MSGBOX_NPC
+PokemonMansion_3F_EventScript_Ichiko::
+	trainerbattle_single TRAINER_ICHIKO, PokemonMansion_3F_Text_IchikoIntro, PokemonMansion_3F_Text_IchikoDefeat, PokemonMansion_3F_EventScript_DefeatedIchiko, NO_MUSIC
+PokemonMansion_3F_EventScript_DefeatedIchiko::
+	msgbox PokemonMansion_3F_Text_IchikoPostBattle, MSGBOX_NPC
 	end
 

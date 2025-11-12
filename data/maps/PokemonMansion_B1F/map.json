@@ -100,7 +100,7 @@
       "flag": "FLAG_HIDE_POKEMON_MANSION_B1F_SECRET_KEY"
     },
     {
-      "local_id": "LOCALID_IMANI",
+      "local_id": "LOCALID_ICHIKO",
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_LITTLE_GIRL",
       "x": 3,
@@ -111,7 +111,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "PokemonMansion_3F_EventScript_Imani",
+      "script": "PokemonMansion_3F_EventScript_Ichiko",
       "flag": "0"
     }
   ],

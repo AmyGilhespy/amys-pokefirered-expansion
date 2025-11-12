@@ -15966,7 +15966,7 @@ Mail: 0x244a 0x2c0f 0x244a 0x2c0f
 === TRAINER_ANNA ===
 Name: ANNA
 Class: Little Girl
-Pic: School Kid F
+Pic: Little Girl 1A
 Gender: Female
 Music: Female
 Items: Potion / Potion / Potion
@@ -15984,7 +15984,7 @@ Nature: Jolly
 === TRAINER_BAILEY ===
 Name: BAILEY
 Class: Little Girl
-Pic: School Kid F
+Pic: Little Girl 2A
 Gender: Female
 Music: Female
 Items: Potion / Potion / Potion
@@ -16060,7 +16060,7 @@ Eager: Yes
 === TRAINER_CHLOE ===
 Name: CHLOE
 Class: Little Girl
-Pic: School Kid F
+Pic: Little Girl 1B
 Gender: Female
 Music: Female
 Items: Potion / Potion / Potion
@@ -16136,7 +16136,7 @@ Tera Type: Ice
 === TRAINER_DANIELLE ===
 Name: DANIELLE
 Class: Little Girl
-Pic: School Kid F
+Pic: Little Girl 3B
 Gender: Female
 Music: Female
 Items: Potion / Potion / Potion
@@ -16212,7 +16212,7 @@ Nature: Adamant
 === TRAINER_EMILY ===
 Name: EMILY
 Class: Little Girl
-Pic: School Kid F
+Pic: Little Girl 2B
 Gender: Female
 Music: Elite Four
 Items: Full Heal / Full Heal / Full Heal
@@ -16290,7 +16290,7 @@ Nature: Jolly
 === TRAINER_FATIMA ===
 Name: FATIMA
 Class: Little Girl
-Pic: School Kid F
+Pic: Little Girl 3A
 Gender: Female
 Music: Female
 Items: Full Restore / Full Restore
@@ -16367,7 +16367,7 @@ Nature: Impish
 === TRAINER_GABRIELLA ===
 Name: GABRIELLA
 Class: Little Girl
-Pic: School Kid F
+Pic: Little Girl 3A
 Gender: Female
 Music: Female
 Items: Full Restore / Full Restore / Full Restore
@@ -16444,7 +16444,7 @@ Nature: Adamant
 === TRAINER_HANNAH ===
 Name: HANNAH
 Class: Little Girl
-Pic: School Kid F
+Pic: Little Girl 1A
 Gender: Female
 Music: Female
 Items: Full Restore / Full Restore / Full Restore
@@ -16514,10 +16514,10 @@ Ability: Sturdy
 Nature: Timid
 - Splash
 
-=== TRAINER_IMANI ===
-Name: IMANI
+=== TRAINER_ICHIKO ===
+Name: ICHIKO
 Class: Little Girl
-Pic: School Kid F
+Pic: Little Girl 2B
 Gender: Female
 Music: Female
 Items: Full Restore / Full Restore / Full Restore
@@ -16568,16 +16568,16 @@ Nature: Calm
 - Double Team
 - Sweet Kiss
 
-Kitty Cat (Meowscarada) (F) @ Choice Band
+Gotholita (Gothorita) (F) @ Eviolite
 Level: 90
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 0 HP / 252 Atk / 0 Def / 0 SpA / 4 SpD / 252 Spe
-Ability: Sword of Ruin
-Nature: Jolly
-- Flower Trick
-- Knock Off
-- Icicle Crash
-- U-turn
+IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
+EVs: 252 HP / 0 Atk / 4 Def / 0 SpA / 252 SpD / 0 Spe
+Ability: Shadow Tag
+Nature: Sassy
+- Charm
+- Confide
+- Taunt
+- Rest
 
 Momma Bear (Ursaluna) (F) @ Assault Vest
 Level: 90
@@ -16594,7 +16594,7 @@ Tera Type: Normal
 === TRAINER_JULIANA ===
 Name: JULIANA
 Class: Little Girl
-Pic: School Kid F
+Pic: Little Girl 3A
 Gender: Female
 Music: Elite Four
 Items: Full Restore / Full Restore / Full Restore
@@ -16670,7 +16670,7 @@ Nature: Timid
 === TRAINER_KYOUKO ===
 Name: KYOUKO
 Class: Little Girl
-Pic: School Kid F
+Pic: Little Girl 2B
 Gender: Female
 Music: Aqua
 Items: Full Restore / Full Restore / Full Restore
@@ -16752,7 +16752,7 @@ Nature: Calm
 === TRAINER_LILY ===
 Name: LILY
 Class: Little Girl
-Pic: School Kid F
+Pic: Little Girl 1B
 Gender: Female
 Music: Aqua
 Items: Full Restore / Full Restore / Full Restore
@@ -16820,7 +16820,7 @@ Nature: Calm
 === TRAINER_MILLY ===
 Name: MILLY
 Class: Little Girl
-Pic: School Kid F
+Pic: Little Girl 2A
 Gender: Female
 Music: Aqua
 Items: Full Restore / Full Restore / Full Restore
@@ -16900,7 +16900,7 @@ Nature: Calm
 === TRAINER_NATALIE ===
 Name: NATALIE
 Class: Little Girl
-Pic: School Kid F
+Pic: Little Girl 1A
 Gender: Female
 Music: Aqua
 Items: Full Restore / Full Restore / Full Restore
@@ -16919,7 +16919,7 @@ Nature: Impish
 === TRAINER_OLIVIA ===
 Name: OLIVIA
 Class: Little Girl
-Pic: School Kid F
+Pic: Little Girl 3B
 Gender: Female
 Music: Elite Four
 Items: Full Restore / Full Restore / Full Restore
@@ -16937,8 +16937,8 @@ Nature: Impish
 
 === TRAINER_AMY ===
 Name: AMY
-Class: Little Girl
-Pic: School Kid F
+Class: ROM Hacker
+Pic: ROM Hacker
 Gender: Female
 Music: Magma
 Items: Full Restore / Full Restore / Full Restore

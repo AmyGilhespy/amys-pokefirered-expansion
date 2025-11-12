@@ -41051,7 +41051,7 @@ F_TRAINER_FEMALE |
 #line 15969
         .trainerClass = TRAINER_CLASS_LITTLE_GIRL,
 #line 15970
-        .trainerPic = TRAINER_PIC_SCHOOL_KID_F,
+        .trainerPic = TRAINER_PIC_LITTLE_GIRL_1A,
         .encounterMusic_gender =
 #line 15971
 F_TRAINER_FEMALE | 
@@ -41064,7 +41064,7 @@ F_TRAINER_FEMALE |
 #line 15975
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_FORCE_SETUP_FIRST_TURN | AI_FLAG_TRY_TO_2HKO | AI_FLAG_HP_AWARE | AI_FLAG_PREFER_STATUS_MOVES | AI_FLAG_STALL | AI_FLAG_SMART_SWITCHING | AI_FLAG_ACE_POKEMON | AI_FLAG_OMNISCIENT,
 #line 0
-        .trainerBackPic = TRAINER_PIC_SCHOOL_KID_F,
+        .trainerBackPic = TRAINER_PIC_LITTLE_GIRL_1A,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -41103,7 +41103,7 @@ F_TRAINER_FEMALE |
 #line 15987
         .trainerClass = TRAINER_CLASS_LITTLE_GIRL,
 #line 15988
-        .trainerPic = TRAINER_PIC_SCHOOL_KID_F,
+        .trainerPic = TRAINER_PIC_LITTLE_GIRL_2A,
         .encounterMusic_gender =
 #line 15989
 F_TRAINER_FEMALE | 
@@ -41116,7 +41116,7 @@ F_TRAINER_FEMALE |
 #line 15993
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_FORCE_SETUP_FIRST_TURN | AI_FLAG_TRY_TO_2HKO | AI_FLAG_HP_AWARE | AI_FLAG_PREFER_STATUS_MOVES | AI_FLAG_STALL | AI_FLAG_SMART_SWITCHING | AI_FLAG_ACE_POKEMON | AI_FLAG_OMNISCIENT,
 #line 0
-        .trainerBackPic = TRAINER_PIC_SCHOOL_KID_F,
+        .trainerBackPic = TRAINER_PIC_LITTLE_GIRL_2A,
         .partySize = 6,
         .party = (const struct TrainerMon[])
         {
@@ -41298,7 +41298,7 @@ F_TRAINER_FEMALE |
 #line 16063
         .trainerClass = TRAINER_CLASS_LITTLE_GIRL,
 #line 16064
-        .trainerPic = TRAINER_PIC_SCHOOL_KID_F,
+        .trainerPic = TRAINER_PIC_LITTLE_GIRL_1B,
         .encounterMusic_gender =
 #line 16065
 F_TRAINER_FEMALE | 
@@ -41311,7 +41311,7 @@ F_TRAINER_FEMALE |
 #line 16069
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_FORCE_SETUP_FIRST_TURN | AI_FLAG_TRY_TO_2HKO | AI_FLAG_HP_AWARE | AI_FLAG_PREFER_STATUS_MOVES | AI_FLAG_STALL | AI_FLAG_SMART_SWITCHING | AI_FLAG_OMNISCIENT,
 #line 0
-        .trainerBackPic = TRAINER_PIC_SCHOOL_KID_F,
+        .trainerBackPic = TRAINER_PIC_LITTLE_GIRL_1B,
         .partySize = 6,
         .party = (const struct TrainerMon[])
         {
@@ -41494,7 +41494,7 @@ F_TRAINER_FEMALE |
 #line 16139
         .trainerClass = TRAINER_CLASS_LITTLE_GIRL,
 #line 16140
-        .trainerPic = TRAINER_PIC_SCHOOL_KID_F,
+        .trainerPic = TRAINER_PIC_LITTLE_GIRL_3B,
         .encounterMusic_gender =
 #line 16141
 F_TRAINER_FEMALE | 
@@ -41507,7 +41507,7 @@ F_TRAINER_FEMALE |
 #line 16145
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_FORCE_SETUP_FIRST_TURN | AI_FLAG_TRY_TO_2HKO | AI_FLAG_HP_AWARE | AI_FLAG_PREFER_STATUS_MOVES | AI_FLAG_STALL | AI_FLAG_SMART_SWITCHING | AI_FLAG_ACE_POKEMON | AI_FLAG_OMNISCIENT,
 #line 0
-        .trainerBackPic = TRAINER_PIC_SCHOOL_KID_F,
+        .trainerBackPic = TRAINER_PIC_LITTLE_GIRL_3B,
         .partySize = 6,
         .party = (const struct TrainerMon[])
         {
@@ -41691,7 +41691,7 @@ F_TRAINER_FEMALE |
 #line 16215
         .trainerClass = TRAINER_CLASS_LITTLE_GIRL,
 #line 16216
-        .trainerPic = TRAINER_PIC_SCHOOL_KID_F,
+        .trainerPic = TRAINER_PIC_LITTLE_GIRL_2B,
         .encounterMusic_gender =
 #line 16217
 F_TRAINER_FEMALE | 
@@ -41704,7 +41704,7 @@ F_TRAINER_FEMALE |
 #line 16221
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_FORCE_SETUP_FIRST_TURN | AI_FLAG_TRY_TO_2HKO | AI_FLAG_HP_AWARE | AI_FLAG_PREFER_STATUS_MOVES | AI_FLAG_STALL | AI_FLAG_SMART_SWITCHING | AI_FLAG_ACE_POKEMON | AI_FLAG_OMNISCIENT,
 #line 0
-        .trainerBackPic = TRAINER_PIC_SCHOOL_KID_F,
+        .trainerBackPic = TRAINER_PIC_LITTLE_GIRL_2B,
         .partySize = 6,
         .party = (const struct TrainerMon[])
         {
@@ -41891,7 +41891,7 @@ F_TRAINER_FEMALE |
 #line 16293
         .trainerClass = TRAINER_CLASS_LITTLE_GIRL,
 #line 16294
-        .trainerPic = TRAINER_PIC_SCHOOL_KID_F,
+        .trainerPic = TRAINER_PIC_LITTLE_GIRL_3A,
         .encounterMusic_gender =
 #line 16295
 F_TRAINER_FEMALE | 
@@ -41904,7 +41904,7 @@ F_TRAINER_FEMALE |
 #line 16299
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_FORCE_SETUP_FIRST_TURN | AI_FLAG_TRY_TO_2HKO | AI_FLAG_HP_AWARE | AI_FLAG_PREFER_STATUS_MOVES | AI_FLAG_STALL | AI_FLAG_SMART_SWITCHING | AI_FLAG_ACE_POKEMON | AI_FLAG_OMNISCIENT,
 #line 0
-        .trainerBackPic = TRAINER_PIC_SCHOOL_KID_F,
+        .trainerBackPic = TRAINER_PIC_LITTLE_GIRL_3A,
         .partySize = 6,
         .party = (const struct TrainerMon[])
         {
@@ -42088,7 +42088,7 @@ F_TRAINER_FEMALE |
 #line 16370
         .trainerClass = TRAINER_CLASS_LITTLE_GIRL,
 #line 16371
-        .trainerPic = TRAINER_PIC_SCHOOL_KID_F,
+        .trainerPic = TRAINER_PIC_LITTLE_GIRL_3A,
         .encounterMusic_gender =
 #line 16372
 F_TRAINER_FEMALE | 
@@ -42101,7 +42101,7 @@ F_TRAINER_FEMALE |
 #line 16376
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_FORCE_SETUP_FIRST_TURN | AI_FLAG_TRY_TO_2HKO | AI_FLAG_HP_AWARE | AI_FLAG_PREFER_STATUS_MOVES | AI_FLAG_STALL | AI_FLAG_SMART_SWITCHING | AI_FLAG_ACE_POKEMON | AI_FLAG_OMNISCIENT,
 #line 0
-        .trainerBackPic = TRAINER_PIC_SCHOOL_KID_F,
+        .trainerBackPic = TRAINER_PIC_LITTLE_GIRL_3A,
         .partySize = 6,
         .party = (const struct TrainerMon[])
         {
@@ -42285,7 +42285,7 @@ F_TRAINER_FEMALE |
 #line 16447
         .trainerClass = TRAINER_CLASS_LITTLE_GIRL,
 #line 16448
-        .trainerPic = TRAINER_PIC_SCHOOL_KID_F,
+        .trainerPic = TRAINER_PIC_LITTLE_GIRL_1A,
         .encounterMusic_gender =
 #line 16449
 F_TRAINER_FEMALE | 
@@ -42298,7 +42298,7 @@ F_TRAINER_FEMALE |
 #line 16453
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_FORCE_SETUP_FIRST_TURN | AI_FLAG_TRY_TO_2HKO | AI_FLAG_HP_AWARE | AI_FLAG_PREFER_STATUS_MOVES | AI_FLAG_STALL | AI_FLAG_SMART_SWITCHING | AI_FLAG_ACE_POKEMON | AI_FLAG_OMNISCIENT,
 #line 0
-        .trainerBackPic = TRAINER_PIC_SCHOOL_KID_F,
+        .trainerBackPic = TRAINER_PIC_LITTLE_GIRL_1A,
         .partySize = 6,
         .party = (const struct TrainerMon[])
         {
@@ -42471,14 +42471,14 @@ F_TRAINER_FEMALE |
         },
     },
 #line 16518
-    [DIFFICULTY_NORMAL][TRAINER_IMANI] =
+    [DIFFICULTY_NORMAL][TRAINER_ICHIKO] =
     {
 #line 16519
-        .trainerName = _("IMANI"),
+        .trainerName = _("ICHIKO"),
 #line 16520
         .trainerClass = TRAINER_CLASS_LITTLE_GIRL,
 #line 16521
-        .trainerPic = TRAINER_PIC_SCHOOL_KID_F,
+        .trainerPic = TRAINER_PIC_LITTLE_GIRL_2B,
         .encounterMusic_gender =
 #line 16522
 F_TRAINER_FEMALE | 
@@ -42491,7 +42491,7 @@ F_TRAINER_FEMALE |
 #line 16526
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_FORCE_SETUP_FIRST_TURN | AI_FLAG_TRY_TO_2HKO | AI_FLAG_HP_AWARE | AI_FLAG_PREFER_STATUS_MOVES | AI_FLAG_STALL | AI_FLAG_SMART_SWITCHING | AI_FLAG_ACE_POKEMON | AI_FLAG_OMNISCIENT,
 #line 0
-        .trainerBackPic = TRAINER_PIC_SCHOOL_KID_F,
+        .trainerBackPic = TRAINER_PIC_LITTLE_GIRL_2B,
         .partySize = 6,
         .party = (const struct TrainerMon[])
         {
@@ -42609,30 +42609,30 @@ F_TRAINER_FEMALE |
             },
             {
 #line 16572
-            .nickname = COMPOUND_STRING("Kitty Cat"),
+            .nickname = COMPOUND_STRING("Gotholita"),
 #line 16572
-            .species = SPECIES_MEOWSCARADA,
+            .species = SPECIES_GOTHORITA,
 #line 16572
             .gender = TRAINER_MON_FEMALE,
 #line 16572
-            .heldItem = ITEM_CHOICE_BAND,
+            .heldItem = ITEM_EVIOLITE,
 #line 16575
-            .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 0, 4),
+            .ev = TRAINER_PARTY_EVS(252, 0, 4, 0, 0, 252),
 #line 16574
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(31, 0, 31, 0, 31, 31),
 #line 16576
-            .ability = ABILITY_SWORD_OF_RUIN,
+            .ability = ABILITY_SHADOW_TAG,
 #line 16573
             .lvl = 90,
 #line 16577
-            .nature = NATURE_JOLLY,
+            .nature = NATURE_SASSY,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 16578
-                MOVE_FLOWER_TRICK,
-                MOVE_KNOCK_OFF,
-                MOVE_ICICLE_CRASH,
-                MOVE_U_TURN,
+                MOVE_CHARM,
+                MOVE_CONFIDE,
+                MOVE_TAUNT,
+                MOVE_REST,
             },
             },
             {
@@ -42675,7 +42675,7 @@ F_TRAINER_FEMALE |
 #line 16597
         .trainerClass = TRAINER_CLASS_LITTLE_GIRL,
 #line 16598
-        .trainerPic = TRAINER_PIC_SCHOOL_KID_F,
+        .trainerPic = TRAINER_PIC_LITTLE_GIRL_3A,
         .encounterMusic_gender =
 #line 16599
 F_TRAINER_FEMALE | 
@@ -42688,7 +42688,7 @@ F_TRAINER_FEMALE |
 #line 16603
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_FORCE_SETUP_FIRST_TURN | AI_FLAG_TRY_TO_2HKO | AI_FLAG_HP_AWARE | AI_FLAG_PREFER_STATUS_MOVES | AI_FLAG_STALL | AI_FLAG_SMART_SWITCHING | AI_FLAG_ACE_POKEMON | AI_FLAG_OMNISCIENT,
 #line 0
-        .trainerBackPic = TRAINER_PIC_SCHOOL_KID_F,
+        .trainerBackPic = TRAINER_PIC_LITTLE_GIRL_3A,
         .partySize = 6,
         .party = (const struct TrainerMon[])
         {
@@ -42870,7 +42870,7 @@ F_TRAINER_FEMALE |
 #line 16673
         .trainerClass = TRAINER_CLASS_LITTLE_GIRL,
 #line 16674
-        .trainerPic = TRAINER_PIC_SCHOOL_KID_F,
+        .trainerPic = TRAINER_PIC_LITTLE_GIRL_2B,
         .encounterMusic_gender =
 #line 16675
 F_TRAINER_FEMALE | 
@@ -42885,7 +42885,7 @@ F_TRAINER_FEMALE |
 #line 16680
         .mugshotColor = MUGSHOT_COLOR_PINK,
 #line 0
-        .trainerBackPic = TRAINER_PIC_SCHOOL_KID_F,
+        .trainerBackPic = TRAINER_PIC_LITTLE_GIRL_2B,
         .partySize = 6,
         .party = (const struct TrainerMon[])
         {
@@ -43065,7 +43065,7 @@ F_TRAINER_FEMALE |
 #line 16756
         .trainerClass = TRAINER_CLASS_LITTLE_GIRL,
 #line 16757
-        .trainerPic = TRAINER_PIC_SCHOOL_KID_F,
+        .trainerPic = TRAINER_PIC_LITTLE_GIRL_1B,
         .encounterMusic_gender =
 #line 16758
 F_TRAINER_FEMALE | 
@@ -43080,7 +43080,7 @@ F_TRAINER_FEMALE |
 #line 16763
         .mugshotColor = MUGSHOT_COLOR_PINK,
 #line 0
-        .trainerBackPic = TRAINER_PIC_SCHOOL_KID_F,
+        .trainerBackPic = TRAINER_PIC_LITTLE_GIRL_1B,
         .partySize = 5,
         .party = (const struct TrainerMon[])
         {
@@ -43234,7 +43234,7 @@ F_TRAINER_FEMALE |
 #line 16825
         .trainerClass = TRAINER_CLASS_LITTLE_GIRL,
 #line 16826
-        .trainerPic = TRAINER_PIC_SCHOOL_KID_F,
+        .trainerPic = TRAINER_PIC_LITTLE_GIRL_2A,
         .encounterMusic_gender =
 #line 16827
 F_TRAINER_FEMALE | 
@@ -43249,7 +43249,7 @@ F_TRAINER_FEMALE |
 #line 16832
         .mugshotColor = MUGSHOT_COLOR_PINK,
 #line 0
-        .trainerBackPic = TRAINER_PIC_SCHOOL_KID_F,
+        .trainerBackPic = TRAINER_PIC_LITTLE_GIRL_2A,
         .partySize = 6,
         .party = (const struct TrainerMon[])
         {
@@ -43433,7 +43433,7 @@ F_TRAINER_FEMALE |
 #line 16906
         .trainerClass = TRAINER_CLASS_LITTLE_GIRL,
 #line 16907
-        .trainerPic = TRAINER_PIC_SCHOOL_KID_F,
+        .trainerPic = TRAINER_PIC_LITTLE_GIRL_1A,
         .encounterMusic_gender =
 #line 16908
 F_TRAINER_FEMALE | 
@@ -43448,7 +43448,7 @@ F_TRAINER_FEMALE |
 #line 16913
         .mugshotColor = MUGSHOT_COLOR_PINK,
 #line 0
-        .trainerBackPic = TRAINER_PIC_SCHOOL_KID_F,
+        .trainerBackPic = TRAINER_PIC_LITTLE_GIRL_1A,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -43487,7 +43487,7 @@ F_TRAINER_FEMALE |
 #line 16925
         .trainerClass = TRAINER_CLASS_LITTLE_GIRL,
 #line 16926
-        .trainerPic = TRAINER_PIC_SCHOOL_KID_F,
+        .trainerPic = TRAINER_PIC_LITTLE_GIRL_3B,
         .encounterMusic_gender =
 #line 16927
 F_TRAINER_FEMALE | 
@@ -43502,7 +43502,7 @@ F_TRAINER_FEMALE |
 #line 16932
         .mugshotColor = MUGSHOT_COLOR_PINK,
 #line 0
-        .trainerBackPic = TRAINER_PIC_SCHOOL_KID_F,
+        .trainerBackPic = TRAINER_PIC_LITTLE_GIRL_3B,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -43539,9 +43539,9 @@ F_TRAINER_FEMALE |
 #line 16943
         .trainerName = _("AMY"),
 #line 16944
-        .trainerClass = TRAINER_CLASS_LITTLE_GIRL,
+        .trainerClass = TRAINER_CLASS_ROM_HACKER,
 #line 16945
-        .trainerPic = TRAINER_PIC_SCHOOL_KID_F,
+        .trainerPic = TRAINER_PIC_ROM_HACKER,
         .encounterMusic_gender =
 #line 16946
 F_TRAINER_FEMALE | 
@@ -43556,7 +43556,7 @@ F_TRAINER_FEMALE |
 #line 16951
         .mugshotColor = MUGSHOT_COLOR_PINK,
 #line 0
-        .trainerBackPic = TRAINER_PIC_SCHOOL_KID_F,
+        .trainerBackPic = TRAINER_PIC_ROM_HACKER,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
@@ -44350,7 +44350,7 @@ const u16 *const gTrainerMailWordsTable[][PARTY_SIZE] __attribute__((section(".r
 [TRAINER_FATIMA] = { NULL, NULL, NULL, NULL, NULL, NULL, },\
 [TRAINER_GABRIELLA] = { NULL, NULL, NULL, NULL, NULL, NULL, },\
 [TRAINER_HANNAH] = { NULL, NULL, NULL, NULL, NULL, NULL, },\
-[TRAINER_IMANI] = { NULL, NULL, NULL, NULL, NULL, NULL, },\
+[TRAINER_ICHIKO] = { NULL, NULL, NULL, NULL, NULL, NULL, },\
 [TRAINER_JULIANA] = { NULL, NULL, NULL, NULL, NULL, NULL, },\
 [TRAINER_KYOUKO] = { sTrainer_TRAINER_KYOUKO_p0_mailwords, NULL, NULL, NULL, NULL, NULL, },\
 [TRAINER_LILY] = { NULL, sTrainer_TRAINER_LILY_p1_mailwords, NULL, NULL, NULL, },\

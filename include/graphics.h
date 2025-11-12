@@ -2630,6 +2630,13 @@ extern const u32 gTrainerFrontPic_AromaLady[];
 extern const u32 gTrainerFrontPic_RuinManiac[];
 extern const u32 gTrainerFrontPic_Lady[];
 extern const u32 gTrainerFrontPic_Painter[];
+extern const u32 gTrainerFrontPic_LittleGirl1a[];
+extern const u32 gTrainerFrontPic_LittleGirl1b[];
+extern const u32 gTrainerFrontPic_LittleGirl2a[];
+extern const u32 gTrainerFrontPic_LittleGirl2b[];
+extern const u32 gTrainerFrontPic_LittleGirl3a[];
+extern const u32 gTrainerFrontPic_LittleGirl3b[];
+extern const u32 gTrainerFrontPic_RomHacker[];
 
 extern const u16 gTrainerPalette_AquaLeaderArchie[];
 extern const u16 gTrainerPalette_AquaGruntM[];
@@ -2784,6 +2791,10 @@ extern const u16 gTrainerPalette_AromaLady[];
 extern const u16 gTrainerPalette_RuinManiac[];
 extern const u16 gTrainerPalette_Lady[];
 extern const u16 gTrainerPalette_Painter[];
+extern const u16 gTrainerPalette_LittleGirl1[];
+extern const u16 gTrainerPalette_LittleGirl2[];
+extern const u16 gTrainerPalette_LittleGirl3[];
+extern const u16 gTrainerPalette_RomHacker[];
 
 extern const u8 gMenuInfoElements_Gfx[];
 extern const u16 gMenuInfoElements1_Pal[];
