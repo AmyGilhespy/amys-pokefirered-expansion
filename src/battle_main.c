@@ -2020,6 +2020,8 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
             s32 nameCharIdx;
             u16 randomSpecies, originalSpecies, originalBST;
             s8 levelDelta = 0;
+            s8 levelMul = 1;
+            s8 levelDiv = 1;
             bool8 givePreassignedMoves;
 
             if (trainer->battleType != TRAINER_BATTLE_TYPE_SINGLES)
@@ -2082,20 +2084,32 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
             else if (trainer->trainerClass == TRAINER_CLASS_CHAMPION) { }
             else if (trainer->trainerClass == TRAINER_CLASS_BOSS) { }
             else if (trainer->trainerClass == TRAINER_CLASS_LITTLE_GIRL) { }
+            else if (trainer->trainerClass == TRAINER_CLASS_ROM_HACKER) { }
             else
             {
                 switch (trainer->trainerClass)
                 {
-                case TRAINER_CLASS_LEADER:
                 case TRAINER_CLASS_RIVAL_EARLY:
+                    levelDelta = -2;
+                    levelMul = 3;
+                    levelDiv = 2;
+                    break;
                 case TRAINER_CLASS_RIVAL_LATE:
+                    levelDelta = 5;
+                    levelMul = 3;
+                    levelDiv = 2;
+                    break;
+                case TRAINER_CLASS_LEADER:
                 case TRAINER_CLASS_ELITE_FOUR:
                 case TRAINER_CLASS_CHAMPION:
                 case TRAINER_CLASS_BOSS:
                 case TRAINER_CLASS_LITTLE_GIRL:
+                case TRAINER_CLASS_ROM_HACKER:
                     break;
                 default:
-                    levelDelta = 5;
+                    levelDelta = 0;
+                    levelMul = 3;
+                    levelDiv = 2;
                     break;
                 }
                 givePreassignedMoves = FALSE;
@@ -2117,7 +2131,7 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
                 }
                 SeedRng(nextSeed);
             }
-            s32 monLevel = (s32) partyData[monIndex].lvl + (s32) levelDelta;
+            s32 monLevel = (s32) partyData[monIndex].lvl * (s32) levelMul / (s32) levelDiv + (s32) levelDelta;
             if (monLevel < MIN_LEVEL)
             {
                 monLevel = MIN_LEVEL;

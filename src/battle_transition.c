@@ -2121,7 +2121,10 @@ static void Mugshots_CreateTrainerPics(struct Task *task)
     opponentSprite->oam.size = SPRITE_SIZE(64x32);
     playerSprite->oam.size = SPRITE_SIZE(64x32);
 
-    if (trainerId == TRAINER_PIC_SCHOOL_KID_F)
+    if (trainerId == TRAINER_PIC_SCHOOL_KID_F
+            || trainerId == TRAINER_PIC_LITTLE_GIRL_1A || trainerId == TRAINER_PIC_LITTLE_GIRL_1B
+            || trainerId == TRAINER_PIC_LITTLE_GIRL_2A || trainerId == TRAINER_PIC_LITTLE_GIRL_2B
+            || trainerId == TRAINER_PIC_LITTLE_GIRL_3A || trainerId == TRAINER_PIC_LITTLE_GIRL_3B)
     {
         // Every 8×8 tile is 32 bytes in VRAM, so a full 64×64 sprite = 8×8 tiles = 64 tiles total.
 
