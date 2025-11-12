@@ -39,9 +39,9 @@ CeruleanCave_SecretChamber_B5F_EventScript_Rematch2Olivia::
 	end
 
 CeruleanCave_SecretChamber_B5F_Movement_OliviaExit::
-	walk_left
-	walk_left
-	walk_left
-	walk_left
+	walk_up
+	walk_up
+	walk_up
+	walk_up
 	step_end
 

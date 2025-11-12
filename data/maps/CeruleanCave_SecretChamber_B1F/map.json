@@ -20,7 +20,7 @@
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_LITTLE_GIRL",
       "x": 7,
-      "y": 19,
+      "y": 3,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
@@ -35,7 +35,7 @@
     {
       "warp_id": "WARP_ID_PRE_KYOUKO_ENTRANCE",
       "x": 35,
-      "y": 20,
+      "y": 4,
       "elevation": 0,
       "dest_map": "MAP_CERULEAN_CAVE_UNDERWATER",
       "dest_warp_id": "WARP_ID_CERULEAN_CAVE_UNDERWATER_EXIT"
@@ -43,7 +43,7 @@
     {
       "warp_id": "WARP_ID_POST_KYOUKO_HOLE",
       "x": 3,
-      "y": 19,
+      "y": 3,
       "elevation": 0,
       "dest_map": "MAP_CERULEAN_CAVE_SECRET_CHAMBER_B2F",
       "dest_warp_id": "WARP_ID_PRE_LILY_ENTRANCE"
@@ -53,7 +53,7 @@
     {
       "type": "trigger",
       "x": 34,
-      "y": 19,
+      "y": 3,
       "elevation": 0,
       "var": "VAR_TEMP_1",
       "var_value": "0",
@@ -62,7 +62,7 @@
     {
       "type": "trigger",
       "x": 35,
-      "y": 19,
+      "y": 3,
       "elevation": 0,
       "var": "VAR_TEMP_1",
       "var_value": "0",
@@ -71,7 +71,7 @@
     {
       "type": "trigger",
       "x": 36,
-      "y": 19,
+      "y": 3,
       "elevation": 0,
       "var": "VAR_TEMP_1",
       "var_value": "0",
@@ -80,7 +80,7 @@
     {
       "type": "trigger",
       "x": 34,
-      "y": 20,
+      "y": 4,
       "elevation": 0,
       "var": "VAR_TEMP_1",
       "var_value": "0",
@@ -89,7 +89,7 @@
     {
       "type": "trigger",
       "x": 35,
-      "y": 20,
+      "y": 4,
       "elevation": 0,
       "var": "VAR_TEMP_1",
       "var_value": "0",
@@ -98,7 +98,7 @@
     {
       "type": "trigger",
       "x": 36,
-      "y": 20,
+      "y": 4,
       "elevation": 0,
       "var": "VAR_TEMP_1",
       "var_value": "0",
@@ -107,7 +107,7 @@
     {
       "type": "trigger",
       "x": 34,
-      "y": 21,
+      "y": 5,
       "elevation": 0,
       "var": "VAR_TEMP_1",
       "var_value": "0",
@@ -116,7 +116,7 @@
     {
       "type": "trigger",
       "x": 35,
-      "y": 21,
+      "y": 5,
       "elevation": 0,
       "var": "VAR_TEMP_1",
       "var_value": "0",
@@ -125,7 +125,7 @@
     {
       "type": "trigger",
       "x": 36,
-      "y": 21,
+      "y": 5,
       "elevation": 0,
       "var": "VAR_TEMP_1",
       "var_value": "0",
@@ -134,7 +134,7 @@
     {
       "type": "trigger",
       "x": 33,
-      "y": 18,
+      "y": 2,
       "elevation": 0,
       "var": "VAR_TEMP_1",
       "var_value": "0",
@@ -143,7 +143,7 @@
     {
       "type": "trigger",
       "x": 34,
-      "y": 18,
+      "y": 2,
       "elevation": 0,
       "var": "VAR_TEMP_1",
       "var_value": "0",
@@ -152,7 +152,7 @@
     {
       "type": "trigger",
       "x": 35,
-      "y": 18,
+      "y": 2,
       "elevation": 0,
       "var": "VAR_TEMP_1",
       "var_value": "0",
@@ -161,7 +161,7 @@
     {
       "type": "trigger",
       "x": 36,
-      "y": 18,
+      "y": 2,
       "elevation": 0,
       "var": "VAR_TEMP_1",
       "var_value": "0",
@@ -170,7 +170,7 @@
     {
       "type": "trigger",
       "x": 37,
-      "y": 18,
+      "y": 2,
       "elevation": 0,
       "var": "VAR_TEMP_1",
       "var_value": "0",
@@ -179,7 +179,7 @@
     {
       "type": "trigger",
       "x": 33,
-      "y": 19,
+      "y": 3,
       "elevation": 0,
       "var": "VAR_TEMP_1",
       "var_value": "0",
@@ -188,7 +188,7 @@
     {
       "type": "trigger",
       "x": 37,
-      "y": 19,
+      "y": 3,
       "elevation": 0,
       "var": "VAR_TEMP_1",
       "var_value": "0",
@@ -197,7 +197,7 @@
     {
       "type": "trigger",
       "x": 33,
-      "y": 20,
+      "y": 4,
       "elevation": 0,
       "var": "VAR_TEMP_1",
       "var_value": "0",
@@ -206,7 +206,7 @@
     {
       "type": "trigger",
       "x": 37,
-      "y": 20,
+      "y": 4,
       "elevation": 0,
       "var": "VAR_TEMP_1",
       "var_value": "0",
@@ -215,7 +215,7 @@
     {
       "type": "trigger",
       "x": 33,
-      "y": 21,
+      "y": 5,
       "elevation": 0,
       "var": "VAR_TEMP_1",
       "var_value": "0",
@@ -224,7 +224,7 @@
     {
       "type": "trigger",
       "x": 37,
-      "y": 21,
+      "y": 5,
       "elevation": 0,
       "var": "VAR_TEMP_1",
       "var_value": "0",

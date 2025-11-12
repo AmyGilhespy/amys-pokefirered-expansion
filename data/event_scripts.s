@@ -1394,3 +1394,15 @@ Text_TestMsg::
 
 	.include "data/maps/CeruleanCave_SecretChamber_B5F/scripts.inc"
 	.include "data/maps/CeruleanCave_SecretChamber_B5F/text.inc"
+
+	.include "data/maps/CeruleanCave_SecretChamber_B6F/scripts.inc"
+	.include "data/maps/CeruleanCave_SecretChamber_B6F/text.inc"
+
+	.include "data/maps/CeruleanCave_SecretChamber_B7F/scripts.inc"
+	.include "data/maps/CeruleanCave_SecretChamber_B7F/text.inc"
+
+	.include "data/maps/CeruleanCave_SecretChamber_B8F/scripts.inc"
+	.include "data/maps/CeruleanCave_SecretChamber_B8F/text.inc"
+
+	.include "data/maps/CeruleanCave_SecretChamber_B9F/scripts.inc"
+	.include "data/maps/CeruleanCave_SecretChamber_B9F/text.inc"

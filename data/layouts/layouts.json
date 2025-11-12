@@ -4385,7 +4385,7 @@
       "id": "LAYOUT_CERULEAN_CAVE_UNDERWATER",
       "name": "CeruleanCave_Underwater_Layout",
       "width": 40,
-      "height": 23,
+      "height": 7,
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_General",
@@ -4397,7 +4397,7 @@
       "id": "LAYOUT_CERULEAN_CAVE_SECRET_CHAMBER_B1F",
       "name": "CeruleanCave_SecretChamber_B1F_Layout",
       "width": 40,
-      "height": 23,
+      "height": 7,
       "border_width": 2,
       "border_height": 2,
       "primary_tileset": "gTileset_General",
@@ -4408,7 +4408,7 @@
     {
       "id": "LAYOUT_CERULEAN_CAVE_SECRET_CHAMBER_B2F",
       "name": "CeruleanCave_SecretChamber_B2F_Layout",
-      "width": 40,
+      "width": 39,
       "height": 23,
       "border_width": 2,
       "border_height": 2,
@@ -4432,7 +4432,7 @@
     {
       "id": "LAYOUT_CERULEAN_CAVE_SECRET_CHAMBER_B4F",
       "name": "CeruleanCave_SecretChamber_B4F_Layout",
-      "width": 40,
+      "width": 39,
       "height": 23,
       "border_width": 2,
       "border_height": 2,
@@ -4444,7 +4444,7 @@
     {
       "id": "LAYOUT_CERULEAN_CAVE_SECRET_CHAMBER_B5F",
       "name": "CeruleanCave_SecretChamber_B5F_Layout",
-      "width": 40,
+      "width": 39,
       "height": 40,
       "border_width": 2,
       "border_height": 2,
@@ -4452,6 +4452,54 @@
       "secondary_tileset": "gTileset_CeruleanCave",
       "border_filepath": "data/layouts/CeruleanCave_SecretChamber_B5F/border.bin",
       "blockdata_filepath": "data/layouts/CeruleanCave_SecretChamber_B5F/map.bin"
+    },
+    {
+      "id": "LAYOUT_CERULEAN_CAVE_SECRET_CHAMBER_B6F",
+      "name": "CeruleanCave_SecretChamber_B6F_Layout",
+      "width": 7,
+      "height": 25,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_CeruleanCave",
+      "border_filepath": "data/layouts/CeruleanCave_SecretChamber_B6F/border.bin",
+      "blockdata_filepath": "data/layouts/CeruleanCave_SecretChamber_B6F/map.bin"
+    },
+    {
+      "id": "LAYOUT_CERULEAN_CAVE_SECRET_CHAMBER_B7F",
+      "name": "CeruleanCave_SecretChamber_B7F_Layout",
+      "width": 7,
+      "height": 25,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_CeruleanCave",
+      "border_filepath": "data/layouts/CeruleanCave_SecretChamber_B7F/border.bin",
+      "blockdata_filepath": "data/layouts/CeruleanCave_SecretChamber_B7F/map.bin"
+    },
+    {
+      "id": "LAYOUT_CERULEAN_CAVE_SECRET_CHAMBER_B8F",
+      "name": "CeruleanCave_SecretChamber_B8F_Layout",
+      "width": 7,
+      "height": 25,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_CeruleanCave",
+      "border_filepath": "data/layouts/CeruleanCave_SecretChamber_B8F/border.bin",
+      "blockdata_filepath": "data/layouts/CeruleanCave_SecretChamber_B8F/map.bin"
+    },
+    {
+      "id": "LAYOUT_CERULEAN_CAVE_SECRET_CHAMBER_B9F",
+      "name": "CeruleanCave_SecretChamber_B9F_Layout",
+      "width": 27,
+      "height": 45,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_CeruleanCave",
+      "border_filepath": "data/layouts/CeruleanCave_SecretChamber_B9F/border.bin",
+      "blockdata_filepath": "data/layouts/CeruleanCave_SecretChamber_B9F/map.bin"
     }
   ]
 }

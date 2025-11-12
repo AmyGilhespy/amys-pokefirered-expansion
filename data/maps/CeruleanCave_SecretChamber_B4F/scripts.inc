@@ -39,9 +39,9 @@ CeruleanCave_SecretChamber_B4F_EventScript_Rematch2Natalie::
 	end
 
 CeruleanCave_SecretChamber_B4F_Movement_NatalieExit::
-	walk_left
-	walk_left
-	walk_left
-	walk_left
+	walk_right
+	walk_right
+	walk_right
+	walk_right
 	step_end
 
