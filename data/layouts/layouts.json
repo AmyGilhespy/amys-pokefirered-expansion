@@ -4493,10 +4493,10 @@
       "id": "LAYOUT_CERULEAN_CAVE_SECRET_CHAMBER_B9F",
       "name": "CeruleanCave_SecretChamber_B9F_Layout",
       "width": 27,
-      "height": 45,
+      "height": 46,
       "border_width": 2,
       "border_height": 2,
-      "primary_tileset": "gTileset_General",
+      "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_CeruleanCave",
       "border_filepath": "data/layouts/CeruleanCave_SecretChamber_B9F/border.bin",
       "blockdata_filepath": "data/layouts/CeruleanCave_SecretChamber_B9F/map.bin"
