@@ -28,7 +28,8 @@ CeruleanCave_SecretChamber_B1F_Text_KyoukoIntro::
 	.string "Cute POKéMON can be strong too!\p"
 	.string "I can't wait to show you my\n"
 	.string "adorable little lovelies!\p"
-	.string "Are you ready to meet them?$"
+	.string "Are you ready to meet them?\n"
+	.string "Let's go!\p"
 
 @ After you've defeated KYOUKO, but not yet AMY:
 CeruleanCave_SecretChamber_B1F_Text_KyoukoRematchIntro::

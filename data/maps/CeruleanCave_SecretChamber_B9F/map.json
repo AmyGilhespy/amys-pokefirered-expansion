@@ -2,7 +2,7 @@
   "id": "MAP_CERULEAN_CAVE_SECRET_CHAMBER_B9F",
   "name": "CeruleanCave_SecretChamber_B9F",
   "layout": "LAYOUT_CERULEAN_CAVE_SECRET_CHAMBER_B9F",
-  "music": "MUS_VICTORY_ROAD",
+  "music": "MUS_NONE",
   "region_map_section": "MAPSEC_CERULEAN_CAVE",
   "requires_flash": false,
   "weather": "WEATHER_SHADE",
@@ -46,7 +46,7 @@
       "flag": "FLAG_TEMP_E"
     },
     {
-      "local_id": "LOCALID_CCSC_B9F_LILY",
+      "local_id": "LOCALID_CCSC_B9F_LILITH",
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_LITTLE_GIRL",
       "x": 18,
@@ -57,11 +57,11 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "CeruleanCave_SecretChamber_B9F_Lily",
+      "script": "CeruleanCave_SecretChamber_B9F_Lilith",
       "flag": "FLAG_TEMP_E"
     },
     {
-      "local_id": "LOCALID_CCSC_B9F_MILLY",
+      "local_id": "LOCALID_CCSC_B9F_MOLLY",
       "type": "object",
       "graphics_id": "OBJ_EVENT_GFX_LITTLE_GIRL",
       "x": 10,
@@ -72,7 +72,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "CeruleanCave_SecretChamber_B9F_Milly",
+      "script": "CeruleanCave_SecretChamber_B9F_Molly",
       "flag": "FLAG_TEMP_E"
     },
     {

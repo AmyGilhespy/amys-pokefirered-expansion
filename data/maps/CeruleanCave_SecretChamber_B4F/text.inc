@@ -1,7 +1,10 @@
 
 
 CeruleanCave_SecretChamber_B4F_Text_NatalieIntro::
-	.string "Intro.$"
+	.string "Hey.\p"
+	.string "I'm Naughty Natalie… …No, don't get\n"
+	.string "any ideas, I'm called that because\l"
+	.string "I like to play tricks on people.$"
 
 @ After you've defeated NATALIE, but not yet AMY:
 CeruleanCave_SecretChamber_B4F_Text_NatalieRematchIntro::
@@ -13,16 +16,15 @@ CeruleanCave_SecretChamber_B4F_Text_NatalieRematch2Intro::
 	.string "Welcome back. Let's go!$"
 
 CeruleanCave_SecretChamber_B4F_Text_NatalieDefeat::
-	.string "Nicely done.$"
+	.string "You got me!$"
 
 CeruleanCave_SecretChamber_B4F_Text_NataliePostBattle::
-	.string "But first, please allow me to heal\n"
-	.string "your living teammates.$"
-
-CeruleanCave_SecretChamber_B4F_Text_NataliePostHeal::
 	.string "A powerful move called Mail Script\n"
 	.string "allowed Courier to use several\l"
 	.string "moves all at once.\p"
+	.string "The moves Mail Script uses are\n"
+	.string "determined by the words used in the\l"
+	.string "held Mail.\p"
 	.string "Since you beat me, I'll teach it\n"
 	.string "to one of your POKéMON if you like.\p"
 	.string "This isn't a one-time offer, either,\n"
@@ -37,12 +39,12 @@ CeruleanCave_SecretChamber_B4F_Text_NatalieWhichMon::
 	.string "Who should learn Mail Script?$"
 
 CeruleanCave_SecretChamber_B4F_Text_NataliePostTeach::
-	.string "Now, a word of caution before you\n"
-	.string "move on: If you leave this cave,\l"
-	.string "you will have to start all over!\p"
-	.string "I'm going to go on ahead and then\n"
-	.string "I'll see you in the final chamber\l"
-	.string "should you make it that far.\p"
-	.string "Good luck, and stay cute!$"
-
-
+	.string "So now, I suppose it's your time to\n"
+	.string "go on to the last fight before you\l"
+	.string "can face our leader.\p"
+	.string "But first, please allow me to heal\n"
+	.string "your living teammates.\p"
+	.string "……… ………\p"
+	.string "Or actually, it's funnier if I don't.\p"
+	.string "I told you I like to play tricks!\n"
+	.string "Good luck with Olivia!$"

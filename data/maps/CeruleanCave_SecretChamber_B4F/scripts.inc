@@ -11,8 +11,6 @@ CeruleanCave_SecretChamber_B4F_Natalie::
 CeruleanCave_SecretChamber_B4F_EventScript_DefeatedNatalie::
 	lockall
 	msgbox CeruleanCave_SecretChamber_B4F_Text_NataliePostBattle, MSGBOX_NPC
-	call EventScript_OutOfCenterPartyHeal
-	msgbox CeruleanCave_SecretChamber_B4F_Text_NataliePostHeal, MSGBOX_NPC
 	msgbox CeruleanCave_SecretChamber_B4F_Text_NatalieTeach, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, CeruleanCave_SecretChamber_B4F_EventScript_NataliePostTeach
 	msgbox CeruleanCave_SecretChamber_B4F_Text_NatalieWhichMon

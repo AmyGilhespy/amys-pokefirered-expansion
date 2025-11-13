@@ -7,15 +7,15 @@ CeruleanCave_SecretChamber_B9F_Kyouko::
 	release
 	end
 
-CeruleanCave_SecretChamber_B9F_Lily::
+CeruleanCave_SecretChamber_B9F_Lilith::
 	lock
-	msgbox CeruleanCave_SecretChamber_B9F_Text_Lily, MSGBOX_NPC
+	msgbox CeruleanCave_SecretChamber_B9F_Text_Lilith, MSGBOX_NPC
 	release
 	end
 
-CeruleanCave_SecretChamber_B9F_Milly::
+CeruleanCave_SecretChamber_B9F_Molly::
 	lock
-	msgbox CeruleanCave_SecretChamber_B9F_Text_Milly, MSGBOX_NPC
+	msgbox CeruleanCave_SecretChamber_B9F_Text_Molly, MSGBOX_NPC
 	release
 	end
 
@@ -41,8 +41,8 @@ CeruleanCave_SecretChamber_B9F_Amy::
 CeruleanCave_SecretChamber_B9F_EventScript_DefeatedAmy::
 	lockall
 	removeobject LOCALID_CCSC_B9F_KYOUKO
-	removeobject LOCALID_CCSC_B9F_LILY
-	removeobject LOCALID_CCSC_B9F_MILLY
+	removeobject LOCALID_CCSC_B9F_LILITH
+	removeobject LOCALID_CCSC_B9F_MOLLY
 	removeobject LOCALID_CCSC_B9F_NATALIE
 	removeobject LOCALID_CCSC_B9F_OLIVIA
 	msgbox CeruleanCave_SecretChamber_B9F_Text_AmyPostBattle, MSGBOX_NPC

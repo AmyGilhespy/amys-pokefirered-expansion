@@ -13,14 +13,6 @@ CeruleanCave_SecretChamber_B3F_EventScript_DefeatedMolly::
 	msgbox CeruleanCave_SecretChamber_B3F_Text_MollyPostBattle, MSGBOX_NPC
 	call EventScript_OutOfCenterPartyHeal
 	msgbox CeruleanCave_SecretChamber_B3F_Text_MollyPostHeal, MSGBOX_NPC
-	msgbox CeruleanCave_SecretChamber_B3F_Text_MollyTeach, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, CeruleanCave_SecretChamber_B3F_EventScript_MollyPostTeach
-	msgbox CeruleanCave_SecretChamber_B3F_Text_MollyWhichMon
-	setvar VAR_0x8005, MOVE_MAIL_SCRIPT
-	call EventScript_ChooseMoveTutorMon
-	goto_if_eq VAR_RESULT, FALSE, CeruleanCave_SecretChamber_B3F_EventScript_MollyPostTeach
-CeruleanCave_SecretChamber_B3F_EventScript_MollyPostTeach::
-	msgbox CeruleanCave_SecretChamber_B3F_Text_MollyPostTeach, MSGBOX_NPC
 	applymovement LOCALID_MOLLY, CeruleanCave_SecretChamber_B3F_Movement_MollyExit
 	waitmovement 0
 	setflag FLAG_TEMP_E @ Hide Molly until map reload

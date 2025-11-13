@@ -6095,6 +6095,7 @@ u16 GetBattleBGM(void)
 
         switch (trainerClass)
         {
+        case TRAINER_CLASS_ROM_HACKER:
         case TRAINER_CLASS_CHAMPION:
             return MUS_HG_VS_CHAMPION;
         case TRAINER_CLASS_LEADER:
@@ -6105,10 +6106,10 @@ u16 GetBattleBGM(void)
             switch (GetTrainerEncounterMusicId(TRAINER_BATTLE_PARAM.opponentA))
             {
             case TRAINER_ENCOUNTER_MUSIC_MAGMA:
-                return MUS_HG_VS_CHAMPION;
-            case TRAINER_ENCOUNTER_MUSIC_AQUA:
-                return MUS_HG_VS_GYM_LEADER_KANTO;
+                return MUS_RS_VS_GYM_LEADER;
             case TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR:
+                return MUS_HG_VS_GYM_LEADER_KANTO;
+            case TRAINER_ENCOUNTER_MUSIC_AQUA:
                 return MUS_HG_VS_GYM_LEADER;
             default:
                 break;

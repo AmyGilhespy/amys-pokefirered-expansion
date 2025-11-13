@@ -9,7 +9,7 @@ CeruleanCave_SecretChamber_B3F_Text_MollyIntro::
 	.string "''Monsoon Molly,'' that's what\n"
 	.string "everyone calls me.\p"
 	.string "Well, my friends sometimes call me\n"
-	.string "''Moist Molly'' instead.\p"
+	.string "''Moist Molly'' instead…\p"
 	.string "I love standing in the rain and\n"
 	.string "letting it soak into my hair and\l"
 	.string "clothing.\p"
@@ -31,33 +31,18 @@ CeruleanCave_SecretChamber_B3F_Text_MollyRematch2Intro::
 	.string "Welcome back. Let's go!$"
 
 CeruleanCave_SecretChamber_B3F_Text_MollyDefeat::
-	.string "Nicely done.$"
+	.string "I'm all wet!$"
 
 CeruleanCave_SecretChamber_B3F_Text_MollyPostBattle::
+	.string "Go on to the next floor and dry\n"
+	.string "yourself off.\p"
 	.string "But first, please allow me to heal\n"
 	.string "your living teammates.$"
 
 CeruleanCave_SecretChamber_B3F_Text_MollyPostHeal::
-	.string "Since you beat me, I'll teach it\n"
-	.string "to one of your POKéMON if you like.\p"
-	.string "This isn't a one-time offer, either,\n"
-	.string "but you'll have to beat me again\l"
-	.string "before I'll teach it again.$"
-
-CeruleanCave_SecretChamber_B3F_Text_MollyTeach::
-	.string "Shall I teach Mail Script to one of\n"
-	.string "your POKéMON?$"
-
-CeruleanCave_SecretChamber_B3F_Text_MollyWhichMon::
-	.string "Who should learn Mail Script?$"
-
-CeruleanCave_SecretChamber_B3F_Text_MollyPostTeach::
-	.string "Now, a word of caution before you\n"
-	.string "move on: If you leave this cave,\l"
-	.string "you will have to start all over!\p"
+	.string "And don't forget, if you leave this\n"
+	.string "cave you will have to start all over!\p"
 	.string "I'm going to go on ahead and then\n"
 	.string "I'll see you in the final chamber\l"
 	.string "should you make it that far.\p"
-	.string "Good luck, and stay cute!$"
-
-
+	.string "You've come a long way. Good luck!$"

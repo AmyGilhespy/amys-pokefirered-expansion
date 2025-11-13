@@ -6,7 +6,15 @@ CeruleanCave_SecretChamber_B2F_Text_LilithIntro::
 	.string "I'm known as LITTLE LILITH because\n"
 	.string "I like to use NFE POKéMON.\p"
 	.string "In case you didn't already know, NFE\n"
-	.string "stands for ''Not Fully Evolved''.$"
+	.string "stands for ''Not Fully Evolved''.\p"
+	.string "In other words, they're nymphs!\n"
+	.string "Babies! You wouldn't harm a baby,\l"
+	.string "would you?\p"
+	.string "But even though we're young, we can\n"
+	.string "still handle ourselves!\p"
+	.string "At least when it comes to POKéMON\n"
+	.string "battles.\p"
+	.string "We'll show you!$"
 
 @ After you've defeated LILITH, but not yet AMY:
 CeruleanCave_SecretChamber_B2F_Text_LilithRematchIntro::
@@ -21,12 +29,17 @@ CeruleanCave_SecretChamber_B2F_Text_LilithDefeat::
 	.string "Oopsies!$"
 
 CeruleanCave_SecretChamber_B2F_Text_LilithPostBattle::
-	.string "But first, please allow me to heal\n"
-	.string "your living teammates.$"
+	.string "You hurt my babies!\p"
+	.string "But that's ok because I can just\n"
+	.string "resurrect them again! Tee-hee!\p"
+	.string "Well I suppose this means you've\n"
+	.string "made it to MOLLY.\p"
+	.string "But before you go, please allow me\n"
+	.string "to heal your living teammates.$"
 
 CeruleanCave_SecretChamber_B2F_Text_ShopIntro::
-	.string "I have a few things for sale that\n"
-	.string "might interest you.\p"
+	.string "Also, I have a few things for sale\n"
+	.string "that might interest you.\p"
 	.string "Take a look, but be warned that I\n"
 	.string "won't offer these wares to you\l"
 	.string "again until you beat me again.$"

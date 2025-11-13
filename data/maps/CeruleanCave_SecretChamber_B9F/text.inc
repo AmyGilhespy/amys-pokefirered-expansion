@@ -3,11 +3,11 @@
 CeruleanCave_SecretChamber_B9F_Text_Kyouko::
 	.string "Kyouko.$"
 
-CeruleanCave_SecretChamber_B9F_Text_Lily::
-	.string "Lily.$"
+CeruleanCave_SecretChamber_B9F_Text_Lilith::
+	.string "Lilith.$"
 
-CeruleanCave_SecretChamber_B9F_Text_Milly::
-	.string "Milly.$"
+CeruleanCave_SecretChamber_B9F_Text_Molly::
+	.string "Molly.$"
 
 CeruleanCave_SecretChamber_B9F_Text_Natalie::
 	.string "Natalie.$"
