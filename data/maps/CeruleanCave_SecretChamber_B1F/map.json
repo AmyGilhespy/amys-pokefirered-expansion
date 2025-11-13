@@ -46,7 +46,7 @@
       "y": 3,
       "elevation": 0,
       "dest_map": "MAP_CERULEAN_CAVE_SECRET_CHAMBER_B2F",
-      "dest_warp_id": "WARP_ID_PRE_LILY_ENTRANCE"
+      "dest_warp_id": "WARP_ID_PRE_LILITH_ENTRANCE"
     }
   ],
   "coord_events": [

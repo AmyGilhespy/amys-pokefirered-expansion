@@ -145,6 +145,9 @@ enum ItemHoldEffect
     // Amy custom hold effects
     HOLD_EFFECT_EVIO,
     HOLD_EFFECT_PERFECT_SASH,
+    HOLD_EFFECT_DRIZZLE,
+    HOLD_EFFECT_DROUGHT,
+    HOLD_EFFECT_PERISH,
     HOLD_EFFECT_COUNT
 };
 

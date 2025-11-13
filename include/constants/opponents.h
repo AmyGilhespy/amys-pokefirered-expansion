@@ -768,13 +768,13 @@
 #define TRAINER_ICHIKO                           760
 #define TRAINER_JULIANA                          761
 #define TRAINER_KYOUKO                           762
-#define TRAINER_LILY                             763
-#define TRAINER_MILLY                            764
+#define TRAINER_LILITH                           763
+#define TRAINER_MOLLY                            764
 #define TRAINER_NATALIE                          765
 #define TRAINER_OLIVIA                           766
 #define TRAINER_AMY                              767
 
-// NOTE: Because each Trainer uses a flag to determine when they are defeated, there is 
+// NOTE: Because each Trainer uses a flag to determine when they are defeated, there is
 //       only space for 25 additional trainers before trainer flag space overflows.
 //       MAX_TRAINERS_COUNT can be increased but will take up additional saveblock space
 

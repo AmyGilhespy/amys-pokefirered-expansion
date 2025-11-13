@@ -1,45 +1,40 @@
 
 
-CeruleanCave_SecretChamber_B2F_Text_LilyIntro::
-	.string "Intro.$"
+CeruleanCave_SecretChamber_B2F_Text_LilithIntro::
+	.string "Hey there.\n"
+	.string "I'm LILITH.\p"
+	.string "I'm known as LITTLE LILITH because\n"
+	.string "I like to use NFE POKéMON.\p"
+	.string "In case you didn't already know, NFE\n"
+	.string "stands for ''Not Fully Evolved''.$"
 
-@ After you've defeated LILY, but not yet AMY:
-CeruleanCave_SecretChamber_B2F_Text_LilyRematchIntro::
+@ After you've defeated LILITH, but not yet AMY:
+CeruleanCave_SecretChamber_B2F_Text_LilithRematchIntro::
 	.string "Welcome back. Are you ready to\n"
 	.string "try again? Let's go!$"
 
 @ After you've defeated AMY:
-CeruleanCave_SecretChamber_B2F_Text_LilyRematch2Intro::
+CeruleanCave_SecretChamber_B2F_Text_LilithRematch2Intro::
 	.string "Welcome back. Let's go!$"
 
-CeruleanCave_SecretChamber_B2F_Text_LilyDefeat::
-	.string "Nicely done.$"
+CeruleanCave_SecretChamber_B2F_Text_LilithDefeat::
+	.string "Oopsies!$"
 
-CeruleanCave_SecretChamber_B2F_Text_LilyPostBattle::
+CeruleanCave_SecretChamber_B2F_Text_LilithPostBattle::
 	.string "But first, please allow me to heal\n"
 	.string "your living teammates.$"
 
-CeruleanCave_SecretChamber_B2F_Text_LilyPostHeal::
-	.string "Since you beat me, I'll teach it\n"
-	.string "to one of your POKéMON if you like.\p"
-	.string "This isn't a one-time offer, either,\n"
-	.string "but you'll have to beat me again\l"
-	.string "before I'll teach it again.$"
+CeruleanCave_SecretChamber_B2F_Text_ShopIntro::
+	.string "I have a few things for sale that\n"
+	.string "might interest you.\p"
+	.string "Take a look, but be warned that I\n"
+	.string "won't offer these wares to you\l"
+	.string "again until you beat me again.$"
 
-CeruleanCave_SecretChamber_B2F_Text_LilyTeach::
-	.string "Shall I teach Mail Script to one of\n"
-	.string "your POKéMON?$"
-
-CeruleanCave_SecretChamber_B2F_Text_LilyWhichMon::
-	.string "Who should learn Mail Script?$"
-
-CeruleanCave_SecretChamber_B2F_Text_LilyPostTeach::
-	.string "Now, a word of caution before you\n"
-	.string "move on: If you leave this cave,\l"
+CeruleanCave_SecretChamber_B2F_Text_ShopOutro::
+	.string "Don't forget, if you leave this cave\n"
 	.string "you will have to start all over!\p"
 	.string "I'm going to go on ahead and then\n"
 	.string "I'll see you in the final chamber\l"
 	.string "should you make it that far.\p"
-	.string "Good luck, and stay cute!$"
-
-
+	.string "Good luck!$"

@@ -16529,7 +16529,7 @@ Items: Full Restore / Full Restore / Full Restore
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Smart Switching / Ace Pokemon / Omniscient
 
-Ballerina (Kirlia) (F) @ Eviolite
+Kirly (Kirlia) (F) @ Eviolite
 Level: 90
 IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 0 HP / 0 Atk / 4 Def / 252 SpA / 0 SpD / 252 Spe
@@ -16562,7 +16562,7 @@ Nature: Calm
 - Psyshock
 - Foul Play
 
-Princess (Steenee) (F) @ Eviolite
+Steeny (Steenee) (F) @ Eviolite
 Level: 90
 IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 4 HP / 0 Atk / 252 Def / 0 SpA / 252 SpD / 0 Spe
@@ -16683,44 +16683,7 @@ Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Smart Switching / Ace Pokemon / Omniscient
 Mugshot: Pink
 
-Foxy (Eevee Starter) (F) @ Eevium Z
-Level: 100
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
-Ability: Simple
-Nature: Careful
-Eager: Yes
-- Last Resort
-- No Retreat
-- Headbutt
-- Baton Pass
-
-Sparky (Pikachu Starter) (F) @ Evio
-Level: 100
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
-Ability: Electric Surge
-Nature: Naughty
-Dynamax Level: 10
-Gigantamax: Yes
-- Buzzy Buzz
-- Zippy Zap
-- Splishy Splash
-- Floaty Fall
-
-Squishy (Audino Mega) (F) @ Leftovers
-Level: 100
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
-EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 0 Spe
-Ability: Pixilate
-Nature: Sassy
-Tera Type: Fairy
-- Verdance
-- Calm Mind
-- Infiniblast
-- Shore Up
-
-Steel Soul (F) @ Leftovers
+Steel Soul (F) @ Orange Mail
 Level: 100
 IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 0 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
@@ -16731,50 +16694,6 @@ Nature: Calm
 - Body Press
 - Baton Pass
 // Don't nickname Steel Soul, as this is likely the first time the player is seeing this mon.
-
-Shadow (Marshadow) (F) @ Life Orb
-Level: 100
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
-Ability: Technician
-Nature: Jolly
-- Spectral Thief
-- Shadow Sneak
-- Close Combat
-- Rock Tomb
-
-Nurse (Mimikyu) (F) @ Perfect Sash
-Level: 100
-IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 0 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
-Ability: Disguise
-Nature: Calm
-- Phoenix Call
-- Revival Blessing
-- No Retreat
-- Baton Pass
-
-=== TRAINER_LILY ===
-Name: LILY
-Class: Little Girl
-Pic: Little Girl 1B
-Gender: Female
-Music: Aqua
-Items: Full Restore / Full Restore / Full Restore
-Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Smart Switching / Ace Pokemon / Omniscient
-Mugshot: Pink
-
-Bun Bun (Lopunny Mega) (F) @ Fightinium Z
-Level: 100
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
-Ability: Scrappy
-Nature: Jolly
-- Attract
-- Close Combat
-- Extreme Speed
-- Super Fang
 
 Good Girl (Sylveon) (F) @ Pixie Plate
 Level: 100
@@ -16800,7 +16719,100 @@ Nature: Sassy
 - Knock Off
 - Baton Pass
 
-Princess (Gothorita) (F) @ Evio
+Squishy (Audino Mega) (F) @ Orange Mail
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 0 Spe
+Ability: Pixilate
+Nature: Sassy
+Tera Type: Fairy
+- Verdance
+- Calm Mind
+- Infiniblast
+- Shore Up
+
+Shadow (Marshadow) (F) @ Bead Mail
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Ability: Technician
+Nature: Jolly
+- Spectral Thief
+- Shadow Sneak
+- Close Combat
+- Rock Tomb
+
+Nurse (Mimikyu) (F) @ Perfect Sash
+Level: 100
+IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 0 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Ability: Disguise
+Nature: Calm
+- Phoenix Call
+- Revival Blessing
+- No Retreat
+- Baton Pass
+
+=== TRAINER_LILITH ===
+Name: LILITH
+Class: Little Girl
+Pic: Little Girl 1B
+Gender: Female
+Music: Aqua
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Smart Switching / Ace Pokemon / Omniscient
+Mugshot: Pink
+
+Foxy (Eevee) (F) @ Eevium Z
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Ability: Simple
+Nature: Careful
+Eager: Yes
+- Last Resort
+- No Retreat
+- Headbutt
+- Baton Pass
+// It can't be Eevee Starter because Eevee Starter can't use Extreme Evoboost for some reason.
+
+Sparky (Pikachu Starter) (F) @ Evio
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Ability: Electric Surge
+Nature: Naughty
+Dynamax Level: 10
+Gigantamax: Yes
+- Buzzy Buzz
+- Zippy Zap
+- Splishy Splash
+- Floaty Fall
+
+Sliggily (Sliggoo-Hisui) (F) @ Fab Mail
+Level: 100
+IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 0 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Ability: Dauntless Shield
+Nature: Modest
+- Tail Glow
+- Doom Desire
+- Draco Meteor
+- Railgun
+
+Ballerina (Kirlia) (F) @ Fab Mail
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Ability: Pixilate
+Nature: Rash
+- Boomburst
+- Psystrike
+- Extreme Speed
+- Armor Cannon
+
+Princess (Gothorita) (F) @ Fab Mail
 Level: 100
 IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
 EVs: 252 HP / 0 Atk / 252 Def / 252 SpA / 252 SpD / 0 Spe
@@ -16812,18 +16824,7 @@ Tera Type: Steel
 - Psychic Noise
 - Rest
 
-Queen (Gardevoir Mega) (F) @ Choice Specs
-Level: 100
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
-Ability: Pixilate
-Nature: Rash
-- Boomburst
-- Psystrike
-- Extreme Speed
-- Armor Cannon
-
-Nurse (Chansey) (F) @ Evio
+Nurse (Chansey) (F) @ Fab Mail
 Level: 100
 IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 0 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
@@ -16834,8 +16835,8 @@ Nature: Calm
 - No Retreat
 - Baton Pass
 
-=== TRAINER_MILLY ===
-Name: MILLY
+=== TRAINER_MOLLY ===
+Name: MOLLY
 Class: Little Girl
 Pic: Little Girl 2A
 Gender: Female
@@ -16856,7 +16857,7 @@ Nature: Sassy
 - Ice Beam
 - Rest
 
-Slick (Ferrothorn) (F) @ Leftovers
+Slick (Ferrothorn) (F) @ Orange Mail
 Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
@@ -16926,7 +16927,7 @@ Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Smart Switching / Ace Pokemon / Omniscient
 Mugshot: Pink
 
-Courier (Delibird) (F) @ Orange Mail
+Courier (Delibird) (F) @ Wood Mail
 Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
@@ -17002,6 +17003,32 @@ EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Ability: Dauntless Shield
 Nature: Impish
 - Tackle
+
+Bun Bun (Lopunny Mega) (F) @ Fightinium Z
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Ability: Scrappy
+Nature: Jolly
+- Attract
+- Close Combat
+- Extreme Speed
+- Super Fang
+
+Queen (Gardevoir Mega) (F) @ Choice Specs
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Ability: Pixilate
+Nature: Rash
+- Boomburst
+- Psystrike
+- Extreme Speed
+- Armor Cannon
+
+
+
+
 
 === TRAINER_AMY ===
 Name: AMY

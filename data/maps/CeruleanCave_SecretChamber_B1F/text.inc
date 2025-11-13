@@ -40,7 +40,7 @@ CeruleanCave_SecretChamber_B1F_Text_KyoukoRematch2Intro::
 	.string "Welcome back. Let's go!$"
 
 CeruleanCave_SecretChamber_B1F_Text_KyoukoDefeat::
-	.string "Nicely done.$"
+	.string "Adorable!$"
 
 CeruleanCave_SecretChamber_B1F_Text_KyoukoPostBattle::
 	.string "Congratulations on winning the\n"

@@ -7430,6 +7430,49 @@ u32 ItemBattleEffects(enum ItemCaseId caseID, u32 battler)
             case HOLD_EFFECT_BOOSTER_ENERGY:
                 effect = TryBoosterEnergy(battler, GetBattlerAbility(battler), caseID);
                 break;
+            case HOLD_EFFECT_DRIZZLE:
+                if (TryChangeBattleWeather(battler, BATTLE_WEATHER_RAIN, TRUE))
+                {
+                    BattleScriptPushCursorAndCallback(BattleScript_DrizzleActivates);
+                    effect = ITEM_EFFECT_OTHER;
+                }
+                else if (gBattleWeather & B_WEATHER_PRIMAL_ANY && HasWeatherEffect() && !gSpecialStatuses[battler].switchInAbilityDone)
+                {
+                    gSpecialStatuses[battler].switchInAbilityDone = TRUE;
+                    BattleScriptPushCursorAndCallback(BattleScript_BlockedByPrimalWeatherEnd3);
+                    effect = ITEM_NO_EFFECT;
+                }
+                break;
+            case HOLD_EFFECT_DROUGHT:
+                if (TryChangeBattleWeather(battler, BATTLE_WEATHER_SUN, TRUE))
+                {
+                    BattleScriptPushCursorAndCallback(BattleScript_DroughtActivates);
+                    effect = ITEM_EFFECT_OTHER;
+                }
+                else if (gBattleWeather & B_WEATHER_PRIMAL_ANY && HasWeatherEffect() && !gSpecialStatuses[battler].switchInAbilityDone)
+                {
+                    gSpecialStatuses[battler].switchInAbilityDone = TRUE;
+                    BattleScriptPushCursorAndCallback(BattleScript_BlockedByPrimalWeatherEnd3);
+                    effect = ITEM_NO_EFFECT;
+                }
+                break;
+            case HOLD_EFFECT_PERISH:
+                if (!gBattleMons[battler].volatiles.perishSong)
+                {
+                    gBattleMons[battler].volatiles.perishSong = TRUE;
+                    gDisableStructs[battler].perishSongTimer = 10;
+                    for (s32 btlr = 0; btlr < gBattlersCount; btlr++)
+                    {
+                        if (btlr != battler && IsBattlerAlive(btlr) && !gBattleMons[btlr].volatiles.perishSong)
+                        {
+                            gBattleMons[btlr].volatiles.perishSong = TRUE;
+                            gDisableStructs[btlr].perishSongTimer = 10;
+                        }
+                    }
+                    BattleScriptCall(BattleScript_PerishBodyActivates);
+                    effect = ITEM_EFFECT_OTHER;
+                }
+                break;
             default:
                 break;
             }

@@ -3812,15 +3812,15 @@ const struct Item gItemsInfo[] =
 
 // Mail
 
-    [ITEM_ORANGE_MAIL] =
+    [ITEM_ORANGE_MAIL] = // Leftovers
     {
         .name = ITEM_NAME("Orange Mail"),
         .pluralName = ITEM_PLURAL_NAME("Orange Mail"),
         .price = 50,
+        .holdEffect = HOLD_EFFECT_LEFTOVERS,
+        .holdEffectParam = 10,
         .description = COMPOUND_STRING(
-            "A Zigzagoon-print "
-            "Mail to be held\nby "
-            "a Pokémon."),
+            "Leftovers. A Zigzagoon-print Mail to\nbe held by a Pokémon."),
         .pocket = POCKET_ITEMS,
         .sortType = ITEM_TYPE_MAIL,
         .type = ITEM_USE_MAIL,
@@ -3884,15 +3884,14 @@ const struct Item gItemsInfo[] =
         .iconPalette = gItemIconPalette_MechMail,
     },
 
-    [ITEM_WOOD_MAIL] =
+    [ITEM_WOOD_MAIL] = // Focus Sash
     {
         .name = ITEM_NAME("Wood Mail"),
         .pluralName = ITEM_PLURAL_NAME("Wood Mail"),
         .price = 50,
+        .holdEffect = HOLD_EFFECT_FOCUS_SASH,
         .description = COMPOUND_STRING(
-            "A Slakoth-print "
-            "Mail to be held\nby "
-            "a Pokémon."),
+            "Focus Sash. A Slakoth-print Mail to\nbe held by a Pokémon."),
         .pocket = POCKET_ITEMS,
         .sortType = ITEM_TYPE_MAIL,
         .type = ITEM_USE_MAIL,
@@ -3902,15 +3901,15 @@ const struct Item gItemsInfo[] =
         .iconPalette = gItemIconPalette_WoodMail,
     },
 
-    [ITEM_WAVE_MAIL] =
+    [ITEM_WAVE_MAIL] = // Drizzle
     {
         .name = ITEM_NAME("Wave Mail"),
         .pluralName = ITEM_PLURAL_NAME("Wave Mail"),
         .price = 50,
+        .holdEffect = HOLD_EFFECT_DRIZZLE,
+        .holdEffectParam = 10,
         .description = COMPOUND_STRING(
-            "A Wailmer-print "
-            "Mail to be held\nby "
-            "a Pokémon."),
+            "Drizzle. A Wailmer-print Mail to\nbe held by a Pokémon."),
         .pocket = POCKET_ITEMS,
         .sortType = ITEM_TYPE_MAIL,
         .type = ITEM_USE_MAIL,
@@ -3920,12 +3919,14 @@ const struct Item gItemsInfo[] =
         .iconPalette = gItemIconPalette_WaveMail,
     },
 
-    [ITEM_BEAD_MAIL] =
+    [ITEM_BEAD_MAIL] = // Life Orb
     {
         .name = ITEM_NAME("Bead Mail"),
         .pluralName = ITEM_PLURAL_NAME("Bead Mail"),
         .price = 50,
-        .description = sBeadMailDesc,
+        .holdEffect = HOLD_EFFECT_LIFE_ORB,
+        .description = COMPOUND_STRING(
+            "Life Orb. Mail featuring a sketch\nof the holding Pokémon."),
         .pocket = POCKET_ITEMS,
         .sortType = ITEM_TYPE_MAIL,
         .type = ITEM_USE_MAIL,
@@ -3935,7 +3936,7 @@ const struct Item gItemsInfo[] =
         .iconPalette = gItemIconPalette_BeadMail,
     },
 
-    [ITEM_SHADOW_MAIL] =
+    [ITEM_SHADOW_MAIL] = // Will give perish count 10.
     {
         .name = ITEM_NAME("Shadow Mail"),
         .pluralName = ITEM_PLURAL_NAME("Shadow Mail"),
@@ -3953,15 +3954,15 @@ const struct Item gItemsInfo[] =
         .iconPalette = gItemIconPalette_ShadowMail,
     },
 
-    [ITEM_TROPIC_MAIL] =
+    [ITEM_TROPIC_MAIL] = // Drought
     {
         .name = ITEM_NAME("Tropic Mail"),
         .pluralName = ITEM_PLURAL_NAME("Tropic Mail"),
         .price = 50,
+        .holdEffect = HOLD_EFFECT_DROUGHT,
+        .holdEffectParam = 10,
         .description = COMPOUND_STRING(
-            "A Bellossom-print "
-            "Mail to be held\nby "
-            "a Pokémon."),
+            "Drought. A Bellossom-print Mail to\nbe held by a Pokémon."),
         .pocket = POCKET_ITEMS,
         .sortType = ITEM_TYPE_MAIL,
         .type = ITEM_USE_MAIL,
@@ -3971,7 +3972,7 @@ const struct Item gItemsInfo[] =
         .iconPalette = gItemIconPalette_TropicMail,
     },
 
-    [ITEM_DREAM_MAIL] =
+    [ITEM_DREAM_MAIL] = // Probably Amy's second-favorite mail.
     {
         .name = ITEM_NAME("Dream Mail"),
         .pluralName = ITEM_PLURAL_NAME("Dream Mail"),
@@ -3986,15 +3987,15 @@ const struct Item gItemsInfo[] =
         .iconPalette = gItemIconPalette_DreamMail,
     },
 
-    [ITEM_FAB_MAIL] =
+    [ITEM_FAB_MAIL] = // Eviolite.  Absolutely beautiful design; Amy's favorite mail by far.
     {
         .name = ITEM_NAME("Fab Mail"),
         .pluralName = ITEM_PLURAL_NAME("Fab Mail"),
         .price = 50,
+        .holdEffect = HOLD_EFFECT_EVIOLITE,
+        .holdEffectParam = 50,
         .description = COMPOUND_STRING(
-            "A gorgeous-print "
-            "Mail to be held "
-            "\nby a Pokémon."),
+            "Eviolite. A gorgeous-print Mail to\nbe held by a Pokémon."),
         .pocket = POCKET_ITEMS,
         .sortType = ITEM_TYPE_MAIL,
         .type = ITEM_USE_MAIL,

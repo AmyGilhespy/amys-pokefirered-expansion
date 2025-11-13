@@ -65,7 +65,8 @@ CeruleanCave_SecretChamber_B1F_EventScript_Rematch2Kyouko::
 
 	.align 2
 CeruleanCave_SecretChamber_B1F_Items::
-	.2byte ITEM_EVIO
+	.2byte ITEM_ORANGE_MAIL
+	.2byte ITEM_BEAD_MAIL
 	.2byte ITEM_PERFECT_SASH
 	.2byte ITEM_NONE
 	release

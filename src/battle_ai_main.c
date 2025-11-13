@@ -6107,6 +6107,12 @@ static s32 AI_ForceSetupFirstTurn(u32 battlerAtk, u32 battlerDef, u32 move, s32 
     case EFFECT_STONE_AXE:
         ADJUST_SCORE(DECENT_EFFECT);
         break;
+    case EFFECT_LAST_RESORT:
+        if (!HasTrainerUsedGimmick(battlerAtk, GIMMICK_Z_MOVE)
+                && gBattleMons[battlerAtk].item == ITEM_EEVIUM_Z
+                && IsViableZMove(battlerAtk, move))
+            ADJUST_SCORE(10000);
+        break;
     default:
         break;
     }
