@@ -6102,6 +6102,8 @@ u16 GetBattleBGM(void)
             return GetTrainerPicFromId(TRAINER_BATTLE_PARAM.opponentA) == TRAINER_PIC_LEADER_GIOVANNI ? MUS_HG_VS_GYM_LEADER_KANTO : MUS_VS_GYM_LEADER;
         case TRAINER_CLASS_ELITE_FOUR:
             return MUS_HG_VS_GYM_LEADER;
+        case TRAINER_CLASS_ULTIMATE_CUTIE:
+            return MUS_HG_VS_GYM_LEADER_KANTO;
         case TRAINER_CLASS_LITTLE_GIRL:
             switch (GetTrainerEncounterMusicId(TRAINER_BATTLE_PARAM.opponentA))
             {

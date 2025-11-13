@@ -83,7 +83,7 @@ MtMoon_1F_Text_RobbyPostBattle::
 
 MtMoon_1F_Text_ZubatIsABloodsucker::
     .string "Beware!\n"
-    .string "ZUBAT is a c???sucker!$"
+    .string "ZUBAT is a c………sucker!$"
 
 MtMoon_1F_Text_BrockHelpsExcavateFossils::
     .string "Hi, I'm excavating for fossils here\n"

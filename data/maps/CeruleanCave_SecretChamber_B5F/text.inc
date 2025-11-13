@@ -1,7 +1,13 @@
 
 
 CeruleanCave_SecretChamber_B5F_Text_OliviaIntro::
-	.string "Intro.$"
+	.string "''Olympian'' means godlike, omnipotent,\n"
+	.string "omniscient.\p"
+	.string "Olympian Olivia is all of these\n"
+	.string "things.\p"
+	.string "Are you ready to see what a god can\n"
+	.string "achieve?\p"
+	.string "Bow to me!$"
 
 @ After you've defeated OLIVIA, but not yet AMY:
 CeruleanCave_SecretChamber_B5F_Text_OliviaRematchIntro::

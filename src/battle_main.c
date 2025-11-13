@@ -341,6 +341,7 @@ const struct TrainerClass gTrainerClasses[TRAINER_CLASS_COUNT] =
     [TRAINER_CLASS_RS_LEADER] =       { _("LEADER"), 25 },
     [TRAINER_CLASS_SCHOOL_KID] =      { _("SCHOOL KID"), 5 },
     [TRAINER_CLASS_LITTLE_GIRL] =     { _("LITTLE GIRL"), 1, BALL_LOVE },
+    [TRAINER_CLASS_ULTIMATE_CUTIE] =  { _("CUTIE"), 1, BALL_LOVE },
     [TRAINER_CLASS_ROM_HACKER] =      { _("ROM HACKER"), 1, BALL_LOVE },
     [TRAINER_CLASS_SR_AND_JR] =       { _("SR. AND JR."), 4 },
     [TRAINER_CLASS_POKEFAN] =         { _("POKéFAN"), 20 },
@@ -2085,6 +2086,7 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
             else if (trainer->trainerClass == TRAINER_CLASS_CHAMPION) { }
             else if (trainer->trainerClass == TRAINER_CLASS_BOSS) { }
             else if (trainer->trainerClass == TRAINER_CLASS_LITTLE_GIRL) { }
+            else if (trainer->trainerClass == TRAINER_CLASS_ULTIMATE_CUTIE) { }
             else if (trainer->trainerClass == TRAINER_CLASS_ROM_HACKER) { }
             else
             {
@@ -2105,6 +2107,7 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
                 case TRAINER_CLASS_CHAMPION:
                 case TRAINER_CLASS_BOSS:
                 case TRAINER_CLASS_LITTLE_GIRL:
+                case TRAINER_CLASS_ULTIMATE_CUTIE:
                 case TRAINER_CLASS_ROM_HACKER:
                     break;
                 default:

@@ -16674,7 +16674,7 @@ Nature: Timid
 
 === TRAINER_KYOUKO ===
 Name: KYOUKO
-Class: Little Girl
+Class: Ultimate Cutie
 Pic: Little Girl 2B
 Gender: Female
 Music: Elite Four
@@ -16705,8 +16705,6 @@ Nature: Modest
 - Sparkly Swirl
 - Draining Kiss
 - Baton Pass
-// Mail: 0x2541 0x2541 0x2541 0x2541 0x2541 0x2541 0x26d5 0x26c7 0x260c
-// Tickle, Tickle, Tickle, Tickle, Tickle, Tickle, Attract, Lock-On, Guillotine
 
 Midnight (Umbreon) (F) @ Toxic Orb
 Level: 100
@@ -16755,7 +16753,7 @@ Nature: Calm
 
 === TRAINER_LILITH ===
 Name: LILITH
-Class: Little Girl
+Class: Ultimate Cutie
 Pic: Little Girl 1B
 Gender: Female
 Music: Elite Four
@@ -16837,7 +16835,7 @@ Nature: Calm
 
 === TRAINER_MOLLY ===
 Name: MOLLY
-Class: Little Girl
+Class: Ultimate Cutie
 Pic: Little Girl 2A
 Gender: Female
 Music: Elite Four
@@ -16918,7 +16916,7 @@ Eager: Yes
 
 === TRAINER_NATALIE ===
 Name: NATALIE
-Class: Little Girl
+Class: Ultimate Cutie
 Pic: Little Girl 1A
 Gender: Female
 Music: Elite Four
@@ -16987,10 +16985,77 @@ Eager: Yes
 
 === TRAINER_OLIVIA ===
 Name: OLIVIA
-Class: Little Girl
+Class: Ultimate Cutie
 Pic: Little Girl 3B
 Gender: Female
 Music: Elite Four
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Smart Switching / Ace Pokemon / Omniscient
+Mugshot: Pink
+
+Hermes (Regieleki) (M) @ Wood Mail
+Level: 100
+IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 0 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Ability: Scrappy
+Nature: Timid
+Mail: 0x256c 0x26c7 0x260c 0x26bf 0x26bf 0x26bf 0x2786 0x2786 0x27be
+- Mail Script
+- Infiniblast
+// Feint, Lock-On, Guillotine, Spikes, Spikes, Spikes, Toxic Spikes, Toxic Spikes, Stealth Rock
+
+Athena (Gardevoir Mega) (F) @ Bead Mail
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Ability: Pixilate
+Nature: Rash
+- Boomburst
+- Psystrike
+- Extreme Speed
+- Armor Cannon
+
+Hercules (Slaking) (M) @ Bead Mail
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Ability: Huge Power
+Nature: Adamant
+- Extreme Evoboost
+- Extreme Speed
+- Icicle Crash
+- Precipice Blades
+
+Cerberus (Houndoom Mega) (M) @ Bead Mail
+Level: 100
+IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 0 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Ability: Orichalcum Pulse
+Nature: Modest
+- Hellfire
+- Baddy Bad
+- Solar Beam
+- Sunny Day
+
+Rhea (Eternatus Eternamax) (F) @ Firium Z
+Level: 100
+IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 0 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Ability: Simple
+Nature: Calm
+Eager: Yes
+- Phoenix Call
+- No Retreat
+- Dragon Energy
+- Baton Pass
+
+=== TRAINER_AMY ===
+Name: AMY
+Class: ROM Hacker
+Pic: ROM Hacker
+Gender: Female
+Music: Female
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Smart Switching / Ace Pokemon / Omniscient
@@ -17015,37 +17080,6 @@ Nature: Jolly
 - Extreme Speed
 - Super Fang
 
-Queen (Gardevoir Mega) (F) @ Choice Specs
-Level: 100
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
-Ability: Pixilate
-Nature: Rash
-- Boomburst
-- Psystrike
-- Extreme Speed
-- Armor Cannon
 
 
-
-
-
-=== TRAINER_AMY ===
-Name: AMY
-Class: ROM Hacker
-Pic: ROM Hacker
-Gender: Female
-Music: Female
-Items: Full Restore / Full Restore / Full Restore
-Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Smart Switching / Ace Pokemon / Omniscient
-Mugshot: Pink
-
-Test (Rattata) (F) @ Eviolite
-Level: 100
-IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-Ability: Dauntless Shield
-Nature: Impish
-- Tackle
 
