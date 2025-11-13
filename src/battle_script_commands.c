@@ -1961,6 +1961,13 @@ static void Cmd_adjustdamage(void)
             gLastUsedItem = gBattleMons[battlerDef].item;
             gBattleStruct->moveResultFlags[battlerDef] |= MOVE_RESULT_FOE_HUNG_ON;
         }
+        else if (holdEffect == HOLD_EFFECT_PERFECT_SASH)
+        {
+            enduredHit |= 1u << battlerDef;
+            RecordItemEffectBattle(battlerDef, holdEffect);
+            gLastUsedItem = gBattleMons[battlerDef].item;
+            gBattleStruct->moveResultFlags[battlerDef] |= MOVE_RESULT_FOE_HUNG_ON;
+        }
         else if (B_AFFECTION_MECHANICS == TRUE && IsOnPlayerSide(battlerDef) && affectionScore >= AFFECTION_THREE_HEARTS)
         {
             if ((affectionScore == AFFECTION_FIVE_HEARTS && rand < 20)
@@ -10907,6 +10914,11 @@ static void Cmd_tryKO(void)
         RecordItemEffectBattle(gBattlerTarget, holdEffect);
     }
     else if (holdEffect == HOLD_EFFECT_FOCUS_SASH && IsBattlerAtMaxHp(gBattlerTarget))
+    {
+        endured = FOCUS_SASHED;
+        RecordItemEffectBattle(gBattlerTarget, holdEffect);
+    }
+    else if (holdEffect == HOLD_EFFECT_PERFECT_SASH)
     {
         endured = FOCUS_SASHED;
         RecordItemEffectBattle(gBattlerTarget, holdEffect);

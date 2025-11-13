@@ -14695,6 +14695,23 @@ const struct Item gItemsInfo[] =
         .iconPic = gItemIcon_Eviolite,
         .iconPalette = gItemIconPalette_Eviolite,
     },
+
+    [ITEM_PERFECT_SASH] =
+    {
+        .name = ITEM_NAME("Perfect Sash"),
+        .pluralName = ITEM_PLURAL_NAME("Perfect Sashes"),
+        .price = 250000,
+        .holdEffect = HOLD_EFFECT_PERFECT_SASH,
+        .description = COMPOUND_STRING(
+            "Endures KO hits\nwith 1 HP."),
+        .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_HELD_ITEM,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 120,
+        .iconPic = gItemIcon_FocusSash,
+        .iconPalette = gItemIconPalette_FocusSash,
+    },
 };
 
 #undef ITEM_NAME

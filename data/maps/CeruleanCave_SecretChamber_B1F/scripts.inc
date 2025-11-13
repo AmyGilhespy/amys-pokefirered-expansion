@@ -43,15 +43,9 @@ CeruleanCave_SecretChamber_B1F_EventScript_DefeatedKyouko::
 	lockall
 	msgbox CeruleanCave_SecretChamber_B1F_Text_KyoukoPostBattle, MSGBOX_NPC
 	call EventScript_OutOfCenterPartyHeal
-	msgbox CeruleanCave_SecretChamber_B1F_Text_KyoukoPostHeal, MSGBOX_NPC
-	msgbox CeruleanCave_SecretChamber_B1F_Text_KyoukoTeach, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, CeruleanCave_SecretChamber_B1F_EventScript_KyoukoPostTeach
-	msgbox CeruleanCave_SecretChamber_B1F_Text_KyoukoWhichMon
-	setvar VAR_0x8005, MOVE_MAIL_SCRIPT
-	call EventScript_ChooseMoveTutorMon
-	goto_if_eq VAR_RESULT, FALSE, CeruleanCave_SecretChamber_B1F_EventScript_KyoukoPostTeach
-CeruleanCave_SecretChamber_B1F_EventScript_KyoukoPostTeach::
-	msgbox CeruleanCave_SecretChamber_B1F_Text_KyoukoPostTeach, MSGBOX_NPC
+	msgbox CeruleanCave_SecretChamber_B1F_Text_ShopIntro
+	pokemart CeruleanCave_SecretChamber_B1F_Items
+	msgbox CeruleanCave_SecretChamber_B1F_Text_ShopOutro
 	applymovement LOCALID_KYOUKO, CeruleanCave_SecretChamber_B1F_Movement_KyoukoExit
 	waitmovement 0
 	setflag FLAG_TEMP_E @ Hide Kyouko until map reload
@@ -67,6 +61,14 @@ CeruleanCave_SecretChamber_B1F_EventScript_Rematch2Kyouko::
 	cleartrainerflag TRAINER_KYOUKO
 	trainerbattle_single TRAINER_KYOUKO, CeruleanCave_SecretChamber_B1F_Text_KyoukoRematch2Intro, CeruleanCave_SecretChamber_B1F_Text_KyoukoDefeat, CeruleanCave_SecretChamber_B1F_EventScript_DefeatedKyouko, NO_MUSIC
 	goto CeruleanCave_SecretChamber_B1F_EventScript_DefeatedKyouko
+	end
+
+	.align 2
+CeruleanCave_SecretChamber_B1F_Items::
+	.2byte ITEM_EVIO
+	.2byte ITEM_PERFECT_SASH
+	.2byte ITEM_NONE
+	release
 	end
 
 CeruleanCave_SecretChamber_B1F_Movement_KyoukoExit::

@@ -20,6 +20,9 @@ CeruleanCave_SecretChamber_B4F_Text_NataliePostBattle::
 	.string "your living teammates.$"
 
 CeruleanCave_SecretChamber_B4F_Text_NataliePostHeal::
+	.string "A powerful move called Mail Script\n"
+	.string "allowed Courier to use several\l"
+	.string "moves all at once.\p"
 	.string "Since you beat me, I'll teach it\n"
 	.string "to one of your POKéMON if you like.\p"
 	.string "This isn't a one-time offer, either,\n"

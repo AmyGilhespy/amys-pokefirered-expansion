@@ -144,6 +144,7 @@ enum ItemHoldEffect
     HOLD_EFFECT_BERSERK_GENE,
     // Amy custom hold effects
     HOLD_EFFECT_EVIO,
+    HOLD_EFFECT_PERFECT_SASH,
     HOLD_EFFECT_COUNT
 };
 

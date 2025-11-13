@@ -1419,6 +1419,8 @@ bool32 CanEndureHit(u32 battler, u32 battlerTarget, u32 move)
         return FALSE;
     if (gAiLogicData->holdEffects[battlerTarget] == HOLD_EFFECT_FOCUS_SASH)
         return TRUE;
+    if (gAiLogicData->holdEffects[battlerTarget] == HOLD_EFFECT_PERFECT_SASH)
+        return TRUE;
 
     if (!DoesBattlerIgnoreAbilityChecks(battler, gAiLogicData->abilities[battler], move))
     {
@@ -1963,6 +1965,8 @@ bool32 ShouldTryOHKO(u32 battlerAtk, u32 battlerDef, enum Ability atkAbility, en
     if (holdEffect == HOLD_EFFECT_FOCUS_BAND && (Random() % 100) < gAiLogicData->holdEffectParams[battlerDef])
         return FALSE;   //probabilistically speaking, focus band should activate so dont OHKO
     else if (holdEffect == HOLD_EFFECT_FOCUS_SASH && AI_BattlerAtMaxHp(battlerDef))
+        return FALSE;
+    else if (holdEffect == HOLD_EFFECT_PERFECT_SASH)
         return FALSE;
 
     if (!DoesBattlerIgnoreAbilityChecks(battlerAtk, atkAbility, move) && defAbility == ABILITY_STURDY)
@@ -3294,6 +3298,7 @@ enum AIPivot ShouldPivot(u32 battlerAtk, u32 battlerDef, enum Ability defAbility
                         return SHOULD_PIVOT;   // Won't get the two turns, pivot
 
                     if (!IsBattleMoveStatus(move) && ((gAiLogicData->shouldSwitch & (1u << battlerAtk))
+                        || gAiLogicData->holdEffects[battlerDef] == HOLD_EFFECT_PERFECT_SASH
                         || (AI_BattlerAtMaxHp(battlerDef) && (gAiLogicData->holdEffects[battlerDef] == HOLD_EFFECT_FOCUS_SASH
                         || (B_STURDY >= GEN_5 && defAbility == ABILITY_STURDY)
                         || defAbility == ABILITY_MULTISCALE
@@ -3302,10 +3307,12 @@ enum AIPivot ShouldPivot(u32 battlerAtk, u32 battlerDef, enum Ability defAbility
                 }
                 else if (!hasStatBoost)
                 {
-                    if (!IsBattleMoveStatus(move) && (AI_BattlerAtMaxHp(battlerDef) && (gAiLogicData->holdEffects[battlerDef] == HOLD_EFFECT_FOCUS_SASH
+                    if (!IsBattleMoveStatus(move) && ((AI_BattlerAtMaxHp(battlerDef) && (gAiLogicData->holdEffects[battlerDef] == HOLD_EFFECT_FOCUS_SASH
                         || (B_STURDY >= GEN_5 && defAbility == ABILITY_STURDY)
                         || defAbility == ABILITY_MULTISCALE
-                        || defAbility == ABILITY_SHADOW_SHIELD)))
+                        || defAbility == ABILITY_SHADOW_SHIELD))
+                        || gAiLogicData->holdEffects[battlerDef] == HOLD_EFFECT_PERFECT_SASH
+                        ))
                         return SHOULD_PIVOT;   // pivot to break sash/sturdy/multiscale
 
                     if (gAiLogicData->shouldSwitch & (1u << battlerAtk))
@@ -3381,7 +3388,10 @@ enum AIPivot ShouldPivot(u32 battlerAtk, u32 battlerDef, enum Ability defAbility
                     // can knock out foe in 2 hits
                     if (IsBattleMoveStatus(move) && ((gAiLogicData->shouldSwitch & (1u << battlerAtk)) //Damaging move
                       //&& (switchScore >= SWITCHING_INCREASE_RESIST_ALL_MOVES + SWITCHING_INCREASE_KO_FOE //remove hazards
-                     || (gAiLogicData->holdEffects[battlerDef] == HOLD_EFFECT_FOCUS_SASH && AI_BattlerAtMaxHp(battlerDef))))
+                     || (
+                            (gAiLogicData->holdEffects[battlerDef] == HOLD_EFFECT_FOCUS_SASH && AI_BattlerAtMaxHp(battlerDef))
+                            || gAiLogicData->holdEffects[battlerDef] == HOLD_EFFECT_PERFECT_SASH
+                     )))
                         return DONT_PIVOT; // Pivot to break the sash
                     else
                         return CAN_TRY_PIVOT;
@@ -4571,6 +4581,7 @@ static const u16 sRecycleEncouragedItems[] =
     ITEM_BLUNDER_POLICY,
     ITEM_KEE_BERRY,
     ITEM_MARANGA_BERRY,
+    ITEM_PERFECT_SASH,
     // TODO expand this
 };
 

@@ -15,13 +15,20 @@ CeruleanCave_SecretChamber_B1F_Text_KyoukoBeatJulianaFirst::
 CeruleanCave_SecretChamber_B1F_Text_KyoukoIntro::
 	.string "Welcome to our SECRET HIDEOUT.\p"
 	.string "We are the ULTIMATE CUTIES, a\n"
-	.string "team of cute little girls who\p"
-	.string "pose a final challenge to you on\n"
-	.string "your journey.\p"
+	.string "team of young girls who pose a\p"
+	.string "final challenge to you on your\n"
+	.string "journey.\p"
 	.string "I am KYOUKO, the first in line.\p"
 	.string "But just because I'm first, that\n"
 	.string "doesn't mean I'm weak.\p"
-	.string "Watch out for my wicked lead!$"
+	.string "Some people affectionately call\n"
+	.string "me ''CUTE KYOUKO''.\p"
+	.string "This is because I only use cute\n"
+	.string "POKéMON.\p"
+	.string "Cute POKéMON can be strong too!\p"
+	.string "I can't wait to show you my\n"
+	.string "adorable little lovelies!\p"
+	.string "Are you ready to meet them?$"
 
 @ After you've defeated KYOUKO, but not yet AMY:
 CeruleanCave_SecretChamber_B1F_Text_KyoukoRematchIntro::
@@ -42,27 +49,17 @@ CeruleanCave_SecretChamber_B1F_Text_KyoukoPostBattle::
 	.string "But first, please allow me to heal\n"
 	.string "your living teammates.$"
 
-CeruleanCave_SecretChamber_B1F_Text_KyoukoPostHeal::
+CeruleanCave_SecretChamber_B1F_Text_ShopIntro::
 	.string "As you saw, we have access to new\n"
 	.string "POKéMON, moves, abilities, items,\l"
 	.string "and other mechanics.\p"
-	.string "A powerful move called Mail Script\n"
-	.string "allowed Courier to use several\l"
-	.string "moves all at once.\p"
-	.string "Since you beat me, I'll teach it\n"
-	.string "to one of your POKéMON if you like.\p"
-	.string "This isn't a one-time offer, either,\n"
-	.string "but you'll have to beat me again\l"
-	.string "before I'll teach it again.$"
+	.string "I have a few things for sale that\n"
+	.string "might interest you.\p"
+	.string "Take a look, but be warned that I\n"
+	.string "won't offer these wares to you\l"
+	.string "again until you beat me again.$"
 
-CeruleanCave_SecretChamber_B1F_Text_KyoukoTeach::
-	.string "Shall I teach Mail Script to one of\n"
-	.string "your POKéMON?$"
-
-CeruleanCave_SecretChamber_B1F_Text_KyoukoWhichMon::
-	.string "Who should learn Mail Script?$"
-
-CeruleanCave_SecretChamber_B1F_Text_KyoukoPostTeach::
+CeruleanCave_SecretChamber_B1F_Text_ShopOutro::
 	.string "Now, a word of caution before you\n"
 	.string "move on: If you leave this cave,\l"
 	.string "you will have to start all over!\p"
@@ -70,5 +67,4 @@ CeruleanCave_SecretChamber_B1F_Text_KyoukoPostTeach::
 	.string "I'll see you in the final chamber\l"
 	.string "should you make it that far.\p"
 	.string "Good luck, and stay cute!$"
-
 

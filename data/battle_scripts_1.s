@@ -8080,7 +8080,9 @@ BattleScript_HangedOnMsg::
 	playanimation BS_TARGET, B_ANIM_HANGED_ON
 	printstring STRINGID_PKMNHUNGONWITHX
 	waitmessage B_WAIT_TIME_LONG
+	jumpifholdeffect BS_TARGET, HOLD_EFFECT_PERFECT_SASH, BattleScript_HangedOnMsgRemoveItem, TRUE
 	jumpifnoholdeffect BS_TARGET, HOLD_EFFECT_FOCUS_SASH, BattleScript_HangedOnMsgRet
+BattleScript_HangedOnMsgRemoveItem::
 	removeitem BS_TARGET
 BattleScript_HangedOnMsgRet:
 	return

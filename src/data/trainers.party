@@ -16683,17 +16683,42 @@ Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Smart Switching / Ace Pokemon / Omniscient
 Mugshot: Pink
 
-Courier (Delibird) (F) @ Orange Mail
+Foxy (Eevee Starter) (F) @ Eevium Z
 Level: 100
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
-Ability: Dauntless Shield
-Nature: Calm
-Mail: 0x26bf 0x26bf 0x26bf 0x2786 0x2786 0x27be 0x2c10 0x2c21 0x26e2
-- Mail Script
-- Explosion
-// Spikes, Spikes, Spikes, Toxic Spikes, Toxic Spikes, Stealth Rock, Light Screen, Reflect, Baton Pass
-// Kyouko's Courier (Delibird) sets up entry hazards and then baton passes immediately to a teammate.  It's not very useful after the first turn of the game, so it just explodes.
+Ability: Simple
+Nature: Careful
+Eager: Yes
+- Last Resort
+- No Retreat
+- Headbutt
+- Baton Pass
+
+Sparky (Pikachu Starter) (F) @ Evio
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Ability: Electric Surge
+Nature: Naughty
+Dynamax Level: 10
+Gigantamax: Yes
+- Buzzy Buzz
+- Zippy Zap
+- Splishy Splash
+- Floaty Fall
+
+Squishy (Audino Mega) (F) @ Leftovers
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 0 Spe
+Ability: Pixilate
+Nature: Sassy
+Tera Type: Fairy
+- Verdance
+- Calm Mind
+- Infiniblast
+- Shore Up
 
 Steel Soul (F) @ Leftovers
 Level: 100
@@ -16705,9 +16730,213 @@ Nature: Calm
 - Verdance
 - Body Press
 - Baton Pass
-//Mail: 0x2c10 0x2c21 0x2c3b
-// Light Screen, Reflect, Infiniblast
 // Don't nickname Steel Soul, as this is likely the first time the player is seeing this mon.
+
+Shadow (Marshadow) (F) @ Life Orb
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Ability: Technician
+Nature: Jolly
+- Spectral Thief
+- Shadow Sneak
+- Close Combat
+- Rock Tomb
+
+Nurse (Mimikyu) (F) @ Perfect Sash
+Level: 100
+IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 0 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Ability: Disguise
+Nature: Calm
+- Phoenix Call
+- Revival Blessing
+- No Retreat
+- Baton Pass
+
+=== TRAINER_LILY ===
+Name: LILY
+Class: Little Girl
+Pic: Little Girl 1B
+Gender: Female
+Music: Aqua
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Smart Switching / Ace Pokemon / Omniscient
+Mugshot: Pink
+
+Bun Bun (Lopunny Mega) (F) @ Fightinium Z
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Ability: Scrappy
+Nature: Jolly
+- Attract
+- Close Combat
+- Extreme Speed
+- Super Fang
+
+Good Girl (Sylveon) (F) @ Pixie Plate
+Level: 100
+IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 0 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Ability: Wonder Guard
+Nature: Modest
+- Attract
+- Sparkly Swirl
+- Draining Kiss
+- Baton Pass
+// Mail: 0x2541 0x2541 0x2541 0x2541 0x2541 0x2541 0x26d5 0x26c7 0x260c
+// Tickle, Tickle, Tickle, Tickle, Tickle, Tickle, Attract, Lock-On, Guillotine
+
+Midnight (Umbreon) (F) @ Toxic Orb
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Ability: Poison Heal
+Nature: Sassy
+- Verdance
+- Spiky Shield
+- Knock Off
+- Baton Pass
+
+Princess (Gothorita) (F) @ Evio
+Level: 100
+IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
+EVs: 252 HP / 0 Atk / 252 Def / 252 SpA / 252 SpD / 0 Spe
+Ability: Shadow Tag
+Nature: Sassy
+Tera Type: Steel
+- Charm
+- Captivate
+- Psychic Noise
+- Rest
+
+Queen (Gardevoir Mega) (F) @ Choice Specs
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Ability: Pixilate
+Nature: Rash
+- Boomburst
+- Psystrike
+- Extreme Speed
+- Armor Cannon
+
+Nurse (Chansey) (F) @ Evio
+Level: 100
+IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 0 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Ability: Simple
+Nature: Calm
+- Phoenix Call
+- Revival Blessing
+- No Retreat
+- Baton Pass
+
+=== TRAINER_MILLY ===
+Name: MILLY
+Class: Little Girl
+Pic: Little Girl 2A
+Gender: Female
+Music: Aqua
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Smart Switching / Ace Pokemon / Omniscient
+Mugshot: Pink
+
+Squirt (Blastoise Mega) (F) @ Assault Vest
+Level: 100
+IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 0 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Ability: Hydration
+Nature: Sassy
+- Steam Eruption
+- Thunder
+- Ice Beam
+- Rest
+
+Slick (Ferrothorn) (F) @ Leftovers
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Ability: Rain Dish
+Nature: Relaxed
+- Verdance
+- Iron Defense
+- Sappy Seed
+- Body Press
+
+Drench (Lanturn) (F) @ Orange Mail
+Level: 100
+IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 0 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Ability: Swift Swim
+Nature: Timid
+Mail: 0x256c 0x25e7 0x25c3 0x25c3 0x25c3 0x25c3 0x25c3 0x25c3 0x2457
+- Mail Script
+- Thunder
+- Steam Eruption
+- Ice Beam
+// Feint, Soak, Charge Beam, Charge Beam, Charge Beam, Charge Beam, Charge Beam, Charge Beam, Thunder
+
+Downpour (Urshifu-Rapid-Strike GMax) (F) @ Mystic Water
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Ability: Mold Breaker
+Nature: Timid
+- Surging Strikes
+- Close Combat
+- Jet Punch
+- U-turn
+
+Wet (Kyogre Primal) (F) @ Mystic Water
+Level: 100
+IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 0 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Ability: Water Bubble
+Nature: Modest
+Tera Type: Water
+- Tail Glow
+- Water Spout
+- Steam Eruption
+- Water Shuriken
+
+Nurse (Swampert Mega) (F) @ Firium Z
+Level: 100
+IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 0 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Ability: Sap Sipper
+Nature: Calm
+Eager: Yes
+- Phoenix Call
+- Revival Blessing
+- No Retreat
+- Baton Pass
+
+=== TRAINER_NATALIE ===
+Name: NATALIE
+Class: Little Girl
+Pic: Little Girl 1A
+Gender: Female
+Music: Aqua
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Smart Switching / Ace Pokemon / Omniscient
+Mugshot: Pink
+
+Courier (Delibird) (F) @ Orange Mail
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Ability: Dauntless Shield
+Nature: Calm
+Mail: 0x26bf 0x26bf 0x26bf 0x2786 0x2786 0x27be 0x2c10 0x2c21 0x26e2
+- Mail Script
+- Explosion
+// Spikes, Spikes, Spikes, Toxic Spikes, Toxic Spikes, Stealth Rock, Light Screen, Reflect, Baton Pass
+// Natalie's Courier (Delibird) sets up entry hazards and then baton passes immediately to a teammate.  It's not very useful after the first turn of the game, so it just explodes.
 
 Amphy (Ampharos Mega) (F) @ Red Card
 Level: 100
@@ -16749,189 +16978,11 @@ IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 0 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
 Ability: Simple
 Nature: Calm
+Eager: Yes
 - Phoenix Call
 - Revival Blessing
 - No Retreat
 - Baton Pass
-
-=== TRAINER_LILY ===
-Name: LILY
-Class: Little Girl
-Pic: Little Girl 1B
-Gender: Female
-Music: Aqua
-Items: Full Restore / Full Restore / Full Restore
-Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Smart Switching / Ace Pokemon / Omniscient
-Mugshot: Pink
-
-Bun Bun (Lopunny Mega) (F) @ Sitrus Berry
-Level: 100
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
-Ability: Scrappy
-Nature: Jolly
-- Attract
-- Extreme Speed
-- Super Fang
-- Seismic Toss
-
-Good Girl (Sylveon) (F) @ Orange Mail
-Level: 100
-IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 0 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
-Ability: Wonder Guard
-Nature: Modest
-Mail: 0x2541 0x2541 0x2541 0x2541 0x2541 0x2541 0x26d5 0x26c7 0x260c
-- Mail Script
-- Attract
-- Sparkly Swirl
-- Baton Pass
-// Tickle, Tickle, Tickle, Tickle, Tickle, Tickle, Attract, Lock-On, Guillotine
-
-Midnight (Umbreon) (F) @ Toxic Orb
-Level: 100
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
-Ability: Poison Heal
-Nature: Sassy
-- Verdance
-- Spiky Shield
-- Knock Off
-- Baton Pass
-
-Princess (Gothorita) (F) @ Evio
-Level: 100
-IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
-EVs: 252 HP / 0 Atk / 252 Def / 252 SpA / 252 SpD / 0 Spe
-Ability: Shadow Tag
-Nature: Sassy
-Tera Type: Steel
-- Charm
-- Captivate
-- Psychic Noise
-- Rest
-
-Queen (Gardevoir Mega) (F) @ Choice Specs
-Level: 100
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
-Ability: Pixilate
-Nature: Rash
-- Boomburst
-- Psystrike
-- Extreme Speed
-- Armor Cannon
-
-Nurse (Eternatus Eternamax) (F) @ Firium Z
-Level: 100
-IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 0 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
-Ability: Simple
-Nature: Calm
-- Phoenix Call
-- Revival Blessing
-- No Retreat
-- Baton Pass
-
-=== TRAINER_MILLY ===
-Name: MILLY
-Class: Little Girl
-Pic: Little Girl 2A
-Gender: Female
-Music: Aqua
-Items: Full Restore / Full Restore / Full Restore
-Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Smart Switching / Ace Pokemon / Omniscient
-Mugshot: Pink
-
-Squirt (Blastoise Mega) (F) @ Assault Vest
-Level: 100
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
-EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 0 Spe
-Ability: Regenerator
-Nature: Sassy
-- Steam Eruption
-- Thunder
-- Ice Beam
-- Flip Turn
-
-Slick (Ferrothorn) (F) @ Leftovers
-Level: 100
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
-Ability: Rain Dish
-Nature: Relaxed
-- Verdance
-- Iron Defense
-- Anchor Shot
-- Body Press
-
-Drench (Lanturn) (F) @ Orange Mail
-Level: 100
-IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 0 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
-Ability: Swift Swim
-Nature: Timid
-Mail: 0x256c 0x25e7 0x25c3 0x25c3 0x25c3 0x25c3 0x25c3 0x25c3 0x2457
-- Mail Script
-- Thunder
-- Steam Eruption
-- Ice Beam
-// Feint, Soak, Charge Beam, Charge Beam, Charge Beam, Charge Beam, Charge Beam, Charge Beam, Thunder
-
-Downpour (Urshifu-Rapid-Strike GMax) (F) @ Mystic Water
-Level: 100
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
-Ability: Mold Breaker
-Nature: Timid
-- Surging Strikes
-- Close Combat
-- Jet Punch
-- U-turn
-
-Wet (Kyogre Primal) (F) @ Mystic Water
-Level: 100
-IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 0 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
-Ability: Water Bubble
-Nature: Modest
-Tera Type: Water
-- Tail Glow
-- Water Spout
-- Steam Eruption
-- Water Shuriken
-
-Nurse (Eternatus Eternamax) (F) @ Firium Z
-Level: 100
-IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 0 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
-Ability: Simple
-Nature: Calm
-- Phoenix Call
-- Revival Blessing
-- No Retreat
-- Baton Pass
-
-=== TRAINER_NATALIE ===
-Name: NATALIE
-Class: Little Girl
-Pic: Little Girl 1A
-Gender: Female
-Music: Aqua
-Items: Full Restore / Full Restore / Full Restore
-Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Smart Switching / Ace Pokemon / Omniscient
-Mugshot: Pink
-
-Test (Rattata) (F) @ Eviolite
-Level: 100
-IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-Ability: Dauntless Shield
-Nature: Impish
-- Tackle
 
 === TRAINER_OLIVIA ===
 Name: OLIVIA

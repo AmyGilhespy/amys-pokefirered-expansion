@@ -299,7 +299,11 @@ static bool32 ShouldSwitchIfHasBadOdds(u32 battler)
 
     // Check if mon gets one shot
     if (maxDamageTaken > gBattleMons[battler].hp
-        && !(gItemsInfo[gBattleMons[battler].item].holdEffect == HOLD_EFFECT_FOCUS_SASH || (!IsMoldBreakerTypeAbility(opposingBattler, gAiLogicData->abilities[opposingBattler]) && B_STURDY >= GEN_5 && aiAbility == ABILITY_STURDY)))
+        && !(
+            gItemsInfo[gBattleMons[battler].item].holdEffect == HOLD_EFFECT_FOCUS_SASH
+            || (!IsMoldBreakerTypeAbility(opposingBattler, gAiLogicData->abilities[opposingBattler]) && B_STURDY >= GEN_5 && aiAbility == ABILITY_STURDY)
+            || gItemsInfo[gBattleMons[battler].item].holdEffect == HOLD_EFFECT_PERFECT_SASH
+            ))
     {
         getsOneShot = TRUE;
     }
@@ -1854,6 +1858,9 @@ static u32 GetSwitchinHitsToKO(s32 damageTaken, u32 battler)
 
         // One shot prevention effects
         if (damageTaken >= maxHP && startingHP == maxHP && (heldItemEffect == HOLD_EFFECT_FOCUS_SASH || (!opponentCanBreakMold && B_STURDY >= GEN_5 && ability == ABILITY_STURDY)) && hitsToKO < 1)
+            currentHP = 1;
+
+        if (damageTaken >= currentHP && heldItemEffect == HOLD_EFFECT_PERFECT_SASH)
             currentHP = 1;
 
         // If mon is still alive, apply weather impact first, as it might KO the mon before it can heal with its item (order is weather -> item -> status)
