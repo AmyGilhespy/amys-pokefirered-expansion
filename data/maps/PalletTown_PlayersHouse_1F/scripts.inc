@@ -2,16 +2,9 @@ PalletTown_PlayersHouse_1F_MapScripts::
 	.byte 0
 
 PalletTown_PlayersHouse_1F_EventScript_Mom::
-	trainerbattle_single TRAINER_MOM, PalletTown_PlayersHouse_Text_MomIntro, PalletTown_PlayersHouse_Text_MomDefeat, PalletTown_PlayersHouse_EventScript_DefeatedMom, NO_MUSIC
-	end
-
-PalletTown_PlayersHouse_EventScript_DefeatedMom::
-	end
-
-PalletTown_PlayersHouse_1F_EventScript_MomNoDebug::
 	lock
 	faceplayer
-	goto_if_set FLAG_BEAT_RIVAL_IN_OAKS_LAB, PalletTown_PlayersHouse_1F_EventScript_MomHeal
+	goto_if_set FLAG_BEAT_RIVAL_IN_OAKS_LAB, PalletTown_PlayersHouse_1F_EventScript_MomHealOrPracticeBattle
 	checkplayergender
 	call_if_eq VAR_RESULT, MALE, PalletTown_PlayersHouse_1F_EventScript_MomOakLookingForYouMale
 	call_if_eq VAR_RESULT, FEMALE, PalletTown_PlayersHouse_1F_EventScript_MomOakLookingForYouFemale
@@ -21,6 +14,7 @@ PalletTown_PlayersHouse_1F_EventScript_MomNoDebug::
 	release
 	end
 
+
 PalletTown_PlayersHouse_1F_EventScript_MomOakLookingForYouMale::
 	msgbox PalletTown_PlayersHouse_1F_Text_AllBoysLeaveOakLookingForYou
 	return
@@ -29,11 +23,28 @@ PalletTown_PlayersHouse_1F_EventScript_MomOakLookingForYouFemale::
 	msgbox PalletTown_PlayersHouse_1F_Text_AllGirlsLeaveOakLookingForYou
 	return
 
+PalletTown_PlayersHouse_1F_EventScript_MomHealOrPracticeBattle::
+	msgbox PalletTown_PlayersHouse_1F_Text_MomAskHeal, MSGBOX_YESNO
+	goto_if_ne VAR_RESULT, NO, PalletTown_PlayersHouse_1F_EventScript_MomHeal
+	msgbox PalletTown_PlayersHouse_1F_Text_MomAskPracticeBattle, MSGBOX_YESNO
+	goto_if_ne VAR_RESULT, NO, PalletTown_PlayersHouse_1F_EventScript_MomPracticeBattle
+	msgbox PalletTown_PlayersHouse_1F_Text_MomTakeCare
+	release
+	end
+
 PalletTown_PlayersHouse_1F_EventScript_MomHeal::
 	msgbox PalletTown_PlayersHouse_1F_Text_YouShouldTakeQuickRest
 	closemessage
 	call EventScript_OutOfCenterPartyHeal
 	msgbox PalletTown_PlayersHouse_1F_Text_LookingGreatTakeCare
+	release
+	end
+
+PalletTown_PlayersHouse_1F_EventScript_MomPracticeBattle::
+	cleartrainerflag TRAINER_MOM
+	trainerbattle_single TRAINER_MOM, PalletTown_PlayersHouse_Text_MomPracticeBattleIntro, PalletTown_PlayersHouse_Text_MomPracticeBattleDefeat, PalletTown_PlayersHouse_EventScript_DefeatedMomPracticeBattle, NO_MUSIC
+PalletTown_PlayersHouse_EventScript_DefeatedMomPracticeBattle::
+	msgbox PalletTown_PlayersHouse_Text_MomPracticeBattlePostBattle
 	release
 	end
 

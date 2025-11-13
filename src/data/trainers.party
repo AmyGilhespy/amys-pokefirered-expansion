@@ -15946,22 +15946,27 @@ IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 === TRAINER_MOM ===
 Name: MOM
-Class: Champion
+Class: Lady
 Pic: RS Aroma Lady
 Gender: Female
-Music: Magma
-Items: Full Restore / Full Restore / Full Restore
-Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Smart Switching / Ace Pokemon / Omniscient / Prefer Highest Damage Move
+Music: Female
+Double Battle: Yes
 
-Mew @ Orange Mail
-Level: 100
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
-Ability: Synchronize
+Goldeen (Magikarp) (F)
+Level: 2
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Ability: Swift Swim
 Nature: Serious
-Mail: 0x244a 0x2c0f 0x244a 0x2c0f
-- Mail Script
+- Splash
+
+Weedle (Caterpie) (M)
+Level: 2
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Ability: Run Away
+Nature: Serious
+- String Shot
 
 === TRAINER_ANNA ===
 Name: ANNA
