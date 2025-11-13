@@ -71,6 +71,8 @@
 #include "data/battle_move_effects.h"
 // #include "follower_npc.h"
 #include "load_save.h"
+#include "field_weather.h"
+#include "constants/weather.h"
 #include "gba/isagbprint.h"
 
 // table to avoid ugly powing on gba (courtesy of doesnt)
@@ -17814,14 +17816,21 @@ void BS_TryToClearPrimalWeather(void)
     NATIVE_ARGS();
     bool32 shouldNotClear = FALSE;
 
-    for (u32 i = 0; i < gBattlersCount; i++)
+    if (gBattleWeather & B_WEATHER_RAIN_PRIMAL && GetCurrentWeather() == WEATHER_DOWNPOUR)
     {
-        enum Ability ability = GetBattlerAbility(i);
-        if (((ability == ABILITY_DESOLATE_LAND && gBattleWeather & B_WEATHER_SUN_PRIMAL)
-             || (ability == ABILITY_PRIMORDIAL_SEA && gBattleWeather & B_WEATHER_RAIN_PRIMAL)
-             || (ability == ABILITY_DELTA_STREAM && gBattleWeather & B_WEATHER_STRONG_WINDS))
-            && IsBattlerAlive(i))
-            shouldNotClear = TRUE;
+        shouldNotClear = TRUE;
+    }
+    else
+    {
+        for (u32 i = 0; i < gBattlersCount; i++)
+        {
+            enum Ability ability = GetBattlerAbility(i);
+            if (((ability == ABILITY_DESOLATE_LAND && gBattleWeather & B_WEATHER_SUN_PRIMAL)
+                 || (ability == ABILITY_PRIMORDIAL_SEA && gBattleWeather & B_WEATHER_RAIN_PRIMAL)
+                 || (ability == ABILITY_DELTA_STREAM && gBattleWeather & B_WEATHER_STRONG_WINDS))
+                && IsBattlerAlive(i))
+                shouldNotClear = TRUE;
+        }
     }
     if (gBattleWeather & B_WEATHER_SUN_PRIMAL && !shouldNotClear)
     {
