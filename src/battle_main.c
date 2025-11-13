@@ -2109,8 +2109,8 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
                     break;
                 default:
                     levelDelta = 0;
-                    levelMul = 3;
-                    levelDiv = 2;
+                    levelMul = 4;
+                    levelDiv = 3;
                     break;
                 }
                 givePreassignedMoves = FALSE;

@@ -14676,6 +14676,25 @@ const struct Item gItemsInfo[] =
         .iconPic = gItemIcon_AbilityCapsule,
         .iconPalette = gItemIconPalette_AbilityCapsule,
     },
+
+    [ITEM_EVIO] =
+    {
+        .name = ITEM_NAME("Evio"),
+        .price = 250000,
+        .holdEffect = HOLD_EFFECT_EVIO,
+        .holdEffectParam = 50,
+        .description = COMPOUND_STRING(
+            "Raises the Def and "
+            "Sp. Def of\nPokémon "
+            "that can evolve."),
+        .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_HELD_ITEM,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 120,
+        .iconPic = gItemIcon_Eviolite,
+        .iconPalette = gItemIconPalette_Eviolite,
+    },
 };
 
 #undef ITEM_NAME

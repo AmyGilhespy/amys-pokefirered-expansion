@@ -4240,12 +4240,14 @@ static void UpdateCurrentMonBufferFromPartyOrBox(struct Pokemon * mon)
 
 static u8 PokeSum_CanForgetSelectedMove(void)
 {
+    #if !(P_CAN_FORGET_HIDDEN_MOVE)
     u16 move;
 
     move = GetMonMoveBySlotId(&sMonSummaryScreen->currentMon, sMoveSelectionCursorPos);
 
     if (IsMoveHM(move) == TRUE && sMonSummaryScreen->mode != PSS_MODE_FORGET_MOVE)
         return FALSE;
+    #endif
 
     return TRUE;
 }

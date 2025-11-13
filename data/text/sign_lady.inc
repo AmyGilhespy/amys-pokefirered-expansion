@@ -28,3 +28,9 @@ PalletTown_Text_LookCopiedTrainerTipsSign::
 PalletTown_Text_PressStartToOpenMenuCopy::
 	.string "TRAINER TIPS!\p"
 	.string "Press START to open the MENU!$"
+
+PalletTown_Text_FuckYou::
+	.string "Oh, you already knew that, you\n"
+	.string "say?\p"
+	.string "Well fuck you!$"
+

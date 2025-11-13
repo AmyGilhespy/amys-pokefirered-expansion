@@ -15960,13 +15960,13 @@ Ability: Swift Swim
 Nature: Serious
 - Splash
 
-Weedle (Caterpie) (M)
+Cascoon (Metapod) (M)
 Level: 2
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-Ability: Run Away
+Ability: Shed Skin
 Nature: Serious
-- String Shot
+- Harden
 
 === TRAINER_ANNA ===
 Name: ANNA
@@ -16580,7 +16580,7 @@ EVs: 252 HP / 0 Atk / 4 Def / 0 SpA / 252 SpD / 0 Spe
 Ability: Shadow Tag
 Nature: Sassy
 - Charm
-- Confide
+- Captivate
 - Taunt
 - Rest
 
@@ -16799,6 +16799,18 @@ Nature: Sassy
 - Spiky Shield
 - Knock Off
 - Baton Pass
+
+Princess (Gothorita) (F) @ Evio
+Level: 100
+IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
+EVs: 252 HP / 0 Atk / 252 Def / 252 SpA / 252 SpD / 0 Spe
+Ability: Shadow Tag
+Nature: Sassy
+Tera Type: Steel
+- Charm
+- Captivate
+- Psychic Noise
+- Rest
 
 Queen (Gardevoir Mega) (F) @ Choice Specs
 Level: 100

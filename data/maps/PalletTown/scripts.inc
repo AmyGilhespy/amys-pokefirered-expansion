@@ -439,6 +439,7 @@ PalletTown_EventScript_SignLadyShowSign::
 	signmsg
 	msgbox PalletTown_Text_PressStartToOpenMenuCopy
 	normalmsg
+	msgbox PalletTown_Text_FuckYou
 	return
 
 PalletTown_EventScript_SignLadyStartShowSign::

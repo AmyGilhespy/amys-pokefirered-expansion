@@ -24,7 +24,7 @@ PalletTown_ProfessorOaksLab_Text_RivalReceivedMonFromOak::
 
 PalletTown_ProfessorOaksLab_Text_RivalMyMonLooksTougher::
     .string "{RIVAL}: My POKéMON looks a lot\n"
-    .string "tougher than yours.$"
+    .string "sexier than yours.$"
 
 PalletTown_ProfessorOaksLab_Text_RivalLetsCheckOutMons::
     .string "{RIVAL}: Wait, {PLAYER}!\n"
@@ -81,7 +81,7 @@ PalletTown_ProfessorOaksLab_Text_OakThreeMonsChooseOne::
     .string "When I was young, I was a serious\n"
     .string "POKéMON TRAINER.\p"
     .string "But now, in my old age, I have\n"
-    .string "only these three left.\p"
+    .string "only these three left, honest!\p"
     .string "You can have one.\n"
     .string "Go on, choose!$"
 
@@ -150,7 +150,7 @@ PalletTown_ProfessorOaksLab_Text_DeliveredOaksParcel::
 PalletTown_ProfessorOaksLab_Text_OakCustomBallIOrdered::
     .string "Ah! \n"
     .string "It's the custom POKé BALL!\p"
-    .string "I had it on order.\n"
+    .string "I had it on order from KURT.\n"
     .string "Thank you!$"
 
 PalletTown_ProfessorOaksLab_Text_OakHaveRequestForYouTwo::

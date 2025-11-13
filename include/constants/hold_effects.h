@@ -142,6 +142,8 @@ enum ItemHoldEffect
     HOLD_EFFECT_OGERPON_MASK,
     // Gen2 hold effect
     HOLD_EFFECT_BERSERK_GENE,
+    // Amy custom hold effects
+    HOLD_EFFECT_EVIO,
     HOLD_EFFECT_COUNT
 };
 
