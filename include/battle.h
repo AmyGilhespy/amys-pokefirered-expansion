@@ -1061,6 +1061,7 @@ extern u16 gChosenMove;
 extern u16 gCalledMove;
 extern u8 gMailScriptActive;
 extern u8 gMailScriptIndex;
+extern u16 gTrainerId;
 extern s32 gBideDmg[MAX_BATTLERS_COUNT];
 extern u16 gLastUsedItem;
 extern enum Ability gLastUsedAbility;

@@ -4686,7 +4686,7 @@ BattleScript_FaintedMonTryChoose:
 	setbyte sSHIFT_SWITCHED, 1
 BattleScript_FaintedMonSendOutNew:
 	drawpartystatussummary BS_FAINTED
-	getswitchedmondata BS_FAINTED @ original crash was here
+	getswitchedmondata BS_FAINTED
 	switchindataupdate BS_FAINTED
 	hpthresholds BS_FAINTED
 	trytoclearprimalweather

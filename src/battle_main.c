@@ -175,6 +175,7 @@ EWRAM_DATA u16 gChosenMove = 0;
 EWRAM_DATA u16 gCalledMove = 0;
 EWRAM_DATA bool8 gMailScriptActive = FALSE;
 EWRAM_DATA u8 gMailScriptIndex = 0;
+EWRAM_DATA u16 gTrainerId = 0;
 EWRAM_DATA s32 gBideDmg[MAX_BATTLERS_COUNT] = {0};
 EWRAM_DATA u16 gLastUsedItem = 0;
 EWRAM_DATA enum Ability gLastUsedAbility = 0;
@@ -1986,6 +1987,9 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
     u16 avoid1 = SPECIES_NONE, avoid2 = SPECIES_NONE;
     u8 monsCount;
     bool8 allowOverlevel = TRUE;
+
+    gTrainerId = trainerId;
+
     if (battleTypeFlags & BATTLE_TYPE_TRAINER && !(battleTypeFlags & (BATTLE_TYPE_FRONTIER
                                                                         | BATTLE_TYPE_EREADER_TRAINER
                                                                         | BATTLE_TYPE_TRAINER_HILL)))
@@ -2091,6 +2095,7 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
             else if (trainer->trainerClass == TRAINER_CLASS_ROM_HACKER) {
                 if (trainerId == TRAINER_AMY)
                 {
+                    gBattleTypeFlags |= BATTLE_TYPE_MULTI_PHASE;
                     return CreateNPCTrainerPartyFromTrainer(party, GetTrainerStructFromId(TRAINER_AMY_1), firstTrainer, gBattleTypeFlags, TRAINER_AMY_1);
                 }
             }

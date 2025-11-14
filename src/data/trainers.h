@@ -43939,7 +43939,7 @@ F_TRAINER_FEMALE |
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 17094
-                MOVE_REST,
+                MOVE_SNORE,
             },
             },
             {

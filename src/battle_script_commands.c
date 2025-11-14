@@ -4972,6 +4972,13 @@ bool32 NoAliveMonsForEitherParty(void)
     return (NoAliveMonsForPlayer() || NoAliveMonsForOpponent());
 }
 
+static void LoadNextPhaseInMultiPhaseBattle(u16 trainerId)
+{
+    bool32 firstTrainer = FALSE; // Seems to just call ZeroEnemyPartyMons() if TRUE
+    // Returns party size, which we ignore.
+    CreateNPCTrainerPartyFromTrainer(&gEnemyParty[0], GetTrainerStructFromId(trainerId), firstTrainer, gBattleTypeFlags, trainerId);
+}
+
 // For battles that aren't BATTLE_TYPE_LINK or BATTLE_TYPE_RECORDED_LINK or trainer battles, the only thing this
 // command does is check whether the player has won/lost by totaling each team's HP. It then
 // sets gBattleOutcome accordingly, if necessary.
@@ -4986,7 +4993,34 @@ static void Cmd_checkteamslost(void)
         gBattleOutcome |= B_OUTCOME_LOST;
 
     if (NoAliveMonsForOpponent())
-        gBattleOutcome |= B_OUTCOME_WON;
+    {
+        if (!(gBattleTypeFlags & BATTLE_TYPE_MULTI_PHASE))
+        {
+            gBattleOutcome |= B_OUTCOME_WON;
+        }
+        else
+        {
+            switch (gTrainerId)
+            {
+            case TRAINER_AMY_1:
+                LoadNextPhaseInMultiPhaseBattle(TRAINER_AMY_2);
+                break;
+            case TRAINER_AMY_2:
+                LoadNextPhaseInMultiPhaseBattle(TRAINER_AMY_3);
+                break;
+            case TRAINER_AMY_3:
+                LoadNextPhaseInMultiPhaseBattle(TRAINER_AMY_4);
+                break;
+            case TRAINER_AMY_4:
+                gBattleOutcome |= B_OUTCOME_WON;
+                break;
+            default:
+                MgbaPrintf(MGBA_LOG_ERROR, "No next phase defined for multiphase trainer ID %d.", gTrainerId);
+                gBattleOutcome |= B_OUTCOME_WON;
+                break;
+            }
+        }
+    }
 
     // Fair switching - everyone has to switch in most at the same time, without knowing which pokemon the other trainer selected.
     // In vanilla Emerald this was only used for link battles, in expansion it's also used for regular trainer battles.
