@@ -1416,7 +1416,7 @@ static bool32 JumpIfMoveAffectedByProtect(u32 move, u32 battler, u32 shouldJump,
 
 static void AccuracyCheck(bool32 recalcDragonDarts, const u8 *nextInstr, const u8 *failInstr, u16 move)
 {
-    if (IS_FRLG && 
+    if (IS_FRLG &&
         ((gBattleTypeFlags & BATTLE_TYPE_FIRST_BATTLE
         && (!BtlCtrl_OakOldMan_TestState2Flag(1) || !BtlCtrl_OakOldMan_TestState2Flag(2))
         && gMovesInfo[move].power != 0
@@ -11164,7 +11164,24 @@ static void Cmd_transformdataexecution(void)
     gBattlescriptCurrInstr = cmd->nextInstr;
     if (gBattleMons[gBattlerTarget].volatiles.transformed
         || gBattleStruct->illusion[gBattlerTarget].state == ILLUSION_ON
-        || IsSemiInvulnerable(gBattlerTarget, EXCLUDE_COMMANDER))
+        || IsSemiInvulnerable(gBattlerTarget, EXCLUDE_COMMANDER)
+        || gBattleMons[gBattlerTarget].species == SPECIES_BROCK
+        || gBattleMons[gBattlerTarget].species == SPECIES_MISTY
+        || gBattleMons[gBattlerTarget].species == SPECIES_ERIKA
+        || gBattleMons[gBattlerTarget].species == SPECIES_SABRINA
+        || gBattleMons[gBattlerTarget].species == SPECIES_BLAINE
+        || gBattleMons[gBattlerTarget].species == SPECIES_LORELEI
+        || gBattleMons[gBattlerTarget].species == SPECIES_BRUNO
+        || gBattleMons[gBattlerTarget].species == SPECIES_AGATHA
+        || gBattleMons[gBattlerTarget].species == SPECIES_LANCE
+        || gBattleMons[gBattlerTarget].species == SPECIES_MOM
+        || gBattleMons[gBattlerTarget].species == SPECIES_KYOUKO
+        || gBattleMons[gBattlerTarget].species == SPECIES_LILITH
+        || gBattleMons[gBattlerTarget].species == SPECIES_MOLLY
+        || gBattleMons[gBattlerTarget].species == SPECIES_NATALIE
+        || gBattleMons[gBattlerTarget].species == SPECIES_OLIVIA
+        || gBattleMons[gBattlerTarget].species == SPECIES_AMY
+        )
     {
         gBattleStruct->moveResultFlags[gBattlerTarget] |= MOVE_RESULT_FAILED;
         gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_TRANSFORM_FAILED;
