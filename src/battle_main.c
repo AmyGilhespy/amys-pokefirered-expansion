@@ -1985,6 +1985,7 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
     s32 i;
     u16 avoid1 = SPECIES_NONE, avoid2 = SPECIES_NONE;
     u8 monsCount;
+    bool8 allowOverlevel = TRUE;
     if (battleTypeFlags & BATTLE_TYPE_TRAINER && !(battleTypeFlags & (BATTLE_TYPE_FRONTIER
                                                                         | BATTLE_TYPE_EREADER_TRAINER
                                                                         | BATTLE_TYPE_TRAINER_HILL)))
@@ -2087,9 +2088,15 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
             else if (trainer->trainerClass == TRAINER_CLASS_BOSS) { }
             else if (trainer->trainerClass == TRAINER_CLASS_LITTLE_GIRL) { }
             else if (trainer->trainerClass == TRAINER_CLASS_ULTIMATE_CUTIE) { }
-            else if (trainer->trainerClass == TRAINER_CLASS_ROM_HACKER) { }
+            else if (trainer->trainerClass == TRAINER_CLASS_ROM_HACKER) {
+                if (trainerId == TRAINER_AMY)
+                {
+                    return CreateNPCTrainerPartyFromTrainer(party, GetTrainerStructFromId(TRAINER_AMY_1), firstTrainer, gBattleTypeFlags, TRAINER_AMY_1);
+                }
+            }
             else
             {
+                allowOverlevel = FALSE;
                 switch (trainer->trainerClass)
                 {
                 case TRAINER_CLASS_RIVAL_EARLY:
@@ -2143,6 +2150,10 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
             else if (monLevel > MAX_LEVEL)
             {
                 monLevel = MAX_LEVEL;
+            }
+            if (!allowOverlevel && monLevel > MAX_LEVEL_STANDARD)
+            {
+                monLevel = MAX_LEVEL_STANDARD;
             }
             CreateMon(&party[i], randomSpecies, monLevel, 0, TRUE, personalityValue, otIdType, fixedOtId);
 

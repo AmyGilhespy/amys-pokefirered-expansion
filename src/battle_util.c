@@ -1592,6 +1592,16 @@ u32 TrySetCantSelectMoveBattleScript(u32 battler)
         limitations++;
         // }
     }
+    else if (holdEffect == HOLD_EFFECT_BINDING_ROPE)
+    {
+        if ((GetActiveGimmick(battler) == GIMMICK_DYNAMAX))
+            gCurrentMove = MOVE_MAX_GUARD;
+        else
+            gCurrentMove = move;
+        gLastUsedItem = gBattleMons[battler].item;
+        gSelectionBattleScripts[battler] = BattleScript_SelectingNotAllowedMoveBindingRope;
+        limitations++;
+    }
     if (DYNAMAX_BYPASS_CHECK && (GetBattlerAbility(battler) == ABILITY_GORILLA_TACTICS) && *choicedMove != MOVE_NONE
               && *choicedMove != MOVE_UNAVAILABLE && *choicedMove != move)
     {
@@ -1681,7 +1691,7 @@ u32 CheckMoveLimitations(u32 battler, u8 unusableMoves, u16 check)
         else if (check & MOVE_LIMITATION_CHOICE_ITEM && IsHoldEffectChoice(holdEffect) && *choicedMove != MOVE_NONE && *choicedMove != MOVE_UNAVAILABLE && *choicedMove != move)
             unusableMoves |= 1u << i;
         // Assault Vest
-        else if (check & MOVE_LIMITATION_ASSAULT_VEST && holdEffect == HOLD_EFFECT_ASSAULT_VEST && IsBattleMoveStatus(move) && moveEffect != EFFECT_ME_FIRST)
+        else if (check & MOVE_LIMITATION_ASSAULT_VEST && ((holdEffect == HOLD_EFFECT_ASSAULT_VEST && IsBattleMoveStatus(move) && moveEffect != EFFECT_ME_FIRST) || holdEffect == HOLD_EFFECT_BINDING_ROPE))
             unusableMoves |= 1u << i;
         // Gravity
         else if (check & MOVE_LIMITATION_GRAVITY && IsGravityPreventingMove(move))

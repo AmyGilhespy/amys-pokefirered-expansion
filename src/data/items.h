@@ -14713,6 +14713,23 @@ const struct Item gItemsInfo[] =
         .iconPic = gItemIcon_FocusSash,
         .iconPalette = gItemIconPalette_FocusSash,
     },
+
+    [ITEM_BINDING_ROPE] =
+    {
+        .name = ITEM_NAME("Binding Rope"),
+        .pluralName = ITEM_PLURAL_NAME("Binding Ropes"),
+        .price = 50,
+        .holdEffect = HOLD_EFFECT_BINDING_ROPE,
+        .description = COMPOUND_STRING(
+            "Holder cannot attack,\nexcept STRUGGLE."),
+        .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_HELD_ITEM,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 10,
+        .iconPic = gItemIcon_FocusBand,
+        .iconPalette = gItemIconPalette_FocusBand,
+    },
 };
 
 #undef ITEM_NAME

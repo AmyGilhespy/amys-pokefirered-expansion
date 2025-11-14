@@ -8954,19 +8954,6 @@ Nature: Adamant
 - Extreme Speed
 - V-create
 
-Pikachu @ Light Ball
-Level: 60
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 0 HP / 252 Atk / 0 Def / 0 SpA / 4 SpD / 252 Spe
-Ability: Galvanize
-Nature: Adamant
-Dynamax Level: 10
-Gigantamax: Yes
-- Volt Tackle
-- Extreme Speed
-- Knock Off
-- Play Rough
-
 === TRAINER_CHAMPION_REMATCH_MOM ===
 Name: MOM
 Class: Champion
@@ -16684,7 +16671,7 @@ AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / T
 Mugshot: Pink
 
 Steel Soul (F) @ Orange Mail
-Level: 100
+Level: 101
 IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 0 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
 Ability: Scrappy
@@ -16696,7 +16683,7 @@ Nature: Calm
 // Don't nickname Steel Soul, as this is likely the first time the player is seeing this mon.
 
 Good Girl (Sylveon) (F) @ Pixie Plate
-Level: 100
+Level: 101
 IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 0 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
 Ability: Wonder Guard
@@ -16707,7 +16694,7 @@ Nature: Modest
 - Baton Pass
 
 Midnight (Umbreon) (F) @ Toxic Orb
-Level: 100
+Level: 101
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
 Ability: Poison Heal
@@ -16718,7 +16705,7 @@ Nature: Sassy
 - Baton Pass
 
 Squishy (Audino Mega) (F) @ Orange Mail
-Level: 100
+Level: 101
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
 EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 0 Spe
 Ability: Pixilate
@@ -16730,7 +16717,7 @@ Tera Type: Fairy
 - Shore Up
 
 Shadow (Marshadow) (F) @ Bead Mail
-Level: 100
+Level: 101
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
 Ability: Technician
@@ -16741,7 +16728,7 @@ Nature: Jolly
 - Rock Tomb
 
 Nurse (Mimikyu) (F) @ Perfect Sash
-Level: 100
+Level: 101
 IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 0 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
 Ability: Disguise
@@ -16763,7 +16750,7 @@ AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / T
 Mugshot: Pink
 
 Foxy (Eevee) (F) @ Eevium Z
-Level: 100
+Level: 101
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
 Ability: Simple
@@ -16776,7 +16763,7 @@ Eager: Yes
 // It can't be Eevee Starter because Eevee Starter can't use Extreme Evoboost for some reason.
 
 Sparky (Pikachu Starter) (F) @ Evio
-Level: 100
+Level: 101
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
 Ability: Electric Surge
@@ -16789,7 +16776,7 @@ Gigantamax: Yes
 - Floaty Fall
 
 Sliggily (Sliggoo-Hisui) (F) @ Fab Mail
-Level: 100
+Level: 101
 IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 0 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
 Ability: Dauntless Shield
@@ -16800,7 +16787,7 @@ Nature: Modest
 - Railgun
 
 Ballerina (Kirlia) (F) @ Fab Mail
-Level: 100
+Level: 101
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
 Ability: Pixilate
@@ -16811,7 +16798,7 @@ Nature: Rash
 - Armor Cannon
 
 Princess (Gothorita) (F) @ Fab Mail
-Level: 100
+Level: 101
 IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
 EVs: 252 HP / 0 Atk / 252 Def / 252 SpA / 252 SpD / 0 Spe
 Ability: Shadow Tag
@@ -16823,7 +16810,7 @@ Tera Type: Steel
 - Rest
 
 Nurse (Chansey) (F) @ Fab Mail
-Level: 100
+Level: 101
 IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 0 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
 Ability: Simple
@@ -16845,18 +16832,18 @@ AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / T
 Mugshot: Pink
 
 Squirt (Blastoise Mega) (F) @ Assault Vest
-Level: 100
+Level: 101
 IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 0 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
-Ability: Hydration
-Nature: Sassy
+Ability: Swift Swim
+Nature: Timid
 - Steam Eruption
 - Thunder
+- Hurricane
 - Ice Beam
-- Rest
 
 Slick (Ferrothorn) (F) @ Orange Mail
-Level: 100
+Level: 101
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
 Ability: Rain Dish
@@ -16867,20 +16854,18 @@ Nature: Relaxed
 - Body Press
 
 Drench (Lanturn) (F) @ Orange Mail
-Level: 100
+Level: 101
 IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 0 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
-Ability: Swift Swim
-Nature: Timid
-Mail: 0x256c 0x25e7 0x25c3 0x25c3 0x25c3 0x25c3 0x25c3 0x25c3 0x2457
-- Mail Script
+Ability: Hydration
+Nature: Modest
 - Thunder
 - Steam Eruption
 - Ice Beam
-// Feint, Soak, Charge Beam, Charge Beam, Charge Beam, Charge Beam, Charge Beam, Charge Beam, Thunder
+- Rest
 
 Downpour (Urshifu-Rapid-Strike GMax) (F) @ Mystic Water
-Level: 100
+Level: 101
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
 Ability: Mold Breaker
@@ -16891,7 +16876,7 @@ Nature: Timid
 - U-turn
 
 Wet (Kyogre Primal) (F) @ Mystic Water
-Level: 100
+Level: 101
 IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 0 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
 Ability: Water Bubble
@@ -16903,7 +16888,7 @@ Tera Type: Water
 - Water Shuriken
 
 Nurse (Swampert Mega) (F) @ Firium Z
-Level: 100
+Level: 101
 IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 0 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
 Ability: Sap Sipper
@@ -16926,7 +16911,7 @@ AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / T
 Mugshot: Pink
 
 Courier (Delibird) (F) @ Wood Mail
-Level: 100
+Level: 101
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
 Ability: Dauntless Shield
@@ -16938,7 +16923,7 @@ Mail: 0x26bf 0x26bf 0x26bf 0x2786 0x2786 0x27be 0x2c10 0x2c21 0x26e2
 // Natalie's Courier (Delibird) sets up entry hazards and then baton passes immediately to a teammate.  It's not very useful after the first turn of the game, so it just explodes.
 
 Amphy (Ampharos Mega) (F) @ Red Card
-Level: 100
+Level: 101
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
 Ability: No Guard
@@ -16949,8 +16934,19 @@ Tera Type: Electric
 - Dragon Tail
 - Inferno
 
+O (Kommo-o) (F) @ Binding Rope
+Level: 101
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Ability: Klutz
+Nature: Timid
+- Trick
+- Double Team
+- Dragon Tail
+- Circle Throw
+
 X (Mewtwo Mega X) (F) @ Red Card
-Level: 100
+Level: 101
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
 Ability: Adaptability
@@ -16961,7 +16957,7 @@ Nature: Impish
 - U-turn
 
 Y (Mewtwo Mega Y) (F) @ Red Card
-Level: 100
+Level: 101
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
 Ability: Sheer Force
@@ -16971,8 +16967,8 @@ Nature: Naive
 - Ice Beam
 - Earth Power
 
-Nurse (Eternatus Eternamax) (F) @ Firium Z
-Level: 100
+Nurse (Mew) (F) @ Firium Z
+Level: 101
 IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 0 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
 Ability: Simple
@@ -16995,7 +16991,7 @@ AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / T
 Mugshot: Pink
 
 Hermes (Regieleki) (M) @ Wood Mail
-Level: 100
+Level: 101
 IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 0 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
 Ability: Scrappy
@@ -17006,7 +17002,7 @@ Mail: 0x256c 0x26c7 0x260c 0x26bf 0x26bf 0x26bf 0x2786 0x2786 0x27be
 // Feint, Lock-On, Guillotine, Spikes, Spikes, Spikes, Toxic Spikes, Toxic Spikes, Stealth Rock
 
 Athena (Gardevoir Mega) (F) @ Bead Mail
-Level: 100
+Level: 101
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
 Ability: Pixilate
@@ -17017,7 +17013,7 @@ Nature: Rash
 - Armor Cannon
 
 Hercules (Slaking) (M) @ Bead Mail
-Level: 100
+Level: 101
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
 Ability: Huge Power
@@ -17028,7 +17024,7 @@ Nature: Adamant
 - Precipice Blades
 
 Cerberus (Houndoom Mega) (M) @ Bead Mail
-Level: 100
+Level: 101
 IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 0 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
 Ability: Orichalcum Pulse
@@ -17038,8 +17034,19 @@ Nature: Modest
 - Solar Beam
 - Sunny Day
 
+Nyx (Lunala) (F) @ Shadow Mail
+Level: 101
+IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 0 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Ability: Shadow Tag
+Nature: Calm
+- Calm Mind
+- Moongeist Beam
+- Psystrike
+- Moonblast
+
 Rhea (Eternatus Eternamax) (F) @ Firium Z
-Level: 100
+Level: 101
 IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 0 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
 Ability: Simple
@@ -17050,24 +17057,200 @@ Eager: Yes
 - Dragon Energy
 - Baton Pass
 
+=== TRAINER_AMY_1 ===
+Name: AMY
+Class: ROM Hacker
+Pic: ROM Hacker
+Gender: Female
+Music: Female
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Sequence Switching / Ace Pokemon / Omniscient
+Mugshot: Pink
+
+Brock (M)
+Level: 101
+IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 0 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Ability: Dauntless Shield
+Nature: Lax
+- Harden
+
+Misty (F) @ Wave Mail
+Level: 101
+IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 0 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Ability: Swift Swim
+Nature: Rash
+- Splash
+
+Erika (F)
+Level: 101
+IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 0 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Ability: Comatose
+Nature: Timid
+- Rest
+
+Sabrina (F) @ Twisted Spoon
+Level: 101
+IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 0 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Ability: Trace
+Nature: Modest
+- Telekinesis
+- Psychic
+
+Blaine (M)
+Level: 101
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Ability: Flame Body
+Nature: Bold
+- Attract
+
+=== TRAINER_AMY_2 ===
+Name: AMY
+Class: ROM Hacker
+Pic: ROM Hacker
+Gender: Female
+Music: Female
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Sequence Switching / Ace Pokemon / Omniscient
+Mugshot: Pink
+
+Lorelei (F) @ Icy Rock
+Level: 101
+IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 0 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Ability: Snow Warning
+Nature: Serious
+- Absolute Zero
+- Sheer Cold
+
+Bruno (M) @ Shell Bell
+Level: 1
+IVs: 0 HP / 31 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+EVs: 0 HP / 252 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Ability: Sturdy
+Nature: Brave
+- Endeavor
+- Mach Punch
+
+Agatha (F) @ Shadow Mail
+Level: 101
+IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 0 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Ability: Shadow Tag
+Nature: Mild
+- Hypnosis
+- Nightmare
+- Curse
+
+Lance (M) @ Dragon Fang
+Level: 101
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Ability: Multiscale
+Nature: Adamant
+- Dragon Dance
+- Dragon Darts
+- Dragon Rage
+
+Mom (F)
+Level: 101
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Ability: Delta Stream
+Nature: Naive
+- Dragon Ascent
+- Dragon Dance
+- Extreme Speed
+- V-create
+
+=== TRAINER_AMY_3 ===
+Name: AMY
+Class: ROM Hacker
+Pic: ROM Hacker
+Gender: Female
+Music: Female
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Sequence Switching / Ace Pokemon / Omniscient
+Mugshot: Pink
+
+Kyouko (F) @ Poke Doll
+Level: 101
+IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 0 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Ability: Cute Charm
+Nature: Brave
+- Sweet Kiss
+- Lovely Kiss
+- Charm
+- Captivate
+
+Lilith (F) @ Binding Rope
+Level: 101
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Ability: Klutz
+Nature: Docile
+- Submission
+
+Molly (F) @ Wave Mail
+Level: 101
+IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 0 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Ability: Rain Dish
+Nature: Jolly
+- Soak
+- Splishy Splash
+
+Natalie (F) @ Choice Scarf
+Level: 101
+IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 0 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Ability: Prankster
+Nature: Naughty
+- Trick
+- Trick or Treat
+
+Olivia (F) @ Draco Plate
+Level: 101
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Ability: Huge Power
+Nature: Bold
+- Judgment
+
+=== TRAINER_AMY_4 ===
+Name: AMY
+Class: ROM Hacker
+Pic: ROM Hacker
+Gender: Female
+Music: Female
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Sequence Switching / Ace Pokemon / Omniscient
+Mugshot: Pink
+
+Amy (F)
+Level: 105
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Ability: Mold Breaker
+Nature: Lonely
+- Extreme Evoboost
+// TODO: mega evolve into Amy (via move, not via item)
+// TODO: item = coffee
+
 === TRAINER_AMY ===
 Name: AMY
 Class: ROM Hacker
 Pic: ROM Hacker
 Gender: Female
 Music: Female
-Items: Full Restore / Full Restore / Full Restore
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Smart Switching / Ace Pokemon / Omniscient
+AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Sequence Switching / Ace Pokemon / Omniscient
 Mugshot: Pink
-
-Test (Rattata) (F) @ Eviolite
-Level: 100
-IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-Ability: Dauntless Shield
-Nature: Impish
-- Tackle
 
 Bun Bun (Lopunny Mega) (F) @ Fightinium Z
 Level: 100

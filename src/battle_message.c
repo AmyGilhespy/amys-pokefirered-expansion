@@ -737,6 +737,7 @@ const u8 *const gBattleStringsTable[STRINGID_COUNT] =
     [STRINGID_PKMNMOVEBOUNCEDABILITY]               = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX}'s {B_CURRENT_MOVE} was bounced back by {B_DEF_NAME_WITH_PREFIX2}'s {B_DEF_ABILITY}!"),
     [STRINGID_IMPOSTERTRANSFORM]                    = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} transformed into {B_DEF_NAME_WITH_PREFIX2} using {B_LAST_ABILITY}!"),
     [STRINGID_ASSAULTVESTDOESNTALLOW]               = COMPOUND_STRING("The effects of the {B_LAST_ITEM} prevent status moves from being used!\p"),
+    [STRINGID_BINDINGROPEDOESNTALLOW]               = COMPOUND_STRING("The effects of the {B_LAST_ITEM} prevent any moves from being used!\p"),
     [STRINGID_GRAVITYPREVENTSUSAGE]                 = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} can't use {B_CURRENT_MOVE} because of gravity!\p"),
     [STRINGID_HEALBLOCKPREVENTSUSAGE]               = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} was prevented from healing!\p"),
     [STRINGID_NOTDONEYET]                           = COMPOUND_STRING("This move effect is not done yet!\p"),
@@ -3227,11 +3228,11 @@ static const struct BattleWindowText sTextOnWindowsInfo_Normal[] = {
     },
 };
 
-static const u8 sNpcTextColorToFont[] = 
+static const u8 sNpcTextColorToFont[] =
 {
-    [NPC_TEXT_COLOR_MALE]    = FONT_MALE, 
-    [NPC_TEXT_COLOR_FEMALE]  = FONT_FEMALE, 
-    [NPC_TEXT_COLOR_MON]     = FONT_NORMAL, 
+    [NPC_TEXT_COLOR_MALE]    = FONT_MALE,
+    [NPC_TEXT_COLOR_FEMALE]  = FONT_FEMALE,
+    [NPC_TEXT_COLOR_MON]     = FONT_NORMAL,
     [NPC_TEXT_COLOR_NEUTRAL] = FONT_NORMAL,
 };
 

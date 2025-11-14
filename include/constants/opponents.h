@@ -750,13 +750,13 @@
 #define TRAINER_CUE_BALL_PAXTON                  742
 #define TRAINER_MOM                              743
 #define TRAINER_CHAMPION_MOM                     744
-#define TRAINER_CHAMPION_REMATCH_MOM             745
-#define TRAINER_CHAMPION_OAK                     746
+#define TRAINER_CHAMPION_OAK                     745
+#define TRAINER_CHAMPION_REMATCH_MOM             746
 #define TRAINER_CHAMPION_REMATCH_OAK             747
-#define TRAINER_RESERVED_1                       748
-#define TRAINER_RESERVED_2                       749
-#define TRAINER_RESERVED_3                       750
-#define TRAINER_RESERVED_4                       751
+#define TRAINER_AMY_1                            748 // Not a real trainer -- just holds party data
+#define TRAINER_AMY_2                            749 // Not a real trainer -- just holds party data
+#define TRAINER_AMY_3                            750 // Not a real trainer -- just holds party data
+#define TRAINER_AMY_4                            751 // Not a real trainer -- just holds party data
 #define TRAINER_ANNA                             752
 #define TRAINER_BAILEY                           753
 #define TRAINER_CHLOE                            754

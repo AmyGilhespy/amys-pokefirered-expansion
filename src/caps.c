@@ -35,7 +35,7 @@ u32 GetCurrentLevelCap(void)
         return VarGet(B_LEVEL_CAP_VARIABLE);
     }
 
-    return MAX_LEVEL;
+    return MAX_LEVEL_STANDARD;
 }
 
 u32 GetSoftLevelCapExpValue(u32 level, u32 expValue)

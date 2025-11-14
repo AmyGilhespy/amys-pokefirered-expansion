@@ -8068,6 +8068,10 @@ BattleScript_SelectingNotAllowedMoveAssaultVestInPalace::
 	printstring STRINGID_ASSAULTVESTDOESNTALLOW
 	goto BattleScript_SelectingUnusableMoveInPalace
 
+BattleScript_SelectingNotAllowedMoveBindingRope::
+	printselectionstring STRINGID_BINDINGROPEDOESNTALLOW
+	endselectionscript
+
 BattleScript_SelectingNotAllowedPlaceholder::
 	printselectionstring STRINGID_NOTDONEYET
 	endselectionscript

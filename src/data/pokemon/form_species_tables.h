@@ -2212,3 +2212,102 @@ static const u16 sMeteonFormSpeciesIdTable[] = {
     FORM_SPECIES_END,
 };
 
+static const u16 sRainPlaceholderFormSpeciesIdTable[] = {
+    SPECIES_RAIN_PLACEHOLDER,
+    FORM_SPECIES_END,
+};
+
+static const u16 sSandPlaceholderFormSpeciesIdTable[] = {
+    SPECIES_SAND_PLACEHOLDER,
+    FORM_SPECIES_END,
+};
+
+static const u16 sSnowPlaceholderFormSpeciesIdTable[] = {
+    SPECIES_SNOW_PLACEHOLDER,
+    FORM_SPECIES_END,
+};
+
+static const u16 sPlaceholderFormSpeciesIdTable[] = {
+    SPECIES_PLACEHOLDER,
+    FORM_SPECIES_END,
+};
+
+static const u16 sBrockFormSpeciesIdTable[] = {
+    SPECIES_BROCK,
+    FORM_SPECIES_END,
+};
+
+static const u16 sMistyFormSpeciesIdTable[] = {
+    SPECIES_MISTY,
+    FORM_SPECIES_END,
+};
+
+static const u16 sErikaFormSpeciesIdTable[] = {
+    SPECIES_ERIKA,
+    FORM_SPECIES_END,
+};
+
+static const u16 sSabrinaFormSpeciesIdTable[] = {
+    SPECIES_SABRINA,
+    FORM_SPECIES_END,
+};
+
+static const u16 sBlaineFormSpeciesIdTable[] = {
+    SPECIES_BLAINE,
+    FORM_SPECIES_END,
+};
+
+static const u16 sLoreleiFormSpeciesIdTable[] = {
+    SPECIES_LORELEI,
+    FORM_SPECIES_END,
+};
+
+static const u16 sBrunoFormSpeciesIdTable[] = {
+    SPECIES_BRUNO,
+    FORM_SPECIES_END,
+};
+
+static const u16 sAgathaFormSpeciesIdTable[] = {
+    SPECIES_AGATHA,
+    FORM_SPECIES_END,
+};
+
+static const u16 sLanceFormSpeciesIdTable[] = {
+    SPECIES_LANCE,
+    FORM_SPECIES_END,
+};
+
+static const u16 sMomFormSpeciesIdTable[] = {
+    SPECIES_MOM,
+    FORM_SPECIES_END,
+};
+
+static const u16 sKyoukoFormSpeciesIdTable[] = {
+    SPECIES_KYOUKO,
+    FORM_SPECIES_END,
+};
+
+static const u16 sLilithFormSpeciesIdTable[] = {
+    SPECIES_LILITH,
+    FORM_SPECIES_END,
+};
+
+static const u16 sMollyFormSpeciesIdTable[] = {
+    SPECIES_MOLLY,
+    FORM_SPECIES_END,
+};
+
+static const u16 sNatalieFormSpeciesIdTable[] = {
+    SPECIES_NATALIE,
+    FORM_SPECIES_END,
+};
+
+static const u16 sOliviaFormSpeciesIdTable[] = {
+    SPECIES_OLIVIA,
+    FORM_SPECIES_END,
+};
+
+static const u16 sAmyFormSpeciesIdTable[] = {
+    SPECIES_AMY,
+    FORM_SPECIES_END,
+};

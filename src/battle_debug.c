@@ -2296,6 +2296,7 @@ static const u8 *const sHoldEffectNames[HOLD_EFFECT_COUNT] =
     [HOLD_EFFECT_DRIZZLE]          = COMPOUND_STRING("Drizzle"),
     [HOLD_EFFECT_DROUGHT]          = COMPOUND_STRING("Drought"),
     [HOLD_EFFECT_PERISH]           = COMPOUND_STRING("Perish"),
+    [HOLD_EFFECT_BINDING_ROPE]     = COMPOUND_STRING("Binding Rope"),
 };
 static const u8 *GetHoldEffectName(enum ItemHoldEffect holdEffect)
 {

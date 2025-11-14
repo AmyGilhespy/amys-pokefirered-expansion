@@ -1642,8 +1642,38 @@
 
 #define SPECIES_STEEL_SOUL                              (NUM_NONFAKEMON_SPECIES + 0) // 1524
 #define SPECIES_METEON                                  (NUM_NONFAKEMON_SPECIES + 1) // 1525
+#define SPECIES_RAIN_PLACEHOLDER                        (NUM_NONFAKEMON_SPECIES + 2) // 1526
+#define SPECIES_SAND_PLACEHOLDER                        (NUM_NONFAKEMON_SPECIES + 3) // 1527
+#define SPECIES_SNOW_PLACEHOLDER                        (NUM_NONFAKEMON_SPECIES + 4) // 1528
+#define SPECIES_PLACEHOLDER                             (NUM_NONFAKEMON_SPECIES + 5) // 1529
 
-#define SPECIES_EGG                                     (NUM_NONFAKEMON_SPECIES + 2) // 1526
+#define NUM_NONWEIRD_SPECIES                            (SPECIES_PLACEHOLDER + 1) // 1530
+
+// Amy: Set 1
+#define SPECIES_BROCK                                   (NUM_NONWEIRD_SPECIES + 0) // 1530
+#define SPECIES_MISTY                                   (NUM_NONWEIRD_SPECIES + 1) // 1531
+#define SPECIES_ERIKA                                   (NUM_NONWEIRD_SPECIES + 2) // 1532
+#define SPECIES_SABRINA                                 (NUM_NONWEIRD_SPECIES + 3) // 1533
+#define SPECIES_BLAINE                                  (NUM_NONWEIRD_SPECIES + 4) // 1534
+
+// Amy: Set 2
+#define SPECIES_LORELEI                                 (NUM_NONWEIRD_SPECIES + 5) // 1535
+#define SPECIES_BRUNO                                   (NUM_NONWEIRD_SPECIES + 6) // 1536
+#define SPECIES_AGATHA                                  (NUM_NONWEIRD_SPECIES + 7) // 1537
+#define SPECIES_LANCE                                   (NUM_NONWEIRD_SPECIES + 8) // 1538
+#define SPECIES_MOM                                     (NUM_NONWEIRD_SPECIES + 9) // 1539
+
+// Amy: Set 3
+#define SPECIES_KYOUKO                                  (NUM_NONWEIRD_SPECIES + 10) // 1540
+#define SPECIES_LILITH                                  (NUM_NONWEIRD_SPECIES + 11) // 1541
+#define SPECIES_MOLLY                                   (NUM_NONWEIRD_SPECIES + 12) // 1542
+#define SPECIES_NATALIE                                 (NUM_NONWEIRD_SPECIES + 13) // 1543
+#define SPECIES_OLIVIA                                  (NUM_NONWEIRD_SPECIES + 14) // 1544
+
+// Amy: Final
+#define SPECIES_AMY                                     (NUM_NONWEIRD_SPECIES + 15) // 1545
+
+#define SPECIES_EGG                                     (SPECIES_AMY + 1) // 1546
 
 #define NUM_SPECIES SPECIES_EGG
 

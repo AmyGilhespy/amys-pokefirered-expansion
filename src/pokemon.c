@@ -66,6 +66,7 @@
 #include "constants/union_room.h"
 #include "constants/weather.h"
 #include "wild_encounter.h"
+#include "gba/isagbprint.h"
 
 #define FRIENDSHIP_EVO_THRESHOLD ((P_FRIENDSHIP_EVO_THRESHOLD >= GEN_8) ? 160 : 220)
 
@@ -1127,7 +1128,8 @@ static const u32 sCompressedStatuses[] =
 STATIC_ASSERT(NUM_SPECIES < (1 << 11), PokemonSubstruct0_species_TooSmall);
 STATIC_ASSERT(NUMBER_OF_MON_TYPES + 1 <= (1 << 5), PokemonSubstruct0_teraType_TooSmall);
 STATIC_ASSERT(ITEMS_COUNT < (1 << 10), PokemonSubstruct0_heldItem_TooSmall);
-STATIC_ASSERT(MAX_LEVEL <= 100, PokemonSubstruct0_experience_PotentiallTooSmall); // Maximum of ~2 million exp.
+//STATIC_ASSERT(MAX_LEVEL <= 100, PokemonSubstruct0_experience_PotentiallTooSmall); // Maximum of ~2 million exp.
+STATIC_ASSERT(MAX_LEVEL <= 107, PokemonSubstruct0_experience_PotentiallTooSmall); // 21 bits: max exp = 2097151; MAX_LEVEL can probably be 107 but not 108, if I did the math right.
 STATIC_ASSERT(POKEBALL_COUNT <= (1 << 6), PokemonSubstruct0_pokeball_TooSmall);
 STATIC_ASSERT(MOVES_COUNT_ALL < (1 << 11), PokemonSubstruct1_moves_TooSmall);
 STATIC_ASSERT(ARRAY_COUNT(sCompressedStatuses) <= (1 << 4), PokemonSubstruct3_compressedStatus_TooSmall);
@@ -1291,7 +1293,13 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
     SetBoxMonData(boxMon, MON_DATA_LANGUAGE, &gGameLanguage);
     SetBoxMonData(boxMon, MON_DATA_OT_NAME, gSaveBlock2Ptr->playerName);
     SetBoxMonData(boxMon, MON_DATA_SPECIES, &species);
-    SetBoxMonData(boxMon, MON_DATA_EXP, &gExperienceTables[gSpeciesInfo[species].growthRate][level]);
+    u32 exp = gExperienceTables[gSpeciesInfo[species].growthRate][level <= MAX_LEVEL ? level : MAX_LEVEL];
+    u8 lvl = GetLevelFromExpAndSpecies(exp, species);
+    if (lvl != level)
+    {
+        MgbaPrintf(MGBA_LOG_ERROR, "Wanted level %d, exp=%u=0x%06x (max=0x1fffff), got level=%d, MAX_LEVEL=%d, MAX_LEVEL_STANDARD=%d", level, exp, exp, lvl, MAX_LEVEL, MAX_LEVEL_STANDARD);
+    }
+    SetBoxMonData(boxMon, MON_DATA_EXP, &exp);
     SetBoxMonData(boxMon, MON_DATA_FRIENDSHIP, &gSpeciesInfo[species].friendship);
     value = GetCurrentRegionMapSectionId();
     SetBoxMonData(boxMon, MON_DATA_MET_LOCATION, &value);
@@ -1975,6 +1983,16 @@ void BoxMonToMon(const struct BoxPokemon *src, struct Pokemon *dest)
     CalculateMonStats(dest);
     value = GetMonData(dest, MON_DATA_MAX_HP) - value;
     SetMonData(dest, MON_DATA_HP, &value);
+}
+
+u8 GetLevelFromExpAndSpecies(u32 exp, u16 species)
+{
+    s32 level = 1;
+
+    while (level <= MAX_LEVEL && gExperienceTables[gSpeciesInfo[species].growthRate][level] <= exp)
+        level++;
+
+    return level - 1;
 }
 
 u8 GetLevelFromMonExp(struct Pokemon *mon)

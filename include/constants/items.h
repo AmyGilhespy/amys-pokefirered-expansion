@@ -1008,8 +1008,9 @@
 #define ITEM_ABILITY_CAPSULE_PLUS (UPSTREAM_ITEMS_COUNT + 0)
 #define ITEM_EVIO                 (UPSTREAM_ITEMS_COUNT + 1)
 #define ITEM_PERFECT_SASH         (UPSTREAM_ITEMS_COUNT + 2)
+#define ITEM_BINDING_ROPE         (UPSTREAM_ITEMS_COUNT + 3)
 
-#define ITEMS_COUNT (ITEM_PERFECT_SASH + 1)
+#define ITEMS_COUNT (ITEM_BINDING_ROPE + 1)
 #define ITEM_FIELD_ARROW ITEMS_COUNT
 
 // A special item id associated with "Cancel"/"Exit" etc. in a list of items or decorations
