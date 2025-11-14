@@ -1,60 +1,67 @@
 
 
 CeruleanCave_SecretChamber_B9F_Text_Kyouko::
-	.string "Kyouko.$"
+	.string "KYOUKO: Kyouko-kyun!\p"
+	.string "I believe in you, cutie!$"
 
 CeruleanCave_SecretChamber_B9F_Text_Lilith::
-	.string "Lilith.$"
+	.string "LILITH: What will I do if you win?\p"
+	.string "I'm open to suggestions!$"
 
 CeruleanCave_SecretChamber_B9F_Text_Molly::
-	.string "Molly.$"
+	.string "MOLLY: Hurry up and get the fight\n"
+	.string "over with so I can have a shower!$"
 
 CeruleanCave_SecretChamber_B9F_Text_Natalie::
-	.string "Natalie.$"
+	.string "NATALIE: You just lost ''THE GAME''!$"
 
 CeruleanCave_SecretChamber_B9F_Text_Olivia::
-	.string "Olivia.$"
+	.string "OLIVIA: I'll be watching this\n"
+	.string "fight closely, godslayer.$"
 
 CeruleanCave_SecretChamber_B9F_Text_AmyIntro::
-	.string "Intro.$"
-
-@ After you've defeated AMY, but not yet AMY:
-CeruleanCave_SecretChamber_B9F_Text_AmyRematchIntro::
-	.string "Welcome back. Are you ready to\n"
-	.string "try again? Let's go!$"
+	.string "Hi! I'm AMY.\p"
+	.string "Do you like POKéMON?\p"
+	.string "I suppose you wouldn't be here if\n"
+	.string "you didn't.\p"
+	.string "I love POKéMON. I've been a huge\n"
+	.string "fan since my early childhood.\p"
+	.string "Who's your favorite POKéMON?\p"
+	.string "I have a lot of favorites, but if I\n"
+	.string "had to choose just one… …then by\l"
+	.string "appearance it's got to be GENGAR.\p"
+	.string "I always name my GENGAR ''Hugs''.\p"
+	.string "But I haven't brought Hugs here to\n"
+	.string "battle you today.\p"
+	.string "Why?\n"
+	.string "You'll see.\p"
+	.string "Are you ready to get your ass beat\n"
+	.string "by the girl who made this hack?\p"
+	.string "Well, then. As leader of the\n"
+	.string "ULTIMATE CUTIES and the developer\p"
+	.string "of this hack… I, AMY, present to\n"
+	.string "you one final challenge. Let's go!$"
 
 @ After you've defeated AMY:
-CeruleanCave_SecretChamber_B9F_Text_AmyRematch2Intro::
+CeruleanCave_SecretChamber_B9F_Text_AmyRematchIntro::
 	.string "Welcome back. Let's go!$"
 
 CeruleanCave_SecretChamber_B9F_Text_AmyDefeat::
-	.string "Nicely done.$"
+	.string "You did it!$"
 
 CeruleanCave_SecretChamber_B9F_Text_AmyPostBattle::
-	.string "But first, please allow me to heal\n"
-	.string "your living teammates.$"
-
-CeruleanCave_SecretChamber_B9F_Text_AmyPostHeal::
-	.string "Since you beat me, I'll teach it\n"
-	.string "to one of your POKéMON if you like.\p"
-	.string "This isn't a one-time offer, either,\n"
-	.string "but you'll have to beat me again\l"
-	.string "before I'll teach it again.$"
-
-CeruleanCave_SecretChamber_B9F_Text_AmyTeach::
-	.string "Shall I teach Mail Script to one of\n"
-	.string "your POKéMON?$"
-
-CeruleanCave_SecretChamber_B9F_Text_AmyWhichMon::
-	.string "Who should learn Mail Script?$"
-
-CeruleanCave_SecretChamber_B9F_Text_AmyPostTeach::
-	.string "Now, a word of caution before you\n"
-	.string "move on: If you leave this cave,\l"
-	.string "you will have to start all over!\p"
-	.string "I'm going to go on ahead and then\n"
-	.string "I'll see you in the final chamber\l"
-	.string "should you make it that far.\p"
-	.string "Good luck, and stay cute!$"
-
-
+	.string "So…\p"
+	.string "How did you like my ROM hack?\n"
+	.string "I worked awfully hard on it.\p"
+	.string "I would like to thank the devs\n"
+	.string "and contributors for the following\l"
+	.string "upstream projects:\p"
+	.string "pret/pokefirered\n"
+	.string "rh-hideout/pokeemerald-expansion\p"
+	.string "Sotomura/pokefirered-rtc\n"
+	.string "cawtds/pokefirered-expansion\p"
+	.string "This project would not have been\n"
+	.string "possible without their hard work.\p"
+	.string "I hope you had as much fun playing\n"
+	.string "as I had working on this project.\p"
+	.string "Until next time!$"

@@ -3,8 +3,11 @@
 CeruleanCave_SecretChamber_B4F_Text_NatalieIntro::
 	.string "Hey.\p"
 	.string "I'm Naughty Natalie… …No, don't get\n"
-	.string "any ideas, I'm called that because\l"
-	.string "I like to play tricks on people.$"
+	.string "any ideas - I'm called that because\l"
+	.string "I like to play tricks on people.\p"
+	.string "You think you're clever enough to\n"
+	.string "not get tricked by a little girl?\p"
+	.string "Well, we'll see about that!$"
 
 @ After you've defeated NATALIE, but not yet AMY:
 CeruleanCave_SecretChamber_B4F_Text_NatalieRematchIntro::

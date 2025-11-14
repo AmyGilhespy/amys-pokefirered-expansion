@@ -29,7 +29,7 @@ CeruleanCave_SecretChamber_B1F_Text_KyoukoIntro::
 	.string "I can't wait to show you my\n"
 	.string "adorable little lovelies!\p"
 	.string "Are you ready to meet them?\n"
-	.string "Let's go!\p"
+	.string "Let's go!$"
 
 @ After you've defeated KYOUKO, but not yet AMY:
 CeruleanCave_SecretChamber_B1F_Text_KyoukoRematchIntro::

@@ -1,10 +1,10 @@
 
 
 CeruleanCave_SecretChamber_B2F_Text_LilithIntro::
-	.string "Hey there.\n"
+	.string "Hi there.\n"
 	.string "I'm LILITH.\p"
 	.string "I'm known as LITTLE LILITH because\n"
-	.string "I like to use NFE POKéMON.\p"
+	.string "I like to use N.F.E. POKéMON.\p"
 	.string "In case you didn't already know, NFE\n"
 	.string "stands for ''Not Fully Evolved''.\p"
 	.string "In other words, they're nymphs!\n"
