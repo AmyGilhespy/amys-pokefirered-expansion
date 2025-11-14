@@ -229,6 +229,8 @@ static EWRAM_DATA struct DebugMenuListData *sDebugMenuListData = NULL;
 EWRAM_DATA bool8 gIsDebugBattle = FALSE;
 EWRAM_DATA u64 gDebugAIFlags = 0;
 
+EWRAM_DATA u8 gKonamiProgress = 0;
+
 // *******************************
 // Define functions
 static void Debug_ShowMenu(DebugFunc HandleInput, const struct DebugMenuOption *items);

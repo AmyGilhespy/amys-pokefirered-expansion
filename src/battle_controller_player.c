@@ -49,6 +49,8 @@
 #include "pokemon_summary_screen.h"
 #include "type_icons.h"
 #include "pokedex.h"
+#include "debug.h"
+#include "event_data.h"
 
 static void PlayerHandleLoadMonSprite(u32 battler);
 static void PlayerHandleDrawTrainerPic(u32 battler);
@@ -314,28 +316,42 @@ static void HandleInputChooseAction(u32 battler)
 
     if (JOY_NEW(A_BUTTON))
     {
-        PlaySE(SE_SELECT);
-        TryHideLastUsedBall();
-
-        switch (gActionSelectionCursor[battler])
+        if (gKonamiProgress == 9)
         {
-        case 0: // Top left
-            BtlController_EmitTwoReturnValues(battler, B_COMM_TO_ENGINE, B_ACTION_USE_MOVE, 0);
-            break;
-        case 1: // Top right
-            BtlController_EmitTwoReturnValues(battler, B_COMM_TO_ENGINE, B_ACTION_USE_ITEM, 0);
-            break;
-        case 2: // Bottom left
-            BtlController_EmitTwoReturnValues(battler, B_COMM_TO_ENGINE, B_ACTION_SWITCH, 0);
-            break;
-        case 3: // Bottom right
-            BtlController_EmitTwoReturnValues(battler, B_COMM_TO_ENGINE, B_ACTION_RUN, 0);
-            break;
+            gKonamiProgress = 0;
+            PlaySE(SE_SAVE);
+            FlagSet(FLAG_BATTLE_DEBUG_ENABLED);
         }
-        BtlController_Complete(battler);
+        else
+        {
+            gKonamiProgress = 0;
+            PlaySE(SE_SELECT);
+            TryHideLastUsedBall();
+
+            switch (gActionSelectionCursor[battler])
+            {
+            case 0: // Top left
+                BtlController_EmitTwoReturnValues(battler, B_COMM_TO_ENGINE, B_ACTION_USE_MOVE, 0);
+                break;
+            case 1: // Top right
+                BtlController_EmitTwoReturnValues(battler, B_COMM_TO_ENGINE, B_ACTION_USE_ITEM, 0);
+                break;
+            case 2: // Bottom left
+                BtlController_EmitTwoReturnValues(battler, B_COMM_TO_ENGINE, B_ACTION_SWITCH, 0);
+                break;
+            case 3: // Bottom right
+                BtlController_EmitTwoReturnValues(battler, B_COMM_TO_ENGINE, B_ACTION_RUN, 0);
+                break;
+            }
+            BtlController_Complete(battler);
+        }
     }
     else if (JOY_NEW(DPAD_LEFT))
     {
+        if (gKonamiProgress == 4 || gKonamiProgress == 6)
+            gKonamiProgress++;
+        else
+            gKonamiProgress = 0;
         if (gActionSelectionCursor[battler] & 1) // if is B_ACTION_USE_ITEM or B_ACTION_RUN
         {
             PlaySE(SE_SELECT);
@@ -346,6 +362,10 @@ static void HandleInputChooseAction(u32 battler)
     }
     else if (JOY_NEW(DPAD_RIGHT))
     {
+        if (gKonamiProgress == 5 || gKonamiProgress == 7)
+            gKonamiProgress++;
+        else
+            gKonamiProgress = 0;
         if (!(gActionSelectionCursor[battler] & 1)) // if is B_ACTION_USE_MOVE or B_ACTION_SWITCH
         {
             PlaySE(SE_SELECT);
@@ -356,6 +376,10 @@ static void HandleInputChooseAction(u32 battler)
     }
     else if (JOY_NEW(DPAD_UP))
     {
+        if (gKonamiProgress == 0 || gKonamiProgress == 1)
+            gKonamiProgress++;
+        else if (gKonamiProgress != 2)
+            gKonamiProgress = 1;
         if (gActionSelectionCursor[battler] & 2) // if is B_ACTION_SWITCH or B_ACTION_RUN
         {
             PlaySE(SE_SELECT);
@@ -366,6 +390,10 @@ static void HandleInputChooseAction(u32 battler)
     }
     else if (JOY_NEW(DPAD_DOWN))
     {
+        if (gKonamiProgress == 2 || gKonamiProgress == 3)
+            gKonamiProgress++;
+        else
+            gKonamiProgress = 0;
         if (!(gActionSelectionCursor[battler] & 2)) // if is B_ACTION_USE_MOVE or B_ACTION_USE_ITEM
         {
             PlaySE(SE_SELECT);
@@ -374,8 +402,13 @@ static void HandleInputChooseAction(u32 battler)
             ActionSelectionCreateCursorAt(gActionSelectionCursor[battler], 0);
         }
     }
+    else if (JOY_NEW(B_BUTTON) && gKonamiProgress == 8)
+    {
+        gKonamiProgress++;
+    }
     else if (JOY_NEW(B_BUTTON) || gPlayerDpadHoldFrames > 59)
     {
+        gKonamiProgress = 0;
         if (IsDoubleBattle()
          && GetBattlerPosition(battler) == B_POSITION_PLAYER_RIGHT
          && !(gAbsentBattlerFlags & (1u << GetBattlerAtPosition(B_POSITION_PLAYER_LEFT)))
@@ -403,9 +436,10 @@ static void HandleInputChooseAction(u32 battler)
     }
     else if (JOY_NEW(START_BUTTON))
     {
+        gKonamiProgress = 0;
         SwapHpBarsWithHpText();
     }
-    else if (DEBUG_BATTLE_MENU == TRUE && JOY_NEW(SELECT_BUTTON))
+    else if (DEBUG_BATTLE_MENU == TRUE && JOY_NEW(SELECT_BUTTON) && FlagGet(FLAG_BATTLE_DEBUG_ENABLED))
     {
         BtlController_EmitTwoReturnValues(battler, B_COMM_TO_ENGINE, B_ACTION_DEBUG, 0);
         BtlController_Complete(battler);
@@ -413,6 +447,7 @@ static void HandleInputChooseAction(u32 battler)
     else if (B_LAST_USED_BALL == TRUE && B_LAST_USED_BALL_CYCLE == FALSE
              && JOY_NEW(B_LAST_USED_BALL_BUTTON) && CanThrowLastUsedBall())
     {
+        gKonamiProgress = 0;
         PlaySE(SE_SELECT);
         TryHideLastUsedBall();
         BtlController_EmitTwoReturnValues(battler, B_COMM_TO_ENGINE, B_ACTION_THROW_BALL, 0);
@@ -1088,7 +1123,7 @@ void HandleMoveSwitching(u32 battler)
         PlaySE(SE_SELECT);
         MoveSelectionDestroyCursorAt(gMultiUsePlayerCursor);
         MoveSelectionCreateCursorAt(gMoveSelectionCursor[battler], 0);
-        
+
         if (gBattleTypeFlags & BATTLE_TYPE_FIRST_BATTLE)
             gBattlerControllerFuncs[battler] = OakOldManHandleInputChooseMove;
         else

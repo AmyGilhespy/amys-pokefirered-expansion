@@ -159,7 +159,7 @@ void FieldGetPlayerInput(struct FieldInput *input, u16 newKeys, u16 heldKeys)
 
         if(DEBUG_OVERWORLD_MENU && !DEBUG_OVERWORLD_IN_MENU)
         {
-            if ((heldKeys & DEBUG_OVERWORLD_HELD_KEYS) && input->DEBUG_OVERWORLD_TRIGGER_EVENT)
+            if ((heldKeys & DEBUG_OVERWORLD_HELD_KEYS) == DEBUG_OVERWORLD_HELD_KEYS && input->DEBUG_OVERWORLD_TRIGGER_EVENT)
             {
                 input->input_field_1_2 = TRUE;
                 input->DEBUG_OVERWORLD_TRIGGER_EVENT = FALSE;
@@ -303,7 +303,7 @@ int ProcessPlayerFieldInput(struct FieldInput *input)
         ShowStartMenu();
         return TRUE;
     }
-    
+
     if (input->tookStep && TryFindHiddenPokemon())
         return TRUE;
 
@@ -312,7 +312,7 @@ int ProcessPlayerFieldInput(struct FieldInput *input)
         gFieldInputRecord.pressedSelectButton = TRUE;
         return TRUE;
     }
-    
+
     if (input->pressedRButton && TryStartDexNavSearch())
         return TRUE;
 

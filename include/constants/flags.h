@@ -1303,8 +1303,8 @@
 #define FLAG_0x4EB               0x4EB
 #define FLAG_GOT_TR100_FROM_EMILY 0x4EC
 #define FLAG_GOT_TR100_FROM_JULIANA 0x4ED
-#define FLAG_GOT_TR100_FROM_OLIVIA 0x4EE
-#define FLAG_GOT_TR100_FROM_AMY  0x4EF
+#define FLAG_0x4EE               0x4EE
+#define FLAG_BATTLE_DEBUG_ENABLED 0x4EF
 #define FLAG_0x4F0               0x4F0
 #define FLAG_0x4F1               0x4F1
 #define FLAG_0x4F2               0x4F2
