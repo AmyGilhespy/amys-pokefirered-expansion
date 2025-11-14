@@ -3810,6 +3810,12 @@ BattleScript_BlockedByPrimalWeatherEnd3::
 	jumpifhalfword CMP_COMMON_BITS, gBattleWeather, B_WEATHER_STRONG_WINDS, BattleScript_MysteriousAirCurrentBlowsOnEnd3
 	end3
 
+BattleScript_ItemBlockedByPrimalWeatherEnd3::
+	jumpifhalfword CMP_COMMON_BITS, gBattleWeather, B_WEATHER_SUN_PRIMAL, BattleScript_ExtremelyHarshSunlightWasNotLessenedEnd3
+	jumpifhalfword CMP_COMMON_BITS, gBattleWeather, B_WEATHER_RAIN_PRIMAL, BattleScript_NoReliefFromHeavyRainEnd3
+	jumpifhalfword CMP_COMMON_BITS, gBattleWeather, B_WEATHER_STRONG_WINDS, BattleScript_MysteriousAirCurrentBlowsOnEnd3
+	end3
+
 BattleScript_BlockedByPrimalWeatherRet::
 	call BattleScript_AbilityPopUp
 	jumpifhalfword CMP_COMMON_BITS, gBattleWeather, B_WEATHER_SUN_PRIMAL, BattleScript_ExtremelyHarshSunlightWasNotLessenedRet
@@ -5474,6 +5480,12 @@ BattleScript_PerishBodyActivates::
 	orword gHitMarker, HITMARKER_IGNORE_SUBSTITUTE | HITMARKER_PASSIVE_HP_UPDATE
 	return
 
+BattleScript_ItemPerishActivates::
+	printstring STRINGID_ITEMPKMNSWILLPERISHIN9TURNS
+	waitmessage B_WAIT_TIME_LONG
+	orword gHitMarker, HITMARKER_IGNORE_SUBSTITUTE | HITMARKER_PASSIVE_HP_UPDATE
+	return
+
 BattleScript_GulpMissileGorging::
 	call BattleScript_AbilityPopUp
 	playanimation BS_ATTACKER, B_ANIM_GULP_MISSILE
@@ -6644,6 +6656,14 @@ BattleScript_DrizzleActivates::
 	call BattleScript_ActivateWeatherAbilities
 	end3
 
+BattleScript_ItemDrizzleActivates::
+	pause B_WAIT_TIME_SHORT
+	printstring STRINGID_ITEMMADEITRAIN
+	waitstate
+	playanimation BS_BATTLER_0, B_ANIM_RAIN_CONTINUES
+	call BattleScript_ActivateWeatherAbilities
+	end3
+
 BattleScript_AbilityRaisesDefenderStat::
 	pause B_WAIT_TIME_SHORT
 	statbuffchange BS_TARGET, STAT_CHANGE_ONLY_CHECKING, BattleScript_AbilityCantRaiseDefenderStat
@@ -7000,6 +7020,14 @@ BattleScript_DroughtActivates::
 	pause B_WAIT_TIME_SHORT
 	call BattleScript_AbilityPopUp
 	printstring STRINGID_PKMNSXINTENSIFIEDSUN
+	waitstate
+	playanimation BS_BATTLER_0, B_ANIM_SUN_CONTINUES
+	call BattleScript_ActivateWeatherAbilities
+	end3
+
+BattleScript_ItemDroughtActivates::
+	pause B_WAIT_TIME_SHORT
+	printstring STRINGID_ITEMSXINTENSIFIEDSUN
 	waitstate
 	playanimation BS_BATTLER_0, B_ANIM_SUN_CONTINUES
 	call BattleScript_ActivateWeatherAbilities

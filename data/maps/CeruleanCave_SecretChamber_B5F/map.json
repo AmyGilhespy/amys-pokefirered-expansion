@@ -35,7 +35,7 @@
     {
       "warp_id": "WARP_ID_PRE_OLIVIA_ENTRANCE",
       "x": 19,
-      "y": 36,
+      "y": 40,
       "elevation": 0,
       "dest_map": "MAP_CERULEAN_CAVE_SECRET_CHAMBER_B4F",
       "dest_warp_id": "WARP_ID_POST_NATALIE_HOLE"

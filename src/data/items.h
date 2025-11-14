@@ -3941,10 +3941,9 @@ const struct Item gItemsInfo[] =
         .name = ITEM_NAME("Shadow Mail"),
         .pluralName = ITEM_PLURAL_NAME("Shadow Mail"),
         .price = 50,
+        .holdEffect = HOLD_EFFECT_PERISH,
         .description = COMPOUND_STRING(
-            "A Duskull-print "
-            "Mail to be held\nby "
-            "a Pokémon."),
+            "Perish Count 10. A Duskull-print\nMail to be held by a Pokémon."),
         .pocket = POCKET_ITEMS,
         .sortType = ITEM_TYPE_MAIL,
         .type = ITEM_USE_MAIL,

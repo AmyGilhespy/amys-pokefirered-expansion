@@ -7,7 +7,7 @@ CeruleanCave_SecretChamber_B4F_Text_NatalieIntro::
 	.string "I like to play tricks on people.\p"
 	.string "You think you're clever enough to\n"
 	.string "not get tricked by a little girl?\p"
-	.string "Well, we'll see about that!$"
+	.string "Well, let's see about that!$"
 
 @ After you've defeated NATALIE, but not yet AMY:
 CeruleanCave_SecretChamber_B4F_Text_NatalieRematchIntro::

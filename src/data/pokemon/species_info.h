@@ -629,6 +629,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .frontPic = gMonFrontPic_Brock,
         .frontPicSize = MON_COORDS_SIZE(64, 64),
         .frontPicYOffset = 0,
+        NO_SHADOW
         //.frontAnimFrames = sAnims_Ditto,
         //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
         .backPic = gMonBackPic_CircledQuestionMark,
@@ -686,6 +687,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .frontPic = gMonFrontPic_Misty,
         .frontPicSize = MON_COORDS_SIZE(64, 64),
         .frontPicYOffset = 0,
+        NO_SHADOW
         //.frontAnimFrames = sAnims_Ditto,
         //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
         .backPic = gMonBackPic_CircledQuestionMark,
@@ -743,6 +745,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .frontPic = gMonFrontPic_Erika,
         .frontPicSize = MON_COORDS_SIZE(64, 64),
         .frontPicYOffset = 0,
+        NO_SHADOW
         //.frontAnimFrames = sAnims_Ditto,
         //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
         .backPic = gMonBackPic_CircledQuestionMark,
@@ -800,6 +803,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .frontPic = gMonFrontPic_Sabrina,
         .frontPicSize = MON_COORDS_SIZE(64, 64),
         .frontPicYOffset = 0,
+        NO_SHADOW
         //.frontAnimFrames = sAnims_Ditto,
         //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
         .backPic = gMonBackPic_CircledQuestionMark,
@@ -857,6 +861,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .frontPic = gMonFrontPic_Blaine,
         .frontPicSize = MON_COORDS_SIZE(64, 64),
         .frontPicYOffset = 0,
+        NO_SHADOW
         //.frontAnimFrames = sAnims_Ditto,
         //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
         .backPic = gMonBackPic_CircledQuestionMark,
@@ -914,6 +919,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .frontPic = gMonFrontPic_Lorelei,
         .frontPicSize = MON_COORDS_SIZE(64, 64),
         .frontPicYOffset = 0,
+        NO_SHADOW
         //.frontAnimFrames = sAnims_Ditto,
         //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
         .backPic = gMonBackPic_CircledQuestionMark,
@@ -971,6 +977,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .frontPic = gMonFrontPic_Bruno,
         .frontPicSize = MON_COORDS_SIZE(64, 64),
         .frontPicYOffset = 0,
+        NO_SHADOW
         //.frontAnimFrames = sAnims_Ditto,
         //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
         .backPic = gMonBackPic_CircledQuestionMark,
@@ -1028,6 +1035,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .frontPic = gMonFrontPic_Agatha,
         .frontPicSize = MON_COORDS_SIZE(64, 64),
         .frontPicYOffset = 0,
+        NO_SHADOW
         //.frontAnimFrames = sAnims_Ditto,
         //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
         .backPic = gMonBackPic_CircledQuestionMark,
@@ -1085,6 +1093,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .frontPic = gMonFrontPic_Lance,
         .frontPicSize = MON_COORDS_SIZE(64, 64),
         .frontPicYOffset = 0,
+        NO_SHADOW
         //.frontAnimFrames = sAnims_Ditto,
         //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
         .backPic = gMonBackPic_CircledQuestionMark,
@@ -1142,6 +1151,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .frontPic = gMonFrontPic_Mom,
         .frontPicSize = MON_COORDS_SIZE(64, 64),
         .frontPicYOffset = 0,
+        NO_SHADOW
         //.frontAnimFrames = sAnims_Ditto,
         //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
         .backPic = gMonBackPic_CircledQuestionMark,
@@ -1199,6 +1209,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .frontPic = gMonFrontPic_Kyouko,
         .frontPicSize = MON_COORDS_SIZE(64, 64),
         .frontPicYOffset = 0,
+        NO_SHADOW
         //.frontAnimFrames = sAnims_Ditto,
         //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
         .backPic = gMonBackPic_CircledQuestionMark,
@@ -1256,6 +1267,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .frontPic = gMonFrontPic_Lilith,
         .frontPicSize = MON_COORDS_SIZE(64, 64),
         .frontPicYOffset = 0,
+        NO_SHADOW
         //.frontAnimFrames = sAnims_Ditto,
         //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
         .backPic = gMonBackPic_CircledQuestionMark,
@@ -1313,6 +1325,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .frontPic = gMonFrontPic_Molly,
         .frontPicSize = MON_COORDS_SIZE(64, 64),
         .frontPicYOffset = 0,
+        NO_SHADOW
         //.frontAnimFrames = sAnims_Ditto,
         //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
         .backPic = gMonBackPic_CircledQuestionMark,
@@ -1370,6 +1383,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .frontPic = gMonFrontPic_Natalie,
         .frontPicSize = MON_COORDS_SIZE(64, 64),
         .frontPicYOffset = 0,
+        NO_SHADOW
         //.frontAnimFrames = sAnims_Ditto,
         //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
         .backPic = gMonBackPic_CircledQuestionMark,
@@ -1396,7 +1410,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .baseSpeed     = 150,
         .baseSpAttack  = 150,
         .baseSpDefense = 150,
-        .types = MON_TYPES(TYPE_NORMAL, TYPE_PSYCHIC),
+        .types = MON_TYPES(TYPE_NORMAL, TYPE_DRAGON),
         .catchRate = 255,
         .expYield = 67,
         .evYield_HP = 1,
@@ -1427,6 +1441,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .frontPic = gMonFrontPic_Olivia,
         .frontPicSize = MON_COORDS_SIZE(64, 64),
         .frontPicYOffset = 0,
+        NO_SHADOW
         //.frontAnimFrames = sAnims_Ditto,
         //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
         .backPic = gMonBackPic_CircledQuestionMark,
@@ -1484,6 +1499,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .frontPic = gMonFrontPic_Amy,
         .frontPicSize = MON_COORDS_SIZE(64, 64),
         .frontPicYOffset = 0,
+        NO_SHADOW
         //.frontAnimFrames = sAnims_Ditto,
         //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
         .backPic = gMonBackPic_CircledQuestionMark,

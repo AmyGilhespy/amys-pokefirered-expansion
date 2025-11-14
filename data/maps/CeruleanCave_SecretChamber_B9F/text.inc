@@ -16,8 +16,8 @@ CeruleanCave_SecretChamber_B9F_Text_Natalie::
 	.string "NATALIE: You just lost ''THE GAME''!$"
 
 CeruleanCave_SecretChamber_B9F_Text_Olivia::
-	.string "OLIVIA: I'll be watching this\n"
-	.string "fight closely, godslayer.$"
+	.string "OLIVIA: I'll be watching this fight\n"
+	.string "closely, godslayer.$"
 
 CeruleanCave_SecretChamber_B9F_Text_AmyIntro::
 	.string "Hi! I'm AMY.\p"
