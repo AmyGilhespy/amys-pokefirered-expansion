@@ -44368,30 +44368,30 @@ F_TRAINER_FEMALE |
         {
             {
 #line 17260
-            .nickname = COMPOUND_STRING("Bun Bun"),
+            .nickname = COMPOUND_STRING("Hugs"),
 #line 17260
-            .species = SPECIES_LOPUNNY_MEGA,
+            .species = SPECIES_GENGAR,
 #line 17260
-            .gender = TRAINER_MON_FEMALE,
+            .gender = TRAINER_MON_MALE,
 #line 17260
-            .heldItem = ITEM_FIGHTINIUM_Z,
+            .heldItem = ITEM_COFFEE,
 #line 17263
-            .ev = TRAINER_PARTY_EVS(252, 252, 252, 252, 252, 252),
+            .ev = TRAINER_PARTY_EVS(252, 0, 252, 252, 252, 252),
 #line 17262
-            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+            .iv = TRAINER_PARTY_IVS(31, 0, 31, 31, 31, 31),
 #line 17264
-            .ability = ABILITY_SCRAPPY,
+            .ability = ABILITY_NO_GUARD,
 #line 17261
-            .lvl = 100,
+            .lvl = 103,
 #line 17265
-            .nature = NATURE_JOLLY,
+            .nature = NATURE_TIMID,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             .moves = {
 #line 17266
-                MOVE_ATTRACT,
-                MOVE_CLOSE_COMBAT,
-                MOVE_EXTREME_SPEED,
-                MOVE_SUPER_FANG,
+                MOVE_HYPNOSIS,
+                MOVE_SHADOW_BALL,
+                MOVE_FOCUS_BLAST,
+                MOVE_RAILGUN,
             },
             },
         },

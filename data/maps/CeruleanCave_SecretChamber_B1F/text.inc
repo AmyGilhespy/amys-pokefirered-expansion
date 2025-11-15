@@ -52,8 +52,8 @@ CeruleanCave_SecretChamber_B1F_Text_KyoukoPostBattle::
 
 CeruleanCave_SecretChamber_B1F_Text_ShopIntro::
 	.string "As you saw, we have access to new\n"
-	.string "POKéMON, moves, abilities, items,\l"
-	.string "and other mechanics.\p"
+	.string "POKéMON, moves, items, and other\l"
+	.string "mechanics.\p"
 	.string "I have a few things for sale that\n"
 	.string "might interest you.\p"
 	.string "Take a look, but be warned that I\n"

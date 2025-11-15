@@ -17255,17 +17255,13 @@ Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Sequence Switching / Ace Pokemon / Omniscient
 Mugshot: Pink
 
-Bun Bun (Lopunny Mega) (F) @ Fightinium Z
-Level: 100
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
-Ability: Scrappy
-Nature: Jolly
-- Attract
-- Close Combat
-- Extreme Speed
-- Super Fang
-
-
-
-
+Hugs (Gengar) (M) @ Coffee
+Level: 103
+IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 0 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Ability: No Guard
+Nature: Timid
+- Hypnosis
+- Shadow Ball
+- Focus Blast
+- Railgun

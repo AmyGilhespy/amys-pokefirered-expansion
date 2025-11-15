@@ -124,6 +124,18 @@ gNameChoice_Momo::
 gNameChoice_Suzi::
     .string "Suzi$"
 
+gNameChoice_Green1::
+    .string "Green$"
+
+gNameChoice_Green2::
+    .string "Gary$"
+
+gNameChoice_Green3::
+    .string "Fuckup$"
+
+gNameChoice_Green4::
+    .string "Asswipe$"
+
 gControlsGuide_Text_NuzlockeIntro::
     .string "Nuzlocke info:\n\n"
     .string "In a moment, you will be asked to\n"

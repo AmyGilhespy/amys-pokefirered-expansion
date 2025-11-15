@@ -41,7 +41,7 @@ ViridianCity_Text_GrandpaHasntHadCoffeeYet::
     .string "Oh, Grandpa!\n"
     .string "Don't be so mean!\p"
     .string "I'm so sorry.\n"
-    .string "He hasn't had his coffee yet.$"
+    .string "He hasn't had his ''coffee'' yet.$"
 
 ViridianCity_Text_GoShoppingInPewterOccasionally::
     .string "I go shopping in PEWTER CITY\n"
@@ -55,10 +55,10 @@ ViridianCity_Text_ThisIsPrivateProperty::
     .string "This is private property!$"
 
 ViridianCity_Text_ShowYouHowToCatchMons::
-    .string "Well, now, I've had my coffee, and\n"
+    .string "Well, now, I've had my ''coffee'', and\n"
     .string "that's what I need to get going!\p"
     .string "Hm?\n"
-    .string "…You don't know how to catch\n"
+    .string "…You don't know how to catch\l"
     .string "a POKéMON?\p"
     .string "I suppose I had better show you\n"
     .string "then!$"

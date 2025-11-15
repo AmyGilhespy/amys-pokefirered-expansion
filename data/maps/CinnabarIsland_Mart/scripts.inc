@@ -24,12 +24,18 @@ CinnabarIsland_Mart_EventScript_Clerk::
 CinnabarIsland_Mart_Items::
 	.2byte ITEM_TM80
 	.2byte ITEM_TM99
+	.2byte ITEM_BLACK_SLUDGE
+	.2byte ITEM_EJECT_BUTTON
+	.2byte ITEM_RED_CARD
+	.2byte ITEM_LIGHT_BALL
+	.2byte ITEM_THICK_CLUB
 	.2byte ITEM_ULTRA_BALL
 	.2byte ITEM_GREAT_BALL
 	.2byte ITEM_HYPER_POTION
 	.2byte ITEM_REVIVE
 	.2byte ITEM_FULL_HEAL
 	.2byte ITEM_ESCAPE_ROPE
+	.2byte ITEM_COCAINE
 	.2byte ITEM_RARE_CANDY
 	.2byte ITEM_MAX_REPEL
 	.2byte ITEM_NONE

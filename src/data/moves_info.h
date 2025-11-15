@@ -21159,6 +21159,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .battleAnimScript = gBattleAnimMove_MalignantChain,
     },
 
+#if 0
     // Placeholder moves
 #define MOVE_AMY_UNUSED(m) [m] = \
     { \
@@ -21294,6 +21295,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_98),
     MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_99),
     MOVE_AMY_UNUSED(MOVE_AMY_UNUSED_100),
+#endif
 
     // Custom moves
 
@@ -21301,8 +21303,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Substitute S"),
         .description = COMPOUND_STRING(
-            "Creates a decoy\nusing 1/8 "
-            "of the\nuser's maximum HP."),
+            "Creates a decoy\nusing 1/8 of the\nuser's maximum HP."),
         .effect = EFFECT_SMALL_SUBSTITUTE,
         .power = 0,
         .type = TYPE_NORMAL,
@@ -21328,8 +21329,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Substitute L"),
         .description = COMPOUND_STRING(
-            "Creates a decoy\nusing 1/2 "
-            "of the\nuser's maximum HP."),
+            "Creates a decoy\nusing 1/2 of the\nuser's maximum HP."),
         .effect = EFFECT_BIG_SUBSTITUTE,
         .power = 0,
         .type = TYPE_NORMAL,
@@ -21355,8 +21355,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Substitute XL"),
         .description = COMPOUND_STRING(
-            "Creates a decoy\nusing 3/4 "
-            "of the\nuser's maximum HP."),
+            "Creates a decoy\nusing 3/4 of the\nuser's maximum HP."),
         .effect = EFFECT_HUGE_SUBSTITUTE,
         .power = 0,
         .type = TYPE_NORMAL,
@@ -21380,7 +21379,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
 
     [MOVE_OMEGA_BEAM] =
     {
-        .name = COMPOUND_STRING("Omega Beam"),
+        .name = COMPOUND_STRING("Priority +1.\nAlways crits.\nMust recharge."),
         .description = sHyperBeamDescription,
         .effect = EFFECT_HIT,
         .power = 120,
@@ -21406,7 +21405,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
 
     [MOVE_OMEGA_STRIKE] =
     {
-        .name = COMPOUND_STRING("Omega Strike"),
+        .name = COMPOUND_STRING("Priority +1.\nAlways crits.\nMust recharge."),
         .description = sHyperBeamDescription,
         .effect = EFFECT_HIT,
         .power = 120,
@@ -21431,7 +21430,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
 
     [MOVE_OBLIVION_BEAM] =
     {
-        .name = COMPOUND_STRING("Oblivion Beam"),
+        .name = COMPOUND_STRING("Always crits.\nMust recharge."),
         .description = sHyperBeamDescription,
         .effect = EFFECT_HIT,
         .power = 150,
@@ -21457,7 +21456,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
 
     [MOVE_ULTIMA_STRIKE] =
     {
-        .name = COMPOUND_STRING("Ultima Strike"),
+        .name = COMPOUND_STRING("Always crits.\nMust recharge."),
         .description = sHyperBeamDescription,
         .effect = EFFECT_HIT,
         .power = 150,
@@ -21482,7 +21481,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
 
     [MOVE_INFINIBLAST] =
     {
-        .name = COMPOUND_STRING("Infiniblast"),
+        .name = COMPOUND_STRING("Highest stat.\nAlways crits.\nMust recharge."),
         .description = sHyperBeamDescription,
         .effect = EFFECT_PHOTON_GEYSER,
         .power = 180,
@@ -21510,8 +21509,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Verdance"),
         .description = COMPOUND_STRING(
-            "Like Ingrain,\nAqua Ring,"
-            "\nand finally\nSynthesis."),
+            "Like Ingrain,\nAqua Ring,\nand finally\nSynthesis."),
         .effect = EFFECT_VERDANCE,
         .power = 0,
         .type = TYPE_GRASS,
@@ -21532,7 +21530,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Hellfire"),
         .description = COMPOUND_STRING(
-            "Targets both opponents."),
+            "Targets both\nopponents."),
         .effect = EFFECT_HIT,
         .power = 150,
         .type = TYPE_FIRE,
@@ -21542,6 +21540,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .priority = 0,
         .alwaysCriticalHit = FALSE,
         .category = DAMAGE_CATEGORY_SPECIAL,
+        .thawsUser = TRUE,
         .contestEffect = CONTEST_EFFECT_HIGHLY_APPEALING,
         .contestCategory = CONTEST_CATEGORY_TOUGH,
         .contestComboStarterId = 0,
@@ -21554,9 +21553,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Absolute Zero"),
         .description = COMPOUND_STRING(
-            "High chance to"
-            "freeze the\nfoe."
-            ),
+            "High chance to\nfreeze the\nfoe. 100%\nif snowing."),
         .effect = EFFECT_NON_VOLATILE_STATUS,
         .power = 0,
         .type = TYPE_ICE,
@@ -21582,8 +21579,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Railgun"),
         .description = COMPOUND_STRING(
-            "Hits the foe with\npowerful "
-            "\nelectricity."),
+            "Does physical\ndamage"),
         .effect = EFFECT_PSYSHOCK,
         .power = 180,
         .type = TYPE_ELECTRIC,
