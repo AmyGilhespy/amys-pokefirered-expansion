@@ -4592,6 +4592,23 @@ BattleScript_FaintAttackerDied::
 	trytrainerslidemsgfirstoff BS_ATTACKER
 	return
 
+BattleScript_FaintAttackerRanAway::
+	tryillusionoff BS_ATTACKER
+	tryactivategulpmissile
+	playfaintcry BS_ATTACKER
+	pause B_WAIT_TIME_LONG
+	dofaintanimation BS_ATTACKER
+	printstring STRINGID_ATTACKERRANAWAY
+	cleareffectsonfaint BS_ATTACKER
+	trytoclearprimalweather
+	tryrevertweatherform
+	flushtextbox
+	waitanimation
+	tryactivatesoulheart
+	tryactivatereceiver BS_ATTACKER
+	trytrainerslidemsgfirstoff BS_ATTACKER
+	return
+
 BattleScript_FaintTargetFainted::
 	tryillusionoff BS_TARGET
 	tryactivategulpmissile
@@ -4618,6 +4635,24 @@ BattleScript_FaintTargetDied::
 	pause B_WAIT_TIME_LONG
 	dofaintanimation BS_TARGET
 	printstring STRINGID_TARGETDIED
+	cleareffectsonfaint BS_TARGET
+	trytoclearprimalweather
+	tryrevertweatherform
+	flushtextbox
+	waitanimation
+	tryactivatesoulheart
+	tryactivatereceiver BS_TARGET
+	trytrainerslidemsgfirstoff BS_TARGET
+	return
+
+BattleScript_FaintTargetRanAway::
+	tryillusionoff BS_TARGET
+	tryactivategulpmissile
+	tryupdateleaderscresttracker
+	playfaintcry BS_TARGET
+	pause B_WAIT_TIME_LONG
+	dofaintanimation BS_TARGET
+	printstring STRINGID_TARGETRANAWAY
 	cleareffectsonfaint BS_TARGET
 	trytoclearprimalweather
 	tryrevertweatherform

@@ -1672,8 +1672,9 @@
 
 // Amy: Final
 #define SPECIES_AMY                                     (NUM_NONWEIRD_SPECIES + 15) // 1545
+#define SPECIES_AMY_MEGA                                (NUM_NONWEIRD_SPECIES + 16) // 1546
 
-#define SPECIES_EGG                                     (SPECIES_AMY + 1) // 1546
+#define SPECIES_EGG                                     (SPECIES_AMY_MEGA + 1) // 1547
 
 #define NUM_SPECIES SPECIES_EGG
 

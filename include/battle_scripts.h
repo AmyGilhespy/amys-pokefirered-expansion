@@ -26,6 +26,8 @@ extern const u8 BattleScript_FaintAttackerFainted[];
 extern const u8 BattleScript_FaintTargetFainted[];
 extern const u8 BattleScript_FaintAttackerDied[];
 extern const u8 BattleScript_FaintTargetDied[];
+extern const u8 BattleScript_FaintAttackerRanAway[];
+extern const u8 BattleScript_FaintTargetRanAway[];
 extern const u8 BattleScript_GiveExp[];
 extern const u8 BattleScript_HandleFaintedMon[];
 extern const u8 BattleScript_LocalTrainerBattleWon[];

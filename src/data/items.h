@@ -9306,7 +9306,7 @@ const struct Item gItemsInfo[] =
     [ITEM_EVIOLITE] =
     {
         .name = ITEM_NAME("Eviolite"),
-        .price = (I_PRICE >= GEN_9) ? 50000 : ((I_PRICE >= GEN_7) ? 4000 : 200),
+        .price = 4000 /*(I_PRICE >= GEN_9) ? 50000 : ((I_PRICE >= GEN_7) ? 4000 : 200)*/,
         .holdEffect = HOLD_EFFECT_EVIOLITE,
         .holdEffectParam = 50,
         .description = COMPOUND_STRING(
@@ -14728,6 +14728,23 @@ const struct Item gItemsInfo[] =
         .flingPower = 10,
         .iconPic = gItemIcon_FocusBand,
         .iconPalette = gItemIconPalette_FocusBand,
+    },
+
+    [ITEM_COFFEE] =
+    {
+        .name = ITEM_NAME("Coffee"),
+        .pluralName = ITEM_PLURAL_NAME("Coffees"),
+        .price = 50,
+        .holdEffect = HOLD_EFFECT_COFFEE,
+        .description = COMPOUND_STRING(
+            "Raises SPEED."),
+        .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_HELD_ITEM,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 50,
+        .iconPic = gItemIcon_Tea,
+        .iconPalette = gItemIconPalette_Tea,
     },
 };
 

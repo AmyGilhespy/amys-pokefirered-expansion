@@ -4914,9 +4914,18 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
             ADJUST_SCORE(DECENT_EFFECT);
         break;
     case EFFECT_TRICK:
+        if (aiData->holdEffects[battlerDef] == HOLD_EFFECT_BINDING_ROPE)
+        {
+            ADJUST_SCORE(-10);
+            break;
+        }
+        // FALLTHOUGH
     case EFFECT_BESTOW:
         switch (aiData->holdEffects[battlerAtk])
         {
+        case HOLD_EFFECT_BINDING_ROPE:
+            ADJUST_SCORE(10);
+            break;
         case HOLD_EFFECT_CHOICE_SCARF:
             ADJUST_SCORE(DECENT_EFFECT); // assume its beneficial
             break;

@@ -2309,5 +2309,13 @@ static const u16 sOliviaFormSpeciesIdTable[] = {
 
 static const u16 sAmyFormSpeciesIdTable[] = {
     SPECIES_AMY,
+#if P_MEGA_EVOLUTIONS
+    SPECIES_AMY_MEGA,
+#endif
+    FORM_SPECIES_END,
+};
+
+static const u16 sAmyMegaFormSpeciesIdTable[] = {
+    SPECIES_AMY_MEGA,
     FORM_SPECIES_END,
 };

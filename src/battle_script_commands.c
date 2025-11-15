@@ -4275,7 +4275,27 @@ static void Cmd_tryfaintmon(void)
         if (cmd->battler == BS_ATTACKER)
         {
             destinyBondBattler = gBattlerTarget;
-            if (gSaveBlock2Ptr->customData.gameType > 0)
+            u16 attackerSpecies = gBattleMons[gBattlerAttacker].species;
+            if (attackerSpecies == SPECIES_BROCK
+                    || attackerSpecies == SPECIES_MISTY
+                    || attackerSpecies == SPECIES_ERIKA
+                    || attackerSpecies == SPECIES_SABRINA
+                    || attackerSpecies == SPECIES_BLAINE
+                    || attackerSpecies == SPECIES_LORELEI
+                    || attackerSpecies == SPECIES_BRUNO
+                    || attackerSpecies == SPECIES_AGATHA
+                    || attackerSpecies == SPECIES_LANCE
+                    || attackerSpecies == SPECIES_MOM
+                    || attackerSpecies == SPECIES_KYOUKO
+                    || attackerSpecies == SPECIES_LILITH
+                    || attackerSpecies == SPECIES_MOLLY
+                    || attackerSpecies == SPECIES_NATALIE
+                    || attackerSpecies == SPECIES_OLIVIA
+                    || attackerSpecies == SPECIES_AMY)
+            {
+                faintScript = BattleScript_FaintAttackerRanAway;
+            }
+            else if (gSaveBlock2Ptr->customData.gameType > 0)
             {
                 faintScript = BattleScript_FaintAttackerDied;
             }
@@ -4287,7 +4307,27 @@ static void Cmd_tryfaintmon(void)
         else
         {
             destinyBondBattler = gBattlerAttacker;
-            if (gSaveBlock2Ptr->customData.gameType > 0)
+            u16 targetSpecies = gBattleMons[gBattlerTarget].species;
+            if (targetSpecies == SPECIES_BROCK
+                    || targetSpecies == SPECIES_MISTY
+                    || targetSpecies == SPECIES_ERIKA
+                    || targetSpecies == SPECIES_SABRINA
+                    || targetSpecies == SPECIES_BLAINE
+                    || targetSpecies == SPECIES_LORELEI
+                    || targetSpecies == SPECIES_BRUNO
+                    || targetSpecies == SPECIES_AGATHA
+                    || targetSpecies == SPECIES_LANCE
+                    || targetSpecies == SPECIES_MOM
+                    || targetSpecies == SPECIES_KYOUKO
+                    || targetSpecies == SPECIES_LILITH
+                    || targetSpecies == SPECIES_MOLLY
+                    || targetSpecies == SPECIES_NATALIE
+                    || targetSpecies == SPECIES_OLIVIA
+                    || targetSpecies == SPECIES_AMY)
+            {
+                faintScript = BattleScript_FaintTargetRanAway;
+            }
+            else if (gSaveBlock2Ptr->customData.gameType > 0)
             {
                 faintScript = BattleScript_FaintTargetDied;
             }

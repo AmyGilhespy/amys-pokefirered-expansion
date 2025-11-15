@@ -16941,7 +16941,6 @@ EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
 Ability: Klutz
 Nature: Timid
 - Trick
-- Double Team
 - Dragon Tail
 - Circle Throw
 
@@ -17206,14 +17205,15 @@ Nature: Jolly
 - Soak
 - Splishy Splash
 
-Natalie (F) @ Choice Scarf
+Natalie (F) @ Binding Rope
 Level: 101
 IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 0 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
-Ability: Prankster
+Ability: Klutz
 Nature: Naughty
 - Trick
 - Trick or Treat
+- Whirlwind
 
 Olivia (F) @ Draco Plate
 Level: 101
@@ -17233,15 +17233,16 @@ Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Sequence Switching / Ace Pokemon / Omniscient
 Mugshot: Pink
 
-Amy (F)
+Amy (F) @ Coffee
 Level: 105
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
-Ability: Mold Breaker
+Ability: Psychic Surge
 Nature: Lonely
 - Extreme Evoboost
-// TODO: mega evolve into Amy (via move, not via item)
-// TODO: item = coffee
+- Yawn
+- Lick
+- Mega Lick
 
 === TRAINER_AMY ===
 Name: AMY

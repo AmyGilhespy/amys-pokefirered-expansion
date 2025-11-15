@@ -4744,6 +4744,8 @@ u32 GetBattlerTotalSpeedStatArgs(u32 battler, enum Ability ability, enum ItemHol
         speed /= 2;
     else if (holdEffect == HOLD_EFFECT_CHOICE_SCARF && GetActiveGimmick(battler) != GIMMICK_DYNAMAX)
         speed = (speed * 150) / 100;
+    else if (holdEffect == HOLD_EFFECT_COFFEE && GetActiveGimmick(battler) != GIMMICK_DYNAMAX)
+        speed = (speed * 125) / 100;
     else if (holdEffect == HOLD_EFFECT_QUICK_POWDER && gBattleMons[battler].species == SPECIES_DITTO && !(gBattleMons[battler].volatiles.transformed))
         speed *= 2;
 
