@@ -453,4 +453,5 @@ gSpecials::
 	def_special GetRandomStarterRival
 	def_special GetGameType
 	def_special RemapPickupItem
+	def_special YouHaveXBadgesNowPokemonWillObeyYou
 gSpecialsEnd::

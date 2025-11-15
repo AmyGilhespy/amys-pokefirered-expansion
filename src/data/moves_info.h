@@ -21528,58 +21528,6 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .validApprenticeMove = TRUE,
     },
 
-    [MOVE_SINGULARITY_Y] =
-    {
-        .name = COMPOUND_STRING("Singularity Y"),
-        .description = sHyperBeamDescription,
-        .effect = EFFECT_PHOTON_GEYSER,
-        .power = 120,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = 5,
-        .target = MOVE_TARGET_BOTH,
-        .priority = 0,
-        .alwaysCriticalHit = TRUE,
-        .category = DAMAGE_CATEGORY_SPECIAL,
-        .ignoresKingsRock = B_UPDATED_MOVE_FLAGS < GEN_3,
-        .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = MOVE_EFFECT_RECHARGE,
-            .self = TRUE,
-        }),
-        .contestEffect = CONTEST_EFFECT_JAMS_OTHERS_BUT_MISS_ONE_TURN,
-        .contestCategory = CONTEST_CATEGORY_COOL,
-        .contestComboStarterId = 0,
-        .contestComboMoves = {0},
-        .battleAnimScript = gBattleAnimMove_LightThatBurnsTheSky,
-        .validApprenticeMove = TRUE,
-    },
-
-    [MOVE_SINGULARITY_Z] =
-    {
-        .name = COMPOUND_STRING("Singularity Z"),
-        .description = sHyperBeamDescription,
-        .effect = EFFECT_PHOTON_GEYSER,
-        .power = 120,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = 5,
-        .target = MOVE_TARGET_BOTH,
-        .priority = 0,
-        .alwaysCriticalHit = TRUE,
-        .category = DAMAGE_CATEGORY_SPECIAL,
-        .ignoresKingsRock = B_UPDATED_MOVE_FLAGS < GEN_3,
-        .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = MOVE_EFFECT_RECHARGE,
-            .self = TRUE,
-        }),
-        .contestEffect = CONTEST_EFFECT_JAMS_OTHERS_BUT_MISS_ONE_TURN,
-        .contestCategory = CONTEST_CATEGORY_COOL,
-        .contestComboStarterId = 0,
-        .contestComboMoves = {0},
-        .battleAnimScript = gBattleAnimMove_LightThatBurnsTheSky,
-        .validApprenticeMove = TRUE,
-    },
-
     [MOVE_HELLFIRE] =
     {
         .name = COMPOUND_STRING("Hellfire"),

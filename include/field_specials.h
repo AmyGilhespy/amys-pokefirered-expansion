@@ -36,5 +36,6 @@ u16 GetStarterSpeciesPlayer(void);
 u16 GetStarterSpeciesRival(void);
 void GetGameType(void);
 void RemapPickupItem(void);
+void YouHaveXBadgesNowPokemonWillObeyYou(void);
 
 #endif // GUARD_FIELD_SPECIALS_H

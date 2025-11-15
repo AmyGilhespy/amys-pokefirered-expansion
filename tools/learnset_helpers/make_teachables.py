@@ -119,9 +119,9 @@ def prepare_output(all_learnables: dict[str, set[str]], repo_teachables: set[str
         "MOVE_OBLIVION_BEAM",    # TM57 Game Corner Prize Room
         "MOVE_ULTIMA_STRIKE",    # TM58 Game Corner Prize Room
         "MOVE_INFINIBLAST",      # TM59 From Lance, and you can also SKETCH it from ANNA
-        "MOVE_VERDANCE",         # TM60 Celadon City Department Store Roof (Thirsty Girl)
-        "MOVE_SINGULARITY_Y",    # TM61 Celadon City Department Store Roof (Thirsty Girl)
-        "MOVE_SINGULARITY_Z",    # TM62 Celadon City Department Store Roof (Thirsty Girl)
+        "MOVE_VERDANCE",         # TM60 Celadon City Department Store Roof (Thirsty Girl: Fresh Water)
+        "MOVE_GLITZY_GLOW",      # TM61 Celadon City Department Store Roof (Thirsty Girl: Soda Pop)
+        "MOVE_BADDY_BAD",        # TM62 Celadon City Department Store Roof (Thirsty Girl: Lemonade)
         "MOVE_FIRE_PUNCH",       # TM63 Saffron City Dojo
         "MOVE_ICE_PUNCH",        # TM64 Saffron City Dojo
         "MOVE_THUNDER_PUNCH",    # TM65 Saffron City Dojo

@@ -66,6 +66,8 @@ CinnabarIsland_Gym_EventScript_DefeatedBlaine::
 
 CinnabarIsland_Gym_EventScript_GiveTR99::
 	msgbox CinnabarIsland_Gym_Text_ExplainVolcanoBadge
+	call EventScript_YouHaveXBadgesNowPokemonWillObeyYou
+	msgbox CinnabarIsland_Gym_Text_TakeThis
 	checkitemspace ITEM_TM99
 	goto_if_eq VAR_RESULT, FALSE, CinnabarIsland_Gym_EventScript_NoRoomForTR99
 	giveitem_msg CinnabarIsland_Gym_Text_ReceivedTR99FromBlaine, ITEM_TM99

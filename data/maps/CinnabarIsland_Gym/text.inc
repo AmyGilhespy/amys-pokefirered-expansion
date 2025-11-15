@@ -19,9 +19,9 @@ CinnabarIsland_Gym_Text_FireBlastIsUltimateFireMove::
     .string "Don't waste it on WATER POKéMON.$"
 
 CinnabarIsland_Gym_Text_ExplainVolcanoBadge::
-    .string "Hah!\p"
-    .string "The VOLCANOBADGE heightens the\n"
-    .string "SPECIAL stats of your POKéMON.\p"
+    .string "Hah!$"
+
+CinnabarIsland_Gym_Text_TakeThis::
     .string "Here, you can have this, too!$"
 
 CinnabarIsland_Gym_Text_ReceivedTR99FromBlaine::
@@ -150,35 +150,34 @@ CinnabarIsland_Gym_Text_GymStatuePlayerWon::
     .string "{RIVAL}, {PLAYER}$"
 
 CinnabarIsland_Gym_Text_PokemonQuizRules::
-    .string "POKéMON Quiz!\p"
-    .string "Get it right, and the door opens to\n"
-    .string "the next room.\p"
-    .string "Get it wrong, and face a TRAINER!\p"
-    .string "If you want to conserve your\n"
-    .string "POKéMON for the GYM LEADER…\p"
-    .string "Then get it right!\n"
-    .string "Here we go!$"
+    .string "POKéMON Quiz!$"
 
+@ TRUE
 CinnabarIsland_Gym_Text_QuizQuestion1::
-    .string "CATERPIE evolves into METAPOD?$"
+    .string "Some badges can be acquired in\n"
+    .string "any order?$"
 
+@ FALSE
 CinnabarIsland_Gym_Text_QuizQuestion2::
-    .string "There are nine certified POKéMON\n"
-    .string "LEAGUE BADGES?$"
+    .string "CASCOON evolves into BEAUTIFLY?$"
 
+@ FALSE
 CinnabarIsland_Gym_Text_QuizQuestion3::
-    .string "POLIWAG evolves three times?$"
+    .string "BIDOOF does not evolve?$"
 
+@ FALSE
 CinnabarIsland_Gym_Text_QuizQuestion4::
-    .string "Are electric moves effective\n"
-    .string "against GROUND-type POKéMON?$"
+    .string "Are FIGHTING-type POKéMON\n"
+    .string "immune to GHOST moves?$"
 
+@ TRUE
 CinnabarIsland_Gym_Text_QuizQuestion5::
     .string "POKéMON of the same kind and level\n"
     .string "are not identical?$"
 
+@ FALSE
 CinnabarIsland_Gym_Text_QuizQuestion6::
-    .string "TM28 contains TOMBSTONY?$"
+    .string "TM69 contains INFINIBLAST?$"
 
 CinnabarIsland_Gym_Text_CorrectGoOnThrough::
     .string "You're absolutely correct!\p"

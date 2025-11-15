@@ -27,13 +27,13 @@ ViridianCity_Gym_Text_ShopIntro::
 ViridianCity_Gym_Text_ShopOutro::
     .string "Don't be a stranger.$"
 
-ViridianCity_Gym_Text_ExplainEarthBadgeTakeThis::
-    .string "The EARTHBADGE makes POKéMON of\n"
-    .string "any level obey without question.\p"
-    .string "It is evidence of your mastery as\n"
-    .string "a POKéMON TRAINER.\p"
+ViridianCity_Gym_Text_ExplainEarthBadge::
+    .string "The EARTHBADGE is evidence of your\n"
+    .string "mastery as a POKéMON TRAINER.\p"
     .string "With it, you can challenge the\n"
-    .string "POKéMON LEAGUE.\p"
+    .string "POKéMON LEAGUE.$"
+
+ViridianCity_Gym_Text_TakeThis::
     .string "Also, take these.\p"
     .string "Consider them gifts for your\n"
     .string "POKéMON LEAGUE challenge.$"

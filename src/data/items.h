@@ -3816,7 +3816,7 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Orange Mail"),
         .pluralName = ITEM_PLURAL_NAME("Orange Mail"),
-        .price = 50,
+        .price = 10000,
         .holdEffect = HOLD_EFFECT_LEFTOVERS,
         .holdEffectParam = 10,
         .description = COMPOUND_STRING(
@@ -3888,7 +3888,7 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Wood Mail"),
         .pluralName = ITEM_PLURAL_NAME("Wood Mail"),
-        .price = 50,
+        .price = 10000,
         .holdEffect = HOLD_EFFECT_FOCUS_SASH,
         .description = COMPOUND_STRING(
             "Focus Sash. A Slakoth-print Mail to\nbe held by a Pokémon."),
@@ -3905,7 +3905,7 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Wave Mail"),
         .pluralName = ITEM_PLURAL_NAME("Wave Mail"),
-        .price = 50,
+        .price = 10000,
         .holdEffect = HOLD_EFFECT_DRIZZLE,
         .holdEffectParam = 10,
         .description = COMPOUND_STRING(
@@ -3923,7 +3923,7 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Bead Mail"),
         .pluralName = ITEM_PLURAL_NAME("Bead Mail"),
-        .price = 50,
+        .price = 10000,
         .holdEffect = HOLD_EFFECT_LIFE_ORB,
         .description = COMPOUND_STRING(
             "Life Orb. Mail featuring a sketch\nof the holding Pokémon."),
@@ -3940,7 +3940,7 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Shadow Mail"),
         .pluralName = ITEM_PLURAL_NAME("Shadow Mail"),
-        .price = 50,
+        .price = 10000,
         .holdEffect = HOLD_EFFECT_PERISH,
         .description = COMPOUND_STRING(
             "Perish Count 10. A Duskull-print\nMail to be held by a Pokémon."),
@@ -3957,7 +3957,7 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Tropic Mail"),
         .pluralName = ITEM_PLURAL_NAME("Tropic Mail"),
-        .price = 50,
+        .price = 10000,
         .holdEffect = HOLD_EFFECT_DROUGHT,
         .holdEffectParam = 10,
         .description = COMPOUND_STRING(
@@ -3990,7 +3990,7 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Fab Mail"),
         .pluralName = ITEM_PLURAL_NAME("Fab Mail"),
-        .price = 50,
+        .price = 10000,
         .holdEffect = HOLD_EFFECT_EVIOLITE,
         .holdEffectParam = 50,
         .description = COMPOUND_STRING(
@@ -11776,24 +11776,24 @@ const struct Item gItemsInfo[] =
         .fieldUseFunc = NULL,
     },
 
-    [ITEM_TM_SINGULARITY_Y] =
+    [ITEM_TM_GLITZY_GLOW] =
     {
         .name = ITEM_NAME("TM61"),
         .price = 10000,
         .description = COMPOUND_STRING(
-            "Singularity Y."),
+            "Glitzy Glow."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = NULL,
     },
 
-    [ITEM_TM_SINGULARITY_Z] =
+    [ITEM_TM_BADDY_BAD] =
     {
         .name = ITEM_NAME("TM62"),
         .price = 10000,
         .description = COMPOUND_STRING(
-            "Singularity Z."),
+            "Baddy Bad."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -14745,6 +14745,23 @@ const struct Item gItemsInfo[] =
         .flingPower = 50,
         .iconPic = gItemIcon_Tea,
         .iconPalette = gItemIconPalette_Tea,
+    },
+
+    [ITEM_COCAINE] =
+    {
+        .name = ITEM_NAME("Cocaine"),
+        .pluralName = ITEM_PLURAL_NAME("Cocaine"),
+        .price = 50,
+        .holdEffect = HOLD_EFFECT_COFFEE,
+        .description = COMPOUND_STRING(
+            "Raises SPEED."),
+        .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_HELD_ITEM,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 50,
+        .iconPic = gItemIcon_BrightPowder,
+        .iconPalette = gItemIconPalette_BrightPowder,
     },
 };
 

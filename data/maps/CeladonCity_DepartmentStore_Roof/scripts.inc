@@ -121,7 +121,7 @@ CeladonCity_DepartmentStore_Roof_EventScript_GiveFreshWater::
 
 CeladonCity_DepartmentStore_Roof_EventScript_GiveSodaPop::
 	setvar VAR_0x8008, ITEM_SODA_POP
-	setvar VAR_0x8009, ITEM_TM_SINGULARITY_Y @ Originally: TM20 Safeguard
+	setvar VAR_0x8009, ITEM_TM_GLITZY_GLOW @ Originally: TM20 Safeguard
 	goto_if_set FLAG_GOT_TM20_FROM_THIRSTY_GIRL, CeladonCity_DepartmentStore_Roof_EventScript_NotThirstyAfterAll
 	msgbox CeladonCity_DepartmentStore_Roof_Text_YaySodaPopHaveThis
 	goto CeladonCity_DepartmentStore_Roof_EventScript_GiveDrink
@@ -129,7 +129,7 @@ CeladonCity_DepartmentStore_Roof_EventScript_GiveSodaPop::
 
 CeladonCity_DepartmentStore_Roof_EventScript_GiveLemonade::
 	setvar VAR_0x8008, ITEM_LEMONADE
-	setvar VAR_0x8009, ITEM_TM_SINGULARITY_Z @ Originally: TM33 Reflect
+	setvar VAR_0x8009, ITEM_TM_BADDY_BAD @ Originally: TM33 Reflect
 	goto_if_set FLAG_GOT_TM33_FROM_THIRSTY_GIRL, CeladonCity_DepartmentStore_Roof_EventScript_NotThirstyAfterAll
 	msgbox CeladonCity_DepartmentStore_Roof_Text_YayLemonadeHaveThis
 	goto CeladonCity_DepartmentStore_Roof_EventScript_GiveDrink

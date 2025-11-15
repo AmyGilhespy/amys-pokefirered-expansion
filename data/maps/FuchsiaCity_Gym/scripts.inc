@@ -35,6 +35,8 @@ FuchsiaCity_Gym_EventScript_DefeatedKoga::
 
 FuchsiaCity_Gym_EventScript_GiveTR99::
 	msgbox FuchsiaCity_Gym_Text_KogaExplainSoulBadge
+	call EventScript_YouHaveXBadgesNowPokemonWillObeyYou
+	msgbox FuchsiaCity_Gym_Text_KogaTakeThis
 	checkitemspace ITEM_TM99
 	goto_if_eq VAR_RESULT, FALSE, FuchsiaCity_Gym_EventScript_NoRoomForTR99
 	giveitem_msg FuchsiaCity_Gym_Text_ReceivedTR99FromKoga, ITEM_TM99

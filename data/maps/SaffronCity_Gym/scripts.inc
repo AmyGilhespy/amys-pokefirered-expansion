@@ -43,7 +43,8 @@ SaffronCity_Gym_EventScript_DefeatedSabrina::
 	end
 
 SaffronCity_Gym_EventScript_GiveTR99::
-	msgbox SaffronCity_Gym_Text_ExplainMarshBadgeTakeThis
+	call EventScript_YouHaveXBadgesNowPokemonWillObeyYou
+	msgbox SaffronCity_Gym_Text_TakeThis
 	checkitemspace ITEM_TM99
 	goto_if_eq VAR_RESULT, FALSE, SaffronCity_Gym_EventScript_NoRoomForTR99
 	giveitem_msg SaffronCity_Gym_Text_ReceivedTR99FromSabrina, ITEM_TM99

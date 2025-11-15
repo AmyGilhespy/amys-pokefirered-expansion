@@ -1,0 +1,13 @@
+EventScript_YouHaveXBadgesNowPokemonWillObeyYou::
+	special YouHaveXBadgesNowPokemonWillObeyYou
+	goto_if_ge VAR_TEMP_1, 8, EventScript_YouHave8BadgesNowAllPokemonWillObeyYou
+	buffernumberstring STR_VAR_1, VAR_TEMP_1
+	buffernumberstring STR_VAR_2, VAR_TEMP_2
+	msgbox Text_YouHaveXBadgesNowPokemonWillObeyYou
+	return
+	end
+
+EventScript_YouHave8BadgesNowAllPokemonWillObeyYou::
+	msgbox Text_YouHave8BadgesNowAllPokemonWillObeyYou
+	return
+	end

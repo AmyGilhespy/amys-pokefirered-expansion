@@ -63,8 +63,8 @@
     F(ULTIMA_STRIKE) \
     F(INFINIBLAST) \
     F(VERDANCE) \
-    F(SINGULARITY_Y) \
-    F(SINGULARITY_Z) \
+    F(GLITZY_GLOW) \
+    F(BADDY_BAD) \
     F(FIRE_PUNCH) \
     F(ICE_PUNCH) \
     F(THUNDER_PUNCH) \

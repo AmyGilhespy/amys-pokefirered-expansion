@@ -812,7 +812,7 @@ gStdScriptsEnd::
 
 	.include "data/scripts/std_msgbox.inc"
 	.include "data/scripts/trainer_battle.inc"
-	
+
 	.include "data/scripts/config.inc"
 	.include "data/scripts/debug.inc"
 
@@ -855,6 +855,7 @@ Text_PlayerWhatCanIDoForYou::
 	.string "{PLAYER}{KUN}, welcome!\p"
 	.string "What can I do for you?$"
 
+	.include "data/text/badges.inc"
 	.include "data/text/obtain_item.inc"
 
 Text_MakingPreparations::
@@ -1071,6 +1072,7 @@ EventScript_ResetAllMapFlags::
 
 	.include "data/scripts/hall_of_fame.inc"
 	.include "data/scripts/pkmn_center_nurse.inc"
+	.include "data/scripts/badges.inc"
 	.include "data/scripts/obtain_item.inc"
 	.include "data/scripts/pc.inc"
 
@@ -1130,7 +1132,7 @@ EventScript_HandOverItem::
 	return
 
 	.include "data/scripts/pokemon_league.inc"
-	.include "data/scripts/movement.inc"	
+	.include "data/scripts/movement.inc"
 	.include "data/scripts/flavor_text.inc"
 	.include "data/scripts/questionnaire.inc"
 

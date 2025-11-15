@@ -1010,8 +1010,9 @@
 #define ITEM_PERFECT_SASH         (UPSTREAM_ITEMS_COUNT + 2)
 #define ITEM_BINDING_ROPE         (UPSTREAM_ITEMS_COUNT + 3)
 #define ITEM_COFFEE               (UPSTREAM_ITEMS_COUNT + 4)
+#define ITEM_COCAINE              (UPSTREAM_ITEMS_COUNT + 5)
+#define ITEMS_COUNT (ITEM_COCAINE + 1)
 
-#define ITEMS_COUNT (ITEM_BINDING_ROPE + 1)
 #define ITEM_FIELD_ARROW ITEMS_COUNT
 
 // A special item id associated with "Cancel"/"Exit" etc. in a list of items or decorations

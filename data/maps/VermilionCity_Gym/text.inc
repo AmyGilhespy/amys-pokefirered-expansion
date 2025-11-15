@@ -15,11 +15,11 @@ VermilionCity_Gym_Text_LtSurgePostBattle::
     .string "But, it's useless against GROUND-\n"
     .string "type POKéMON!$"
 
-VermilionCity_Gym_Text_ExplainThunderBadgeTakeThis::
-    .string "The THUNDERBADGE cranks up your\n"
-    .string "POKéMON's SPEED!\p"
-    .string "It also lets your POKéMON FLY\n"
-    .string "lightning-quick anytime, kid!\p"
+VermilionCity_Gym_Text_ExplainThunderBadge::
+    .string "The THUNDERBADGE lets your POKéMON\n"
+    .string "FLY lightning-quick anytime, kid!$"
+
+VermilionCity_Gym_Text_TakeThis::
     .string "You're special, kid!\n"
     .string "Take this!$"
 

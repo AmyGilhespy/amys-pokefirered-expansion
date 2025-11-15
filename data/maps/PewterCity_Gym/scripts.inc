@@ -17,6 +17,7 @@ PewterCity_Gym_EventScript_DefeatedBrock::
 	setflag FLAG_HIDE_PEWTER_CITY_GYM_GUIDE
 	clearflag FLAG_HIDE_PEWTER_CITY_RUNNING_SHOES_GUY
 	set_gym_trainers 1
+	call EventScript_YouHaveXBadgesNowPokemonWillObeyYou
 	goto PewterCity_Gym_EventScript_GiveTR99
 	end
 

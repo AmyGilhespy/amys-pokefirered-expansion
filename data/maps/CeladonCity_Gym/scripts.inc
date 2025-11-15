@@ -35,7 +35,9 @@ CeladonCity_Gym_EventScript_DefeatedErika::
 	end
 
 CeladonCity_Gym_EventScript_GiveTR99::
-	msgbox CeladonCity_Gym_Text_ExplainRainbowBadgeTakeThis
+	msgbox CeladonCity_Gym_Text_ExplainRainbowBadge
+	call EventScript_YouHaveXBadgesNowPokemonWillObeyYou
+	msgbox CeladonCity_Gym_Text_TakeThis
 	checkitemspace ITEM_TM99
 	goto_if_eq VAR_RESULT, FALSE, CeladonCity_Gym_EventScript_NoRoomForTR99
 	giveitem_msg CeladonCity_Gym_Text_ReceivedTR99FromErika, ITEM_TM99

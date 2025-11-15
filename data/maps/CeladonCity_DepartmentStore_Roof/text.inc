@@ -17,9 +17,9 @@ Text_ReceivedItemFromLittleGirl::
     .string "from the little girl.$"
 
 CeladonCity_DepartmentStore_Roof_Text_ExplainTM60::
-    .string "TM60 contains SINGULARITY X.\p"
-    .string "It's a move that weakens the power\n"
-    .string "of special attacks by your foe.$"
+    .string "TM60 contains VERDANCE.\p"
+    .string "It's like INGRAIN, AQUA RING, and\n"
+    .string "SYNTHESIS combined!$"
 
 CeladonCity_DepartmentStore_Roof_Text_YaySodaPopHaveThis::
     .string "Yay!\p"
@@ -28,9 +28,9 @@ CeladonCity_DepartmentStore_Roof_Text_YaySodaPopHaveThis::
     .string "You can have this from me!$"
 
 CeladonCity_DepartmentStore_Roof_Text_ExplainTM61::
-    .string "TM61 contains SINGULARITY Y.\p"
-    .string "It's a move that prevents status\n"
-    .string "problems among your POKéMON.$"
+    .string "TM61 contains GLITZY GLOW.\p"
+    .string "It's a move that weakens the power\n"
+    .string "of special attacks by your foe.$"
 
 CeladonCity_DepartmentStore_Roof_Text_YayLemonadeHaveThis::
     .string "Yay!\p"
@@ -39,7 +39,7 @@ CeladonCity_DepartmentStore_Roof_Text_YayLemonadeHaveThis::
     .string "You can have this from me!$"
 
 CeladonCity_DepartmentStore_Roof_Text_ExplainTM62::
-    .string "TM62 contains SINGULARITY Z.\p"
+    .string "TM62 contains BADDY BAD.\p"
     .string "It's a move that weakens the power\n"
     .string "of physical attacks by your foe.$"
 

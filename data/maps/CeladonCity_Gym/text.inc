@@ -38,11 +38,11 @@ CeladonCity_Gym_Text_ErikaPostBattle::
     .string "I would never collect POKéMON if\n"
     .string "they were unattractive.$"
 
-CeladonCity_Gym_Text_ExplainRainbowBadgeTakeThis::
-    .string "The RAINBOWBADGE will make\n"
-    .string "POKéMON up to Lv. 50 obey.\p"
-    .string "It also allows POKéMON to use\n"
-    .string "STRENGTH in and out of battle.\p"
+CeladonCity_Gym_Text_ExplainRainbowBadge::
+    .string "The RAINBOWBADGE allows POKéMON\n"
+    .string "to use STRENGTH out of battle.$"
+
+CeladonCity_Gym_Text_TakeThis::
     .string "Please also take this with you.$"
 
 CeladonCity_Gym_Text_ReceivedTR99FromErika::

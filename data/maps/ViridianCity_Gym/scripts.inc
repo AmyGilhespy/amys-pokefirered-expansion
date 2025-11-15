@@ -40,7 +40,9 @@ ViridianCity_Gym_EventScript_DefeatedGiovanni::
 	end
 
 ViridianCity_Gym_EventScript_GiveTR99::
-	msgbox ViridianCity_Gym_Text_ExplainEarthBadgeTakeThis
+	msgbox ViridianCity_Gym_Text_ExplainEarthBadge
+	call EventScript_YouHaveXBadgesNowPokemonWillObeyYou
+	msgbox ViridianCity_Gym_Text_TakeThis
 	checkitemspace ITEM_TM99, 10
 	goto_if_eq VAR_RESULT, FALSE, ViridianCity_Gym_EventScript_NoRoomForTR99
 	giveitem_msg ViridianCity_Gym_Text_ReceivedTR99FromGiovanni, ITEM_TM99, amount=10

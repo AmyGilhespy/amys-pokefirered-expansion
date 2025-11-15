@@ -9,6 +9,8 @@ VermilionCity_Gym_MapScripts::
 	.byte 0
 
 VermilionCity_Gym_OnLoad::
+	setflag FOUND_FIRST_SWITCH
+	setflag FLAG_FOUND_BOTH_VERMILION_GYM_SWITCHES
 	call_if_set FOUND_FIRST_SWITCH, VermilionCity_Gym_EventScript_SetOneBeamOff
 	call_if_set FLAG_FOUND_BOTH_VERMILION_GYM_SWITCHES, VermilionCity_Gym_EventScript_SetBeamsOff
 	end
@@ -239,7 +241,9 @@ VermilionCity_Gym_EventScript_ShowOaksAide::
 	return
 
 VermilionCity_Gym_EventScript_GiveTR99::
-	msgbox VermilionCity_Gym_Text_ExplainThunderBadgeTakeThis
+	msgbox VermilionCity_Gym_Text_ExplainThunderBadge
+	call EventScript_YouHaveXBadgesNowPokemonWillObeyYou
+	msgbox VermilionCity_Gym_Text_TakeThis
 	checkitemspace ITEM_TM99
 	goto_if_eq VAR_RESULT, FALSE, VermilionCity_Gym_EventScript_NoRoomForTR99
 	giveitem_msg VermilionCity_Gym_Text_ReceivedTR99FromLtSurge, ITEM_TM99
