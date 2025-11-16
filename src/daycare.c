@@ -581,6 +581,7 @@ static void ShiftDaycareSlots(struct DayCare *daycare)
 
 static void ApplyDaycareExperience(struct Pokemon *mon)
 {
+    #if 0
     s32 i;
     bool8 firstMove;
     u16 learnedMove;
@@ -607,6 +608,7 @@ static void ApplyDaycareExperience(struct Pokemon *mon)
 
     // Re-calculate the mons stats at its new level.
     CalculateMonStats(mon);
+    #endif
 }
 
 static u16 TakeSelectedPokemonFromDaycare(struct DaycareMon *daycareMon)
@@ -625,6 +627,9 @@ static u16 TakeSelectedPokemonFromDaycare(struct DaycareMon *daycareMon)
         SetMonData(&pokemon, MON_DATA_EXP, &experience);
         ApplyDaycareExperience(&pokemon);
     }
+
+    // Instead of leveling up, we change gender
+    TransgendPokemon(&pokemon);
 
     gPlayerParty[PARTY_SIZE - 1] = pokemon;
     if (daycareMon->mail.message.itemId)
@@ -656,7 +661,7 @@ static u8 GetLevelAfterDaycareSteps(struct BoxPokemon *mon, u32 steps)
 {
     struct BoxPokemon tempMon = *mon;
 
-    u32 experience = GetBoxMonData(mon, MON_DATA_EXP) + steps;
+    u32 experience = GetBoxMonData(mon, MON_DATA_EXP) /*+ steps*/;
     SetBoxMonData(&tempMon, MON_DATA_EXP,  &experience);
     return GetLevelFromBoxMonExp(&tempMon);
 }
@@ -667,7 +672,7 @@ static u8 GetNumLevelsGainedFromSteps(struct DaycareMon *daycareMon)
     u8 levelAfter;
 
     levelBefore = GetLevelFromBoxMonExp(&daycareMon->mon);
-    levelAfter = GetLevelAfterDaycareSteps(&daycareMon->mon, daycareMon->steps);
+    levelAfter = levelBefore; //GetLevelAfterDaycareSteps(&daycareMon->mon, daycareMon->steps);
     if (levelAfter > GetCurrentLevelCap())
         levelAfter = GetCurrentLevelCap();
     return levelAfter - levelBefore;
@@ -689,7 +694,7 @@ static u32 GetDaycareCostForSelectedMon(struct DaycareMon *daycareMon)
     DayCare_GetBoxMonNickname(&daycareMon->mon, gStringVar1);
     cost = 100 + 100 * numLevelsGained;
     ConvertIntToDecimalStringN(gStringVar2, cost, STR_CONV_MODE_LEFT_ALIGN, 5);
-    return cost;
+    return 0 /* cost */;
 }
 
 static u16 GetDaycareCostForMon(struct DayCare *daycare, u8 slotId)
@@ -1828,8 +1833,8 @@ void PutMonInRoute5Daycare(void)
 
 void GetCostToWithdrawRoute5DaycareMon(void)
 {
-    u16 cost = GetDaycareCostForSelectedMon(&gSaveBlock1Ptr->route5DayCareMon);
-    gSpecialVar_0x8005 = cost;
+    //u16 cost = GetDaycareCostForSelectedMon(&gSaveBlock1Ptr->route5DayCareMon);
+    gSpecialVar_0x8005 = 0/* cost */;
 }
 
 bool8 IsThereMonInRoute5Daycare(void)

@@ -1408,6 +1408,73 @@ void CreateMonWithNature(struct Pokemon *mon, u16 species, u8 level, u8 fixedIV,
     CreateMon(mon, species, level, fixedIV, TRUE, personality, OT_ID_PLAYER_ID, 0);
 }
 
+bool8 TransgendPokemon(struct Pokemon *mon)
+{
+    u32 personality = 0;
+    u32 originalPersonality = GetMonData(mon, MON_DATA_PERSONALITY, NULL);
+    u16 species = GetMonData(mon, MON_DATA_SPECIES, NULL);
+    u8 originalGender = GetGenderFromSpeciesAndPersonality(species, originalPersonality);
+    if (originalGender == MON_GENDERLESS || (originalGender != MON_MALE && originalGender != MON_FEMALE))
+    {
+        return FALSE;
+    }
+    u8 targetGender = originalGender == MON_MALE ? MON_FEMALE : MON_MALE;
+
+    u8 nature = GetNatureFromPersonality(originalPersonality);
+    u8 unownLetter = species != SPECIES_UNOWN ? 0 : GET_UNOWN_LETTER(originalPersonality);
+
+    s16 tries = 1000;
+
+    if (species == SPECIES_UNOWN && (u8)(unownLetter - 1) < NUM_UNOWN_FORMS)
+    {
+        u16 actualLetter;
+
+        do
+        {
+            personality = Random32();
+            actualLetter = GET_UNOWN_LETTER(personality);
+            if (--tries <= 0)
+                break;
+        }
+        while (nature != GetNatureFromPersonality(personality)
+            || targetGender != GetGenderFromSpeciesAndPersonality(species, personality)
+            || actualLetter != unownLetter - 1);
+    }
+    else
+    {
+        do
+        {
+            personality = Random32();
+            if (--tries <= 0)
+                break;
+        }
+        while (nature != GetNatureFromPersonality(personality)
+            || targetGender != GetGenderFromSpeciesAndPersonality(species, personality));
+    }
+
+    // Sanity/Safety checks:
+    if (nature != GetNatureFromPersonality(personality))
+    {
+        return FALSE;
+    }
+    if (targetGender == originalGender)
+    {
+        return FALSE;
+    }
+    if (targetGender != GetGenderFromSpeciesAndPersonality(species, personality))
+    {
+        return FALSE;
+    }
+    if (species == SPECIES_UNOWN && unownLetter != GET_UNOWN_LETTER(personality))
+    {
+        return FALSE;
+    }
+
+    UpdateMonPersonality(&mon->box, personality);
+    CalculateMonStats(mon);
+    return TRUE;
+}
+
 void CreateMonWithGenderNatureLetter(struct Pokemon *mon, u16 species, u8 level, u8 fixedIV, u8 gender, u8 nature, u8 unownLetter)
 {
     u32 personality;
@@ -5906,6 +5973,33 @@ u8 CanLearnTeachableMove(u16 species, u16 move)
     if (species == SPECIES_EGG)
     {
         return FALSE;
+    }
+    else if (species == SPECIES_STEEL_SOUL
+            || species == SPECIES_METEON
+            || species == SPECIES_RAIN_PLACEHOLDER
+            || species == SPECIES_SAND_PLACEHOLDER
+            || species == SPECIES_SNOW_PLACEHOLDER
+            || species == SPECIES_PLACEHOLDER
+            || species == SPECIES_BROCK
+            || species == SPECIES_MISTY
+            || species == SPECIES_ERIKA
+            || species == SPECIES_SABRINA
+            || species == SPECIES_BLAINE
+            || species == SPECIES_LORELEI
+            || species == SPECIES_BRUNO
+            || species == SPECIES_AGATHA
+            || species == SPECIES_LANCE
+            || species == SPECIES_MOM
+            || species == SPECIES_KYOUKO
+            || species == SPECIES_LILITH
+            || species == SPECIES_MOLLY
+            || species == SPECIES_NATALIE
+            || species == SPECIES_OLIVIA
+            || species == SPECIES_AMY
+            || species == SPECIES_AMY_MEGA
+            )
+    {
+        return TRUE;
     }
     else if (species == SPECIES_MEW)
     {

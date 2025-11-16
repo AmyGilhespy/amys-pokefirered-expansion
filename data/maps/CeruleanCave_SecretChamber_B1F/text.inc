@@ -22,7 +22,7 @@ CeruleanCave_SecretChamber_B1F_Text_KyoukoIntro::
 	.string "But just because I'm first, that\n"
 	.string "doesn't mean I'm weak.\p"
 	.string "Some people affectionately call\n"
-	.string "me ''CUTE KYOUKO''.\p"
+	.string "me “CUTE KYOUKO”.\p"
 	.string "This is because I only use cute\n"
 	.string "POKéMON.\p"
 	.string "Cute POKéMON can be strong too!\p"

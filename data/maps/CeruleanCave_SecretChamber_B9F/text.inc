@@ -13,7 +13,7 @@ CeruleanCave_SecretChamber_B9F_Text_Molly::
 	.string "over with so I can have a shower!$"
 
 CeruleanCave_SecretChamber_B9F_Text_Natalie::
-	.string "NATALIE: You just lost ''THE GAME''!$"
+	.string "NATALIE: You just lost “THE GAME”!$"
 
 CeruleanCave_SecretChamber_B9F_Text_Olivia::
 	.string "OLIVIA: I'll be watching this fight\n"
@@ -30,7 +30,7 @@ CeruleanCave_SecretChamber_B9F_Text_AmyIntro::
 	.string "I have a lot of favorites, but if I\n"
 	.string "had to choose just one… …then by\l"
 	.string "appearance it's got to be GENGAR.\p"
-	.string "I always name my GENGAR ''Hugs''.\p"
+	.string "I always name my GENGAR “Hugs”.\p"
 	.string "But I haven't brought Hugs here to\n"
 	.string "battle you today.\p"
 	.string "Why?\n"

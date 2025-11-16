@@ -169,6 +169,7 @@ def prepare_output(all_learnables: dict[str, set[str]], repo_teachables: set[str
         "MOVE_SPLASH",           # Move Tutor
         "MOVE_CELEBRATE",        # Move Tutor
         "MOVE_MIMIC",            # Move Tutor: Unchanged, because I liked the dialogue+move
+        "MOVE_PSYCHIC_FANGS",    # Move Tutor
         "MOVE_BOLT_STRIKE",      # Move Tutor
         "MOVE_HOLD_HANDS",       # Move Tutor
         "MOVE_DREAM_EATER",      # Move Tutor: Unchanged, because I liked the move

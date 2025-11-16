@@ -8656,11 +8656,11 @@ Nature: Calm
 - Rain Dance
 - Rest
 
-Cloyster @ Focus Sash
+Cloyster @ Leftovers
 Level: 51
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 0 HP / 252 Atk / 0 Def / 0 SpA / 4 SpD / 252 Spe
-Ability: Refrigerate
+Ability: Sturdy
 Nature: Jolly
 - Spikes
 - Shell Smash
@@ -8954,6 +8954,327 @@ Nature: Adamant
 - Extreme Speed
 - V-create
 
+=== TRAINER_CHAMPION_OAK ===
+Name: PROF. OAK
+Class: Pkmn Prof
+Pic: Professor Oak
+Gender: Male
+Music: Magma
+Items: Full Restore / Full Restore / Full Restore
+Double Battle: Yes
+AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Smart Switching / Ace Pokemon / Omniscient / Prefer Highest Damage Move
+
+Necrozma-Dusk Mane @ Ultranecrozium Z
+Level: 100
+IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 0 HP / 0 Atk / 32 Def / 224 SpA / 0 SpD / 252 Spe
+Ability: Prism Armor
+Nature: Jolly
+- Stealth Rock
+- Photon Geyser
+- Dragon Pulse
+- Heat Wave
+
+Rayquaza @ Life Orb
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 0 HP / 252 Atk / 4 Def / 0 SpA / 0 SpD / 252 Spe
+Ability: Air Lock
+Nature: Adamant
+- Dragon Ascent
+- Dragon Dance
+- Extreme Speed
+- V-create
+
+=== TRAINER_ELITE_FOUR_REMATCH_LORELEI ===
+Name: LORELEI
+Class: Elite Four
+Pic: Elite Four Lorelei
+Gender: Female
+Music: Elite Four
+Items: Full Restore / Full Restore
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Will Suicide / Smart Switching / Ace Pokemon / Omniscient
+Mugshot: Purple
+
+Dewgong @ Leftovers
+Level: 100
+IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 0 Atk / 4 Def / 0 SpA / 252 SpD / 0 Spe
+Ability: Hydration
+Nature: Calm
+- Whirlpool
+- Perish Song
+- Rain Dance
+- Rest
+
+Cloyster @ Perfect Sash
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 0 HP / 252 Atk / 0 Def / 0 SpA / 4 SpD / 252 Spe
+Ability: Disguise
+Nature: Jolly
+- Spikes
+- Shell Smash
+- Icicle Crash
+- Ice Shard
+
+Mamoswine @ Life Orb
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 0 HP / 252 Atk / 0 Def / 0 SpA / 4 SpD / 252 Spe
+Ability: Huge Power
+Nature: Adamant
+- Icicle Crash
+- Earthquake
+- Close Combat
+- Ice Shard
+
+Rotom Frost @ Focus Sash
+Level: 100
+IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 0 HP / 0 Atk / 0 Def / 252 SpA / 4 SpD / 252 Spe
+Ability: Snow Warning
+Nature: Timid
+- Railgun
+- Blizzard
+- Secret Sword
+- Absolute Zero
+
+Glalie @ Glalitite
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 0 HP / 252 Atk / 0 Def / 0 SpA / 4 SpD / 252 Spe
+Ability: Snow Warning
+Nature: Jolly
+- Double Edge
+- Extreme Speed
+- Absolute Zero
+- Last Resort
+
+Lapras @ Sitrus Berry
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+Nature: Serious
+- Ice Beam
+
+=== TRAINER_ELITE_FOUR_REMATCH_BRUNO ===
+Name: BRUNO
+Class: Elite Four
+Pic: Elite Four Bruno
+Gender: Male
+Music: Elite Four
+Items: Full Restore / Full Restore
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Sequence Switching / Ace Pokemon / Omniscient / Prefer Highest Damage Move
+Mugshot: Green
+
+Hariyama @ Custap Berry
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 0 Def / 0 SpA / 252 SpD / 0 Spe
+Ability: Disguise
+Nature: Adamant
+- Substitute XL
+- Swords Dance
+- Close Combat
+- Knock Off
+
+Shedinja @ Coffee
+Level: 100
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 31 Spe
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 252 Spe
+Ability: Wonder Guard
+Nature: Quiet
+Tera Type: Stellar
+- Endeavor
+- Dragon Rage
+- Shadow Sneak
+
+Iron Hands @ Smooth Rock
+Level: 100
+IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
+EVs: 252 HP / 0 Atk / 4 Def / 0 SpA / 252 SpD / 0 Spe
+Ability: Sand Stream
+Nature: Adamant
+- Toxic Spikes
+- Shed Tail
+
+Diglett Alola @ Shed Shell
+Level: 1
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Ability: Sturdy
+Nature: Quiet
+- Endeavor
+- Dragon Rage
+
+Lucario @ Lucarionite
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 0 HP / 252 Atk / 0 Def / 0 SpA / 4 SpD / 252 Spe
+Ability: Sand Stream
+Nature: Jolly
+- Swords Dance
+- Meteor Mash
+- Close Combat
+- Bullet Punch
+
+Machamp @ Life Orb
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+Nature: Serious
+- Cross Chop
+
+=== TRAINER_ELITE_FOUR_REMATCH_AGATHA ===
+Name: AGATHA
+Class: Elite Four
+Pic: Elite Four Agatha
+Gender: Female
+Music: Elite Four
+Items: Full Restore / Full Restore
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Smart Switching / Ace Pokemon / Omniscient / Prefer Highest Damage Move
+Mugshot: Pink
+
+Gengar @ Petaya Berry
+Level: 100
+IVs: 30 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 0 HP / 0 Atk / 0 Def / 252 SpA / 4 SpD / 252 Spe
+Ability: No Guard
+Nature: Timid
+- Shadow Ball
+- Focus Blast
+- Zap Cannon
+- Substitute XL
+
+Marshadow @ Life Orb
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 0 HP / 252 Atk / 0 Def / 0 SpA / 4 SpD / 252 Spe
+Ability: Huge Power
+Nature: Jolly
+- Spectral Thief
+- Shadow Sneak
+- Close Combat
+- Pursuit
+
+Gholdengo @ Leftovers
+Level: 100
+IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 0 Atk / 228 Def / 0 SpA / 0 SpD / 28 Spe
+Ability: Earth Eater
+Nature: Bold
+- Make It Rain
+- Shadow Ball
+- Nasty Plot
+- Recover
+
+Lunala @ Lunalium Z
+Level: 100
+IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 0 HP / 0 Atk / 0 Def / 244 SpA / 12 SpD / 252 Spe
+Ability: Shadow Shield
+Nature: Timid
+- Calm Mind
+- Moongeist Beam
+- Psyshock
+- Moonblast
+
+Gengar @ Gengarite
+Level: 100
+IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 0 HP / 0 Atk / 0 Def / 252 SpA / 4 SpD / 252 Spe
+Ability: Psychic Surge
+Nature: Timid
+- Shadow Ball
+- Sludge Wave
+- Substitute S
+- Destiny Bond
+
+Gengar @ Leftovers
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+Nature: Serious
+- Shadow Ball
+
+=== TRAINER_ELITE_FOUR_REMATCH_LANCE ===
+Name: LANCE
+Class: Elite Four
+Pic: Elite Four Lance
+Gender: Male
+Music: Elite Four
+Items: Full Restore / Full Restore
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Smart Switching / Ace Pokemon / Omniscient
+Mugshot: Blue
+
+Gyarados @ Wave Mail
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 0 HP / 252 Atk / 0 Def / 0 SpA / 4 SpD / 252 Spe
+Ability: Delta Stream
+Nature: Jolly
+- Dragon Dance
+- Waterfall
+- Brave Bird
+- Infiniblast
+
+Eternatus @ Black Sludge
+Level: 100
+IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 0 HP / 0 Atk / 0 Def / 252 SpA / 4 SpD / 252 Spe
+Ability: Simple
+Nature: Timid
+- Tail Glow
+- Core Enforcer
+- Sludge Bomb
+- Recover
+
+Aerodactyl @ Life Orb
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 0 HP / 252 Atk / 0 Def / 0 SpA / 4 SpD / 252 Spe
+Ability: Huge Power
+Nature: Jolly
+- Stealth Rock
+- Stone Edge
+- Earthquake
+- Infiniblast
+
+Charizard @ Charizardite X
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 0 HP / 252 Atk / 4 Def / 0 SpA / 0 SpD / 252 Spe
+Ability: Drought
+Nature: Timid
+- Dragon Dance
+- Flare Blitz
+- Dragon Claw
+- Roost
+
+Dragonite @ Yache Berry
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 0 HP / 252 Atk / 0 Def / 0 SpA / 4 SpD / 252 Spe
+Ability: Aerilate
+Nature: Jolly
+Tera Type: Flying
+- Dragon Dance
+- Extreme Speed
+- Infiniblast
+- Recover
+
+Dragonite @ Sitrus Berry
+Level: 100
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
+Nature: Serious
+- Hyper Beam
+
 === TRAINER_CHAMPION_REMATCH_MOM ===
 Name: MOM
 Class: Champion
@@ -8999,38 +9320,6 @@ Gigantamax: Yes
 - Knock Off
 - Play Rough
 
-=== TRAINER_CHAMPION_OAK ===
-Name: PROF. OAK
-Class: Pkmn Prof
-Pic: Professor Oak
-Gender: Male
-Music: Magma
-Items: Full Restore / Full Restore / Full Restore
-Double Battle: Yes
-AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Smart Switching / Ace Pokemon / Omniscient / Prefer Highest Damage Move
-
-Necrozma-Dusk Mane @ Ultranecrozium Z
-Level: 100
-IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 0 HP / 0 Atk / 32 Def / 224 SpA / 0 SpD / 252 Spe
-Ability: Prism Armor
-Nature: Jolly
-- Stealth Rock
-- Photon Geyser
-- Dragon Pulse
-- Heat Wave
-
-Rayquaza @ Life Orb
-Level: 100
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 0 HP / 252 Atk / 4 Def / 0 SpA / 0 SpD / 252 Spe
-Ability: Air Lock
-Nature: Adamant
-- Dragon Ascent
-- Dragon Dance
-- Extreme Speed
-- V-create
-
 === TRAINER_CHAMPION_REMATCH_OAK ===
 Name: PROF. OAK
 Class: Pkmn Prof
@@ -9062,294 +9351,6 @@ Nature: Adamant
 - Dragon Dance
 - Extreme Speed
 - V-create
-
-=== TRAINER_ELITE_FOUR_LORELEI_2 ===
-Name: LORELEI
-Class: Elite Four
-Pic: Elite Four Lorelei
-Gender: Female
-Music: Elite Four
-Items: Full Restore / Full Restore
-Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Will Suicide / Smart Switching / Ace Pokemon / Omniscient
-Mugshot: Purple
-
-Dewgong @ Leftovers
-Level: 52
-IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 0 Atk / 4 Def / 0 SpA / 252 SpD / 0 Spe
-Ability: Hydration
-Nature: Calm
-- Whirlpool
-- Perish Song
-- Rain Dance
-- Rest
-
-Cloyster @ Focus Sash
-Level: 51
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 0 HP / 252 Atk / 0 Def / 0 SpA / 4 SpD / 252 Spe
-Ability: Refrigerate
-Nature: Jolly
-- Spikes
-- Shell Smash
-- Icicle Crash
-- Ice Shard
-
-Mamoswine @ Life Orb
-Level: 52
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 0 HP / 252 Atk / 0 Def / 0 SpA / 4 SpD / 252 Spe
-Ability: Huge Power
-Nature: Adamant
-- Icicle Crash
-- Earthquake
-- Close Combat
-- Ice Shard
-
-Rotom Frost @ Focus Sash
-Level: 54
-IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 0 HP / 0 Atk / 0 Def / 252 SpA / 4 SpD / 252 Spe
-Ability: Snow Warning
-Nature: Timid
-- Railgun
-- Blizzard
-- Secret Sword
-- Absolute Zero
-
-Glalie @ Glalitite
-Level: 54
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 0 HP / 252 Atk / 0 Def / 0 SpA / 4 SpD / 252 Spe
-Ability: Snow Warning
-Nature: Jolly
-- Double Edge
-- Extreme Speed
-- Absolute Zero
-- Last Resort
-
-Lapras @ Sitrus Berry
-Level: 54
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
-Nature: Serious
-- Ice Beam
-
-=== TRAINER_ELITE_FOUR_BRUNO_2 ===
-Name: BRUNO
-Class: Elite Four
-Pic: Elite Four Bruno
-Gender: Male
-Music: Elite Four
-Items: Full Restore / Full Restore
-Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Sequence Switching / Ace Pokemon / Omniscient / Prefer Highest Damage Move
-Mugshot: Green
-
-Hariyama @ Custap Berry
-Level: 51
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 4 HP / 252 Atk / 0 Def / 0 SpA / 252 SpD / 0 Spe
-Ability: Disguise
-Nature: Adamant
-- Substitute XL
-- Swords Dance
-- Close Combat
-- Knock Off
-
-Shedinja @ Bright Powder
-Level: 52
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 31 Spe
-EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 252 Spe
-Ability: Wonder Guard
-Nature: Quiet
-Tera Type: Stellar
-- Endeavor
-- Dragon Rage
-
-Iron Hands @ Smooth Rock
-Level: 51
-IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
-EVs: 252 HP / 0 Atk / 4 Def / 0 SpA / 252 SpD / 0 Spe
-Ability: Sand Stream
-Nature: Adamant
-- Toxic Spikes
-- Shed Tail
-
-Diglett Alola @ Shed Shell
-Level: 1
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-Ability: Sturdy
-Nature: Quiet
-- Endeavor
-- Dragon Rage
-
-Lucario @ Lucarionite
-Level: 56
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 0 HP / 252 Atk / 0 Def / 0 SpA / 4 SpD / 252 Spe
-Ability: Sand Stream
-Nature: Jolly
-- Swords Dance
-- Meteor Mash
-- Close Combat
-- Bullet Punch
-
-Machamp @ Life Orb
-Level: 56
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
-Nature: Serious
-- Cross Chop
-
-=== TRAINER_ELITE_FOUR_AGATHA_2 ===
-Name: AGATHA
-Class: Elite Four
-Pic: Elite Four Agatha
-Gender: Female
-Music: Elite Four
-Items: Full Restore / Full Restore
-Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Smart Switching / Ace Pokemon / Omniscient / Prefer Highest Damage Move
-Mugshot: Pink
-
-Gengar @ Petaya Berry
-Level: 54
-IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 0 HP / 0 Atk / 0 Def / 252 SpA / 4 SpD / 252 Spe
-Ability: No Guard
-Nature: Timid
-- Shadow Ball
-- Focus Blast
-- Zap Cannon
-- Substitute XL
-
-Marshadow @ Life Orb
-Level: 54
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 0 HP / 252 Atk / 0 Def / 0 SpA / 4 SpD / 252 Spe
-Ability: Technician
-Nature: Jolly
-- Spectral Thief
-- Shadow Sneak
-- Close Combat
-- Pursuit
-
-Gholdengo @ Leftovers
-Level: 53
-IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 252 HP / 0 Atk / 228 Def / 0 SpA / 0 SpD / 28 Spe
-Ability: Earth Eater
-Nature: Bold
-- Make It Rain
-- Shadow Ball
-- Nasty Plot
-- Recover
-
-Lunala @ Lunalium Z
-Level: 56
-IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 0 HP / 0 Atk / 0 Def / 244 SpA / 12 SpD / 252 Spe
-Ability: Shadow Shield
-Nature: Timid
-- Calm Mind
-- Moongeist Beam
-- Psyshock
-- Moonblast
-
-Gengar @ Gengarite
-Level: 58
-IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 0 HP / 0 Atk / 0 Def / 252 SpA / 4 SpD / 252 Spe
-Ability: Psychic Surge
-Nature: Timid
-- Shadow Ball
-- Sludge Wave
-- Substitute S
-- Destiny Bond
-
-Gengar @ Leftovers
-Level: 58
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
-Nature: Serious
-- Shadow Ball
-
-=== TRAINER_ELITE_FOUR_LANCE_2 ===
-Name: LANCE
-Class: Elite Four
-Pic: Elite Four Lance
-Gender: Male
-Music: Elite Four
-Items: Full Restore / Full Restore
-Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Smart Switching / Ace Pokemon / Omniscient
-Mugshot: Blue
-
-Gyarados @ Damp Rock
-Level: 56
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 0 HP / 252 Atk / 0 Def / 0 SpA / 4 SpD / 252 Spe
-Ability: Drizzle
-Nature: Jolly
-- Dragon Dance
-- Waterfall
-- Brave Bird
-- Infiniblast
-
-Eternatus @ Black Sludge
-Level: 54
-IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 0 HP / 0 Atk / 0 Def / 252 SpA / 4 SpD / 252 Spe
-Ability: Simple
-Nature: Timid
-- Tail Glow
-- Core Enforcer
-- Sludge Bomb
-- Recover
-
-Aerodactyl @ Life Orb
-Level: 54
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 0 HP / 252 Atk / 0 Def / 0 SpA / 4 SpD / 252 Spe
-Ability: Huge Power
-Nature: Jolly
-- Stealth Rock
-- Stone Edge
-- Earthquake
-- Infiniblast
-
-Charizard @ Charizardite X
-Level: 58
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 0 HP / 252 Atk / 4 Def / 0 SpA / 0 SpD / 252 Spe
-Ability: Drought
-Nature: Timid
-- Dragon Dance
-- Flare Blitz
-- Dragon Claw
-- Roost
-
-Dragonite @ Yache Berry
-Level: 60
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 0 HP / 252 Atk / 0 Def / 0 SpA / 4 SpD / 252 Spe
-Ability: Aerilate
-Nature: Jolly
-Tera Type: Flying
-- Dragon Dance
-- Extreme Speed
-- Infiniblast
-- Recover
-
-Dragonite @ Sitrus Berry
-Level: 60
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
-Nature: Serious
-- Hyper Beam
 
 === TRAINER_TEAM_ROCKET_GRUNT ===
 Name: GRUNT

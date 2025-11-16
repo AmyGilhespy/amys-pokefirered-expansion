@@ -724,6 +724,7 @@ void ZeroEnemyPartyMons(void);
 void CreateMon(struct Pokemon *mon, u16 species, u8 level, u8 fixedIV, u8 hasFixedPersonality, u32 fixedPersonality, u8 otIdType, u32 fixedOtId);
 void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, u8 hasFixedPersonality, u32 fixedPersonality, u8 otIdType, u32 fixedOtId);
 void CreateMonWithNature(struct Pokemon *mon, u16 species, u8 level, u8 fixedIV, u8 nature);
+bool8 TransgendPokemon(struct Pokemon *mon);
 void CreateMonWithGenderNatureLetter(struct Pokemon *mon, u16 species, u8 level, u8 fixedIV, u8 gender, u8 nature, u8 unownLetter);
 void CreateMaleMon(struct Pokemon *mon, u16 species, u8 level);
 void CreateOldMansMon(struct Pokemon *mon, u16 species, u8 level);

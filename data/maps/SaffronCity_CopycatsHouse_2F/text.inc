@@ -27,10 +27,25 @@ Text_MimicTeach::
     .string "I can teach the move MIMIC.$"
 
 Text_MimicDeclined::
-    .string "Don't you like MIMIC?$"
+    .string "Don't you like MIMIC?\p"
+    .string "Nom nom.$"
+Text_CopycatBitesYourArm::
+    .string "COPYCAT bites your arm.$"
+Text_PsychicFangsTeach::
+    .string "Well then, do you want to learn how\n"
+    .string "to nibble and bite like this?$"
+
+Text_PsychicFangsDeclined::
+    .string "I just want that POKé DOLL!\p"
+    .string "What do I have to do for you to\n"
+    .string "give it to me?$"
 
 Text_MimicWhichMon::
     .string "I really love MIMIC!\n"
+    .string "Who's going to learn it?$"
+
+Text_PsychicFangsWhichMon::
+    .string "I really love PSYCHIC FANGS!\n"
     .string "Who's going to learn it?$"
 
 Text_MimicTaughtMale::
@@ -50,6 +65,11 @@ Text_MimicTaughtFemale::
     .string "copy what I say and do?\p"
     .string "COPYCAT: You bet!\n"
     .string "It's a scream!$"
+
+Text_PsychicFangsTaught::
+    .string "Nom nom.$"
+Text_CopycatBitesYourArmAgain::
+    .string "COPYCAT bites your arm again.$"
 
 SaffronCity_CopycatsHouse_2F_Text_TooMuchInBag::
     .string "にもつが　いっぱいね！$"

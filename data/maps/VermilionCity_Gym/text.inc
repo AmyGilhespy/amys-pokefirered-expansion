@@ -5,7 +5,7 @@ VermilionCity_Gym_Text_LtSurgeIntro::
     .string "Not with your puny power!\p"
     .string "I tell you, kid, electric POKéMON\n"
     .string "saved me during the war!\p"
-    .string "They say, ''make love, not war,''\n"
+    .string "They say, “make love, not war,”\n"
     .string "but frankly…\p"
     .string "…I prefer war!{PLAY_BGM}{MUS_ENCOUNTER_GYM_LEADER}$"
 
@@ -39,7 +39,7 @@ VermilionCity_Gym_Text_ShopIntro::
     .string "think you might want.$"
 
 VermilionCity_Gym_Text_ShopOutro::
-    .string "Come back to say ''Hi'' sometime!$"
+    .string "Come back to say “Hi” sometime!$"
 
 VermilionCity_Gym_Text_LtSurgeDefeat::
     .string "Now that's a shocker!\p"

@@ -14745,8 +14745,8 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 50,
-        .iconPic = gItemIcon_BrightPowder,
-        .iconPalette = gItemIconPalette_BrightPowder,
+        .iconPic = gItemIcon_Powder,
+        .iconPalette = gItemIconPalette_EnergyPowder,
     },
 };
 

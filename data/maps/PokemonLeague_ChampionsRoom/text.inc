@@ -15,7 +15,7 @@ PokemonLeague_ChampionsRoom_Text_Intro::
     .string "{RIVAL}? Well, he was here\p"
     .string "just a moment ago.  He was asking\n"
     .string "if you made it here first.\p"
-    .string "I told him ''no'', but to expect to\n"
+    .string "I told him “no”, but to expect to\n"
     .string "see you in no time.\p"
     .string "Oh, what's that?\n"
     .string "You want to know how he did\l"

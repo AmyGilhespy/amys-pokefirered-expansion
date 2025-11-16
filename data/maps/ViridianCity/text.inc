@@ -41,7 +41,7 @@ ViridianCity_Text_GrandpaHasntHadCoffeeYet::
     .string "Oh, Grandpa!\n"
     .string "Don't be so mean!\p"
     .string "I'm so sorry.\n"
-    .string "He hasn't had his ''coffee'' yet.$"
+    .string "He hasn't had his “coffee” yet.$"
 
 ViridianCity_Text_GoShoppingInPewterOccasionally::
     .string "I go shopping in PEWTER CITY\n"
@@ -55,7 +55,7 @@ ViridianCity_Text_ThisIsPrivateProperty::
     .string "This is private property!$"
 
 ViridianCity_Text_ShowYouHowToCatchMons::
-    .string "Well, now, I've had my ''coffee'', and\n"
+    .string "Well, now, I've had my “coffee”, and\n"
     .string "that's what I need to get going!\p"
     .string "Hm?\n"
     .string "…You don't know how to catch\l"
@@ -75,7 +75,7 @@ ViridianCity_Text_WatchThatToLearnBasics::
     .string "of being a POKéMON TRAINER.$"
 
 ViridianCity_Text_WeakenMonsFirstToCatch::
-    .string "Well, now, I've had my coffee, and\n"
+    .string "Well, now, I've had my “coffee”, and\n"
     .string "that's what I need to get going!\p"
     .string "But I made it too strong.\n"
     .string "It gave me a headache…\p"
@@ -85,7 +85,7 @@ ViridianCity_Text_WeakenMonsFirstToCatch::
     .string "POKéMON before trying to catch it.$"
 
 ViridianCity_Text_HowsTeachyTVHelping::
-    .string "Well, now, I've had my coffee, and\n"
+    .string "Well, now, I've had my “coffee”, and\n"
     .string "that's what I need to get going!\p"
     .string "But I made it too strong.\n"
     .string "It gave me a headache…\p"

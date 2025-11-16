@@ -241,7 +241,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
             gShinyOverworldPalette_SteelSoul
         )
         .levelUpLearnset = sSteelSoulLevelUpLearnset,
-        .teachableLearnset = sMewTeachableLearnset,
+        .teachableLearnset = sNoneTeachableLearnset, // Like Mew, uses exceptions in CanLearnTeachableMove() in pokemon.c instead.
         .formSpeciesIdTable = sSteelSoulFormSpeciesIdTable,
         .formChangeTable = sSteelSoulFormChangeTable,
         //.perfectIVCount = NUM_STATS,
@@ -308,7 +308,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         )
         FOOTPRINT(Minior)
         .levelUpLearnset = sMeteonLevelUpLearnset,
-        .teachableLearnset = sMewTeachableLearnset,
+        .teachableLearnset = sNoneTeachableLearnset, // Like Mew, uses exceptions in CanLearnTeachableMove() in pokemon.c instead.
         .formSpeciesIdTable = sMeteonFormSpeciesIdTable,
         .formChangeTable = sMeteonFormChangeTable,
         //.perfectIVCount = NUM_STATS,
@@ -375,7 +375,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .iconPalIndex = 0,
         FOOTPRINT(QuestionMark)
         .levelUpLearnset = sNoneLevelUpLearnset,
-        .teachableLearnset = sNoneTeachableLearnset,
+        .teachableLearnset = sNoneTeachableLearnset, // Like Mew, uses exceptions in CanLearnTeachableMove() in pokemon.c instead.
         .evolutions = EVOLUTION({EVO_LEVEL, 100, SPECIES_NONE},
                                 {EVO_ITEM, ITEM_MOOMOO_MILK, SPECIES_NONE}),
         //.formSpeciesIdTable = sNoneFormSpeciesIdTable,
@@ -444,7 +444,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .iconPalIndex = 0,
         FOOTPRINT(QuestionMark)
         .levelUpLearnset = sNoneLevelUpLearnset,
-        .teachableLearnset = sNoneTeachableLearnset,
+        .teachableLearnset = sNoneTeachableLearnset, // Like Mew, uses exceptions in CanLearnTeachableMove() in pokemon.c instead.
         .evolutions = EVOLUTION({EVO_LEVEL, 100, SPECIES_NONE},
                                 {EVO_ITEM, ITEM_MOOMOO_MILK, SPECIES_NONE}),
         //.formSpeciesIdTable = sNoneFormSpeciesIdTable,
@@ -513,7 +513,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .iconPalIndex = 0,
         FOOTPRINT(QuestionMark)
         .levelUpLearnset = sNoneLevelUpLearnset,
-        .teachableLearnset = sNoneTeachableLearnset,
+        .teachableLearnset = sNoneTeachableLearnset, // Like Mew, uses exceptions in CanLearnTeachableMove() in pokemon.c instead.
         .evolutions = EVOLUTION({EVO_LEVEL, 100, SPECIES_NONE},
                                 {EVO_ITEM, ITEM_MOOMOO_MILK, SPECIES_NONE}),
         //.formSpeciesIdTable = sNoneFormSpeciesIdTable,
@@ -582,7 +582,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .iconPalIndex = 0,
         FOOTPRINT(QuestionMark)
         .levelUpLearnset = sNoneLevelUpLearnset,
-        .teachableLearnset = sNoneTeachableLearnset,
+        .teachableLearnset = sNoneTeachableLearnset, // Like Mew, uses exceptions in CanLearnTeachableMove() in pokemon.c instead.
         .evolutions = EVOLUTION({EVO_LEVEL, 100, SPECIES_NONE},
                                 {EVO_ITEM, ITEM_MOOMOO_MILK, SPECIES_NONE}),
         //.formSpeciesIdTable = sNoneFormSpeciesIdTable,
@@ -642,7 +642,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .iconPalIndex = 0,
         FOOTPRINT(QuestionMark)
         .levelUpLearnset = sNoneLevelUpLearnset,
-        .teachableLearnset = sNoneTeachableLearnset,
+        .teachableLearnset = sNoneTeachableLearnset, // Like Mew, uses exceptions in CanLearnTeachableMove() in pokemon.c instead.
         //.formSpeciesIdTable = sNoneFormSpeciesIdTable,
         //.formChangeTable = sNoneFormChangeTable,
         //.perfectIVCount = NUM_STATS,
@@ -700,7 +700,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .iconPalIndex = 0,
         FOOTPRINT(QuestionMark)
         .levelUpLearnset = sNoneLevelUpLearnset,
-        .teachableLearnset = sNoneTeachableLearnset,
+        .teachableLearnset = sNoneTeachableLearnset, // Like Mew, uses exceptions in CanLearnTeachableMove() in pokemon.c instead.
         //.formSpeciesIdTable = sNoneFormSpeciesIdTable,
         //.formChangeTable = sNoneFormChangeTable,
         //.perfectIVCount = NUM_STATS,
@@ -758,7 +758,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .iconPalIndex = 0,
         FOOTPRINT(QuestionMark)
         .levelUpLearnset = sNoneLevelUpLearnset,
-        .teachableLearnset = sNoneTeachableLearnset,
+        .teachableLearnset = sNoneTeachableLearnset, // Like Mew, uses exceptions in CanLearnTeachableMove() in pokemon.c instead.
         //.formSpeciesIdTable = sNoneFormSpeciesIdTable,
         //.formChangeTable = sNoneFormChangeTable,
         //.perfectIVCount = NUM_STATS,
@@ -816,7 +816,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .iconPalIndex = 0,
         FOOTPRINT(QuestionMark)
         .levelUpLearnset = sNoneLevelUpLearnset,
-        .teachableLearnset = sNoneTeachableLearnset,
+        .teachableLearnset = sNoneTeachableLearnset, // Like Mew, uses exceptions in CanLearnTeachableMove() in pokemon.c instead.
         //.formSpeciesIdTable = sNoneFormSpeciesIdTable,
         //.formChangeTable = sNoneFormChangeTable,
         //.perfectIVCount = NUM_STATS,
@@ -874,7 +874,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .iconPalIndex = 0,
         FOOTPRINT(QuestionMark)
         .levelUpLearnset = sNoneLevelUpLearnset,
-        .teachableLearnset = sNoneTeachableLearnset,
+        .teachableLearnset = sNoneTeachableLearnset, // Like Mew, uses exceptions in CanLearnTeachableMove() in pokemon.c instead.
         //.formSpeciesIdTable = sNoneFormSpeciesIdTable,
         //.formChangeTable = sNoneFormChangeTable,
         //.perfectIVCount = NUM_STATS,
@@ -932,7 +932,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .iconPalIndex = 0,
         FOOTPRINT(QuestionMark)
         .levelUpLearnset = sNoneLevelUpLearnset,
-        .teachableLearnset = sNoneTeachableLearnset,
+        .teachableLearnset = sNoneTeachableLearnset, // Like Mew, uses exceptions in CanLearnTeachableMove() in pokemon.c instead.
         //.formSpeciesIdTable = sNoneFormSpeciesIdTable,
         //.formChangeTable = sNoneFormChangeTable,
         //.perfectIVCount = NUM_STATS,
@@ -990,7 +990,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .iconPalIndex = 0,
         FOOTPRINT(QuestionMark)
         .levelUpLearnset = sNoneLevelUpLearnset,
-        .teachableLearnset = sNoneTeachableLearnset,
+        .teachableLearnset = sNoneTeachableLearnset, // Like Mew, uses exceptions in CanLearnTeachableMove() in pokemon.c instead.
         //.formSpeciesIdTable = sNoneFormSpeciesIdTable,
         //.formChangeTable = sNoneFormChangeTable,
         //.perfectIVCount = NUM_STATS,
@@ -1048,7 +1048,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .iconPalIndex = 0,
         FOOTPRINT(QuestionMark)
         .levelUpLearnset = sNoneLevelUpLearnset,
-        .teachableLearnset = sNoneTeachableLearnset,
+        .teachableLearnset = sNoneTeachableLearnset, // Like Mew, uses exceptions in CanLearnTeachableMove() in pokemon.c instead.
         //.formSpeciesIdTable = sNoneFormSpeciesIdTable,
         //.formChangeTable = sNoneFormChangeTable,
         //.perfectIVCount = NUM_STATS,
@@ -1106,7 +1106,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .iconPalIndex = 0,
         FOOTPRINT(QuestionMark)
         .levelUpLearnset = sNoneLevelUpLearnset,
-        .teachableLearnset = sNoneTeachableLearnset,
+        .teachableLearnset = sNoneTeachableLearnset, // Like Mew, uses exceptions in CanLearnTeachableMove() in pokemon.c instead.
         //.formSpeciesIdTable = sNoneFormSpeciesIdTable,
         //.formChangeTable = sNoneFormChangeTable,
         //.perfectIVCount = NUM_STATS,
@@ -1164,7 +1164,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .iconPalIndex = 0,
         FOOTPRINT(QuestionMark)
         .levelUpLearnset = sNoneLevelUpLearnset,
-        .teachableLearnset = sNoneTeachableLearnset,
+        .teachableLearnset = sNoneTeachableLearnset, // Like Mew, uses exceptions in CanLearnTeachableMove() in pokemon.c instead.
         //.formSpeciesIdTable = sNoneFormSpeciesIdTable,
         //.formChangeTable = sNoneFormChangeTable,
         //.perfectIVCount = NUM_STATS,
@@ -1222,7 +1222,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .iconPalIndex = 0,
         FOOTPRINT(QuestionMark)
         .levelUpLearnset = sNoneLevelUpLearnset,
-        .teachableLearnset = sNoneTeachableLearnset,
+        .teachableLearnset = sNoneTeachableLearnset, // Like Mew, uses exceptions in CanLearnTeachableMove() in pokemon.c instead.
         //.formSpeciesIdTable = sNoneFormSpeciesIdTable,
         //.formChangeTable = sNoneFormChangeTable,
         //.perfectIVCount = NUM_STATS,
@@ -1280,7 +1280,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .iconPalIndex = 0,
         FOOTPRINT(QuestionMark)
         .levelUpLearnset = sNoneLevelUpLearnset,
-        .teachableLearnset = sNoneTeachableLearnset,
+        .teachableLearnset = sNoneTeachableLearnset, // Like Mew, uses exceptions in CanLearnTeachableMove() in pokemon.c instead.
         //.formSpeciesIdTable = sNoneFormSpeciesIdTable,
         //.formChangeTable = sNoneFormChangeTable,
         //.perfectIVCount = NUM_STATS,
@@ -1338,7 +1338,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .iconPalIndex = 0,
         FOOTPRINT(QuestionMark)
         .levelUpLearnset = sNoneLevelUpLearnset,
-        .teachableLearnset = sNoneTeachableLearnset,
+        .teachableLearnset = sNoneTeachableLearnset, // Like Mew, uses exceptions in CanLearnTeachableMove() in pokemon.c instead.
         //.formSpeciesIdTable = sNoneFormSpeciesIdTable,
         //.formChangeTable = sNoneFormChangeTable,
         //.perfectIVCount = NUM_STATS,
@@ -1396,7 +1396,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .iconPalIndex = 0,
         FOOTPRINT(QuestionMark)
         .levelUpLearnset = sNoneLevelUpLearnset,
-        .teachableLearnset = sNoneTeachableLearnset,
+        .teachableLearnset = sNoneTeachableLearnset, // Like Mew, uses exceptions in CanLearnTeachableMove() in pokemon.c instead.
         //.formSpeciesIdTable = sNoneFormSpeciesIdTable,
         //.formChangeTable = sNoneFormChangeTable,
         //.perfectIVCount = NUM_STATS,
@@ -1454,7 +1454,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .iconPalIndex = 0,
         FOOTPRINT(QuestionMark)
         .levelUpLearnset = sNoneLevelUpLearnset,
-        .teachableLearnset = sNoneTeachableLearnset,
+        .teachableLearnset = sNoneTeachableLearnset, // Like Mew, uses exceptions in CanLearnTeachableMove() in pokemon.c instead.
         //.formSpeciesIdTable = sNoneFormSpeciesIdTable,
         //.formChangeTable = sNoneFormChangeTable,
         //.perfectIVCount = NUM_STATS,
@@ -1512,7 +1512,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .iconPalIndex = 0,
         FOOTPRINT(QuestionMark)
         .levelUpLearnset = sNoneLevelUpLearnset,
-        .teachableLearnset = sNoneTeachableLearnset,
+        .teachableLearnset = sNoneTeachableLearnset, // Like Mew, uses exceptions in CanLearnTeachableMove() in pokemon.c instead.
         .formSpeciesIdTable = sAmyFormSpeciesIdTable,
         .formChangeTable = sAmyFormChangeTable,
         //.perfectIVCount = NUM_STATS,
@@ -1570,7 +1570,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .iconPalIndex = 0,
         FOOTPRINT(QuestionMark)
         .levelUpLearnset = sNoneLevelUpLearnset,
-        .teachableLearnset = sNoneTeachableLearnset,
+        .teachableLearnset = sNoneTeachableLearnset, // Like Mew, uses exceptions in CanLearnTeachableMove() in pokemon.c instead.
         //.formSpeciesIdTable = sNoneFormSpeciesIdTable,
         //.formChangeTable = sNoneFormChangeTable,
         //.perfectIVCount = NUM_STATS,

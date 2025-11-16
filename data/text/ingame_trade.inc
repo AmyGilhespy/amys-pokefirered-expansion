@@ -21,12 +21,12 @@ Trade_Text_IsntMyOldMonGreat::
 Trade_Text_LookingForSomethingSpecificWannaTradeForMon::
 	.string "I'm looking for something\n"
 	.string "specific: I'll trade my best\l"
-	.string "POKéMON for a ''!'' UNOWN.\p"
+	.string "POKéMON for a “!” UNOWN.\p"
 	.string "Wanna trade one for my\n"
 	.string "{STR_VAR_2}?$"
 
 Trade_Text_LookingForSomethingSpecificWrongMon::
-	.string "That's not a ''!'' UNOWN!$"
+	.string "That's not a “!” UNOWN!$"
 
 Trade_Text_InterestingOfferMewWannaTradeForUnawareMew:
 	.string "I have an interesting offer\n"

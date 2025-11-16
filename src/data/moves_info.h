@@ -21379,8 +21379,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
 
     [MOVE_OMEGA_BEAM] =
     {
-        .name = COMPOUND_STRING("Priority +1.\nAlways crits.\nMust recharge."),
-        .description = sHyperBeamDescription,
+        .name = COMPOUND_STRING("Omega Beam"),
+        .description = COMPOUND_STRING("Priority +1.\nAlways crits.\nMust recharge."),
         .effect = EFFECT_HIT,
         .power = 120,
         .type = TYPE_NORMAL,
@@ -21405,8 +21405,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
 
     [MOVE_OMEGA_STRIKE] =
     {
-        .name = COMPOUND_STRING("Priority +1.\nAlways crits.\nMust recharge."),
-        .description = sHyperBeamDescription,
+        .name = COMPOUND_STRING("Omega Strike"),
+        .description = COMPOUND_STRING("Priority +1.\nAlways crits.\nMust recharge."),
         .effect = EFFECT_HIT,
         .power = 120,
         .type = TYPE_NORMAL,
@@ -21430,8 +21430,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
 
     [MOVE_OBLIVION_BEAM] =
     {
-        .name = COMPOUND_STRING("Always crits.\nMust recharge."),
-        .description = sHyperBeamDescription,
+        .name = COMPOUND_STRING("Oblivion Beam"),
+        .description = COMPOUND_STRING("Always crits.\nMust recharge."),
         .effect = EFFECT_HIT,
         .power = 150,
         .type = TYPE_NORMAL,
@@ -21456,8 +21456,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
 
     [MOVE_ULTIMA_STRIKE] =
     {
-        .name = COMPOUND_STRING("Always crits.\nMust recharge."),
-        .description = sHyperBeamDescription,
+        .name = COMPOUND_STRING("Ultima Strike"),
+        .description = COMPOUND_STRING("Always crits.\nMust recharge."),
         .effect = EFFECT_HIT,
         .power = 150,
         .type = TYPE_NORMAL,
@@ -21481,8 +21481,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
 
     [MOVE_INFINIBLAST] =
     {
-        .name = COMPOUND_STRING("Highest stat.\nAlways crits.\nMust recharge."),
-        .description = sHyperBeamDescription,
+        .name = COMPOUND_STRING("Infiniblast"),
+        .description = COMPOUND_STRING("Highest stat.\nAlways crits.\nMust recharge."),
         .effect = EFFECT_PHOTON_GEYSER,
         .power = 180,
         .type = TYPE_NORMAL,

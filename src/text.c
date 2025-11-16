@@ -2128,7 +2128,7 @@ static u32 GetGlyphWidth_Female(u16 glyphId, bool32 isJapanese)
     {
         if (glyphId == 0)
             return 10;
-        
+
         return gFontFemaleJapaneseGlyphWidths[glyphId];
     }
     else

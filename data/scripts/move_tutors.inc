@@ -393,24 +393,46 @@ EventScript_MimicTutor::
 	goto_if_set FLAG_TUTOR_MIMIC, EventScript_MimicTaught
 .endif
 	msgbox Text_MimicTeach, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, EventScript_MimicDeclined
+	goto_if_eq VAR_RESULT, NO, EventScript_MimicDeclinedPsychicFangsTeach
+.if I_REUSABLE_TMS == FALSE
 	call EventScript_CanOnlyBeLearnedOnce
-	goto_if_eq VAR_RESULT, NO, EventScript_MimicDeclined
+	goto_if_eq VAR_RESULT, NO, EventScript_MimicDeclinedPsychicFangsTeach
+.endif
 	msgbox Text_MimicWhichMon
 	setvar VAR_0x8005, MOVE_MIMIC
 	call EventScript_ChooseMoveTutorMon
 	lock
 	faceplayer
-	goto_if_eq VAR_RESULT, 0, EventScript_MimicDeclined
+	goto_if_eq VAR_RESULT, 0, EventScript_MimicDeclinedPsychicFangsTeach
 	removeitem ITEM_POKE_DOLL
-.if I_REUSABLE_TMS == FALSE
 	setflag FLAG_TUTOR_MIMIC
-.endif
 	goto EventScript_MimicTaught
 	end
 
-EventScript_MimicDeclined::
+EventScript_MimicDeclinedPsychicFangsTeach::
 	msgbox Text_MimicDeclined
+	textcolor NPC_TEXT_COLOR_NEUTRAL
+	msgbox Text_CopycatBitesYourArm
+	textcolor NPC_TEXT_COLOR_FEMALE
+	msgbox Text_PsychicFangsTeach, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, EventScript_PsychicFangsDeclined
+.if I_REUSABLE_TMS == FALSE
+	call EventScript_CanOnlyBeLearnedOnce
+	goto_if_eq VAR_RESULT, NO, EventScript_PsychicFangsDeclined
+.endif
+	msgbox Text_PsychicFangsWhichMon
+	setvar VAR_0x8005, MOVE_PSYCHIC_FANGS
+	call EventScript_ChooseMoveTutorMon
+	lock
+	faceplayer
+	goto_if_eq VAR_RESULT, 0, EventScript_PsychicFangsDeclined
+	removeitem ITEM_POKE_DOLL
+	setflag FLAG_TUTOR_MIMIC
+	goto EventScript_PsychicFangsTaught
+	end
+
+EventScript_PsychicFangsDeclined::
+	msgbox Text_PsychicFangsDeclined
 	release
 	end
 
@@ -418,6 +440,13 @@ EventScript_MimicTaught::
 	checkplayergender
 	call_if_eq VAR_RESULT, MALE, EventScript_MimicTaughtMale
 	call_if_eq VAR_RESULT, FEMALE, EventScript_MimicTaughtFemale
+	release
+	end
+
+EventScript_PsychicFangsTaught::
+	msgbox Text_PsychicFangsTaught
+	textcolor NPC_TEXT_COLOR_NEUTRAL
+	msgbox Text_CopycatBitesYourArmAgain
 	release
 	end
 

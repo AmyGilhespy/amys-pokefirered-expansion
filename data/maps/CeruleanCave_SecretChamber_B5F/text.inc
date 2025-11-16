@@ -1,7 +1,7 @@
 
 
 CeruleanCave_SecretChamber_B5F_Text_OliviaIntro::
-	.string "''Olympian'' means godlike, omnipotent,\n"
+	.string "“Olympian” means godlike, omnipotent,\n"
 	.string "omniscient.\p"
 	.string "Olympian Olivia is all of these\n"
 	.string "things.\p"
