@@ -11311,7 +11311,8 @@ static void Cmd_setsubstitute(void)
 
     u32 factor = 4;
     u32 factorMul = 1;
-    switch (GetMoveEffect(gCurrentMove))
+    u16 effect = GetMoveEffect(gCurrentMove);
+    switch (effect)
     {
     case EFFECT_SHED_TAIL: factor = 2; break;
     case EFFECT_SUBSTITUTE: factor = 4; break;
@@ -11323,10 +11324,12 @@ static void Cmd_setsubstitute(void)
 
     u32 hp;
 
-    if (factor == 2)
-        hp = (GetNonDynamaxMaxHP(gBattlerAttacker)+1) / factor; // shed tail rounds up
+    if (effect == EFFECT_SHED_TAIL)
+        hp = ((u32) GetNonDynamaxMaxHP(gBattlerAttacker) + 1) / factor; // shed tail rounds up
+    else if (effect == EFFECT_SUBSTITUTE || effect == EFFECT_SMALL_SUBSTITUTE) // Substitute, S: round down
+        hp = (u32) GetNonDynamaxMaxHP(gBattlerAttacker) * factorMul / factor; // one bit value will only work for Pokémon which max hp can go to 1020(which is more than possible in games)
     else
-        hp = GetNonDynamaxMaxHP(gBattlerAttacker) * factorMul / factor; // one bit value will only work for Pokémon which max hp can go to 1020(which is more than possible in games)
+        hp = ((u32) GetNonDynamaxMaxHP(gBattlerAttacker) * factorMul + factor - 1) / factor; // Substitute L, XL: round up
 
     if (hp == 0)
         hp = 1;
@@ -11344,7 +11347,7 @@ static void Cmd_setsubstitute(void)
 
         gBattleMons[gBattlerAttacker].volatiles.substitute = TRUE;
         gBattleMons[gBattlerAttacker].volatiles.wrapped = FALSE;
-        if (factor == 2)
+        if (effect == EFFECT_SHED_TAIL)
             gDisableStructs[gBattlerAttacker].substituteHP = gBattleStruct->moveDamage[gBattlerAttacker] / 2;
         else
             gDisableStructs[gBattlerAttacker].substituteHP = gBattleStruct->moveDamage[gBattlerAttacker];
