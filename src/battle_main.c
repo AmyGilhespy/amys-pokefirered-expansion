@@ -2106,13 +2106,13 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
                 {
                 case TRAINER_CLASS_RIVAL_EARLY:
                     levelDelta = -2;
-                    levelMul = 13;
-                    levelDiv = 10;
+                    levelMul = 4;
+                    levelDiv = 3;
                     break;
                 case TRAINER_CLASS_RIVAL_LATE:
-                    levelDelta = 3;
-                    levelMul = 13;
-                    levelDiv = 10;
+                    levelDelta = 4;
+                    levelMul = 4;
+                    levelDiv = 3;
                     break;
                 case TRAINER_CLASS_LEADER:
                 case TRAINER_CLASS_ELITE_FOUR:
