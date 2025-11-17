@@ -1,0 +1,242 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"Package Control: inst",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ins",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: insta",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Enable Package"
+			],
+			[
+				"Package Control: dis",
+				"Package Control: Disable Package"
+			],
+			[
+				"Package Control: ena",
+				"Package Control: Enable Package"
+			],
+			[
+				"Package Control: instal",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: install",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion",
+		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/src"
+	],
+	"file_history":
+	[
+		"/home/amy/.config/sublime-text/Packages/Alignment/Default (Linux).sublime-keymap",
+		"/home/amy/.config/sublime-text/Packages/Alignment/Base File.sublime-settings",
+		"/home/amy/.config/sublime-text/Packages/User/Base File.sublime-settings",
+		"/home/amy/.config/sublime-text/Packages/AutoFileName/autofilename.sublime-settings",
+		"/home/amy/.config/sublime-text/Packages/DocBlockr/README.md",
+		"/home/amy/.config/sublime-text/Packages/SingleTrailingNewLine/SingleTrailingNewLine.sublime-settings",
+		"/home/amy/.config/sublime-text/Packages/Materialize/schemes/Material Vim Blackboard.tmTheme",
+		"/home/amy/.config/sublime-text/Packages/User/Material Vim Blackboard.sublime-color-scheme",
+		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/asm/macros.inc",
+		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/data/battle_scripts_1.s",
+		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/src/battle_main.c",
+		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/include/battle_main.h",
+		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/src/data/pokemon/level_up_learnsets/fakemon.h",
+		"/home/amy/.config/sublime-text/Packages/User/Preferences.sublime-settings",
+		"/home/amy/.config/sublime-text/Packages/Default/Preferences.sublime-settings"
+	],
+	"find":
+	{
+		"height": 0.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"scrollbar_highlights": true,
+		"show_context": true,
+		"use_buffer2": true,
+		"use_gitignore": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"folders":
+	[
+		{
+			"path": "/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion"
+		}
+	],
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.LSP Log Panel":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"output.diagnostics":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"output.find_results":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"pinned_build_system": "",
+	"project": "",
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+		"lsp_show_inlay_hints": false
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 316.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
