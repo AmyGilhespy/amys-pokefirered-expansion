@@ -23,10 +23,9 @@ SaffronCity_Mart_EventScript_Clerk::
 	.align 2
 SaffronCity_Mart_Items::
 	.2byte ITEM_TM82 @ Focus Blast
-	.2byte ITEM_TM83 @ ?
+	.2byte ITEM_TM83 @ Psyshock
 	.2byte ITEM_GREAT_BALL
 	.2byte ITEM_HYPER_POTION
-	.2byte ITEM_REVIVE
 	.2byte ITEM_FULL_HEAL
 	.2byte ITEM_ESCAPE_ROPE
 	.2byte ITEM_RARE_CANDY

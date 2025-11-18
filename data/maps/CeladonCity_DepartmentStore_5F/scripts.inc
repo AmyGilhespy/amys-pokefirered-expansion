@@ -149,8 +149,8 @@ CeladonCity_DepartmentStore_5F_EventScript_ClerkVitamins::
 
 	.align 2
 CeladonCity_DepartmentStore_5F_Vitamins::
-	.2byte ITEM_HP_UP
 	.2byte ITEM_PP_UP
+	.2byte ITEM_HP_UP
 	.2byte ITEM_PROTEIN
 	.2byte ITEM_IRON
 	.2byte ITEM_CALCIUM
