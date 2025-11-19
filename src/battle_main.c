@@ -5081,6 +5081,7 @@ static void TurnValuesCleanUp(bool8 var0)
         //MgbaPrintf(MGBA_LOG_WARN, "TurnValuesCleanUp(%d): gD~S~[i=%d].rechargeTimer=%d,gB~M~[i].volatiles.recharge=%d", var0, i, gDisableStructs[i].rechargeTimer, gBattleMons[i].volatiles.recharge);
         if (var0)
         {
+            gDisableStructs[i].endured = FALSE; // Amy: This was missing, and was causing Endure to last forever.
             gProtectStructs[i].protected = PROTECT_NONE;
             gProtectStructs[i].quash = FALSE;
             gProtectStructs[i].usedCustapBerry = FALSE;

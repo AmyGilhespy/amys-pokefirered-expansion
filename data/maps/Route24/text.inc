@@ -16,12 +16,14 @@ Route24_Text_JoinTeamRocket::
     .string "We're a group of professional\n"
     .string "criminals specializing in POKéMON!\p"
     .string "Want to join?\p"
-    .string "Are you sure?\p"
-    .string "Come on, join us!\p"
-    .string "I'm telling you to join!\p"
-    .string "…Okay, you need convincing!\p"
-    .string "I'll make you an offer you can't\n"
-    .string "refuse!$"
+    .string "…Wait, you actually do?\p"
+    .string "Shit, you're not supposed to say\n"
+    .string "“yes”…\p"
+    .string "I was supposed to beat you up when\n"
+    .string "you said no - I was looking forward\l"
+    .string "to that!\p"
+    .string "…Okay, well I'm going to beat you up\n"
+    .string "anyway!$"
 
 Route24_Text_RocketDefeat::
     .string "Arrgh!\n"
@@ -30,8 +32,8 @@ Route24_Text_RocketDefeat::
 Route24_Text_YoudBecomeTopRocketLeader::
     .string "With your ability, you'd become\n"
     .string "a top leader in TEAM ROCKET.\p"
-    .string "Come on, think of the opportunity!\n"
-    .string "Don't let this chance go to waste.$"
+    .string "Unfortunately for you, I don't like\n"
+    .string "you.$"
 
 Route24_Text_ShaneIntro::
     .string "I saw your feat from the grass!$"

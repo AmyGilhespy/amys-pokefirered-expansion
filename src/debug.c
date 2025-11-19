@@ -76,6 +76,7 @@
 #include "rtc.h"
 #include "fake_rtc.h"
 #include "save.h"
+#include "random_encounters.h"
 
 enum FollowerNPCCreateDebugMenu
 {
@@ -258,6 +259,7 @@ static void DebugAction_Util_Weather(u8 taskId);
 static void DebugAction_Util_Weather_SelectId(u8 taskId);
 static void DebugAction_Util_WatchCredits(u8 taskId);
 static void DebugAction_Util_CheatStart(u8 taskId);
+static void DebugAction_Util_RerollEncounters(u8 taskId);
 
 static void DebugAction_TimeMenu_ChangeTimeOfDay(u8 taskId);
 static void DebugAction_TimeMenu_ChangeWeekdays(u8 taskId);
@@ -542,6 +544,7 @@ static const struct DebugMenuOption sDebugMenu_Actions_Utilities[] =
     { COMPOUND_STRING("Time Functions…"),   DebugAction_OpenSubMenu, sDebugMenu_Actions_TimeMenu, },
     { COMPOUND_STRING("Watch credits…"),    DebugAction_Util_WatchCredits },
     { COMPOUND_STRING("Cheat start"),       DebugAction_Util_CheatStart },
+    { COMPOUND_STRING("Reroll encounters"), DebugAction_Util_RerollEncounters },
     { COMPOUND_STRING("Berry Functions…"),  DebugAction_OpenSubMenu, sDebugMenu_Actions_BerryFunctions },
     { COMPOUND_STRING("EWRAM Counters…"),   DebugAction_ExecuteScript, Debug_EventScript_EWRAMCounters },
     { COMPOUND_STRING("Follower NPC…"),     DebugAction_OpenSubMenu, sDebugMenu_Actions_FollowerNPCMenu },
@@ -1556,6 +1559,14 @@ static void DebugAction_Util_CheatStart(u8 taskId)
 
     InitTimeBasedEvents();
     Debug_DestroyMenu_Full_Script(taskId, Debug_CheatStart);
+}
+
+static void DebugAction_Util_RerollEncounters(u8 taskId)
+{
+    Debug_DestroyMenu_Full(taskId);
+    RandomEncounters_Init();
+    RandomEncounters_FillAllWithRandom();
+    ScriptContext_Enable();
 }
 
 void BufferExpansionVersion(struct ScriptContext *ctx)
@@ -3941,4 +3952,51 @@ void CheckEWRAMCounters(struct ScriptContext *ctx)
 {
     ConvertIntToDecimalStringN(gStringVar1, gFollowerSteps, STR_CONV_MODE_LEFT_ALIGN, 5);
     ConvertIntToDecimalStringN(gStringVar2, gChainFishingDexNavStreak, STR_CONV_MODE_LEFT_ALIGN, 5);
+}
+
+// GBA → ASCII decoder for English FireRed/LeafGreen
+// Handles A–Z, a–z, 0–9, space, dash, period.
+// Everything else becomes '?'.
+// Stops at terminator 0xFF.
+void ConvertGbaTextToAscii(const u8 *gba, char *ascii, size_t maxLen)
+{
+    size_t i = 0;
+
+    while (i + 1 < maxLen)
+    {
+        u8 c = gba[i];
+
+        // End of string in GBA encoding
+        if (c == 0xFF)
+            break;
+
+        // Capital letters (FRLG: 0xBB–0xD4 = 'A'..'Z')
+        if (c >= 0xBB && c <= 0xD4)
+        {
+            ascii[i] = 'A' + (c - 0xBB);
+        }
+        // Lowercase letters (FRLG: 0xD5–0xEE = 'a'..'z')
+        else if (c >= 0xD5 && c <= 0xEE)
+        {
+            ascii[i] = 'a' + (c - 0xD5);
+        }
+        // Numbers (0xA1–0xAA = '0'..'9')
+        else if (c >= 0xA1 && c <= 0xAA)
+        {
+            ascii[i] = '0' + (c - 0xA1);
+        }
+        // Common punctuation
+        else if (c == 0x00) ascii[i] = ' ';
+        else if (c == 0xAB) ascii[i] = '-';
+        else if (c == 0xAC) ascii[i] = '.';
+        else
+        {
+            // Unknown → '?'
+            ascii[i] = '?';
+        }
+
+        i++;
+    }
+
+    ascii[i] = '\0';
 }

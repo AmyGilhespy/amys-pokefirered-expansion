@@ -23,6 +23,8 @@
 #include "constants/weather.h"
 #include "random_encounters.h"
 #include "constants/random_encounters.h"
+#include "debug.h"
+#include "gba/isagbprint.h"
 
 #define MAX_ENCOUNTER_RATE 1600
 
@@ -507,6 +509,27 @@ static bool8 TryGenerateWildMon(const struct WildPokemonInfo * wildMonInfo, u8 a
         return FALSE;
     if (flags & WILD_CHECK_KEEN_EYE && !IsAbilityAllowingEncounter(level))
         return FALSE;
+
+    char buf[32];
+    u16 wildMonSpecies0 = wildMonInfo->wildPokemon[0].species;
+    u16 wildMonSpecies1 = wildMonInfo->wildPokemon[1].species;
+    u16 wildMonSpecies2 = wildMonInfo->wildPokemon[2].species;
+    ConvertGbaTextToAscii(gSpeciesInfo[wildMonSpecies0].speciesName, buf, sizeof buf);
+    MgbaPrintf(MGBA_LOG_WARN, "gSpeciesInfo[wildMonInfo->wildPokemon[0].species=%d].speciesName=``%s''", wildMonSpecies0, buf);
+    ConvertGbaTextToAscii(gSpeciesInfo[wildMonSpecies1].speciesName, buf, sizeof buf);
+    MgbaPrintf(MGBA_LOG_WARN, "gSpeciesInfo[wildMonInfo->wildPokemon[1].species=%d].speciesName=``%s''", wildMonSpecies1, buf);
+    ConvertGbaTextToAscii(gSpeciesInfo[wildMonSpecies2].speciesName, buf, sizeof buf);
+    MgbaPrintf(MGBA_LOG_WARN, "gSpeciesInfo[wildMonInfo->wildPokemon[2].species=%d].speciesName=``%s''", wildMonSpecies2, buf);
+    regionId = gMapHeader.regionMapSectionId;
+    wildMonSpecies0 = gSaveBlock2Ptr->customData.randomEncounters[regionId][0];
+    wildMonSpecies1 = gSaveBlock2Ptr->customData.randomEncounters[regionId][1];
+    wildMonSpecies2 = gSaveBlock2Ptr->customData.randomEncounters[regionId][2];
+    ConvertGbaTextToAscii(gSpeciesInfo[wildMonSpecies0].speciesName, buf, sizeof buf);
+    MgbaPrintf(MGBA_LOG_WARN, "gSpeciesInfo[gSaveBlock2Ptr->customData.randomEncounters[regionId][0]=%d].speciesName=``%s''", wildMonSpecies0, buf);
+    ConvertGbaTextToAscii(gSpeciesInfo[wildMonSpecies1].speciesName, buf, sizeof buf);
+    MgbaPrintf(MGBA_LOG_WARN, "gSpeciesInfo[gSaveBlock2Ptr->customData.randomEncounters[regionId][1]=%d].speciesName=``%s''", wildMonSpecies1, buf);
+    ConvertGbaTextToAscii(gSpeciesInfo[wildMonSpecies2].speciesName, buf, sizeof buf);
+    MgbaPrintf(MGBA_LOG_WARN, "gSpeciesInfo[gSaveBlock2Ptr->customData.randomEncounters[regionId][2]=%d].speciesName=``%s''", wildMonSpecies2, buf);
 
     CreateWildMon(wildMonInfo->wildPokemon[wildMonIndex].species, level, wildMonIndex);
     return TRUE;
