@@ -1847,7 +1847,7 @@ static u32 GetSwitchinHitsToKO(s32 damageTaken, u32 battler)
         return 1;
 
     // Find hits to KO
-    while (currentHP > 0)
+    while (hitsToKO < 1024 /* Amy: Fixes infinite loop! */ && currentHP > 0)
     {
         // Remove weather damage when it would run out
         if (weatherImpact != 0 && weatherDuration == 0)

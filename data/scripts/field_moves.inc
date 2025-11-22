@@ -284,7 +284,7 @@ EventScript_Waterfall::
 	goto_if_eq VAR_RESULT, NO, EventScript_EndWaterfall
 	msgbox Text_MonUsedWaterfall
 	dofieldeffect FLDEFF_USE_WATERFALL
-	waitstate @ Amy: Was missing.
+	@NOT {waitstate} @ Amy: Seemed was missing, but adding it caused waterfall field effect to deadlock.
 	goto EventScript_EndWaterfall
 
 EventScript_CantUseWaterfall::

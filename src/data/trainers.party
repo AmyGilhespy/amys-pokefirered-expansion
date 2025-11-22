@@ -9007,7 +9007,7 @@ Gender: Female
 Music: Elite Four
 Items: Full Restore / Full Restore
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Will Suicide / Smart Switching / Ace Pokemon / Omniscient
+AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Smart Switching / Ace Pokemon / Omniscient
 Mugshot: Purple
 
 Dewgong @ Leftovers
@@ -9020,6 +9020,7 @@ Nature: Calm
 - Perish Song
 - Rain Dance
 - Rest
+// AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Will Suicide / Smart Switching / Ace Pokemon / Omniscient
 
 Cloyster @ Perfect Sash
 Level: 101

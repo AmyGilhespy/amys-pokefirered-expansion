@@ -2058,8 +2058,12 @@ static enum MoveCanceller CancellerAsleepOrFrozen(struct BattleContext *ctx)
     }
     else if (gBattleMons[ctx->battlerAtk].status1 & STATUS1_FREEZE && !MoveThawsUser(ctx->currentMove))
     {
-        if (!RandomPercentage(RNG_FROZEN, 20))
+        if (gBattleMons[ctx->battlerAtk].volatiles.freezeMinTurns > 0 || !RandomPercentage(RNG_FROZEN, 20))
         {
+            if (gBattleMons[ctx->battlerAtk].volatiles.freezeMinTurns > 0)
+            {
+                gBattleMons[ctx->battlerAtk].volatiles.freezeMinTurns--;
+            }
             gProtectStructs[ctx->battlerAtk].nonVolatileStatusImmobility = TRUE;
             gBattlescriptCurrInstr = BattleScript_MoveUsedIsFrozen;
             gHitMarker |= HITMARKER_UNABLE_TO_USE_MOVE;
@@ -3219,12 +3223,10 @@ enum MoveCanceller AtkCanceller_MoveSuccessOrder(struct BattleContext *ctx)
     enum MoveCanceller effect = MOVE_STEP_SUCCESS;
     bool8 isMailScript = ctx->moveEffect == EFFECT_MAIL_SCRIPT && gBattleStruct->atkCancellerTracker == 0;
 
-MgbaPrintf(MGBA_LOG_WARN, "AtkCanceller_MoveSuccessOrder(): <<A>> index=%d", gMailScriptIndex);
     if (isMailScript)
     {
         if (!gMailScriptActive)
         {
-        MgbaPrintf(MGBA_LOG_WARN, "AtkCanceller_MoveSuccessOrder(): index=%d WILL RESET", gMailScriptIndex);
             gMailScriptIndex = 0;
             gMailScriptActive = TRUE;
             gAmySaveCurrentTurnActionNumber = gCurrentTurnActionNumber;
@@ -3242,7 +3244,6 @@ MgbaPrintf(MGBA_LOG_WARN, "AtkCanceller_MoveSuccessOrder(): <<A>> index=%d", gMa
         #endif
     }
 
-MgbaPrintf(MGBA_LOG_WARN, "AtkCanceller_MoveSuccessOrder(): <<B>> index=%d", gMailScriptIndex);
     while (gBattleStruct->atkCancellerTracker < CANCELLER_END && effect == MOVE_STEP_SUCCESS)
     {
         if (ctx->moveEffect == EFFECT_MAIL_SCRIPT && gBattleStruct->atkCancellerTracker == CANCELLER_POWER_POINTS)
@@ -3254,11 +3255,8 @@ MgbaPrintf(MGBA_LOG_WARN, "AtkCanceller_MoveSuccessOrder(): <<B>> index=%d", gMa
         gBattleStruct->atkCancellerTracker++;
     }
 
-        MgbaPrintf(MGBA_LOG_WARN, "AtkCanceller_MoveSuccessOrder(): index=%d", gMailScriptIndex);
     if (gMailScriptActive && (effect == MOVE_STEP_FAILURE || gBattleStruct->atkCancellerTracker >= CANCELLER_END))
     {
-        MgbaPrintf(MGBA_LOG_WARN, "AtkCanceller_MoveSuccessOrder(): index=%d TRUE, will inc", gMailScriptIndex);
-
         // We’ve just finished a submove script; advance to the next mail word
         gMailScriptIndex++;
 
@@ -3279,7 +3277,6 @@ MgbaPrintf(MGBA_LOG_WARN, "AtkCanceller_MoveSuccessOrder(): <<B>> index=%d", gMa
         }
     }
 
-MgbaPrintf(MGBA_LOG_WARN, "AtkCanceller_MoveSuccessOrder(): <<C>> index=%d", gMailScriptIndex);
     if (effect == MOVE_STEP_REMOVES_STATUS)
     {
         BtlController_EmitSetMonData(
@@ -3292,7 +3289,6 @@ MgbaPrintf(MGBA_LOG_WARN, "AtkCanceller_MoveSuccessOrder(): <<C>> index=%d", gMa
         MarkBattlerForControllerExec(ctx->battlerAtk);
     }
 
-MgbaPrintf(MGBA_LOG_WARN, "AtkCanceller_MoveSuccessOrder(): <<D>> index=%d", gMailScriptIndex);
     return effect;
 }
 

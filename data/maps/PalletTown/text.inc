@@ -84,5 +84,5 @@ PalletTown_Text_AlphabetGirl::
     .string "ICHIKO is on Cinnabar Island.\n"
     .string "JULIANA is at the Indigo Plateau.\p"
     .string "KYOUKO through OLIVIA make up the\n"
-    .string "ULTIMATE CUTIES, and they are hidden\l"
-    .string "in their SECRET HIDEOUT near MEWTWO.$"
+    .string "ULTIMATE CUTIES, hidden in their\l"
+    .string "SECRET HIDEOUT near MEWTWO.$"

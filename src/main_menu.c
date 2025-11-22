@@ -18,6 +18,7 @@
 #include "task.h"
 #include "text_window.h"
 #include "title_screen.h"
+#include "constants/game_modes.h"
 #include "constants/songs.h"
 
 extern const u8 gText_GameMode[];
@@ -751,11 +752,11 @@ static void PrintGameMode(void)
     AddTextPrinterParameterized3(MAIN_MENU_WINDOW_CONTINUE, FONT_NORMAL, 2, 82, sTextColor2, -1, gText_GameMode);
     switch (gSaveBlock2Ptr->customData.gameMode)
     {
-    case   0: ptr = gText_Standard;   break;
-    case   1: ptr = gText_Limited;    break;
-    case   2: ptr = gText_Nuzlocke;   break;
-    case 255: ptr = gText_EscapeRoom; break;
-    default:  ptr = gText_Invalid;    break;
+    case GAME_MODE_STANDARD:    ptr = gText_Standard;   break;
+    case GAME_MODE_LIMITED:     ptr = gText_Limited;    break;
+    case GAME_MODE_NUZLOCKE:    ptr = gText_Nuzlocke;   break;
+    case GAME_MODE_ESCAPE_ROOM: ptr = gText_EscapeRoom; break;
+    default:                    ptr = gText_Invalid;    break;
     }
     AddTextPrinterParameterized3(MAIN_MENU_WINDOW_CONTINUE, FONT_NORMAL, 62, 82, sTextColor2, -1, ptr);
 }

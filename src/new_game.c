@@ -33,6 +33,7 @@
 #include "save.h"
 #include "rtc.h"
 #include "random_encounters.h"
+#include "constants/game_modes.h"
 #include "constants/species.h"
 
 // this file's functions
@@ -91,6 +92,12 @@ static void WarpToPlayersRoom(void)
     WarpIntoMap();
 }
 
+static void WarpToEscapeRoom(void)
+{
+    SetWarpDestination(MAP_GROUP(MAP_PALLET_TOWN_PLAYERS_HOUSE_2F), MAP_NUM(MAP_PALLET_TOWN_PLAYERS_HOUSE_2F), -1, 6, 6);
+    WarpIntoMap();
+}
+
 void Sav2_ClearSetDefault(void)
 {
     ClearSav2();
@@ -114,7 +121,7 @@ void NewGameInitData(void)
 {
     u16 i;
     u8 rivalName[PLAYER_NAME_LENGTH + 1];
-    
+
     if (gSaveFileStatus == SAVE_STATUS_EMPTY || gSaveFileStatus == SAVE_STATUS_INVALID)
         RtcReset();
 
@@ -136,7 +143,14 @@ void NewGameInitData(void)
     InitEventData();
     InitTimeBasedEvents(); // remove if wallclock
     ResetFameChecker();
-    SetMoney(&gSaveBlock1Ptr->money, 3000);
+    if (gSaveBlock2Ptr->customData.gameMode < 128)
+    {
+        SetMoney(&gSaveBlock1Ptr->money, 3000);
+    }
+    else
+    {
+        SetMoney(&gSaveBlock1Ptr->money, 0);
+    }
     ResetGameStats();
     ClearPlayerLinkBattleRecords();
     InitHeracrossSizeRecord();
@@ -150,11 +164,21 @@ void NewGameInitData(void)
     gSaveBlock1Ptr->registeredItem = 0;
     ClearBag();
 
-    // Give starting items
-    AddBagItem(ITEM_RARE_CANDY, 999);
-    AddBagItem(ITEM_MAX_REPEL, 999);
+    if (gSaveBlock2Ptr->customData.gameMode < 128)
+    {
+        // Give starting items
+        AddBagItem(ITEM_RARE_CANDY, 999);
+        AddBagItem(ITEM_MAX_REPEL, 999);
 
-    NewGameInitPCItems();
+        // Give starting PC items
+        NewGameInitPCItems();
+    }
+    else if (gSaveBlock2Ptr->customData.gameMode == GAME_MODE_ESCAPE_ROOM)
+    {
+        // Give starting PC items
+        NewGameInitPCItemsEscapeRoom();
+    }
+
     // ClearEnigmaBerries();
     InitEasyChatPhrases();
     ResetTrainerFanClub();
@@ -162,25 +186,39 @@ void NewGameInitData(void)
     ResetMiniGamesResults();
     ClearMysteryGift();
     SetAllRenewableItemFlags();
-    WarpToPlayersRoom();
+    if (gSaveBlock2Ptr->customData.gameMode < 128)
+    {
+        WarpToPlayersRoom();
+    }
+    else if (gSaveBlock2Ptr->customData.gameMode == GAME_MODE_ESCAPE_ROOM)
+    {
+        WarpToEscapeRoom();
+    }
     RunScriptImmediately(EventScript_ResetAllMapFlags);
     StringCopy(gSaveBlock1Ptr->rivalName, rivalName);
     ResetTrainerTowerResults();
     ResetItemFlags();
     ResetDexNav();
-    RandomEncounters_Init();
-    RandomEncounters_FillAllWithRandom();
+    if (gSaveBlock2Ptr->customData.gameMode < 128)
+    {
+        RandomEncounters_Init();
+        RandomEncounters_FillAllWithRandom();
+    }
 
-    // Shortcuts:
-    FlagSet(FLAG_GOT_TEA); // Unlocks the gate houses to Saffron
-    FlagSet(FLAG_HIDE_SAFFRON_ROCKETS); // Moves the Rocket blocking the gym in Saffron
-    FlagClear(FLAG_HIDE_SAFFRON_CIVILIANS); // Moves the Rocket blocking the gym in Saffron
-    AddBagItem(ITEM_POKE_FLUTE, 1);
-    FlagSet(FLAG_GOT_POKE_FLUTE);
-    AddBagItem(ITEM_HM03, 1); // Surf
-    AddBagItem(ITEM_HM05, 1); // Flash
-    AddBagItem(ITEM_SECRET_KEY, 1);
-    FlagSet(FLAG_HIDE_POKEMON_MANSION_B1F_SECRET_KEY); // Unlocks the gym in Cinnabar
+    if (gSaveBlock2Ptr->customData.gameMode < 128)
+    {
+        // Shortcuts:
+        FlagSet(FLAG_GOT_TEA); // Unlocks the gate houses to Saffron
+        FlagSet(FLAG_HIDE_SAFFRON_ROCKETS); // Moves the Rocket blocking the gym in Saffron
+        FlagClear(FLAG_HIDE_SAFFRON_CIVILIANS); // Moves the Rocket blocking the gym in Saffron
+        AddBagItem(ITEM_POKE_FLUTE, 1);
+        FlagSet(FLAG_GOT_POKE_FLUTE);
+        AddBagItem(ITEM_HM03, 1); // Surf
+        AddBagItem(ITEM_HM05, 1); // Flash
+        AddBagItem(ITEM_SECRET_KEY, 1);
+        FlagSet(FLAG_HIDE_POKEMON_MANSION_B1F_SECRET_KEY); // Unlocks the gym in Cinnabar
+        FlagSet(FLAG_HIDE_CERULEAN_CAVE_GUARD); // Unlocks the Cerulean Cave from the start (once you can surf)
+    }
 
     // Testing/debug:
     if (FALSE) // For easy testing, change this to TRUE.

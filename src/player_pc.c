@@ -24,6 +24,7 @@
 #define PC_ITEM_ID  0
 #define PC_QUANTITY 1
 #define NEW_GAME_PC_ITEMS(i, type) (((u16 *)gNewGamePCItems + type)[i * 2])
+#define NEW_GAME_PC_ITEMS_ESCAPE_ROOM(i, type) (((u16 *)gNewGamePCItemsEscapeRoom + type)[i * 2])
 #define NEW_GAME_PC_ITEM_OPTIONS(i, type) (((u16 *)gNewGamePCItemOptions + type)[i * 2])
 
 #define tCount          data[2]
@@ -101,12 +102,19 @@ static const struct ItemSlot gNewGamePCItems[] = {
     { ITEM_NONE,   0 }
 };
 
+static const struct ItemSlot gNewGamePCItemsEscapeRoom[] = {
+    { ITEM_POTION, 1 },
+    //{ ITEM_POTION, 1 },
+    { ITEM_NONE,   0 }
+};
+
 static const struct ItemSlot gNewGamePCItemOptions[] = {
     { ITEM_CHOICE_BAND, 1 },
     { ITEM_CHOICE_SCARF, 1 },
     { ITEM_CHOICE_SPECS, 1 },
     { ITEM_ASSAULT_VEST, 1 },
     { ITEM_LIFE_ORB, 1 },
+    { ITEM_FOCUS_SASH, 1 },
     { ITEM_LEFTOVERS, 1 }
 };
 
@@ -158,6 +166,15 @@ void NewGameInitPCItems(void)
     count = sizeof gNewGamePCItemOptions / sizeof *gNewGamePCItemOptions;
     i = (u16) Random32() % count;
     AddPCItem(NEW_GAME_PC_ITEM_OPTIONS(i, PC_ITEM_ID), NEW_GAME_PC_ITEM_OPTIONS(i, PC_QUANTITY));
+}
+
+void NewGameInitPCItemsEscapeRoom(void)
+{
+    u8 i;
+
+    for (i = 0, ClearPCItemSlots(); NEW_GAME_PC_ITEMS_ESCAPE_ROOM(i, PC_ITEM_ID) && NEW_GAME_PC_ITEMS_ESCAPE_ROOM(i, PC_QUANTITY) &&
+                                    AddPCItem(NEW_GAME_PC_ITEMS_ESCAPE_ROOM(i, PC_ITEM_ID), NEW_GAME_PC_ITEMS_ESCAPE_ROOM(i, PC_QUANTITY)) == TRUE; i++)
+        ;
 }
 
 void BedroomPC(void)

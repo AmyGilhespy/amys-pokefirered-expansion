@@ -19,6 +19,7 @@
 #include "task.h"
 #include "text_window.h"
 #include "util.h"
+#include "constants/game_modes.h"
 #include "constants/songs.h"
 
 #define INTRO_SPECIES SPECIES_GENGAR
@@ -1292,16 +1293,16 @@ static void Task_OakSpeech_HandleGameModeInput(u8 taskId)
     switch (input)
     {
     case 0: // Standard
-        gSaveBlock2Ptr->customData.gameMode = 0;
+        gSaveBlock2Ptr->customData.gameMode = GAME_MODE_STANDARD;
         break;
     case 1: // Limited
-        gSaveBlock2Ptr->customData.gameMode = 1;
+        gSaveBlock2Ptr->customData.gameMode = GAME_MODE_LIMITED;
         break;
     case 2: // Nuzlocke
-        gSaveBlock2Ptr->customData.gameMode = 2;
+        gSaveBlock2Ptr->customData.gameMode = GAME_MODE_NUZLOCKE;
         break;
     case 3: // Escape Room
-        gSaveBlock2Ptr->customData.gameMode = 255;
+        gSaveBlock2Ptr->customData.gameMode = GAME_MODE_ESCAPE_ROOM;
         break;
     case MENU_B_PRESSED:
     case MENU_NOTHING_CHOSEN:

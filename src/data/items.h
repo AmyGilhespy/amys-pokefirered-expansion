@@ -14666,7 +14666,7 @@ const struct Item gItemsInfo[] =
     [ITEM_EVIO] =
     {
         .name = ITEM_NAME("Evio"),
-        .price = 250000,
+        .price = 60000,
         .holdEffect = HOLD_EFFECT_EVIO,
         .holdEffectParam = 50,
         .description = COMPOUND_STRING(
@@ -14686,7 +14686,7 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Perfect Sash"),
         .pluralName = ITEM_PLURAL_NAME("Perfect Sashes"),
-        .price = 250000,
+        .price = 60000,
         .holdEffect = HOLD_EFFECT_PERFECT_SASH,
         .description = COMPOUND_STRING(
             "Endures KO hits\nwith 1 HP."),
