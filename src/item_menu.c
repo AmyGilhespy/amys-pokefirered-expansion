@@ -1317,7 +1317,7 @@ static void Task_BagMenu_HandleInput(u8 taskId)
         SwitchBagPocket(taskId, MENU_CURSOR_DELTA_RIGHT, FALSE);
         return;
     default:
-        if (JOY_NEW(SELECT_BUTTON) && gBagPosition.location == ITEMMENULOCATION_FIELD)
+        if (FALSE && JOY_NEW(SELECT_BUTTON) && gBagPosition.location == ITEMMENULOCATION_FIELD)
         {
             ListMenuGetScrollAndRow(tListTaskId, scrollPos, cursorPos);
             if ((*scrollPos + *cursorPos) != gBagMenu->numItemStacks[gBagPosition.pocket] - 1)
@@ -1327,7 +1327,7 @@ static void Task_BagMenu_HandleInput(u8 taskId)
                 return;
             }
         }
-            else if (JOY_NEW(START_BUTTON))
+            else if (JOY_NEW(START_BUTTON) || JOY_NEW(SELECT_BUTTON))
             {
                 if ((gBagMenu->numItemStacks[gBagPosition.pocket] - 1) <= 1) //can't sort with 0 or 1 item in bag
                 {
@@ -1508,7 +1508,7 @@ static void Task_HandleSwappingItemsInput(u8 taskId)
     if (IsActiveOverworldLinkBusy() == TRUE)
         return;
 
-    if (JOY_NEW(SELECT_BUTTON))
+    if (FALSE && JOY_NEW(SELECT_BUTTON))
     {
         PlaySE(SE_SELECT);
         ListMenuGetScrollAndRow(tListTaskId, &gBagPosition.scrollPosition[gBagPosition.pocket], &gBagPosition.cursorPosition[gBagPosition.pocket]);
@@ -1700,7 +1700,13 @@ static void Task_ItemContext_SingleRow(u8 taskId)
             break;
         default:
             PlaySE(SE_SELECT);
-            sItemMenuActions[gBagMenu->contextMenuItemsPtr[selection]].func.void_u8(taskId);
+            {
+                void (*void_u8)(u8) = sItemMenuActions[gBagMenu->contextMenuItemsPtr[selection]].func.void_u8;
+                if (void_u8)
+                {
+                    void_u8(taskId);
+                }
+            }
             break;
         }
     }

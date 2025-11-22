@@ -31,6 +31,7 @@ LavenderTown_Mart_Items::
 	.2byte ITEM_WIDE_LENS
 	.2byte ITEM_ZOOM_LENS
 	.2byte ITEM_EXPERT_BELT
+	.2byte ITEM_AIR_BALLOON
 	.2byte ITEM_BIG_ROOT
 	.2byte ITEM_SHELL_BELL
 	.2byte ITEM_IRON_BALL

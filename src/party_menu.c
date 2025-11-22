@@ -5566,6 +5566,7 @@ void ItemUseCB_TeraShard(u8 taskId, TaskFunc func)
     StringExpandPlaceholders(gStringVar4, gText_TeraTypeChanged);
     DisplayPartyMenuMessage(gStringVar4, TRUE);
     ScheduleBgCopyTilemapToVram(2);
+    RemoveBagItem(item, 1);
     gTasks[taskId].func = Task_ClosePartyMenuAfterText;
     gPartyMenuUseExitCallback = TRUE;
 }

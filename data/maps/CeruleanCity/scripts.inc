@@ -35,7 +35,7 @@ CeruleanCity_EventScript_RivalTriggerRight::
 
 CeruleanCity_EventScript_Rival::
 	textcolor NPC_TEXT_COLOR_MALE
-	setvar VAR_MAP_SCENE_ROUTE22, 2
+	@setvar VAR_MAP_SCENE_ROUTE22, 2
 	playbgm MUS_ENCOUNTER_RIVAL, 0
 	addobject LOCALID_CERULEAN_RIVAL
 	applymovement LOCALID_CERULEAN_RIVAL, CeruleanCity_Movement_RivalEnter
