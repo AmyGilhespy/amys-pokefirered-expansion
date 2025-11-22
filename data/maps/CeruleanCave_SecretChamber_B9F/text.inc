@@ -62,6 +62,17 @@ CeruleanCave_SecretChamber_B9F_Text_AmyPostBattle::
 	.string "cawtds/pokefirered-expansion\p"
 	.string "This project would not have been\n"
 	.string "possible without their hard work.\p"
+	.string "My good friend Remiphy made some\n"
+	.string "of the art (most of the fakemon).\p"
 	.string "I hope you had as much fun playing\n"
 	.string "as I had working on this project.\p"
 	.string "Until next time!$"
+
+CeruleanCave_SecretChamber_B9F_Text_ReceivedEscapeRope::
+	.string "{PLAYER} received ESCAPE ROPE.$"
+
+CeruleanCave_SecretChamber_B9F_Text_DidNotReceiveEscapeRope::
+	.string "Oh… I tried to give you an\n"
+	.string "ESCAPE ROPE, but you had no room\l"
+	.string "for it in your bag.\p"
+	.string "So I'll warp you home instead!$"

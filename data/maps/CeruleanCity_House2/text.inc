@@ -1,11 +1,13 @@
 CeruleanCity_House2_Text_RocketsStoleTMForDig::
     .string "Those miserable ROCKETS!\p"
-    .string "Look what they've done to my\n"
-    .string "house!\p"
+    .string "Look what they've made the police\n"
+    .string "do to my house!\p"
     .string "They stole a couple of powerful\n"
     .string "TMs that I worked hard to acquire!\p"
     .string "I was going to use them on a\n"
     .string "PORYGON…\p"
+    .string "Then the cops showed up and\n"
+    .string "totally wrecked the place…\p"
     .string "That cost me a bundle, it did!$"
 
 CeruleanCity_House2_Text_TeachDiglettDigWithoutTM::

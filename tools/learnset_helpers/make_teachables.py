@@ -150,7 +150,7 @@ def prepare_output(all_learnables: dict[str, set[str]], repo_teachables: set[str
         "MOVE_HAZE",             # TR87 Celadon City Department Store 2F
         "MOVE_RAPID_SPIN",       # TR88 Celadon City Department Store 2F
         "MOVE_SWEET_SCENT",      # TR89 Celadon City Department Store 2F
-        "MOVE_DETECT",           # TR90 Celadon City Department Store 2F
+        "MOVE_ENDURE",           # TR90 Celadon City Department Store 2F
         "MOVE_BANEFUL_BUNKER",   # TR91 Fuchsia City Gym Shop
         "MOVE_SPIKY_SHIELD",     # TR92 Fuchsia City Gym Shop
         "MOVE_WATER_SHURIKEN",   # TR93 Fuchsia City Gym Shop

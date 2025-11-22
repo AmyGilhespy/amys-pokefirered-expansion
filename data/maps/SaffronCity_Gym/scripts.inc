@@ -3,7 +3,7 @@ SaffronCity_Gym_MapScripts::
 
 SaffronCity_Gym_EventScript_Sabrina::
 	famechecker FAMECHECKER_SABRINA, FCPICKSTATE_COLORED, UpdatePickStateFromSpecialVar8005
-	special GetGameType
+	special GetGameMode
 	goto_if_ne VAR_RESULT, 0, SaffronCity_Gym_EventScript_Sabrina_Nuzlocke
 	trainerbattle_single TRAINER_LEADER_SABRINA, SaffronCity_Gym_Text_SabrinaIntroStandard, SaffronCity_Gym_Text_SabrinaDefeat, SaffronCity_Gym_EventScript_DefeatedSabrina, NO_MUSIC
 	goto_if_unset FLAG_GOT_TR99_FROM_SABRINA, SaffronCity_Gym_EventScript_GiveTR99

@@ -260,7 +260,7 @@ void RandomEncounters_Init(void)
 
 bool8 RandomEncounters_IsAllowedSpecies(u16 species)
 {
-    if (species >= NUM_SPECIES)
+    if (species >= NUM_NONWEIRD_SPECIES)
     {
         return FALSE;
     }

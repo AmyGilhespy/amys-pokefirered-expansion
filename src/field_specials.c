@@ -2742,9 +2742,15 @@ u16 GetStarterSpeciesRival(void)
     return GetStarterSpeciesById(index);
 }
 
-void GetGameType(void)
+void GetGameMode(void)
 {
-    VarSet(VAR_RESULT, gSaveBlock2Ptr->customData.gameType);
+    VarSet(VAR_RESULT, gSaveBlock2Ptr->customData.gameMode);
+}
+
+void SetGameMode(void)
+{
+    gSaveBlock2Ptr->customData.gameMode = (u8) VarGet(VAR_TEMP_1);
+    MgbaPrintf(MGBA_LOG_WARN, "gSaveBlock2Ptr->customData.gameMode = %d", gSaveBlock2Ptr->customData.gameMode);
 }
 
 void RemapPickupItem(void)

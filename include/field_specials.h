@@ -34,7 +34,8 @@ void GetRandomStarterPlayer(void);
 void GetRandomStarterRival(void);
 u16 GetStarterSpeciesPlayer(void);
 u16 GetStarterSpeciesRival(void);
-void GetGameType(void);
+void GetGameMode(void);
+void SetGameMode(void);
 void RemapPickupItem(void);
 void YouHaveXBadgesNowPokemonWillObeyYou(void);
 

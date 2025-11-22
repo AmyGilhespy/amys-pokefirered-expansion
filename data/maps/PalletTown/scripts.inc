@@ -7,13 +7,21 @@ PalletTown_MapScripts::
 
 PalletTown_OnTransition::
 	setworldmapflag FLAG_WORLD_MAP_PALLET_TOWN
+	call_if_unset FLAG_SYS_GAME_CLEAR, PalletTown_EventScript_HideAlphabetGirl
+	checktrainerflag TRAINER_AMY
+	call_if_ne PalletTown_EventScript_HideAlphabetGirl
 	call_if_set FLAG_PALLET_LADY_NOT_BLOCKING_SIGN, PalletTown_EventScript_TryReadySignLady
 	call_if_eq VAR_MAP_SCENE_PALLET_TOWN_SIGN_LADY, 0, PalletTown_EventScript_SetSignLadyPos
 	call_if_eq VAR_MAP_SCENE_PALLET_TOWN_SIGN_LADY, 1, PalletTown_EventScript_SetSignLadyDone
 	end
 
+PalletTown_EventScript_HideAlphabetGirl::
+	setflag FLAG_TEMP_A
+	removeobject LOCALID_ALPHABET_GIRL
+	return
+
 PalletTown_EventScript_TryReadySignLady::
-	goto_if_unset FLAG_OPENED_START_MENU, EventScript_Return
+	@goto_if_unset FLAG_OPENED_START_MENU, EventScript_Return
 	goto_if_ge VAR_MAP_SCENE_PALLET_TOWN_SIGN_LADY, 1, EventScript_Return
 	setvar VAR_MAP_SCENE_PALLET_TOWN_SIGN_LADY, 1
 	return
@@ -446,5 +454,10 @@ PalletTown_EventScript_SignLadyStartShowSign::
 	applymovement LOCALID_PALLET_SIGN_LADY, Common_Movement_FacePlayer
 	waitmovement 0
 	call PalletTown_EventScript_SignLadyShowSign
+	release
+	end
+
+PalletTown_EventScript_AlphabetGirl::
+	msgbox PalletTown_Text_AlphabetGirl, MSGBOX_NPC
 	release
 	end

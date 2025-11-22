@@ -21532,9 +21532,9 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .description = COMPOUND_STRING(
             "Targets both\nopponents."),
         .effect = EFFECT_HIT,
-        .power = 150,
+        .power = 135,
         .type = TYPE_FIRE,
-        .accuracy = 100,
+        .accuracy = 90,
         .pp = 5,
         .target = MOVE_TARGET_BOTH,
         .priority = 0,

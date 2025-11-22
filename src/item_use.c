@@ -1131,7 +1131,7 @@ bool32 CannotUseItemsInBattle(u16 itemId, struct Pokemon *mon)
         break;
     }
 
-    if (gSaveBlock2Ptr->customData.gameType > 0) // Nuzlocke mode
+    if (gSaveBlock2Ptr->customData.gameMode > 1 && gSaveBlock2Ptr->customData.gameMode < 128) // Nuzlocke mode
     {
         switch (itemId)
         {
@@ -1240,7 +1240,7 @@ void ItemUseOutOfBattle_CannotUse(u8 taskId)
 
 void ItemUseOutOfBattle_CannotUseInNuzlockeRevivalMedicine(u8 taskId)
 {
-    if (gSaveBlock2Ptr->customData.gameType > 0) // Nuzlocke mode
+    if (gSaveBlock2Ptr->customData.gameMode > 1 && gSaveBlock2Ptr->customData.gameMode < 128) // Nuzlocke mode
     {
         StringExpandPlaceholders(gStringVar4, gText_CannotUseNuzlockeRevival);
         DisplayItemMessageInCurrentContext(taskId, FALSE, FONT_MALE, gStringVar4);
@@ -1254,7 +1254,7 @@ void ItemUseOutOfBattle_CannotUseInNuzlockeRevivalMedicine(u8 taskId)
 
 void ItemUseOutOfBattle_CannotUseInNuzlockeSacredAsh(u8 taskId)
 {
-    if (gSaveBlock2Ptr->customData.gameType > 0) // Nuzlocke mode
+    if (gSaveBlock2Ptr->customData.gameMode > 1 && gSaveBlock2Ptr->customData.gameMode < 128) // Nuzlocke mode
     {
         StringExpandPlaceholders(gStringVar4, gText_CannotUseNuzlockeRevival);
         DisplayItemMessageInCurrentContext(taskId, FALSE, FONT_MALE, gStringVar4);

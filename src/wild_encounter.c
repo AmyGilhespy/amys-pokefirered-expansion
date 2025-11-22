@@ -457,7 +457,7 @@ static bool8 TryGenerateWildMon(const struct WildPokemonInfo * wildMonInfo, u8 a
     u8 regionId;
     u8 wildMonIndex = 0;
     u8 level;
-    if (gSaveBlock2Ptr->customData.gameType > 0)
+    if (gSaveBlock2Ptr->customData.gameMode > 0 && gSaveBlock2Ptr->customData.gameMode < 128) // Limited mode or Nuzlocke mode
     {
         regionId = gMapHeader.regionMapSectionId;
         if (gSaveBlock2Ptr->customData.caughtEncounters[regionId] > 0)
@@ -510,6 +510,7 @@ static bool8 TryGenerateWildMon(const struct WildPokemonInfo * wildMonInfo, u8 a
     if (flags & WILD_CHECK_KEEN_EYE && !IsAbilityAllowingEncounter(level))
         return FALSE;
 
+    #if 0
     char buf[32];
     u16 wildMonSpecies0 = wildMonInfo->wildPokemon[0].species;
     u16 wildMonSpecies1 = wildMonInfo->wildPokemon[1].species;
@@ -530,6 +531,7 @@ static bool8 TryGenerateWildMon(const struct WildPokemonInfo * wildMonInfo, u8 a
     MgbaPrintf(MGBA_LOG_WARN, "gSpeciesInfo[gSaveBlock2Ptr->customData.randomEncounters[regionId][1]=%d].speciesName=``%s''", wildMonSpecies1, buf);
     ConvertGbaTextToAscii(gSpeciesInfo[wildMonSpecies2].speciesName, buf, sizeof buf);
     MgbaPrintf(MGBA_LOG_WARN, "gSpeciesInfo[gSaveBlock2Ptr->customData.randomEncounters[regionId][2]=%d].speciesName=``%s''", wildMonSpecies2, buf);
+    #endif
 
     CreateWildMon(wildMonInfo->wildPokemon[wildMonIndex].species, level, wildMonIndex);
     return TRUE;

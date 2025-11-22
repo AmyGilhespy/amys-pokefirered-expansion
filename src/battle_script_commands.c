@@ -4295,7 +4295,7 @@ static void Cmd_tryfaintmon(void)
             {
                 faintScript = BattleScript_FaintAttackerRanAway;
             }
-            else if (gSaveBlock2Ptr->customData.gameType > 0)
+            else if (gSaveBlock2Ptr->customData.gameMode > 1 && gSaveBlock2Ptr->customData.gameMode < 128) // Nuzlocke mode
             {
                 faintScript = BattleScript_FaintAttackerDied;
             }
@@ -4327,7 +4327,7 @@ static void Cmd_tryfaintmon(void)
             {
                 faintScript = BattleScript_FaintTargetRanAway;
             }
-            else if (gSaveBlock2Ptr->customData.gameType > 0)
+            else if (gSaveBlock2Ptr->customData.gameMode > 1 && gSaveBlock2Ptr->customData.gameMode < 128) // Nuzlocke mode
             {
                 faintScript = BattleScript_FaintTargetDied;
             }
@@ -7271,6 +7271,75 @@ static void Cmd_switchindataupdate(void)
             }
         }
     }
+
+    // Fix for duplicate battler:
+    // --- BEGIN PATCH SNIPPET ---
+    /*
+     * Defensive fix #1 for duplicate active-mon bug in doubles with >2 trainer mons.
+     * Ensure gBattlerPartyIndexes[battler] isn't equal to another battler on the same side.
+     * If it is, pick the first unused valid party slot and request the controller again.
+     */
+    {
+        u8 side = GetBattlerSide(battler);
+        u8 curIndex = gBattlerPartyIndexes[battler];
+        bool8 duplicateFound = FALSE;
+
+        for (i = 0; i < gBattlersCount; ++i)
+        {
+            if ((u8)i == battler)
+                continue;
+            if (GetBattlerSide(i) != side)
+                continue;
+            if (gBattlerPartyIndexes[i] == curIndex)
+            {
+                duplicateFound = TRUE;
+                break;
+            }
+        }
+
+        if (duplicateFound)
+        {
+            struct Pokemon *party = GetBattlerParty(battler);
+            u8 newIndex;
+            bool8 found = FALSE;
+
+            for (newIndex = 0; newIndex < PARTY_SIZE; ++newIndex)
+            {
+                if (!IsValidForBattle(&party[newIndex]))
+                    continue;
+
+                // ensure no other battler on same side uses this slot
+                bool8 used = FALSE;
+                for (i = 0; i < gBattlersCount; ++i)
+                {
+                    if (GetBattlerSide(i) != side)
+                        continue;
+                    if (gBattlerPartyIndexes[i] == newIndex)
+                    {
+                        used = TRUE;
+                        break;
+                    }
+                }
+
+                if (!used)
+                {
+                    found = TRUE;
+                    break;
+                }
+            }
+
+            if (found)
+            {
+                gBattlerPartyIndexes[battler] = gBattleStruct->monToSwitchIntoId[battler] = newIndex;
+                // Ask controller for whole mon data for this newly assigned slot and re-sync
+                BtlController_EmitGetMonData(battler, B_COMM_TO_CONTROLLER, REQUEST_ALL_BATTLE, 1u << newIndex);
+                MarkBattlerForControllerExec(battler);
+                return;
+            }
+            // If not found, fall through and let normal logic handle the situation.
+        }
+    }
+    // --- END PATCH SNIPPET ---
 
     gBattleMons[battler].types[0] = GetSpeciesType(gBattleMons[battler].species, 0);
     gBattleMons[battler].types[1] = GetSpeciesType(gBattleMons[battler].species, 1);

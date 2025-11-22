@@ -8933,7 +8933,7 @@ Double Battle: Yes
 AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Smart Switching / Ace Pokemon / Omniscient / Prefer Highest Damage Move
 
 Necrozma-Dusk Mane @ Ultranecrozium Z
-Level: 60
+Level: 72
 IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 0 HP / 0 Atk / 32 Def / 224 SpA / 0 SpD / 252 Spe
 Ability: Prism Armor
@@ -8944,7 +8944,7 @@ Nature: Jolly
 - Heat Wave
 
 Rayquaza @ Life Orb
-Level: 60
+Level: 72
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 0 HP / 252 Atk / 4 Def / 0 SpA / 0 SpD / 252 Spe
 Ability: Air Lock
@@ -8953,6 +8953,19 @@ Nature: Adamant
 - Dragon Dance
 - Extreme Speed
 - V-create
+
+Pikachu @ Light Ball
+Level: 72
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 0 HP / 252 Atk / 0 Def / 0 SpA / 4 SpD / 252 Spe
+Ability: Galvanize
+Nature: Adamant
+Dynamax Level: 10
+Gigantamax: Yes
+- Volt Tackle
+- Extreme Speed
+- Knock Off
+- Play Rough
 
 === TRAINER_CHAMPION_OAK ===
 Name: PROF. OAK
@@ -8998,7 +9011,7 @@ AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / T
 Mugshot: Purple
 
 Dewgong @ Leftovers
-Level: 100
+Level: 101
 IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 0 Atk / 4 Def / 0 SpA / 252 SpD / 0 Spe
 Ability: Hydration
@@ -9009,7 +9022,7 @@ Nature: Calm
 - Rest
 
 Cloyster @ Perfect Sash
-Level: 100
+Level: 101
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 0 HP / 252 Atk / 0 Def / 0 SpA / 4 SpD / 252 Spe
 Ability: Disguise
@@ -9020,7 +9033,7 @@ Nature: Jolly
 - Ice Shard
 
 Mamoswine @ Life Orb
-Level: 100
+Level: 101
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 0 HP / 252 Atk / 0 Def / 0 SpA / 4 SpD / 252 Spe
 Ability: Huge Power
@@ -9031,7 +9044,7 @@ Nature: Adamant
 - Ice Shard
 
 Rotom Frost @ Focus Sash
-Level: 100
+Level: 101
 IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 0 HP / 0 Atk / 0 Def / 252 SpA / 4 SpD / 252 Spe
 Ability: Snow Warning
@@ -9042,7 +9055,7 @@ Nature: Timid
 - Absolute Zero
 
 Glalie @ Glalitite
-Level: 100
+Level: 101
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 0 HP / 252 Atk / 0 Def / 0 SpA / 4 SpD / 252 Spe
 Ability: Snow Warning
@@ -9053,7 +9066,7 @@ Nature: Jolly
 - Last Resort
 
 Lapras @ Sitrus Berry
-Level: 100
+Level: 101
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
 Nature: Serious
@@ -9071,7 +9084,7 @@ AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / T
 Mugshot: Green
 
 Hariyama @ Custap Berry
-Level: 100
+Level: 101
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 4 HP / 252 Atk / 0 Def / 0 SpA / 252 SpD / 0 Spe
 Ability: Disguise
@@ -9082,7 +9095,7 @@ Nature: Adamant
 - Knock Off
 
 Shedinja @ Coffee
-Level: 100
+Level: 101
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 31 Spe
 EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 252 Spe
 Ability: Wonder Guard
@@ -9093,7 +9106,7 @@ Tera Type: Stellar
 - Shadow Sneak
 
 Iron Hands @ Smooth Rock
-Level: 100
+Level: 101
 IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
 EVs: 252 HP / 0 Atk / 4 Def / 0 SpA / 252 SpD / 0 Spe
 Ability: Sand Stream
@@ -9111,7 +9124,7 @@ Nature: Quiet
 - Dragon Rage
 
 Lucario @ Lucarionite
-Level: 100
+Level: 101
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 0 HP / 252 Atk / 0 Def / 0 SpA / 4 SpD / 252 Spe
 Ability: Sand Stream
@@ -9122,7 +9135,7 @@ Nature: Jolly
 - Bullet Punch
 
 Machamp @ Life Orb
-Level: 100
+Level: 101
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
 Nature: Serious
@@ -9140,7 +9153,7 @@ AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / T
 Mugshot: Pink
 
 Gengar @ Petaya Berry
-Level: 100
+Level: 101
 IVs: 30 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 0 HP / 0 Atk / 0 Def / 252 SpA / 4 SpD / 252 Spe
 Ability: No Guard
@@ -9151,7 +9164,7 @@ Nature: Timid
 - Substitute XL
 
 Marshadow @ Life Orb
-Level: 100
+Level: 101
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 0 HP / 252 Atk / 0 Def / 0 SpA / 4 SpD / 252 Spe
 Ability: Huge Power
@@ -9162,7 +9175,7 @@ Nature: Jolly
 - Pursuit
 
 Gholdengo @ Leftovers
-Level: 100
+Level: 101
 IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 0 Atk / 228 Def / 0 SpA / 0 SpD / 28 Spe
 Ability: Earth Eater
@@ -9173,7 +9186,7 @@ Nature: Bold
 - Recover
 
 Lunala @ Lunalium Z
-Level: 100
+Level: 101
 IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 0 HP / 0 Atk / 0 Def / 244 SpA / 12 SpD / 252 Spe
 Ability: Shadow Shield
@@ -9184,7 +9197,7 @@ Nature: Timid
 - Moonblast
 
 Gengar @ Gengarite
-Level: 100
+Level: 101
 IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 0 HP / 0 Atk / 0 Def / 252 SpA / 4 SpD / 252 Spe
 Ability: Psychic Surge
@@ -9195,7 +9208,7 @@ Nature: Timid
 - Destiny Bond
 
 Gengar @ Leftovers
-Level: 100
+Level: 101
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
 Nature: Serious
@@ -9213,7 +9226,7 @@ AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / T
 Mugshot: Blue
 
 Gyarados @ Wave Mail
-Level: 100
+Level: 101
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 0 HP / 252 Atk / 0 Def / 0 SpA / 4 SpD / 252 Spe
 Ability: Delta Stream
@@ -9224,7 +9237,7 @@ Nature: Jolly
 - Infiniblast
 
 Eternatus @ Black Sludge
-Level: 100
+Level: 101
 IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 0 HP / 0 Atk / 0 Def / 252 SpA / 4 SpD / 252 Spe
 Ability: Simple
@@ -9235,7 +9248,7 @@ Nature: Timid
 - Recover
 
 Aerodactyl @ Life Orb
-Level: 100
+Level: 101
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 0 HP / 252 Atk / 0 Def / 0 SpA / 4 SpD / 252 Spe
 Ability: Huge Power
@@ -9246,7 +9259,7 @@ Nature: Jolly
 - Infiniblast
 
 Charizard @ Charizardite X
-Level: 100
+Level: 101
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 0 HP / 252 Atk / 4 Def / 0 SpA / 0 SpD / 252 Spe
 Ability: Drought
@@ -9257,7 +9270,7 @@ Nature: Timid
 - Roost
 
 Dragonite @ Yache Berry
-Level: 100
+Level: 101
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 0 HP / 252 Atk / 0 Def / 0 SpA / 4 SpD / 252 Spe
 Ability: Aerilate
@@ -9269,7 +9282,7 @@ Tera Type: Flying
 - Recover
 
 Dragonite @ Sitrus Berry
-Level: 100
+Level: 101
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 84 HP / 84 Atk / 84 Def / 84 SpA / 84 SpD / 84 Spe
 Nature: Serious
@@ -9286,7 +9299,7 @@ Double Battle: Yes
 AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Smart Switching / Ace Pokemon / Omniscient / Prefer Highest Damage Move
 
 Necrozma-Dusk Mane @ Ultranecrozium Z
-Level: 100
+Level: 101
 IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 0 HP / 0 Atk / 32 Def / 224 SpA / 0 SpD / 252 Spe
 Ability: Prism Armor
@@ -9297,7 +9310,7 @@ Nature: Jolly
 - Heat Wave
 
 Rayquaza @ Life Orb
-Level: 100
+Level: 101
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 0 HP / 252 Atk / 4 Def / 0 SpA / 0 SpD / 252 Spe
 Ability: Air Lock
@@ -9308,7 +9321,7 @@ Nature: Adamant
 - V-create
 
 Pikachu @ Light Ball
-Level: 100
+Level: 101
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 0 HP / 252 Atk / 0 Def / 0 SpA / 4 SpD / 252 Spe
 Ability: Galvanize
@@ -15955,6 +15968,14 @@ EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Ability: Shed Skin
 Nature: Serious
 - Harden
+
+Pikachu (Dedenne) (F) @ Petaya Berry
+Level: 2
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+EVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Ability: Plus
+Nature: Serious
+- Tail Whip
 
 === TRAINER_ANNA ===
 Name: ANNA

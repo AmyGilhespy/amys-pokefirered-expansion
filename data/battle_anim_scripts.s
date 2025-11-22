@@ -12971,10 +12971,10 @@ gBattleAnimMove_GlitzyGlow::
 	loadspritegfx ANIM_TAG_POISON_BUBBLE @violet color
 	loadspritegfx ANIM_TAG_SMALL_EMBER @flame wheel particle
 	loadspritegfx ANIM_TAG_CIRCLE_OF_LIGHT
-	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_CIRCLE_OF_LIGHT, 0, 12, 12, 0x289F
+	@createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_CIRCLE_OF_LIGHT, 0, 12, 12, 0x289F
 	monbg ANIM_DEF_PARTNER
 	splitbgprio_foes ANIM_TARGET
-	@createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_BG, 1, 0, 12, 0 @Darken
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_BG, 1, 0, 12, 0 @Darken
 	playsewithpan SE_M_PSYBEAM, SOUND_PAN_ATTACKER
 	createsprite gGrowingShockWaveOrbSpriteTemplate, ANIM_ATTACKER, 0, 0
 	delay 18

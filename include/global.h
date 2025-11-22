@@ -406,7 +406,7 @@ struct CustomData {
     u32 seed;
     u16 starters[3];
     u8 caughtEncounters[RANDOM_ENCOUNTER_REGION_COUNT];
-    u8 gameType;
+    u8 gameMode;
     u8 padding;
 };
 

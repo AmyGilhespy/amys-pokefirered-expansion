@@ -136,11 +136,48 @@ gNameChoice_Green3::
 gNameChoice_Green4::
     .string "Asswipe$"
 
-gControlsGuide_Text_NuzlockeIntro::
-    .string "Nuzlocke info:\n\n"
+gControlsGuide_Text_GameModeIntro::
+    .string "Game mode info:\n\n"
     .string "In a moment, you will be asked to\n"
-    .string "choose between STANDARD and NUZLOCKE\n"
-    .string "modes. Here is what NUZLOCKE means:$"
+    .string "choose between various game modes.\n"
+    .string "Here is what the modes mean:$"
+
+gControlsGuide_Text_StandardInfo1::
+    .string "1. When a POKéMON faints, it can be\n"
+    .string "   revived as normal.$"
+
+gControlsGuide_Text_StandardInfo2::
+    .string "2. You can catch as many POKéMON\n"
+    .string "   per area as you like.$"
+
+gControlsGuide_Text_StandardInfo3::
+    .string "3. Aside from a level cap and the\n"
+    .string "   randomization, the game will play\n"
+    .string "   much like normal POKéMON.$"
+
+gControlsGuide_Text_StandardInfo4::
+    .string "4. Feel free to place additional\n"
+    .string "   restrictions on yourself for\n"
+    .string "   added challenge!$"
+
+gControlsGuide_Text_LimitedInfo1::
+    .string "1. When a POKéMON faints, it can be\n"
+    .string "   revived as normal.$"
+
+gControlsGuide_Text_LimitedInfo2::
+    .string "2. You can catch only one POKéMON\n"
+    .string "   per area. After you do, they\n"
+    .string "   will stop spawning there forever.$"
+
+gControlsGuide_Text_LimitedInfo3::
+    .string "3. Aside from a level cap and the\n"
+    .string "   randomization, the game will play\n"
+    .string "   much like normal POKéMON.$"
+
+gControlsGuide_Text_LimitedInfo4::
+    .string "4. Feel free to place additional\n"
+    .string "   restrictions on yourself for\n"
+    .string "   added challenge!$"
 
 gControlsGuide_Text_NuzlockeInfo1::
     .string "1. When a POKéMON faints, it dies.\n"
@@ -161,6 +198,26 @@ gControlsGuide_Text_NuzlockeInfo4::
     .string "4. Feel free to place additional\n"
     .string "   restrictions on yourself for\n"
     .string "   added challenge!$"
+
+gControlsGuide_Text_EscapeRoomInfo1::
+    .string "1. The ESC ROOM (Escape Room) game\n"
+    .string "   mode takes place in a completely\n"
+    .string "   different map from the others.$"
+
+gControlsGuide_Text_EscapeRoomInfo2::
+    .string "2. It is a bonus game mode where the\n"
+    .string "   goal is to escape a puzzle-filled\n"
+    .string "   area and make it to the house.$"
+
+gControlsGuide_Text_EscapeRoomInfo3::
+    .string "3. The rules are the same as in the\n"
+    .string "   STANDARD game mode, but the map\n"
+    .string "   makes the gameplay very different.$"
+
+gControlsGuide_Text_EscapeRoomInfo4::
+    .string "4. You probably don't want to place\n"
+    .string "   any additional restrictions on\n"
+    .string "   yourself as it is a puzzle mode!$"
 
 gControlsGuide_Text_Intro::
     .string "The various buttons will be explained in\n"
@@ -192,7 +249,7 @@ gControlsGuide_Text_LRButtons::
     .string "game, or on how to do things,\n"
     .string "press the L or R Button.$"
 
-gOakSpeech_Text_AskGameType::
+gOakSpeech_Text_AskGameMode::
     .string "What type of game do you want to\n"
     .string "play?$"
 
@@ -201,7 +258,7 @@ gOakSpeech_Text_AskPlayerGender::
     .string "How do you identify?$"
 
 gPikachuIntro_Text_Page1::
-    .string "Tips (for both modes):\n"
+    .string "Tips (for all modes):\n"
     .string "\n"
     .string "1. SAVE OFTEN! While I have done my\n"
     .string "   best to eliminate as many bug as I\n"

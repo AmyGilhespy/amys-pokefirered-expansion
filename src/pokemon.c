@@ -1102,6 +1102,7 @@ static const u32 sCompressedStatuses[] =
     STATUS1_PARALYSIS,
     STATUS1_TOXIC_POISON,
     STATUS1_FROSTBITE,
+    STATUS1_DEAD,
 };
 
 // Attempt to detect situations where the BoxPokemon struct is unable to
@@ -6020,7 +6021,7 @@ u8 CanLearnTeachableMove(u16 species, u16 move)
         case MOVE_SPLISHY_SPLASH:
         case MOVE_VOLT_TACKLE:
         case MOVE_ZIPPY_ZAP:
-            return FALSE;
+            return TRUE; // Was FALSE, but we really do want every move to be available.
         default:
             return TRUE;
         }
@@ -7402,19 +7403,31 @@ bool8 PlayerHasLivingMon(void)
 
 void HealPokemon(struct Pokemon *mon)
 {
-    u32 data;
+    u32 hp;
+    u32 status;
 
-    data = GetMonData(mon, MON_DATA_HP);
-    if (data < 1 && gSaveBlock2Ptr->customData.gameType > 0)
+    hp = GetMonData(mon, MON_DATA_HP);
+    status = GetMonData(mon, MON_DATA_STATUS);
+    if ((hp < 1 || status == STATUS1_DEAD) && gSaveBlock2Ptr->customData.gameMode > 1 && gSaveBlock2Ptr->customData.gameMode < 128) // Nuzlocke mode
     {
+        if (hp > 0)
+        {
+            hp = 0;
+            SetMonData(mon, MON_DATA_HP, &hp);
+        }
+        if (status != STATUS1_DEAD)
+        {
+            status = STATUS1_DEAD;
+            SetMonData(mon, MON_DATA_STATUS, &status);
+        }
         return;
     }
 
-    data = GetMonData(mon, MON_DATA_MAX_HP);
-    SetMonData(mon, MON_DATA_HP, &data);
+    hp = GetMonData(mon, MON_DATA_MAX_HP);
+    SetMonData(mon, MON_DATA_HP, &hp);
 
-    data = STATUS1_NONE;
-    SetMonData(mon, MON_DATA_STATUS, &data);
+    status = STATUS1_NONE;
+    SetMonData(mon, MON_DATA_STATUS, &status);
 
     MonRestorePP(mon);
 }

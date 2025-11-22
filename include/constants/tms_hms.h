@@ -93,7 +93,7 @@
     F(HAZE) \
     F(RAPID_SPIN) \
     F(SWEET_SCENT) \
-    F(DETECT) \
+    F(ENDURE) \
     F(BANEFUL_BUNKER) \
     F(SPIKY_SHIELD) \
     F(WATER_SHURIKEN) \

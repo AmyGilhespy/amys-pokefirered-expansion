@@ -26,7 +26,7 @@
 enum
 {
     WIN_INTRO_TEXTBOX,
-    WIN_INTRO_GAMETYPE,
+    WIN_INTRO_GAMEMODE,
     WIN_INTRO_BOYGIRL,
     WIN_INTRO_YESNO,
     WIN_INTRO_NAMES,
@@ -63,10 +63,10 @@ static void Task_PikachuIntro_HandleInput(u8);
 static void Task_PikachuIntro_Clear(u8);
 
 static void Task_OakSpeech_Init(u8);
-static void Task_OakSpeech_AskGameType(u8);
-static void Task_OakSpeech_ShowGameTypeOptions(u8);
-static void Task_OakSpeech_HandleGameTypeInput(u8);
-static void Task_OakSpeech_ClearGameTypeWindows(u8);
+static void Task_OakSpeech_AskGameMode(u8);
+static void Task_OakSpeech_ShowGameModeOptions(u8);
+static void Task_OakSpeech_HandleGameModeInput(u8);
+static void Task_OakSpeech_ClearGameModeWindows(u8);
 static void Task_OakSpeech_WelcomeToTheWorld(u8);
 static void Task_OakSpeech_ThisWorld(u8);
 static void Task_OakSpeech_ReleaseNidoranFFromPokeBall(u8);
@@ -116,11 +116,13 @@ static void PrintNameChoiceOptions(u8, u8);
 static void GetDefaultName(u8, u8);
 
 extern const u8 gText_Controls[];
-extern const u8 gText_NuzlockeInfo[];
+extern const u8 gText_GameModeInfo[];
 extern const u8 gText_ABUTTONNext[];
 extern const u8 gText_ABUTTONNext_BBUTTONBack[];
 extern const u8 gText_Standard[];
+extern const u8 gText_Limited[];
 extern const u8 gText_Nuzlocke[];
+extern const u8 gText_EscapeRoom[];
 extern const u8 gText_Boy[];
 extern const u8 gText_Girl[];
 extern const struct OamData gOamData_AffineOff_ObjBlend_32x32;
@@ -206,10 +208,10 @@ enum
 {
     CONTROLS_GUIDE_PAGES_2_3_WINDOW_TOP,
     CONTROLS_GUIDE_PAGES_2_3_WINDOW_MIDDLE,
-    NUM_CONTROLS_GUIDE_PAGES_2_3_WINDOWS,
+    NUM_CONTROLS_GUIDE_PAGES_2PLUS_WINDOWS,
 };
 
-static const struct WindowTemplate sControlsGuide_WindowTemplate_Page2[NUM_CONTROLS_GUIDE_PAGES_2_3_WINDOWS + 1] =
+static const struct WindowTemplate sControlsGuide_WindowTemplate_Page2OrEven[NUM_CONTROLS_GUIDE_PAGES_2PLUS_WINDOWS + 1] =
 {
     [CONTROLS_GUIDE_PAGES_2_3_WINDOW_TOP] =
     {
@@ -234,7 +236,7 @@ static const struct WindowTemplate sControlsGuide_WindowTemplate_Page2[NUM_CONTR
     DUMMY_WIN_TEMPLATE
 };
 
-static const struct WindowTemplate sControlsGuide_WindowTemplate_Page3[NUM_CONTROLS_GUIDE_PAGES_2_3_WINDOWS + 1] =
+static const struct WindowTemplate sControlsGuide_WindowTemplate_Page3OrOdd[NUM_CONTROLS_GUIDE_PAGES_2PLUS_WINDOWS + 1] =
 {
     [CONTROLS_GUIDE_PAGES_2_3_WINDOW_TOP] =
     {
@@ -261,17 +263,42 @@ static const struct WindowTemplate sControlsGuide_WindowTemplate_Page3[NUM_CONTR
 
 enum
 {
-    CONTROLS_GUIDE_PAGE_1,
-    CONTROLS_GUIDE_PAGE_2,
-    CONTROLS_GUIDE_PAGE_3,
+    //CONTROLS_GUIDE_PAGE_1,
+    //CONTROLS_GUIDE_PAGE_2,
+    //CONTROLS_GUIDE_PAGE_3,
+
+    MODE_GUIDE_PAGE_1,
+
+    STANDARD_GUIDE_PAGE_1,
+    STANDARD_GUIDE_PAGE_2,
+
+    LIMITED_GUIDE_PAGE_1,
+    LIMITED_GUIDE_PAGE_2,
+
+    NUZLOCKE_GUIDE_PAGE_1,
+    NUZLOCKE_GUIDE_PAGE_2,
+
+    #ifdef ESCAPE_ROOM
+    ESCAPE_ROOM_GUIDE_PAGE_1,
+    ESCAPE_ROOM_GUIDE_PAGE_2,
+    #endif
+
     NUM_CONTROLS_GUIDE_PAGES,
 };
 
 static const struct WindowTemplate *const sControlsGuide_WindowTemplates[NUM_CONTROLS_GUIDE_PAGES] =
 {
-    [CONTROLS_GUIDE_PAGE_1] = sControlsGuide_WindowTemplate_Page1,
-    [CONTROLS_GUIDE_PAGE_2] = sControlsGuide_WindowTemplate_Page2,
-    [CONTROLS_GUIDE_PAGE_3] = sControlsGuide_WindowTemplate_Page3
+    [MODE_GUIDE_PAGE_1] = sControlsGuide_WindowTemplate_Page1,
+    [STANDARD_GUIDE_PAGE_1] = sControlsGuide_WindowTemplate_Page2OrEven,
+    [STANDARD_GUIDE_PAGE_2] = sControlsGuide_WindowTemplate_Page3OrOdd,
+    [LIMITED_GUIDE_PAGE_1] = sControlsGuide_WindowTemplate_Page2OrEven,
+    [LIMITED_GUIDE_PAGE_2] = sControlsGuide_WindowTemplate_Page3OrOdd,
+    [NUZLOCKE_GUIDE_PAGE_1] = sControlsGuide_WindowTemplate_Page2OrEven,
+    [NUZLOCKE_GUIDE_PAGE_2] = sControlsGuide_WindowTemplate_Page3OrOdd,
+    #ifdef ESCAPE_ROOM
+    [ESCAPE_ROOM_GUIDE_PAGE_1] = sControlsGuide_WindowTemplate_Page2OrEven,
+    [ESCAPE_ROOM_GUIDE_PAGE_2] = sControlsGuide_WindowTemplate_Page3OrOdd,
+    #endif
 };
 
 static const struct WindowTemplate sIntro_WindowTemplates[NUM_INTRO_WINDOWS + 1] =
@@ -286,13 +313,19 @@ static const struct WindowTemplate sIntro_WindowTemplates[NUM_INTRO_WINDOWS + 1]
         .paletteNum = 15,
         .baseBlock = 1
     },
-    [WIN_INTRO_GAMETYPE] =
+    [WIN_INTRO_GAMEMODE] =
     {
         .bg = 0,
         .tilemapLeft = 2,
         .tilemapTop = 2,
-        .width = 9,
-        .height = 4,
+        .width = 7,
+        .height =
+        #ifdef ESCAPE_ROOM
+            4 * 2
+        #else
+            3 * 2
+        #endif
+            ,
         .paletteNum = 15,
         .baseBlock = 1
     },
@@ -574,14 +607,35 @@ static const struct SpriteTemplate sPikachuIntro_Pikachu_SpriteTemplates[NUM_PIK
 
 #define CONTROLS_GUIDE_STRINGS_PER_PAGE 2
 
-static const u8 *const sControlsGuide_Pages2And3_Strings[CONTROLS_GUIDE_STRINGS_PER_PAGE * 2] =
+static const u8 *const sControlsGuide_Pages2Plus_Strings[CONTROLS_GUIDE_STRINGS_PER_PAGE * 2 * 4] =
 {
-    // Page 2
+    // Page 2 Even
+    gControlsGuide_Text_StandardInfo1,
+    gControlsGuide_Text_StandardInfo2,
+    // Page 3 Odd
+    gControlsGuide_Text_StandardInfo3,
+    gControlsGuide_Text_StandardInfo4,
+
+    // Page 4 Even
+    gControlsGuide_Text_LimitedInfo1,
+    gControlsGuide_Text_LimitedInfo2,
+    // Page 5 Odd
+    gControlsGuide_Text_LimitedInfo3,
+    gControlsGuide_Text_LimitedInfo4,
+
+    // Page 6 Even
     gControlsGuide_Text_NuzlockeInfo1,
     gControlsGuide_Text_NuzlockeInfo2,
-    // Page 3
+    // Page 7 Odd
     gControlsGuide_Text_NuzlockeInfo3,
     gControlsGuide_Text_NuzlockeInfo4,
+
+    // Page 8 Even
+    gControlsGuide_Text_EscapeRoomInfo1,
+    gControlsGuide_Text_EscapeRoomInfo2,
+    // Page 9 Odd
+    gControlsGuide_Text_EscapeRoomInfo3,
+    gControlsGuide_Text_EscapeRoomInfo4,
 };
 
 static const u8 *const sMaleNameChoices[] =
@@ -802,11 +856,11 @@ static void Task_NewGameScene(u8 taskId)
 
 static void ControlsGuide_LoadPage1(void)
 {
-    HofPCTopBar_PrintPair(gText_NuzlockeInfo, gText_ABUTTONNext, FALSE, 0, TRUE);
+    HofPCTopBar_PrintPair(gText_GameModeInfo, gText_ABUTTONNext, FALSE, 0, TRUE);
     sOakSpeechResources->windowIds[0] = AddWindow(sControlsGuide_WindowTemplates[sOakSpeechResources->currentPage]);
     PutWindowTilemap(sOakSpeechResources->windowIds[0]);
     FillWindowPixelBuffer(sOakSpeechResources->windowIds[0], PIXEL_FILL(0));
-    AddTextPrinterParameterized4(sOakSpeechResources->windowIds[0], FONT_NORMAL, 2, 0, 1, 1, sTextColor_White, 0, gControlsGuide_Text_NuzlockeIntro);
+    AddTextPrinterParameterized4(sOakSpeechResources->windowIds[0], FONT_NORMAL, 2, 0, 1, 1, sTextColor_White, 0, gControlsGuide_Text_GameModeIntro);
     CopyWindowToVram(sOakSpeechResources->windowIds[0], COPYWIN_FULL);
     FillBgTilemapBufferRect_Palette0(1, 0x3000, 1, 3, 5, 16);
     CopyBgTilemapBufferToVram(1);
@@ -815,20 +869,48 @@ static void ControlsGuide_LoadPage1(void)
 static void Task_ControlsGuide_LoadPage(u8 taskId)
 {
     u8 currWindow = 0;
-    u8 page2Or3 = sOakSpeechResources->currentPage - 1; // 0 if page 2, 1 if page 3
-    if (sOakSpeechResources->currentPage == CONTROLS_GUIDE_PAGE_1)
+    u8 page2PlusNr = sOakSpeechResources->currentPage - 1;
+    if (sOakSpeechResources->currentPage == MODE_GUIDE_PAGE_1)
     {
         ControlsGuide_LoadPage1();
     }
     else
     {
-        HofPCTopBar_Print(gText_ABUTTONNext_BBUTTONBack, 0, TRUE);
-        for (currWindow = CONTROLS_GUIDE_PAGES_2_3_WINDOW_TOP; currWindow < NUM_CONTROLS_GUIDE_PAGES_2_3_WINDOWS; currWindow++)
+        switch (sOakSpeechResources->currentPage)
+        {
+        case STANDARD_GUIDE_PAGE_1:
+        case STANDARD_GUIDE_PAGE_2:
+            HofPCTopBar_PrintPair(gText_Standard, gText_ABUTTONNext_BBUTTONBack, FALSE, 0, TRUE);
+            break;
+
+        case LIMITED_GUIDE_PAGE_1:
+        case LIMITED_GUIDE_PAGE_2:
+            HofPCTopBar_PrintPair(gText_Limited, gText_ABUTTONNext_BBUTTONBack, FALSE, 0, TRUE);
+            break;
+
+        case NUZLOCKE_GUIDE_PAGE_1:
+        case NUZLOCKE_GUIDE_PAGE_2:
+            HofPCTopBar_PrintPair(gText_Nuzlocke, gText_ABUTTONNext_BBUTTONBack, FALSE, 0, TRUE);
+            break;
+
+        #ifdef ESCAPE_ROOM
+        case ESCAPE_ROOM_GUIDE_PAGE_1:
+        case ESCAPE_ROOM_GUIDE_PAGE_2:
+            HofPCTopBar_PrintPair(gText_EscapeRoom, gText_ABUTTONNext_BBUTTONBack, FALSE, 0, TRUE);
+            break;
+        #endif
+
+        case MODE_GUIDE_PAGE_1:
+        default:
+            HofPCTopBar_Print(gText_ABUTTONNext_BBUTTONBack, 0, TRUE);
+            break;
+        }
+        for (currWindow = CONTROLS_GUIDE_PAGES_2_3_WINDOW_TOP; currWindow < NUM_CONTROLS_GUIDE_PAGES_2PLUS_WINDOWS; currWindow++)
         {
             sOakSpeechResources->windowIds[currWindow] = AddWindow(&sControlsGuide_WindowTemplates[sOakSpeechResources->currentPage][currWindow]);
             PutWindowTilemap(sOakSpeechResources->windowIds[currWindow]);
             FillWindowPixelBuffer(sOakSpeechResources->windowIds[currWindow], PIXEL_FILL(0));
-            AddTextPrinterParameterized4(sOakSpeechResources->windowIds[currWindow], FONT_NORMAL, 0, 0, 1, 1, sTextColor_White, 0, sControlsGuide_Pages2And3_Strings[currWindow + page2Or3 * CONTROLS_GUIDE_STRINGS_PER_PAGE]);
+            AddTextPrinterParameterized4(sOakSpeechResources->windowIds[currWindow], FONT_NORMAL, 0, 0, 1, 1, sTextColor_White, 0, sControlsGuide_Pages2Plus_Strings[currWindow + page2PlusNr * CONTROLS_GUIDE_STRINGS_PER_PAGE]);
             CopyWindowToVram(sOakSpeechResources->windowIds[currWindow], COPYWIN_FULL);
         }
         CopyBgTilemapBufferToVram(1);
@@ -847,12 +929,12 @@ static void Task_ControlsGuide_HandleInput(u8 taskId)
             {
                 gTasks[taskId].tDelta = 1;
 
-                if (sOakSpeechResources->currentPage < CONTROLS_GUIDE_PAGE_3)
+                if (sOakSpeechResources->currentPage < NUM_CONTROLS_GUIDE_PAGES - 1)
                     BeginNormalPaletteFade(PALETTES_OBJECTS | 0xDFFF, -1, 0, 16, GetTextWindowPalette(2)[15]);
             }
             else // B_BUTTON
             {
-                if (sOakSpeechResources->currentPage == CONTROLS_GUIDE_PAGE_1)
+                if (sOakSpeechResources->currentPage == MODE_GUIDE_PAGE_1)
                     return;
 
                 gTasks[taskId].tDelta = -1;
@@ -874,12 +956,11 @@ static void Task_ControlsGuide_ChangePage(u8 taskId)
     {
         switch (sOakSpeechResources->currentPage)
         {
-        case CONTROLS_GUIDE_PAGE_1:
+        case MODE_GUIDE_PAGE_1:
             numWindows = NUM_CONTROLS_GUIDE_PAGE_1_WINDOWS;
             break;
-        case CONTROLS_GUIDE_PAGE_2:
-        case CONTROLS_GUIDE_PAGE_3:
-            numWindows = NUM_CONTROLS_GUIDE_PAGES_2_3_WINDOWS;
+        default:
+            numWindows = NUM_CONTROLS_GUIDE_PAGES_2PLUS_WINDOWS;
             break;
         }
         sOakSpeechResources->currentPage += gTasks[taskId].tDelta;
@@ -910,7 +991,7 @@ static void Task_ControlsGuide_Clear(u8 taskId)
     u8 i = 0;
     if (!gPaletteFade.active)
     {
-        for (i = 0; i < NUM_CONTROLS_GUIDE_PAGES_2_3_WINDOWS; i++)
+        for (i = 0; i < NUM_CONTROLS_GUIDE_PAGES_2PLUS_WINDOWS; i++)
         {
             FillWindowPixelBuffer(sOakSpeechResources->windowIds[i], PIXEL_FILL(0));
             ClearWindowTilemap(sOakSpeechResources->windowIds[i]);
@@ -1118,7 +1199,7 @@ static void Task_OakSpeech_Init(u8 taskId)
         BeginNormalPaletteFade(PALETTES_ALL, 5, 16, 0, RGB_BLACK);
         tTimer = 80;
         ShowBg(2);
-        gTasks[taskId].func = Task_OakSpeech_AskGameType;
+        gTasks[taskId].func = Task_OakSpeech_AskGameMode;
     }
 }
 
@@ -1151,54 +1232,86 @@ static inline void OakSpeechPrintMessage(const u8 *str, u8 speed, bool32 isStrin
 //     CopyWindowToVram(WIN_INTRO_TEXTBOX, COPYWIN_FULL);                                                                                                       \
 // })
 
-static void Task_OakSpeech_AskGameType(u8 taskId)
+static void Task_OakSpeech_AskGameMode(u8 taskId)
 {
-    OakSpeechPrintMessage(gOakSpeech_Text_AskGameType, sOakSpeechResources->textSpeed, FALSE);
-    gTasks[taskId].func = Task_OakSpeech_ShowGameTypeOptions;
+    OakSpeechPrintMessage(gOakSpeech_Text_AskGameMode, sOakSpeechResources->textSpeed, FALSE);
+    gTasks[taskId].func = Task_OakSpeech_ShowGameModeOptions;
 }
 
-static void Task_OakSpeech_ShowGameTypeOptions(u8 taskId)
+static void Task_OakSpeech_ShowGameModeOptions(u8 taskId)
 {
     if (!IsTextPrinterActive(WIN_INTRO_TEXTBOX))
     {
-        gTasks[taskId].tMenuWindowId = AddWindow(&sIntro_WindowTemplates[WIN_INTRO_GAMETYPE]);
+        gTasks[taskId].tMenuWindowId = AddWindow(&sIntro_WindowTemplates[WIN_INTRO_GAMEMODE]);
         PutWindowTilemap(gTasks[taskId].tMenuWindowId);
         DrawStdFrameWithCustomTileAndPalette(gTasks[taskId].tMenuWindowId, TRUE, GetStandardFrameBaseTileNum(), 14);
         FillWindowPixelBuffer(gTasks[taskId].tMenuWindowId, PIXEL_FILL(1));
+
+        // Standard:
         sOakSpeechResources->textColor[0] = 1;
         sOakSpeechResources->textColor[1] = 2;
         sOakSpeechResources->textColor[2] = 3;
         AddTextPrinterParameterized3(gTasks[taskId].tMenuWindowId, FONT_NORMAL, 8, 1, sOakSpeechResources->textColor, 0, gText_Standard);
+
+        // Limited:
         sOakSpeechResources->textColor[0] = 1;
         sOakSpeechResources->textColor[1] = 2;
         sOakSpeechResources->textColor[2] = 3;
-        AddTextPrinterParameterized3(gTasks[taskId].tMenuWindowId, FONT_NORMAL, 8, 17, sOakSpeechResources->textColor, 0, gText_Nuzlocke);
-        InitMenuNormal(gTasks[taskId].tMenuWindowId, FONT_NORMAL, 0, 1, GetFontAttribute(FONT_NORMAL, FONTATTR_MAX_LETTER_HEIGHT) + 2, 2, /*initialCursorPos=standard*/0);
+        AddTextPrinterParameterized3(gTasks[taskId].tMenuWindowId, FONT_NORMAL, 8, 17, sOakSpeechResources->textColor, 0, gText_Limited);
+
+        // Nuzlocke:
+        sOakSpeechResources->textColor[0] = 1;
+        sOakSpeechResources->textColor[1] = 2;
+        sOakSpeechResources->textColor[2] = 3;
+        AddTextPrinterParameterized3(gTasks[taskId].tMenuWindowId, FONT_NORMAL, 8, 33, sOakSpeechResources->textColor, 0, gText_Nuzlocke);
+
+        #ifdef ESCAPE_ROOM
+        // Escape Room:
+        sOakSpeechResources->textColor[0] = 1;
+        sOakSpeechResources->textColor[1] = 2;
+        sOakSpeechResources->textColor[2] = 3;
+        AddTextPrinterParameterized3(gTasks[taskId].tMenuWindowId, FONT_NORMAL, 8, 49, sOakSpeechResources->textColor, 0, gText_EscapeRoom);
+        #endif
+
+        InitMenuNormal(gTasks[taskId].tMenuWindowId, FONT_NORMAL,
+            0, 1, GetFontAttribute(FONT_NORMAL, FONTATTR_MAX_LETTER_HEIGHT) + 2,
+            #ifdef ESCAPE_ROOM
+            4
+            #else
+            3
+            #endif
+            , /*initialCursorPos=nuzlocke*/2);
         CopyWindowToVram(gTasks[taskId].tMenuWindowId, COPYWIN_FULL);
-        gTasks[taskId].func = Task_OakSpeech_HandleGameTypeInput;
+        gTasks[taskId].func = Task_OakSpeech_HandleGameModeInput;
     }
 }
 
-static void Task_OakSpeech_HandleGameTypeInput(u8 taskId)
+static void Task_OakSpeech_HandleGameModeInput(u8 taskId)
 {
     s8 input = Menu_ProcessInputNoWrap();
     switch (input)
     {
     case 0: // Standard
-        gSaveBlock2Ptr->customData.gameType = 0;
+        gSaveBlock2Ptr->customData.gameMode = 0;
         break;
-    case 1: // Nuzlocke
-        gSaveBlock2Ptr->customData.gameType = 1;
+    case 1: // Limited
+        gSaveBlock2Ptr->customData.gameMode = 1;
+        break;
+    case 2: // Nuzlocke
+        gSaveBlock2Ptr->customData.gameMode = 2;
+        break;
+    case 3: // Escape Room
+        gSaveBlock2Ptr->customData.gameMode = 255;
         break;
     case MENU_B_PRESSED:
     case MENU_NOTHING_CHOSEN:
         return;
     }
-    gTasks[taskId].func = Task_OakSpeech_ClearGameTypeWindows;
+    gTasks[taskId].func = Task_OakSpeech_ClearGameModeWindows;
 
 }
 
-static void Task_OakSpeech_ClearGameTypeWindows(u8 taskId)
+static void Task_OakSpeech_ClearGameModeWindows(u8 taskId)
 {
     s16 *data = gTasks[taskId].data;
     ClearStdWindowAndFrameToTransparent(tMenuWindowId, TRUE);

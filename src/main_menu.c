@@ -20,6 +20,13 @@
 #include "title_screen.h"
 #include "constants/songs.h"
 
+extern const u8 gText_GameMode[];
+extern const u8 gText_Standard[];
+extern const u8 gText_Limited[];
+extern const u8 gText_Nuzlocke[];
+extern const u8 gText_EscapeRoom[];
+extern const u8 gText_Invalid[];
+
 enum MainMenuType
 {
     MAIN_MENU_NEWGAME = 0,
@@ -67,6 +74,7 @@ static void PrintPlayerName(void);
 static void PrintPlayTime(void);
 static void PrintDexCount(void);
 static void PrintBadgeCount(void);
+static void PrintGameMode(void);
 static void LoadUserFrameToBg(u8 bgId);
 static void SetStdFrame0OnBg(u8 bgId);
 static void MainMenu_DrawWindow(const struct WindowTemplate * template);
@@ -90,18 +98,18 @@ static const struct WindowTemplate sWindowTemplate[] = {
         .tilemapLeft = 3,
         .tilemapTop = 1,
         .width = 24,
-        .height = 10,
+        .height = 12,
         .paletteNum = 15,
         .baseBlock = 0x001
     }, 
     [MAIN_MENU_WINDOW_NEWGAME] = {
         .bg = 0,
         .tilemapLeft = 3,
-        .tilemapTop = 13,
+        .tilemapTop = 15,
         .width = 24,
         .height = 2,
         .paletteNum = 15,
-        .baseBlock = 0x0f1
+        .baseBlock = 0x121 // Amy: was 0x0f1
     }, 
     [MAIN_MENU_WINDOW_MYSTERYGIFT] = {
         .bg = 0,
@@ -110,7 +118,7 @@ static const struct WindowTemplate sWindowTemplate[] = {
         .width = 24,
         .height = 2,
         .paletteNum = 15,
-        .baseBlock = 0x121
+        .baseBlock = 0x151 // Amy: was 0x121
     }, 
     [MAIN_MENU_WINDOW_ERROR] = {
         .bg = 0,
@@ -610,15 +618,15 @@ static void MoveWindowByMenuTypeAndCursorPos(u8 menuType, u8 cursorPos)
         default:
         case 0: // CONTINUE
             win0vTop = 0x00 << 8;
-            win0vBot = 0x60;
+            win0vBot = 0x70; // Amy: was 0x60
             break;
         case 1: // NEW GAME
-            win0vTop = 0x60 << 8;
-            win0vBot = 0x80;
+            win0vTop = 0x70 << 8; // Amy: was 0x60 << 8
+            win0vBot = 0x90; // Amy: was 0x80
             break;
         case 2: // MYSTERY GIFT
-            win0vTop = 0x80 << 8;
-            win0vBot = 0xA0;
+            win0vTop = 0x90 << 8; // Amy: was 0x80 << 8
+            win0vBot = 0xB0; // Amy: was 0xA0
             break;
         }
         break;
@@ -674,6 +682,7 @@ static void PrintContinueStats(void)
     PrintDexCount();
     PrintPlayTime();
     PrintBadgeCount();
+    PrintGameMode();
 }
 
 static void PrintPlayerName(void)
@@ -734,6 +743,21 @@ static void PrintBadgeCount(void)
     ptr = ConvertIntToDecimalStringN(strbuf, nbadges, STR_CONV_MODE_LEADING_ZEROS, 1);
     StringAppend(ptr, gTextJPDummy_Ko);
     AddTextPrinterParameterized3(MAIN_MENU_WINDOW_CONTINUE, FONT_NORMAL, 62, 66, sTextColor2, -1, strbuf);
+}
+
+static void PrintGameMode(void)
+{
+    const u8 *ptr;
+    AddTextPrinterParameterized3(MAIN_MENU_WINDOW_CONTINUE, FONT_NORMAL, 2, 82, sTextColor2, -1, gText_GameMode);
+    switch (gSaveBlock2Ptr->customData.gameMode)
+    {
+    case   0: ptr = gText_Standard;   break;
+    case   1: ptr = gText_Limited;    break;
+    case   2: ptr = gText_Nuzlocke;   break;
+    case 255: ptr = gText_EscapeRoom; break;
+    default:  ptr = gText_Invalid;    break;
+    }
+    AddTextPrinterParameterized3(MAIN_MENU_WINDOW_CONTINUE, FONT_NORMAL, 62, 82, sTextColor2, -1, ptr);
 }
 
 static void LoadUserFrameToBg(u8 bgId)

@@ -42,35 +42,43 @@ IndigoPlateau_PokemonCenter_1F_Text_LancesCousinGymLeaderFarAway::
     .string "somewhere far away.$"
 
 IndigoPlateau_PokemonCenter_1F_Text_JulianaBeatEmilyFirst::
-    .string "I'll fight you only after you\n"
-    .string "beat EMILY in CELADON CITY.$"
+    .string "……… ………\p"
+    .string "Go beat EMILY in CELADON CITY.$"
 
 IndigoPlateau_PokemonCenter_1F_Text_JulianaIntro::
-    .string ".$"
+    .string "Hi……… I'm Juliana.\p"
+    .string "……… ………\p"
+    .string "Talking is hard for me.\p"
+    .string "……… ………\p"
+    .string "Battling is not.\p"
+    .string "……… ………\n"
+    .string "……… ………\p"
+    .string "Good luck!$"
 
 IndigoPlateau_PokemonCenter_1F_Text_JulianaRematchIntro::
-    .string ".$"
+    .string "……… ………\p"
+    .string "Good luck!$"
 
 IndigoPlateau_PokemonCenter_1F_Text_JulianaDefeat::
-    .string "Good work.$"
+    .string "Nice!$"
 
 IndigoPlateau_PokemonCenter_1F_Text_JulianaPostBattle::
-    .string "I wasn't the final fight, but\n"
-    .string "before you continue, there's\l"
-    .string "something you should know:\p"
-    .string "From here on out, things get…\l"
-    .string "…weird.\p"
-    .string "Talk to me again for a rematch!$"
+    .string "Talk again for a rematch.$"
 
 IndigoPlateau_PokemonCenter_1F_Text_JulianaPreTR100::
+    .string "Oh!\p"
+    .string "……… ………\n"
+    .string "……… ………\p"
     .string "EMILY probably gave you one of\n"
-    .string "these already, but here.$"
+    .string "these already……… but here.$"
 
 IndigoPlateau_PokemonCenter_1F_Text_JulianaGotTR100::
     .string "{PLAYER} received TR100\n"
     .string "from JULIANA.$"
 
 IndigoPlateau_PokemonCenter_1F_Text_JulianaPostTR100::
-    .string "TR100 contains PHOENIX CALL.\n"
-    .string "Use it to resurrect the fallen.$"
+    .string "……… ………\p"
+    .string "TR100 contains PHOENIX CALL.\p"
+    .string "……… ………\p"
+    .string "For resurrection.$"
 

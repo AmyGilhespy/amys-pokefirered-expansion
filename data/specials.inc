@@ -451,7 +451,8 @@ gSpecials::
 	def_special SetHiddenNature
 	def_special GetRandomStarterPlayer
 	def_special GetRandomStarterRival
-	def_special GetGameType
+	def_special GetGameMode
+	def_special SetGameMode
 	def_special RemapPickupItem
 	def_special YouHaveXBadgesNowPokemonWillObeyYou
 gSpecialsEnd::

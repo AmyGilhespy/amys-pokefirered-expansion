@@ -84,7 +84,7 @@ CeladonCity_DepartmentStore_2F_TMs::
 	.2byte ITEM_TM87 @ Haze
 	.2byte ITEM_TM88 @ Rapid Spin
 	.2byte ITEM_TM89 @ Sweet Scent
-	.2byte ITEM_TM90 @ Detect
+	.2byte ITEM_TM90 @ Endure
 	.2byte ITEM_NONE
 	release
 	end

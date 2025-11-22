@@ -17,6 +17,10 @@
 #include "constants/seagallop.h"
 #include "constants/menu.h"
 
+extern const u8 gText_Standard[];
+extern const u8 gText_Limited[];
+extern const u8 gText_Nuzlocke[];
+
 #define GFXTAG_FOSSIL 7000
 
 #define MULTICHOICE(name) {.list = name, .count = ARRAY_COUNT(name)}
@@ -574,6 +578,13 @@ static const struct MenuAction sMultichoiceList_NurseCustom[] = {
     { gOtherText_Exit }
 };
 
+static const struct MenuAction sMultichoiceList_GameModeCustom[] = {
+    { gText_Standard },
+    { gText_Limited },
+    { gText_Nuzlocke },
+    { gOtherText_Exit }
+};
+
 static const struct MenuAction sMultichoiceList_Exit[] = {
     { gOtherText_Exit }
 };
@@ -645,6 +656,7 @@ static const struct MultichoiceListStruct sMultichoiceLists[] = {
     [MULTICHOICE_JOIN_OR_LEAD]                               = MULTICHOICE(sMultichoiceList_JoinOrLead),
     [MULTICHOICE_TRAINER_TOWER_MODE]                         = MULTICHOICE(sMultichoiceList_TrainerTowerMode),
     [MULTICHOICE_NURSE_CUSTOM]                               = MULTICHOICE(sMultichoiceList_NurseCustom),
+    [MULTICHOICE_GAME_MODE_CUSTOM]                           = MULTICHOICE(sMultichoiceList_GameModeCustom),
 };
 
 // From Cool to Berries goes unused

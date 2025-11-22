@@ -26,6 +26,7 @@ LavenderTown_Mart_EventScript_Clerk::
 
 	.align 2
 LavenderTown_Mart_Items::
+	.2byte ITEM_FOCUS_SASH
 	.2byte ITEM_SCOPE_LENS
 	.2byte ITEM_WIDE_LENS
 	.2byte ITEM_ZOOM_LENS
@@ -33,6 +34,10 @@ LavenderTown_Mart_Items::
 	.2byte ITEM_BIG_ROOT
 	.2byte ITEM_SHELL_BELL
 	.2byte ITEM_IRON_BALL
+	.2byte ITEM_MENTAL_HERB
+	.2byte ITEM_MIRROR_HERB
+	.2byte ITEM_POWER_HERB
+	.2byte ITEM_WHITE_HERB
 	.2byte ITEM_DAMP_ROCK
 	.2byte ITEM_HEAT_ROCK
 	.2byte ITEM_SMOOTH_ROCK

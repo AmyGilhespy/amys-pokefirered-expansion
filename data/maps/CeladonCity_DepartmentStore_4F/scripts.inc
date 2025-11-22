@@ -72,6 +72,7 @@ CeladonCity_DepartmentStore_4F_Items::
 	.2byte ITEM_MAGMARIZER
 	.2byte ITEM_UPGRADE
 	.2byte ITEM_DUBIOUS_DISC
+	.2byte ITEM_GIMMIGHOUL_COIN
 	.2byte ITEM_EVERSTONE
 	.2byte ITEM_NONE
 	release

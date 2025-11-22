@@ -42,6 +42,9 @@ PalletTown_PlayersHouse_1F_Text_MomAskHeal::
 PalletTown_PlayersHouse_1F_Text_MomAskPracticeBattle::
     .string "What about having a practice battle?$"
 
+PalletTown_PlayersHouse_1F_Text_MomAskChangeGameMode::
+    .string "Want to change game mode?$"
+
 PalletTown_PlayersHouse_1F_Text_MomTakeCare::
     .string "Take care of yourself, Honey.$"
 
@@ -55,3 +58,43 @@ PalletTown_PlayersHouse_Text_MomPracticeBattlePostBattle::
     .string "You're so good at battling!\n"
     .string "You're doing great, hun.$"
 
+PalletTown_PlayersHouse_1F_Text_WhichGameMode::
+    .string "Which game mode would you\n"
+    .string "like to switch to?$"
+
+PalletTown_PlayersHouse_1F_Text_GameModeIsStandard::
+    .string "Your game mode is set to STANDARD.$"
+
+PalletTown_PlayersHouse_1F_Text_GameModeIsNowStandard::
+    .string "Your game mode is now set to\n"
+    .string "STANDARD.$"
+
+PalletTown_PlayersHouse_1F_Text_GameModeAlreadyStandard::
+    .string "Your game mode was already\n"
+    .string "STANDARD.$"
+
+PalletTown_PlayersHouse_1F_Text_GameModeIsLimited::
+    .string "Your game mode is set to LIMITED.$"
+
+PalletTown_PlayersHouse_1F_Text_GameModeIsNowLimited::
+    .string "Your game mode is now set to\n"
+    .string "LIMITED.$"
+
+PalletTown_PlayersHouse_1F_Text_GameModeAlreadyLimited::
+    .string "Your game mode was already\n"
+    .string "LIMITED.$"
+
+PalletTown_PlayersHouse_1F_Text_GameModeIsNuzlocke::
+    .string "Your game mode is set to NUZLOCKE.$"
+
+PalletTown_PlayersHouse_1F_Text_GameModeIsNowNuzlocke::
+    .string "Your game mode is now set to\n"
+    .string "NUZLOCKE.$"
+
+PalletTown_PlayersHouse_1F_Text_GameModeAlreadyNuzlocke::
+    .string "Your game mode was already\n"
+    .string "NUZLOCKE.$"
+
+PalletTown_PlayersHouse_1F_Text_GameModeIsInvalid::
+    .string "Your game mode is invalid!\n"
+    .string "Please change it ASAP!$"

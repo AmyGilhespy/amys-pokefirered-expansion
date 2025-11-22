@@ -21,7 +21,7 @@ VermilionCity_House2_Text_DanielleDefeat::
 	.string "Oh, you're strong!$"
 
 VermilionCity_House2_Text_DaniellePostBattle::
-	.string "I'll raise my {STR_VAR_1}\n"
+	.string "I'll raise the one you traded\n"
 	.string "to be even stronger than them!$"
 
 VermilionCity_House2_Text_HowIsMyOldMon::

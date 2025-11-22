@@ -9052,7 +9052,7 @@ const struct Item gItemsInfo[] =
     [ITEM_POWER_HERB] =
     {
         .name = ITEM_NAME("Power Herb"),
-        .price = (I_PRICE >= GEN_9) ? 30000 : ((I_PRICE >= GEN_7) ? 4000 : 100),
+        .price = 4000 /*(I_PRICE >= GEN_9) ? 30000 : ((I_PRICE >= GEN_7) ? 4000 : 100)*/,
         .holdEffect = HOLD_EFFECT_POWER_HERB,
         .description = COMPOUND_STRING(
             "Allows immediate "
@@ -9071,7 +9071,7 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Focus Sash"),
         .pluralName = ITEM_PLURAL_NAME("Focus Sashes"),
-        .price = (I_PRICE >= GEN_9) ? 50000 : ((I_PRICE >= GEN_7) ? 4000 : 200),
+        .price = 4000 /*(I_PRICE >= GEN_9) ? 50000 : ((I_PRICE >= GEN_7) ? 4000 : 200)*/,
         .holdEffect = HOLD_EFFECT_FOCUS_SASH,
         .description = COMPOUND_STRING(
             "If the holder has "
@@ -9180,7 +9180,7 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Black Sludge"),
         .pluralName = ITEM_PLURAL_NAME("Black Sludge"),
-        .price = (I_PRICE >= GEN_9) ? 10000 : ((I_PRICE >= GEN_7) ? 4000 : 200),
+        .price = 4000 /*(I_PRICE >= GEN_9) ? 10000 : ((I_PRICE >= GEN_7) ? 4000 : 200)*/,
         .holdEffect = HOLD_EFFECT_BLACK_SLUDGE,
         .description = COMPOUND_STRING(
             "Restores HP for "
@@ -9382,7 +9382,7 @@ const struct Item gItemsInfo[] =
     [ITEM_RED_CARD] =
     {
         .name = ITEM_NAME("Red Card"),
-        .price = (I_PRICE >= GEN_9) ? 3000 : ((I_PRICE >= GEN_7) ? 4000 : 200),
+        .price = 4000/*(I_PRICE >= GEN_9) ? 3000 : ((I_PRICE >= GEN_7) ? 4000 : 200)*/,
         .holdEffect = HOLD_EFFECT_RED_CARD,
         .holdEffectParam = 0,
         .description = COMPOUND_STRING(
@@ -9438,7 +9438,7 @@ const struct Item gItemsInfo[] =
     [ITEM_EJECT_BUTTON] =
     {
         .name = ITEM_NAME("Eject Button"),
-        .price = (I_PRICE >= GEN_9) ? 30000 : ((I_PRICE >= GEN_7) ? 4000 : 200),
+        .price = 4000 /*(I_PRICE >= GEN_9) ? 30000 : ((I_PRICE >= GEN_7) ? 4000 : 200)*/,
         .holdEffect = HOLD_EFFECT_EJECT_BUTTON,
         .holdEffectParam = 0,
         .description = COMPOUND_STRING(
@@ -12125,12 +12125,12 @@ const struct Item gItemsInfo[] =
         .fieldUseFunc = NULL,
     },
 
-    [ITEM_TM_DETECT] =
+    [ITEM_TM_ENDURE] =
     {
         .name = ITEM_NAME("TR90"),
         .price = 3000,
         .description = COMPOUND_STRING(
-            "SINGLE USE. Detect.\nProtects user for one turn."),
+            "SINGLE USE. Endure.\nUser survives with 1 HP."),
         .importance = 0,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -13610,7 +13610,7 @@ const struct Item gItemsInfo[] =
     [ITEM_GIMMIGHOUL_COIN] =
     {
         .name = ITEM_NAME("Gimmighoul Coin"),
-        .price = 400,
+        .price = 1,
         .description = COMPOUND_STRING(
             "Gimmighoul hoard "
             "and treasure\nthese "
@@ -14748,6 +14748,25 @@ const struct Item gItemsInfo[] =
         .flingPower = 50,
         .iconPic = gItemIcon_Powder,
         .iconPalette = gItemIconPalette_EnergyPowder,
+    },
+
+    [ITEM_PISS] =
+    {
+        .name = ITEM_NAME("Piss"),
+        .pluralName = ITEM_PLURAL_NAME("Piss"),
+        .price = 20000 * TREASURE_FACTOR,
+        .holdEffectParam = 0,
+        .description = COMPOUND_STRING(
+            "An old lady's "
+            "piss. Can be\nsold at "
+            "a high price."),
+        .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_SELLABLE,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 120,
+        .iconPic = gItemIcon_MoomooMilk,
+        .iconPalette = gItemIconPalette_MoomooMilk,
     },
 };
 

@@ -54,7 +54,7 @@ CinnabarIsland_PokemonLab_Lounge_EventScript_Norma::
 	copyvar VAR_0x800A, VAR_0x8004
 	goto_if_ge VAR_0x8004, PARTY_SIZE, CinnabarIsland_PokemonLab_Lounge_EventScript_NormaDeclineTrade
 	copyvar VAR_0x8005, VAR_0x800A
-	specialvar VAR_RESULT, GetTradeSpecies
+	call EventScript_GetInGameTradeSpeciesUnownRemap
 	copyvar VAR_0x800B, VAR_RESULT
 	goto_if_ne VAR_RESULT, SPECIES_UNOWN_EXCLAMATION, CinnabarIsland_PokemonLab_Lounge_EventScript_NormaNotRequestedMon
 	copyvar VAR_0x8004, VAR_0x8008

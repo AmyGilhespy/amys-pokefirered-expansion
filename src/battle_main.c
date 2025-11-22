@@ -2079,7 +2079,7 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
             else if (trainer->trainerClass == TRAINER_CLASS_LEADER && trainer->trainerPic == TRAINER_PIC_LEADER_GIOVANNI) { } // Comparing the pic ID is way simpler than comparing the name.
             else if (trainer->trainerClass == TRAINER_CLASS_RIVAL_EARLY && monsCount == 1) // Oak's Lab
             {
-                givePreassignedMoves = gSaveBlock2Ptr->customData.gameType == 0 ? FALSE : TRUE;
+                givePreassignedMoves = gSaveBlock2Ptr->customData.gameMode > 1 && gSaveBlock2Ptr->customData.gameMode < 128 ? TRUE : FALSE; // Nuzlocke mode or not
                 randomSpecies = GetStarterSpeciesRival();
                 if (randomSpecies == SPECIES_NONE)
                 {
@@ -3361,6 +3361,11 @@ const u8* FaintClearSetData(u32 battler)
                 }
             }
         }
+    }
+
+    if (gSaveBlock2Ptr->customData.gameMode > 1 && gSaveBlock2Ptr->customData.gameMode < 128) // Nuzlocke mode
+    {
+        gBattleMons[battler].status1 = STATUS1_DEAD;
     }
 
     return result;

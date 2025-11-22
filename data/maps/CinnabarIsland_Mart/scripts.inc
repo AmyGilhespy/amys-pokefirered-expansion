@@ -29,6 +29,7 @@ CinnabarIsland_Mart_Items::
 	.2byte ITEM_RED_CARD
 	.2byte ITEM_LIGHT_BALL
 	.2byte ITEM_THICK_CLUB
+	.2byte ITEM_LEEK
 	.2byte ITEM_ULTRA_BALL
 	.2byte ITEM_GREAT_BALL
 	.2byte ITEM_HYPER_POTION

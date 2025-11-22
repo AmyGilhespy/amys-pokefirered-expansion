@@ -1831,7 +1831,7 @@ static bool32 Fishing_CheckForBite(struct Task *task)
     task->tStep = FISHING_GOT_BITE;
     bite = FALSE;
 
-    if (gSaveBlock2Ptr->customData.gameType > 0)
+    if (gSaveBlock2Ptr->customData.gameMode > 0 && gSaveBlock2Ptr->customData.gameMode < 128) // Limited mode or Nuzlocke mode
     {
         regionId = gMapHeader.regionMapSectionId;
         if (gSaveBlock2Ptr->customData.caughtEncounters[regionId] > 0)

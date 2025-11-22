@@ -28,6 +28,8 @@ PalletTown_PlayersHouse_1F_EventScript_MomHealOrPracticeBattle::
 	goto_if_ne VAR_RESULT, NO, PalletTown_PlayersHouse_1F_EventScript_MomHeal
 	msgbox PalletTown_PlayersHouse_1F_Text_MomAskPracticeBattle, MSGBOX_YESNO
 	goto_if_ne VAR_RESULT, NO, PalletTown_PlayersHouse_1F_EventScript_MomPracticeBattle
+	msgbox PalletTown_PlayersHouse_1F_Text_MomAskChangeGameMode, MSGBOX_YESNO
+	goto_if_ne VAR_RESULT, NO, PalletTown_PlayersHouse_1F_EventScript_ChooseNewGameMode
 	msgbox PalletTown_PlayersHouse_1F_Text_MomTakeCare
 	release
 	end
@@ -70,3 +72,88 @@ PalletTown_PlayersHouse_1F_EventScript_TVScreenMale::
 PalletTown_PlayersHouse_1F_EventScript_TVScreenFemale::
 	msgbox PalletTown_PlayersHouse_1F_Text_MovieOnTVGirlOnBrickRoad
 	return
+
+PalletTown_PlayersHouse_1F_EventScript_ChooseNewGameMode::
+	special GetGameMode
+	switch VAR_RESULT
+	case 0, PalletTown_PlayersHouse_1F_EventScript_GameModeIsStandard
+	case 1, PalletTown_PlayersHouse_1F_EventScript_GameModeIsLimited
+	case 2, PalletTown_PlayersHouse_1F_EventScript_GameModeIsNuzlocke
+	goto PalletTown_PlayersHouse_1F_EventScript_GameModeIsInvalid
+	end
+
+PalletTown_PlayersHouse_1F_EventScript_GameModeIsStandard::
+	msgbox PalletTown_PlayersHouse_1F_Text_GameModeIsStandard
+	goto PalletTown_PlayersHouse_1F_EventScript_ChooseNewGameModeMenu
+	end
+
+PalletTown_PlayersHouse_1F_EventScript_GameModeIsLimited::
+	msgbox PalletTown_PlayersHouse_1F_Text_GameModeIsLimited
+	goto PalletTown_PlayersHouse_1F_EventScript_ChooseNewGameModeMenu
+	end
+
+PalletTown_PlayersHouse_1F_EventScript_GameModeIsNuzlocke::
+	msgbox PalletTown_PlayersHouse_1F_Text_GameModeIsNuzlocke
+	goto PalletTown_PlayersHouse_1F_EventScript_ChooseNewGameModeMenu
+	end
+
+PalletTown_PlayersHouse_1F_EventScript_GameModeIsInvalid::
+	msgbox PalletTown_PlayersHouse_1F_Text_GameModeIsInvalid
+	goto PalletTown_PlayersHouse_1F_EventScript_ChooseNewGameModeMenu
+	end
+
+PalletTown_PlayersHouse_1F_EventScript_ChooseNewGameModeMenu::
+	message PalletTown_PlayersHouse_1F_Text_WhichGameMode
+	waitmessage
+	multichoice 18, 5, MULTICHOICE_GAME_MODE_CUSTOM, FALSE
+	switch VAR_RESULT
+	case 0, PalletTown_PlayersHouse_1F_EventScript_SetNewGameMode_Standard
+	case 1, PalletTown_PlayersHouse_1F_EventScript_SetNewGameMode_Limited
+	case 2, PalletTown_PlayersHouse_1F_EventScript_SetNewGameMode_Nuzlocke
+	case 3, PalletTown_PlayersHouse_1F_EventScript_DontSetNewGameMode
+	case 127, PalletTown_PlayersHouse_1F_EventScript_DontSetNewGameMode
+	end
+
+PalletTown_PlayersHouse_1F_EventScript_SetNewGameMode_Standard::
+	special GetGameMode
+	goto_if_eq VAR_RESULT, 0, PalletTown_PlayersHouse_1F_EventScript_SetNewGameMode_StandardAlreadySet
+	setvar VAR_TEMP_1, 0
+	special SetGameMode
+	msgbox PalletTown_PlayersHouse_1F_Text_GameModeIsNowStandard
+	release
+	end
+PalletTown_PlayersHouse_1F_EventScript_SetNewGameMode_StandardAlreadySet::
+	msgbox PalletTown_PlayersHouse_1F_Text_GameModeAlreadyStandard
+	release
+	end
+
+PalletTown_PlayersHouse_1F_EventScript_SetNewGameMode_Limited::
+	special GetGameMode
+	goto_if_eq VAR_RESULT, 1, PalletTown_PlayersHouse_1F_EventScript_SetNewGameMode_LimitedAlreadySet
+	setvar VAR_TEMP_1, 1
+	special SetGameMode
+	msgbox PalletTown_PlayersHouse_1F_Text_GameModeIsNowLimited
+	release
+	end
+PalletTown_PlayersHouse_1F_EventScript_SetNewGameMode_LimitedAlreadySet::
+	msgbox PalletTown_PlayersHouse_1F_Text_GameModeAlreadyLimited
+	release
+	end
+
+PalletTown_PlayersHouse_1F_EventScript_SetNewGameMode_Nuzlocke::
+	special GetGameMode
+	goto_if_eq VAR_RESULT, 2, PalletTown_PlayersHouse_1F_EventScript_SetNewGameMode_NuzlockeAlreadySet
+	setvar VAR_TEMP_1, 2
+	special SetGameMode
+	msgbox PalletTown_PlayersHouse_1F_Text_GameModeIsNowNuzlocke
+	release
+	end
+PalletTown_PlayersHouse_1F_EventScript_SetNewGameMode_NuzlockeAlreadySet::
+	msgbox PalletTown_PlayersHouse_1F_Text_GameModeAlreadyNuzlocke
+	release
+	end
+
+PalletTown_PlayersHouse_1F_EventScript_DontSetNewGameMode::
+	msgbox PalletTown_PlayersHouse_1F_Text_MomTakeCare
+	release
+	end
