@@ -4,6 +4,7 @@
 #include "constants/battle_partner.h"
 
 #define TRAINER_NONE                               0
+#if 0
 // Dummy trainers for all the RS trainer classes
 #define TRAINER_AQUA_LEADER                        1
 #define TRAINER_AQUA_GRUNT_M                       2
@@ -93,6 +94,101 @@
 #define TRAINER_LEADER_WALLACE                    86
 #define TRAINER_ELITE_FOUR_GLACIA                 87
 #define TRAINER_ELITE_FOUR_DRAKE                  88
+#endif
+#if 1 // Normal game modes reserved IDs
+#define TRAINER_RESERVED_01                        1
+#define TRAINER_RESERVED_02                        2
+#define TRAINER_RESERVED_03                        3
+#define TRAINER_RESERVED_04                        4
+#define TRAINER_RESERVED_05                        5
+#define TRAINER_RESERVED_06                        6
+#define TRAINER_RESERVED_07                        7
+#define TRAINER_RESERVED_08                        8
+#define TRAINER_RESERVED_09                        9
+#define TRAINER_RESERVED_10                       10
+#define TRAINER_RESERVED_11                       11
+#define TRAINER_RESERVED_12                       12
+#define TRAINER_RESERVED_13                       13
+#define TRAINER_RESERVED_14                       14
+#define TRAINER_RESERVED_15                       15
+#define TRAINER_RESERVED_16                       16
+#define TRAINER_RESERVED_17                       17
+#define TRAINER_RESERVED_18                       18
+#define TRAINER_RESERVED_19                       19
+#define TRAINER_RESERVED_20                       20
+#define TRAINER_RESERVED_21                       21
+#define TRAINER_RESERVED_22                       22
+#define TRAINER_RESERVED_23                       23
+#define TRAINER_RESERVED_24                       24
+#define TRAINER_RESERVED_25                       25
+#define TRAINER_RESERVED_26                       26
+#define TRAINER_RESERVED_27                       27
+#define TRAINER_RESERVED_28                       28
+#define TRAINER_RESERVED_29                       29
+#define TRAINER_RESERVED_30                       30
+#define TRAINER_RESERVED_31                       31
+#define TRAINER_RESERVED_32                       32
+#define TRAINER_RESERVED_33                       33
+#define TRAINER_RESERVED_34                       34
+#define TRAINER_RESERVED_35                       35
+#define TRAINER_RESERVED_36                       36
+#define TRAINER_RESERVED_37                       37
+#define TRAINER_RESERVED_38                       38
+#define TRAINER_RESERVED_39                       39
+#define TRAINER_RESERVED_40                       40
+#endif // End normal game modes reserved IDs
+#if 1 //#ifdef ESCAPE_ROOM // Escape room game mode IDs
+#define TRAINER_ESCAPE_ROOM_A                     41
+#define TRAINER_ESCAPE_ROOM_B                     42
+#define TRAINER_ESCAPE_ROOM_C                     43
+#define TRAINER_ESCAPE_ROOM_D                     44
+#define TRAINER_ESCAPE_ROOM_E                     45
+#define TRAINER_ESCAPE_ROOM_F                     46
+#define TRAINER_ESCAPE_ROOM_G                     47
+#define TRAINER_ESCAPE_ROOM_H                     48
+#define TRAINER_ESCAPE_ROOM_I                     49
+#define TRAINER_ESCAPE_ROOM_J                     50
+#define TRAINER_ESCAPE_ROOM_K                     51
+#define TRAINER_ESCAPE_ROOM_L                     52
+#define TRAINER_ESCAPE_ROOM_M                     53
+#define TRAINER_ESCAPE_ROOM_N                     54
+#define TRAINER_ESCAPE_ROOM_O                     55
+#define TRAINER_ESCAPE_ROOM_P                     56
+#define TRAINER_ESCAPE_ROOM_Q                     57
+#define TRAINER_ESCAPE_ROOM_R                     58
+#define TRAINER_ESCAPE_ROOM_S                     59
+#define TRAINER_ESCAPE_ROOM_T                     60
+#endif // End escape room game mode IDs
+#if 0 // Unused game modes IDs
+#define TRAINER_UNUSED_61                         61
+#define TRAINER_UNUSED_62                         62
+#define TRAINER_UNUSED_63                         63
+#define TRAINER_UNUSED_64                         64
+#define TRAINER_UNUSED_65                         65
+#define TRAINER_UNUSED_66                         66
+#define TRAINER_UNUSED_67                         67
+#define TRAINER_UNUSED_68                         68
+#define TRAINER_UNUSED_69                         69
+#define TRAINER_UNUSED_70                         70
+#define TRAINER_UNUSED_71                         71
+#define TRAINER_UNUSED_72                         72
+#define TRAINER_UNUSED_73                         73
+#define TRAINER_UNUSED_74                         74
+#define TRAINER_UNUSED_75                         75
+#define TRAINER_UNUSED_76                         76
+#define TRAINER_UNUSED_77                         77
+#define TRAINER_UNUSED_78                         78
+#define TRAINER_UNUSED_79                         79
+#define TRAINER_UNUSED_80                         80
+#define TRAINER_UNUSED_81                         81
+#define TRAINER_UNUSED_82                         82
+#define TRAINER_UNUSED_83                         83
+#define TRAINER_UNUSED_84                         84
+#define TRAINER_UNUSED_85                         85
+#define TRAINER_UNUSED_86                         86
+#define TRAINER_UNUSED_87                         87
+#define TRAINER_UNUSED_88                         88
+#endif // End unused game modes IDs
 // Actual FRLG trainers start here
 #define TRAINER_YOUNGSTER_BEN                     89
 #define TRAINER_YOUNGSTER_CALVIN                  90

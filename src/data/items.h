@@ -14768,6 +14768,39 @@ const struct Item gItemsInfo[] =
         .iconPic = gItemIcon_MoomooMilk,
         .iconPalette = gItemIconPalette_MoomooMilk,
     },
+
+    [ITEM_LIGMA_BALL] =
+    {
+        .name = ITEM_NAME("Ligma Ball"),
+        .price = 0,
+        .description = COMPOUND_STRING(
+            "A Ball that "
+            "boosts a\ncaught "
+            "Pokémon's IVs."),
+        .pocket = POCKET_POKE_BALLS,
+        .type = ITEM_USE_BAG_MENU,
+        .battleUsage = EFFECT_ITEM_THROW_BALL,
+        .secondaryId = BALL_LIGMA,
+        .iconPic = gItemIcon_MasterBall,
+        .iconPalette = gItemIconPalette_MasterBall,
+    },
+
+    [ITEM_ROCKET_BALL] =
+    {
+        .name = ITEM_NAME("Rocket Ball"),
+        .price = 0,
+        .description = COMPOUND_STRING(
+            "Team Rocket's ball that "
+            "catches a\ntrainer's "
+            "Pokémon without fail."),
+        .pocket = POCKET_POKE_BALLS,
+        .type = ITEM_USE_BAG_MENU,
+        .battleUsage = EFFECT_ITEM_THROW_BALL,
+        .secondaryId = BALL_ROCKET,
+        .iconPic = gItemIcon_RocketBall,
+        .iconPalette = gItemIconPalette_RocketBall,
+    },
+
 };
 
 #undef ITEM_NAME

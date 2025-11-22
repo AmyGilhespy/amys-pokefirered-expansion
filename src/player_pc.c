@@ -103,9 +103,10 @@ static const struct ItemSlot gNewGamePCItems[] = {
 };
 
 static const struct ItemSlot gNewGamePCItemsEscapeRoom[] = {
-    { ITEM_POTION, 1 },
-    //{ ITEM_POTION, 1 },
-    { ITEM_NONE,   0 }
+    { ITEM_POTION,      1 },
+    { ITEM_ROCKET_BALL, 1 },
+    { ITEM_LIGMA_BALL,  2 },
+    { ITEM_NONE,        0 }
 };
 
 static const struct ItemSlot gNewGamePCItemOptions[] = {

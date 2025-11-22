@@ -4500,6 +4500,30 @@
       "secondary_tileset": "gTileset_CeruleanCave",
       "border_filepath": "data/layouts/CeruleanCave_SecretChamber_B9F/border.bin",
       "blockdata_filepath": "data/layouts/CeruleanCave_SecretChamber_B9F/map.bin"
+    },
+    {
+      "id": "LAYOUT_ESCAPE_ROOM",
+      "name": "EscapeRoom_Layout",
+      "width": 20,
+      "height": 20,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_PalletTown",
+      "border_filepath": "data/layouts/EscapeRoom/border.bin",
+      "blockdata_filepath": "data/layouts/EscapeRoom/map.bin"
+    },
+    {
+      "id": "LAYOUT_ESCAPE_ROOM_POKEMON_CENTER_1F",
+      "name": "EscapeRoom_PokemonCenter_1F_Layout",
+      "width": 15,
+      "height": 10,
+      "border_width": 2,
+      "border_height": 2,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_PokemonCenter",
+      "border_filepath": "data/layouts/EscapeRoom_PokemonCenter_1F/border.bin",
+      "blockdata_filepath": "data/layouts/EscapeRoom_PokemonCenter_1F/map.bin"
     }
   ]
 }

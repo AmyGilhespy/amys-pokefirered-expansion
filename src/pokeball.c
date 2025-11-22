@@ -1566,6 +1566,8 @@ void LoadBallGfx(u8 ballId)
     case BALL_NET ... BALL_NEST:
     case BALL_REPEAT:
     case BALL_SAFARI:
+    case BALL_LIGMA:
+    case BALL_ROCKET:
         var = GetSpriteTileStartByTag(gBallSpriteSheets[ballId].tag);
         DecompressDataWithHeaderVram(gOpenPokeballGfx, (void *)(OBJ_VRAM0 + 0x100 + var * 32));
         break;

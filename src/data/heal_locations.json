@@ -159,6 +159,14 @@
       "y": 12,
       "respawn_map": "MAP_SIX_ISLAND_POKEMON_CENTER_1F",
       "respawn_npc": "LOCALID_SIX_ISLAND_NURSE"
+    },
+    {
+      "id": "HEAL_LOCATION_ESCAPE_ROOM",
+      "map": "MAP_ESCAPE_ROOM",
+      "x": 13,
+      "y": 11,
+      "respawn_map": "MAP_ESCAPE_ROOM_POKEMON_CENTER_1F",
+      "respawn_npc": "LOCALID_ESCAPE_ROOM_NURSE"
     }
   ]
 }

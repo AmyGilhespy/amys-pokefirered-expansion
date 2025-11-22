@@ -1408,3 +1408,9 @@ Text_TestMsg::
 
 	.include "data/maps/CeruleanCave_SecretChamber_B9F/scripts.inc"
 	.include "data/maps/CeruleanCave_SecretChamber_B9F/text.inc"
+
+	.include "data/maps/EscapeRoom/scripts.inc"
+	.include "data/maps/EscapeRoom/text.inc"
+
+	.include "data/maps/EscapeRoom_PokemonCenter_1F/scripts.inc"
+	.include "data/maps/EscapeRoom_PokemonCenter_1F/text.inc"

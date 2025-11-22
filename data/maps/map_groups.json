@@ -43,7 +43,8 @@
     "gMapGroup_IndoorTwoIslandRoute",
     "gMapGroup_IndoorSixIslandRoute",
     "gMapGroup_IndoorSevenIslandRoute",
-    "gMapGroup_CeruleanCaveSecretChamber"
+    "gMapGroup_CeruleanCaveSecretChamber",
+    "gMapGroup_EscapeRoom"
   ],
   "gMapGroup_Link": [
     "BattleColosseum_2P",
@@ -567,5 +568,9 @@
     "CeruleanCave_SecretChamber_B7F",
     "CeruleanCave_SecretChamber_B8F",
     "CeruleanCave_SecretChamber_B9F"
+  ],
+  "gMapGroup_EscapeRoom": [
+    "EscapeRoom",
+    "EscapeRoom_PokemonCenter_1F"
   ]
 }

@@ -2928,6 +2928,10 @@ extern const u32 gItemIcon_BeastBall[];
 extern const u16 gItemIconPalette_BeastBall[];
 extern const u32 gItemIcon_CherishBall[];
 extern const u16 gItemIconPalette_CherishBall[];
+extern const u32 gItemIcon_LigmaBall[];
+extern const u16 gItemIconPalette_LigmaBall[];
+extern const u32 gItemIcon_RocketBall[];
+extern const u16 gItemIconPalette_RocketBall[];
 // Medicine
 extern const u32 gItemIcon_Potion[];
 extern const u16 gItemIconPalette_Potion[];

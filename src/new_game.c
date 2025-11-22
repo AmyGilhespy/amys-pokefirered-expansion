@@ -61,6 +61,11 @@ void CopyTrainerId(u8 *dst, u8 *src)
 
 static void InitPlayerTrainerId(void)
 {
+    if (gSaveBlock2Ptr->customData.gameMode == GAME_MODE_ESCAPE_ROOM)
+    {
+        SetTrainerId(42069, gSaveBlock2Ptr->playerTrainerId);
+        return;
+    }
     u32 trainerId = (Random() << 0x10) | GetGeneratedTrainerIdLower();
     SetTrainerId(trainerId, gSaveBlock2Ptr->playerTrainerId);
 }
@@ -94,7 +99,7 @@ static void WarpToPlayersRoom(void)
 
 static void WarpToEscapeRoom(void)
 {
-    SetWarpDestination(MAP_GROUP(MAP_PALLET_TOWN_PLAYERS_HOUSE_2F), MAP_NUM(MAP_PALLET_TOWN_PLAYERS_HOUSE_2F), -1, 6, 6);
+    SetWarpDestination(MAP_GROUP(MAP_ESCAPE_ROOM), MAP_NUM(MAP_ESCAPE_ROOM), -1, 6, 6);
     WarpIntoMap();
 }
 
@@ -218,6 +223,10 @@ void NewGameInitData(void)
         AddBagItem(ITEM_SECRET_KEY, 1);
         FlagSet(FLAG_HIDE_POKEMON_MANSION_B1F_SECRET_KEY); // Unlocks the gym in Cinnabar
         FlagSet(FLAG_HIDE_CERULEAN_CAVE_GUARD); // Unlocks the Cerulean Cave from the start (once you can surf)
+    }
+    else if (gSaveBlock2Ptr->customData.gameMode == GAME_MODE_ESCAPE_ROOM)
+    {
+        FlagSet(FLAG_SYS_POKEMON_GET); // Add "POKEMON" to the menu.
     }
 
     // Testing/debug:

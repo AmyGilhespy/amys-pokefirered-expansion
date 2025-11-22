@@ -83,6 +83,7 @@
 #include "field_specials.h"
 #include "mail.h"
 #include "mail_trainer.h"
+#include "constants/game_modes.h"
 #include "gba/isagbprint.h"
 
 extern const struct BgTemplate gBattleBgTemplates[];
@@ -2074,8 +2075,9 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
             thisSeed |= i;
             randomSpecies = originalSpecies = partyData[monIndex].species;
             givePreassignedMoves = TRUE;
-            if (trainer->trainerClass == TRAINER_CLASS_LEADER && (
-                trainer->trainerPic == TRAINER_PIC_LEADER_SABRINA ? (i < 2 || i == 5) : i < 3 )) { } // Comparing the pic ID is way simpler than comparing the name.
+            if (gSaveBlock2Ptr->customData.gameMode == GAME_MODE_ESCAPE_ROOM) { }
+            else if (trainer->trainerClass == TRAINER_CLASS_LEADER && (
+                    trainer->trainerPic == TRAINER_PIC_LEADER_SABRINA ? (i < 2 || i == 5) : i < 3 )) { } // Comparing the pic ID is way simpler than comparing the name.
             else if (trainer->trainerClass == TRAINER_CLASS_LEADER && trainer->trainerPic == TRAINER_PIC_LEADER_GIOVANNI) { } // Comparing the pic ID is way simpler than comparing the name.
             else if (trainer->trainerClass == TRAINER_CLASS_RIVAL_EARLY && monsCount == 1) // Oak's Lab
             {
