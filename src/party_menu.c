@@ -63,6 +63,7 @@
 #include "constants/easy_chat.h"
 #include "constants/field_effects.h"
 #include "constants/field_move.h"
+#include "constants/game_modes.h"
 #include "constants/item_effects.h"
 #include "constants/items.h"
 #include "constants/maps.h"
@@ -484,6 +485,15 @@ void InitPartyMenu(u8 menuType, u8 layout, u8 partyAction, bool8 keepCursorPos, 
         CalculatePlayerPartyCount();
         SetMainCallback2(CB2_InitPartyMenu);
     }
+}
+
+
+static bool32 ItemIsStuckAndCannotBeRemoved(struct Pokemon *mon, u16 item)
+{
+    return gSaveBlock2Ptr->customData.gameMode == GAME_MODE_ESCAPE_ROOM
+            && item == ITEM_CHOICE_BAND
+            && GetMonData(mon, MON_DATA_SPECIES) == SPECIES_SHUCKLE
+            ;
 }
 
 static void RefreshPartyMenu(void) //Refreshes the party menu without restarting tasks
@@ -1015,7 +1025,7 @@ static bool8 DisplayPartyPokemonDataForMoveTutorOrEvolutionItem(u8 slot)
 
     if (gPartyMenu.action == PARTY_ACTION_MOVE_TUTOR)
     {
-        gSpecialVar_Result = FALSE;        
+        gSpecialVar_Result = FALSE;
         DisplayPartyPokemonDataToTeachMove(slot, gSpecialVar_0x8005);
     }
     else
@@ -1030,6 +1040,8 @@ static bool8 DisplayPartyPokemonDataForMoveTutorOrEvolutionItem(u8 slot)
             DisplayPartyPokemonDataToTeachMove(slot, ItemIdToBattleMoveId(item));
             break;
         case 2: // Evolution stone
+            if (item == ITEM_MIDDLE_STONE && MiddleStoneCanEvolveSpecies(GetMonData(currentPokemon, MON_DATA_SPECIES)))
+                return FALSE;
             if (!GetMonData(currentPokemon, MON_DATA_IS_EGG) && GetEvolutionTargetSpecies(currentPokemon, EVO_MODE_ITEM_CHECK, item, NULL, NULL, CHECK_EVO) != SPECIES_NONE)
                 return FALSE;
             DisplayPartyPokemonDescriptionData(slot, PARTYBOX_DESC_NO_USE);
@@ -1872,6 +1884,8 @@ static u8 TryTakeMonItem(struct Pokemon *mon)
 
     if (item == ITEM_NONE)
         return 0;
+    if (ItemIsStuckAndCannotBeRemoved(mon, item))
+        return 3;
     if (AddBagItem(item, 1) == FALSE)
         return 1;
     item = ITEM_NONE;
@@ -1898,6 +1912,12 @@ static void BufferBagFullCantTakeItemMessage(u16 itemId)
     }
     StringCopy(gStringVar1, string);
     StringExpandPlaceholders(gStringVar4, gText_BagFullCouldNotRemoveItem);
+}
+
+static void BufferItemStuckCantTakeItemMessage(u16 itemId)
+{
+    StringCopy(gStringVar1, GetItemName(itemId));
+    StringExpandPlaceholders(gStringVar4, gText_ItemStuckCouldNotRemoveItem);
 }
 
 #define tHP           data[0]
@@ -3682,8 +3702,19 @@ static void Task_SwitchHoldItemsPrompt(u8 taskId)
 {
     if (!gPaletteFade.active)
     {
-        DisplayAlreadyHoldingItemSwitchMessage(&gPlayerParty[gPartyMenu.slotId], sPartyMenuItemId, TRUE);
-        gTasks[taskId].func = Task_SwitchItemsYesNo;
+        u16 heldItem = GetMonData(&gPlayerParty[gPartyMenu.slotId], MON_DATA_HELD_ITEM);
+        if (ItemIsStuckAndCannotBeRemoved(&gPlayerParty[gPartyMenu.slotId], heldItem))
+        {
+            BufferItemStuckCantTakeItemMessage(heldItem);
+            DisplayPartyMenuMessage(gStringVar4, TRUE);
+            ScheduleBgCopyTilemapToVram(2);
+            gTasks[taskId].func = Task_UpdateHeldItemSpriteAndClosePartyMenu;
+        }
+        else
+        {
+            DisplayAlreadyHoldingItemSwitchMessage(&gPlayerParty[gPartyMenu.slotId], sPartyMenuItemId, TRUE);
+            gTasks[taskId].func = Task_SwitchItemsYesNo;
+        }
     }
 }
 
@@ -3703,8 +3734,16 @@ static void Task_HandleSwitchItemsYesNoInput(u8 taskId)
     case 0: // Yes, switch items
         RemoveBagItem(gSpecialVar_ItemId, 1);
         
+        u16 heldItem = GetMonData(&gPlayerParty[gPartyMenu.slotId], MON_DATA_HELD_ITEM);
+        if (ItemIsStuckAndCannotBeRemoved(&gPlayerParty[gPartyMenu.slotId], heldItem))
+        {
+            ReturnGiveItemToBagOrPC(heldItem);
+            BufferItemStuckCantTakeItemMessage(heldItem);
+            DisplayPartyMenuMessage(gStringVar4, FALSE);
+            gTasks[taskId].func = Task_UpdateHeldItemSpriteAndClosePartyMenu;
+        }
         // No room to return held item to bag
-        if (AddBagItem(sPartyMenuItemId, 1) == FALSE)
+        else if (AddBagItem(sPartyMenuItemId, 1) == FALSE)
         {
             AddBagItem(gSpecialVar_ItemId, 1);
             BufferBagFullCantTakeItemMessage(sPartyMenuItemId);
@@ -3814,6 +3853,10 @@ static void CursorCB_TakeItem(u8 taskId)
         break;
     case 1: // No room to take item
         BufferBagFullCantTakeItemMessage(item);
+        DisplayPartyMenuMessage(gStringVar4, TRUE);
+        break;
+    case 3: // It's stuck
+        BufferItemStuckCantTakeItemMessage(item);
         DisplayPartyMenuMessage(gStringVar4, TRUE);
         break;
     default: // Took item
@@ -6313,7 +6356,14 @@ static void CB2_UseEvolutionStone(void)
 {
     u16 targetSpecies;
     gCB2_AfterEvolution = gPartyMenu.exitCallback;
-    targetSpecies = GetEvolutionTargetSpecies(&gPlayerParty[gPartyMenu.slotId], EVO_MODE_ITEM_USE, gSpecialVar_ItemId, NULL, NULL, CHECK_EVO);
+    if (gSpecialVar_ItemId == ITEM_MIDDLE_STONE)
+    {
+        targetSpecies = GetEvolutionTargetSpecies(&gPlayerParty[gPartyMenu.slotId], EVO_MODE_NORMAL, gSpecialVar_ItemId, NULL, NULL, CHECK_EVO);
+    }
+    else
+    {
+        targetSpecies = GetEvolutionTargetSpecies(&gPlayerParty[gPartyMenu.slotId], EVO_MODE_ITEM_USE, gSpecialVar_ItemId, NULL, NULL, CHECK_EVO);
+    }
     BeginEvolutionScene(&gPlayerParty[gPartyMenu.slotId], targetSpecies, FALSE, gPartyMenu.slotId);
     ItemUse_SetQuestLogEvent(QL_EVENT_USED_ITEM, &gPlayerParty[gPartyMenu.slotId], gSpecialVar_ItemId, 0xFFFF);
     RemoveBagItem(gSpecialVar_ItemId, 1);
@@ -6321,7 +6371,14 @@ static void CB2_UseEvolutionStone(void)
 
 static bool8 MonCanEvolve(void)
 {
-    return GetEvolutionTargetSpecies(&gPlayerParty[gPartyMenu.slotId], EVO_MODE_ITEM_USE, gSpecialVar_ItemId, NULL, NULL, CHECK_EVO) != SPECIES_NONE;
+    if (gSpecialVar_ItemId == ITEM_MIDDLE_STONE)
+    {
+        return GetEvolutionTargetSpecies(&gPlayerParty[gPartyMenu.slotId], EVO_MODE_NORMAL, gSpecialVar_ItemId, NULL, NULL, CHECK_EVO) != SPECIES_NONE;
+    }
+    else
+    {
+        return GetEvolutionTargetSpecies(&gPlayerParty[gPartyMenu.slotId], EVO_MODE_ITEM_USE, gSpecialVar_ItemId, NULL, NULL, CHECK_EVO) != SPECIES_NONE;
+    }
 }
 
 u8 GetItemEffectType(u16 item)
@@ -6457,6 +6514,13 @@ static void TryGiveItemOrMailToSelectedMon(u8 taskId)
     {
         GiveItemOrMailToSelectedMon(taskId);
     }
+    else if (ItemIsStuckAndCannotBeRemoved(&gPlayerParty[gPartyMenu.slotId], sPartyMenuItemId))
+    {
+        BufferItemStuckCantTakeItemMessage(sPartyMenuItemId);
+        DisplayPartyMenuMessage(gStringVar4, TRUE);
+        ScheduleBgCopyTilemapToVram(2);
+        gTasks[taskId].func = Task_UpdateHeldItemSpriteAndClosePartyMenu;
+    }
     else if (ItemIsMail(sPartyMenuItemId))
     {
         DisplayItemMustBeRemovedFirstMessage(taskId);
@@ -6567,7 +6631,15 @@ static void Task_HandleSwitchItemsFromBagYesNoInput(u8 taskId)
     case 0: // Yes, switch items
         item = gPartyMenu.bagItem;
         RemoveItemToGiveFromBag(item);
-        if (AddBagItem(sPartyMenuItemId, 1) == FALSE)
+        u16 heldItem = GetMonData(&gPlayerParty[gPartyMenu.slotId], MON_DATA_HELD_ITEM);
+        if (ItemIsStuckAndCannotBeRemoved(&gPlayerParty[gPartyMenu.slotId], heldItem))
+        {
+            ReturnGiveItemToBagOrPC(heldItem);
+            BufferItemStuckCantTakeItemMessage(heldItem);
+            DisplayPartyMenuMessage(gStringVar4, FALSE);
+            gTasks[taskId].func = Task_UpdateHeldItemSpriteAndClosePartyMenu;
+        }
+        else if (AddBagItem(sPartyMenuItemId, 1) == FALSE)
         {
             ReturnGiveItemToBagOrPC(item);
             BufferBagFullCantTakeItemMessage(sPartyMenuItemId);

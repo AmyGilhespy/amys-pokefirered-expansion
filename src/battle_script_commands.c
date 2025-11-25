@@ -73,6 +73,7 @@
 #include "load_save.h"
 #include "field_weather.h"
 #include "constants/weather.h"
+#include "constants/game_modes.h"
 #include "gba/isagbprint.h"
 
 // table to avoid ugly powing on gba (courtesy of doesnt)
@@ -1496,7 +1497,13 @@ static void AccuracyCheck(bool32 recalcDragonDarts, const u8 *nextInstr, const u
                                             holdEffectAtk,
                                             holdEffectDef);
 
-            if (!RandomPercentage(RNG_ACCURACY, accuracy))
+            bool32 missByAccuracy = !RandomPercentage(RNG_ACCURACY, accuracy);
+            if (gSaveBlock2Ptr->customData.gameMode == GAME_MODE_ESCAPE_ROOM)
+            {
+                missByAccuracy = FALSE;
+            }
+
+            if (missByAccuracy)
             {
                 gBattleStruct->moveResultFlags[battlerDef] = MOVE_RESULT_MISSED;
                 gBattleStruct->missStringId[battlerDef] = gBattleCommunication[MISS_TYPE] = B_MSG_MISSED;
@@ -1778,12 +1785,38 @@ static void Cmd_critcalc(void)
             gSpecialStatuses[battlerDef].criticalHit = TRUE;
         else
         {
+            u16 critNum, critDen;
+
             if (GetGenConfig(GEN_CONFIG_CRIT_CHANCE) == GEN_1)
-                gSpecialStatuses[battlerDef].criticalHit = RandomChance(RNG_CRITICAL_HIT, gBattleStruct->critChance[battlerDef], 256);
+            {
+                critNum = gBattleStruct->critChance[battlerDef];
+                critDen = 256;
+            }
             else if (GetGenConfig(GEN_CONFIG_CRIT_CHANCE) == GEN_2)
-                gSpecialStatuses[battlerDef].criticalHit = RandomChance(RNG_CRITICAL_HIT, GetCriticalHitOdds(gBattleStruct->critChance[battlerDef]), 256);
+            {
+                critNum = GetCriticalHitOdds(gBattleStruct->critChance[battlerDef]);
+                critDen = 256;
+            }
             else
-                gSpecialStatuses[battlerDef].criticalHit = RandomChance(RNG_CRITICAL_HIT, 1, GetCriticalHitOdds(gBattleStruct->critChance[battlerDef]));
+            {
+                critNum = 1;
+                critDen = GetCriticalHitOdds(gBattleStruct->critChance[battlerDef]);
+            }
+            if (gSaveBlock2Ptr->customData.gameMode == GAME_MODE_ESCAPE_ROOM)
+            {
+                if ((u32) critNum * 2 >= critDen)
+                {
+                    gSpecialStatuses[battlerDef].criticalHit = TRUE;
+                }
+                else
+                {
+                    gSpecialStatuses[battlerDef].criticalHit = FALSE;
+                }
+            }
+            else
+            {
+                gSpecialStatuses[battlerDef].criticalHit = RandomChance(RNG_CRITICAL_HIT, critNum, critDen);
+            }
         }
 
         // Counter for IF_CRITICAL_HITS_GE evolution condition.
@@ -9788,6 +9821,21 @@ static void Cmd_setprotectlike(void)
 
     TryResetProtectUseCounter(gBattlerAttacker);
 
+    if (gSaveBlock2Ptr->customData.gameMode == GAME_MODE_ESCAPE_ROOM)
+    {
+        // If protectUses > 0, a Protect-like move succeeded last turn.
+        // In Escape Room mode, *any consecutive use must always fail.*
+        if (gDisableStructs[gBattlerAttacker].protectUses > 0)
+        {
+            // Force the failure path.
+            gDisableStructs[gBattlerAttacker].protectUses = 0;
+            gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_PROTECT_FAILED;
+            gBattleStruct->moveResultFlags[gBattlerTarget] |= MOVE_RESULT_MISSED;
+            gBattlescriptCurrInstr = cmd->nextInstr;
+            return;
+        }
+    }
+
     if (gCurrentTurnActionNumber == (gBattlersCount - 1))
         notLastTurn = FALSE;
 
@@ -13710,13 +13758,53 @@ static void Cmd_handleballthrow(void)
 
     gBattlerTarget = GetCatchingBattler();
 
-    if (gBattleTypeFlags & BATTLE_TYPE_GHOST)
+    u32 ballId = ItemIdToBallId(gLastUsedItem);
+
+    if (gSaveBlock2Ptr->customData.gameMode == GAME_MODE_ESCAPE_ROOM)
+    {
+        if (ballId == BALL_FRIEND)
+        {
+            if (gBattleMons[gBattlerTarget].species != SPECIES_BIDOOF)
+            {
+                BtlController_EmitBallThrowAnim(gBattlerAttacker, B_COMM_TO_CONTROLLER, BALL_GHOST_DODGE);
+                MarkBattlerForControllerExec(gBattlerAttacker);
+                gBattlescriptCurrInstr = BattleScript_EscapeRoomFriendBallDodge;
+                return;
+            }
+            else if (FlagGet(FLAG_ESCAPE_ROOM_CAUGHT_BIDOOF))
+            {
+                BtlController_EmitBallThrowAnim(gBattlerAttacker, B_COMM_TO_CONTROLLER, BALL_GHOST_DODGE);
+                MarkBattlerForControllerExec(gBattlerAttacker);
+                gBattlescriptCurrInstr = BattleScript_EscapeRoomFriendBallDodgeRepeat;
+                return;
+            }
+        }
+        else
+        {
+            if (gBattleMons[gBattlerTarget].species == SPECIES_BIDOOF)
+            {
+                BtlController_EmitBallThrowAnim(gBattlerAttacker, B_COMM_TO_CONTROLLER, BALL_GHOST_DODGE);
+                MarkBattlerForControllerExec(gBattlerAttacker);
+                gBattlescriptCurrInstr = BattleScript_EscapeRoomNonFriendBallDodge;
+                return;
+            }
+        }
+    }
+
+    if (!(gBattleTypeFlags & BATTLE_TYPE_TRAINER) && ballId == BALL_ROCKET)
+    {
+        gLastUsedBall = gLastUsedItem; // Not sure why this is needed for and only for the Rocket Ball, but whatever...
+        BtlController_EmitBallThrowAnim(gBattlerAttacker, B_COMM_TO_CONTROLLER, BALL_GHOST_DODGE);
+        MarkBattlerForControllerExec(gBattlerAttacker);
+        gBattlescriptCurrInstr = BattleScript_RocketBallDodge;
+    }
+    else if (gBattleTypeFlags & BATTLE_TYPE_GHOST)
     {
         BtlController_EmitBallThrowAnim(gBattlerAttacker, B_COMM_TO_CONTROLLER, BALL_GHOST_DODGE);
         MarkBattlerForControllerExec(gBattlerAttacker);
         gBattlescriptCurrInstr = BattleScript_GhostBallDodge;
     }
-    else if (gBattleTypeFlags & BATTLE_TYPE_TRAINER && ItemIdToBallId(gLastUsedItem) != BALL_ROCKET)
+    else if (gBattleTypeFlags & BATTLE_TYPE_TRAINER && ballId != BALL_ROCKET)
     {
         BtlController_EmitBallThrowAnim(gBattlerAttacker, B_COMM_TO_CONTROLLER, BALL_TRAINER_BLOCK);
         MarkBattlerForControllerExec(gBattlerAttacker);
@@ -13732,7 +13820,6 @@ static void Cmd_handleballthrow(void)
     {
         u32 odds, i;
         u32 catchRate;
-        u32 ballId = ItemIdToBallId(gLastUsedItem);
 
         gBallToDisplay = gLastThrownBall = gLastUsedItem;
         if (gBattleTypeFlags & BATTLE_TYPE_SAFARI)
@@ -13754,10 +13841,12 @@ static void Cmd_handleballthrow(void)
             case BALL_ULTRA:
                 ballMultiplier = 200;
                 break;
+            #if 0
             case BALL_SPORT:
                 if (B_SPORT_BALL_MODIFIER <= GEN_7)
                     ballMultiplier = 150;
                 break;
+            #endif
             case BALL_GREAT:
                 ballMultiplier = 150;
                 break;
@@ -13960,6 +14049,57 @@ static void Cmd_handleballthrow(void)
             {
                 u32 friendship = (B_FRIEND_BALL_MODIFIER >= GEN_8 ? 150 : 200);
                 SetMonData(caughtMon, MON_DATA_FRIENDSHIP, &friendship);
+                if (gSaveBlock2Ptr->customData.gameMode == GAME_MODE_ESCAPE_ROOM)
+                {
+                    if (gBattleMons[gBattlerTarget].species == SPECIES_BIDOOF)
+                    {
+                        FlagSet(FLAG_ESCAPE_ROOM_CAUGHT_BIDOOF);
+                    }
+                }
+            }
+            else if (ballId == BALL_LIGMA)
+            {
+                u32 ivs = 0x3fffffff;
+                SetMonData(caughtMon, MON_DATA_IVS, &ivs);
+            }
+            else if (ballId == BALL_ROCKET)
+            {
+                if (gSaveBlock2Ptr->customData.gameMode == GAME_MODE_ESCAPE_ROOM)
+                {
+                    u32 level = 20;
+                    SetMonData(caughtMon, MON_DATA_LEVEL, &level);
+                }
+            }
+            if (ballId == BALL_ROCKET)
+            {
+                CopyMonToPC(caughtMon);
+                FlagSet(FLAG_TEMP_1C);
+
+                if (!gHasFetchedBall)
+                {
+                    gLastUsedBall = gLastUsedItem;
+                    RemoveBagItem(gLastUsedItem, 1); // TODO: Check @@@HERE@@@ to see if this works with ball fetch!
+                }
+
+                gBattleCommunication[MULTISTRING_CHOOSER] = BALL_TRAINER_STOLEN;
+
+                MarkBattlerForControllerExec(gBattlerAttacker);
+                gBattlescriptCurrInstr = BattleScript_TrainerPokemonStolen;
+
+                GetBattlerMon(gBattlerTarget)->hp = 0;
+
+                // Redraw the HUD:
+                for (i = 0; i < 4; i++)
+                {
+                    if (i != gBattlerTarget && IsBattlerAlive(i))
+                    {
+                        UpdateHealthboxAttribute(gHealthboxSpriteIds[i], GetBattlerMon(i), HEALTHBOX_ALL);
+                    }
+                    else if (i == gBattlerTarget)
+                    {
+                        SetHealthboxSpriteInvisible(gHealthboxSpriteIds[i]);
+                    }
+                }
             }
         }
         else // mon may be caught, calculate shakes
@@ -13980,7 +14120,7 @@ static void Cmd_handleballthrow(void)
                 maxShakes = BALL_3_SHAKES_SUCCESS;
             }
 
-            if (ballId == BALL_MASTER || ballId == BALL_LIGMA || ballId == BALL_ROCKET)
+            if (ballId == BALL_MASTER || gSaveBlock2Ptr->customData.gameMode == GAME_MODE_ESCAPE_ROOM)
             {
                 shakes = maxShakes;
             }
@@ -14028,6 +14168,57 @@ static void Cmd_handleballthrow(void)
                 {
                     u32 friendship = (B_FRIEND_BALL_MODIFIER >= GEN_8 ? 150 : 200);
                     SetMonData(caughtMon, MON_DATA_FRIENDSHIP, &friendship);
+                    if (gSaveBlock2Ptr->customData.gameMode == GAME_MODE_ESCAPE_ROOM)
+                    {
+                        if (gBattleMons[gBattlerTarget].species == SPECIES_BIDOOF)
+                        {
+                            FlagSet(FLAG_ESCAPE_ROOM_CAUGHT_BIDOOF);
+                        }
+                    }
+                }
+                else if (ballId == BALL_LIGMA)
+                {
+                    u32 ivs = 0x3fffffff;
+                    SetMonData(caughtMon, MON_DATA_IVS, &ivs);
+                }
+                else if (ballId == BALL_ROCKET)
+                {
+                    if (gSaveBlock2Ptr->customData.gameMode == GAME_MODE_ESCAPE_ROOM)
+                    {
+                        u32 level = 20;
+                        SetMonData(caughtMon, MON_DATA_LEVEL, &level);
+                    }
+                }
+                if (ballId == BALL_ROCKET)
+                {
+                    CopyMonToPC(caughtMon);
+                    FlagSet(FLAG_TEMP_1C);
+
+                    if (!gHasFetchedBall)
+                    {
+                        gLastUsedBall = gLastUsedItem;
+                        RemoveBagItem(gLastUsedItem, 1); // TODO: Check @@@HERE@@@ to see if this works with ball fetch!
+                    }
+
+                    gBattleCommunication[MULTISTRING_CHOOSER] = BALL_TRAINER_STOLEN;
+
+                    MarkBattlerForControllerExec(gBattlerAttacker);
+                    gBattlescriptCurrInstr = BattleScript_TrainerPokemonStolen;
+
+                    GetBattlerMon(gBattlerTarget)->hp = 0;
+
+                    // Redraw the HUD:
+                    for (i = 0; i < 4; i++)
+                    {
+                        if (i != gBattlerTarget && IsBattlerAlive(i))
+                        {
+                            UpdateHealthboxAttribute(gHealthboxSpriteIds[i], GetBattlerMon(i), HEALTHBOX_ALL);
+                        }
+                        else if (i == gBattlerTarget)
+                        {
+                            SetHealthboxSpriteInvisible(gHealthboxSpriteIds[i]);
+                        }
+                    }
                 }
             }
             else // not caught
@@ -18283,6 +18474,18 @@ void BS_GetBattlersForRecall(void)
             gBattleCommunication[MULTISTRING_CHOOSER] |= gBitTable[i];
         i++;
     }
+
+    gBattlescriptCurrInstr = cmd->nextInstr;
+}
+
+void BS_AmyRocketBallSwapTurnAndResumeBGM(void)
+{
+    NATIVE_ARGS();
+
+    // This controls whose replacement gets sent out:
+    gBattlerFainted = gBattlerTarget;
+
+    PlayBGM(GetBattleBGM());
 
     gBattlescriptCurrInstr = cmd->nextInstr;
 }

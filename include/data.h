@@ -76,7 +76,8 @@ struct TrainerMon
     u8 shouldUseDynamax:1;
     u8 eager:1;
     u8 dynamaxLevel:4;
-    u8 padding2:4;
+    u8 sequenceMoves:1;
+    u8 padding2:3;
     u32 tags;
 };
 

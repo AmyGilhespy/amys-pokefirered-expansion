@@ -27,12 +27,15 @@ enum PokeBall
     BALL_HEAVY = 21,
     BALL_DREAM = 22,
     BALL_SAFARI = 23,
+    #if 0
     BALL_SPORT = 24,
     BALL_PARK = 25,
+    #else
+    BALL_LIGMA = 24,
+    BALL_ROCKET = 25,
+    #endif
     BALL_BEAST = 26,
     BALL_CHERISH = 27,
-    BALL_LIGMA = 28,
-    BALL_ROCKET = 29,
     POKEBALL_COUNT
 };
 

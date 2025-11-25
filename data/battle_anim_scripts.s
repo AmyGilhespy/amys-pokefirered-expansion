@@ -25569,7 +25569,7 @@ RecoverAbsorbEffect:
 gBattleAnimMove_Mimic::
 	loadspritegfx ANIM_TAG_ORBS
 	setalpha 11, 5
-	monbg_static ANIM_DEF_PARTNER
+	@monbg_static ANIM_DEF_PARTNER
 	splitbgprio_all
 	panse SE_M_MINIMIZE, SOUND_PAN_TARGET, SOUND_PAN_ATTACKER, -3, 0
 	createvisualtask AnimTask_ShrinkTargetCopy, 5, 128, 24
@@ -25579,9 +25579,9 @@ gBattleAnimMove_Mimic::
 	setarg 7, 0xFFFF
 	waitforvisualfinish
 	playsewithpan SE_M_TAKE_DOWN, SOUND_PAN_ATTACKER
-	createvisualtask AnimTask_BlendColorCycle, 2, F_PAL_ATTACKER, 0, 2, 0, 11, RGB_WHITE
-	waitforvisualfinish
-	clearmonbg_static ANIM_DEF_PARTNER
+	@createvisualtask AnimTask_BlendColorCycle, 2, F_PAL_ATTACKER, 0, 2, 0, 11, RGB_WHITE
+	@waitforvisualfinish
+	@clearmonbg_static ANIM_DEF_PARTNER
 	blendoff
 	end
 

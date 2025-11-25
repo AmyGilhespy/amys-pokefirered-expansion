@@ -22,6 +22,7 @@
 #include "constants/items.h"
 #include "constants/weather.h"
 #include "random_encounters.h"
+#include "constants/game_modes.h"
 #include "constants/random_encounters.h"
 #include "debug.h"
 #include "gba/isagbprint.h"
@@ -81,6 +82,32 @@ static const u8 sUnownLetterSlots[][LAND_WILD_COUNT] = {
   //  Z   Z   Z   Z   Z   Z   Z   Z   Z   Z   Z   !
     {25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 25, 26},
 };
+
+static void SetEscapeRoomWildMonHeldItemEtc(struct Pokemon *mon, u16 species)
+{
+    u32 abilityNum = 0;
+    u32 heldItem = ITEM_NONE;
+    switch (species)
+    {
+    case SPECIES_BIDOOF: // Land
+        heldItem = ITEM_HM06; // HM06 = Rock Smash
+        break;
+    case SPECIES_SHUCKLE: // Rock Smash
+        SetMonData(mon, MON_DATA_ABILITY_NUM, &abilityNum);
+        heldItem = ITEM_CHOICE_BAND; // Stuck
+        break;
+    case SPECIES_SMEARGLE: // Fishing: Super Rod
+        break;
+    //case SPECIES_SMEARGLE: // Fishing: Good Rod
+        //break;
+    //case SPECIES_SMEARGLE: // Fishing: Old Rod
+        //break;
+    case SPECIES_MAGIKARP: // Surfing
+        break;
+    default: break;
+    }
+    SetMonData(mon, MON_DATA_HELD_ITEM, &heldItem);
+}
 
 void DisableWildEncounters(bool8 state)
 {
@@ -375,7 +402,7 @@ u8 PickWildMonNature(void)
 void CreateWildMon(u16 species, u8 level, u8 unownSlot)
 {
     u32 personality;
-    u16 overriddenSpecies;
+    u16 overriddenSpecies = RANDOM_ENCOUNTER_SPECIES_NONE;
     s8 chamber;
     bool32 checkCuteCharm;
     u8 unownLetter = NUM_UNOWN_FORMS;
@@ -384,7 +411,10 @@ void CreateWildMon(u16 species, u8 level, u8 unownSlot)
 
     regionId = gMapHeader.regionMapSectionId;
     slotIndex = Random() % RANDOM_ENCOUNTER_SLOTS_PER_REGION;
-    overriddenSpecies = RandomEncounters_GetSpeciesForRegionSlot(regionId, slotIndex);
+    if (gSaveBlock2Ptr->customData.gameMode != GAME_MODE_ESCAPE_ROOM)
+    {
+        overriddenSpecies = RandomEncounters_GetSpeciesForRegionSlot(regionId, slotIndex);
+    }
     if (overriddenSpecies != RANDOM_ENCOUNTER_SPECIES_NONE) {
         species = overriddenSpecies;
     }
@@ -421,6 +451,10 @@ void CreateWildMon(u16 species, u8 level, u8 unownSlot)
             gender = MON_FEMALE;
 
         CreateMonWithGenderNatureLetter(&gEnemyParty[0], species, level, USE_RANDOM_IVS, gender, PickWildMonNature(), unownLetter);
+        if (gSaveBlock2Ptr->customData.gameMode == GAME_MODE_ESCAPE_ROOM)
+        {
+            SetEscapeRoomWildMonHeldItemEtc(&gEnemyParty[0], species);
+        }
         return;
     }
 
@@ -432,6 +466,11 @@ void CreateWildMon(u16 species, u8 level, u8 unownSlot)
     {
         personality = GenerateUnownPersonalityByLetter(unownLetter);
         CreateMon(&gEnemyParty[0], species, level, USE_RANDOM_IVS, TRUE, personality, FALSE, 0);
+    }
+
+    if (gSaveBlock2Ptr->customData.gameMode == GAME_MODE_ESCAPE_ROOM)
+    {
+        SetEscapeRoomWildMonHeldItemEtc(&gEnemyParty[0], species);
     }
 }
 

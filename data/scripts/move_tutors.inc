@@ -606,3 +606,25 @@ Movement_JumpInPlaceLeft:
 Movement_JumpInPlaceRight:
 	jump_in_place_right
 	step_end
+
+EventScript_EscapeRoom_TrickTutor::
+	lock
+	faceplayer
+	msgbox EscapeRoom_Text_TrickTeach, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, EventScript_EscapeRoom_TrickDeclined
+	msgbox EscapeRoom_Text_TrickWhichMon
+	setvar VAR_0x8005, MOVE_TRICK
+	call EventScript_ChooseMoveTutorMon
+	goto_if_eq VAR_RESULT, FALSE, EventScript_EscapeRoom_TrickDeclined
+	goto EventScript_EscapeRoom_TrickTaught
+	end
+
+EventScript_EscapeRoom_TrickDeclined::
+	msgbox EscapeRoom_Text_TrickDeclined
+	release
+	end
+
+EventScript_EscapeRoom_TrickTaught::
+	msgbox EscapeRoom_Text_TrickTaught
+	release
+	end

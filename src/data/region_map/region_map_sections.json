@@ -1135,6 +1135,14 @@
       "y": 0,
       "width": 0,
       "height": 0
+    },
+    {
+      "id": "MAPSEC_ESCAPE_ROOM",
+      "name": "ESCAPE ROOM",
+      "x": 0,
+      "y": 0,
+      "width": 0,
+      "height": 0
     }
   ]
 }

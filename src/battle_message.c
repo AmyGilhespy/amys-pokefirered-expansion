@@ -521,14 +521,22 @@ const u8 *const gBattleStringsTable[STRINGID_COUNT] =
     [STRINGID_WALLYUSEDITEM]                        = COMPOUND_STRING("WALLY used {B_LAST_ITEM}!"), //no decapitalize until it is everywhere
     [STRINGID_TRAINERBLOCKEDBALL]                   = COMPOUND_STRING("The Trainer blocked your Poké Ball!"),
     [STRINGID_DONTBEATHIEF]                         = COMPOUND_STRING("Don't be a thief!"),
+    [STRINGID_TRAINERPKMNSTOLEN1]                   = COMPOUND_STRING("{B_TRAINER1_NAME_WITH_CLASS}: Noooo!"),
+    [STRINGID_TRAINERPKMNSTOLEN2]                   = COMPOUND_STRING("You thief!"),
     [STRINGID_ITDODGEDBALL]                         = COMPOUND_STRING("It dodged your thrown Poké Ball! This Pokémon can't be caught!"),
+    [STRINGID_ITDODGEDBALLROCKET]                   = COMPOUND_STRING("It dodged your thrown Rocket Ball!"),
+    [STRINGID_ITDODGEDBALLFRIEND]                   = COMPOUND_STRING("It dodged your thrown Friend Ball! Only Bidoof is a friend!"),
+    [STRINGID_ITDODGEDBALLNONFRIEND]                = COMPOUND_STRING("It dodged your thrown Poké Ball! Bidoof is a friend!"),
+    [STRINGID_ITDODGEDBALLFRIENDREPEAT]             = COMPOUND_STRING("It dodged your thrown Friend Ball! You already caught a friend!"),
     [STRINGID_YOUMISSEDPKMN]                        = COMPOUND_STRING("You missed the Pokémon!"),
     [STRINGID_PKMNBROKEFREE]                        = COMPOUND_STRING("Oh no! The Pokémon broke free!"),
     [STRINGID_ITAPPEAREDCAUGHT]                     = COMPOUND_STRING("Aww! It appeared to be caught!"),
     [STRINGID_AARGHALMOSTHADIT]                     = COMPOUND_STRING("Aargh! Almost had it!"),
     [STRINGID_SHOOTSOCLOSE]                         = COMPOUND_STRING("Gah! It was so close, too!"),
     [STRINGID_GOTCHAPKMNCAUGHTPLAYER]               = COMPOUND_STRING("Gotcha! {B_DEF_NAME} was caught!{WAIT_SE}{PLAY_BGM MUS_CAUGHT}\p"),
+    [STRINGID_GOTCHAPKMNCAUGHTPLAYERNOMUSIC]        = COMPOUND_STRING("Gotcha! {B_DEF_NAME} was caught!{WAIT_SE}\p"),
     [STRINGID_GOTCHAPKMNCAUGHTWALLY]                = COMPOUND_STRING("Gotcha! {B_DEF_NAME} was caught!{WAIT_SE}{PLAY_BGM MUS_CAUGHT}{PAUSE 127}"),
+    [STRINGID_GOTCHAPKMNSTOLEN]                     = COMPOUND_STRING("Gotcha! {B_DEF_NAME} was stolen!{WAIT_SE}{PAUSE 127}"),
     [STRINGID_GIVENICKNAMECAPTURED]                 = COMPOUND_STRING("Would you like to give {B_DEF_NAME} a nickname?"),
     [STRINGID_PKMNSENTTOPC]                         = COMPOUND_STRING("{B_DEF_NAME} has been sent to {B_PC_CREATOR_NAME} PC!"), //Still used lanette's pc since terminology is different
     [STRINGID_PKMNDATAADDEDTODEX]                   = COMPOUND_STRING("{B_DEF_NAME}'s data has been added to the Pokédex!\p"),
@@ -1368,10 +1376,11 @@ const u16 gFutureMoveUsedStringIds[] =
 
 const u16 gBallEscapeStringIds[] =
 {
-    [BALL_NO_SHAKES]     = STRINGID_PKMNBROKEFREE,
-    [BALL_1_SHAKE]       = STRINGID_ITAPPEAREDCAUGHT,
-    [BALL_2_SHAKES]      = STRINGID_AARGHALMOSTHADIT,
-    [BALL_3_SHAKES_FAIL] = STRINGID_SHOOTSOCLOSE
+    [BALL_NO_SHAKES]      = STRINGID_PKMNBROKEFREE,
+    [BALL_1_SHAKE]        = STRINGID_ITAPPEAREDCAUGHT,
+    [BALL_2_SHAKES]       = STRINGID_AARGHALMOSTHADIT,
+    [BALL_3_SHAKES_FAIL]  = STRINGID_SHOOTSOCLOSE,
+    [BALL_TRAINER_STOLEN] = STRINGID_GOTCHAPKMNSTOLEN
 };
 
 // Overworld weathers that don't have an associated battle weather default to "It is raining."

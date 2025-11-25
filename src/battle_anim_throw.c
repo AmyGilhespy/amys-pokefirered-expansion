@@ -159,6 +159,8 @@ static const struct CaptureStar sCaptureStars[] =
 #define TAG_PARTICLES_PARKBALL    65055
 #define TAG_PARTICLES_BEASTBALL   65056
 #define TAG_PARTICLES_CHERISHBALL 65057
+#define TAG_PARTICLES_LIGMABALL   65058
+#define TAG_PARTICLES_ROCKETBALL  65059
 
 static const struct CompressedSpriteSheet sBallParticleSpriteSheets[] =
 {
@@ -186,12 +188,15 @@ static const struct CompressedSpriteSheet sBallParticleSpriteSheets[] =
     [BALL_HEAVY]    = {gBattleAnimSpriteGfx_Particles2,     0x100, TAG_PARTICLES_HEAVYBALL},
     [BALL_DREAM]    = {gBattleAnimSpriteGfx_Particles,      0x100, TAG_PARTICLES_DREAMBALL},
     [BALL_SAFARI]   = {gBattleAnimSpriteGfx_Particles,      0x100, TAG_PARTICLES_SAFARIBALL},
+    #if 0
     [BALL_SPORT]    = {gBattleAnimSpriteGfx_Particles,      0x100, TAG_PARTICLES_SPORTBALL},
     [BALL_PARK]     = {gBattleAnimSpriteGfx_Particles,      0x100, TAG_PARTICLES_PARKBALL},
+    #else
+    [BALL_LIGMA]    = {gBattleAnimSpriteGfx_Particles,      0x100, TAG_PARTICLES_LIGMABALL},
+    [BALL_ROCKET]   = {gBattleAnimSpriteGfx_Particles,      0x100, TAG_PARTICLES_ROCKETBALL},
+    #endif
     [BALL_BEAST]    = {gBattleAnimSpriteGfx_Particles,      0x100, TAG_PARTICLES_BEASTBALL},
     [BALL_CHERISH]  = {gBattleAnimSpriteGfx_Particles2,     0x100, TAG_PARTICLES_CHERISHBALL},
-    [BALL_LIGMA]    = {gBattleAnimSpriteGfx_Particles,      0x100, TAG_PARTICLES_LOVEBALL},
-    [BALL_ROCKET]   = {gBattleAnimSpriteGfx_Particles,      0x100, TAG_PARTICLES_ULTRABALL},
 };
 
 static const struct SpritePalette sBallParticlePalettes[] =
@@ -220,12 +225,15 @@ static const struct SpritePalette sBallParticlePalettes[] =
     [BALL_HEAVY]    = {gBattleAnimSpritePal_Particles2,     TAG_PARTICLES_HEAVYBALL},
     [BALL_DREAM]    = {gBattleAnimSpritePal_CircleImpact,   TAG_PARTICLES_DREAMBALL},
     [BALL_SAFARI]   = {gBattleAnimSpritePal_CircleImpact,   TAG_PARTICLES_SAFARIBALL},
+    #if 0
     [BALL_SPORT]    = {gBattleAnimSpritePal_CircleImpact,   TAG_PARTICLES_SPORTBALL},
     [BALL_PARK]     = {gBattleAnimSpritePal_CircleImpact,   TAG_PARTICLES_PARKBALL},
+    #else
+    [BALL_LIGMA]    = {gBattleAnimSpritePal_CircleImpact,   TAG_PARTICLES_LIGMABALL},
+    [BALL_ROCKET]   = {gBattleAnimSpritePal_CircleImpact,   TAG_PARTICLES_ROCKETBALL},
+    #endif
     [BALL_BEAST]    = {gBattleAnimSpritePal_CircleImpact,   TAG_PARTICLES_BEASTBALL},
     [BALL_CHERISH]  = {gBattleAnimSpritePal_Particles2,     TAG_PARTICLES_CHERISHBALL},
-    [BALL_LIGMA]    = {gBattleAnimSpritePal_CircleImpact,   TAG_PARTICLES_LOVEBALL},
-    [BALL_ROCKET]   = {gBattleAnimSpritePal_CircleImpact,   TAG_PARTICLES_ULTRABALL},
 };
 
 static const union AnimCmd sAnim_RegularBall[] =
@@ -306,12 +314,15 @@ static const u8 sBallParticleAnimNums[POKEBALL_COUNT] =
     [BALL_HEAVY]   = 0,
     [BALL_DREAM]   = 5,
     [BALL_SAFARI]  = 0,
+    #if 0
     [BALL_SPORT]   = 0,
     [BALL_PARK]    = 5,
-    [BALL_BEAST]   = 5,
-    [BALL_CHERISH] = 0,
+    #else
     [BALL_LIGMA]   = 3,
     [BALL_ROCKET]  = 5,
+    #endif
+    [BALL_BEAST]   = 5,
+    [BALL_CHERISH] = 0,
 };
 
 static const TaskFunc sBallParticleAnimationFuncs[POKEBALL_COUNT] =
@@ -341,12 +352,15 @@ static const TaskFunc sBallParticleAnimationFuncs[POKEBALL_COUNT] =
     [BALL_HEAVY]   = GreatBallOpenParticleAnimation,
     [BALL_DREAM]   = UltraBallOpenParticleAnimation,
     [BALL_SAFARI]  = SafariBallOpenParticleAnimation,
+    #if 0
     [BALL_SPORT]   = UltraBallOpenParticleAnimation,
     [BALL_PARK]    = UltraBallOpenParticleAnimation,
-    [BALL_BEAST]   = UltraBallOpenParticleAnimation,
-    [BALL_CHERISH] = MasterBallOpenParticleAnimation,
+    #else
     [BALL_LIGMA]   = GreatBallOpenParticleAnimation,
     [BALL_ROCKET]  = UltraBallOpenParticleAnimation,
+    #endif
+    [BALL_BEAST]   = UltraBallOpenParticleAnimation,
+    [BALL_CHERISH] = MasterBallOpenParticleAnimation,
 };
 
 static const struct SpriteTemplate sBallParticleSpriteTemplates[POKEBALL_COUNT] =
@@ -567,6 +581,7 @@ static const struct SpriteTemplate sBallParticleSpriteTemplates[POKEBALL_COUNT] 
         .affineAnims = gDummySpriteAffineAnimTable,
         .callback = SpriteCallbackDummy,
     },
+    #if 0
     [BALL_SPORT] = {
         .tileTag = TAG_PARTICLES_SPORTBALL,
         .paletteTag = TAG_PARTICLES_SPORTBALL,
@@ -585,6 +600,26 @@ static const struct SpriteTemplate sBallParticleSpriteTemplates[POKEBALL_COUNT] 
         .affineAnims = gDummySpriteAffineAnimTable,
         .callback = SpriteCallbackDummy,
     },
+    #else
+    [BALL_LIGMA] = {
+        .tileTag = TAG_PARTICLES_LIGMABALL,
+        .paletteTag = TAG_PARTICLES_LIGMABALL,
+        .oam = &gOamData_AffineOff_ObjNormal_8x8,
+        .anims = sAnims_BallParticles,
+        .images = NULL,
+        .affineAnims = gDummySpriteAffineAnimTable,
+        .callback = SpriteCallbackDummy,
+    },
+    [BALL_ROCKET] = {
+        .tileTag = TAG_PARTICLES_ROCKETBALL,
+        .paletteTag = TAG_PARTICLES_ROCKETBALL,
+        .oam = &gOamData_AffineOff_ObjNormal_8x8,
+        .anims = sAnims_BallParticles,
+        .images = NULL,
+        .affineAnims = gDummySpriteAffineAnimTable,
+        .callback = SpriteCallbackDummy,
+    },
+    #endif
     [BALL_BEAST] = {
         .tileTag = TAG_PARTICLES_BEASTBALL,
         .paletteTag = TAG_PARTICLES_BEASTBALL,
@@ -597,24 +632,6 @@ static const struct SpriteTemplate sBallParticleSpriteTemplates[POKEBALL_COUNT] 
     [BALL_CHERISH] = {
         .tileTag = TAG_PARTICLES_CHERISHBALL,
         .paletteTag = TAG_PARTICLES_CHERISHBALL,
-        .oam = &gOamData_AffineOff_ObjNormal_8x8,
-        .anims = sAnims_BallParticles,
-        .images = NULL,
-        .affineAnims = gDummySpriteAffineAnimTable,
-        .callback = SpriteCallbackDummy,
-    },
-    [BALL_LIGMA] = {
-        .tileTag = TAG_PARTICLES_LOVEBALL,
-        .paletteTag = TAG_PARTICLES_LOVEBALL,
-        .oam = &gOamData_AffineOff_ObjNormal_8x8,
-        .anims = sAnims_BallParticles,
-        .images = NULL,
-        .affineAnims = gDummySpriteAffineAnimTable,
-        .callback = SpriteCallbackDummy,
-    },
-    [BALL_ROCKET] = {
-        .tileTag = TAG_PARTICLES_ULTRABALL,
-        .paletteTag = TAG_PARTICLES_ULTRABALL,
         .oam = &gOamData_AffineOff_ObjNormal_8x8,
         .anims = sAnims_BallParticles,
         .images = NULL,
@@ -650,12 +667,15 @@ const u16 gBallOpenFadeColors[] =
     [BALL_HEAVY] = RGB(7, 11, 20),
     [BALL_DREAM] = RGB(31, 31, 15),
     [BALL_SAFARI] = RGB(23, 30, 20),
+    #if 0
     [BALL_SPORT] = RGB(31, 31, 15),
     [BALL_PARK] = RGB(31, 31, 15),
-    [BALL_BEAST] = RGB(31, 31, 15),
-    [BALL_CHERISH] = RGB(25, 4, 3),
+    #else
     [BALL_LIGMA] = RGB(31, 19, 26),
     [BALL_ROCKET] = RGB(31, 31, 15),
+    #endif
+    [BALL_BEAST] = RGB(31, 31, 15),
+    [BALL_CHERISH] = RGB(25, 4, 3),
 };
 
 const struct SpriteTemplate gSafariBaitSpriteTemplate =

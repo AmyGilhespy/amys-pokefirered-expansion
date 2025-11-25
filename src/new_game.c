@@ -99,7 +99,7 @@ static void WarpToPlayersRoom(void)
 
 static void WarpToEscapeRoom(void)
 {
-    SetWarpDestination(MAP_GROUP(MAP_ESCAPE_ROOM), MAP_NUM(MAP_ESCAPE_ROOM), -1, 6, 6);
+    SetWarpDestination(MAP_GROUP(MAP_ESCAPE_ROOM), MAP_NUM(MAP_ESCAPE_ROOM), 0, 0, 0);
     WarpIntoMap();
 }
 
@@ -180,6 +180,10 @@ void NewGameInitData(void)
     }
     else if (gSaveBlock2Ptr->customData.gameMode == GAME_MODE_ESCAPE_ROOM)
     {
+        // Give starting items
+        AddBagItem(ITEM_POKE_DOLL,  999);
+        AddBagItem(ITEM_HM_SURF,      1);
+
         // Give starting PC items
         NewGameInitPCItemsEscapeRoom();
     }
@@ -213,6 +217,7 @@ void NewGameInitData(void)
     if (gSaveBlock2Ptr->customData.gameMode < 128)
     {
         // Shortcuts:
+        FlagSet(FLAG_SYS_B_DASH); // Gives running shoes
         FlagSet(FLAG_GOT_TEA); // Unlocks the gate houses to Saffron
         FlagSet(FLAG_HIDE_SAFFRON_ROCKETS); // Moves the Rocket blocking the gym in Saffron
         FlagClear(FLAG_HIDE_SAFFRON_CIVILIANS); // Moves the Rocket blocking the gym in Saffron
@@ -227,6 +232,12 @@ void NewGameInitData(void)
     else if (gSaveBlock2Ptr->customData.gameMode == GAME_MODE_ESCAPE_ROOM)
     {
         FlagSet(FLAG_SYS_POKEMON_GET); // Add "POKEMON" to the menu.
+
+        // Collect all the badges:
+        for (i = 0; i < NUM_BADGES; i++)
+        {
+            FlagSet(FLAG_BADGE01_GET + i);
+        }
     }
 
     // Testing/debug:

@@ -561,6 +561,7 @@ const struct Item gItemsInfo[] =
         .iconPalette = gItemIconPalette_SafariBall,
     },
 
+#if 0
     [ITEM_SPORT_BALL] =
     {
         .name = ITEM_NAME("Sport Ball"),
@@ -591,6 +592,7 @@ const struct Item gItemsInfo[] =
         .iconPic = gItemIcon_ParkBall,
         .iconPalette = gItemIconPalette_ParkBall,
     },
+#endif
 
     [ITEM_BEAST_BALL] =
     {
@@ -14746,8 +14748,18 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 50,
+        #if 1
+        .iconPic = gItemIcon_Powder,
+        .iconPalette = gItemIconPalette_ShoalSalt,
+        #else
+        #if 1
+        .iconPic = gItemIcon_SilverPowder,
+        .iconPalette = gItemIconPalette_SilverPowder,
+        #else
         .iconPic = gItemIcon_Powder,
         .iconPalette = gItemIconPalette_EnergyPowder,
+        #endif
+        #endif
     },
 
     [ITEM_PISS] =
@@ -14781,8 +14793,8 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_BAG_MENU,
         .battleUsage = EFFECT_ITEM_THROW_BALL,
         .secondaryId = BALL_LIGMA,
-        .iconPic = gItemIcon_MasterBall,
-        .iconPalette = gItemIconPalette_MasterBall,
+        .iconPic = gItemIcon_LigmaBall,
+        .iconPalette = gItemIconPalette_LigmaBall,
     },
 
     [ITEM_ROCKET_BALL] =
@@ -14791,14 +14803,29 @@ const struct Item gItemsInfo[] =
         .price = 0,
         .description = COMPOUND_STRING(
             "Team Rocket's ball that "
-            "catches a\ntrainer's "
-            "Pokémon without fail."),
+            "can even\ncatch another "
+            "trainer's Pokémon."),
         .pocket = POCKET_POKE_BALLS,
         .type = ITEM_USE_BAG_MENU,
         .battleUsage = EFFECT_ITEM_THROW_BALL,
         .secondaryId = BALL_ROCKET,
         .iconPic = gItemIcon_RocketBall,
         .iconPalette = gItemIconPalette_RocketBall,
+    },
+
+    [ITEM_MIDDLE_STONE] =
+    {
+        .name = ITEM_NAME("Middle Stone"),
+        .price = 500 /*(I_PRICE >= GEN_7) ? 3000 : 2100*/,
+        .description = sEvolutionStoneDesc,
+        .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_EVOLUTION_STONE,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
+        .effect = gItemEffect_EvoItem,
+        .flingPower = 30,
+        .iconPic = gItemIcon_MoonStone,
+        .iconPalette = gItemIconPalette_MoonStone,
     },
 
 };

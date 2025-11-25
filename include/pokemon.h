@@ -127,6 +127,7 @@ enum MonData {
     MON_DATA_EVOLUTION_TRACKER,
     MON_DATA_CUSTOM_ABILITY,
     MON_DATA_EAGER_FLAG,
+    MON_DATA_SEQUENCE_MOVES_FLAG,
 };
 
 struct PokemonSubstruct0
@@ -142,7 +143,8 @@ struct PokemonSubstruct0
     u8 friendship;
     u16 pokeball:6; // 63 balls.
     u16 nickname12:8; // 12th character of nickname.
-    u16 unused_0A:2;
+    u16 sequenceMoves:1;
+    u16 unused_0A:1;
 };
 
 struct PokemonSubstruct1
@@ -399,7 +401,7 @@ struct BattlePokemon
     /*0x16*/ u32 spAttackIV:5;
     /*0x17*/ u32 spDefenseIV:5;
     /*0x17*/ u32 eager:1; // was abilityNum : 2
-    /*0x17*/ u32 unused:1; // was abilityNum : 2
+    /*0x17*/ u32 sequenceMoves:1; // was abilityNum : 2
     /*0x18*/ s8 statStages[NUM_BATTLE_STATS];
     /*0x20*/ enum Ability ability;
     /*0x22*/ u8 types[3];
@@ -835,6 +837,8 @@ u8 GetNature(struct Pokemon *mon);
 u8 GetNatureFromPersonality(u32 personality);
 u32 GetGMaxTargetSpecies(u32 species);
 bool32 DoesMonMeetAdditionalConditions(struct Pokemon *mon, const struct EvolutionParam *params, struct Pokemon *tradePartner, u32 partyId, bool32 *canStopEvo, enum EvoState evoState);
+u16 GetMiddleStoneEvolution(u16 species);
+bool32 MiddleStoneCanEvolveSpecies(u16 species);
 u32 GetEvolutionTargetSpecies(struct Pokemon *mon, enum EvolutionMode mode, u16 evolutionItem, struct Pokemon *tradePartner, bool32 *canStopEvo, enum EvoState evoState);
 bool8 IsMonPastEvolutionLevel(struct Pokemon *mon);
 u16 NationalPokedexNumToSpecies(enum NationalDexOrder nationalNum);

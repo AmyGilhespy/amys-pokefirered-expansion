@@ -89,6 +89,9 @@ struct Pokemon
     bool eager;
     bool eager_line;
 
+    bool sequence_moves;
+    bool sequence_moves_line;
+
     struct String moves[MAX_MON_MOVES];
     int moves_n;
     int move1_line;
@@ -1584,6 +1587,14 @@ static bool parse_trainer(struct Parser *p, const struct Parsed *parsed, struct 
                 if (!token_bool(p, &value, &pokemon->eager))
                     any_error = !show_parse_error(p);
             }
+            else if (is_literal_token(&key, "Sequence Moves"))
+            {
+                if (pokemon->sequence_moves)
+                    any_error = !set_show_parse_error(p, key.location, "duplicate 'Sequence Moves'");
+                pokemon->sequence_moves_line = value.location.line;
+                if (!token_bool(p, &value, &pokemon->sequence_moves))
+                    any_error = !show_parse_error(p);
+            }
             else if (is_literal_token(&key, "Tags"))
             {
                 if (pokemon->tags_line)
@@ -2169,11 +2180,11 @@ static void fprint_trainers(const char *output_path, FILE *f, struct Parsed *par
                 fprintf(f, ",\n");
             }
 
-            if (pokemon->eager_line)
+            if (pokemon->sequence_moves_line)
             {
-                fprintf(f, "#line %d\n", pokemon->eager_line);
-                fprintf(f, "            .eager = ");
-                fprint_bool(f, pokemon->eager);
+                fprintf(f, "#line %d\n", pokemon->sequence_moves_line);
+                fprintf(f, "            .sequenceMoves = ");
+                fprint_bool(f, pokemon->sequence_moves);
                 fprintf(f, ",\n");
             }
 

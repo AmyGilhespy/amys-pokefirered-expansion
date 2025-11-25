@@ -317,6 +317,7 @@ extern const u8 gText_ReceivedItemFromPkmn[];
 extern const u8 gText_PkmnAlreadyHoldingItemSwitch[];
 extern const u8 gText_SwitchedPkmnItem[];
 extern const u8 gText_BagFullCouldNotRemoveItem[];
+extern const u8 gText_ItemStuckCouldNotRemoveItem[];
 extern const u8 gText_PkmnCantParticipate[];
 extern const u8 gText_CancelParticipation[];
 extern const u8 gText_OakThisIsListOfPokemon[];

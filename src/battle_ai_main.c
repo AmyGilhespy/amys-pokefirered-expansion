@@ -419,6 +419,56 @@ u32 BattleAI_ChooseMoveIndex(u32 battler)
         DecideTerastal(battler);
 
     chosenMoveIndex = ChooseMoveOrAction(battler);
+    if (gBattleMons[battler].sequenceMoves)
+    {
+        bool8 firstTurn = gDisableStructs[battler].isFirstTurn;
+        u8 usableMoves[MAX_MON_MOVES];
+        u8 usableCount = 0;
+
+        u16 *allMoves = GetMovesArray(battler);
+        u32 moveLimitations = gAiLogicData->moveLimitations[battler];
+
+        // Copy moves and determine usability
+        for (int i = 0; i < MAX_MON_MOVES; i++)
+        {
+            usableMoves[i] = 0;
+
+            if (allMoves[i] == MOVE_NONE || gBattleMons[battler].pp[i] < 1 || IsMoveUnusable(i, allMoves[i], moveLimitations))
+                continue;
+
+            usableMoves[i] = 1;
+            usableCount++;
+        }
+        if (firstTurn)
+        {
+            if (usableMoves[0])
+            {
+                chosenMoveIndex = 0;
+            }
+        }
+        else
+        {
+            // Look for any usable move except move 1
+            u8 altUsableCount = 0;
+            for (int i = 1; i < MAX_MON_MOVES; i++)
+                if (usableMoves[i])
+                    altUsableCount++;
+
+            // If any move except the first is usable → pick RANDOM among moves 2–4
+            if (altUsableCount > 0)
+            {
+                u8 picks[3];
+                u8 idx = 0;
+
+                for (int i = 1; i < MAX_MON_MOVES; i++)
+                    if (usableMoves[i])
+                        picks[idx++] = i;
+
+                chosenMoveIndex = picks[Random() % idx];
+                return chosenMoveIndex;
+            }
+        }
+    }
 
     if (gBattleStruct->gimmick.usableGimmick[battler] != GIMMICK_NONE)
         ReconsiderGimmick(battler, gBattlerTarget, gBattleMons[battler].moves[chosenMoveIndex]);
@@ -1739,6 +1789,8 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
                 ADJUST_SCORE(-10);
             else if (GetActiveGimmick(battlerDef) == GIMMICK_DYNAMAX)
                 ADJUST_SCORE(-10);
+            else
+                ADJUST_SCORE(4); // TODO: Tune this @@@HERE@@@: 10 was too high, 0 was too low
             break;
         case EFFECT_MIST:
             if (gSideStatuses[GetBattlerSide(battlerAtk)] & SIDE_STATUS_MIST
@@ -2238,11 +2290,14 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
             //TODO
             break;
         case EFFECT_LOCK_ON:
-            if (gBattleMons[battlerDef].volatiles.lockOn
+            if (gBattleMons[battlerAtk].volatiles.lockOn // Amy: Added this first test to prevent double-lock-on
+              || gBattleMons[battlerDef].volatiles.lockOn
               || aiData->abilities[battlerAtk] == ABILITY_NO_GUARD
               || aiData->abilities[battlerDef] == ABILITY_NO_GUARD
               || DoesPartnerHaveSameMoveEffect(BATTLE_PARTNER(battlerAtk), battlerDef, move, aiData->partnerMove))
                 ADJUST_SCORE(-10);
+            else if (HasMoveWithEffect(battlerAtk, EFFECT_OHKO))
+                ADJUST_SCORE(4); // TODO: Tune this @@@HERE@@@: Untuned, starting at 4
             break;
         case EFFECT_LASER_FOCUS:
             if (gBattleMons[battlerDef].volatiles.laserFocus)

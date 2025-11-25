@@ -35,7 +35,11 @@ const struct ObjectEventGraphicsInfo gPokeballGraphics[POKEBALL_COUNT] = {
     POKEBALL_GFX_INFO(HEAL),
     POKEBALL_GFX_INFO(QUICK),
     POKEBALL_GFX_INFO(CHERISH),
+    #if 0
     POKEBALL_GFX_INFO(PARK),
+    #else
+    POKEBALL_GFX_INFO(ROCKET),
+    #endif
     // Gen II/Johto Apricorn pokeballs
     POKEBALL_GFX_INFO(FAST),
     POKEBALL_GFX_INFO(LEVEL),
@@ -44,7 +48,11 @@ const struct ObjectEventGraphicsInfo gPokeballGraphics[POKEBALL_COUNT] = {
     POKEBALL_GFX_INFO(LOVE),
     POKEBALL_GFX_INFO(FRIEND),
     POKEBALL_GFX_INFO(MOON),
+    #if 0
     POKEBALL_GFX_INFO(SPORT),
+    #else
+    POKEBALL_GFX_INFO(LIGMA),
+    #endif
     // Gen V
     POKEBALL_GFX_INFO(DREAM),
     // Gen VII

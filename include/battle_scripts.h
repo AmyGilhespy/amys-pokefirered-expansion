@@ -30,6 +30,7 @@ extern const u8 BattleScript_FaintAttackerRanAway[];
 extern const u8 BattleScript_FaintTargetRanAway[];
 extern const u8 BattleScript_GiveExp[];
 extern const u8 BattleScript_HandleFaintedMon[];
+extern const u8 BattleScript_FaintedMonSendOutNew[];
 extern const u8 BattleScript_LocalTrainerBattleWon[];
 extern const u8 BattleScript_LocalTwoTrainersDefeated[];
 extern const u8 BattleScript_LocalBattleWonLoseTexts[];
@@ -262,6 +263,7 @@ extern const u8 BattleScript_SuccessBallThrow[];
 extern const u8 BattleScript_WallyBallThrow[];
 extern const u8 BattleScript_ShakeBallThrow[];
 extern const u8 BattleScript_TrainerBallBlock[];
+extern const u8 BattleScript_TrainerPokemonStolen[];
 extern const u8 BattleScript_RunByUsingItem[];
 extern const u8 BattleScript_ActionWatchesCarefully[];
 extern const u8 BattleScript_ActionGetNear[];
@@ -887,5 +889,11 @@ extern const u8 BattleScript_TooScaredToMove[];
 extern const u8 BattleScript_GhostBallDodge[];
 extern const u8 BattleScript_OldMan_Pokedude_CaughtMessage[];
 extern const u8 BattleScript_SilphScopeUnveiled[];
+
+// Amy custom
+extern const u8 BattleScript_RocketBallDodge[];
+extern const u8 BattleScript_EscapeRoomFriendBallDodge[];
+extern const u8 BattleScript_EscapeRoomNonFriendBallDodge[];
+extern const u8 BattleScript_EscapeRoomFriendBallDodgeRepeat[];
 
 #endif // GUARD_BATTLE_SCRIPTS_H

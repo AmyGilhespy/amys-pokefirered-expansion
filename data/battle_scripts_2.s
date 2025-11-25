@@ -25,6 +25,30 @@ BattleScript_GhostBallDodge::
 	waitmessage B_WAIT_TIME_LONG
 	finishaction
 
+BattleScript_RocketBallDodge::
+	waitmessage B_WAIT_TIME_LONG
+	printstring STRINGID_ITDODGEDBALLROCKET
+	waitmessage B_WAIT_TIME_LONG
+	finishaction
+
+BattleScript_EscapeRoomFriendBallDodge::
+	waitmessage B_WAIT_TIME_LONG
+	printstring STRINGID_ITDODGEDBALLFRIEND
+	waitmessage B_WAIT_TIME_LONG
+	finishaction
+
+BattleScript_EscapeRoomNonFriendBallDodge::
+	waitmessage B_WAIT_TIME_LONG
+	printstring STRINGID_ITDODGEDBALLNONFRIEND
+	waitmessage B_WAIT_TIME_LONG
+	finishaction
+
+BattleScript_EscapeRoomFriendBallDodgeRepeat::
+	waitmessage B_WAIT_TIME_LONG
+	printstring STRINGID_ITDODGEDBALLFRIENDREPEAT
+	waitmessage B_WAIT_TIME_LONG
+	finishaction
+
 @ pokemerald
 	.align 2
 gBattlescriptsForUsingItem::
@@ -226,7 +250,12 @@ BattleScript_SafariBallThrow::
 BattleScript_SuccessBallThrow::
 	setbyte sMON_CAUGHT, TRUE
 	incrementgamestat GAME_STAT_POKEMON_CAPTURES
+	@jumpifbattletype BATTLE_TYPE_TRAINER, BattleScript_SuccessBallThrowNoMusic
 	printstring STRINGID_GOTCHAPKMNCAUGHTPLAYER
+	goto BattleScript_SuccessBallThrowPostMessage
+BattleScript_SuccessBallThrowNoMusic::
+	printstring STRINGID_GOTCHAPKMNCAUGHTPLAYERNOMUSIC
+BattleScript_SuccessBallThrowPostMessage::
 	jumpifbyte CMP_NOT_EQUAL, sEXP_CATCH, TRUE, BattleScript_TryPrintCaughtMonInfo
 	setbyte sGIVEEXP_STATE, 0
 	getexp BS_TARGET
@@ -250,8 +279,11 @@ BattleScript_TryNicknameCaughtMon::
 BattleScript_GiveCaughtMonEnd::
 	givecaughtmon BattleScript_SuccessBallThrowEnd
 BattleScript_SuccessBallThrowEnd::
+	@jumpifbattletype BATTLE_TYPE_TRAINER, BattleScript_SuccessBallThrowEndTrainer
 	setbyte gBattleOutcome, B_OUTCOME_CAUGHT
 	finishturn
+BattleScript_SuccessBallThrowEndTrainer::
+	finishaction
 
 BattleScript_WallyBallThrow::
 	printstring STRINGID_GOTCHAPKMNCAUGHTWALLY
@@ -276,6 +308,21 @@ BattleScript_TrainerBallBlock::
 	printstring STRINGID_DONTBEATHIEF
 	waitmessage B_WAIT_TIME_LONG
 	finishaction
+
+BattleScript_TrainerPokemonStolen::
+	waitmessage B_WAIT_TIME_LONG
+	trainerslidein BS_TARGET
+	waitstate
+	printstring STRINGID_TRAINERPKMNSTOLEN1
+	waitmessage B_WAIT_TIME_LONG
+	printstring STRINGID_TRAINERPKMNSTOLEN2
+	waitmessage B_WAIT_TIME_LONG
+	trainerslideout BS_TARGET
+	waitstate
+	printstring STRINGID_PKMNSENTTOPC
+	waitmessage B_WAIT_TIME_LONG
+	callnative BS_AmyRocketBallSwapTurnAndResumeBGM
+	goto BattleScript_HandleFaintedMon
 
 BattleScript_RunByUsingItem::
 	playse SE_FLEE

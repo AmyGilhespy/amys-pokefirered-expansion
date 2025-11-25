@@ -76,6 +76,8 @@ static u16 GetBattlerPokeballItemId(u8 battler);
 #define GFX_TAG_PARK_BALL    55025
 #define GFX_TAG_BEAST_BALL   55026
 #define GFX_TAG_CHERISH_BALL 55027
+#define GFX_TAG_LIGMA_BALL   55028
+#define GFX_TAG_ROCKET_BALL  55029
 
 const struct CompressedSpriteSheet gBallSpriteSheets[POKEBALL_COUNT] =
 {
@@ -103,8 +105,13 @@ const struct CompressedSpriteSheet gBallSpriteSheets[POKEBALL_COUNT] =
     [BALL_HEAVY]   = {gBallGfx_Heavy,   384, GFX_TAG_HEAVY_BALL},
     [BALL_DREAM]   = {gBallGfx_Dream,   384, GFX_TAG_DREAM_BALL},
     [BALL_SAFARI]  = {gBallGfx_Safari,  384, GFX_TAG_SAFARI_BALL},
+    #if 0
     [BALL_SPORT]   = {gBallGfx_Sport,   384, GFX_TAG_SPORT_BALL},
     [BALL_PARK]    = {gBallGfx_Park,    384, GFX_TAG_PARK_BALL},
+    #else
+    [BALL_LIGMA]   = {gBallGfx_Ligma,   384, GFX_TAG_LIGMA_BALL},
+    [BALL_ROCKET]  = {gBallGfx_Rocket,  384, GFX_TAG_ROCKET_BALL},
+    #endif
     [BALL_BEAST]   = {gBallGfx_Beast,   384, GFX_TAG_BEAST_BALL},
     [BALL_CHERISH] = {gBallGfx_Cherish, 384, GFX_TAG_CHERISH_BALL},
 };
@@ -135,8 +142,13 @@ const struct SpritePalette gBallSpritePalettes[POKEBALL_COUNT] =
     [BALL_HEAVY]   = {gBallPal_Heavy,   GFX_TAG_HEAVY_BALL},
     [BALL_DREAM]   = {gBallPal_Dream,   GFX_TAG_DREAM_BALL},
     [BALL_SAFARI]  = {gBallPal_Safari,  GFX_TAG_SAFARI_BALL},
+    #if 0
     [BALL_SPORT]   = {gBallPal_Sport,   GFX_TAG_SPORT_BALL},
     [BALL_PARK]    = {gBallPal_Park,    GFX_TAG_PARK_BALL},
+    #else
+    [BALL_LIGMA]   = {gBallPal_Ligma,   GFX_TAG_LIGMA_BALL},
+    [BALL_ROCKET]  = {gBallPal_Rocket,  GFX_TAG_ROCKET_BALL},
+    #endif
     [BALL_BEAST]   = {gBallPal_Beast,   GFX_TAG_BEAST_BALL},
     [BALL_CHERISH] = {gBallPal_Cherish, GFX_TAG_CHERISH_BALL},
 };
@@ -496,6 +508,7 @@ const struct SpriteTemplate gBallSpriteTemplates[POKEBALL_COUNT] =
         .affineAnims = sAffineAnim_BallRotate,
         .callback = SpriteCB_BallThrow,
     },
+    #if 0
     [BALL_SPORT] =
     {
         .tileTag = GFX_TAG_SPORT_BALL,
@@ -516,6 +529,28 @@ const struct SpriteTemplate gBallSpriteTemplates[POKEBALL_COUNT] =
         .affineAnims = sAffineAnim_BallRotate,
         .callback = SpriteCB_BallThrow,
     },
+    #else
+    [BALL_LIGMA] =
+    {
+        .tileTag = GFX_TAG_LIGMA_BALL,
+        .paletteTag = GFX_TAG_LIGMA_BALL,
+        .oam = &sBallOamData,
+        .anims = sBallAnimSequences,
+        .images = NULL,
+        .affineAnims = sAffineAnim_BallRotate,
+        .callback = SpriteCB_BallThrow,
+    },
+    [BALL_ROCKET] =
+    {
+        .tileTag = GFX_TAG_ROCKET_BALL,
+        .paletteTag = GFX_TAG_ROCKET_BALL,
+        .oam = &sBallOamData,
+        .anims = sBallAnimSequences,
+        .images = NULL,
+        .affineAnims = sAffineAnim_BallRotate,
+        .callback = SpriteCB_BallThrow,
+    },
+    #endif
     [BALL_BEAST] =
     {
         .tileTag = GFX_TAG_BEAST_BALL,

@@ -3054,6 +3054,9 @@ u32 GetBoxMonData3(struct BoxPokemon *boxMon, s32 field, u8 *data)
         case MON_DATA_EAGER_FLAG:
             retVal = GetSubstruct3(boxMon)->eager;
             break;
+        case MON_DATA_SEQUENCE_MOVES_FLAG:
+            retVal = GetSubstruct0(boxMon)->sequenceMoves;
+            break;
         default:
             break;
         }
@@ -3478,6 +3481,9 @@ void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const void *dataArg)
         }
         case MON_DATA_EAGER_FLAG:
             SET8(GetSubstruct3(boxMon)->eager);
+            break;
+        case MON_DATA_SEQUENCE_MOVES_FLAG:
+            SET8(GetSubstruct0(boxMon)->sequenceMoves);
             break;
         default:
             break;
@@ -4003,6 +4009,7 @@ void PokemonToBattleMon(struct Pokemon *src, struct BattlePokemon *dst)
     dst->isShiny = IsMonShiny(src);
     dst->ability = dst->originalAbility = GetMonAbility(src);
     dst->eager = GetMonData(src, MON_DATA_EAGER_FLAG, NULL);
+    dst->sequenceMoves = GetMonData(src, MON_DATA_SEQUENCE_MOVES_FLAG, NULL);
     GetMonData(src, MON_DATA_NICKNAME, nickname);
     StringCopy_Nickname(dst->nickname, nickname);
     GetMonData(src, MON_DATA_OT_NAME, dst->otName);
@@ -4363,11 +4370,26 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
                     case 7: // ITEM4_EVO_STONE
                         {
                             bool32 canStopEvo = TRUE;
-                            u32 targetSpecies = GetEvolutionTargetSpecies(mon, EVO_MODE_ITEM_USE, item, NULL, &canStopEvo, CHECK_EVO);
+                            u32 targetSpecies;
+                            if (item == ITEM_MIDDLE_STONE)
+                            {
+                                targetSpecies = GetEvolutionTargetSpecies(mon, EVO_MODE_NORMAL, item, NULL, &canStopEvo, CHECK_EVO);
+                            }
+                            else
+                            {
+                                targetSpecies = GetEvolutionTargetSpecies(mon, EVO_MODE_ITEM_USE, item, NULL, &canStopEvo, CHECK_EVO);
+                            }
 
                             if (targetSpecies != SPECIES_NONE)
                             {
-                                GetEvolutionTargetSpecies(mon, EVO_MODE_ITEM_USE, item, NULL, &canStopEvo, DO_EVO);
+                                if (item == ITEM_MIDDLE_STONE)
+                                {
+                                    GetEvolutionTargetSpecies(mon, EVO_MODE_NORMAL, item, NULL, &canStopEvo, DO_EVO);
+                                }
+                                else
+                                {
+                                    GetEvolutionTargetSpecies(mon, EVO_MODE_ITEM_USE, item, NULL, &canStopEvo, DO_EVO);
+                                }
                                 // already called in item use special (differs from emerald)
                                 // BeginEvolutionScene(mon, targetSpecies, canStopEvo, partyIndex);
                                 return FALSE;
@@ -5087,6 +5109,55 @@ bool32 DoesMonMeetAdditionalConditions(struct Pokemon *mon, const struct Evoluti
     return TRUE;
 }
 
+u16 GetMiddleStoneEvolution(u16 species)
+{
+    s32 i;
+    const struct Evolution *evolutions = gSpeciesInfo[species].evolutions;
+    u16 levelUpTarget = SPECIES_NONE;
+
+    if (evolutions == NULL)
+        return SPECIES_NONE;
+
+    // 1. Find the level-up evolution target
+    for (i = 0; evolutions[i].method != EVOLUTIONS_END; i++)
+    {
+        if (evolutions[i].method == EVO_LEVEL)
+        {
+            levelUpTarget = SanitizeSpeciesId(evolutions[i].targetSpecies);
+            break;
+        }
+    }
+
+    if (levelUpTarget == SPECIES_NONE)
+        return SPECIES_NONE; // No level-up evo → Middle Stone can't do anything
+
+    // 2. Check if target has further evolutions
+    bool32 canEvolveFurther = FALSE;
+    const struct Evolution *evosNext = gSpeciesInfo[levelUpTarget].evolutions;
+
+    if (evosNext == NULL)
+        return SPECIES_NONE;
+
+    for (i = 0; evosNext[i].method != EVOLUTIONS_END; i++)
+    {
+        if (evosNext[i].method != EVO_NONE)
+        {
+            canEvolveFurther = TRUE;
+            break;
+        }
+    }
+
+    if (!canEvolveFurther)
+        return SPECIES_NONE;  // Target is final stage
+
+    return levelUpTarget;  // Allowed mid-stage evolution
+}
+
+bool32 MiddleStoneCanEvolveSpecies(u16 species)
+{
+    return GetMiddleStoneEvolution(species) != SPECIES_NONE;
+}
+
 u32 GetEvolutionTargetSpecies(struct Pokemon *mon, enum EvolutionMode mode, u16 evolutionItem, struct Pokemon *tradePartner, bool32 *canStopEvo, enum EvoState evoState)
 {
     int i;
@@ -5129,7 +5200,7 @@ u32 GetEvolutionTargetSpecies(struct Pokemon *mon, enum EvolutionMode mode, u16 
             switch (evolutions[i].method)
             {
             case EVO_LEVEL:
-                if (evolutions[i].param <= level)
+                if (evolutions[i].param <= level || (evolutionItem == ITEM_MIDDLE_STONE && MiddleStoneCanEvolveSpecies(species)))
                     conditionsMet = TRUE;
                 break;
             case EVO_LEVEL_BATTLE_ONLY:
@@ -7694,4 +7765,43 @@ u16 GetFirstPartnerMove(u16 species)
         default:
             return MOVE_NONE;
     }
+}
+
+bool8 EscapeRoomRemoveAllButRaltsLine(void)
+{
+    u16 species;
+    u8 i;
+    s8 raltsSlot = -1;
+
+    // Find Ralts in the party
+    for (i = 0; i < gPlayerPartyCount; i++)
+    {
+        species = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES);
+        if (species == SPECIES_RALTS || species == SPECIES_KIRLIA || species == SPECIES_GARDEVOIR || species == SPECIES_GALLADE)
+        {
+            raltsSlot = i;
+            break;
+        }
+    }
+
+    // If the player somehow has no Ralts, do nothing (failsafe)
+    if (raltsSlot < 0)
+        return FALSE;
+
+    // Copy the Ralts into slot 0 if it isn't already
+    if (raltsSlot != 0)
+        gPlayerParty[0] = gPlayerParty[raltsSlot];
+
+    for (i = 1; i < PARTY_SIZE; i++)
+        ZeroMonData(&gPlayerParty[i]);
+
+    // Set party count to 1
+    gPlayerPartyCount = 1;
+
+    return FALSE; // return FALSE so the script continues immediately
+}
+
+void EscapeRoomCheckIfFullTeamOf6InParty(void)
+{
+    gSpecialVar_Result = gPlayerPartyCount == 6;
 }
