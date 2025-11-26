@@ -158,6 +158,8 @@ CeladonCity_DepartmentStore_5F_Vitamins::
 	.2byte ITEM_ZINC
 	.2byte ITEM_CARBOS
 
+	.2byte ITEM_FRESH_START_MOCHI
+
 	.2byte ITEM_IV_UP_HP
 	.2byte ITEM_IV_UP_ATK
 	.2byte ITEM_IV_UP_DEF
