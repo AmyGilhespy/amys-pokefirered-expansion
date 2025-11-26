@@ -73,7 +73,7 @@
 #include "load_save.h"
 #include "field_weather.h"
 #include "constants/weather.h"
-#include "constants/game_modes.h"
+#include "game_modes.h"
 #include "gba/isagbprint.h"
 
 // table to avoid ugly powing on gba (courtesy of doesnt)
@@ -1498,7 +1498,7 @@ static void AccuracyCheck(bool32 recalcDragonDarts, const u8 *nextInstr, const u
                                             holdEffectDef);
 
             bool32 missByAccuracy = !RandomPercentage(RNG_ACCURACY, accuracy);
-            if (gSaveBlock2Ptr->customData.gameMode == GAME_MODE_ESCAPE_ROOM)
+            if (GameModeIsDeterministic())
             {
                 missByAccuracy = FALSE;
             }
@@ -1802,7 +1802,7 @@ static void Cmd_critcalc(void)
                 critNum = 1;
                 critDen = GetCriticalHitOdds(gBattleStruct->critChance[battlerDef]);
             }
-            if (gSaveBlock2Ptr->customData.gameMode == GAME_MODE_ESCAPE_ROOM)
+            if (GameModeIsDeterministic())
             {
                 if ((u32) critNum * 2 >= critDen)
                 {
@@ -4331,7 +4331,7 @@ static void Cmd_tryfaintmon(void)
             {
                 faintScript = BattleScript_FaintAttackerRanAway;
             }
-            else if (gSaveBlock2Ptr->customData.gameMode > 1 && gSaveBlock2Ptr->customData.gameMode < 128) // Nuzlocke mode
+            else if (GameModeFaintedPokemonDie()) // Nuzlocke mode
             {
                 faintScript = BattleScript_FaintAttackerDied;
             }
@@ -4363,7 +4363,7 @@ static void Cmd_tryfaintmon(void)
             {
                 faintScript = BattleScript_FaintTargetRanAway;
             }
-            else if (gSaveBlock2Ptr->customData.gameMode > 1 && gSaveBlock2Ptr->customData.gameMode < 128) // Nuzlocke mode
+            else if (GameModeFaintedPokemonDie()) // Nuzlocke mode
             {
                 faintScript = BattleScript_FaintTargetDied;
             }
@@ -9821,7 +9821,7 @@ static void Cmd_setprotectlike(void)
 
     TryResetProtectUseCounter(gBattlerAttacker);
 
-    if (gSaveBlock2Ptr->customData.gameMode == GAME_MODE_ESCAPE_ROOM)
+    if (GameModeIsDeterministic())
     {
         // If protectUses > 0, a Protect-like move succeeded last turn.
         // In Escape Room mode, *any consecutive use must always fail.*
@@ -14064,7 +14064,7 @@ static void Cmd_handleballthrow(void)
             }
             else if (ballId == BALL_ROCKET)
             {
-                if (gSaveBlock2Ptr->customData.gameMode == GAME_MODE_ESCAPE_ROOM)
+                if (GameModeStandardizesStolenPokemonLevelsTo20())
                 {
                     u32 level = 20;
                     SetMonData(caughtMon, MON_DATA_LEVEL, &level);
@@ -14120,7 +14120,7 @@ static void Cmd_handleballthrow(void)
                 maxShakes = BALL_3_SHAKES_SUCCESS;
             }
 
-            if (ballId == BALL_MASTER || gSaveBlock2Ptr->customData.gameMode == GAME_MODE_ESCAPE_ROOM)
+            if (ballId == BALL_MASTER || GameModeAllBallsAreMasterBalls())
             {
                 shakes = maxShakes;
             }
@@ -14183,7 +14183,7 @@ static void Cmd_handleballthrow(void)
                 }
                 else if (ballId == BALL_ROCKET)
                 {
-                    if (gSaveBlock2Ptr->customData.gameMode == GAME_MODE_ESCAPE_ROOM)
+                    if (GameModeStandardizesStolenPokemonLevelsTo20())
                     {
                         u32 level = 20;
                         SetMonData(caughtMon, MON_DATA_LEVEL, &level);

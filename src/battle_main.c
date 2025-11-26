@@ -83,7 +83,7 @@
 #include "field_specials.h"
 #include "mail.h"
 #include "mail_trainer.h"
-#include "constants/game_modes.h"
+#include "game_modes.h"
 #include "gba/isagbprint.h"
 
 extern const struct BgTemplate gBattleBgTemplates[];
@@ -1982,6 +1982,34 @@ void CustomTrainerPartyAssignMoves(struct Pokemon *mon, const struct TrainerMon 
     }
 }
 
+static void ApplyPPMaxToMove(struct Pokemon *mon, u8 moveIndex)
+{
+    u32 dataUnsigned;
+    u32 temp2;
+    u16 move = GetMonData(mon, MON_DATA_MOVE1 + moveIndex, NULL);
+    if (move == MOVE_NONE)
+    {
+        return;
+    }
+
+    u32 ppBonuses = GetMonData(mon, MON_DATA_PP_BONUSES, NULL);
+    dataUnsigned = (ppBonuses & gPPUpGetMask[moveIndex]) >> (moveIndex * 2);
+    temp2 = CalculatePPWithBonus(move, ppBonuses, moveIndex);
+
+    // Check if 3 PP Ups have been applied already, and that the move has a total PP of at least 5 (excludes Sketch)
+    if (dataUnsigned < 3 && temp2 >= 5)
+    {
+        dataUnsigned = ppBonuses;
+        dataUnsigned &= gPPUpClearMask[moveIndex];
+        dataUnsigned += gPPUpAddValues[moveIndex] * 3; // Apply 3 PP Ups (max)
+
+        SetMonData(mon, MON_DATA_PP_BONUSES, &dataUnsigned);
+        dataUnsigned = CalculatePPWithBonus(move, dataUnsigned, moveIndex) - temp2;
+        dataUnsigned = GetMonData(mon, MON_DATA_PP1 + moveIndex, NULL) + dataUnsigned;
+        SetMonData(mon, MON_DATA_PP1 + moveIndex, &dataUnsigned);
+    }
+}
+
 u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer *trainer, bool32 firstTrainer, u32 battleTypeFlags, u16 trainerId)
 {
     u32 personalityValue;
@@ -2076,13 +2104,13 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
             thisSeed |= i;
             randomSpecies = originalSpecies = partyData[monIndex].species;
             givePreassignedMoves = TRUE;
-            if (gSaveBlock2Ptr->customData.gameMode == GAME_MODE_ESCAPE_ROOM) { }
+            if (GameModeHasEntirelyHandCraftedBattles()) { }
             else if (trainer->trainerClass == TRAINER_CLASS_LEADER && (
                     trainer->trainerPic == TRAINER_PIC_LEADER_SABRINA ? (i < 2 || i == 5) : i < 3 )) { } // Comparing the pic ID is way simpler than comparing the name.
             else if (trainer->trainerClass == TRAINER_CLASS_LEADER && trainer->trainerPic == TRAINER_PIC_LEADER_GIOVANNI) { } // Comparing the pic ID is way simpler than comparing the name.
             else if (trainer->trainerClass == TRAINER_CLASS_RIVAL_EARLY && monsCount == 1) // Oak's Lab
             {
-                givePreassignedMoves = gSaveBlock2Ptr->customData.gameMode > 1 && gSaveBlock2Ptr->customData.gameMode < 128 ? TRUE : FALSE; // Nuzlocke mode or not
+                givePreassignedMoves = GameModeFirstRivalBattleIsRigged() ? TRUE : FALSE; // Nuzlocke mode or not
                 randomSpecies = GetStarterSpeciesRival();
                 if (randomSpecies == SPECIES_NONE)
                 {
@@ -2218,6 +2246,16 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
             SetMonData(&party[i], MON_DATA_ABILITY_NUM, &abilityNum);
             SetMonData(&party[i], MON_DATA_CUSTOM_ABILITY, &customAbility);
             SetMonData(&party[i], MON_DATA_FRIENDSHIP, &(partyData[monIndex].friendship));
+            if (trainer->trainerClass == TRAINER_CLASS_ROM_HACKER
+                    || trainer->trainerClass == TRAINER_CLASS_ULTIMATE_CUTIE
+                    || trainer->trainerClass == TRAINER_CLASS_CHAMPION
+                    || GameModeHasEntirelyPPMaxedMoves())
+            {
+                ApplyPPMaxToMove(&party[i], 0);
+                ApplyPPMaxToMove(&party[i], 1);
+                ApplyPPMaxToMove(&party[i], 2);
+                ApplyPPMaxToMove(&party[i], 3);
+            }
             if (partyData[monIndex].ball != ITEM_NONE)
             {
                 ball = partyData[monIndex].ball;
@@ -3371,7 +3409,7 @@ const u8* FaintClearSetData(u32 battler)
         }
     }
 
-    if (gSaveBlock2Ptr->customData.gameMode > 1 && gSaveBlock2Ptr->customData.gameMode < 128) // Nuzlocke mode
+    if (GameModeFaintedPokemonDie()) // Nuzlocke mode
     {
         gBattleMons[battler].status1 = STATUS1_DEAD;
     }

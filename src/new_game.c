@@ -33,7 +33,7 @@
 #include "save.h"
 #include "rtc.h"
 #include "random_encounters.h"
-#include "constants/game_modes.h"
+#include "game_modes.h"
 #include "constants/species.h"
 
 // this file's functions
@@ -61,7 +61,7 @@ void CopyTrainerId(u8 *dst, u8 *src)
 
 static void InitPlayerTrainerId(void)
 {
-    if (gSaveBlock2Ptr->customData.gameMode == GAME_MODE_ESCAPE_ROOM)
+    if (GameModeHasStaticPlayerTrainerID())
     {
         SetTrainerId(42069, gSaveBlock2Ptr->playerTrainerId);
         return;
@@ -148,7 +148,7 @@ void NewGameInitData(void)
     InitEventData();
     InitTimeBasedEvents(); // remove if wallclock
     ResetFameChecker();
-    if (gSaveBlock2Ptr->customData.gameMode < 128)
+    if (GameModeStartWith3000Money())
     {
         SetMoney(&gSaveBlock1Ptr->money, 3000);
     }
@@ -169,16 +169,18 @@ void NewGameInitData(void)
     gSaveBlock1Ptr->registeredItem = 0;
     ClearBag();
 
-    if (gSaveBlock2Ptr->customData.gameMode < 128)
+    if (GameModeStartWithStandardQoLItems())
     {
         // Give starting items
         AddBagItem(ITEM_RARE_CANDY, 999);
         AddBagItem(ITEM_MAX_REPEL, 999);
-
+    }
+    if (GameModeStartWithStandardPCItems())
+    {
         // Give starting PC items
         NewGameInitPCItems();
     }
-    else if (gSaveBlock2Ptr->customData.gameMode == GAME_MODE_ESCAPE_ROOM)
+    if (gSaveBlock2Ptr->customData.gameMode == GAME_MODE_ESCAPE_ROOM)
     {
         // Give starting items
         AddBagItem(ITEM_POKE_DOLL,  999);
@@ -195,7 +197,7 @@ void NewGameInitData(void)
     ResetMiniGamesResults();
     ClearMysteryGift();
     SetAllRenewableItemFlags();
-    if (gSaveBlock2Ptr->customData.gameMode < 128)
+    if (GameModeSpawnInPalletTown())
     {
         WarpToPlayersRoom();
     }
@@ -208,16 +210,19 @@ void NewGameInitData(void)
     ResetTrainerTowerResults();
     ResetItemFlags();
     ResetDexNav();
-    if (gSaveBlock2Ptr->customData.gameMode < 128)
+    if (GameModeHasRandomWildEncounters())
     {
         RandomEncounters_Init();
         RandomEncounters_FillAllWithRandom();
     }
 
-    if (gSaveBlock2Ptr->customData.gameMode < 128)
+    if (GameModeStartWithDash())
+    {
+        FlagSet(FLAG_SYS_B_DASH); // Gives running shoes
+    }
+    if (GameModeStartWithStandardQoLFlags())
     {
         // Shortcuts:
-        FlagSet(FLAG_SYS_B_DASH); // Gives running shoes
         FlagSet(FLAG_GOT_TEA); // Unlocks the gate houses to Saffron
         FlagSet(FLAG_HIDE_SAFFRON_ROCKETS); // Moves the Rocket blocking the gym in Saffron
         FlagClear(FLAG_HIDE_SAFFRON_CIVILIANS); // Moves the Rocket blocking the gym in Saffron
@@ -229,10 +234,13 @@ void NewGameInitData(void)
         FlagSet(FLAG_HIDE_POKEMON_MANSION_B1F_SECRET_KEY); // Unlocks the gym in Cinnabar
         FlagSet(FLAG_HIDE_CERULEAN_CAVE_GUARD); // Unlocks the Cerulean Cave from the start (once you can surf)
     }
-    else if (gSaveBlock2Ptr->customData.gameMode == GAME_MODE_ESCAPE_ROOM)
+
+    if (GameModeStartsWithPokemonMenuItem())
     {
         FlagSet(FLAG_SYS_POKEMON_GET); // Add "POKEMON" to the menu.
-
+    }
+    if (GameModeStartsWithAll8Badges())
+    {
         // Collect all the badges:
         for (i = 0; i < NUM_BADGES; i++)
         {

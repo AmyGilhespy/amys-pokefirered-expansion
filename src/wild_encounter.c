@@ -22,7 +22,7 @@
 #include "constants/items.h"
 #include "constants/weather.h"
 #include "random_encounters.h"
-#include "constants/game_modes.h"
+#include "game_modes.h"
 #include "constants/random_encounters.h"
 #include "debug.h"
 #include "gba/isagbprint.h"
@@ -411,7 +411,7 @@ void CreateWildMon(u16 species, u8 level, u8 unownSlot)
 
     regionId = gMapHeader.regionMapSectionId;
     slotIndex = Random() % RANDOM_ENCOUNTER_SLOTS_PER_REGION;
-    if (gSaveBlock2Ptr->customData.gameMode != GAME_MODE_ESCAPE_ROOM)
+    if (GameModeHasRandomWildEncounters())
     {
         overriddenSpecies = RandomEncounters_GetSpeciesForRegionSlot(regionId, slotIndex);
     }

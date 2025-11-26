@@ -66,6 +66,7 @@
 #include "constants/union_room.h"
 #include "constants/weather.h"
 #include "wild_encounter.h"
+#include "game_modes.h"
 #include "gba/isagbprint.h"
 
 #define FRIENDSHIP_EVO_THRESHOLD ((P_FRIENDSHIP_EVO_THRESHOLD >= GEN_8) ? 160 : 220)
@@ -7481,7 +7482,7 @@ void HealPokemon(struct Pokemon *mon)
 
     hp = GetMonData(mon, MON_DATA_HP);
     status = GetMonData(mon, MON_DATA_STATUS);
-    if ((hp < 1 || status == STATUS1_DEAD) && gSaveBlock2Ptr->customData.gameMode > 1 && gSaveBlock2Ptr->customData.gameMode < 128) // Nuzlocke mode
+    if (((hp < 1 && GameModeFaintedPokemonDie()) || status == STATUS1_DEAD) && GameModeCannotReviveDeadPokemon()) // Nuzlocke mode
     {
         if (hp > 0)
         {

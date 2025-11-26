@@ -2750,7 +2750,7 @@ void GetGameMode(void)
 void SetGameMode(void)
 {
     gSaveBlock2Ptr->customData.gameMode = (u8) VarGet(VAR_TEMP_1);
-    MgbaPrintf(MGBA_LOG_WARN, "gSaveBlock2Ptr->customData.gameMode = %d", gSaveBlock2Ptr->customData.gameMode);
+    //MgbaPrintf(MGBA_LOG_WARN, "gSaveBlock2Ptr->customData.gameMode = %d", gSaveBlock2Ptr->customData.gameMode);
 }
 
 void RemapPickupItem(void)

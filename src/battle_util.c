@@ -53,7 +53,7 @@
 #include "constants/weather.h"
 #include "constants/pokemon.h"
 #include "mail_trainer.h"
-#include "constants/game_modes.h"
+#include "game_modes.h"
 #include "gba/isagbprint.h"
 
 /*
@@ -10157,7 +10157,7 @@ static inline s32 DoMoveDamageCalcVars(struct DamageContext *ctx)
     DAMAGE_APPLY_MODIFIER(GetCriticalModifier(ctx->isCrit));
     DAMAGE_APPLY_MODIFIER(GetGlaiveRushModifier(ctx->battlerDef));
 
-    if (ctx->randomFactor && gSaveBlock2Ptr->customData.gameMode != GAME_MODE_ESCAPE_ROOM)
+    if (ctx->randomFactor && !GameModeIsDeterministic())
     {
         dmg *= DMG_ROLL_PERCENT_HI - RandomUniform(RNG_DAMAGE_MODIFIER, 0, DMG_ROLL_PERCENT_HI - DMG_ROLL_PERCENT_LO);
         dmg /= 100;
@@ -11378,7 +11378,7 @@ void TryRestoreHeldItems(void)
 {
     u32 i;
     bool32 returnNPCItems = B_RETURN_STOLEN_NPC_ITEMS >= GEN_5 && gBattleTypeFlags & BATTLE_TYPE_TRAINER;
-    if (returnNPCItems && gSaveBlock2Ptr->customData.gameMode == GAME_MODE_ESCAPE_ROOM)
+    if (returnNPCItems && GameModeKeepStolenTrainerItems())
     {
         returnNPCItems = FALSE;
     }

@@ -63,7 +63,7 @@
 #include "constants/easy_chat.h"
 #include "constants/field_effects.h"
 #include "constants/field_move.h"
-#include "constants/game_modes.h"
+#include "game_modes.h"
 #include "constants/item_effects.h"
 #include "constants/items.h"
 #include "constants/maps.h"
@@ -1120,7 +1120,7 @@ static void CreatePartyMonSprites(u8 slot)
             CreatePartyMonHeldItemSpriteParameterized(gMultiPartnerParty[actualSlot].species, gMultiPartnerParty[actualSlot].heldItem, &sPartyMenuBoxes[slot]);
             CreatePartyMonPokeballSpriteParameterized(gMultiPartnerParty[actualSlot].species, &sPartyMenuBoxes[slot]);
             if (gMultiPartnerParty[actualSlot].hp == 0)
-                status = gSaveBlock2Ptr->customData.gameMode > 1 && gSaveBlock2Ptr->customData.gameMode < 128 ? AILMENT_DEAD : AILMENT_FNT; // Nuzlocke mode or not
+                status = GameModeFaintedPokemonDie() ? AILMENT_DEAD : AILMENT_FNT; // Nuzlocke mode or not
             else
                 status = GetAilmentFromStatus(gMultiPartnerParty[actualSlot].status);
             CreatePartyMonStatusSpriteParameterized(gMultiPartnerParty[actualSlot].species, status, &sPartyMenuBoxes[slot]);
@@ -2018,7 +2018,7 @@ u8 GetMonAilment(struct Pokemon *mon)
     u8 ailment;
 
     if (GetMonData(mon, MON_DATA_HP) == 0)
-        return gSaveBlock2Ptr->customData.gameMode > 1 && gSaveBlock2Ptr->customData.gameMode < 128 ? AILMENT_DEAD : AILMENT_FNT; // Nuzlocke mode or not
+        return GameModeFaintedPokemonDie() ? AILMENT_DEAD : AILMENT_FNT; // Nuzlocke mode or not
     ailment = GetAilmentFromStatus(GetMonData(mon, MON_DATA_STATUS));
     if (ailment != AILMENT_NONE)
         return ailment;
@@ -5182,7 +5182,7 @@ void ItemUseCB_Medicine(u8 taskId, TaskFunc func)
             hp = GetMonData(mon, MON_DATA_HP);
             if (hp == GetMonData(mon, MON_DATA_MAX_HP))
                 canHeal = FALSE;
-            if (hp == 0 && gSaveBlock2Ptr->customData.gameMode > 1 && gSaveBlock2Ptr->customData.gameMode < 128)
+            if (hp == 0 && GameModeFaintedPokemonDie())
             {
                 dead = TRUE;
             }

@@ -42093,8 +42093,6 @@ F_TRAINER_FEMALE |
 #line 16417
                 MOVE_SIMPLE_BEAM,
                 MOVE_HYDRO_PUMP,
-                MOVE_HYDRO_PUMP,
-                MOVE_HYDRO_PUMP,
             },
             },
         },

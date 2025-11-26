@@ -42,6 +42,7 @@
 #include "constants/moves.h"
 #include "constants/songs.h"
 #include "constants/field_weather.h"
+#include "game_modes.h"
 
 EWRAM_DATA void (*sItemUseOnFieldCB)(u8 taskId) = NULL;
 
@@ -1131,27 +1132,29 @@ bool32 CannotUseItemsInBattle(u16 itemId, struct Pokemon *mon)
         break;
     }
 
-    if (gSaveBlock2Ptr->customData.gameMode > 1 && gSaveBlock2Ptr->customData.gameMode < 128) // Nuzlocke mode
+    switch (itemId)
     {
-        switch (itemId)
+    case ITEM_FULL_RESTORE:
+        if (GameModeCannotUseFullRestoreInBattle())
         {
-        case ITEM_FULL_RESTORE:
             cannotUse = TRUE;
             failStr = gText_CannotUseNuzlockeGeneric;
-            break;
-        case ITEM_REVIVE:
-        case ITEM_MAX_REVIVE:
-        case ITEM_REVIVAL_HERB:
-        case ITEM_SACRED_ASH:
-        case ITEM_MAX_HONEY:
+        }
+        break;
+    case ITEM_REVIVE:
+    case ITEM_MAX_REVIVE:
+    case ITEM_REVIVAL_HERB:
+    case ITEM_SACRED_ASH:
+    case ITEM_MAX_HONEY:
+        if (GameModeCannotUseRevivalItemsInBattle())
+        {
             cannotUse = TRUE;
             failStr = gText_CannotUseNuzlockeRevival;
-            break;
-        default:
-            break;
         }
+        break;
+    default:
+        break;
     }
-
 
     if (failStr != NULL)
         StringExpandPlaceholders(gStringVar4, failStr);
@@ -1240,7 +1243,7 @@ void ItemUseOutOfBattle_CannotUse(u8 taskId)
 
 void ItemUseOutOfBattle_CannotUseInNuzlockeRevivalMedicine(u8 taskId)
 {
-    if (gSaveBlock2Ptr->customData.gameMode > 1 && gSaveBlock2Ptr->customData.gameMode < 128) // Nuzlocke mode
+    if (GameModeCannotUseRevivalItemsOutOfBattle()) // Nuzlocke mode
     {
         StringExpandPlaceholders(gStringVar4, gText_CannotUseNuzlockeRevival);
         DisplayItemMessageInCurrentContext(taskId, FALSE, FONT_MALE, gStringVar4);
@@ -1254,7 +1257,7 @@ void ItemUseOutOfBattle_CannotUseInNuzlockeRevivalMedicine(u8 taskId)
 
 void ItemUseOutOfBattle_CannotUseInNuzlockeSacredAsh(u8 taskId)
 {
-    if (gSaveBlock2Ptr->customData.gameMode > 1 && gSaveBlock2Ptr->customData.gameMode < 128) // Nuzlocke mode
+    if (GameModeCannotUseRevivalItemsOutOfBattle()) // Nuzlocke mode
     {
         StringExpandPlaceholders(gStringVar4, gText_CannotUseNuzlockeRevival);
         DisplayItemMessageInCurrentContext(taskId, FALSE, FONT_MALE, gStringVar4);

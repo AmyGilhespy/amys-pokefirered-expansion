@@ -93,7 +93,7 @@ static const u8 sBorderBgMap[] = INCBIN_U8("graphics/title_screen/leafgreen/bord
 static const u32 sSlash_Gfx[] = INCBIN_U32("graphics/title_screen/slash.4bpp.lz");
 
 #if defined(FIRERED)
-static const u16 sFlames_Pal[] = INCBIN_U16("graphics/title_screen/firered/flames.gbapal");
+static const u16 sFlames_Pal[] = INCBIN_U16("graphics/title_screen/firered/flames-minus135-plus160.gbapal");
 static const u32 sFlames_Gfx[] = INCBIN_U32("graphics/title_screen/firered/flames.4bpp.lz");
 static const u32 sBlankFlames_Gfx[] = INCBIN_U32("graphics/title_screen/firered/blank_flames.4bpp.lz");
 #elif defined(LEAFGREEN)
