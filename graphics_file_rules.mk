@@ -490,6 +490,9 @@ $(TITLESCREENGFXDIR)/firered/box_art_mon.4bpp: %.4bpp: %.png
 $(TITLESCREENGFXDIR)/leafgreen/box_art_mon.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -num_tiles 123 -Wnum_tiles
 
+$(TITLESCREENGFXDIR)/original/rom_hacker_big.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -num_tiles 90 -Wnum_tiles
+
 POKEDEXAREAMARKERSDATADIR := graphics/pokedex/area_markers
 
 POKEDEXAREAMARKERFILES := \

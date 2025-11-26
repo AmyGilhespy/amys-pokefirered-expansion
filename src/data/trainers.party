@@ -16394,3 +16394,25 @@ Sequence Moves: Yes
 - Guillotine
 - Fissure
 - Sheer Cold
+
+
+=== TRAINER_ESCAPE_ROOM_PSYDUCK ===
+Name: Psyduck
+Class: Psyduck
+Pic: Psyduck
+Gender: Female
+Music: Female
+Double Battle: No
+AI: Check Bad Move / Check Viability / Try To Faint / Sequence Switching / Omniscient
+
+Psyduck (F)
+Level: 15
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
+Ability: Cloud Nine
+Nature: Adamant
+Sequence Moves: Yes
+- Simple Beam
+- Hydro Pump
+- Hydro Pump
+- Hydro Pump

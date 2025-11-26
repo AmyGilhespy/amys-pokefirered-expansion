@@ -173,6 +173,7 @@
 #define TRAINER_PIC_LITTLE_GIRL_3A        152
 #define TRAINER_PIC_LITTLE_GIRL_3B        153
 #define TRAINER_PIC_ROM_HACKER            154
+#define TRAINER_PIC_PSYDUCK               155
 
 // The player back pics are assumed to alternate according to the gender values (MALE/FEMALE)
 #define TRAINER_BACK_PIC_RED                    0
@@ -300,6 +301,7 @@ enum TrainerClassID
     TRAINER_CLASS_RUIN_MANIAC,
     TRAINER_CLASS_LADY,
     TRAINER_CLASS_PAINTER,
+    TRAINER_CLASS_PSYDUCK,
 
     TRAINER_CLASS_COUNT
 };
@@ -457,6 +459,7 @@ enum TrainerClassID
 #define FACILITY_CLASS_LITTLE_GIRL            150
 #define FACILITY_CLASS_ULTIMATE_CUTIE         151
 #define FACILITY_CLASS_ROM_HACKER             152
+#define FACILITY_CLASS_PSYDUCK                153
 
 #define F_TRAINER_FEMALE (1 << 7)
 

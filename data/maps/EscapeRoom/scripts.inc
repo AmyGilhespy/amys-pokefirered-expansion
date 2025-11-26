@@ -1,6 +1,11 @@
 EscapeRoom_MapScripts::
+	map_script MAP_SCRIPT_ON_LOAD, EscapeRoom_OnLoad
 	map_script MAP_SCRIPT_ON_TRANSITION, EscapeRoom_OnTransition
 	.byte 0
+
+EscapeRoom_OnLoad::
+	cleartrainerflag TRAINER_ESCAPE_ROOM_PSYDUCK
+	end
 
 EscapeRoom_OnTransition::
 	call_if_unset FLAG_ESCAPE_ROOM_INIT, EscapeRoom_EventScript_Init
@@ -20,6 +25,15 @@ EscapeRoom_EventScript_Init::
 	setflag FLAG_SYS_B_DASH
 
 	return
+
+
+EscapeRoom_EventScript_Sign_JustADecoration::
+	msgbox EscapeRoom_Text_Sign_JustADecoration, MSGBOX_SIGN
+	end
+
+EscapeRoom_EventScript_Sign_NoHiddenItems::
+	msgbox EscapeRoom_Text_Sign_NoHiddenItems, MSGBOX_SIGN
+	end
 
 
 EscapeRoom_EventScript_Sign1::
@@ -252,6 +266,17 @@ EscapeRoom_EventScript_StoleH::
 	end
 
 EscapeRoom_EventScript_DefeatedH::
+	end
+
+
+EscapeRoom_EventScript_Psyduck::
+	trainerbattle_single TRAINER_ESCAPE_ROOM_PSYDUCK, EscapeRoom_Text_PsyduckIntro, EscapeRoom_Text_PsyduckDefeat, EscapeRoom_EventScript_DefeatedPsyduck
+	cleartrainerflag TRAINER_ESCAPE_ROOM_PSYDUCK @ This MUST NOT happen before the battle, as it uses LOS to start the battle instead of waiting for you to talk to them and LOS trainers MUST have their trainer flag not cleared between the LOS trigger and the battle or it hard freezes or even crashes due to a null pointer mishap.
+	goto_if_unset FLAG_TEMP_1C, EscapeRoom_EventScript_End
+	clearflag FLAG_TEMP_1C
+	end
+
+EscapeRoom_EventScript_DefeatedPsyduck::
 	end
 
 

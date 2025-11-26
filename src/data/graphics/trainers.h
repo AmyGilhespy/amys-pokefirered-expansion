@@ -461,6 +461,9 @@ const u16 gTrainerPalette_LittleGirl3[] = INCBIN_U16("graphics/trainers/palettes
 const u32 gTrainerFrontPic_RomHacker[] = INCBIN_U32("graphics/trainers/front_pics/rom_hacker_front_pic.4bpp.lz");
 const u16 gTrainerPalette_RomHacker[] = INCBIN_U16("graphics/trainers/palettes/rom_hacker.gbapal");
 
+const u32 gTrainerFrontPic_Psyduck[] = INCBIN_U32("graphics/trainers/front_pics/psyduck_front_pic.4bpp.lz");
+const u16 gTrainerPalette_Psyduck[] = INCBIN_U16("graphics/trainers/palettes/psyduck.gbapal");
+
 const u8 gTrainerBackPic_Red[] = INCBIN_U8("graphics/trainers/back_pics/red_back_pic.4bpp");
 const u8 gTrainerBackPic_Leaf[] = INCBIN_U8("graphics/trainers/back_pics/leaf_back_pic.4bpp");
 const u8 gTrainerBackPic_Pokedude[] = INCBIN_U8("graphics/trainers/back_pics/pokedude_back_pic.4bpp");
@@ -643,6 +646,7 @@ const struct TrainerSprite gTrainerSprites[] =
     TRAINER_SPRITE(TRAINER_PIC_LITTLE_GIRL_3A, gTrainerFrontPic_LittleGirl3a, TRAINER_PIC_SIZE, gTrainerPalette_LittleGirl3, 8, 1),
     TRAINER_SPRITE(TRAINER_PIC_LITTLE_GIRL_3B, gTrainerFrontPic_LittleGirl3b, TRAINER_PIC_SIZE, gTrainerPalette_LittleGirl3, 8, 1),
     TRAINER_SPRITE(TRAINER_PIC_ROM_HACKER, gTrainerFrontPic_RomHacker, TRAINER_PIC_SIZE, gTrainerPalette_RomHacker, 8, 1),
+    TRAINER_SPRITE(TRAINER_PIC_PSYDUCK, gTrainerFrontPic_Psyduck, TRAINER_PIC_SIZE, gTrainerPalette_Psyduck, 8, 1),
 };
 
 static const union AnimCmd sAnimCmd_Kanto[] = {

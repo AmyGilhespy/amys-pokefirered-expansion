@@ -157,7 +157,7 @@
 #define TRAINER_ESCAPE_ROOM_Q                     57
 #define TRAINER_ESCAPE_ROOM_R                     58
 #define TRAINER_ESCAPE_ROOM_S                     59
-#define TRAINER_ESCAPE_ROOM_T                     60
+#define TRAINER_ESCAPE_ROOM_PSYDUCK               60
 #endif // End escape room game mode IDs
 #if 0 // Unused game modes IDs
 #define TRAINER_UNUSED_61                         61

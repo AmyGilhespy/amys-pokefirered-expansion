@@ -1,3 +1,10 @@
+EscapeRoom_Text_Sign_JustADecoration::
+    .string "This is just a decoration.\p"
+    @ Fallthrough
+EscapeRoom_Text_Sign_NoHiddenItems::
+    .string "There are no invisible items.\p"
+    .string "Stop looking for hidden items!$"
+
 EscapeRoom_Text_Sign1::
     .string "Welcome to Amy's Escape Room!\p"
 
@@ -185,7 +192,7 @@ EscapeRoom_Text_EDefeat::
 
 EscapeRoom_Text_FIntro::
     .string "I'm a fan of OHKOs…\p"
-    .string "I bet you wish you still had your\l"
+    .string "I bet you wish you still had your\n"
     .string "SUDOWOODO or your SHUCKLE!$"
 
 EscapeRoom_Text_FDefeat::
@@ -202,6 +209,12 @@ EscapeRoom_Text_HIntro::
 
 EscapeRoom_Text_HDefeat::
     .string "Defeat…$"
+
+EscapeRoom_Text_PsyduckIntro::
+    .string "PSYDUCK: Quack…$"
+
+EscapeRoom_Text_PsyduckDefeat::
+    .string "PSYDUCK: Quack…$"
 
 EscapeRoom_Text_YouBastard::
     .string "You bastard.$"

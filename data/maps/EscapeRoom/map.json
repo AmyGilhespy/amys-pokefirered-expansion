@@ -352,6 +352,21 @@
       "trainer_sight_or_berry_tree_id": "5",
       "script": "EscapeRoom_EventScript_TrainerH",
       "flag": "FLAG_SPECIAL_GAME_MODE_HIDE_TRAINER_H"
+    },
+    {
+      "local_id": "LOCALID_ESCAPE_ROOM_PSYDUCK",
+      "type": "object",
+      "graphics_id": "OBJ_EVENT_GFX_PSYDUCK",
+      "x": 8,
+      "y": 38,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "7",
+      "script": "EscapeRoom_EventScript_Psyduck",
+      "flag": "0"
     }
   ],
   "warp_events": [
@@ -375,6 +390,13 @@
       "elevation": 0,
       "dest_map": "MAP_ESCAPE_ROOM_POKEMON_CENTER_1F",
       "dest_warp_id": "0"
+    },
+    {
+      "x": 2,
+      "y": 23,
+      "elevation": 0,
+      "dest_map": "MAP_ESCAPE_ROOM_POKEMON_CENTER_1F",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [
@@ -392,7 +414,7 @@
     {
       "type": "sign",
       "x": 20,
-      "y": 20,
+      "y": 21,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
       "script": "EscapeRoom_EventScript_Sign1"
@@ -420,6 +442,22 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
       "script": "EscapeRoom_EventScript_Sign4"
+    },
+    {
+      "type": "sign",
+      "x": 7,
+      "y": 11,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_WEST",
+      "script": "EscapeRoom_EventScript_Sign_NoHiddenItems"
+    },
+    {
+      "type": "sign",
+      "x": 37,
+      "y": 3,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "EscapeRoom_EventScript_Sign_JustADecoration"
     }
   ]
 }

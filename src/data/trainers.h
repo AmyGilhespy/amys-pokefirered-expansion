@@ -42048,6 +42048,57 @@ F_TRAINER_FEMALE |
             },
         },
     },
+#line 16401
+    [DIFFICULTY_NORMAL][TRAINER_ESCAPE_ROOM_PSYDUCK] =
+    {
+#line 16402
+        .trainerName = _("Psyduck"),
+#line 16403
+        .trainerClass = TRAINER_CLASS_PSYDUCK,
+#line 16404
+        .trainerPic = TRAINER_PIC_PSYDUCK,
+        .encounterMusic_gender =
+#line 16405
+F_TRAINER_FEMALE | 
+#line 16406
+            TRAINER_ENCOUNTER_MUSIC_FEMALE,
+#line 16407
+        .battleType = TRAINER_BATTLE_TYPE_SINGLES,
+#line 16408
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_CHECK_VIABILITY | AI_FLAG_TRY_TO_FAINT | AI_FLAG_SEQUENCE_SWITCHING | AI_FLAG_OMNISCIENT,
+#line 0
+        .trainerBackPic = TRAINER_PIC_PSYDUCK,
+        .partySize = 1,
+        .party = (const struct TrainerMon[])
+        {
+            {
+#line 16410
+            .species = SPECIES_PSYDUCK,
+#line 16410
+            .gender = TRAINER_MON_FEMALE,
+#line 16413
+            .ev = TRAINER_PARTY_EVS(252, 252, 252, 252, 252, 252),
+#line 16412
+            .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
+#line 16414
+            .ability = ABILITY_CLOUD_NINE,
+#line 16411
+            .lvl = 15,
+#line 16415
+            .nature = NATURE_ADAMANT,
+            .dynamaxLevel = MAX_DYNAMAX_LEVEL,
+#line 1
+            .sequenceMoves = TRUE,
+            .moves = {
+#line 16417
+                MOVE_SIMPLE_BEAM,
+                MOVE_HYDRO_PUMP,
+                MOVE_HYDRO_PUMP,
+                MOVE_HYDRO_PUMP,
+            },
+            },
+        },
+    },
 #ifndef AMY_TRAINERS_CUSTOM
 #define AMY_TRAINERS_CUSTOM \
 static const u16 sTrainer_TRAINER_NATALIE_p0_mailwords[] __attribute__((section(".rodata"))) = { 9919, 9919, 9919, 10118, 10118, 10174, 11280, 11297, 9954, };\
@@ -42741,5 +42792,6 @@ const u16 *const gTrainerMailWordsTable[][PARTY_SIZE] __attribute__((section(".r
 [TRAINER_ESCAPE_ROOM_F] = { NULL, },\
 [TRAINER_ESCAPE_ROOM_G] = { NULL, },\
 [TRAINER_ESCAPE_ROOM_H] = { NULL, },\
+[TRAINER_ESCAPE_ROOM_PSYDUCK] = { NULL, },\
 };
 #endif // AMY_TRAINERS_CUSTOM

@@ -6308,6 +6308,8 @@ u16 GetBattleBGM(void)
             return MUS_HG_VS_RIVAL;
         case TRAINER_CLASS_TEAM_ROCKET:
             return MUS_HG_VS_ROCKET;
+        case TRAINER_CLASS_PSYDUCK:
+            return MUS_VS_WILD;
         case TRAINER_CLASS_COOLTRAINER:
         case TRAINER_CLASS_GENTLEMAN:
         default:
