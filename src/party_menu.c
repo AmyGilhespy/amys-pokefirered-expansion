@@ -4621,8 +4621,17 @@ static void GetMedicineItemEffectMessage(u16 item, u32 statusCured)
         StringExpandPlaceholders(gStringVar4, gText_PkmnBecameHealthy);
         break;
     case ITEM_EFFECT_HP_EV:
-        StringCopy(gStringVar2, gText_ItemEffect_HP);
-        StringExpandPlaceholders(gStringVar4, gText_PkmnBaseVar2StatIncreased);
+        const u8 *hpItemEffect = GetItemEffect(item);
+        if (hpItemEffect != NULL && hpItemEffect[4] & ITEM4_EV_HP
+                && (s8) (u32) hpItemEffect[ITEM_EFFECT_ARG_START] == ITEM6_NOT_HP_BUT_FRIENDSHIP_ONLY)
+        {
+            StringExpandPlaceholders(gStringVar4, gText_PkmnFriendshipChanged);
+        }
+        else
+        {
+            StringCopy(gStringVar2, gText_ItemEffect_HP);
+            StringExpandPlaceholders(gStringVar4, gText_PkmnBaseVar2StatIncreased);
+        }
         break;
     case ITEM_EFFECT_ATK_EV:
         StringCopy(gStringVar2, gText_ItemEffect_Attack);

@@ -354,6 +354,7 @@ extern const u8 gText_ItemEffect_Speed[];
 extern const u8 gText_ItemEffect_SpAtk[];
 extern const u8 gText_ItemEffect_SpDef[];
 extern const u8 gText_PkmnBaseVar2StatIncreased[];
+extern const u8 gText_PkmnFriendshipChanged[];
 extern const u8 gText_MovesPPIncreased[];
 extern const u8 gText_PPWasRestored[];
 extern const u8 gText_PkmnHPRestoredByVar2[];

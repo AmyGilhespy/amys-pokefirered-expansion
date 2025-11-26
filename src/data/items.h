@@ -29,6 +29,9 @@
 #define PP_UP_PRICE (CHEAP_VITAMINS ? 50 : ((I_PRICE == GEN_1) ? 1 : ((I_PRICE >= GEN_7) ? 10000 : 9800)))
 #define PP_MAX_PRICE (CHEAP_VITAMINS ? 100 : ((I_PRICE >= GEN_7) ? 10000 : 9800))
 
+#define IV_UP_PRICE 100
+#define IV_DOWN_PRICE 100
+
 // Shared Item Description entries
 
 static const u8 sFullHealDesc[]       = _("Heals all the "
@@ -8674,7 +8677,7 @@ const struct Item gItemsInfo[] =
     [ITEM_WHITE_HERB] =
     {
         .name = ITEM_NAME("White Herb"),
-        .price = (I_PRICE >= GEN_9) ? 20000 : ((I_PRICE >= GEN_7) ? 4000 : 100),
+        .price = 1000 /*(I_PRICE >= GEN_9) ? 20000 : ((I_PRICE >= GEN_7) ? 4000 : 100)*/,
         .holdEffect = HOLD_EFFECT_WHITE_HERB,
         .description = COMPOUND_STRING(
             "A hold item that "
@@ -8755,7 +8758,7 @@ const struct Item gItemsInfo[] =
     [ITEM_MENTAL_HERB] =
     {
         .name = ITEM_NAME("Mental Herb"),
-        .price = (I_PRICE >= GEN_9) ? 10000 : ((I_PRICE >= GEN_7) ? 4000 : 100),
+        .price = 1000/*(I_PRICE >= GEN_9) ? 10000 : ((I_PRICE >= GEN_7) ? 4000 : 100)*/,
         .holdEffect = HOLD_EFFECT_MENTAL_HERB,
         .description = COMPOUND_STRING(
         #if B_MENTAL_HERB >= GEN_5
@@ -9054,7 +9057,7 @@ const struct Item gItemsInfo[] =
     [ITEM_POWER_HERB] =
     {
         .name = ITEM_NAME("Power Herb"),
-        .price = 4000 /*(I_PRICE >= GEN_9) ? 30000 : ((I_PRICE >= GEN_7) ? 4000 : 100)*/,
+        .price = 1000 /*(I_PRICE >= GEN_9) ? 30000 : ((I_PRICE >= GEN_7) ? 4000 : 100)*/,
         .holdEffect = HOLD_EFFECT_POWER_HERB,
         .description = COMPOUND_STRING(
             "Allows immediate "
@@ -9365,7 +9368,7 @@ const struct Item gItemsInfo[] =
     [ITEM_AIR_BALLOON] =
     {
         .name = ITEM_NAME("Air Balloon"),
-        .price = (I_PRICE >= GEN_9) ? 15000 : ((I_PRICE >= GEN_7) ? 4000 : 200),
+        .price = 4000 /*(I_PRICE >= GEN_9) ? 15000 : ((I_PRICE >= GEN_7) ? 4000 : 200)*/,
         .holdEffect = HOLD_EFFECT_AIR_BALLOON,
         .holdEffectParam = 0,
         .description = COMPOUND_STRING(
@@ -13662,7 +13665,7 @@ const struct Item gItemsInfo[] =
     [ITEM_MIRROR_HERB] =
     {
         .name = ITEM_NAME("Mirror Herb"),
-        .price = 30000,
+        .price = 1000 /*30000*/,
         .holdEffect = HOLD_EFFECT_MIRROR_HERB,
         .description = COMPOUND_STRING(
             "Mirrors an enemy's "
@@ -13718,7 +13721,7 @@ const struct Item gItemsInfo[] =
     [ITEM_TERA_ORB] =
     {
         .name = ITEM_NAME("Tera Orb"),
-        .price = 0,
+        .price = 5000,
         .description = COMPOUND_STRING(
             "Energy charges can "
             "be used to\ncause "
@@ -14725,14 +14728,14 @@ const struct Item gItemsInfo[] =
         .price = 50,
         .holdEffect = HOLD_EFFECT_COFFEE,
         .description = COMPOUND_STRING(
-            "Raises SPEED."),
+            "Hold item that increases\nSPEED by 25%."),
         .pocket = POCKET_ITEMS,
         .sortType = ITEM_TYPE_HELD_ITEM,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 50,
         .iconPic = gItemIcon_Tea,
-        .iconPalette = gItemIconPalette_Tea,
+        .iconPalette = gItemIconPalette_Coffee,
     },
 
     [ITEM_COCAINE] =
@@ -14742,7 +14745,7 @@ const struct Item gItemsInfo[] =
         .price = 50,
         .holdEffect = HOLD_EFFECT_COFFEE,
         .description = COMPOUND_STRING(
-            "Raises SPEED."),
+            "Hold item that increases\nSPEED by 25%."),
         .pocket = POCKET_ITEMS,
         .sortType = ITEM_TYPE_HELD_ITEM,
         .type = ITEM_USE_BAG_MENU,
@@ -14826,6 +14829,244 @@ const struct Item gItemsInfo[] =
         .flingPower = 30,
         .iconPic = gItemIcon_MoonStone,
         .iconPalette = gItemIconPalette_MoonStone,
+    },
+
+    [ITEM_IV_UP_HP] =
+    {
+        .name = ITEM_NAME("IV UP HP"),
+        .price = IV_UP_PRICE,
+        .description = COMPOUND_STRING(
+            "Raises the HP IV "
+            "of one\nPokémon by 1."),
+        .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_STAT_BOOST_DRINK,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_Medicine,
+        .effect = gItemEffect_IVUpHp,
+        .flingPower = 30,
+        .iconPic = gItemIcon_HPUp,
+        .iconPalette = gItemIconPalette_HPUp,
+    },
+
+    [ITEM_IV_UP_ATK] =
+    {
+        .name = ITEM_NAME("IV UP Atk"),
+        .price = IV_UP_PRICE,
+        .description = COMPOUND_STRING(
+            "Raises the Atk IV "
+            "of one\nPokémon by 1."),
+        .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_STAT_BOOST_DRINK,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_Medicine,
+        .effect = gItemEffect_IVUpAtk,
+        .flingPower = 30,
+        .iconPic = gItemIcon_Vitamin,
+        .iconPalette = gItemIconPalette_Protein,
+    },
+
+    [ITEM_IV_UP_DEF] =
+    {
+        .name = ITEM_NAME("IV UP Def"),
+        .price = IV_UP_PRICE,
+        .description = COMPOUND_STRING(
+            "Raises the Def IV "
+            "of one\nPokémon by 1."),
+        .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_STAT_BOOST_DRINK,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_Medicine,
+        .effect = gItemEffect_IVUpDef,
+        .flingPower = 30,
+        .iconPic = gItemIcon_Vitamin,
+        .iconPalette = gItemIconPalette_Iron,
+    },
+
+    [ITEM_IV_UP_SPATK] =
+    {
+        .name = ITEM_NAME("IV UP SpAtk"),
+        .price = IV_UP_PRICE,
+        .description = COMPOUND_STRING(
+            "Raises the Sp. Atk IV "
+            "of one\nPokémon by 1."),
+        .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_STAT_BOOST_DRINK,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_Medicine,
+        .effect = gItemEffect_IVUpSpAtk,
+        .flingPower = 30,
+        .iconPic = gItemIcon_Vitamin,
+        .iconPalette = gItemIconPalette_Calcium,
+    },
+
+    [ITEM_IV_UP_SPDEF] =
+    {
+        .name = ITEM_NAME("IV UP SpDef"),
+        .price = IV_UP_PRICE,
+        .description = COMPOUND_STRING(
+            "Raises the Sp. Def IV "
+            "of one\nPokémon by 1."),
+        .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_STAT_BOOST_DRINK,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_Medicine,
+        .effect = gItemEffect_IVUpSpDef,
+        .flingPower = 30,
+        .iconPic = gItemIcon_Vitamin,
+        .iconPalette = gItemIconPalette_Zinc,
+    },
+
+    [ITEM_IV_UP_SPEED] =
+    {
+        .name = ITEM_NAME("IV UP Speed"),
+        .price = IV_UP_PRICE,
+        .description = COMPOUND_STRING(
+            "Raises the Speed IV "
+            "of one\nPokémon by 1."),
+        .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_STAT_BOOST_DRINK,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_Medicine,
+        .effect = gItemEffect_IVUpSpeed,
+        .flingPower = 30,
+        .iconPic = gItemIcon_Vitamin,
+        .iconPalette = gItemIconPalette_Carbos,
+    },
+
+    [ITEM_IV_DOWN_HP] =
+    {
+        .name = ITEM_NAME("IV DOWN HP"),
+        .price = IV_UP_PRICE,
+        .description = COMPOUND_STRING(
+            "Lowers the HP IV "
+            "of one\nPokémon by 1."),
+        .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_STAT_BOOST_DRINK,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_Medicine,
+        .effect = gItemEffect_IVDownHp,
+        .flingPower = 30,
+        .iconPic = gItemIcon_HPUp,
+        .iconPalette = gItemIconPalette_HPUp,
+    },
+
+    [ITEM_IV_DOWN_ATK] =
+    {
+        .name = ITEM_NAME("IV DOWN Atk"),
+        .price = IV_UP_PRICE,
+        .description = COMPOUND_STRING(
+            "Lowers the Atk IV "
+            "of one\nPokémon by 1."),
+        .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_STAT_BOOST_DRINK,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_Medicine,
+        .effect = gItemEffect_IVDownAtk,
+        .flingPower = 30,
+        .iconPic = gItemIcon_Vitamin,
+        .iconPalette = gItemIconPalette_Protein,
+    },
+
+    [ITEM_IV_DOWN_DEF] =
+    {
+        .name = ITEM_NAME("IV DOWN Def"),
+        .price = IV_DOWN_PRICE,
+        .description = COMPOUND_STRING(
+            "Lowers the Def IV "
+            "of one\nPokémon by 1."),
+        .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_STAT_BOOST_DRINK,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_Medicine,
+        .effect = gItemEffect_IVDownDef,
+        .flingPower = 30,
+        .iconPic = gItemIcon_Vitamin,
+        .iconPalette = gItemIconPalette_Iron,
+    },
+
+    [ITEM_IV_DOWN_SPATK] =
+    {
+        .name = ITEM_NAME("IV DOWN SpAtk"),
+        .price = IV_DOWN_PRICE,
+        .description = COMPOUND_STRING(
+            "Lowers the Sp. Atk IV "
+            "of one\nPokémon by 1."),
+        .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_STAT_BOOST_DRINK,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_Medicine,
+        .effect = gItemEffect_IVDownSpAtk,
+        .flingPower = 30,
+        .iconPic = gItemIcon_Vitamin,
+        .iconPalette = gItemIconPalette_Calcium,
+    },
+
+    [ITEM_IV_DOWN_SPDEF] =
+    {
+        .name = ITEM_NAME("IV DOWN SpDef"),
+        .price = IV_DOWN_PRICE,
+        .description = COMPOUND_STRING(
+            "Lowers the Sp. Def IV "
+            "of one\nPokémon by 1."),
+        .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_STAT_BOOST_DRINK,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_Medicine,
+        .effect = gItemEffect_IVDownSpDef,
+        .flingPower = 30,
+        .iconPic = gItemIcon_Vitamin,
+        .iconPalette = gItemIconPalette_Zinc,
+    },
+
+    [ITEM_IV_DOWN_SPEED] =
+    {
+        .name = ITEM_NAME("IV DOWN Speed"),
+        .price = IV_DOWN_PRICE,
+        .description = COMPOUND_STRING(
+            "Lowers the Speed IV "
+            "of one\nPokémon by 1."),
+        .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_STAT_BOOST_DRINK,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_Medicine,
+        .effect = gItemEffect_IVDownSpeed,
+        .flingPower = 30,
+        .iconPic = gItemIcon_Vitamin,
+        .iconPalette = gItemIconPalette_Carbos,
+    },
+
+    [ITEM_FRIENDSHIP_UP] =
+    {
+        .name = ITEM_NAME("Friendship Up"),
+        .price = 100,
+        .description = COMPOUND_STRING(
+            "Raises the friendship "
+            "of one\nPokémon by 10."),
+        .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_STAT_BOOST_DRINK,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_Medicine,
+        .effect = gItemEffect_FriendshipUp,
+        .flingPower = 30,
+        .iconPic = gItemIcon_SweetHeart,
+        .iconPalette = gItemIconPalette_SweetHeart,
+    },
+
+    [ITEM_FRIENDSHIP_DOWN] =
+    {
+        .name = ITEM_NAME("Friendship Down"),
+        .price = 100,
+        .description = COMPOUND_STRING(
+            "Lowers the friendship "
+            "of one\nPokémon by 10."),
+        .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_STAT_BOOST_DRINK,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_Medicine,
+        .effect = gItemEffect_FriendshipDown,
+        .flingPower = 30,
+        .iconPic = gItemIcon_RevivalHerb,
+        .iconPalette = gItemIconPalette_RevivalHerb,
     },
 
 };

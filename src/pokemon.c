@@ -1024,6 +1024,16 @@ static const u8 sGetMonDataEVConstants[] =
     MON_DATA_SPATK_EV
 };
 
+static const u8 sGetMonDataIVConstants[] =
+{
+    MON_DATA_HP_IV,
+    MON_DATA_ATK_IV,
+    MON_DATA_DEF_IV,
+    MON_DATA_SPEED_IV,
+    MON_DATA_SPDEF_IV,
+    MON_DATA_SPATK_IV
+};
+
 // For stat-raising items
 static const u8 sStatsToRaise[] =
 {
@@ -4078,6 +4088,7 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
     s32 dataSigned, evCap;
     s32 friendship;
     s32 i;
+    bool8 friendshipChanged = FALSE;
     bool8 retVal = TRUE;
     const u8 *itemEffect;
     u8 itemEffectParam = ITEM_EFFECT_ARG_START;
@@ -4220,7 +4231,30 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
                         dataSigned = GetMonData(mon, sGetMonDataEVConstants[temp1], NULL);
                         evChange = temp2;
 
-                        if (evChange > 0) // Increasing EV (HP or Atk)
+                        if (evChange == ITEM6_NOT_HP_BUT_FRIENDSHIP_ONLY)
+                        {
+                            // No EVs to change, but make sure friendship updates anyway
+                            friendshipOnly = TRUE;
+                            itemEffectParam++;
+                            break;
+                        }
+                        else if (evChange == ITEM6_ADD_IV) // Increasing IV (HP or Atk) by 1
+                        {
+                            // We actually want IV not EV
+                            dataSigned = GetMonData(mon, sGetMonDataIVConstants[temp1], NULL);
+                            if (dataSigned >= MAX_PER_STAT_IVS)
+                                return TRUE;  // Prevents item use if the per-stat cap is already reached
+                            dataSigned++;
+                        }
+                        else if (evChange == ITEM6_SUBTRACT_IV) // Decreasing IV (HP or Atk) by 1
+                        {
+                            // We actually want IV not EV
+                            dataSigned = GetMonData(mon, sGetMonDataIVConstants[temp1], NULL);
+                            if (dataSigned <= 0)
+                                return TRUE;  // Prevents item use if the per-stat cap is already reached
+                            dataSigned--;
+                        }
+                        else if (evChange > 0) // Increasing EV (HP or Atk)
                         {
                             // Check if the total EV limit is reached
                             if (evCount >= maxAllowedEVs)
@@ -4273,7 +4307,14 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
                         }
 
                         // Update EVs and stats
-                        SetMonData(mon, sGetMonDataEVConstants[temp1], &dataSigned);
+                        if (evChange == ITEM6_ADD_IV || evChange == ITEM6_SUBTRACT_IV)
+                        {
+                            SetMonData(mon, sGetMonDataIVConstants[temp1], &dataSigned);
+                        }
+                        else
+                        {
+                            SetMonData(mon, sGetMonDataEVConstants[temp1], &dataSigned);
+                        }
                         CalculateMonStats(mon);
                         itemEffectParam++;
                         retVal = FALSE;
@@ -4424,7 +4465,23 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
                         temp2 = itemEffect[itemEffectParam];
                         dataSigned = GetMonData(mon, sGetMonDataEVConstants[temp1 + 2], NULL);
                         evChange = temp2;
-                        if (evChange > 0) // Increasing EV
+                        if (evChange == ITEM6_ADD_IV) // Increasing IV (HP or Atk) by 1
+                        {
+                            // We actually want IV not EV
+                            dataSigned = GetMonData(mon, sGetMonDataIVConstants[temp1 + 2], NULL);
+                            if (dataSigned >= MAX_PER_STAT_IVS)
+                                return TRUE;  // Prevents item use if the per-stat cap is already reached
+                            dataSigned++;
+                        }
+                        else if (evChange == ITEM6_SUBTRACT_IV) // Decreasing IV (HP or Atk) by 1
+                        {
+                            // We actually want IV not EV
+                            dataSigned = GetMonData(mon, sGetMonDataIVConstants[temp1 + 2], NULL);
+                            if (dataSigned <= 0)
+                                return TRUE;  // Prevents item use if the per-stat cap is already reached
+                            dataSigned--;
+                        }
+                        else if (evChange > 0) // Increasing EV
                         {
                             // Check if the total EV limit is reached
                             if (evCount >= maxAllowedEVs)
@@ -4477,7 +4534,14 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
                         }
 
                         // Update EVs and stats
-                        SetMonData(mon, sGetMonDataEVConstants[temp1 + 2], &dataSigned);
+                        if (evChange == ITEM6_ADD_IV || evChange == ITEM6_SUBTRACT_IV)
+                        {
+                            SetMonData(mon, sGetMonDataIVConstants[temp1 + 2], &dataSigned);
+                        }
+                        else
+                        {
+                            SetMonData(mon, sGetMonDataEVConstants[temp1 + 2], &dataSigned);
+                        }
                         CalculateMonStats(mon);
                         retVal = FALSE;
                         itemEffectParam++;
@@ -4509,20 +4573,26 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
                         // how much friendship the Pokémon already has.
                         // In general, Pokémon with lower friendship receive more,
                         // and Pokémon with higher friendship receive less.
-                        if (GetMonData(mon, MON_DATA_FRIENDSHIP, NULL) < 100)
+                        s32 friendship5 = GetMonData(mon, MON_DATA_FRIENDSHIP, NULL);
+                        if (friendship5 < 100)
                             UPDATE_FRIENDSHIP_FROM_ITEM();
+                        friendshipChanged |= friendship5 != GetMonData(mon, MON_DATA_FRIENDSHIP, NULL);
                         itemEffectParam++;
                         break;
 
                     case 6: // ITEM5_FRIENDSHIP_MID
+                        s32 friendship6 = GetMonData(mon, MON_DATA_FRIENDSHIP, NULL);
                         if (GetMonData(mon, MON_DATA_FRIENDSHIP, NULL) >= 100 && GetMonData(mon, MON_DATA_FRIENDSHIP, NULL) < 200)
                             UPDATE_FRIENDSHIP_FROM_ITEM();
+                        friendshipChanged |= friendship6 != GetMonData(mon, MON_DATA_FRIENDSHIP, NULL);
                         itemEffectParam++;
                         break;
 
                     case 7: // ITEM5_FRIENDSHIP_HIGH
+                        s32 friendship7 = GetMonData(mon, MON_DATA_FRIENDSHIP, NULL);
                         if (GetMonData(mon, MON_DATA_FRIENDSHIP, NULL) >= 200)
                             UPDATE_FRIENDSHIP_FROM_ITEM();
+                        friendshipChanged |= friendship7 != GetMonData(mon, MON_DATA_FRIENDSHIP, NULL);
                         itemEffectParam++;
                         break;
                     }
@@ -4532,6 +4602,12 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
             }
             break;
         }
+    }
+    if (!retVal && !friendshipChanged && itemEffect != NULL && itemEffect[4] & ITEM4_EV_HP
+            && (s8) (u32) itemEffect[ITEM_EFFECT_ARG_START] == ITEM6_NOT_HP_BUT_FRIENDSHIP_ONLY)
+    {
+        // Prevent friendship-only item use if friendship did not actually change.
+        return TRUE;
     }
     return retVal;
 }

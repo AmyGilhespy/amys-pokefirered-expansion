@@ -459,3 +459,97 @@ const u8 gItemEffect_TamatoBerry[10] = {
     [6] = ITEM6_SUBTRACT_EV,
     EV_BERRY_FRIENDSHIP_CHANGE,
 };
+
+
+const u8 gItemEffect_IVUpHp[11] = {
+    [4] = ITEM4_EV_HP,
+    [6] = ITEM6_ADD_IV,
+    [10] = ITEM10_IS_VITAMIN,
+};
+
+const u8 gItemEffect_IVUpAtk[11] = {
+    [4] = ITEM4_EV_ATK,
+    [6] = ITEM6_ADD_IV,
+    [10] = ITEM10_IS_VITAMIN,
+};
+
+const u8 gItemEffect_IVUpDef[11] = {
+    [5] = ITEM5_EV_DEF,
+    [6] = ITEM6_ADD_IV,
+    [10] = ITEM10_IS_VITAMIN,
+};
+
+const u8 gItemEffect_IVUpSpAtk[11] = {
+    [5] = ITEM5_EV_SPATK,
+    [6] = ITEM6_ADD_IV,
+    [10] = ITEM10_IS_VITAMIN,
+};
+
+const u8 gItemEffect_IVUpSpDef[11] = {
+    [5] = ITEM5_EV_SPDEF,
+    [6] = ITEM6_ADD_IV,
+    [10] = ITEM10_IS_VITAMIN,
+};
+
+const u8 gItemEffect_IVUpSpeed[11] = {
+    [5] = ITEM5_EV_SPEED,
+    [6] = ITEM6_ADD_IV,
+    [10] = ITEM10_IS_VITAMIN,
+};
+
+const u8 gItemEffect_IVDownHp[11] = {
+    [4] = ITEM4_EV_HP,
+    [6] = ITEM6_SUBTRACT_IV,
+    [10] = ITEM10_IS_VITAMIN,
+};
+
+const u8 gItemEffect_IVDownAtk[11] = {
+    [4] = ITEM4_EV_ATK,
+    [6] = ITEM6_SUBTRACT_IV,
+    [10] = ITEM10_IS_VITAMIN,
+};
+
+const u8 gItemEffect_IVDownDef[11] = {
+    [5] = ITEM5_EV_DEF,
+    [6] = ITEM6_SUBTRACT_IV,
+    [10] = ITEM10_IS_VITAMIN,
+};
+
+const u8 gItemEffect_IVDownSpAtk[11] = {
+    [5] = ITEM5_EV_SPATK,
+    [6] = ITEM6_SUBTRACT_IV,
+    [10] = ITEM10_IS_VITAMIN,
+};
+
+const u8 gItemEffect_IVDownSpDef[11] = {
+    [5] = ITEM5_EV_SPDEF,
+    [6] = ITEM6_SUBTRACT_IV,
+    [10] = ITEM10_IS_VITAMIN,
+};
+
+const u8 gItemEffect_IVDownSpeed[11] = {
+    [5] = ITEM5_EV_SPEED,
+    [6] = ITEM6_SUBTRACT_IV,
+    [10] = ITEM10_IS_VITAMIN,
+};
+
+const u8 gItemEffect_FriendshipUp[11] = {
+    [4] = ITEM4_EV_HP, // HP stat must be altered for the friendship to update...
+    [5] = ITEM5_FRIENDSHIP_ALL,
+    [6] = ITEM6_NOT_HP_BUT_FRIENDSHIP_ONLY, // ...but this makes it altar HP EV by 0.
+    [7] = 10, // Friendship change, low
+    [8] = 10, // Friendship change, mid
+    [9] = 10, // Friendship change, high
+    [10] = ITEM10_IS_VITAMIN,
+};
+
+const u8 gItemEffect_FriendshipDown[11] = {
+    [4] = ITEM4_EV_HP, // HP stat must be altered for the friendship to update...
+    [5] = ITEM5_FRIENDSHIP_ALL,
+    [6] = ITEM6_NOT_HP_BUT_FRIENDSHIP_ONLY, // ...but this makes it altar HP EV by 0.
+    [7] = -10, // Friendship change, low
+    [8] = -10, // Friendship change, mid
+    [9] = -10, // Friendship change, high
+    [10] = ITEM10_IS_VITAMIN,
+};
+

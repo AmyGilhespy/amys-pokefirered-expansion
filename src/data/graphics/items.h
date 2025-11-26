@@ -1958,6 +1958,7 @@ const u16 gItemIconPalette_RainbowPass[] = INCBIN_U16("graphics/items/icon_palet
 
 const u32 gItemIcon_Tea[] = INCBIN_U32("graphics/items/icons/tea.4bpp.lz");
 const u16 gItemIconPalette_Tea[] = INCBIN_U16("graphics/items/icon_palettes/tea.gbapal");
+const u16 gItemIconPalette_Coffee[] = INCBIN_U16("graphics/items/icon_palettes/coffee.gbapal");
 
 const u32 gItemIcon_Gem[] = INCBIN_U32("graphics/items/icons/gem.4bpp.lz");
 const u16 gItemIconPalette_Ruby[] = INCBIN_U16("graphics/items/icon_palettes/ruby.gbapal");

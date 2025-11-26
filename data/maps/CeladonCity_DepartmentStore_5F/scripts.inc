@@ -150,12 +150,31 @@ CeladonCity_DepartmentStore_5F_EventScript_ClerkVitamins::
 	.align 2
 CeladonCity_DepartmentStore_5F_Vitamins::
 	.2byte ITEM_PP_UP
+
 	.2byte ITEM_HP_UP
 	.2byte ITEM_PROTEIN
 	.2byte ITEM_IRON
 	.2byte ITEM_CALCIUM
 	.2byte ITEM_ZINC
 	.2byte ITEM_CARBOS
+
+	.2byte ITEM_IV_UP_HP
+	.2byte ITEM_IV_UP_ATK
+	.2byte ITEM_IV_UP_DEF
+	.2byte ITEM_IV_UP_SPATK
+	.2byte ITEM_IV_UP_SPDEF
+	.2byte ITEM_IV_UP_SPEED
+
+	.2byte ITEM_IV_DOWN_HP
+	.2byte ITEM_IV_DOWN_ATK
+	.2byte ITEM_IV_DOWN_DEF
+	.2byte ITEM_IV_DOWN_SPATK
+	.2byte ITEM_IV_DOWN_SPDEF
+	.2byte ITEM_IV_DOWN_SPEED
+
+	.2byte ITEM_FRIENDSHIP_UP
+	.2byte ITEM_FRIENDSHIP_DOWN
+
 	.2byte ITEM_LONELY_MINT
 	.2byte ITEM_ADAMANT_MINT
 	.2byte ITEM_NAUGHTY_MINT
@@ -177,6 +196,7 @@ CeladonCity_DepartmentStore_5F_Vitamins::
 	.2byte ITEM_JOLLY_MINT
 	.2byte ITEM_NAIVE_MINT
 	.2byte ITEM_SERIOUS_MINT
+
 	.2byte ITEM_NONE
 	release
 	end
