@@ -48,7 +48,7 @@ static const struct InGameTrade sInGameTrades[] = {
     {
         .nickname = _("Fishy"),
         .species = SPECIES_MAGIKARP,
-        .ivs = {31, 31, 31, 31, 31, 31},
+        .ivs = {0, 0, 0, 0, 0, 0},
         .otId = 8810,
         .conditions = {0, 0, 0, 0, 255}, // cool, beauty, cute, smart, tough
         .personality = NATURE_JOLLY,
@@ -63,7 +63,7 @@ static const struct InGameTrade sInGameTrades[] = {
     {
         .nickname = _("Sugma"),
         .species = SPECIES_SLUGMA,
-        .ivs = {31, 0, 31, 31, 31, 31},
+        .ivs = {15, 15, 15, 15, 15, 15},
         .otId = 13637,
         .conditions = {255, 0, 0, 0, 0}, // cool, beauty, cute, smart, tough
         .personality = NATURE_CALM,
@@ -78,7 +78,7 @@ static const struct InGameTrade sInGameTrades[] = {
     {
         .nickname = _("Moist"),
         .species = SPECIES_FERROSEED,
-        .ivs = {31, 31, 31, 31, 31, 31},
+        .ivs = {15, 15, 15, 15, 15, 15},
         .otId = 1239,
         .conditions = {255, 0, 0, 0, 0}, // cool, beauty, cute, smart, tough
         .personality = NATURE_SASSY,
@@ -94,7 +94,7 @@ static const struct InGameTrade sInGameTrades[] = {
     {
         .nickname = _("Noisy"),
         .species = SPECIES_NOIBAT,
-        .ivs = {31, 0, 31, 31, 31, 31},
+        .ivs = {15, 15, 15, 15, 15, 15},
         .otId = 50298,
         .conditions = {0, 0, 0, 0, 255}, // cool, beauty, cute, smart, tough
         .personality = NATURE_TIMID,
@@ -103,14 +103,14 @@ static const struct InGameTrade sInGameTrades[] = {
         .otName = _("CLIFTON"),
         .otGender = MALE,
         .sheen = 10,
-        .customAbility = ABILITY_AERILATE
+        .customAbility = ABILITY_SLOW_START
     },
     // These three are extremely good, so there will be a high cost to obtaining them in addition to their late-game appearance.
     [INGAME_TRADE_TANGELA] = // 7 (Pokemon Lab: Lounge)
     {
         .nickname = _("Soul"),
         .species = SPECIES_MAGEARNA,
-        .ivs = {31, 0, 31, 31, 31, 31},
+        .ivs = {15, 15, 15, 15, 15, 15},
         .otId = 60042,
         .conditions = {255, 255, 0, 0, 0}, // cool, beauty, cute, smart, tough
         .personality = NATURE_CALM,
@@ -119,23 +119,23 @@ static const struct InGameTrade sInGameTrades[] = {
         .otName = _("NORMA"),
         .otGender = FEMALE,
         .sheen = 10,
-        .customAbility = ABILITY_REGENERATOR
+        .customAbility = ABILITY_DEFEATIST
     },
     // These three are extremely good, so there will be a high cost to obtaining them in addition to their late-game appearance.
     [INGAME_TRADE_SEEL] = // 8 (Pokemon Lab: Experiment Room)
     {
-        .nickname = _("Nyaa"),
-        .species = SPECIES_MEW,
-        .ivs = {31, 31, 31, 31, 31, 31},
+        .nickname = _("Ecdysis"),
+        .species = SPECIES_SHEDINJA,
+        .ivs = {31, 0, 0, 0, 0, 0},
         .otId = 9853,
-        .conditions = {0, 255, 255, 0, 0}, // cool, beauty, cute, smart, tough
-        .personality = NATURE_JOLLY,
+        .conditions = {0, 0, 0, 255, 0}, // cool, beauty, cute, smart, tough
+        .personality = NATURE_RELAXED,
         .heldItem = ITEM_LEFTOVERS,
         .mailNum = 255,
         .otName = _("GARETT"),
         .otGender = MALE,
         .sheen = 10,
-        .customAbility = ABILITY_UNAWARE
+        .customAbility = ABILITY_TRUANT
     },
 };
 

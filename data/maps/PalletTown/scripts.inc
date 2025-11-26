@@ -21,9 +21,9 @@ PalletTown_EventScript_HideAlphabetGirl::
 	return
 
 PalletTown_EventScript_TryReadySignLady::
-	@goto_if_unset FLAG_OPENED_START_MENU, EventScript_Return
+	goto_if_unset FLAG_OPENED_START_MENU, EventScript_Return
 	goto_if_ge VAR_MAP_SCENE_PALLET_TOWN_SIGN_LADY, 1, EventScript_Return
-	setvar VAR_MAP_SCENE_PALLET_TOWN_SIGN_LADY, 1
+	@setvar VAR_MAP_SCENE_PALLET_TOWN_SIGN_LADY, 1
 	return
 
 PalletTown_EventScript_SetSignLadyDone::
@@ -420,7 +420,7 @@ PalletTown_EventScript_TownSign::
 PalletTown_EventScript_TrainerTips::
 	lockall
 	msgbox PalletTown_Text_PressStartToOpenMenu
-	setvar VAR_MAP_SCENE_PALLET_TOWN_SIGN_LADY, 1
+	@setvar VAR_MAP_SCENE_PALLET_TOWN_SIGN_LADY, 1
 	releaseall
 	end
 

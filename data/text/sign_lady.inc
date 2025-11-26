@@ -17,7 +17,7 @@ PalletTown_Text_PressStartToOpenMenu::
 	.string "Press START to open the MENU!$"
 
 PalletTown_Text_SignsAreUsefulArentThey::
-	.string "Signs are useful, aren't they?$"
+	.string "Fuck you, know-it-all.$"
 
 PalletTown_Text_LookCopiedTrainerTipsSign::
 	.string "Look, look!\p"
