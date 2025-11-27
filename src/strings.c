@@ -3,6 +3,7 @@
 #include "constants/item.h"
 
 const u8 gExpandedPlaceholder_Empty[] = _("");
+const u8 gText_ChangeMe[] = _("CHANGE ME!");
 const u8 gExpandedPlaceholder_Kun[] = _("-kun");
 const u8 gExpandedPlaceholder_Chan[] = _("-chan");
 const u8 gExpandedPlaceholder_Sapphire[] = _("SAPPHIRE");
@@ -919,14 +920,16 @@ const u8 gText_OptionMenuCancel[] = _("CANCEL");
 const u8 gText_TextSpeedSlow[] = _("SLOW");
 const u8 gText_TextSpeedMid[] = _("MID");
 const u8 gText_TextSpeedFast[] = _("FAST");
+const u8 gText_TextSpeedVeryFast[] = _("VERY FAST");
+const u8 gText_TextSpeedInstant[] = _("INSTANT");
 const u8 gText_BattleSceneOn[] = _("ON");
 const u8 gText_BattleSceneOff[] = _("OFF");
-const u8 gText_BattleStyleShift[] = _("SHIFT");
+const u8 gText_BattleStyleShift[] = _("");
 const u8 gText_BattleStyleSet[] = _("SET");
 const u8 gText_SoundMono[] = _("MONO");
 const u8 gText_SoundStereo[] = _("STEREO");
 const u8 gTextJP_Type[] = _("タイプ");
-const u8 gText_ButtonTypeHelp[] = _("HELP");
+const u8 gText_ButtonTypeHelp[] = _("");
 const u8 gText_ButtonTypeLEqualsA[] = _("L=A");
 const u8 gText_ButtonTypeLR[] = _("LR");
 const u8 gText_FrameType[] = _("TYPE");

@@ -78,7 +78,9 @@ static const u8 sTextSpeedFrameDelays[] =
 {
     [OPTIONS_TEXT_SPEED_SLOW] = 8,
     [OPTIONS_TEXT_SPEED_MID]  = 4,
-    [OPTIONS_TEXT_SPEED_FAST] = 1
+    [OPTIONS_TEXT_SPEED_FAST] = 1,
+    [OPTIONS_TEXT_SPEED_VERY_FAST] = 1,
+    [OPTIONS_TEXT_SPEED_INSTANT] = 1
 };
 
 static const struct WindowTemplate sStandardTextBox_WindowTemplates[] = 
@@ -193,9 +195,9 @@ void AddTextPrinterForMessage(bool8 allowSkippingDelayWithButtonPress)
     gTextFlags.canABSpeedUpPrint = allowSkippingDelayWithButtonPress;    
     color = ContextNpcGetTextColor();
     if (color == NPC_TEXT_COLOR_MALE)
-        AddTextPrinterParameterized2(0, FONT_MALE, gStringVar4, GetPlayerTextSpeedDelay(), nptr, TEXT_COLOR_BLUE, TEXT_COLOR_WHITE, TEXT_COLOR_LIGHT_GRAY);
+        AddTextPrinterParameterized2(0, FONT_MALE, gStringVar4, GetPlayerTextSpeedDelay(), nptr, AMY_TEXT_COLOR_MALE, TEXT_COLOR_WHITE, TEXT_COLOR_LIGHT_GRAY);
     else if (color == NPC_TEXT_COLOR_FEMALE)
-        AddTextPrinterParameterized2(0, FONT_FEMALE, gStringVar4, GetPlayerTextSpeedDelay(), nptr, TEXT_COLOR_RED, TEXT_COLOR_WHITE, TEXT_COLOR_LIGHT_GRAY);
+        AddTextPrinterParameterized2(0, FONT_FEMALE, gStringVar4, GetPlayerTextSpeedDelay(), nptr, AMY_TEXT_COLOR_FEMALE, TEXT_COLOR_WHITE, TEXT_COLOR_LIGHT_GRAY);
     else // NPC_TEXT_COLOR_MON / NPC_TEXT_COLOR_NEUTRAL
         AddTextPrinterParameterized2(0, FONT_NORMAL, gStringVar4, GetPlayerTextSpeedDelay(), nptr, TEXT_COLOR_DARK_GRAY, TEXT_COLOR_WHITE, TEXT_COLOR_LIGHT_GRAY);
 }
@@ -402,8 +404,8 @@ void DisplayYesNoMenuWithDefault(void)
 
 u8 GetPlayerTextSpeedDelay(void)
 {
-    if (gSaveBlock2Ptr->optionsTextSpeed > OPTIONS_TEXT_SPEED_FAST)
-        gSaveBlock2Ptr->optionsTextSpeed = OPTIONS_TEXT_SPEED_MID;
+    if (gSaveBlock2Ptr->optionsTextSpeed > OPTIONS_TEXT_SPEED_INSTANT)
+        gSaveBlock2Ptr->optionsTextSpeed = OPTIONS_TEXT_SPEED_FAST;
     return sTextSpeedFrameDelays[gSaveBlock2Ptr->optionsTextSpeed];
 }
 

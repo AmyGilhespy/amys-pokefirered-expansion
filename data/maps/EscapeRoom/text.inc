@@ -17,8 +17,8 @@ EscapeRoom_Text_Sign1::
     .string "Do note, however, that is is entirely\n"
     .string "possible to get softlocked!\p"
 
-    .string "You should only save when a sign tells\n"
-    .string "you that it's safe to save!\p"
+    .string "You should only save when a sign\n"
+    .string "tells you that it's safe to save!\p"
 
     .string "It's mostly gen 9 mechanics, but\n"
     .string "some things may be different.\p"
@@ -45,15 +45,15 @@ EscapeRoom_Text_Sign1::
     .string "are in item balls (i.e. not hidden).\p"
 
     .string "If you talk to a trainer again\n"
-    .string "after beating them, you can re-fight\l"
-    .string "them. You usually probably shouldn't.\p"
+    .string "after beating them, you can refight\l"
+    .string "them, which is usually a bad idea.\p"
 
     .string "Note that if you manage to piss off\n"
     .string "a trainer REAL bad, they leave.\p"
 
     .string "Remember, luck has been removed\n"
     .string "where possible. So it doesn't make\l"
-    .string "much sense to wish you “good luck”…\p"
+    .string "much sense to wish you luck…\p"
 
     .string "Therefore, break a leg!$"
 
@@ -159,7 +159,7 @@ EscapeRoom_Text_TrainerDWontFightPartialParty::
     .string "I may be a ROCKET, but I'm also\n"
     .string "honorable and won't fight you\p"
     .string "unless you have as many POKéMON\n"
-    .string "with you as I have…\n"
+    .string "with you as I have…\l"
     .string "It's only fair that way!$"
 
 EscapeRoom_Text_DIntro::

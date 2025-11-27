@@ -15,7 +15,7 @@ PewterCity_Gym_Text_BrockIntro::
     .string "Show me your best!{PLAY_BGM}{MUS_ENCOUNTER_GYM_LEADER}$"
 
 PewterCity_Gym_Text_BrockDefeat::
-    .string "I took you for granted, and so\n"
+    .string "I took you for granite, and so\n"
     .string "I lost.\p"
     .string "As proof of your victory, I confer\n"
     .string "on you this…the official POKéMON\l"
