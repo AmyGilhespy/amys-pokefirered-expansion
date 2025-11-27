@@ -1,3 +1,11 @@
+TwoIsland_House_Text_TradeFinished::
+    .string "Awesome, thanks!\p"
+    .string "If you ever want another EEVEE, I've\n"
+    .string "got plenty more where that came from.$"
+
+TwoIsland_House_Text_DeclineTrade::
+    .string "Aww, that's too bad.$"
+
 TwoIsland_House_Text_TeachMonMoveForMushroom::
     .string "I'm the POKéMON MOVE MANIAC.\p"
     .string "I know every single move that\n"

@@ -2504,7 +2504,7 @@ static void GetInGameTradeMail(struct Mail * mail, const struct InGameTrade * in
 {
     int i;
     for (i = 0; i < MAIL_WORDS_COUNT; i++)
-        mail->words[i] = sInGameTradeMailMessages[inGameTrade->mailNum][i];
+        ;//mail->words[i] = sInGameTradeMailMessages[inGameTrade->mailNum][i];
     StringCopy(mail->playerName, inGameTrade->otName);
     mail->trainerId[0] = inGameTrade->otId >> 24;
     mail->trainerId[1] = inGameTrade->otId >> 16;

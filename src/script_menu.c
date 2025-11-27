@@ -585,6 +585,13 @@ static const struct MenuAction sMultichoiceList_GameModeCustom[] = {
     { gOtherText_Exit }
 };
 
+static const struct MenuAction sMultichoiceList_LittleGirlSlowpokeGift[] = {
+    { gText_SlowpokeKanto },
+    { gText_SlowpokeGalar },
+    { gText_SlowpokeTail },
+    { gOtherText_Exit }
+};
+
 static const struct MenuAction sMultichoiceList_Exit[] = {
     { gOtherText_Exit }
 };
@@ -657,6 +664,7 @@ static const struct MultichoiceListStruct sMultichoiceLists[] = {
     [MULTICHOICE_TRAINER_TOWER_MODE]                         = MULTICHOICE(sMultichoiceList_TrainerTowerMode),
     [MULTICHOICE_NURSE_CUSTOM]                               = MULTICHOICE(sMultichoiceList_NurseCustom),
     [MULTICHOICE_GAME_MODE_CUSTOM]                           = MULTICHOICE(sMultichoiceList_GameModeCustom),
+    [MULTICHOICE_LITTLE_GIRL_SLOWPOKE_GIFT]                  = MULTICHOICE(sMultichoiceList_LittleGirlSlowpokeGift),
 };
 
 // From Cool to Berries goes unused

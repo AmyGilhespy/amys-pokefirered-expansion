@@ -14,12 +14,82 @@ LavenderTown_EventScript_LittleGirl::
 	msgbox LavenderTown_Text_DoYouBelieveInGhosts, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, YES, LavenderTown_EventScript_LittleGirlBelieve
 	msgbox LavenderTown_Text_JustImaginingWhiteHand
+	call_if_unset FLAG_GOT_SOME_SLOWPOKE, LavenderTown_EventScript_LittleGirl_SlowpokeGift
 	release
 	end
 
 LavenderTown_EventScript_LittleGirlBelieve::
 	msgbox LavenderTown_Text_SoThereAreBelievers
+	call_if_unset FLAG_GOT_SOME_SLOWPOKE, LavenderTown_EventScript_LittleGirl_SlowpokeGift
 	release
+	end
+
+LavenderTown_EventScript_LittleGirl_SlowpokeGift::
+	message LavenderTown_Text_LittleGirl_SlowpokeGift_Prompt
+	waitmessage
+	multichoice 11, 0, MULTICHOICE_LITTLE_GIRL_SLOWPOKE_GIFT, FALSE
+	switch VAR_RESULT
+	case 0, LavenderTown_EventScript_LittleGirl_SlowpokeGift_Kanto
+	case 1, LavenderTown_EventScript_LittleGirl_SlowpokeGift_Galar
+	case 2, LavenderTown_EventScript_LittleGirl_SlowpokeGift_SlowpokeTail
+	case 3, LavenderTown_EventScript_LittleGirl_SlowpokeGift_ReturnEnd
+	case 127, LavenderTown_EventScript_LittleGirl_SlowpokeGift_ReturnEnd
+LavenderTown_EventScript_LittleGirl_SlowpokeGift_ReturnEnd:
+	return
+	end
+
+LavenderTown_EventScript_LittleGirl_SlowpokeGift_Kanto:
+	setvar VAR_TEMP_1, SPECIES_SLOWPOKE
+	goto LavenderTown_EventScript_LittleGirl_SlowpokeGift_GiveGift
+
+LavenderTown_EventScript_LittleGirl_SlowpokeGift_Galar:
+	setvar VAR_TEMP_1, SPECIES_SLOWPOKE_GALAR
+	goto LavenderTown_EventScript_LittleGirl_SlowpokeGift_GiveGift
+
+LavenderTown_EventScript_LittleGirl_SlowpokeGift_GiveGift:
+	textcolor NPC_TEXT_COLOR_NEUTRAL
+	givemon VAR_TEMP_1, 1
+	goto_if_eq VAR_RESULT, 0, LavenderTown_EventScript_LittleGirl_SlowpokeGift_ReceivedMonParty
+	goto_if_eq VAR_RESULT, 1, LavenderTown_EventScript_LittleGirl_SlowpokeGift_ReceivedMonPC
+	goto_if_eq VAR_RESULT, 2, LavenderTown_EventScript_LittleGirl_SlowpokeGift_PartyFull
+	return
+	end
+
+LavenderTown_EventScript_LittleGirl_SlowpokeGift_ReceivedMonParty:
+	setflag FLAG_GOT_SOME_SLOWPOKE
+	bufferspeciesname STR_VAR_1, VAR_TEMP_1
+	playfanfare MUS_LEVEL_UP
+	message Text_PlayerObtainedTheMon
+	waitmessage
+	waitfanfare
+	goto LavenderTown_EventScript_LittleGirl_SlowpokeGift_ReceivedMonPostReceiveSlowpoke
+	end
+
+LavenderTown_EventScript_LittleGirl_SlowpokeGift_ReceivedMonPC:
+	setflag FLAG_GOT_SOME_SLOWPOKE
+	bufferspeciesname STR_VAR_1, VAR_TEMP_1
+	playfanfare MUS_LEVEL_UP
+	message Text_PlayerObtainedTheMon
+	waitmessage
+	waitfanfare
+	call EventScript_TransferredToPC
+	goto LavenderTown_EventScript_LittleGirl_SlowpokeGift_ReceivedMonPostReceiveSlowpoke
+	end
+
+LavenderTown_EventScript_LittleGirl_SlowpokeGift_PartyFull:
+	msgbox Text_NoMoreRoomForPokemon
+	return
+	end
+
+LavenderTown_EventScript_LittleGirl_SlowpokeGift_ReceivedMonPostReceiveSlowpoke:
+	textcolor NPC_TEXT_COLOR_FEMALE
+	msgbox LavenderTown_Text_LittleGirl_SlowpokeGift_PostReceiveSlowpoke
+	return
+	end
+
+LavenderTown_EventScript_LittleGirl_SlowpokeGift_SlowpokeTail::
+	msgbox LavenderTown_Text_LittleGirl_SlowpokeGift_SlowpokeTail
+	return
 	end
 
 LavenderTown_EventScript_WorkerM::

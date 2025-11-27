@@ -139,6 +139,10 @@ const u8 gOtherText_NurseCustomHeal[] = _("HEAL");
 const u8 gOtherText_NurseCustomName[] = _("RENAME");
 const u8 gOtherText_NurseCustomRemind[] = _("REMIND");
 
+const u8 gText_SlowpokeKanto[] = _("KANTO");
+const u8 gText_SlowpokeGalar[] = _("GALAR");
+const u8 gText_SlowpokeTail[] = _("SLOWPOKETAIL, YUM!");
+
 const u8 gText_CannotUseNuzlockeGeneric[] = _("You can't use that during battle in a\nNuzlocke.{PAUSE_UNTIL_PRESS}");
 const u8 gText_CannotUseNuzlockeRevival[] = _("There's no coming back from the dead.{PAUSE_UNTIL_PRESS}");
 

@@ -23,7 +23,7 @@ static const struct InGameTrade sInGameTrades[] = {
         .conditions = {0, 0, 0, 255, 0}, // cool, beauty, cute, smart, tough
         .personality = NATURE_HASTY,
         .heldItem = ITEM_CHOICE_SCARF,
-        .mailNum = 0,
+        .mailNum = 255,
         .otName = _("DONTAE"),
         .otGender = MALE,
         .sheen = 10,
@@ -137,18 +137,20 @@ static const struct InGameTrade sInGameTrades[] = {
         .sheen = 10,
         .customAbility = ABILITY_TRUANT
     },
-};
-
-static const u16 sInGameTradeMailMessages[][10] = {
+    // And the EEVEE on TwoIsland
+    [INGAME_TRADE_EEVEE] = // 9 (TwoIsland)
     {
-        EC_WORD_THAT_S,
-        EC_WORD_A,
-        EC_WORD_HEALTHY,
-        EC_POKEMON(JYNX),
-        EC_WORD_EXCL,
-        EC_WORD_BE,
-        EC_WORD_KIND,
-        EC_WORD_TO,
-        EC_WORD_IT
-    }
+        .nickname = _("Unique"),
+        .species = SPECIES_EEVEE,
+        .ivs = {0, 0, 0, 0, 0, 0},
+        .otId = 42069,
+        .conditions = {0, 255, 255, 0, 0}, // cool, beauty, cute, smart, tough
+        .personality = NATURE_DOCILE,
+        .heldItem = ITEM_EVERSTONE,
+        .mailNum = 255,
+        .otName = _("MANIAC"),
+        .otGender = MALE,
+        .sheen = 10,
+        .customAbility = ABILITY_NORMALIZE
+    },
 };

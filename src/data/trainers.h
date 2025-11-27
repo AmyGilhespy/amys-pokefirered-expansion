@@ -19396,7 +19396,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_SHEDINJA,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 7568
-            .heldItem = ITEM_BRIGHT_POWDER,
+            .heldItem = ITEM_AIR_BALLOON,
 #line 7571
             .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 0, 0),
 #line 7570
@@ -19409,7 +19409,7 @@ F_TRAINER_FEMALE |
             .nature = NATURE_QUIET,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
 #line 7574
-            .teraType = TYPE_STELLAR,
+            .teraType = TYPE_ELECTRIC,
             .moves = {
 #line 7575
                 MOVE_ENDEAVOR,
@@ -20267,7 +20267,7 @@ F_TRAINER_FEMALE |
             .species = SPECIES_SHEDINJA,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 7934
-            .heldItem = ITEM_COFFEE,
+            .heldItem = ITEM_AIR_BALLOON,
 #line 7937
             .ev = TRAINER_PARTY_EVS(0, 0, 0, 252, 0, 0),
 #line 7936
@@ -20280,7 +20280,7 @@ F_TRAINER_FEMALE |
             .nature = NATURE_QUIET,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
 #line 7940
-            .teraType = TYPE_STELLAR,
+            .teraType = TYPE_ELECTRIC,
             .moves = {
 #line 7941
                 MOVE_ENDEAVOR,
@@ -38572,7 +38572,7 @@ F_TRAINER_FEMALE |
 #line 15020
             .gender = TRAINER_MON_MALE,
 #line 15020
-            .heldItem = ITEM_BRIGHT_POWDER,
+            .heldItem = ITEM_AIR_BALLOON,
 #line 15023
             .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 4, 0),
 #line 15022
@@ -38585,7 +38585,7 @@ F_TRAINER_FEMALE |
             .nature = NATURE_JOLLY,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
 #line 15026
-            .teraType = TYPE_STELLAR,
+            .teraType = TYPE_ELECTRIC,
             .moves = {
 #line 15027
                 MOVE_ENDEAVOR,
@@ -38967,7 +38967,7 @@ F_TRAINER_FEMALE |
 #line 15173
             .gender = TRAINER_MON_MALE,
 #line 15173
-            .heldItem = ITEM_BRIGHT_POWDER,
+            .heldItem = ITEM_AIR_BALLOON,
 #line 15176
             .ev = TRAINER_PARTY_EVS(0, 252, 0, 252, 4, 0),
 #line 15175
@@ -38980,7 +38980,7 @@ F_TRAINER_FEMALE |
             .nature = NATURE_JOLLY,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
 #line 15179
-            .teraType = TYPE_STELLAR,
+            .teraType = TYPE_ELECTRIC,
             .moves = {
 #line 15180
                 MOVE_DOUBLE_TEAM,

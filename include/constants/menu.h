@@ -75,6 +75,7 @@
 #define MULTICHOICE_TRAINER_TOWER_MODE                         64
 #define MULTICHOICE_NURSE_CUSTOM                               65
 #define MULTICHOICE_GAME_MODE_CUSTOM                           66
+#define MULTICHOICE_LITTLE_GIRL_SLOWPOKE_GIFT                  67
 
 #define MULTICHOICE_NONE                                      255
 

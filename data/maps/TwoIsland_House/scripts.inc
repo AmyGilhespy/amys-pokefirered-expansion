@@ -6,6 +6,32 @@
 TwoIsland_House_MapScripts::
 	.byte 0
 
+TwoIsland_House_EventScript_EeveeTrader::
+	lock
+	faceplayer
+	setvar VAR_0x8008, INGAME_TRADE_EEVEE
+	call EventScript_GetInGameTradeSpeciesInfo
+	msgbox Trade_Text_LookingForSomethingSpecificWannaTradeForMon, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, TwoIsland_House_EventScript_DeclineTrade
+	call EventScript_ChooseMonForInGameTrade
+	goto_if_ge VAR_0x8004, PARTY_SIZE, TwoIsland_House_EventScript_DeclineTrade
+	call EventScript_GetInGameTradeSpeciesUnownRemap
+	goto_if_ne VAR_RESULT, SPECIES_UNOWN_EXCLAMATION, TwoIsland_House_EventScript_NotRequestedMon
+	call EventScript_DoInGameTrade
+	msgbox TwoIsland_House_Text_TradeFinished
+	release
+	end
+
+TwoIsland_House_EventScript_DeclineTrade::
+	msgbox TwoIsland_House_Text_DeclineTrade
+	release
+	end
+
+TwoIsland_House_EventScript_NotRequestedMon::
+	msgbox Trade_Text_LookingForSomethingSpecificWrongMon
+	release
+	end
+
 TwoIsland_House_EventScript_MoveManiac::
 	goto_if_questlog EventScript_ReleaseEnd
 	special QuestLog_CutRecording

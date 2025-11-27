@@ -27,6 +27,7 @@ LavenderTown_Mart_EventScript_Clerk::
 	.align 2
 LavenderTown_Mart_Items::
 	.2byte ITEM_FOCUS_SASH
+	.2byte ITEM_HEAVY_DUTY_BOOTS
 	.2byte ITEM_SCOPE_LENS
 	.2byte ITEM_WIDE_LENS
 	.2byte ITEM_ZOOM_LENS

@@ -10,6 +10,15 @@ LavenderTown_Text_JustImaginingWhiteHand::
     .string "That white hand on your shoulder…\n"
     .string "I'm just imagining it.$"
 
+LavenderTown_Text_LittleGirl_SlowpokeGift_Prompt::
+    .string "Which SLOWPOKE is best?$"
+
+LavenderTown_Text_LittleGirl_SlowpokeGift_PostReceiveSlowpoke::
+    .string "Take care of your new friend!$"
+
+LavenderTown_Text_LittleGirl_SlowpokeGift_SlowpokeTail::
+    .string "You're a terrible person, huh?$"
+
 LavenderTown_Text_TownKnownAsMonGraveSite::
     .string "This town is known as the grave\n"
     .string "site of POKéMON.\p"

@@ -97,6 +97,10 @@ extern const u8 gOtherText_NurseCustomHeal[];
 extern const u8 gOtherText_NurseCustomName[];
 extern const u8 gOtherText_NurseCustomRemind[];
 
+extern const u8 gText_SlowpokeKanto[];
+extern const u8 gText_SlowpokeGalar[];
+extern const u8 gText_SlowpokeTail[];
+
 extern const u8 gText_CannotUseNuzlockeGeneric[];
 extern const u8 gText_CannotUseNuzlockeRevival[];
 
