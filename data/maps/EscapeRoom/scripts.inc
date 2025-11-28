@@ -16,7 +16,7 @@ EscapeRoom_EventScript_Init::
 	setflag FLAG_ESCAPE_ROOM_INIT
 	setrespawn HEAL_LOCATION_ESCAPE_ROOM
 
-	givemon SPECIES_RALTS, 12, ITEM_NONE, ITEM_LOVE_BALL, NATURE_NAUGHTY, 0, MON_FEMALE,  208, 0, 0, 0, 0, 0,  31, 31, 31, 31, 31, 31,  MOVE_DISABLE, MOVE_GROWL, MOVE_DISARMING_VOICE, MOVE_NONE, FALSE, FALSE, TYPE_FAIRY, 0
+	givemon SPECIES_RALTS, 12, ITEM_NONE, ITEM_LOVE_BALL, NATURE_NAUGHTY, 0, MON_FEMALE,  208, 0, 0, 0, 0, 0,  31, 31, 31, 31, 31, 31,  MOVE_GROWL, MOVE_DISARMING_VOICE, MOVE_NONE, MOVE_NONE, FALSE, FALSE, TYPE_FAIRY, 0
 
 	givemon SPECIES_BONSLY, 16, ITEM_NONE, ITEM_LOVE_BALL, NATURE_HARDY, 0, MON_MALE,  0, 252, 0, 0, 0, 0,  31, 31, 31, 31, 31, 31,  MOVE_ROCK_THROW, MOVE_NONE, MOVE_NONE, MOVE_NONE, FALSE, FALSE, TYPE_ROCK, 0
 
@@ -43,8 +43,10 @@ EscapeRoom_EventScript_Sign1::
 
 EscapeRoom_EventScript_TrainerA::
 	trainerbattle_double TRAINER_ESCAPE_ROOM_A, EscapeRoom_Text_AIntro, EscapeRoom_Text_ADefeat, EscapeRoom_Text_ANotEnoughPkmn, EscapeRoom_EventScript_DefeatedA
-	goto_if_set FLAG_TEMP_1C, EscapeRoom_EventScript_StoleA
 	cleartrainerflag TRAINER_ESCAPE_ROOM_A @ This MUST NOT happen before the battle, as it uses LOS to start the battle instead of waiting for you to talk to them and LOS trainers MUST have their trainer flag not cleared between the LOS trigger and the battle or it hard freezes or even crashes due to a null pointer mishap.
+	end
+EscapeRoom_EventScript_DefeatedA::
+	goto_if_set FLAG_TEMP_1C, EscapeRoom_EventScript_StoleA
 	end
 EscapeRoom_EventScript_StoleA::
 	clearflag FLAG_TEMP_1C
@@ -54,23 +56,19 @@ EscapeRoom_EventScript_StoleA::
 	removeobject LOCALID_ESCAPE_ROOM_TRAINER_A2
 	end
 
-EscapeRoom_EventScript_DefeatedA::
-	end
-
 
 EscapeRoom_EventScript_TrainerB::
 	trainerbattle_single TRAINER_ESCAPE_ROOM_B, EscapeRoom_Text_BIntro, EscapeRoom_Text_BDefeat, EscapeRoom_EventScript_DefeatedB
-	goto_if_set FLAG_TEMP_1C, EscapeRoom_EventScript_StoleB
 	cleartrainerflag TRAINER_ESCAPE_ROOM_B @ This MUST NOT happen before the battle, as it uses LOS to start the battle instead of waiting for you to talk to them and LOS trainers MUST have their trainer flag not cleared between the LOS trigger and the battle or it hard freezes or even crashes due to a null pointer mishap.
+	end
+EscapeRoom_EventScript_DefeatedB::
+	goto_if_set FLAG_TEMP_1C, EscapeRoom_EventScript_StoleB
 	end
 EscapeRoom_EventScript_StoleB::
 	clearflag FLAG_TEMP_1C
 	msgbox EscapeRoom_Text_YouBastard, MSGBOX_NPC
 	setflag FLAG_SPECIAL_GAME_MODE_HIDE_TRAINER_B
 	removeobject LOCALID_ESCAPE_ROOM_TRAINER_B
-	end
-
-EscapeRoom_EventScript_DefeatedB::
 	end
 
 
@@ -105,17 +103,16 @@ EscapeRoom_EventScript_Item2::
 
 EscapeRoom_EventScript_TrainerC::
 	trainerbattle_single TRAINER_ESCAPE_ROOM_C, EscapeRoom_Text_CIntro, EscapeRoom_Text_CDefeat, EscapeRoom_EventScript_DefeatedC
-	goto_if_set FLAG_TEMP_1C, EscapeRoom_EventScript_StoleC
 	cleartrainerflag TRAINER_ESCAPE_ROOM_C @ This MUST NOT happen before the battle, as it uses LOS to start the battle instead of waiting for you to talk to them and LOS trainers MUST have their trainer flag not cleared between the LOS trigger and the battle or it hard freezes or even crashes due to a null pointer mishap.
+	end
+EscapeRoom_EventScript_DefeatedC::
+	goto_if_set FLAG_TEMP_1C, EscapeRoom_EventScript_StoleC
 	end
 EscapeRoom_EventScript_StoleC::
 	clearflag FLAG_TEMP_1C
 	msgbox EscapeRoom_Text_YouBastard, MSGBOX_NPC
 	setflag FLAG_SPECIAL_GAME_MODE_HIDE_TRAINER_C
 	removeobject LOCALID_ESCAPE_ROOM_TRAINER_C
-	end
-
-EscapeRoom_EventScript_DefeatedC::
 	end
 
 
@@ -170,25 +167,22 @@ EscapeRoom_EventScript_TrainerD::
 	callnative EscapeRoomCheckIfFullTeamOf6InParty
 	goto_if_eq VAR_RESULT, FALSE, EscapeRoom_EventScript_TrainerDWontFightPartialParty
 	trainerbattle_single TRAINER_ESCAPE_ROOM_D, EscapeRoom_Text_DIntro, EscapeRoom_Text_DDefeat, EscapeRoom_EventScript_DefeatedD
-	clearflag FLAG_TEMP_1C
-	setflag FLAG_SPECIAL_GAME_MODE_HIDE_TRAINER_D
-	removeobject LOCALID_ESCAPE_ROOM_TRAINER_D
 	end
-
 EscapeRoom_EventScript_TrainerDWontFightBeforeBoulderPuzzleSolved::
 	msgbox EscapeRoom_Text_TrainerDWontFightBeforeBoulderPuzzleSolved, MSGBOX_NPC
 	end
-
 EscapeRoom_EventScript_TrainerDWontFightPartialParty::
 	msgbox EscapeRoom_Text_TrainerDWontFightPartialParty, MSGBOX_NPC
 	end
-
 EscapeRoom_EventScript_DefeatedD::
 	callnative EscapeRoomRemoveAllButRaltsLine
 	textcolor NPC_TEXT_COLOR_NEUTRAL
 	msgbox EscapeRoom_Text_DTookPokemon, MSGBOX_NPC
 	textcolor NPC_TEXT_COLOR_MALE
 	msgbox EscapeRoom_Text_DPostTakePokemon, MSGBOX_NPC
+	clearflag FLAG_TEMP_1C
+	setflag FLAG_SPECIAL_GAME_MODE_HIDE_TRAINER_D
+	removeobject LOCALID_ESCAPE_ROOM_TRAINER_D
 	end
 
 
@@ -207,8 +201,10 @@ EscapeRoom_EventScript_Item6::
 
 EscapeRoom_EventScript_TrainerE::
 	trainerbattle_single TRAINER_ESCAPE_ROOM_E, EscapeRoom_Text_EIntro, EscapeRoom_Text_EDefeat, EscapeRoom_EventScript_DefeatedE
-	goto_if_set FLAG_TEMP_1C, EscapeRoom_EventScript_StoleE
 	cleartrainerflag TRAINER_ESCAPE_ROOM_E @ This MUST NOT happen before the battle, as it uses LOS to start the battle instead of waiting for you to talk to them and LOS trainers MUST have their trainer flag not cleared between the LOS trigger and the battle or it hard freezes or even crashes due to a null pointer mishap.
+	end
+EscapeRoom_EventScript_DefeatedE::
+	goto_if_set FLAG_TEMP_1C, EscapeRoom_EventScript_StoleE
 	end
 EscapeRoom_EventScript_StoleE::
 	clearflag FLAG_TEMP_1C
@@ -217,14 +213,13 @@ EscapeRoom_EventScript_StoleE::
 	removeobject LOCALID_ESCAPE_ROOM_TRAINER_E
 	end
 
-EscapeRoom_EventScript_DefeatedE::
-	end
-
 
 EscapeRoom_EventScript_TrainerF::
 	trainerbattle_single TRAINER_ESCAPE_ROOM_F, EscapeRoom_Text_FIntro, EscapeRoom_Text_FDefeat, EscapeRoom_EventScript_DefeatedF
-	goto_if_set FLAG_TEMP_1C, EscapeRoom_EventScript_StoleF
 	cleartrainerflag TRAINER_ESCAPE_ROOM_F @ This MUST NOT happen before the battle, as it uses LOS to start the battle instead of waiting for you to talk to them and LOS trainers MUST have their trainer flag not cleared between the LOS trigger and the battle or it hard freezes or even crashes due to a null pointer mishap.
+	end
+EscapeRoom_EventScript_DefeatedF::
+	goto_if_set FLAG_TEMP_1C, EscapeRoom_EventScript_StoleF
 	end
 EscapeRoom_EventScript_StoleF::
 	clearflag FLAG_TEMP_1C
@@ -233,14 +228,13 @@ EscapeRoom_EventScript_StoleF::
 	removeobject LOCALID_ESCAPE_ROOM_TRAINER_F
 	end
 
-EscapeRoom_EventScript_DefeatedF::
-	end
-
 
 EscapeRoom_EventScript_TrainerG::
 	trainerbattle_single TRAINER_ESCAPE_ROOM_G, EscapeRoom_Text_GIntro, EscapeRoom_Text_GDefeat, EscapeRoom_EventScript_DefeatedG
-	goto_if_set FLAG_TEMP_1C, EscapeRoom_EventScript_StoleG
 	cleartrainerflag TRAINER_ESCAPE_ROOM_G @ This MUST NOT happen before the battle, as it uses LOS to start the battle instead of waiting for you to talk to them and LOS trainers MUST have their trainer flag not cleared between the LOS trigger and the battle or it hard freezes or even crashes due to a null pointer mishap.
+	end
+EscapeRoom_EventScript_DefeatedG::
+	goto_if_set FLAG_TEMP_1C, EscapeRoom_EventScript_StoleG
 	end
 EscapeRoom_EventScript_StoleG::
 	clearflag FLAG_TEMP_1C
@@ -249,14 +243,13 @@ EscapeRoom_EventScript_StoleG::
 	removeobject LOCALID_ESCAPE_ROOM_TRAINER_G
 	end
 
-EscapeRoom_EventScript_DefeatedG::
-	end
-
 
 EscapeRoom_EventScript_TrainerH::
 	trainerbattle_single TRAINER_ESCAPE_ROOM_H, EscapeRoom_Text_HIntro, EscapeRoom_Text_HDefeat, EscapeRoom_EventScript_DefeatedH
-	goto_if_set FLAG_TEMP_1C, EscapeRoom_EventScript_StoleH
 	cleartrainerflag TRAINER_ESCAPE_ROOM_H @ This MUST NOT happen before the battle, as it uses LOS to start the battle instead of waiting for you to talk to them and LOS trainers MUST have their trainer flag not cleared between the LOS trigger and the battle or it hard freezes or even crashes due to a null pointer mishap.
+	end
+EscapeRoom_EventScript_DefeatedH::
+	goto_if_set FLAG_TEMP_1C, EscapeRoom_EventScript_StoleH
 	end
 EscapeRoom_EventScript_StoleH::
 	clearflag FLAG_TEMP_1C
@@ -265,18 +258,13 @@ EscapeRoom_EventScript_StoleH::
 	removeobject LOCALID_ESCAPE_ROOM_TRAINER_H
 	end
 
-EscapeRoom_EventScript_DefeatedH::
-	end
-
 
 EscapeRoom_EventScript_Psyduck::
 	trainerbattle_single TRAINER_ESCAPE_ROOM_PSYDUCK, EscapeRoom_Text_PsyduckIntro, EscapeRoom_Text_PsyduckDefeat, EscapeRoom_EventScript_DefeatedPsyduck
+EscapeRoom_EventScript_DefeatedPsyduck:
 	cleartrainerflag TRAINER_ESCAPE_ROOM_PSYDUCK @ This MUST NOT happen before the battle, as it uses LOS to start the battle instead of waiting for you to talk to them and LOS trainers MUST have their trainer flag not cleared between the LOS trigger and the battle or it hard freezes or even crashes due to a null pointer mishap.
 	goto_if_unset FLAG_TEMP_1C, EscapeRoom_EventScript_End
 	clearflag FLAG_TEMP_1C
-	end
-
-EscapeRoom_EventScript_DefeatedPsyduck::
 	end
 
 
