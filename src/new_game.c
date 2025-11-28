@@ -132,6 +132,12 @@ void NewGameInitData(void)
 
     StringCopy(rivalName, gSaveBlock1Ptr->rivalName);
     gDifferentSaveFile = TRUE;
+
+    // The gameMode field was set in Oak's speech and is supposed to be preserved.  Everything else should be wiped.
+    u8 gameMode = gSaveBlock2Ptr->customData.gameMode;
+    memset(&gSaveBlock2Ptr->customData, 0, sizeof gSaveBlock2Ptr->customData);
+    gSaveBlock2Ptr->customData.gameMode = gameMode;
+
     ZeroPlayerPartyMons();
     ZeroEnemyPartyMons();
     ClearBattleTower();
