@@ -436,6 +436,12 @@ void GenerateFontHalfRowLookupTable(u8 fgColor, u8 bgColor, u8 shadowColor)
 
     u16 *current = sFontHalfRowLookupTable;
 
+    if ((shadowColor == TEXT_COLOR_TRANSPARENT || shadowColor == TEXT_COLOR_WHITE)
+            && (fgColor == AMY_TEXT_COLOR_MALE || fgColor == AMY_TEXT_COLOR_FEMALE))
+    {
+        shadowColor = AMY_TEXT_COLOR_GENDERED_SPEAKER_SHADOW;
+    }
+
     sLastTextBgColor = bgColor;
     sLastTextFgColor = fgColor;
     sLastTextShadowColor = shadowColor;

@@ -164,7 +164,7 @@ static const struct WindowTemplate sWindowTemplates[WIN_COUNT] = {
     }
 };
 
-static const u8 sTextColors[3] = {TEXT_DYNAMIC_COLOR_6, TEXT_COLOR_WHITE, TEXT_DYNAMIC_COLOR_3};
+static const u8 sTextColors[3] = {TEXT_DYNAMIC_COLOR_6, TEXT_COLOR_WHITE, TEXT_COLOR_TRANSPARENT/*TEXT_DYNAMIC_COLOR_3*/};
 
 static const u16 sDescriptionWindow_Gfx[] = INCBIN_U16("graphics/quest_log/description_window.4bpp");
 

@@ -170,11 +170,6 @@ u16 AddTextPrinterParameterized2(u8 windowId, u8 fontId, const u8 *str, u8 speed
 {
     struct TextPrinterTemplate printer;
 
-    if (shadowColor == fgColor && (fgColor == AMY_TEXT_COLOR_MALE || fgColor == AMY_TEXT_COLOR_FEMALE))
-    {
-        shadowColor = AMY_TEXT_COLOR_GENDERED_SPEAKER_SHADOW;
-    }
-
     printer.currentChar = str;
     printer.windowId = windowId;
     printer.fontId = fontId;
@@ -1361,11 +1356,6 @@ void AddTextPrinterParameterized3(u8 windowId, u8 fontId, u8 x, u8 y, const u8 *
     u8 bgColor = color[0];
     u8 shadowColor = color[2];
 
-    if (shadowColor == fgColor && (fgColor == AMY_TEXT_COLOR_MALE || fgColor == AMY_TEXT_COLOR_FEMALE))
-    {
-        shadowColor = AMY_TEXT_COLOR_GENDERED_SPEAKER_SHADOW;
-    }
-
     printer.currentChar = str;
     printer.windowId = windowId;
     printer.fontId = fontId;
@@ -1390,11 +1380,6 @@ void AddTextPrinterParameterized4(u8 windowId, u8 fontId, u8 x, u8 y, u8 letterS
     u8 bgColor = color[0];
     u8 shadowColor = color[2];
 
-    if (shadowColor == fgColor && (fgColor == AMY_TEXT_COLOR_MALE || fgColor == AMY_TEXT_COLOR_FEMALE))
-    {
-        shadowColor = AMY_TEXT_COLOR_GENDERED_SPEAKER_SHADOW;
-    }
-
     printer.currentChar = str;
     printer.windowId = windowId;
     printer.fontId = fontId;
@@ -1418,11 +1403,6 @@ void AddTextPrinterParameterized5(u8 windowId, u8 fontId, const u8 *str, u8 x, u
     u8 fgColor = GetFontAttribute(fontId, FONTATTR_COLOR_FOREGROUND);
     u8 bgColor = GetFontAttribute(fontId, FONTATTR_COLOR_BACKGROUND);
     u8 shadowColor = GetFontAttribute(fontId, FONTATTR_COLOR_SHADOW);
-
-    if (shadowColor == fgColor && (fgColor == AMY_TEXT_COLOR_MALE || fgColor == AMY_TEXT_COLOR_FEMALE))
-    {
-        shadowColor = AMY_TEXT_COLOR_GENDERED_SPEAKER_SHADOW;
-    }
 
     printer.currentChar = str;
     printer.windowId = windowId;
