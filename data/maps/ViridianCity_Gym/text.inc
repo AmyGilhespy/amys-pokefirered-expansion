@@ -49,7 +49,7 @@ ViridianCity_Gym_Text_ReceivedAbilityCapsulePlusFromGiovanni::
 ViridianCity_Gym_Text_ExplainTR99AndAbilityCapsulePlus::
     .string "TR99 contains SKETCH…\p"
     .string "…Wait, you seem to already know\n"
-    .string "what that one does.  And as for\p"
+    .string "what that one does. And as for\p"
     .string "the Ability Capsule+, it allows\n"
     .string "you to change a POKéMON's ability\p"
     .string "to a random one, even if the\n"

@@ -9612,7 +9612,7 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("Heavy-Duty Boots"),
         .pluralName = ITEM_PLURAL_NAME("Heavy-Duty Boots"),
-        .price = (I_PRICE >= GEN_9) ? 20000 : 4000,
+        .price = 4000 /*(I_PRICE >= GEN_9) ? 20000 : 4000*/,
         .holdEffect = HOLD_EFFECT_HEAVY_DUTY_BOOTS,
         .description = COMPOUND_STRING(
             "Boots that prevent "
