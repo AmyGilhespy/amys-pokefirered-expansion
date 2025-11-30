@@ -12858,7 +12858,7 @@ void TryResurrectParty(u32 battler)
         if (GetMonData(&party[i], MON_DATA_HP) == 0)
         {
             u16 maxHp = GetMonData(&party[i], MON_DATA_MAX_HP);
-            u16 halfHp = maxHp / 2;
+            u16 halfHp = (maxHp + 1) / 2;
             SetMonData(&party[i], MON_DATA_HP, &halfHp);
             // Clear faint flag, status, etc.
             u32 zero = 0;

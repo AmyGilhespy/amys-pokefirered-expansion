@@ -13,7 +13,7 @@
   "show_map_name": true,
   "floor_number": -1,
   "battle_scene": "MAP_BATTLE_SCENE_INDOOR_2",
-  "connections": 0,
+  "connections": null,
   "object_events": [
     {
       "type": "object",
@@ -27,7 +27,7 @@
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "5",
       "script": "RocketHideout_B1F_EventScript_Grunt2",
-      "flag": "FLAG_HIDE_MISC_KANTO_ROCKETS"
+      "flag": "0"
     },
     {
       "type": "object",
@@ -41,7 +41,7 @@
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "2",
       "script": "RocketHideout_B1F_EventScript_Grunt1",
-      "flag": "FLAG_HIDE_MISC_KANTO_ROCKETS"
+      "flag": "0"
     },
     {
       "type": "object",
@@ -55,7 +55,7 @@
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "4",
       "script": "RocketHideout_B1F_EventScript_Grunt4",
-      "flag": "FLAG_HIDE_MISC_KANTO_ROCKETS"
+      "flag": "0"
     },
     {
       "type": "object",
@@ -69,7 +69,7 @@
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "3",
       "script": "RocketHideout_B1F_EventScript_Grunt3",
-      "flag": "FLAG_HIDE_MISC_KANTO_ROCKETS"
+      "flag": "0"
     },
     {
       "type": "object",
@@ -83,7 +83,7 @@
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "3",
       "script": "RocketHideout_B1F_EventScript_Grunt5",
-      "flag": "FLAG_HIDE_MISC_KANTO_ROCKETS"
+      "flag": "0"
     },
     {
       "type": "object",
@@ -158,9 +158,7 @@
       "dest_warp_id": "1"
     }
   ],
-  "coord_events": [
-
-  ],
+  "coord_events": [],
   "bg_events": [
     {
       "type": "hidden_item",
