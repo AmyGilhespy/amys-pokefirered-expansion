@@ -7395,7 +7395,7 @@ Gender: Male
 Music: Aqua
 Items: Hyper Potion / Hyper Potion / Full Heal
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Smart Switching / Ace Pokemon / Omniscient / Prefer Highest Damage Move
+AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Smart Switching / Ace Pokemon / Prefer Highest Damage Move
 
 Dugtrio @ Focus Sash
 Level: 42
@@ -7478,7 +7478,7 @@ Gender: Female
 Music: Elite Four
 Items: Full Restore / Full Restore
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Will Suicide / Smart Switching / Ace Pokemon / Omniscient
+AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Will Suicide / Smart Switching / Ace Pokemon
 Mugshot: Purple
 
 Dewgong @ Leftovers
@@ -7551,7 +7551,7 @@ Gender: Male
 Music: Elite Four
 Items: Full Restore / Full Restore
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Sequence Switching / Ace Pokemon / Omniscient / Prefer Highest Damage Move
+AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Sequence Switching / Ace Pokemon / Prefer Highest Damage Move
 Mugshot: Green
 
 Hariyama @ Custap Berry
@@ -7619,7 +7619,7 @@ Gender: Female
 Music: Elite Four
 Items: Full Restore / Full Restore
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Smart Switching / Ace Pokemon / Omniscient / Prefer Highest Damage Move
+AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Smart Switching / Ace Pokemon / Prefer Highest Damage Move
 Mugshot: Pink
 
 Gengar @ Petaya Berry
@@ -7692,7 +7692,7 @@ Gender: Male
 Music: Elite Four
 Items: Full Restore / Full Restore
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Smart Switching / Ace Pokemon / Omniscient
+AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Smart Switching / Ace Pokemon
 Mugshot: Blue
 
 Gyarados @ Damp Rock
@@ -7766,7 +7766,7 @@ Gender: Female
 Music: Magma
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
-AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Smart Switching / Ace Pokemon / Omniscient / Prefer Highest Damage Move
+AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Smart Switching / Ace Pokemon / Prefer Highest Damage Move
 
 Necrozma-Dusk Mane @ Ultranecrozium Z
 Level: 72
@@ -7811,7 +7811,7 @@ Gender: Male
 Music: Magma
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
-AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Smart Switching / Ace Pokemon / Omniscient / Prefer Highest Damage Move
+AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Smart Switching / Ace Pokemon / Prefer Highest Damage Move
 
 Necrozma-Dusk Mane @ Ultranecrozium Z
 Level: 100
@@ -7843,7 +7843,7 @@ Gender: Female
 Music: Elite Four
 Items: Full Restore / Full Restore
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Smart Switching / Ace Pokemon / Omniscient
+AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Smart Switching / Ace Pokemon
 Mugshot: Purple
 
 Dewgong @ Leftovers
@@ -7856,7 +7856,7 @@ Nature: Calm
 - Perish Song
 - Rain Dance
 - Rest
-// AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Will Suicide / Smart Switching / Ace Pokemon / Omniscient
+// AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Will Suicide / Smart Switching / Ace Pokemon
 
 Cloyster @ Perfect Sash
 Level: 101
@@ -7917,7 +7917,7 @@ Gender: Male
 Music: Elite Four
 Items: Full Restore / Full Restore
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Sequence Switching / Ace Pokemon / Omniscient / Prefer Highest Damage Move
+AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Sequence Switching / Ace Pokemon / Prefer Highest Damage Move
 Mugshot: Green
 
 Hariyama @ Custap Berry
@@ -7986,7 +7986,7 @@ Gender: Female
 Music: Elite Four
 Items: Full Restore / Full Restore
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Smart Switching / Ace Pokemon / Omniscient / Prefer Highest Damage Move
+AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Smart Switching / Ace Pokemon / Prefer Highest Damage Move
 Mugshot: Pink
 
 Gengar @ Petaya Berry
@@ -8059,7 +8059,7 @@ Gender: Male
 Music: Elite Four
 Items: Full Restore / Full Restore
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Smart Switching / Ace Pokemon / Omniscient
+AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Smart Switching / Ace Pokemon
 Mugshot: Blue
 
 Gyarados @ Wave Mail
@@ -8133,7 +8133,7 @@ Gender: Female
 Music: Magma
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
-AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Smart Switching / Ace Pokemon / Omniscient / Prefer Highest Damage Move
+AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Smart Switching / Ace Pokemon / Prefer Highest Damage Move
 
 Necrozma-Dusk Mane @ Ultranecrozium Z
 Level: 101
@@ -8178,7 +8178,7 @@ Gender: Male
 Music: Magma
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
-AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Smart Switching / Ace Pokemon / Omniscient / Prefer Highest Damage Move
+AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Smart Switching / Ace Pokemon / Prefer Highest Damage Move
 
 Necrozma-Dusk Mane @ Ultranecrozium Z
 Level: 100
@@ -14822,7 +14822,7 @@ Gender: Female
 Music: Female
 Items: Potion / Potion / Potion
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Smart Switching / Ace Pokemon / Omniscient
+AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Smart Switching / Ace Pokemon
 
 Mr Cuddles (Eevee) (M) @ Eviolite
 Level: 35
@@ -14840,7 +14840,7 @@ Gender: Female
 Music: Female
 Items: Potion / Potion / Potion
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Smart Switching / Ace Pokemon / Omniscient
+AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Smart Switching / Ace Pokemon
 
 Pikablu (Marill) (F) @ Eviolite
 Level: 40
@@ -14916,7 +14916,7 @@ Gender: Female
 Music: Female
 Items: Potion / Potion / Potion
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Smart Switching / Omniscient
+AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Smart Switching
 
 MistyFan (Staryu) (F) @ Damp Rock
 Level: 45
@@ -14992,7 +14992,7 @@ Gender: Female
 Music: Female
 Items: Potion / Potion / Potion
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Smart Switching / Ace Pokemon / Omniscient
+AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Smart Switching / Ace Pokemon
 
 Cuddles (Eevee) (F) @ Eevium Z
 Level: 50
@@ -15068,7 +15068,7 @@ Gender: Female
 Music: Aqua
 Items: Full Heal / Full Heal / Full Heal
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Smart Switching / Ace Pokemon / Omniscient
+AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Smart Switching / Ace Pokemon
 
 Mom (Chansey) (F) @ Eviolite
 Level: 100
@@ -15146,7 +15146,7 @@ Gender: Female
 Music: Female
 Items: Full Restore / Full Restore
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Smart Switching / Ace Pokemon / Omniscient
+AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Smart Switching / Ace Pokemon
 
 Ninja (Skarmory) (F) @ Bright Powder
 Level: 60
@@ -15223,7 +15223,7 @@ Gender: Female
 Music: Female
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Smart Switching / Ace Pokemon / Omniscient
+AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Smart Switching / Ace Pokemon
 
 Demon (Grimmsnarl) (M) @ Light Clay
 Level: 70
@@ -15300,7 +15300,7 @@ Gender: Female
 Music: Female
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Smart Switching / Ace Pokemon / Omniscient
+AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Smart Switching / Ace Pokemon
 
 Surge (Tapu-Koko) (F) @ Terrain Extender
 Level: 80
@@ -15373,7 +15373,7 @@ Gender: Female
 Music: Female
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Smart Switching / Ace Pokemon / Omniscient
+AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Smart Switching / Ace Pokemon
 
 Kirly (Kirlia) (F) @ Eviolite
 Level: 90
@@ -15450,7 +15450,7 @@ Gender: Female
 Music: Aqua
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Smart Switching / Ace Pokemon / Omniscient
+AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Smart Switching / Ace Pokemon
 
 Jinxed (Giratina) (M) @ Safety Goggles
 Level: 100
@@ -15526,7 +15526,7 @@ Gender: Female
 Music: Elite Four
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Smart Switching / Ace Pokemon / Omniscient
+AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Smart Switching / Ace Pokemon
 Mugshot: Pink
 
 Steel Soul (F) @ Orange Mail
@@ -15605,7 +15605,7 @@ Gender: Female
 Music: Elite Four
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Smart Switching / Ace Pokemon / Omniscient
+AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Smart Switching / Ace Pokemon
 Mugshot: Pink
 
 Foxy (Eevee) (F) @ Eevium Z
@@ -15687,7 +15687,7 @@ Gender: Female
 Music: Elite Four
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Smart Switching / Ace Pokemon / Omniscient
+AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Smart Switching / Ace Pokemon
 Mugshot: Pink
 
 Squirt (Blastoise Mega) (F) @ Assault Vest
@@ -15766,7 +15766,7 @@ Gender: Female
 Music: Elite Four
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Smart Switching / Ace Pokemon / Omniscient
+AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Smart Switching / Ace Pokemon
 Mugshot: Pink
 
 Courier (Delibird) (F) @ Wood Mail
@@ -15799,6 +15799,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
 Ability: Klutz
 Nature: Timid
+Sequence Moves: Yes
 - Trick
 - Dragon Tail
 - Circle Throw
@@ -15845,7 +15846,7 @@ Gender: Female
 Music: Elite Four
 Items: Full Restore / Full Restore / Full Restore
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Smart Switching / Ace Pokemon / Omniscient
+AI: Check Bad Move / Try To Faint / Check Viability / Force Setup First Turn / Try To 2HKO / HP Aware / Prefer Status Moves / Stall / Smart Switching / Ace Pokemon
 Mugshot: Pink
 
 Hermes (Regieleki) (M) @ Wood Mail
@@ -15857,6 +15858,7 @@ Nature: Timid
 Mail: 0x256c 0x26c7 0x260c 0x26bf 0x26bf 0x26bf 0x2786 0x2786 0x27be
 - Mail Script
 - Infiniblast
+- Sunsteel Strike
 // Feint, Lock-On, Guillotine, Spikes, Spikes, Spikes, Toxic Spikes, Toxic Spikes, Stealth Rock
 
 Athena (Gardevoir Mega) (F) @ Bead Mail
@@ -15868,7 +15870,7 @@ Nature: Rash
 - Boomburst
 - Psystrike
 - Extreme Speed
-- Armor Cannon
+- Sunsteel Strike
 
 Hercules (Slaking) (M) @ Bead Mail
 Level: 101
@@ -15955,6 +15957,7 @@ IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 0 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
 Ability: Trace
 Nature: Modest
+Sequence Moves: Yes
 - Telekinesis
 - Psychic
 
@@ -15982,6 +15985,7 @@ IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 0 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
 Ability: Snow Warning
 Nature: Serious
+Sequence Moves: Yes
 - Absolute Zero
 - Sheer Cold
 
@@ -16010,9 +16014,8 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
 Ability: Multiscale
 Nature: Adamant
+Sequence Moves: Yes
 - Dragon Dance
-- Dragon Darts
-- Dragon Rage
 - Infiniblast
 
 Mom (F)
@@ -16021,8 +16024,9 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
 Ability: Delta Stream
 Nature: Naive
-- Dragon Ascent
+Sequence Moves: Yes
 - Dragon Dance
+- Dragon Ascent
 - Extreme Speed
 - V-create
 
@@ -16061,6 +16065,7 @@ IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 0 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
 Ability: Rain Dish
 Nature: Jolly
+Sequence Moves: Yes
 - Soak
 - Splishy Splash
 
@@ -16070,6 +16075,7 @@ IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 0 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
 Ability: Klutz
 Nature: Naughty
+Sequence Moves: Yes
 - Trick
 - Trick or Treat
 - Whirlwind
@@ -16099,6 +16105,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Atk / 252 Def / 252 SpA / 252 SpD / 252 Spe
 Ability: Psychic Surge
 Nature: Lonely
+Sequence Moves: Yes
 - Extreme Evoboost
 - Yawn
 - Lick
@@ -16136,7 +16143,7 @@ Pic: Twins
 Gender: Female
 Music: Female
 Double Battle: Yes
-AI: Check Bad Move / Check Viability / Try To Faint / Sequence Switching / Omniscient
+AI: Check Bad Move / Check Viability / Try To Faint / Sequence Switching
 
 Abomasnow (M) @ Abomasite
 Level: 100
@@ -16164,7 +16171,7 @@ Pic: Youngster
 Gender: Male
 Music: Male
 Double Battle: No
-AI: Check Bad Move / Check Viability / Try To Faint / Sequence Switching / Omniscient
+AI: Check Bad Move / Check Viability / Try To Faint / Sequence Switching
 
 Hoppip (F)
 Level: 19
@@ -16194,7 +16201,7 @@ Pic: Cooltrainer F
 Gender: Female
 Music: Female
 Double Battle: No
-AI: Check Bad Move / Check Viability / Try To Faint / Sequence Switching / Omniscient
+AI: Check Bad Move / Check Viability / Try To Faint / Sequence Switching
 
 Hoppip (M)
 Level: 1
@@ -16255,7 +16262,7 @@ Pic: Rocket Grunt M
 Gender: Male
 Music: Male
 Double Battle: No
-AI: Check Bad Move / Check Viability / Try To Faint / Sequence Switching / Omniscient
+AI: Check Bad Move / Check Viability / Try To Faint / Sequence Switching
 
 Hoppip (M)
 Level: 1
@@ -16313,7 +16320,7 @@ Pic: Cooltrainer M
 Gender: Male
 Music: Male
 Double Battle: No
-AI: Check Bad Move / Check Viability / Try To Faint / Sequence Switching / Omniscient
+AI: Check Bad Move / Check Viability / Try To Faint / Sequence Switching
 
 Pikachu Pop Star (F) @ Light Ball
 Level: 100
@@ -16337,7 +16344,7 @@ Pic: Lass
 Gender: Female
 Music: Female
 Double Battle: No
-AI: Check Bad Move / Check Viability / Try To Faint / Sequence Switching / Omniscient
+AI: Check Bad Move / Check Viability / Try To Faint / Sequence Switching
 
 Smeargle (F)
 Level: 100
@@ -16359,7 +16366,7 @@ Pic: Bug Catcher
 Gender: Male
 Music: Male
 Double Battle: No
-AI: Check Bad Move / Check Viability / Try To Faint / Sequence Switching / Omniscient
+AI: Check Bad Move / Check Viability / Try To Faint / Sequence Switching
 
 Smeargle (F)
 Level: 100
@@ -16381,7 +16388,7 @@ Pic: Picnicker
 Gender: Female
 Music: Female
 Double Battle: No
-AI: Check Bad Move / Check Viability / Try To Faint / Sequence Switching / Omniscient
+AI: Check Bad Move / Check Viability / Try To Faint / Sequence Switching
 
 Smeargle (F)
 Level: 100
@@ -16403,7 +16410,7 @@ Pic: Psyduck
 Gender: Female
 Music: Female
 Double Battle: No
-AI: Check Bad Move / Check Viability / Try To Faint / Sequence Switching / Omniscient
+AI: Check Bad Move / Check Viability / Try To Faint / Sequence Switching
 
 Psyduck (F)
 Level: 15

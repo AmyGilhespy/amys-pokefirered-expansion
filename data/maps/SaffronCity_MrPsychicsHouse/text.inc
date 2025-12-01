@@ -8,9 +8,10 @@ SaffronCity_MrPsychicsHouse_Text_ReceivedTM29FromMrPsychic::
 
 SaffronCity_MrPsychicsHouse_Text_ExplainTM29::
     .string "You already know, don't you?\n"
-    .string "TM69 is MEGA LICK.\p"
-    .string "It's fun to use on your POKéMON,\n"
-    .string "or on older, wiser elders like me!$"
+    .string "TM69 is MEGA LICK--$"
+SaffronCity_MrPsychicsHouse_Text_Interrupt::
+    .string "You leave before he can finish\n"
+    .string "what he was saying.$"
 
 SaffronCity_MrPsychicsHouse_Text_YouveNoRoom::
     .string "Where do you plan to put this?\n"

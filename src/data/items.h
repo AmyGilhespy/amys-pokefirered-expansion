@@ -14740,8 +14740,13 @@ const struct Item gItemsInfo[] =
 
     [ITEM_COCAINE] =
     {
+        #ifdef COCAINE
         .name = ITEM_NAME("Cocaine"),
         .pluralName = ITEM_PLURAL_NAME("Cocaine"),
+        #else
+        .name = ITEM_NAME("“Coffee”"),
+        .pluralName = ITEM_PLURAL_NAME("“Coffee”"),
+        #endif
         .price = 50,
         .holdEffect = HOLD_EFFECT_COFFEE,
         .description = COMPOUND_STRING(

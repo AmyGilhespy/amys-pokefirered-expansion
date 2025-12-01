@@ -10,6 +10,8 @@ SaffronCity_MrPsychicsHouse_EventScript_MrPsychic::
 	goto_if_eq VAR_RESULT, FALSE, SaffronCity_MrPsychicsHouse_EventScript_NoRoomForTM29
 	giveitem_msg SaffronCity_MrPsychicsHouse_Text_ReceivedTM29FromMrPsychic, ITEM_TM69
 	msgbox SaffronCity_MrPsychicsHouse_Text_ExplainTM29
+	textcolor NPC_TEXT_COLOR_NEUTRAL
+	msgbox SaffronCity_MrPsychicsHouse_Text_Interrupt, MSGBOX_NPC
 	setflag FLAG_GOT_TM29_FROM_MR_PSYCHIC
 	release
 	end
@@ -20,6 +22,8 @@ SaffronCity_MrPsychicsHouse_EventScript_NoRoomForTM29::
 	end
 
 SaffronCity_MrPsychicsHouse_EventScript_AlreadyGotTM29::
-	msgbox SaffronCity_MrPsychicsHouse_Text_ExplainTM29
+	msgbox SaffronCity_MrPsychicsHouse_Text_ExplainTM29, MSGBOX_NPC
+	textcolor NPC_TEXT_COLOR_NEUTRAL
+	msgbox SaffronCity_MrPsychicsHouse_Text_Interrupt, MSGBOX_NPC
 	release
 	end

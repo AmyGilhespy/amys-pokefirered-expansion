@@ -4,8 +4,9 @@ CeruleanCity_Gym_Text_MistyIntro::
     .string "policy about POKéMON can turn pro.\p"
     .string "What is your approach when you\n"
     .string "catch and train POKéMON?\p"
-    .string "My policy is to not be afraid\n"
-    .string "to get a little wet!{PLAY_BGM}{MUS_ENCOUNTER_GYM_LEADER}$"
+    .string "Since I work with a lot of WATER\n"
+    .string "POKéMON, my policy is to not be\l"
+    .string "afraid to get a little wet!{PLAY_BGM}{MUS_ENCOUNTER_GYM_LEADER}$"
 
 CeruleanCity_Gym_Text_ExplainTR99::
     .string "TR99 teaches SKETCH.\p"

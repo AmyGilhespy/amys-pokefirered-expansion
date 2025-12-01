@@ -7,7 +7,9 @@ MtMoon_1F_OnTransition::
 	end
 
 MtMoon_1F_EventScript_ZubatSign::
-	msgbox MtMoon_1F_Text_ZubatIsABloodsucker, MSGBOX_SIGN
+	msgbox MtMoon_1F_Text_ZubatIsABloodsucker1, MSGBOX_SIGN
+	textcolor NPC_TEXT_COLOR_NEUTRAL
+	msgbox MtMoon_1F_Text_ZubatIsABloodsucker2, MSGBOX_NPC
 	end
 
 MtMoon_1F_EventScript_Marcos::

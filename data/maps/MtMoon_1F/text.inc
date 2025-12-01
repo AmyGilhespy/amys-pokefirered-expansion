@@ -81,9 +81,12 @@ MtMoon_1F_Text_RobbyPostBattle::
     .string "But if you can catch one, you'll\l"
     .string "be able to count on it.$"
 
-MtMoon_1F_Text_ZubatIsABloodsucker::
+MtMoon_1F_Text_ZubatIsABloodsucker1::
     .string "Beware!\n"
-    .string "ZUBAT is a c………sucker!$"
+    .string "ZUBAT is a bloodsucker!$"
+MtMoon_1F_Text_ZubatIsABloodsucker2::
+    .string "…But someone crossed out “blood”\n"
+    .string "and changed it to a dirty word.$"
 
 MtMoon_1F_Text_BrockHelpsExcavateFossils::
     .string "Hi, I'm excavating for fossils here\n"

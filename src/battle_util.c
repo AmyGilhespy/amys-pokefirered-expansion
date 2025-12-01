@@ -881,6 +881,11 @@ static bool8 TryResetForMailScript()
                       | HITMARKER_PASSIVE_HP_UPDATE
                       //| HITMARKER_OBEYS
                       );
+        if (gBattleStruct->bouncedMoveIsUsed)
+        {
+            gBattleStruct->bouncedMoveIsUsed = FALSE;
+            gMailScriptIndex--;
+        }
         return TRUE;
     }
     return FALSE;
@@ -7467,13 +7472,13 @@ u32 ItemBattleEffects(enum ItemCaseId caseID, u32 battler)
                 if (!gBattleMons[battler].volatiles.perishSong)
                 {
                     gBattleMons[battler].volatiles.perishSong = TRUE;
-                    gDisableStructs[battler].perishSongTimer = 9;
+                    gDisableStructs[battler].perishSongTimer = 6;
                     for (s32 btlr = 0; btlr < gBattlersCount; btlr++)
                     {
                         if (btlr != battler && IsBattlerAlive(btlr) && !gBattleMons[btlr].volatiles.perishSong)
                         {
                             gBattleMons[btlr].volatiles.perishSong = TRUE;
-                            gDisableStructs[btlr].perishSongTimer = 9;
+                            gDisableStructs[btlr].perishSongTimer = 6;
                         }
                     }
                     BattleScriptCall(BattleScript_ItemPerishActivates);

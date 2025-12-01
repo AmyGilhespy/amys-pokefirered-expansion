@@ -5516,7 +5516,7 @@ BattleScript_PerishBodyActivates::
 	return
 
 BattleScript_ItemPerishActivates::
-	printstring STRINGID_ITEMPKMNSWILLPERISHIN9TURNS
+	printstring STRINGID_ITEMPKMNSWILLPERISHIN6TURNS
 	waitmessage B_WAIT_TIME_LONG
 	orword gHitMarker, HITMARKER_IGNORE_SUBSTITUTE | HITMARKER_PASSIVE_HP_UPDATE
 	return

@@ -1,18 +1,18 @@
 static const struct InGameTrade sInGameTrades[] = {
     [INGAME_TRADE_MR_MIME] = // 0
     {
-        .nickname = _("Hugs"),
+        .nickname = _("Ghost"),
         .species = SPECIES_GASTLY,
         .ivs = {31, 0, 31, 31, 31, 31},
         .otId = 1985,
         .conditions = {0, 0, 0, 255, 0}, // cool, beauty, cute, smart, tough
         .personality = NATURE_TIMID,
-        .heldItem = ITEM_BLACK_SLUDGE,
+        .heldItem = ITEM_METAL_COAT,
         .mailNum = 255,
         .otName = _("REYLEY"),
         .otGender = MALE,
         .sheen = 10,
-        .customAbility = ABILITY_NORMALIZE
+        .customAbility = ABILITY_NO_GUARD
     },
     [INGAME_TRADE_JYNX] = // 1
     {

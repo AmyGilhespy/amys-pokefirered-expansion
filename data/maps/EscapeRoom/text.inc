@@ -84,7 +84,7 @@ EscapeRoom_Text_MoveTutor_Trick_SuperRod_Received::
     .string "{PLAYER} received SUPER ROD!$"
 
 EscapeRoom_Text_TrickTeach::
-    .string "I can turn TRICKs real good.\p"
+    .string "I can do TRICKs real good.\p"
     .string "Want me to teach it to one of your\n"
     .string "POKéMON?$"
 
