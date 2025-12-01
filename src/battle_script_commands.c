@@ -965,6 +965,8 @@ static const struct PickupItem sPickupTable[] =
     { ITEM_BOTTLE_CAP,      {   _,   _,   _,   _,   _,   _,   _,   1,   1,   1, } },
 };
 
+static bool8 sLoadNextPhaseInMultiPhaseBattle = FALSE;
+
 #undef _
 
 static void ValidateSavedBattlerCounts(void)
@@ -5050,6 +5052,7 @@ bool32 NoAliveMonsForEitherParty(void)
 
 static void LoadNextPhaseInMultiPhaseBattle(u16 trainerId)
 {
+    sLoadNextPhaseInMultiPhaseBattle = TRUE;
     bool32 firstTrainer = FALSE; // Seems to just call ZeroEnemyPartyMons() if TRUE
     // Returns party size, which we ignore.
     CreateNPCTrainerPartyFromTrainer(&gEnemyParty[0], GetTrainerStructFromId(trainerId), firstTrainer, gBattleTypeFlags, trainerId);
@@ -7242,9 +7245,16 @@ static void Cmd_getswitchedmondata(void)
         return;
 
     if (TESTING
+     && !sLoadNextPhaseInMultiPhaseBattle
      && gBattlerPartyIndexes[battler] == gBattleStruct->monToSwitchIntoId[battler]
      && gBattleStruct->hpBefore[battler] != 0) // battler is alive
         Test_ExitWithResult(TEST_RESULT_ERROR, 0, ":L:%s:%d: battler is trying to switch to themself", __FILE__, __LINE__);
+
+    if (gBattleTypeFlags & BATTLE_TYPE_MULTI_PHASE && sLoadNextPhaseInMultiPhaseBattle)
+    {
+        gBattleStruct->monToSwitchIntoId[battler] = 0;
+    }
+    sLoadNextPhaseInMultiPhaseBattle = FALSE;
 
     gBattlerPartyIndexes[battler] = gBattleStruct->monToSwitchIntoId[battler];
 
