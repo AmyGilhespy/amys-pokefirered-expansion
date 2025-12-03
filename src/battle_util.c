@@ -3918,6 +3918,27 @@ static inline u32 SetStartingSideStatus(u32 flag, u32 side, u32 message, u32 ani
     return 0;
 }
 
+static bool32 SpeciesPreventsImposterTransform(u16 species)
+{
+    return species == SPECIES_BROCK
+        || species == SPECIES_MISTY
+        || species == SPECIES_ERIKA
+        || species == SPECIES_SABRINA
+        || species == SPECIES_BLAINE
+        || species == SPECIES_LORELEI
+        || species == SPECIES_BRUNO
+        || species == SPECIES_AGATHA
+        || species == SPECIES_LANCE
+        || species == SPECIES_MOM
+        || species == SPECIES_KYOUKO
+        || species == SPECIES_LILITH
+        || species == SPECIES_MOLLY
+        || species == SPECIES_NATALIE
+        || species == SPECIES_OLIVIA
+        || species == SPECIES_AMY
+        ;
+}
+
 u32 AbilityBattleEffects(u32 caseID, u32 battler, enum Ability ability, u32 special, u32 moveArg)
 {
     u32 effect = 0;
@@ -4219,7 +4240,8 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, enum Ability ability, u32 spec
                     && !gBattleMons[diagonalBattler].volatiles.transformed
                     && !gBattleMons[battler].volatiles.transformed
                     && gBattleStruct->illusion[diagonalBattler].state != ILLUSION_ON
-                    && !IsSemiInvulnerable(diagonalBattler, EXCLUDE_COMMANDER))
+                    && !IsSemiInvulnerable(diagonalBattler, EXCLUDE_COMMANDER)
+                    && !SpeciesPreventsImposterTransform(gBattleMons[diagonalBattler].species))
                 {
                     SaveBattlerAttacker(gBattlerAttacker);
                     SaveBattlerTarget(gBattlerTarget);
@@ -11056,6 +11078,10 @@ bool32 CanBattlerGetOrLoseItem(u32 battler, u16 itemId)
         return FALSE;
     else if (holdEffect == HOLD_EFFECT_BOOSTER_ENERGY
          && (gSpeciesInfo[gBattleMons[battler].species].isParadox || gSpeciesInfo[gBattleMons[gBattlerTarget].species].isParadox))
+        return FALSE;
+    else if (gSaveBlock2Ptr->customData.gameMode == GAME_MODE_ESCAPE_ROOM
+            && gBattleMons[battler].species == SPECIES_SHUCKLE
+            && itemId == ITEM_CHOICE_BAND)
         return FALSE;
     else
         return TRUE;

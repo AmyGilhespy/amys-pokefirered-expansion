@@ -2239,7 +2239,7 @@ static void SafariTextIntoHealthboxObject(void *dest, u8 *windowTileData, u32 wi
 
 #define ABILITY_POP_UP_ABILITY_BG_TXTCLR 7
 #define ABILITY_POP_UP_ABILITY_FG_TXTCLR 9
-#define ABILITY_POP_UP_ABILITY_SH_TXTCLR 1
+#define ABILITY_POP_UP_ABILITY_SH_TXTCLR 13
 
 #define sState          data[0]
 #define sAutoDestroy    data[1]

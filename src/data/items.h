@@ -14717,8 +14717,8 @@ const struct Item gItemsInfo[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .flingPower = 10,
-        .iconPic = gItemIcon_LinkingCord,
-        .iconPalette = gItemIconPalette_LinkingCord,
+        .iconPic = gItemIcon_EscapeRope,
+        .iconPalette = gItemIconPalette_EscapeRope,
     },
 
     [ITEM_COFFEE] =

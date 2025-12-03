@@ -20,11 +20,36 @@ EscapeRoom_EventScript_Init::
 
 	givemon SPECIES_BONSLY, 16, ITEM_NONE, ITEM_LOVE_BALL, NATURE_HARDY, 0, MON_MALE,  0, 252, 0, 0, 0, 0,  31, 31, 31, 31, 31, 31,  MOVE_ROCK_THROW, MOVE_NONE, MOVE_NONE, MOVE_NONE, FALSE, FALSE, TYPE_ROCK, 0
 
-	givemon SPECIES_FARFETCHD, 14, ITEM_NONE, ITEM_LOVE_BALL, NATURE_SASSY, 0, MON_MALE,  0, 0, 0, 0, 0, 0,  31, 31, 31, 31, 31, 31,  MOVE_PLUCK, MOVE_FEINT, MOVE_SAND_ATTACK, MOVE_PECK, FALSE, FALSE, TYPE_NORMAL, 0
+	givemon SPECIES_FARFETCHD, 14, ITEM_NONE, ITEM_LOVE_BALL, NATURE_SASSY, 0, MON_MALE,  0, 0, 0, 0, 0, 0,  31, 31, 31, 31, 31, 31,  MOVE_SAND_ATTACK, MOVE_PECK, MOVE_NONE, MOVE_NONE, FALSE, FALSE, TYPE_NORMAL, 0
 
 	setflag FLAG_SYS_B_DASH
 
 	return
+
+
+EscapeRoom_EventScript_AntiSoftLock::
+	msgbox EscapeRoom_Text_AntiSoftLock_PreFix, MSGBOX_NPC
+	callnative EscapeRoomAntiSoftLock
+	msgbox EscapeRoom_Text_AntiSoftLock_PostFix, MSGBOX_NPC
+	end
+
+
+@ Triggered when VAR_TEMP_1 is 0
+EscapeRoom_EventScript_GymDoorLocked::
+	lockall
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterUp
+	waitmovement 0
+	delay 20
+	msgbox EscapeRoom_Text_DoorIsLocked
+	closemessage
+	applymovement LOCALID_PLAYER, EscapeRoom_Movement_ForcePlayerFromDoor
+	waitmovement 0
+	releaseall
+	end
+
+EscapeRoom_Movement_ForcePlayerFromDoor::
+	walk_down
+	step_end
 
 
 EscapeRoom_EventScript_Sign_JustADecoration::
@@ -82,8 +107,8 @@ EscapeRoom_EventScript_Sign3::
 
 
 EscapeRoom_EventScript_MoveTutor_Trick::
-	goto_if_set FLAG_ESCAPE_ROOM_GOT_ITEMS_FROM_PROSTITUTE, EventScript_EscapeRoom_TrickTutor
-	setflag FLAG_ESCAPE_ROOM_GOT_ITEMS_FROM_PROSTITUTE
+	goto_if_set FLAG_ESCAPE_ROOM_GOT_ITEMS_FROM_TRICK_TUTOR, EventScript_EscapeRoom_TrickTutor
+	setflag FLAG_ESCAPE_ROOM_GOT_ITEMS_FROM_TRICK_TUTOR
 	msgbox EscapeRoom_Text_MoveTutor_Trick_RareCandy_Message, MSGBOX_NPC
 	giveitem_msg EscapeRoom_Text_MoveTutor_Trick_RareCandy_Received, ITEM_RARE_CANDY, 1
 	msgbox EscapeRoom_Text_MoveTutor_Trick_SuperRod_Message, MSGBOX_NPC

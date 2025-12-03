@@ -528,6 +528,7 @@ const u8 *const gBattleStringsTable[STRINGID_COUNT] =
     [STRINGID_ITDODGEDBALLFRIEND]                   = COMPOUND_STRING("It dodged your thrown Friend Ball! Only Bidoof is a friend!"),
     [STRINGID_ITDODGEDBALLNONFRIEND]                = COMPOUND_STRING("It dodged your thrown Poké Ball! Bidoof is a friend!"),
     [STRINGID_ITDODGEDBALLFRIENDREPEAT]             = COMPOUND_STRING("It dodged your thrown Friend Ball! You already caught a friend!"),
+    [STRINGID_ITDODGEDBALLREPEAT]                   = COMPOUND_STRING("It dodged your thrown Poké Ball! You already caught this Pokémon!"),
     [STRINGID_YOUMISSEDPKMN]                        = COMPOUND_STRING("You missed the Pokémon!"),
     [STRINGID_PKMNBROKEFREE]                        = COMPOUND_STRING("Oh no! The Pokémon broke free!"),
     [STRINGID_ITAPPEAREDCAUGHT]                     = COMPOUND_STRING("Aww! It appeared to be caught!"),

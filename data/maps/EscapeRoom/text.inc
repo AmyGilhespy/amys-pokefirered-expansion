@@ -1,3 +1,12 @@
+EscapeRoom_Text_AntiSoftLock_PreFix::
+    .string "OAK: Hi, I'm here to fix any\p"
+    .string "soft-locks you may encounter.$"
+
+EscapeRoom_Text_AntiSoftLock_PostFix::
+    .string "I only checked your party, not\n"
+    .string "your PC… but as for your party,\l"
+    .string "you should now be good to go!$"
+
 EscapeRoom_Text_Sign_JustADecoration::
     .string "This is just a decoration.\p"
     @ Fallthrough
@@ -14,8 +23,8 @@ EscapeRoom_Text_Sign1::
     .string "Random critical hits, accuracy,\n"
     .string "etc. have been completely removed.\p"
 
-    .string "Do note, however, that is is entirely\n"
-    .string "possible to get softlocked!\p"
+    .string "If you should happen to get soft-\n"
+    .string "locked, see Prof. Oak for a fix.\p"
 
     .string "You should only save when a sign\n"
     .string "tells you that it's safe to save!\p"
@@ -68,8 +77,11 @@ EscapeRoom_Text_Sign3::
 
 EscapeRoom_Text_Sign4::
     .string "Push the boulder onto the switch\n"
-    .string "to give the ROCKET GRUNT a free\l"
-    .string "orchiectomy.$"
+    .string "to make the ROCKET GRUNT lose his\l"
+    .string "special Rocket Balls.$"
+
+EscapeRoom_Text_DoorIsLocked::
+    .string "The door is locked…$"
 
 EscapeRoom_Text_MoveTutor_Trick_RareCandy_Message::
     .string "Hey, do you want some candy?$"
@@ -136,18 +148,16 @@ EscapeRoom_Text_SittingBoy_RareCandy_Received::
     .string "{PLAYER} received RARE CANDY!$"
 
 EscapeRoom_Text_SittingBoy_GiveCocaine::
-    .string "Give COCAINE to the child?$"
+    .string "Give “Coffee” to the child?$"
 
 EscapeRoom_Text_SittingBoy_YayCocaine::
-    .string "Yay, COCAINE!$"
+    .string "Yay, drugs!$"
 
 EscapeRoom_Text_SittingBoy_PleaseFindMeSomethingEnergizing::
     .string "Please find me something energizing!$"
 
 EscapeRoom_Text_TrainerDWontFightBeforeBoulderPuzzleSolved::
-    .string "Hey kid, have you seen my balls?\p"
-    .string "They're so useful and powerful,\n"
-    .string "and they feel so nice in my hands!$"
+    .string "Hey kid, have you seen my balls?$"
 
 EscapeRoom_Text_TrainerDShitILostMyBalls::
     .string "Shit, I lost my balls…\n"
@@ -157,7 +167,7 @@ EscapeRoom_Text_TrainerDWontFightPartialParty::
     .string "Hold on, you don't have a full\n"
     .string "team of 6 POKéMON in your party.\p"
     .string "I may be a ROCKET, but I'm also\n"
-    .string "honorable and won't fight you\p"
+    .string "honorable, and won't fight you\p"
     .string "unless you have as many POKéMON\n"
     .string "with you as I have…\l"
     .string "It's only fair that way!$"

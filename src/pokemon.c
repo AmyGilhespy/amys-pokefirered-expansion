@@ -7865,7 +7865,10 @@ bool8 EscapeRoomRemoveAllButRaltsLine(void)
 
     // If the player somehow has no Ralts, do nothing (failsafe)
     if (raltsSlot < 0)
+    {
+        UpdateFollowingPokemon();
         return FALSE;
+    }
 
     // Copy the Ralts into slot 0 if it isn't already
     if (raltsSlot != 0)
@@ -7877,7 +7880,128 @@ bool8 EscapeRoomRemoveAllButRaltsLine(void)
     // Set party count to 1
     gPlayerPartyCount = 1;
 
+    UpdateFollowingPokemon();
     return FALSE; // return FALSE so the script continues immediately
+}
+
+bool8 EscapeRoomAntiSoftLock(void)
+{
+    u32 species;
+    u32 level;
+    u32 move;
+    s32 i;
+    u8 giveRareCandies = 0;
+    bool8 noRareCandiesMayBeUsedAtAll = !FlagGet(TRAINER_FLAGS_START + TRAINER_ESCAPE_ROOM_B);
+
+    for (i = 1; i < gPlayerPartyCount; i++)
+    {
+        struct Pokemon *mon = &gPlayerParty[i];
+        if (mon == NULL)
+            continue;
+        species = GetMonData(mon, MON_DATA_SPECIES);
+        level = GetMonData(mon, MON_DATA_LEVEL);
+
+        // Rare Candy is never used on Ralts
+        if ((species == SPECIES_RALTS || species == SPECIES_KIRLIA) && level > 12)
+        {
+            giveRareCandies += level - 12;
+            level = 12;
+            SetMonData(mon, MON_DATA_LEVEL, &level);
+        }
+
+        // Once you beat Benjamin it's safe to use Rare Candy on Bonsly, but it must evolve!
+        if (species == SPECIES_SUDOWOODO && level > 17)
+        {
+            giveRareCandies += level - 17;
+            level = 17;
+            SetMonData(mon, MON_DATA_LEVEL, &level);
+        }
+        if (noRareCandiesMayBeUsedAtAll && species == SPECIES_SUDOWOODO)
+        {
+            species = SPECIES_BONSLY;
+            SetMonData(mon, MON_DATA_SPECIES, &species);
+        }
+        if (species == SPECIES_BONSLY && level > 16)
+        {
+            giveRareCandies += level - 16;
+            level = 16;
+            SetMonData(mon, MON_DATA_LEVEL, &level);
+
+            move = GetMonData(mon, MON_DATA_MOVE1);
+            if (move == MOVE_SLAM || move == MOVE_ROCK_SMASH)
+            {
+                move = MOVE_NONE;
+                SetMonData(mon, MON_DATA_MOVE1, &move);
+            }
+
+            move = GetMonData(mon, MON_DATA_MOVE2);
+            if (move == MOVE_SLAM || move == MOVE_ROCK_SMASH)
+            {
+                move = MOVE_NONE;
+                SetMonData(mon, MON_DATA_MOVE2, &move);
+            }
+
+            move = GetMonData(mon, MON_DATA_MOVE3);
+            if (move == MOVE_SLAM || move == MOVE_ROCK_SMASH)
+            {
+                move = MOVE_NONE;
+                SetMonData(mon, MON_DATA_MOVE3, &move);
+            }
+
+            move = GetMonData(mon, MON_DATA_MOVE4);
+            if (move == MOVE_SLAM || move == MOVE_ROCK_SMASH)
+            {
+                move = MOVE_NONE;
+                SetMonData(mon, MON_DATA_MOVE4, &move);
+            }
+        }
+
+        // Once you beat Benjamin it's safe to have used Rare Candy on Farfetchd
+        if (species == SPECIES_FARFETCHD && level > 15)
+        {
+            giveRareCandies += level - 15;
+            level = 15;
+            SetMonData(mon, MON_DATA_LEVEL, &level);
+        }
+        if (noRareCandiesMayBeUsedAtAll && species == SPECIES_FARFETCHD && level > 14)
+        {
+            giveRareCandies += level - 14;
+            level = 14;
+            SetMonData(mon, MON_DATA_LEVEL, &level);
+
+            move = GetMonData(mon, MON_DATA_MOVE1);
+            if (move == MOVE_CUT)
+            {
+                move = MOVE_NONE;
+                SetMonData(mon, MON_DATA_MOVE1, &move);
+            }
+
+            move = GetMonData(mon, MON_DATA_MOVE2);
+            if (move == MOVE_CUT)
+            {
+                move = MOVE_NONE;
+                SetMonData(mon, MON_DATA_MOVE2, &move);
+            }
+
+            move = GetMonData(mon, MON_DATA_MOVE3);
+            if (move == MOVE_CUT)
+            {
+                move = MOVE_NONE;
+                SetMonData(mon, MON_DATA_MOVE3, &move);
+            }
+
+            move = GetMonData(mon, MON_DATA_MOVE4);
+            if (move == MOVE_CUT)
+            {
+                move = MOVE_NONE;
+                SetMonData(mon, MON_DATA_MOVE4, &move);
+            }
+        }
+    }
+
+    AddBagItem(ITEM_RARE_CANDY, giveRareCandies);
+
+    return FALSE;
 }
 
 void EscapeRoomCheckIfFullTeamOf6InParty(void)

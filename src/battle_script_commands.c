@@ -13776,6 +13776,7 @@ static void Cmd_handleballthrow(void)
         {
             if (gBattleMons[gBattlerTarget].species != SPECIES_BIDOOF)
             {
+                AddBagItem(gLastUsedItem, 1);
                 BtlController_EmitBallThrowAnim(gBattlerAttacker, B_COMM_TO_CONTROLLER, BALL_GHOST_DODGE);
                 MarkBattlerForControllerExec(gBattlerAttacker);
                 gBattlescriptCurrInstr = BattleScript_EscapeRoomFriendBallDodge;
@@ -13783,20 +13784,52 @@ static void Cmd_handleballthrow(void)
             }
             else if (FlagGet(FLAG_ESCAPE_ROOM_CAUGHT_BIDOOF))
             {
+                AddBagItem(gLastUsedItem, 1);
                 BtlController_EmitBallThrowAnim(gBattlerAttacker, B_COMM_TO_CONTROLLER, BALL_GHOST_DODGE);
                 MarkBattlerForControllerExec(gBattlerAttacker);
                 gBattlescriptCurrInstr = BattleScript_EscapeRoomFriendBallDodgeRepeat;
                 return;
             }
         }
-        else
+        else // Not a Friend Ball
         {
             if (gBattleMons[gBattlerTarget].species == SPECIES_BIDOOF)
             {
+                AddBagItem(gLastUsedItem, 1);
                 BtlController_EmitBallThrowAnim(gBattlerAttacker, B_COMM_TO_CONTROLLER, BALL_GHOST_DODGE);
                 MarkBattlerForControllerExec(gBattlerAttacker);
                 gBattlescriptCurrInstr = BattleScript_EscapeRoomNonFriendBallDodge;
                 return;
+            }
+            if (gBattleMons[gBattlerTarget].species == SPECIES_SHUCKLE)
+            {
+                if (FlagGet(FLAG_ESCAPE_ROOM_CAUGHT_SHUCKLE))
+                {
+                    AddBagItem(gLastUsedItem, 1);
+                    BtlController_EmitBallThrowAnim(gBattlerAttacker, B_COMM_TO_CONTROLLER, BALL_GHOST_DODGE);
+                    MarkBattlerForControllerExec(gBattlerAttacker);
+                    gBattlescriptCurrInstr = BattleScript_EscapeRoomShuckleBallDodgeRepeat;
+                    return;
+                }
+                else
+                {
+                    FlagSet(FLAG_ESCAPE_ROOM_CAUGHT_SHUCKLE);
+                }
+            }
+            if (gBattleMons[gBattlerTarget].species == SPECIES_SMEARGLE)
+            {
+                if (FlagGet(FLAG_ESCAPE_ROOM_CAUGHT_SMEARGLE))
+                {
+                    AddBagItem(gLastUsedItem, 1);
+                    BtlController_EmitBallThrowAnim(gBattlerAttacker, B_COMM_TO_CONTROLLER, BALL_GHOST_DODGE);
+                    MarkBattlerForControllerExec(gBattlerAttacker);
+                    gBattlescriptCurrInstr = BattleScript_EscapeRoomSmeargleBallDodgeRepeat;
+                    return;
+                }
+                else
+                {
+                    FlagSet(FLAG_ESCAPE_ROOM_CAUGHT_SMEARGLE);
+                }
             }
         }
     }
@@ -14071,6 +14104,12 @@ static void Cmd_handleballthrow(void)
             {
                 u32 ivs = 0x3fffffff;
                 SetMonData(caughtMon, MON_DATA_IVS, &ivs);
+                if (gSaveBlock2Ptr->customData.gameMode == GAME_MODE_ESCAPE_ROOM
+                        && gBattleMons[gBattlerTarget].species == SPECIES_SHUCKLE)
+                {
+                    u32 heldChoiceBand = ITEM_CHOICE_BAND;
+                    SetMonData(caughtMon, MON_DATA_HELD_ITEM, &heldChoiceBand);
+                }
             }
             else if (ballId == BALL_ROCKET)
             {
@@ -14190,6 +14229,12 @@ static void Cmd_handleballthrow(void)
                 {
                     u32 ivs = 0x3fffffff;
                     SetMonData(caughtMon, MON_DATA_IVS, &ivs);
+                    if (gSaveBlock2Ptr->customData.gameMode == GAME_MODE_ESCAPE_ROOM
+                            && gBattleMons[gBattlerTarget].species == SPECIES_SHUCKLE)
+                    {
+                        u32 heldChoiceBand = ITEM_CHOICE_BAND;
+                        SetMonData(caughtMon, MON_DATA_HELD_ITEM, &heldChoiceBand);
+                    }
                 }
                 else if (ballId == BALL_ROCKET)
                 {

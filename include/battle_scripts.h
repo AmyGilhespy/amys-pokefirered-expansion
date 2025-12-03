@@ -894,5 +894,7 @@ extern const u8 BattleScript_RocketBallDodge[];
 extern const u8 BattleScript_EscapeRoomFriendBallDodge[];
 extern const u8 BattleScript_EscapeRoomNonFriendBallDodge[];
 extern const u8 BattleScript_EscapeRoomFriendBallDodgeRepeat[];
+extern const u8 BattleScript_EscapeRoomShuckleBallDodgeRepeat[];
+extern const u8 BattleScript_EscapeRoomSmeargleBallDodgeRepeat[];
 
 #endif // GUARD_BATTLE_SCRIPTS_H

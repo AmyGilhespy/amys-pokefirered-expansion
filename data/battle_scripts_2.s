@@ -49,6 +49,13 @@ BattleScript_EscapeRoomFriendBallDodgeRepeat::
 	waitmessage B_WAIT_TIME_LONG
 	finishaction
 
+BattleScript_EscapeRoomSmeargleBallDodgeRepeat::
+BattleScript_EscapeRoomShuckleBallDodgeRepeat::
+	waitmessage B_WAIT_TIME_LONG
+	printstring STRINGID_ITDODGEDBALLREPEAT
+	waitmessage B_WAIT_TIME_LONG
+	finishaction
+
 @ pokemerald
 	.align 2
 gBattlescriptsForUsingItem::
