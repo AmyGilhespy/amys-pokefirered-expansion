@@ -14106,12 +14106,6 @@ static void Cmd_handleballthrow(void)
             {
                 u32 ivs = 0x3fffffff;
                 SetMonData(caughtMon, MON_DATA_IVS, &ivs);
-                if (gSaveBlock2Ptr->customData.gameMode == GAME_MODE_ESCAPE_ROOM
-                        && gBattleMons[gBattlerTarget].species == SPECIES_SHUCKLE)
-                {
-                    u32 heldChoiceBand = ITEM_CHOICE_BAND;
-                    SetMonData(caughtMon, MON_DATA_HELD_ITEM, &heldChoiceBand);
-                }
             }
             else if (ballId == BALL_ROCKET)
             {
@@ -14231,12 +14225,6 @@ static void Cmd_handleballthrow(void)
                 {
                     u32 ivs = 0x3fffffff;
                     SetMonData(caughtMon, MON_DATA_IVS, &ivs);
-                    if (gSaveBlock2Ptr->customData.gameMode == GAME_MODE_ESCAPE_ROOM
-                            && gBattleMons[gBattlerTarget].species == SPECIES_SHUCKLE)
-                    {
-                        u32 heldChoiceBand = ITEM_CHOICE_BAND;
-                        SetMonData(caughtMon, MON_DATA_HELD_ITEM, &heldChoiceBand);
-                    }
                 }
                 else if (ballId == BALL_ROCKET)
                 {

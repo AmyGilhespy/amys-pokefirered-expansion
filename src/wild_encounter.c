@@ -94,7 +94,7 @@ static void SetEscapeRoomWildMonHeldItemEtc(struct Pokemon *mon, u16 species)
         break;
     case SPECIES_SHUCKLE: // Rock Smash
         SetMonData(mon, MON_DATA_ABILITY_NUM, &abilityNum);
-        // It will have ITEM_CHOICE_BAND but only after it's caught so you can't Trick it off.
+        heldItem = ITEM_CHOICE_BAND;
         break;
     case SPECIES_SMEARGLE: // Fishing: Super Rod
         break;
