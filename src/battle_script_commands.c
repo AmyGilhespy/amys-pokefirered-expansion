@@ -4209,7 +4209,9 @@ static void Cmd_setadditionaleffects(void)
                 percentChance = CalcSecondaryEffectChance(gBattlerAttacker, GetBattlerAbility(gBattlerAttacker), additionalEffect);
 
                 // Activate effect if it's primary (chance == 0) or if RNGesus says so
-                if ((percentChance == 0) || RandomPercentage(RNG_SECONDARY_EFFECT + gBattleStruct->additionalEffectsCounter, percentChance))
+                if ((percentChance == 0) || GameModeIsDeterministic()
+                        ? percentChance >= 50
+                        : RandomPercentage(RNG_SECONDARY_EFFECT + gBattleStruct->additionalEffectsCounter, percentChance))
                 {
                     gBattleScripting.moveEffect = additionalEffect->moveEffect;
                     gBattleCommunication[MULTISTRING_CHOOSER] = *((u8 *) &additionalEffect->multistring);

@@ -1,6 +1,6 @@
 EscapeRoom_Text_AntiSoftLock_PreFix::
-    .string "OAK: Hi, I'm here to fix any\p"
-    .string "soft-locks you may encounter.$"
+    .string "OAK: Hi, I'm here to fix any soft-\n"
+    .string "locks you may encounter.$"
 
 EscapeRoom_Text_AntiSoftLock_PostFix::
     .string "I only checked your party, not\n"
@@ -26,9 +26,6 @@ EscapeRoom_Text_Sign1::
     .string "If you should happen to get soft-\n"
     .string "locked, see Prof. Oak for a fix.\p"
 
-    .string "You should only save when a sign\n"
-    .string "tells you that it's safe to save!\p"
-
     .string "It's mostly gen 9 mechanics, but\n"
     .string "some things may be different.\p"
 
@@ -49,6 +46,9 @@ EscapeRoom_Text_Sign1::
     .string "so, say you encounter a wild\n"
     .string "Bidoof by walking in the grass,\l"
     .string "that grass will only have Bidoof.\p"
+
+    .string "You should only ever catch one of\n"
+    .string "any POKéMON species.\p"
 
     .string "All findable items in the game\n"
     .string "are in item balls (i.e. not hidden).\p"

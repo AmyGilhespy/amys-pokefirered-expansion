@@ -7893,7 +7893,7 @@ bool8 EscapeRoomAntiSoftLock(void)
     u8 giveRareCandies = 0;
     bool8 noRareCandiesMayBeUsedAtAll = !FlagGet(TRAINER_FLAGS_START + TRAINER_ESCAPE_ROOM_B);
 
-    for (i = 1; i < gPlayerPartyCount; i++)
+    for (i = 0; i < gPlayerPartyCount; i++)
     {
         struct Pokemon *mon = &gPlayerParty[i];
         if (mon == NULL)
