@@ -63,238 +63,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "src/data/items.h",
-			"settings":
-			{
-				"buffer_size": 489069,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			},
-			"undo_stack":
-			[
-				[
-					21,
-					1,
-					"insert",
-					{
-						"characters": "Escape"
-					},
-					"BgAAAN5JBwAAAAAA30kHAAAAAAALAAAATGlua2luZ0NvcmTfSQcAAAAAAOBJBwAAAAAAAAAAAOBJBwAAAAAA4UkHAAAAAAAAAAAA4UkHAAAAAADiSQcAAAAAAAAAAADiSQcAAAAAAONJBwAAAAAAAAAAAONJBwAAAAAA5EkHAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAA3kkHAAAAAADpSQcAAAAAAAAAAAAAAPC/"
-				],
-				[
-					22,
-					1,
-					"insert_dimensions",
-					null,
-					"AgAAANRJBwAAAAAA1EkHAAAAAAAQAAAAZ0l0ZW1JY29uX0VzY2FwZdRJBwAAAAAA6EkHAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAA5EkHAAAAAADkSQcAAAAAAAAAAAAAAPC/"
-				],
-				[
-					26,
-					1,
-					"insert",
-					{
-						"characters": "Escape"
-					},
-					"BgAAABJKBwAAAAAAE0oHAAAAAAALAAAATGlua2luZ0NvcmQTSgcAAAAAABRKBwAAAAAAAAAAABRKBwAAAAAAFUoHAAAAAAAAAAAAFUoHAAAAAAAWSgcAAAAAAAAAAAAWSgcAAAAAABdKBwAAAAAAAAAAABdKBwAAAAAAGEoHAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAAEkoHAAAAAAAdSgcAAAAAAAAAAAAAAPC/"
-				],
-				[
-					27,
-					1,
-					"insert_dimensions",
-					null,
-					"AgAAAAFKBwAAAAAAAUoHAAAAAAAXAAAAZ0l0ZW1JY29uUGFsZXR0ZV9Fc2NhcGUBSgcAAAAAABxKBwAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAAGEoHAAAAAAAYSgcAAAAAAAAAAAAAAPC/"
-				]
-			]
-		},
-		{
-			"file": "data/maps/EscapeRoom/text.inc",
-			"settings":
-			{
-				"buffer_size": 6546,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			},
-			"undo_stack":
-			[
-				[
-					11,
-					1,
-					"insert",
-					{
-						"characters": "Coffee"
-					},
-					"BgAAAJ4QAAAAAAAAnxAAAAAAAAAHAAAAQ09DQUlORZ8QAAAAAAAAoBAAAAAAAAAAAAAAoBAAAAAAAAChEAAAAAAAAAAAAAChEAAAAAAAAKIQAAAAAAAAAAAAAKIQAAAAAAAAoxAAAAAAAAAAAAAAoxAAAAAAAACkEAAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAAnhAAAAAAAAClEAAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					13,
-					1,
-					"",
-					null,
-					"AQAAAKQQAAAAAAAApRAAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAApBAAAAAAAACkEAAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					16,
-					1,
-					"",
-					null,
-					"AQAAAJ4QAAAAAAAAnxAAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAAnhAAAAAAAACeEAAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					23,
-					1,
-					"paste",
-					null,
-					"AQAAAPIQAAAAAAAA+hAAAAAAAAAHAAAAQ09DQUlORQ",
-					"AQAAAAAAAAABAAAA8hAAAAAAAAD5EAAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					32,
-					1,
-					"left_delete",
-					null,
-					"AQAAAN8RAAAAAAAA3xEAAAAAAABiAAAAICAgIC5zdHJpbmcgIlRoZXkncmUgc28gdXNlZnVsIGFuZCBwb3dlcmZ1bCxcbiIKICAgIC5zdHJpbmcgImFuZCB0aGV5IGZlZWwgc28gbmljZSBpbiBteSBoYW5kcyEkIgo",
-					"AQAAAAAAAAABAAAA3xEAAAAAAABBEgAAAAAAAAAAAAAAAAAA"
-				],
-				[
-					35,
-					1,
-					"insert",
-					{
-						"characters": "$"
-					},
-					"AQAAANsRAAAAAAAA3BEAAAAAAAACAAAAXHA",
-					"AQAAAAAAAAABAAAA3REAAAAAAADbEQAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					40,
-					1,
-					"insert",
-					{
-						"characters": ","
-					},
-					"AQAAACsTAAAAAAAALBMAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAAKxMAAAAAAAArEwAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					48,
-					1,
-					"insert",
-					{
-						"characters": "make"
-					},
-					"BAAAANgIAAAAAAAA2QgAAAAAAAAEAAAAZ2l2ZdkIAAAAAAAA2ggAAAAAAAAAAAAA2ggAAAAAAADbCAAAAAAAAAAAAADbCAAAAAAAANwIAAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAA3AgAAAAAAADYCAAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					52,
-					1,
-					"insert",
-					{
-						"characters": "lose"
-					},
-					"BAAAAO4IAAAAAAAA7wgAAAAAAAAGAAAAYSBmcmVl7wgAAAAAAADwCAAAAAAAAAAAAADwCAAAAAAAAPEIAAAAAAAAAAAAAPEIAAAAAAAA8ggAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAA7ggAAAAAAAD0CAAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					53,
-					1,
-					"insert",
-					{
-						"characters": " his"
-					},
-					"BAAAAPIIAAAAAAAA8wgAAAAAAAAAAAAA8wgAAAAAAAD0CAAAAAAAAAAAAAD0CAAAAAAAAPUIAAAAAAAAAAAAAPUIAAAAAAAA9ggAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAA8ggAAAAAAADyCAAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					57,
-					1,
-					"insert",
-					{
-						"characters": "Rocket"
-					},
-					"BgAAAAcJAAAAAAAACAkAAAAAAAALAAAAb3JjaGllY3RvbXkICQAAAAAAAAkJAAAAAAAAAAAAAAkJAAAAAAAACgkAAAAAAAAAAAAACgkAAAAAAAALCQAAAAAAAAAAAAALCQAAAAAAAAwJAAAAAAAAAAAAAAwJAAAAAAAADQkAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAAEgkAAAAAAAAHCQAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					58,
-					1,
-					"insert",
-					{
-						"characters": " Balls"
-					},
-					"BgAAAA0JAAAAAAAADgkAAAAAAAAAAAAADgkAAAAAAAAPCQAAAAAAAAAAAAAPCQAAAAAAABAJAAAAAAAAAAAAABAJAAAAAAAAEQkAAAAAAAAAAAAAEQkAAAAAAAASCQAAAAAAAAAAAAASCQAAAAAAABMJAAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAADQkAAAAAAAANCQAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					60,
-					1,
-					"insert",
-					{
-						"characters": "balls"
-					},
-					"BQAAAAcJAAAAAAAACAkAAAAAAAAMAAAAUm9ja2V0IEJhbGxzCAkAAAAAAAAJCQAAAAAAAAAAAAAJCQAAAAAAAAoJAAAAAAAAAAAAAAoJAAAAAAAACwkAAAAAAAAAAAAACwkAAAAAAAAMCQAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAAEwkAAAAAAAAHCQAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					62,
-					1,
-					"insert",
-					{
-						"characters": "special"
-					},
-					"BwAAAAcJAAAAAAAACAkAAAAAAAAAAAAACAkAAAAAAAAJCQAAAAAAAAAAAAAJCQAAAAAAAAoJAAAAAAAAAAAAAAoJAAAAAAAACwkAAAAAAAAAAAAACwkAAAAAAAAMCQAAAAAAAAAAAAAMCQAAAAAAAA0JAAAAAAAAAAAAAA0JAAAAAAAADgkAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAABwkAAAAAAAAHCQAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					63,
-					1,
-					"insert",
-					{
-						"characters": " "
-					},
-					"AQAAAA4JAAAAAAAADwkAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAADgkAAAAAAAAOCQAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					66,
-					1,
-					"insert",
-					{
-						"characters": "Rocket"
-					},
-					"BgAAAA8JAAAAAAAAEAkAAAAAAAABAAAAYhAJAAAAAAAAEQkAAAAAAAAAAAAAEQkAAAAAAAASCQAAAAAAAAAAAAASCQAAAAAAABMJAAAAAAAAAAAAABMJAAAAAAAAFAkAAAAAAAAAAAAAFAkAAAAAAAAVCQAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAAEAkAAAAAAAAPCQAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					67,
-					1,
-					"insert",
-					{
-						"characters": " B"
-					},
-					"AgAAABUJAAAAAAAAFgkAAAAAAAAAAAAAFgkAAAAAAAAXCQAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAAFQkAAAAAAAAVCQAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					76,
-					1,
-					"insert",
-					{
-						"characters": "drugs"
-					},
-					"BQAAAP0QAAAAAAAA/hAAAAAAAAAMAAAA4oCcQ29mZmVl4oCd/hAAAAAAAAD/EAAAAAAAAAAAAAD/EAAAAAAAAAARAAAAAAAAAAAAAAARAAAAAAAAAREAAAAAAAAAAAAAAREAAAAAAAACEQAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAA/RAAAAAAAAAFEQAAAAAAAAAAAAAAAPC/"
-				]
-			]
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -369,23 +137,60 @@
 	],
 	"file_history":
 	[
-		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/data/battle_scripts_1.s",
-		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/src/data/trainers.party",
-		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/src/battle_main.c",
+		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/data/maps/EscapeRoom/text.inc",
+		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/include/constants/items.h",
+		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/src/option_menu.c",
+		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/data/maps/SaffronCity_Gym/scripts.inc",
+		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/data/scripts/pkmn_center_nurse.inc",
+		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/data/maps/LavenderTown_House2/text.inc",
+		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/src/data/items.h",
+		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/data/specials.inc",
+		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/src/party_menu_specials.c",
+		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/src/party_menu.c",
+		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/include/constants/party_menu.h",
+		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/src/title_screen.c",
+		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/src/main_menu.c",
+		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/include/main_menu.h",
+		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/src/wild_encounter.c",
 		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/src/battle_util.c",
+		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/src/battle_main.c",
+		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/src/data/moves_info.h",
+		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/src/pokemon.c",
 		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/src/battle_script_commands.c",
+		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/data/maps/LavenderTown_Mart/scripts.inc",
+		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/graphics/items/icon_palettes/blank_plate.pal",
+		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/src/data/graphics/items.h",
+		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/include/graphics.h",
+		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/data/maps/FuchsiaCity_Gym/scripts.inc",
+		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/data/maps/CeladonCity_Gym/scripts.inc",
 		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/include/battle_scripts.h",
+		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/src/new_game.c",
+		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/include/constants/flags.h",
+		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/include/constants/opponents.h",
+		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/src/event_object_movement.c",
+		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/data/event_scripts.s",
+		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/src/overworld.c",
+		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/data/maps/EscapeRoom/scripts.inc",
+		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/data/battle_scripts_2.s",
+		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/include/constants/battle_string_ids.h",
+		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/src/battle_message.c",
+		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/data/battle_scripts_1.s",
+		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/asm/macros/battle_script.inc",
+		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/include/constants/characters.h",
+		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/src/battle_interface.c",
+		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/graphics/battle_interface/ability_pop_up.pal",
+		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/data/maps/CinnabarIsland/text.inc",
+		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/data/maps/CinnabarIsland/scripts.inc",
+		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/data/maps/CeruleanCave_SecretChamber_B9F/text.inc",
+		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/src/data/trainers.party",
 		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/graphics/pokemon/amy/normal.pal",
 		"/home/amy/Pictures/PokemonArt/OriginalPokemonArt/64x64-rotsprite.pal",
 		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/graphics/trainers/palettes/rom_hacker.pal",
-		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/include/constants/battle_string_ids.h",
-		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/src/battle_message.c",
 		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/data/maps/SaffronCity_MrPsychicsHouse/text.inc",
 		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/data/maps/SaffronCity_MrPsychicsHouse/scripts.inc",
 		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/data/text/ingame_trade.inc",
 		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/src/data/ingame_trades.h",
 		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/data/maps/CeruleanCity_Gym/text.inc",
-		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/data/maps/EscapeRoom/scripts.inc",
 		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/src/text.c",
 		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/asm/macros/event.inc",
 		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/graphics/text_window/stdpal_0.pal",
@@ -393,19 +198,13 @@
 		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/graphics/text_window/stdpal_2.pal",
 		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/graphics/text_window/stdpal_3.pal",
 		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/graphics/text_window/stdpal_4.pal",
-		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/src/wild_encounter.c",
 		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/src/field_player_avatar.c",
-		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/src/new_game.c",
 		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/src/menu.c",
 		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/include/global.h",
-		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/include/constants/characters.h",
 		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/src/text_window.c",
 		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/graphics_file_rules.mk",
 		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/src/field_specials.c",
-		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/src/option_menu.c",
-		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/data/maps/EscapeRoom/text.inc",
 		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/data/maps/SaffronCity/text.inc",
-		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/src/data/items.h",
 		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/src/data/pokemon/species_info/gen_1_families.h",
 		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/data/maps/ViridianCity_Gym/text.inc",
 		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/data/maps/MtMoon_1F/scripts.inc",
@@ -442,7 +241,6 @@
 		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/data/maps/PewterCity/text.inc",
 		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/data/maps/CeladonCity_GameCorner_PrizeRoom/scripts.inc",
 		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/data/maps/LavenderTown/scripts.inc",
-		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/include/constants/flags.h",
 		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/data/maps/CinnabarIsland_PokemonLab_ExperimentRoom/scripts.inc",
 		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/src/trade_scene.c",
 		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/include/constants/trade.h",
@@ -452,7 +250,6 @@
 		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/data/maps/CinnabarIsland_PokemonLab_ResearchRoom/scripts.inc",
 		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/data/maps/CinnabarIsland_PokemonLab_Lounge/text.inc",
 		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/data/maps/CinnabarIsland_PokemonLab_ExperimentRoom/text.inc",
-		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/data/maps/LavenderTown_Mart/scripts.inc",
 		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/include/constants/menu.h",
 		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/src/script_menu.c",
 		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/data/maps/LavenderTown/text.inc",
@@ -464,39 +261,10 @@
 		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/data/maps/PalletTown_ProfessorOaksLab/scripts.inc",
 		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/data/maps/CinnabarIsland_PokemonLab_Lounge/scripts.inc",
 		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/data/maps/CeladonCity_DepartmentStore_5F/scripts.inc",
-		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/src/party_menu.c",
 		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/src/data/pokemon/item_effects.h",
 		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/include/constants/item_effects.h",
-		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/src/pokemon.c",
 		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/graphics/items/icon_palettes/coffee.pal",
-		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/include/bg.h",
-		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/include/constants/opponents.h",
-		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/src/pokemon_storage_system.c",
-		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/src/item.c",
-		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/src/item_use.c",
-		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/data/maps/SaffronCity_Gym/scripts.inc",
-		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/include/graphics.h",
-		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/src/data/graphics/items.h",
-		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/include/constants/items.h",
-		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/data/maps/VermilionCity_Gym/scripts.inc",
-		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/src/game_modes.c",
-		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/include/game_modes.h",
-		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/src/graphics.c",
-		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/src/data/pokemon/trainer_class_lookups.h",
-		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/Makefile",
-		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/src/title_screen.c",
-		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/graphics/title_screen/firered/background-minus60.pal",
-		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/graphics/title_screen/firered/background.pal",
-		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/graphics/title_screen/original/rom_hacker_big.pal",
-		"/home/amy/Pictures/PokemonArt/OriginalPokemonArt/48x120@16.pal",
-		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/tileset_rules.mk",
-		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/spritesheet_rules.mk",
-		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/tools/gbagfx/main.c",
-		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/tools/jsonproc/jsonproc.cpp",
-		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/map_data_rules.mk",
-		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/json_data_rules.mk",
-		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/graphics/title_screen/original/rom_hacker_big.json",
-		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/tools/mapjson/mapjson.cpp"
+		"/home/amy/Games/Emulation/Games/Pokémon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/include/bg.h"
 	],
 	"find":
 	{
@@ -515,6 +283,45 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"is is",
+			"CHANGEME",
+			"EventScript_PkmnCenterNurse_CantRenameEgg",
+			"EventScript_PkmnCenterNurse_CantTutorEgg",
+			"PARTY_MENU_TYPE_MOVE_RELEAR",
+			"EventScript_PkmnCenterNurse_RenamePkmn",
+			"EventScript_PkmnCenterNurse_RemindPkmn",
+			"EventScript_PkmnCenterNurse_RenamePkmn",
+			"PixiePl",
+			"HOLD_EFFECT_PLATE",
+			"FucshiaCity_Gym_Shop",
+			"Saffron",
+			"ITEM_CHOICE_BAND",
+			"CHOICE_BAND",
+			"RandomPercentage(",
+			"RandomPercentage",
+			"CanApplyAdditionalEffect",
+			"CalcSecondaryEffectChance",
+			"additionalEffect",
+			"MoveIsAffectedBySheerForce",
+			"additionalEffect",
+			"MoveHasAdditionalEffectWithChance",
+			"additionalEffects",
+			"SetNonVolatileStatus",
+			"moveEffect",
+			"FLAG_ESCAPE_ROOM_CAUGHT_",
+			"ABILITY_POP_UP_ABILITY_SH_TXTCLR",
+			"PrintAbilityOnAbilityPopUp",
+			"CreateAbilityPopUp",
+			"PROSTI",
+			"Text_GymDoorLocked",
+			"CinnabarIsland_EventScript_GymDoorLocked",
+			"SpeciesPreventsImposterTransform",
+			"brock",
+			"CanBattlerGetOrLoseItem",
+			"tryswapitems",
+			"Trick:",
+			"EFFECT_TRICK",
+			"CHOICE_BAND",
 			"binding",
 			"sLoadNextPhaseInMultiPhaseBattle",
 			"LoadNextPhaseInMultiPhaseBattle",
@@ -603,46 +410,7 @@
 			"CloseAndSaveOptionMenu",
 			"Task_OptionMenu",
 			"SetOptionMenuTask",
-			"sOptionMenuPtr",
-			"sOptionMenuItemCounts",
-			"sBattleStyleOptions",
-			"SHIFT\"",
-			"SYS_FLAGS",
-			"VAR_TEMP_1",
-			"CeladonCity_GameCorner_PrizeRoom_EventScript_ReceivedMonParty",
-			"buffer",
-			"sInGameTradeMailMessages",
-			"INGAME_TRADE_EEVEE",
-			"tail",
-			"sMultichoiceList_GameModeCustom",
-			"MULTICHOICE_NURSE",
-			"Text",
-			"partyfull",
-			"CeladonCity_GameCorner_PrizeRoom_EventScript_ReceivedMonParty",
-			"CeladonCity_GameCorner_PrizeRoom_EventScript_ConfirmPrizeMonSpeciesNameBuffered",
-			"CeladonCity_GameCorner_PrizeRoom_EventScript_CheckReceivedMon",
-			"CeladonCity_GameCorner_PrizeRoom_EventScript_ReceivedMonParty",
-			"CeladonCity_GameCorner_PrizeRoom_EventScript_CheckReceivedMon",
-			"CeladonCity_GameCorner_PrizeRoom_EventScript_ConfirmPrizeMonSpeciesNameBuffered",
-			"CeladonCity_GameCorner_PrizeRoom_EventScript_ConfirmPrizeMon",
-			"CeladonCity_GameCorner_PrizeRoom_EventScript_Unown",
-			"GOT_COINS_F",
-			"Shedinja",
-			"stellar",
-			"signs are useful",
-			"@",
-			"PalletTown_ProfessorOaksLab_EventScript_ReadyEndSignLadyScene",
-			"PalletTown_EventScript_SetSignLadyDone",
-			"VAR_MAP_SCENE_PALLET_TOWN_SIGN_LADY",
-			"FLAG_PALLET_LADY_NOT_BLOCKING_SIGN",
-			"PalletTown_EventScript_MoveSignLadyToRouteEntrance",
-			"Trade_Text_InterestingOfferMewWrongMon",
-			"reset",
-			"evChange",
-			"itemEffect",
-			"UPDATE_FRIENDSHIP_FROM_ITEM",
-			"retVal",
-			"UPDATE_FRIENDSHIP_FROM_ITEM"
+			"sOptionMenuPtr"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -674,73 +442,6 @@
 		{
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "src/data/items.h",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 489069,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								477726,
-								477726
-							]
-						],
-						"settings":
-						{
-							"lsp_uri": "file:///home/amy/Games/Emulation/Games/Pok%C3%A9mon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/src/data/items.h",
-							"rainbow_checked": true,
-							"syntax": "Packages/C++/C++.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 337804.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"stack_multiselect": false,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "data/maps/EscapeRoom/text.inc",
-					"selected": true,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 6546,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								5651,
-								5651
-							]
-						],
-						"settings":
-						{
-							"lsp_uri": "file:///home/amy/Games/Emulation/Games/Pok%C3%A9mon/Amy/AmysFireRedNuzlocke/amys-pokefirered-expansion/data/maps/EscapeRoom/text.inc",
-							"rainbow_checked": true,
-							"syntax": "Packages/Text/Plain text.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 3318.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"stack_multiselect": false,
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -800,7 +501,7 @@
 	"project": "",
 	"replace":
 	{
-		"height": 118.0
+		"height": 64.0
 	},
 	"save_all_on_build": true,
 	"select_file":

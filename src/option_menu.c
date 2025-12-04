@@ -128,7 +128,7 @@ static const struct BgTemplate sOptionMenuBgTemplates[] =
 };
 
 static const u16 sOptionMenuPalette[] = INCBIN_U16("graphics/misc/option_menu.gbapal");
-static const u16 sOptionMenuItemCounts[MENUITEM_COUNT] = {5, 2, 2, 2, 3, 10, 0};
+static const u16 sOptionMenuItemCounts[MENUITEM_COUNT] = {5, 2, 1, 2, 2, 10, 0};
 
 static const u8 *const sOptionMenuItemsNames[MENUITEM_COUNT] =
 {
@@ -158,8 +158,7 @@ static const u8 *const sBattleSceneOptions[] =
 
 static const u8 *const sBattleStyleOptions[] =
 {
-    gText_BattleStyleSet,
-    gText_ChangeMe
+    gText_BattleStyleSet
 };
 
 static const u8 *const sSoundOptions[] =
@@ -171,8 +170,7 @@ static const u8 *const sSoundOptions[] =
 static const u8 *const sButtonTypeOptions[] =
 {
 	gText_ButtonTypeLR,
-	gText_ButtonTypeLEqualsA,
-    gText_ChangeMe
+	gText_ButtonTypeLEqualsA
 };
 
 static const u8 sOptionMenuPickSwitchCancelTextColor[] = {TEXT_DYNAMIC_COLOR_6, TEXT_COLOR_WHITE, TEXT_COLOR_DARK_GRAY};

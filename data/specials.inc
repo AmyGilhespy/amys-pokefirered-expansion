@@ -455,4 +455,5 @@ gSpecials::
 	def_special SetGameMode
 	def_special RemapPickupItem
 	def_special YouHaveXBadgesNowPokemonWillObeyYou
+	def_special ChooseMonForMoveRenamer
 gSpecialsEnd::

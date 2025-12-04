@@ -62,8 +62,13 @@ EventScript_PkmnCenterNurse_PlayerWaitingInUnionRoom::
 	return
 
 EventScript_PkmnCenterNurse_RenamePkmn::
+	msgbox LavenderTown_House2_Text_RenameWhichMon
+	special ChooseMonForMoveRenamer
+	waitstate
+	goto_if_ge VAR_0x8004, PARTY_SIZE, EventScript_PkmnCenterNurse_Goodbye
+	special IsSelectedMonEgg
+	goto_if_eq VAR_RESULT, TRUE, EventScript_PkmnCenterNurse_CantRenameEgg
 	msgbox LavenderTown_House2_Text_WhatShallNewNicknameBe
-	setvar VAR_0x8004, 0 @ Index of pokemon in player's party whose name is to change
 	call EventScript_ChangePokemonNickname
 	specialvar VAR_RESULT, NameRaterWasNicknameChanged
 	special BufferMonNickname
@@ -98,6 +103,11 @@ EventScript_PkmnCenterNurse_NoMoveToTutorMon::
 EventScript_PkmnCenterNurse_CantTutorEgg::
 	msgbox TwoIsland_House_Text_CantTeachAnEgg
 	goto EventScript_PkmnCenterNurse_RemindPkmn
+	end
+
+EventScript_PkmnCenterNurse_CantRenameEgg::
+	msgbox LavenderTown_House2_Text_CantRenameAnEgg
+	goto EventScript_PkmnCenterNurse_RenamePkmn
 	end
 
 EventScript_PkmnCenterNurse_Goodbye::

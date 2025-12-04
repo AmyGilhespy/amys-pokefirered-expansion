@@ -8,6 +8,14 @@ LavenderTown_House2_Text_CritiqueWhichMonsNickname::
     .string "Which POKéMON's nickname should\n"
     .string "I critique?$"
 
+LavenderTown_House2_Text_RenameWhichMon::
+    .string "Which POKéMON's nickname should\n"
+    .string "I help you change?$"
+
+LavenderTown_House2_Text_CantRenameAnEgg::
+    .string "That POKéMON isn't ready to be\n"
+    .string "named just yet.$"
+
 LavenderTown_House2_Text_GiveItANicerName::
     .string "{STR_VAR_1}, is it?\n"
     .string "That is a decent nickname!\p"

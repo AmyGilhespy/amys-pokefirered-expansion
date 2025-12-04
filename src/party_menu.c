@@ -3256,6 +3256,7 @@ static u8 GetPartyMenuActionsType(struct Pokemon *mon)
     // PARTY_MENU_TYPE_MULTI_SHOWCASE
     // PARTY_MENU_TYPE_MOVE_RELEARNER
     // PARTY_MENU_TYPE_MINIGAME
+    // PARTY_MENU_TYPE_MOVE_RENAMER
     default:
         actionType = ACTIONS_NONE;
         break;

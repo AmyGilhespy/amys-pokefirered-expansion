@@ -742,6 +742,9 @@ const u16 gItemIconPalette_IronPlate[] = INCBIN_U16("graphics/items/icon_palette
 const u32 gItemIcon_PixiePlate[] = INCBIN_U32("graphics/items/icons/pixie_plate.4bpp.lz");
 const u16 gItemIconPalette_PixiePlate[] = INCBIN_U16("graphics/items/icon_palettes/pixie_plate.gbapal");
 
+const u32 gItemIcon_BlankPlate[] = INCBIN_U32("graphics/items/icons/blank_plate.4bpp.lz");
+const u16 gItemIconPalette_BlankPlate[] = INCBIN_U16("graphics/items/icon_palettes/blank_plate.gbapal");
+
 // Drives
 
 const u32 gItemIcon_DouseDrive[] = INCBIN_U32("graphics/items/icons/douse_drive.4bpp.lz");

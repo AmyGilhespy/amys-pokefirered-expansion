@@ -46,7 +46,7 @@ LavenderTown_Mart_Items::
 	.2byte ITEM_ICY_ROCK
 	.2byte ITEM_TERRAIN_EXTENDER
 	.2byte ITEM_LIGHT_CLAY
-	@.2byte ITEM_BLANK_PLATE @ Doesn't exist in my fork.
+	.2byte ITEM_BLANK_PLATE @ Doesn't exist in my fork.
 	.2byte ITEM_FIST_PLATE
 	.2byte ITEM_SKY_PLATE
 	.2byte ITEM_TOXIC_PLATE

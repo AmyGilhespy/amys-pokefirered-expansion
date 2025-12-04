@@ -5,7 +5,7 @@ FuchsiaCity_Gym_EventScript_Koga::
 	famechecker FAMECHECKER_KOGA, FCPICKSTATE_COLORED, UpdatePickStateFromSpecialVar8005
 	trainerbattle_single TRAINER_LEADER_KOGA, FuchsiaCity_Gym_Text_KogaIntro, FuchsiaCity_Gym_Text_KogaDefeat, FuchsiaCity_Gym_EventScript_DefeatedKoga, NO_MUSIC
 	goto_if_unset FLAG_GOT_TR99_FROM_KOGA, FuchsiaCity_Gym_EventScript_GiveTR99
-	goto SaffronCity_Gym_Shop
+	goto FuchsiaCity_Gym_Shop
 	end
 
 FuchsiaCity_Gym_Shop::

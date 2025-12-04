@@ -32,6 +32,16 @@ void ChooseMonForMoveRelearner(void)
     BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 0x10, RGB_BLACK);
 }
 
+void ChooseMonForMoveRenamer(void)
+{
+    u8 taskId;
+
+    LockPlayerFieldControls();
+    taskId = CreateTask(Task_ChoosePartyMon, 10);
+    gTasks[taskId].data[0] = PARTY_MENU_TYPE_MOVE_RENAMER;
+    BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 0x10, RGB_BLACK);
+}
+
 static void Task_ChoosePartyMon(u8 taskId)
 {
     if (!gPaletteFade.active)

@@ -31,6 +31,7 @@
 #define PARTY_MENU_TYPE_UNION_ROOM_TRADE          9  // trading board
 #define PARTY_MENU_TYPE_SPIN_TRADE                10 // Unused beta for Gen IV's Spin Trade
 #define PARTY_MENU_TYPE_MINIGAME                  11
+#define PARTY_MENU_TYPE_MOVE_RENAMER              12
 
 #define PARTY_ACTION_CHOOSE_MON         0
 #define PARTY_ACTION_SEND_OUT           1

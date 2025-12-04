@@ -3356,6 +3356,8 @@ extern const u32 gItemIcon_IronPlate[];
 extern const u16 gItemIconPalette_IronPlate[];
 extern const u32 gItemIcon_PixiePlate[];
 extern const u16 gItemIconPalette_PixiePlate[];
+extern const u32 gItemIcon_BlankPlate[];
+extern const u16 gItemIconPalette_BlankPlate[];
 // Drives
 extern const u32 gItemIcon_DouseDrive[];
 extern const u16 gItemIconPalette_DouseDrive[];

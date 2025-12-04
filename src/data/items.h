@@ -12145,7 +12145,7 @@ const struct Item gItemsInfo[] =
     [ITEM_TM_BANEFUL_BUNKER] =
     {
         .name = ITEM_NAME("TR91"),
-        .price = 10000,
+        .price = 5000,
         .description = COMPOUND_STRING(
             "SINGLE USE. Baneful Bunker.\nProtects user. Poisons on contact."),
         .importance = 0,
@@ -12157,7 +12157,7 @@ const struct Item gItemsInfo[] =
     [ITEM_TM_SPIKY_SHIELD] =
     {
         .name = ITEM_NAME("TR92"),
-        .price = 10000,
+        .price = 5000,
         .description = COMPOUND_STRING(
             "SINGLE USE. Spiky Shield.\nProtects user. Damages on contact."),
         .importance = 0,
@@ -12169,7 +12169,7 @@ const struct Item gItemsInfo[] =
     [ITEM_TM_WATER_SHURIKEN] =
     {
         .name = ITEM_NAME("TR93"),
-        .price = 20000,
+        .price = 5000,
         .description = COMPOUND_STRING(
             "SINGLE USE. Water Shuriken.\nPriority +1. Hits 2-5 times."),
         .importance = 0,
@@ -12217,7 +12217,7 @@ const struct Item gItemsInfo[] =
     [ITEM_TM_SPORE] =
     {
         .name = ITEM_NAME("TR97"),
-        .price = 30000,
+        .price = 10000,
         .description = COMPOUND_STRING(
             "SINGLE USE. Spore.\n100% chance to inflict sleep."),
         .importance = 0,
@@ -12229,7 +12229,7 @@ const struct Item gItemsInfo[] =
     [ITEM_TM_DARK_VOID] =
     {
         .name = ITEM_NAME("TR98"),
-        .price = 40000,
+        .price = 10000,
         .description = COMPOUND_STRING(
             "SINGLE USE. Dark Void.\nHits both foes. Causes sleep."),
         .importance = 0,
@@ -15072,6 +15072,26 @@ const struct Item gItemsInfo[] =
         .flingPower = 30,
         .iconPic = gItemIcon_RevivalHerb,
         .iconPalette = gItemIconPalette_RevivalHerb,
+    },
+
+    [ITEM_BLANK_PLATE] =
+    {
+        .name = ITEM_NAME("Blank Plate"),
+        .price = 1000,
+        .holdEffect = HOLD_EFFECT_PLATE,
+        .holdEffectParam = 20,
+        .description = COMPOUND_STRING(
+            "A tablet that ups "
+            "the power of "
+            "\nNormal-type moves."),
+        .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_PLATE,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .secondaryId = TYPE_NORMAL,
+        .flingPower = 90,
+        .iconPic = gItemIcon_BlankPlate,
+        .iconPalette = gItemIconPalette_BlankPlate,
     },
 
 };
